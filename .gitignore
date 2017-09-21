@@ -58,3 +58,5 @@ typings/
 .env
 
 .DS_Store
+
+.out

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .out",
+    "build-storybook-static": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",
     "build": "webpack"
   },
