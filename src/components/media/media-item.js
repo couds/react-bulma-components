@@ -7,14 +7,18 @@ const MediaItem = ({
   className,
   style,
   renderAs,
-  mediaRole,
+  ...props
 }) => {
   const Element = renderAs;
+  let { position } = props;
+  if (position === 'center') {
+    position = 'content';
+  }
   return (
     <Element
       style={style}
       className={classnames(className, {
-        [`media-${mediaRole}`]: mediaRole,
+        [`media-${position}`]: position,
       })}
     >
       {children}
@@ -27,7 +31,7 @@ MediaItem.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   renderAs: PropTypes.string,
-  mediaRole: PropTypes.oneOf(['content', 'right', 'left']),
+  position: PropTypes.oneOf(['center', 'right', 'left']),
 };
 
 MediaItem.defaultProps = {
@@ -35,7 +39,7 @@ MediaItem.defaultProps = {
   className: '',
   style: {},
   renderAs: 'div',
-  mediaRole: 'content',
+  position: 'center',
 };
 
 export default MediaItem;

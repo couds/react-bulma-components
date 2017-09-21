@@ -3,99 +3,511 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Columns from '.';
+import Box from '../box';
+import Heading from '../heading';
 
 storiesOf('Columns', module)
-  .add('Three columns with text', () => (
+  .addDecorator(story => (
+    <div style={{ margin: 10 }}>
+      {story()}
+    </div>
+  ))
+  .add('Basic', () => (
     <Columns>
-      <Columns.Column notification>
-        <p className="bd-notification is-success"> First Column</p>
+      <Columns.Column>
+        <p className="bd-notification is-success">First Column</p>
       </Columns.Column>
-      <Columns.Column notification type="info" >
-        <p className="bd-notification is-info"> Middle Column</p>
+      <Columns.Column>
+        <p className="bd-notification is-info">Second Column</p>
       </Columns.Column>
-      <Columns.Column notification type="warning" >
-        <p className="bd-notification is-warning"> Last Column</p>
+      <Columns.Column>
+        <p className="bd-notification is-warning">Third Column</p>
+      </Columns.Column>
+      <Columns.Column>
+        <p className="bd-notification is-warning">Fourth Column</p>
       </Columns.Column>
     </Columns>
   ))
-  .add('Three Columns with One is half of the width', () => (
-    <Columns>
-      <Columns.Column>
-        <p className="bd-notification is-success"> First Column</p>
-      </Columns.Column>
-      <Columns.Column size={Columns.CONSTANTS.SIZES.HALF}>
-        <p className="bd-notification is-info"> Large Column</p>
-      </Columns.Column>
-      <Columns.Column>
-        <p className="bd-notification is-warning"> Last Column</p>
-      </Columns.Column>
-    </Columns>
+  .add('Sizes by name', () => (
+    <div>
+      <Columns>
+        <Columns.Column size="three-quarters">
+          <p className="bd-notification is-success">is-three-quarters</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-info">Auto</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-warning">Auto</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size="two-thirds">
+          <p className="bd-notification is-success">is-two-thirds</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-info">Auto</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-warning">Auto</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size="half">
+          <p className="bd-notification is-success">is-half</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-info">Auto</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-warning">Auto</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size="one-third">
+          <p className="bd-notification is-success">is-one-thirds</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-info">Auto</p>
+        </Columns.Column>
+        <Columns.Column>
+          <p className="bd-notification is-warning">Auto</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size="one-quarter">
+          <p className="bd-notification is-success">is-one-quarter</p>
+        </Columns.Column>
+        <Columns.Column >
+          <p className="bd-notification is-info">Auto</p>
+        </Columns.Column>
+      </Columns>
+    </div>
   ))
-  .add('One Column centered using offset', () => (
-    <Columns>
-      <Columns.Column
-        offset={Columns.CONSTANTS.SIZES.ONEQUARTER}
-        size={Columns.CONSTANTS.SIZES.HALF}
-      >
-        <p className="bd-notification is-success">{'I\'m centered'}</p>
-      </Columns.Column>
-    </Columns>
+  .add('Sizes by 12 Columns', () => (
+    <div>
+      <Columns>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-success">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-info">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-warning">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size={2}>
+          <p className="bd-notification is-success">size-2</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-warning">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size={3}>
+          <p className="bd-notification is-success">size-3</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns>
+        <Columns.Column size={4}>
+          <p className="bd-notification is-success">size-4</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={5}>
+          <p className="bd-notification is-success">size-5</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={6}>
+          <p className="bd-notification is-success">size-6</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={7}>
+          <p className="bd-notification is-success">size-7</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-black">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={8}>
+          <p className="bd-notification is-success">size-8</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-dark">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={9}>
+          <p className="bd-notification is-success">size-9</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-light">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={10}>
+          <p className="bd-notification is-success">size-10</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-white">size-1</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={11}>
+          <p className="bd-notification is-success">size-11</p>
+        </Columns.Column>
+        <Columns.Column size={1}>
+          <p className="bd-notification is-danger">size-1</p>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={12}>
+          <p className="bd-notification is-success">size-12</p>
+        </Columns.Column>
+      </Columns>
+    </div>
   ))
-  .add('One really big columns and other that fill the gap', () => (
-    <Columns>
-      <Columns.Column size={9}>
-        <p className="bd-notification is-success">Really large</p>
-      </Columns.Column>
-      <Columns.Column>
-        <p className="bd-notification is-info">{'I\'m small'}</p>
-      </Columns.Column>
-      <Columns.Column>
-        <p className="bd-notification is-danger">Me Too</p>
-      </Columns.Column>
-    </Columns>
+  .add('With Offset', () => (
+    <div>
+      <Columns mobile>
+        <Columns.Column size="half" offset="one-quarter">
+          <p className="bd-notification is-info">size half<br />offset one-quarter</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns mobile>
+        <Columns.Column size={4} offset={8}>
+          <p className="bd-notification is-info">size 4<br />offset 8</p>
+        </Columns.Column>
+      </Columns>
+
+      <Columns mobile>
+        <Columns.Column size={11} offset={1}>
+          <p className="bd-notification is-info">size 11<br />offset 1</p>
+        </Columns.Column>
+      </Columns>
+    </div>
   ))
-  .add('One column that use the neccesary space, other that fill the gap', () => (
+  .add('Narrow', () => (
     <Columns>
       <Columns.Column narrow>
-        <p className="bd-notification is-info" style={{ width: 200 }}>
-          {'I\'m fix to 200PX'}
-        </p>
+        <Box style={{ width: 200 }}>
+          <Heading size={5} renderAs="p">Narrow column</Heading>
+          <Heading subtitle renderAs="p">This column is only 200px wide.</Heading>
+        </Box>
       </Columns.Column>
       <Columns.Column>
-        <p className="bd-notification is-success">I use the available space</p>
-      </Columns.Column>
-      <Columns.Column>
-        <p className="bd-notification is-danger">I share the space also</p>
+        <Box>
+          <Heading size={5} renderAs="p">Flexible column</Heading>
+          <Heading subtitle renderAs="p">This column will take up the remaining space available.</Heading>
+        </Box>
       </Columns.Column>
     </Columns>
   ))
-  .add('One column that use the neccesary space with breakpoint, other that fill the gap', () => (
-    <Columns>
-      <Columns.Column narrow="desktop" >
-        <p className="bd-notification is-success" style={{ width: 150 }}>
-          150PX on Desktop only
+  .add('Responsive', () => (
+    <div>
+      <Box>
+        <Heading size={5} renderAs="p">Mobile</Heading>
+        <Columns breakpoint="mobile">
+          <Columns.Column>
+            <p className="bd-notification is-success">First Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-info">Second Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Third Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Fourth Column</p>
+          </Columns.Column>
+        </Columns>
+      </Box>
+      <Box>
+        <Heading renderAs="p" size={5}>Tablet</Heading>
+        <Columns breakpoint="tablet">
+          <Columns.Column>
+            <p className="bd-notification is-success">First Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-info">Second Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Third Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Fourth Column</p>
+          </Columns.Column>
+        </Columns>
+      </Box>
+      <Box>
+        <Heading renderAs="p" size={5}>Desktop</Heading>
+        <Columns breakpoint="desktop">
+          <Columns.Column>
+            <p className="bd-notification is-success">First Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-info">Second Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Third Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Fourth Column</p>
+          </Columns.Column>
+        </Columns>
+      </Box>
+    </div>
+  ))
+  .add('Different column size per breakpoint', () => (
+    <Columns breakpoint="mobile">
+      <Columns.Column
+        mobileSize="three-quarters"
+        tabletSize="two-thirds"
+        desktopSize="half"
+        widescreenSize="one-third"
+        fullhfSize="one-quarter"
+      >
+        <p className="bd-notification is-success">
+          is-three-quarters-mobile<br />
+          is-two-thirds-tablet<br />
+          is-half-desktop
+          is-one-third-widescreen
+          is-one-quarter-fullhd
         </p>
       </Columns.Column>
-      <Columns.Column size={2}>
-        <p className="bd-notification is-info">I use 1/6 of the space</p>
+      <Columns.Column className="column">
+        <p className="bd-notification is-info">1</p>
       </Columns.Column>
-      <Columns.Column size={2}>
-        <p className="bd-notification is-warning">Me too!!</p>
+      <Columns.Column className="column">
+        <p className="bd-notification is-warning">1</p>
       </Columns.Column>
-      <Columns.Column>
-        <p className="bd-notification is-danger">I use the remainging space</p>
+    </Columns>
+  ))
+  .add('Nested', () => (
+    <Columns>
+      <Columns.Column size="half">
+        <p className="bd-notification is-success">First Column</p>
+        <Columns>
+          <Columns.Column size="one-third">
+            <p className="bd-notification is-info">First Nested Column</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Second Nested Column (auto)</p>
+          </Columns.Column>
+        </Columns>
+      </Columns.Column>
+      <Columns.Column size="half">
+        <p className="bd-notification is-success">Second Column</p>
+        <Columns>
+          <Columns.Column size="half">
+            <p className="bd-notification is-info">First Nested Column (Half)</p>
+          </Columns.Column>
+          <Columns.Column size="one-quarter">
+            <p className="bd-notification is-warning">Second Nested Column (one-quarter)</p>
+          </Columns.Column>
+          <Columns.Column>
+            <p className="bd-notification is-warning">Third Nested Column (auto)</p>
+          </Columns.Column>
+        </Columns>
       </Columns.Column>
     </Columns>
   ))
   .add('gapless columns', () => (
     <Columns gapless>
-      <Columns.Column notification>
+      <Columns.Column>
         <p className="bd-notification is-success"> First Column</p>
       </Columns.Column>
-      <Columns.Column notification type="info" >
+      <Columns.Column>
         <p className="bd-notification is-info"> Middle Column</p>
       </Columns.Column>
-      <Columns.Column notification type="warning" >
+      <Columns.Column>
         <p className="bd-notification is-warning"> Last Column</p>
       </Columns.Column>
     </Columns>

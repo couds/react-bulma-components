@@ -7,12 +7,15 @@ const Content = ({
   className,
   style,
   renderAs,
+  size,
 }) => {
   const Element = renderAs;
   return (
     <Element
       style={style}
-      className={classnames('content', className)}
+      className={classnames('content', className, {
+        [`is-${size}`]: size,
+      })}
     >
       {children}
     </Element>
@@ -23,6 +26,7 @@ Content.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   renderAs: PropTypes.string,
 };
 
@@ -30,6 +34,7 @@ Content.defaultProps = {
   children: null,
   className: '',
   style: {},
+  size: null,
   renderAs: 'div',
 };
 

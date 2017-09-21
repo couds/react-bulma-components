@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Tag from '.';
+import { Field, Control } from '../form';
 
 storiesOf('Tag', module)
   .addDecorator(story => (
@@ -17,41 +18,76 @@ storiesOf('Tag', module)
   ))
   .add('Group Tags', () => (
     <Tag.Group>
-      <Tag type="primary">
+      <Tag color="primary">
         Tag Text
       </Tag>
-      <Tag type="success">
+      <Tag color="success">
         Tag Text
       </Tag>
-      <Tag type="danger">
+      <Tag color="danger">
         Tag Text
       </Tag>
-      <Tag type="warrning">
+      <Tag color="warrning">
         Tag Text
       </Tag>
-      <Tag type="info">
+      <Tag color="info">
         Tag Text
       </Tag>
     </Tag.Group>
   ))
   .add('Group Tags without gap', () => (
-    <Tag.Group gapless>
-      <Tag>
-        Tag Text
-      </Tag>
-      <Tag>
-        Tag Text
-      </Tag>
-      <Tag>
-        Tag Text
-      </Tag>
-      <Tag>
-        Tag Text
-      </Tag>
-      <Tag>
-        Tag Text
-      </Tag>
-    </Tag.Group>
+    <div>
+      <Tag.Group gapless>
+        <Tag>
+          Tag Text
+        </Tag>
+        <Tag color="primary">
+          Tag Text
+        </Tag>
+      </Tag.Group>
+      <Tag.Group gapless>
+        <Tag color="danger">
+          Delete
+        </Tag>
+        <Tag remove renderAs="a" />
+      </Tag.Group>
+    </div>
+  ))
+  .add('Group Tags without gap multiline', () => (
+    <div>
+      <Field multiline kind="group">
+        <Control>
+          <Tag.Group gapless>
+            <Tag color="dark">
+              npm
+            </Tag>
+            <Tag color="info">
+              V 5.3
+            </Tag>
+          </Tag.Group>
+        </Control>
+        <Control>
+          <Tag.Group gapless>
+            <Tag color="dark">
+              Build
+            </Tag>
+            <Tag color="success">
+              Pass
+            </Tag>
+          </Tag.Group>
+        </Control>
+        <Control>
+          <Tag.Group gapless>
+            <Tag color="dark">
+              Chat
+            </Tag>
+            <Tag color="primary">
+              Slack
+            </Tag>
+          </Tag.Group>
+        </Control>
+      </Field>
+    </div>
   ))
   .add('Others', () => (
     <Tag.Group>

@@ -3,65 +3,55 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Heading from '.';
+import Box from '../box';
 
 storiesOf('Heading', module)
+  .addDecorator(story => (
+    <div style={{ margin: 10 }}>
+      {story()}
+    </div>
+  ))
   .add('Default', () => (
     <div>
-      <div>
+      <Box>
         <Heading>
           Title
         </Heading>
         <Heading subtitle>
           Subtitle
         </Heading>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Heading size={1}>
-          Title
-        </Heading>
-        <Heading subtitle size={1}>
-          Subtitle
-        </Heading>
-      </div>
-      <div>
-        <Heading size={2}>
-          Title
-        </Heading>
-        <Heading subtitle size={2}>
-          Subtitle
-        </Heading>
-      </div>
-      <div>
-        <Heading size={3}>
           Title
         </Heading>
         <Heading subtitle size={3}>
           Subtitle
         </Heading>
-      </div>
-      <div>
-        <Heading size={4}>
+      </Box>
+      <Box>
+        <Heading size={2}>
           Title
         </Heading>
         <Heading subtitle size={4}>
-          Title
+          Subtitle
         </Heading>
-      </div>
-      <div>
-        <Heading size={5}>
+      </Box>
+      <Box>
+        <Heading size={3}>
           Title
         </Heading>
         <Heading subtitle size={5}>
           Subtitle
         </Heading>
-      </div>
-      <div>
-        <Heading size={6}>
+      </Box>
+      <Box>
+        <Heading size={4}>
           Title
         </Heading>
         <Heading subtitle size={6}>
-          Subtitle
+          Title
         </Heading>
-      </div>
+      </Box>
     </div>
   ));

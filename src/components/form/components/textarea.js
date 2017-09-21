@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import CONSTANTS from '../../../constants';
 import events from '../../../modifiers/events';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Textarea = ({
   className,
@@ -39,7 +39,7 @@ Textarea.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(roles),
+  color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,

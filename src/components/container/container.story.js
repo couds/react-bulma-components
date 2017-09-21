@@ -3,28 +3,43 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Container from '.';
-
-const style = { background: '#e6e6e6', flex: 1, height: 50 };
+import Heading from '../heading';
+import Section from '../section';
 
 storiesOf('Container', module)
   .add('Default', () => (
-    <Container>
-      <div style={style}>
-        Content
-      </div>
-    </Container>
-  ))
-  .add('Fluid', () => (
-    <Container fluid>
-      <div style={style}>
-        Content
-      </div>
-    </Container>
-  ))
-  .add('With widescreen breakpoint', () => (
-    <Container breakpoint="widescreen" >
-      <div style={style}>
-        Content
-      </div>
-    </Container>
+    <div>
+      <Section>
+        <Container>
+          <p className="bd-notification is-success">
+            <Heading size={5} renderAs="p">Default</Heading>
+            <Heading subtitle renderAs="p">Container</Heading>
+          </p>
+        </Container>
+      </Section>
+      <Section>
+        <Container fluid>
+          <p className="bd-notification is-info">
+            <Heading size={5} renderAs="p">Fluid</Heading>
+            <Heading subtitle renderAs="p">Container</Heading>
+          </p>
+        </Container>
+      </Section>
+      <Section>
+        <Container breakpoint="widescreen">
+          <p className="bd-notification is-warning">
+            <Heading size={5} renderAs="p">Breakpoint Widescreen</Heading>
+            <Heading subtitle renderAs="p">Container</Heading>
+          </p>
+        </Container>
+      </Section>
+      <Section>
+        <Container breakpoint="fullhd">
+          <p className="bd-notification is-danger">
+            <Heading size={5} renderAs="p">Breakpoint Fullhd</Heading>
+            <Heading subtitle renderAs="p">Container</Heading>
+          </p>
+        </Container>
+      </Section>
+    </div>
   ));

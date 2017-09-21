@@ -5,38 +5,33 @@ import { storiesOf } from '@storybook/react';
 import Button from '.';
 
 storiesOf('Button', module)
-.add('Types', () => (
-  <div>
-    <Button>
-      Normal
-    </Button>
-    <Button type="primary">
-      Primary
-    </Button>
-    <Button type="info">
-      Info
-    </Button>
-    <Button type="danger">
-      Danger
-    </Button>
-    <Button type="warning">
-      Warning
-    </Button>
-    <Button type="success">
-      Success
-    </Button>
+.addDecorator(story => (
+  <div className="button-display">
+    {story()}
   </div>
 ))
-.add('Colors', () => (
+.add('By Colors', () => (
   <div>
     <Button>
       Normal
+    </Button>
+    <Button color="primary">
+      Primary
+    </Button>
+    <Button color="info">
+      Info
+    </Button>
+    <Button color="danger">
+      Danger
+    </Button>
+    <Button color="warning">
+      Warning
+    </Button>
+    <Button color="success">
+      Success
     </Button>
     <Button color="white">
       White
-    </Button>
-    <Button color="link">
-      Link
     </Button>
     <Button color="light">
       Light
@@ -49,26 +44,25 @@ storiesOf('Button', module)
     </Button>
   </div>
 ))
-.add('Full Width', () => (
-  <div>
-    <Button fill type="primary">
-      Full Width
-    </Button>
-  </div>
-))
 .add('Other Styles', () => (
   <div>
-    <Button loading type="info">
+    <Button fullwidth color="primary">
+      Full Width
+    </Button>
+    <Button loading color="info">
       Loading
     </Button>
-    <Button outlined type="danger">
+    <Button outlined color="danger">
       Warning Outlined
     </Button>
-    <Button inverted type="success">
+    <Button inverted color="success">
       Success Inverted
     </Button>
-    <Button disabled type="info">
+    <Button disabled color="info">
       Disabled
+    </Button>
+    <Button link>
+      Link
     </Button>
 
     <Button remove />

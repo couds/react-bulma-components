@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import CONSTANTS from '../../../constants';
 import events from '../../../modifiers/events';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Input = ({
   className,
@@ -42,7 +42,7 @@ Input.propTypes = {
   style: PropTypes.object,
   type: PropTypes.oneOf(['text', 'email', 'tel', 'password']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(roles),
+  color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
   isStatic: PropTypes.bool,
   disabled: PropTypes.bool,

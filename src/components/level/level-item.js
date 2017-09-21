@@ -1,23 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from '../../constants';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
-
-const LevelContainer = ({
+const LevelItem = ({
   children,
   className,
   style,
-  breakpoint,
   renderAs,
 }) => {
   const Element = renderAs;
   return (
     <Element
       style={style}
-      className={classnames('level', className, {
-        [`is-${breakpoint}`]: breakpoint,
+      className={classnames('level-item', className, {
       })}
     >
       {children}
@@ -25,20 +20,18 @@ const LevelContainer = ({
   );
 };
 
-LevelContainer.propTypes = {
+LevelItem.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
-  breakpoint: PropTypes.oneOf([breakpoints]),
   renderAs: PropTypes.string,
 };
 
-LevelContainer.defaultProps = {
+LevelItem.defaultProps = {
   children: null,
   className: '',
   style: {},
-  breakpoint: null,
   renderAs: 'div',
 };
 
-export default LevelContainer;
+export default LevelItem;

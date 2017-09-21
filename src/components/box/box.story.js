@@ -16,7 +16,7 @@ storiesOf('Box', module)
   .add('Default', () => (
     <Box>
       <Media>
-        <Media.Item renderAs="figure" mediaRole="left">
+        <Media.Item renderAs="figure" position="left">
           <Image renderAs="p" size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
         </Media.Item>
         <Media.Item>

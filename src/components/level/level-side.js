@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Level = ({
+const LevelSide = ({
   children,
   className,
   style,
   renderAs,
+  align,
 }) => {
   const Element = renderAs;
   return (
     <Element
       style={style}
-      className={classnames('level-item', className, {
+      className={classnames(className, {
+        [`level-${align}`]: align,
       })}
     >
       {children}
@@ -20,18 +22,21 @@ const Level = ({
   );
 };
 
-Level.propTypes = {
+LevelSide.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
   renderAs: PropTypes.string,
+  align: PropTypes.string,
 };
 
-Level.defaultProps = {
+LevelSide.defaultProps = {
   children: null,
   className: '',
   style: {},
   renderAs: 'div',
+  align: 'left',
 };
 
-export default Level;
+
+export default LevelSide;

@@ -6,7 +6,7 @@ export default {
     WIDESCREEN: 'widescreen',
     FULLHD: 'fullhd',
   },
-  ROLES: {
+  COLORS: {
     PRIMARY: 'primary',
     SUCCESS: 'success',
     INFO: 'info',
@@ -14,5 +14,7 @@ export default {
     DANGER: 'danger',
     LIGHT: 'light',
     DARK: 'dark',
+    WHITE: 'white',
+    BLACK: 'black',
   },
 };

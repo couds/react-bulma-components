@@ -1,13 +1,14 @@
 {
   "name": "react-bulma-components",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "React components for Bulma framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "build": "webpack"
   },
   "storybook-deployer": {
     "gitUsername": "Couds",
@@ -20,7 +21,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/couds/react-bulma-components/issues"
   },

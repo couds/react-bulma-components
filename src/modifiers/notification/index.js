@@ -4,23 +4,23 @@ import classnames from 'classnames';
 import './notification.sass';
 import CONSTANTS from '../../constants';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 
 export default {
   propTypes: {
-    type: PropTypes.oneOf(roles),
+    color: PropTypes.oneOf(colors),
     notification: PropTypes.bool,
   },
   className: ({
     notification,
-    type,
+    color,
   }) => classnames({
     notification,
-    [`is-${type}`]: type,
+    [`is-${color}`]: color,
   }),
   defaultProps: {
-    type: null,
+    color: null,
     notification: false,
   },
 };

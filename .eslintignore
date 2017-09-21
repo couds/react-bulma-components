@@ -1,1 +1,2 @@
-*.story.js
+dist/**
+**.min.js

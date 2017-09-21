@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Progress = ({
   className,
   style,
   value,
   max,
-  type,
+  color,
   size,
 }) => (
   <progress
@@ -18,7 +18,7 @@ const Progress = ({
     value={value}
     max={max}
     className={classnames('progress', className, {
-      [`is-${type}`]: type,
+      [`is-${color}`]: color,
       [`is-${size}`]: size,
     })}
   />
@@ -27,7 +27,7 @@ const Progress = ({
 Progress.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.oneOf(roles),
+  color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
@@ -36,7 +36,7 @@ Progress.propTypes = {
 Progress.defaultProps = {
   className: '',
   style: {},
-  type: null,
+  color: null,
   size: null,
 };
 

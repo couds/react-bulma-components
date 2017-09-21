@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import CONSTANTS from '../../../constants';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Help = ({
   className,
@@ -26,7 +26,7 @@ const Help = ({
 Help.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  color: PropTypes.oneOf(roles),
+  color: PropTypes.oneOf(colors),
   children: PropTypes.node,
 };
 

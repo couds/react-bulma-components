@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Button = ({
   children,
@@ -11,7 +11,6 @@ const Button = ({
   style,
   renderAs,
   onClick,
-  type,
   color,
   size,
   outlined,
@@ -19,10 +18,11 @@ const Button = ({
   state,
   submit,
   reset,
-  fill,
+  fullwidth,
   loading,
   disabled,
   remove,
+  link,
   ...props
 }) => {
   let Element = props.static ? 'span' : renderAs;
@@ -42,13 +42,13 @@ const Button = ({
       disabled={disabled}
       onClick={onClick}
       className={classnames(className, {
-        [`is-${type}`]: type,
+        'is-link': link,
         [`is-${color}`]: color,
         [`is-${size}`]: size,
         [`is-${state}`]: state,
         'is-outlined': outlined,
         'is-inverted': inverted,
-        'is-fullwidth': fill,
+        'is-fullwidth': fullwidth,
         'is-loading': loading,
         delete: remove,
         button: !remove,
@@ -65,9 +65,8 @@ Button.propTypes = {
   style: PropTypes.object,
   renderAs: PropTypes.oneOf(['a', 'button']),
   static: PropTypes.bool,
-  type: PropTypes.oneOf(roles),
   onClick: PropTypes.func,
-  color: PropTypes.oneOf(['white', 'black', 'light', 'dark', 'link']),
+  color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   state: PropTypes.oneOf(['hover', 'focus', 'active', 'loading']),
   outlined: PropTypes.bool,
@@ -75,9 +74,10 @@ Button.propTypes = {
   submit: PropTypes.bool,
   reset: PropTypes.bool,
   loading: PropTypes.bool,
-  fill: PropTypes.bool,
+  fullwidth: PropTypes.bool,
   disabled: PropTypes.bool,
   remove: PropTypes.bool,
+  link: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -87,15 +87,15 @@ Button.defaultProps = {
   renderAs: 'a',
   onClick: () => null,
   static: false,
-  type: null,
   color: null,
+  link: false,
   size: null,
   state: null,
   outlined: false,
   inverted: false,
   submit: false,
   reset: false,
-  fill: false,
+  fullwidth: false,
   loading: false,
   disabled: false,
   remove: false,

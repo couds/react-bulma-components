@@ -6,12 +6,11 @@ import classnames from 'classnames';
 import CONSTANTS from '../../../constants';
 import events from '../../../modifiers/events';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Select = ({
   className,
   style,
-  type,
   size,
   color,
   readOnly,
@@ -45,9 +44,8 @@ Select.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.oneOf(['text', 'email', 'tel', 'password']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(roles),
+  color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
@@ -60,7 +58,6 @@ Select.defaultProps = {
   className: '',
   value: '',
   style: {},
-  type: 'text',
   size: null,
   color: null,
   readOnly: false,

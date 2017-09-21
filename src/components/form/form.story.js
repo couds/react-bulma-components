@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from '.';
 import Button from '../button';
 
+/* eslint-disable react/no-multi-comp */
 const HoC = (Component) => {
   class Controlled extends React.Component {
     state = {
@@ -60,22 +61,21 @@ class RadioGroup extends React.Component {
   render() {
     return (
       <Control>
-        <Radio onChange={this.onChange} checked={this.state.selected === 'Yes' } value="Yes" name="question">
+        <Radio onChange={this.onChange} checked={this.state.selected === 'Yes'} value="Yes" name="question">
           Yes
         </Radio>
-        <Radio onChange={this.onChange} checked={this.state.selected === 'No' } value="No" name="question" >
+        <Radio onChange={this.onChange} checked={this.state.selected === 'No'} value="No" name="question" >
           No
         </Radio>
       </Control>
     );
   }
 }
-
+/* eslint-enable react/no-multi-comp */
 const InputControlled = HoC(Input);
 const TextareaControlled = HoC(Textarea);
 const SelectControlled = HoC(Select);
 const CheckboxControlled = HoCCheckbox(Checkbox);
-const RadioControlled = HoCCheckbox(Radio);
 
 storiesOf('Form', module)
   .addDecorator(story => (

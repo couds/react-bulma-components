@@ -7,14 +7,14 @@ import HeroHead from './hero-head';
 import HeroBody from './hero-body';
 import HeroFooter from './hero-footer';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Hero = ({
   children,
   className,
   style,
   renderAs,
-  heroRole,
+  color,
   gradient,
   size,
 }) => {
@@ -23,7 +23,7 @@ const Hero = ({
     <Element
       style={style}
       className={classnames('hero', className, {
-        [`is-${heroRole}`]: heroRole,
+        [`is-${color}`]: color,
         [`is-${size}`]: size,
         'is-bold': gradient,
       })}
@@ -38,7 +38,7 @@ Hero.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   renderAs: PropTypes.string,
-  heroRole: PropTypes.oneOf(roles),
+  color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
   size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
 };
@@ -48,7 +48,7 @@ Hero.defaultProps = {
   className: '',
   style: {},
   renderAs: 'section',
-  heroRole: null,
+  color: null,
   gradient: false,
   size: null,
 };

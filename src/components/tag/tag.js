@@ -5,52 +5,54 @@ import classnames from 'classnames';
 import TagGroup from './tag-group';
 import CONSTANTS from '../../constants';
 
-const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Tag = ({
   children,
   className,
   style,
-  type,
   color,
   size,
   rounded,
   remove,
-}) => (
-  <span
-    style={style}
-    className={classnames('tag', className, {
-      [`is-${size}`]: size,
-      [`is-${type}`]: type,
-      [`is-${color}`]: color,
-      'is-rounded': rounded,
-      'is-delete': remove,
-    })}
-  >
-    {children}
-  </span>
+  renderAs,
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      style={style}
+      className={classnames('tag', className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-rounded': rounded,
+        'is-delete': remove,
+      })}
+    >
+      {!remove && children}
+    </Element>
   );
+};
 
 Tag.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.oneOf(roles),
-  color: PropTypes.oneOf(['dark', 'light', 'white', 'black']),
+  color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['medium', 'large']),
   rounded: PropTypes.bool,
   remove: PropTypes.bool,
+  renderAs: PropTypes.string,
 };
 
 Tag.defaultProps = {
   children: null,
   className: '',
   style: {},
-  type: null,
   color: null,
   size: null,
   rounded: false,
   remove: false,
+  renderAs: 'span',
 };
 
 Tag.Group = TagGroup;
