@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 
 const roles = [null].concat(Object.keys(CONSTANTS.ROLES).map(key => CONSTANTS.ROLES[key]));
 
-const Footer = ({
+const Progress = ({
   className,
   style,
   value,
@@ -24,7 +24,7 @@ const Footer = ({
   />
   );
 
-Footer.propTypes = {
+Progress.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   type: PropTypes.oneOf(roles),
@@ -33,11 +33,11 @@ Footer.propTypes = {
   max: PropTypes.number.isRequired,
 };
 
-Footer.defaultProps = {
+Progress.defaultProps = {
   className: '',
   style: {},
   type: null,
   size: null,
 };
 
-export default Footer;
+export default Progress;

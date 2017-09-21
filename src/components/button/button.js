@@ -22,6 +22,7 @@ const Button = ({
   fill,
   loading,
   disabled,
+  remove,
   ...props
 }) => {
   let Element = props.static ? 'span' : renderAs;
@@ -40,7 +41,7 @@ const Button = ({
       style={style}
       disabled={disabled}
       onClick={onClick}
-      className={classnames('button', className, {
+      className={classnames(className, {
         [`is-${type}`]: type,
         [`is-${color}`]: color,
         [`is-${size}`]: size,
@@ -49,6 +50,8 @@ const Button = ({
         'is-inverted': inverted,
         'is-fullwidth': fill,
         'is-loading': loading,
+        delete: remove,
+        button: !remove,
       })}
     >
       {children}
@@ -74,6 +77,7 @@ Button.propTypes = {
   loading: PropTypes.bool,
   fill: PropTypes.bool,
   disabled: PropTypes.bool,
+  remove: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -94,6 +98,7 @@ Button.defaultProps = {
   fill: false,
   loading: false,
   disabled: false,
+  remove: false,
 };
 
 export default Button;

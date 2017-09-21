@@ -70,6 +70,8 @@ storiesOf('Button', module)
     <Button disabled type="info">
       Disabled
     </Button>
+
+    <Button remove />
     <div style={{ background: '#4c4c4c', padding: 20, width: 200, margin: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Button inverted outlined type="success">
         Inverted Outlined

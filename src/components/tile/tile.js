@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import notification from '../../modifiers/notification';
 
 
-const Footer = ({
+const Tile = ({
   children,
   className,
   style,
@@ -33,7 +33,7 @@ const Footer = ({
   );
 };
 
-Footer.propTypes = {
+Tile.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
@@ -44,7 +44,7 @@ Footer.propTypes = {
   ...notification.propTypes,
 };
 
-Footer.defaultProps = {
+Tile.defaultProps = {
   children: null,
   className: '',
   style: {},
@@ -55,4 +55,4 @@ Footer.defaultProps = {
   ...notification.defaultProps,
 };
 
-export default Footer;
+export default Tile;

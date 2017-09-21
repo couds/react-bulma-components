@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Footer = ({
+const Table = ({
   children,
   className,
   style,
@@ -23,7 +23,7 @@ const Footer = ({
   </table>
   );
 
-Footer.propTypes = {
+Table.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
@@ -32,7 +32,7 @@ Footer.propTypes = {
   bordered: PropTypes.bool,
 };
 
-Footer.defaultProps = {
+Table.defaultProps = {
   children: null,
   className: '',
   style: {},
@@ -41,4 +41,4 @@ Footer.defaultProps = {
   bordered: false,
 };
 
-export default Footer;
+export default Table;

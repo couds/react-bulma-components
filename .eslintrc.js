@@ -20,7 +20,8 @@ module.exports = {
     'import/prefer-default-export': 0,
     'react/forbid-prop-types': 0,
     'max-len': 0,
-    'jsx-a11y/accessible-emoji': 0
+    'jsx-a11y/accessible-emoji': 0,
+    'jsx-a11y/label-has-for': 0,
   },
   'globals': {
     'document': true,

@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "storybook-deployer": {
+    "gitUsername": "Couds",
+    "gitEmail": "john.elric@gmail.com",
+    "commitMessage": "Deploy Storybook [skip ci]"
   },
   "repository": {
     "type": "git",
@@ -31,6 +37,7 @@
     "@storybook/addon-links": "^3.2.6",
     "@storybook/cli": "3.2.9",
     "@storybook/react": "^3.2.8",
+    "@storybook/storybook-deployer": "2.0.0",
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",

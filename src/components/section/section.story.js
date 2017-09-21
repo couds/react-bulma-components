@@ -13,7 +13,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -21,7 +21,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -29,7 +29,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -37,7 +37,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -49,7 +49,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -57,7 +57,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -65,7 +65,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -77,7 +77,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -85,7 +85,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>
@@ -93,7 +93,7 @@ storiesOf('Section', module)
         <Container>
           <Heading>Section</Heading>
           <Heading subtitle>
-            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+            A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
           </Heading>
         </Container>
       </Section>

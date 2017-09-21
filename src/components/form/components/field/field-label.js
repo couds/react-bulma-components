@@ -2,35 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Box = ({
+const FieldLabel = ({
   children,
   className,
   style,
   renderAs,
+  size,
 }) => {
   const Element = renderAs;
+
   return (
     <Element
       style={style}
-      className={classnames('box', className)}
+      className={classnames('field-label', className, {
+        [`is-${size}`]: size,
+      })}
     >
       {children}
     </Element>
   );
 };
 
-Box.propTypes = {
+FieldLabel.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
   renderAs: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
 };
 
-Box.defaultProps = {
+FieldLabel.defaultProps = {
   children: null,
   className: '',
   style: {},
   renderAs: 'div',
+  size: null,
 };
 
-export default Box;
+export default FieldLabel;
