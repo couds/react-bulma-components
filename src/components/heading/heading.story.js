@@ -18,7 +18,7 @@ storiesOf('Heading', module)
         <Heading>
           Title
         </Heading>
-        <Heading subtitle>
+        <Heading subtitle size={6}>
           Subtitle
         </Heading>
       </Box>
