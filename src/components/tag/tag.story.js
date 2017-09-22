@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Tag from '.';
 import { Field, Control } from '../form';
@@ -11,11 +12,11 @@ storiesOf('Tag', module)
       {story()}
     </div>
   ))
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <Tag>
       Tag Text
     </Tag>
-  ))
+  )))
   .add('Group Tags', () => (
     <Tag.Group>
       <Tag color="primary">
@@ -35,7 +36,7 @@ storiesOf('Tag', module)
       </Tag>
     </Tag.Group>
   ))
-  .add('Group Tags without gap', () => (
+  .add('Group Tags without gap', withInfo()(() => (
     <div>
       <Tag.Group gapless>
         <Tag>
@@ -52,8 +53,8 @@ storiesOf('Tag', module)
         <Tag remove renderAs="a" />
       </Tag.Group>
     </div>
-  ))
-  .add('Group Tags without gap multiline', () => (
+  )))
+  .add('Group Tags without gap multiline', withInfo()(() => (
     <div>
       <Field multiline kind="group">
         <Control>
@@ -88,12 +89,12 @@ storiesOf('Tag', module)
         </Control>
       </Field>
     </div>
-  ))
-  .add('Others', () => (
+  )))
+  .add('Others', withInfo()(() => (
     <Tag.Group>
       <Tag rounded>
         Rounded
       </Tag>
       <Tag remove />
     </Tag.Group>
-  ));
+  )));

@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Section from '.';
 import Container from '../container';
 import Heading from '../heading';
 
 storiesOf('Section', module)
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <div>
       <Section>
         <Container>
@@ -42,8 +43,8 @@ storiesOf('Section', module)
         </Container>
       </Section>
     </div>
-  ))
-  .add('Medium', () => (
+  )))
+  .add('Medium', withInfo()(() => (
     <div>
       <Section size="medium">
         <Container>
@@ -70,8 +71,8 @@ storiesOf('Section', module)
         </Container>
       </Section>
     </div>
-  ))
-  .add('Large', () => (
+  )))
+  .add('Large', withInfo()(() => (
     <div>
       <Section size="large">
         <Container>
@@ -98,4 +99,4 @@ storiesOf('Section', module)
         </Container>
       </Section>
     </div>
-  ));
+  )));

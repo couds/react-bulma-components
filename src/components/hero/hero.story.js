@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Hero from '.';
 import Heading from '../heading';
@@ -8,7 +9,7 @@ import Section from '../section';
 import Container from '../container';
 
 storiesOf('Hero', module)
-  .add('Default with color', () => (
+  .add('Default with color', withInfo()(() => (
     <div>
       <Section>
         <Hero color="primary" >
@@ -54,8 +55,8 @@ storiesOf('Hero', module)
         </Hero>
       </Section>
     </div>
-  ))
-  .add('Gradient (EXPERIMENTAL)', () => (
+  )))
+  .add('Gradient (EXPERIMENTAL)', withInfo()(() => (
     <div>
       <Section>
         <Hero color="primary" gradient >
@@ -101,8 +102,8 @@ storiesOf('Hero', module)
         </Hero>
       </Section>
     </div>
-  ))
-  .add('Differents Sizes', () => (
+  )))
+  .add('Differents Sizes', withInfo()(() => (
     <div>
       <Hero color="primary" size="medium" >
         <Hero.Body>
@@ -120,8 +121,8 @@ storiesOf('Hero', module)
         </Hero.Body>
       </Hero>
     </div>
-  ))
-  .add('Vertical Alignments', () => (
+  )))
+  .add('Vertical Alignments', withInfo()(() => (
     <Hero size="fullheight" color="primary" >
       <Hero.Head renderAs="header">
         <div className="bd-notification is-info">Header</div>
@@ -133,4 +134,4 @@ storiesOf('Hero', module)
         <div className="bd-notification is-danger">Footer</div>
       </Hero.Footer>
     </Hero>
-  ));
+  )));

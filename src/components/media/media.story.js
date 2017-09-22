@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Media from '.';
 import Image from '../image';
@@ -17,7 +18,7 @@ console.log({ Media, Item: Media.Item });
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 
 storiesOf('Media', module)
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <Section>
       <Box>
         <Media>
@@ -42,8 +43,8 @@ storiesOf('Media', module)
         </Media>
       </Box>
     </Section>
-  ))
-  .add('Right Media', () => (
+  )))
+  .add('Right Media', withInfo()(() => (
     <Section>
       <Box>
         <Media>
@@ -56,8 +57,8 @@ storiesOf('Media', module)
         </Media>
       </Box>
     </Section>
-  ))
-  .add('Nested', () => (
+  )))
+  .add('Nested', withInfo()(() => (
     <Section>
       <Box>
         <Media renderAs="article">
@@ -137,4 +138,4 @@ storiesOf('Media', module)
         </Media>
       </Box>
     </Section>
-  ));
+  )));

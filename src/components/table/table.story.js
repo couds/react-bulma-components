@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Table from '.';
 
 storiesOf('Table', module)
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <Table>
       <thead>
         <tr>
@@ -304,4 +305,4 @@ storiesOf('Table', module)
         </tr>
       </tbody>
     </Table>
-  ));
+  )));

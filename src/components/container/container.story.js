@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Container from '.';
 import Heading from '../heading';
 import Section from '../section';
 
 storiesOf('Container', module)
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <div>
       <Section>
         <Container>
@@ -42,4 +43,4 @@ storiesOf('Container', module)
         </Container>
       </Section>
     </div>
-  ));
+  )));

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Heading from '.';
 import Box from '../box';
@@ -11,7 +12,7 @@ storiesOf('Heading', module)
       {story()}
     </div>
   ))
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <div>
       <Box>
         <Heading>
@@ -54,4 +55,4 @@ storiesOf('Heading', module)
         </Heading>
       </Box>
     </div>
-  ));
+  )));

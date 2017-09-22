@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Box from '.';
 import Media from '../media';
@@ -13,7 +14,7 @@ storiesOf('Box', module)
       {story()}
     </div>
   ))
-  .add('Default', () => (
+  .add('Default', withInfo('Box Implementation')(() => (
     <Box>
       <Media>
         <Media.Item renderAs="figure" position="left">
@@ -30,4 +31,4 @@ storiesOf('Box', module)
         </Media.Item>
       </Media>
     </Box>
-  ));
+  )));

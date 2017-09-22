@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Columns from '.';
 import Box from '../box';
@@ -12,7 +13,7 @@ storiesOf('Columns', module)
       {story()}
     </div>
   ))
-  .add('Basic', () => (
+  .add('Basic', withInfo('')(() => (
     <Columns>
       <Columns.Column>
         <p className="bd-notification is-success">First Column</p>
@@ -27,8 +28,8 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning">Fourth Column</p>
       </Columns.Column>
     </Columns>
-  ))
-  .add('Sizes by name', () => (
+  )))
+  .add('Sizes by name', withInfo('')(() => (
     <div>
       <Columns>
         <Columns.Column size="three-quarters">
@@ -87,8 +88,8 @@ storiesOf('Columns', module)
         </Columns.Column>
       </Columns>
     </div>
-  ))
-  .add('Sizes by 12 Columns', () => (
+  )))
+  .add('Sizes by 12 Columns', withInfo('')(() => (
     <div>
       <Columns>
         <Columns.Column size={1}>
@@ -352,8 +353,8 @@ storiesOf('Columns', module)
         </Columns.Column>
       </Columns>
     </div>
-  ))
-  .add('With Offset', () => (
+  )))
+  .add('With Offset', withInfo('')(() => (
     <div>
       <Columns mobile>
         <Columns.Column size="half" offset="one-quarter">
@@ -373,8 +374,8 @@ storiesOf('Columns', module)
         </Columns.Column>
       </Columns>
     </div>
-  ))
-  .add('Narrow', () => (
+  )))
+  .add('Narrow', withInfo('')(() => (
     <Columns>
       <Columns.Column narrow>
         <Box style={{ width: 200 }}>
@@ -389,8 +390,8 @@ storiesOf('Columns', module)
         </Box>
       </Columns.Column>
     </Columns>
-  ))
-  .add('Responsive', () => (
+  )))
+  .add('Responsive', withInfo('')(() => (
     <div>
       <Box>
         <Heading size={5} renderAs="p">Mobile</Heading>
@@ -444,8 +445,8 @@ storiesOf('Columns', module)
         </Columns>
       </Box>
     </div>
-  ))
-  .add('Different column size per breakpoint', () => (
+  )))
+  .add('Different column size per breakpoint', withInfo('')(() => (
     <Columns breakpoint="mobile">
       <Columns.Column
         mobileSize="three-quarters"
@@ -469,8 +470,8 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning">1</p>
       </Columns.Column>
     </Columns>
-  ))
-  .add('Nested', () => (
+  )))
+  .add('Nested', withInfo('')(() => (
     <Columns>
       <Columns.Column size="half">
         <p className="bd-notification is-success">First Column</p>
@@ -498,8 +499,8 @@ storiesOf('Columns', module)
         </Columns>
       </Columns.Column>
     </Columns>
-  ))
-  .add('gapless columns', () => (
+  )))
+  .add('gapless columns', withInfo('')(() => (
     <Columns gapless>
       <Columns.Column>
         <p className="bd-notification is-success"> First Column</p>
@@ -511,4 +512,4 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning"> Last Column</p>
       </Columns.Column>
     </Columns>
-  ));
+  )));

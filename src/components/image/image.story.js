@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Image from '.';
 import Content from '../content';
@@ -11,12 +12,12 @@ storiesOf('Image', module)
       {story()}
     </div>
   ))
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <div style={{ width: 320 }}>
       <Image src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
     </div>
-  ))
-  .add('Fixed Square', () => (
+  )))
+  .add('Fixed Square', withInfo()(() => (
     <Content>
       <table>
         <thead>
@@ -57,8 +58,8 @@ storiesOf('Image', module)
         </tbody>
       </table>
     </Content>
-  ))
-  .add('Responsive images with ratios', () => (
+  )))
+  .add('Responsive images with ratios', withInfo()(() => (
     <Content>
       <table>
         <thead>
@@ -95,4 +96,4 @@ storiesOf('Image', module)
         </tbody>
       </table>
     </Content>
-  ));
+  )));

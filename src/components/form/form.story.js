@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from '.';
 import Button from '../button';
@@ -8,6 +9,8 @@ import Button from '../button';
 /* eslint-disable react/no-multi-comp */
 const HoC = (Component) => {
   class Controlled extends React.Component {
+    static displayName = 'Select'
+
     state = {
       value: '',
     }
@@ -28,6 +31,7 @@ const HoC = (Component) => {
 
 const HoCCheckbox = (Component) => {
   class Controlled extends React.Component {
+    static displayName = 'Checkbox'
     state = {
       checked: false,
     }
@@ -72,8 +76,6 @@ class RadioGroup extends React.Component {
   }
 }
 /* eslint-enable react/no-multi-comp */
-const InputControlled = HoC(Input);
-const TextareaControlled = HoC(Textarea);
 const SelectControlled = HoC(Select);
 const CheckboxControlled = HoCCheckbox(Checkbox);
 
@@ -83,19 +85,19 @@ storiesOf('Form', module)
       {story()}
     </div>
   ))
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <div>
       <Field>
         <Label>Name</Label>
         <Control>
-          <InputControlled placeholder="Text input" />
+          <Input placeholder="Text input" />
         </Control>
       </Field>
 
       <Field>
         <Label>Username</Label>
         <Control>
-          <InputControlled color="success" type="text" placeholder="Text input" value="bulma" />
+          <Input color="success" type="text" placeholder="Text input" value="bulma" />
         </Control>
         <Help color="success">This username is available</Help>
       </Field>
@@ -103,7 +105,7 @@ storiesOf('Form', module)
       <Field>
         <Label>Email</Label>
         <Control>
-          <InputControlled color="danger" type="email" placeholder="Email input" value="hello@" />
+          <Input color="danger" type="email" placeholder="Email input" value="hello@" />
         </Control>
         <Help color="danger">This email is invalid</Help>
       </Field>
@@ -121,7 +123,7 @@ storiesOf('Form', module)
       <Field>
         <Label>Message</Label>
         <Control>
-          <TextareaControlled placeholder="Textarea" />
+          <Textarea placeholder="Textarea" />
         </Control>
       </Field>
 
@@ -146,4 +148,4 @@ storiesOf('Form', module)
         </Control>
       </Field>
     </div>
-  ));
+  )));

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Footer from '.';
 import Container from '../container';
@@ -8,7 +9,7 @@ import Content from '../content';
 import Hero from '../hero';
 
 storiesOf('Footer', module)
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <Hero size="fullheight">
       <Hero.Head renderAs="header" />
       <Hero.Body />
@@ -26,4 +27,4 @@ storiesOf('Footer', module)
         </Footer>
       </Hero.Footer>
     </Hero>
-  ));
+  )));

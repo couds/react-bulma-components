@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
 import Tile from '.';
 import Heading from '../heading';
@@ -9,7 +10,7 @@ import Section from '../section';
 import Box from '../box';
 
 storiesOf('Tile', module)
-  .add('Default', () => (
+  .add('Default', withInfo()(() => (
     <Section>
       <Box>
         <Tile kind="ancestor">
@@ -53,4 +54,4 @@ storiesOf('Tile', module)
         </Tile>
       </Box>
     </Section>
-  ));
+  )));
