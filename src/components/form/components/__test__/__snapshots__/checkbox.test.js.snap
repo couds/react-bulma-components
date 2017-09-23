@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component Should Exists 1`] = `[Function]`;
+
+exports[`Checkbox component Should have checkbox classname 1`] = `
+<label
+  className="checkbox"
+  disabled={false}
+  style={Object {}}
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+    value=""
+  />
+  Text
+</label>
+`;

@@ -4,7 +4,8 @@
   "description": "React components for Bulma framework",
   "main": "dist",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config=jest.json",
+    "test:cov": "jest --coverage --config=jest.json",
     "storybook": "start-storybook -p 6006",
     "prepublish": "yarn clean && npm run build",
     "clean:build": "rm -rf dist && rm -rf lib && rm -rf full",

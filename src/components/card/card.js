@@ -32,7 +32,7 @@ const Card = ({
 
 Card.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.node,
   style: PropTypes.object,
   renderAs: PropTypes.string,
   type: PropTypes.oneOf(['header', 'header-item', 'header-icon', 'footer', 'footer-item', 'image', 'content']),

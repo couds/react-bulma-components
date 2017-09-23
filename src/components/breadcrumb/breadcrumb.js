@@ -34,7 +34,7 @@ const Breadcrumb = ({
             };
             return (
               <li
-                key={item.to}
+                key={item.url}
                 className={classnames({
                   'is-active': item.active,
                 })}
@@ -64,10 +64,10 @@ Breadcrumb.propTypes = {
       name: PropTypes.node,
     }),
   ),
-  renderAs: PropTypes.oneOfType(
+  renderAs: PropTypes.oneOfType([
     PropTypes.oneOf(['a']),
     PropTypes.func,
-  ),
+  ]),
   hrefAttr: PropTypes.string,
 };
 

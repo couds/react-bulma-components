@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb component Should be a Breadcrumb 1`] = `
+<nav
+  className="breadcrumb"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="/section"
+      >
+        Section
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="/detail"
+      >
+        Details
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component Should throw a warning that hrefAttr is not defined 1`] = `
+<nav
+  className="breadcrumb"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        className="Others"
+        null="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className="Others"
+        null="/section"
+      >
+        Section
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        className="Others"
+        null="/detail"
+      >
+        Details
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component Should use inline style and custom size 1`] = `
+<nav
+  className="breadcrumb is-large"
+  style={
+    Object {
+      "marginTop": 10,
+    }
+  }
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="/section"
+      >
+        Section
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="/detail"
+      >
+        Details
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component should use separator arrow 1`] = `
+<nav
+  className="breadcrumb has-arrow-separator"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="#1"
+      >
+        Storybook
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="#2"
+      >
+        Breadcrumb
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="#3"
+      >
+        Breadcrumb Types
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component should use separator bullet 1`] = `
+<nav
+  className="breadcrumb has-bullet-separator"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="#1"
+      >
+        Storybook
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="#2"
+      >
+        Breadcrumb
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="#3"
+      >
+        Breadcrumb Types
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component should use separator dot 1`] = `
+<nav
+  className="breadcrumb has-dot-separator"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="#1"
+      >
+        Storybook
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="#2"
+      >
+        Breadcrumb
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="#3"
+      >
+        Breadcrumb Types
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component should use separator null 1`] = `
+<nav
+  className="breadcrumb"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="#1"
+      >
+        Storybook
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="#2"
+      >
+        Breadcrumb
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="#3"
+      >
+        Breadcrumb Types
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Breadcrumb component should use separator succeeds 1`] = `
+<nav
+  className="breadcrumb has-succeeds-separator"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+    >
+      <a
+        href="#1"
+      >
+        Storybook
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        href="#2"
+      >
+        Breadcrumb
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="#3"
+      >
+        Breadcrumb Types
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

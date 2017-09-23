@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content component Should have content classname 1`] = `
+<div
+  className="content"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;

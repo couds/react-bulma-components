@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Columns component Should have columns classname 1`] = `
+<div
+  className="columns is-multiline"
+  style={Object {}}
+>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    1
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    2
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    3
+  </div>
+</div>
+`;
+
+exports[`Columns component Should have columns one column half width and 3 other as default 1`] = `
+<div
+  className="columns is-multiline"
+  style={Object {}}
+>
+  <div
+    className="column is-half"
+    style={Object {}}
+  >
+    1
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    2
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    3
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    4
+  </div>
+</div>
+`;
+
+exports[`Columns component Should have columns one column half width, other narrow and 2 other as default 1`] = `
+<div
+  className="columns is-multiline"
+  style={Object {}}
+>
+  <div
+    className="column is-half"
+    style={Object {}}
+  >
+    1
+  </div>
+  <div
+    className="column is-narrow"
+    style={Object {}}
+  >
+    2
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    3
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    4
+  </div>
+</div>
+`;
