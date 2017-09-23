@@ -60,3 +60,7 @@ typings/
 .DS_Store
 
 .out
+
+/dist
+/lib
+/full

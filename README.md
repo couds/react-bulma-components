@@ -2,39 +2,75 @@
 
 React components for Bulma framework
 
+This is a implementation in React of the [Bulma](http://bulma.io/) Framework Component by Jeremy Thomas.
 
-You can use the [editor on GitHub](https://github.com/couds/react-bulma-components/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can find the Storybook of all components [here](https://couds.github.io/react-bulma-components/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### To Install
 
-### Markdown
+```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### To Use
 
-```markdown
-Syntax highlighted code block
+```javascript
+import React from 'react';
+// You can import from the global component (you will need to include the css file dist/react-bulma-components.min.css)
+import { Columns } from 'react-bulma-components';
 
-# Header 1
-## Header 2
-### Header 3
+// You can also include the js that also bundle the ccs (do not work with server-side rendering)
+import { Columns } from 'react-bulma-components/full';
 
-- Bulleted
-- List
+// [RECOMENDED] Or import only the components you will use (this will reduce the total bundle size)
+// If you use this approach and want to use the global Bulma styles import react-bulma-components/src/index.sass and configure webpack to handle sass files
+import Columns from 'react-bulma-components/lib/components/columns';
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+export default () => (
+  <Columns>
+      <Columns.Column>
+        First Column
+      </Columns.Column>
+      <Columns.Column>
+        Second Column
+      </Columns.Column>
+      <Columns.Column>
+        Third Column
+      </Columns.Column>
+      <Columns.Column>
+        Fourth Column
+      </Columns.Column>
+    </Columns>
+);
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Documentation
 
-### Jekyll Themes
+You can find the documentation in https://couds.github.io/react-bulma-components
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/couds/react-bulma-components/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Each component import his own sass file, in this way you can reduce your css total file only including the styles you use, to enable this please configure your [Webpack](https://webpack.github.io/) to handle sass files. You can use the webpack.config.js on the root folder of this repository
 
-### Support or Contact
+Some componets may vary the api/naming convention with the Bulma Docs, please refear to each storybook to see how to use each component (you can find the source code of the story usin ght button "Show info" on the top-right corner) 
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The Following componets were ported:
+
+- Box ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Box)) ([Docs](http://bulma.io/documentation/elements/box/))
+- Breadcrumb ([Storybook](http://localhost:6006/?selectedKind=Breadcrumb)) ([Docs](http://bulma.io/documentation/components/breadcrumb/))
+- Button ([Storybook](http://localhost:6006/?selectedKind=Button)) ([Docs](http://bulma.io/documentation/elements/button/))
+- Card ([Storybook](http://localhost:6006/?selectedKind=Card)) ([Docs](http://bulma.io/documentation/components/card/))
+- Column ([Storybook](http://localhost:6006/?selectedKind=Columns)) ([Docs](http://bulma.io/documentation/columns/basics/))
+- Container ([Storybook](http://localhost:6006/?selectedKind=Container)) ([Docs](http://bulma.io/documentation/layout/container/))
+- Content ([Storybook](http://localhost:6006/?selectedKind=Content)) ([Docs](http://bulma.io/documentation/elements/content/))
+- Footer ([Storybook](http://localhost:6006/?selectedKind=Footer)) ([Docs](http://bulma.io/documentation/layout/footer/))
+- Form ([Storybook](http://localhost:6006/?selectedKind=Form)) ([Docs](http://bulma.io/documentation/form/general/))
+- Heading (Title, Subtitle and heading on Bulma) ([Storybook](http://localhost:6006/?selectedKind=Heading)) ([Docs](http://bulma.io/documentation/elements/title/))
+- Hero ([Storybook](http://localhost:6006/?selectedKind=Hero)) ([Docs](http://bulma.io/documentation/layout/hero/))
+- Image ([Storybook](http://localhost:6006/?selectedKind=Image)) ([Docs](http://bulma.io/documentation/elements/image/))
+- Level ([Storybook](http://localhost:6006/?selectedKind=Level)) ([Docs](http://bulma.io/documentation/layout/level/))
+- Media ([Storybook](http://localhost:6006/?selectedKind=Media)) ([Docs](http://bulma.io/documentation/layout/media-object/))
+- Notification ([Storybook](http://localhost:6006/?selectedKind=Notification)) ([Docs](http://bulma.io/documentation/elements/notification/))
+- Progress ([Storybook](http://localhost:6006/?selectedKind=Progress)) ([Docs](http://bulma.io/documentation/elements/progress/))
+- Section ([Storybook](http://localhost:6006/?selectedKind=Section)) ([Docs](http://bulma.io/documentation/layout/section/))
+- Table ([Storybook](http://localhost:6006/?selectedKind=Table)) ([Docs](http://bulma.io/documentation/elements/table/))
+- Tag ([Storybook](http://localhost:6006/?selectedKind=Tag)) ([Docs](http://bulma.io/documentation/elements/tag/))
+- Tile ([Storybook](http://localhost:6006/?selectedKind=Tile)) ([Docs](http://bulma.io/documentation/layout/tiles/))
+
+This page is open source. Noticed a typo? Or something unclear? Improve this page on [GitHub](https://github.com/couds/react-bulma-components/blob/master/README.md)

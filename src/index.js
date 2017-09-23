@@ -3,7 +3,7 @@ import * as Form from './components/form';
 
 export { default as Box } from './components/box';
 export { default as Button } from './components/button';
-export { default as Column } from './components/column';
+export { default as Columns } from './components/columns';
 export { default as Container } from './components/container';
 export { default as Content } from './components/content';
 export { default as Footer } from './components/footer';

@@ -2,14 +2,50 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
+  output: 'full/index',
+  plugins: [
+    {
+      test: /\.s(c|a)ss$/,
+      loader: 'style-loader!css-loader!sass-loader',
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader!sass-loader',
+    },
+  ],
+} : {
+  output: 'dist/index',
+  plugins: [
+    {
+      test: /\.s(c|a)ss$/,
+      loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader!sass-loader',
+      }),
+    },
+    {
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader',
+      }),
+    },
+  ],
+};
 
 module.exports = {
   devtool: 'source-maps',
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'dist/'),
-    filename: 'react-bulma-components.min.js',
-    sourceMapFilename: 'react-bulma-components.js.map',
+    path: path.join(__dirname),
+    filename: `${options.output}.js`,
+    sourceMapFilename: `${options.output}.js.map`,
+    umdNamedDefine: true,
+    libraryTarget: 'umd',
+    library: 'react-bulma-components',
   },
   plugins: [
     new ProgressBarPlugin(),
@@ -21,35 +57,8 @@ module.exports = {
       filename: 'react-bulma-components.min.css',
       allChunks: true,
     }),
+    new OptimizeCssAssetsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      mangle: true,
-      sourceMap: true,
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        join_vars: true,
-      },
-      output: {
-        comments: false,
-      },
-      exclude: [/\.min\.js$/gi], // skip pre-minified libs
-    }),
   ],
   module: {
     rules: [
@@ -63,22 +72,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/, // Only .css files
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }), // Run both loaders
-      },
-      {
         test: /\.json/, // Only .json files
         loader: 'json-loader', // Run both loaders
-      },
-      {
-        test: /\.s(c|a)ss$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader!sass-loader',
-        }),
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?.*)?$/,
@@ -88,6 +83,7 @@ module.exports = {
         test: /\.(jpg|png|gif)$/,
         loader: 'file-loader?name=images/[name].[ext]',
       },
+      ...options.plugins,
     ],
   },
   resolve: {
