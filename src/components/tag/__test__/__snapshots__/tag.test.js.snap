@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag component Should be Large 1`] = `
+<span
+  className="tag is-large"
+  style={Object {}}
+>
+  Tag Large
+</span>
+`;
+
+exports[`Tag component Should be group tags 1`] = `
+<span
+  className="tags has-addons"
+  style={Object {}}
+>
+  <span
+    className="tag"
+    style={Object {}}
+  >
+    Tag 1
+  </span>
+  <span
+    className="tag"
+    style={Object {}}
+  >
+    Tag 2
+  </span>
+</span>
+`;
+
+exports[`Tag component Should concat classname in props with Bulma classname 1`] = `
+<span
+  className="tag other-class this-is-a-test"
+  style={Object {}}
+>
+  Tag name
+</span>
+`;
+
+exports[`Tag component Should exist 1`] = `[Function]`;
+
+exports[`Tag component Should expose Tag Group 1`] = `[Function]`;
+
+exports[`Tag component Should have tag classname 1`] = `
+<span
+  className="tag"
+  style={Object {}}
+>
+  Tag name
+</span>
+`;
+
+exports[`Tag component Should use inline styles 1`] = `
+<span
+  className="tag"
+  style={
+    Object {
+      "width": 250,
+    }
+  }
+>
+  Tag name
+</span>
+`;
+
+exports[`Tag component Should use use color black 1`] = `
+<span
+  className="tag is-black"
+  style={Object {}}
+>
+  tag 
+  black
+</span>
+`;
+
+exports[`Tag component Should use use color danger 1`] = `
+<span
+  className="tag is-danger"
+  style={Object {}}
+>
+  tag 
+  danger
+</span>
+`;
+
+exports[`Tag component Should use use color dark 1`] = `
+<span
+  className="tag is-dark"
+  style={Object {}}
+>
+  tag 
+  dark
+</span>
+`;
+
+exports[`Tag component Should use use color info 1`] = `
+<span
+  className="tag is-info"
+  style={Object {}}
+>
+  tag 
+  info
+</span>
+`;
+
+exports[`Tag component Should use use color light 1`] = `
+<span
+  className="tag is-light"
+  style={Object {}}
+>
+  tag 
+  light
+</span>
+`;
+
+exports[`Tag component Should use use color null 1`] = `
+<span
+  className="tag"
+  style={Object {}}
+>
+  tag 
+</span>
+`;
+
+exports[`Tag component Should use use color primary 1`] = `
+<span
+  className="tag is-primary"
+  style={Object {}}
+>
+  tag 
+  primary
+</span>
+`;
+
+exports[`Tag component Should use use color success 1`] = `
+<span
+  className="tag is-success"
+  style={Object {}}
+>
+  tag 
+  success
+</span>
+`;
+
+exports[`Tag component Should use use color warning 1`] = `
+<span
+  className="tag is-warning"
+  style={Object {}}
+>
+  tag 
+  warning
+</span>
+`;
+
+exports[`Tag component Should use use color white 1`] = `
+<span
+  className="tag is-white"
+  style={Object {}}
+>
+  tag 
+  white
+</span>
+`;

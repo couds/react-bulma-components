@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Media component Should be a Media Content 1`] = `
+<div
+  className="content"
+  style={Object {}}
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</div>
+`;
+
+exports[`Media component Should concat classname in props with Bulma classname 1`] = `
+<article
+  className="media other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</article>
+`;
+
+exports[`Media component Should exist 1`] = `[Function]`;
+
+exports[`Media component Should expose Level Side and Item 1`] = `[Function]`;
+
+exports[`Media component Should expose Level Side and Item 2`] = `[Function]`;
+
+exports[`Media component Should have media classname 1`] = `
+<article
+  className="media"
+  style={Object {}}
+>
+  <img
+    alt="placeholder"
+    src="http://bulma.io/images/placeholders/128x128.png"
+  />
+</article>
+`;
+
+exports[`Media component Should hbe a Media Item 1`] = `
+<figure
+  className="media-left"
+  style={Object {}}
+>
+  <img
+    alt="placeholder"
+    src="http://bulma.io/images/placeholders/128x128.png"
+  />
+</figure>
+`;
+
+exports[`Media component Should hbe a Media Item Centered 1`] = `
+<figure
+  className="media-content"
+  style={Object {}}
+>
+  <img
+    alt="placeholder"
+    src="http://bulma.io/images/placeholders/128x128.png"
+  />
+</figure>
+`;
+
+exports[`Media component Should use inline styles 1`] = `
+<article
+  className="media"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</article>
+`;
