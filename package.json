@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components for Bulma framework",
   "main": "dist",
   "scripts": {
@@ -8,12 +8,13 @@
     "test:cov": "eslint . && jest --coverage --config=jest.json",
     "coveralls": "cat ./.coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
-    "prepublish": "yarn clean && npm run build",
+    "prepublish": "yarn clean:build && npm run build && yarn clean:test",
     "clean:build": "rm -rf dist && rm -rf lib && rm -rf full",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",
-    "build": "WEBPACK_ENV=INCLUDE_CSS webpack --progress --color && webpack --progress --color && yarn create-lib",
-    "create-lib": "babel ./src --out-dir ./lib --copy-files --source-maps"
+    "build": "WEBPACK_ENV=INCLUDE_CSS webpack --progress --color && webpack --progress --color && yarn create:lib",
+    "create:lib": "babel ./src --out-dir ./lib --copy-files --source-maps",
+    "clean:test": "rm -rf $(find ./lib -name \"__test__\")"
   },
   "storybook-deployer": {
     "gitUsername": "Couds",
