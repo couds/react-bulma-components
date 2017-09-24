@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image component Should be 32x32 1`] = `
+<figure
+  className="image is-32x32"
+  style={Object {}}
+>
+  <img
+    alt=""
+    onError={[Function]}
+    src="http://mydomain.com/image"
+  />
+</figure>
+`;
+
+exports[`Image component Should be square 1`] = `
+<figure
+  className="image is-square"
+  style={Object {}}
+>
+  <img
+    alt=""
+    onError={[Function]}
+    src="http://mydomain.com/image"
+  />
+</figure>
+`;
+
+exports[`Image component Should exist 1`] = `[Function]`;
+
+exports[`Image component Should have image classname 1`] = `
+<figure
+  className="image"
+  style={Object {}}
+>
+  <img
+    alt=""
+    onError={[Function]}
+    src="http://mydomain.com/image"
+  />
+</figure>
+`;

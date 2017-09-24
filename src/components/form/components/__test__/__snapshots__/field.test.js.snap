@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field component Should Exists 1`] = `[Function]`;
+
+exports[`Field component Should export Label and Body as static properties 1`] = `[Function]`;
+
+exports[`Field component Should export Label and Body as static properties 2`] = `[Function]`;
+
+exports[`Field component Should have field classname 1`] = `
+<div
+  className="field"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;
+
+exports[`Field component Should have field classname with addons classname 1`] = `
+<div
+  className="field has-addons"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;
+
+exports[`Field component Should have field classname with grouped classname 1`] = `
+<div
+  className="field is-grouped"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;
+
+exports[`Field component Should have field-body classname 1`] = `
+<div
+  className="field-body"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;
+
+exports[`Field component Should have field-label classname 1`] = `
+<div
+  className="field-label"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;

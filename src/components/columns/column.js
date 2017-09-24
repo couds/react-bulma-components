@@ -77,7 +77,7 @@ Column.defaultProps = {
   style: {},
   size: null,
   offset: null,
-  narrow: false,
+  narrow: null,
   mobileSize: null,
   tabletSize: null,
   desktopSize: null,

@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio component Should be disabled, checked and with value 1`] = `
+<label
+  className="radio"
+  disabled={true}
+  style={Object {}}
+>
+  <input
+    checked={true}
+    disabled={true}
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value="TEST"
+  />
+  <p>
+    Default
+  </p>
+</label>
+`;
+
+exports[`Radio component Should concat classname in props with Bulma classname 1`] = `
+<label
+  className="radio other-class this-is-a-test"
+  disabled={false}
+  style={Object {}}
+>
+  <input
+    checked={false}
+    disabled={false}
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value=""
+  />
+  <p>
+    Default
+  </p>
+</label>
+`;
+
+exports[`Radio component Should exist 1`] = `[Function]`;
+
+exports[`Radio component Should have radio classname 1`] = `
+<label
+  className="radio"
+  disabled={false}
+  style={Object {}}
+>
+  <input
+    checked={false}
+    disabled={false}
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value=""
+  />
+  Test 
+  <a>
+    Give me
+  </a>
+</label>
+`;
+
+exports[`Radio component Should show a error on the console because name props its required 1`] = `
+<label
+  className="radio"
+  disabled={true}
+  style={Object {}}
+>
+  <input
+    checked={true}
+    disabled={true}
+    name={undefined}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value="TEST"
+  />
+  <p>
+    Default
+  </p>
+</label>
+`;
+
+exports[`Radio component Should use inline styles 1`] = `
+<label
+  className="radio"
+  disabled={false}
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <input
+    checked={false}
+    disabled={false}
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value=""
+  />
+  <p>
+    Default
+  </p>
+</label>
+`;

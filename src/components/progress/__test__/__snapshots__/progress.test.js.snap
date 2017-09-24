@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress component Should be Large 1`] = `
+<progress
+  className="progress is-large"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should concat classname in props with Bulma classname 1`] = `
+<progress
+  className="progress other-class this-is-a-test"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should exist 1`] = `[Function]`;
+
+exports[`Progress component Should have notification classname 1`] = `
+<progress
+  className="progress"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use inline styles 1`] = `
+<progress
+  className="progress"
+  max={100}
+  style={
+    Object {
+      "width": 250,
+    }
+  }
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color black 1`] = `
+<progress
+  className="progress is-black"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color danger 1`] = `
+<progress
+  className="progress is-danger"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color dark 1`] = `
+<progress
+  className="progress is-dark"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color info 1`] = `
+<progress
+  className="progress is-info"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color light 1`] = `
+<progress
+  className="progress is-light"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color null 1`] = `
+<progress
+  className="progress"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color primary 1`] = `
+<progress
+  className="progress is-primary"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color success 1`] = `
+<progress
+  className="progress is-success"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color warning 1`] = `
+<progress
+  className="progress is-warning"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component Should use use color white 1`] = `
+<progress
+  className="progress is-white"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;

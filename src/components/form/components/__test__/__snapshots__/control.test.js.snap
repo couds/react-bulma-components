@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Control component Should be fullwidth, loading and size = large 1`] = `
+<div
+  className="control is-expanded is-loading is-large"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Control component Should concat classname in props with Bulma classname 1`] = `
+<div
+  className="control other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Control component Should exist 1`] = `[Function]`;
+
+exports[`Control component Should have control classname 1`] = `
+<div
+  className="control"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;
+
+exports[`Control component Should render as a html section element 1`] = `
+<section
+  className="control"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Control component Should use inline styles 1`] = `
+<div
+  className="control"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</div>
+`;

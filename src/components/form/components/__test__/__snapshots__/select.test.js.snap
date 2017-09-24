@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component Should be large, red, disabled and multioption 1`] = `
+<div
+  className="select is-large is-danger is-multiple"
+  style={Object {}}
+>
+  <select
+    disabled={true}
+    multiple={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select component Should concat classname in props with Bulma classname 1`] = `
+<div
+  className="select other-class this-is-a-test"
+  style={Object {}}
+>
+  <select
+    disabled={false}
+    multiple={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select component Should exist 1`] = `[Function]`;
+
+exports[`Select component Should have select classname 1`] = `
+<div
+  className="select"
+  style={Object {}}
+>
+  <select
+    disabled={false}
+    multiple={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select component Should use inline styles 1`] = `
+<div
+  className="select"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <select
+    disabled={false}
+    multiple={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea component Should be disabled with placeholder and value 1`] = `
+<textarea
+  className="textarea"
+  disabled={true}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder="hello tests"
+  readOnly={false}
+  rows={4}
+  style={Object {}}
+  value="TEST"
+/>
+`;
+
+exports[`Textarea component Should be large with 10 rows and readOnly 1`] = `
+<textarea
+  className="textarea is-large"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={true}
+  rows={10}
+  style={Object {}}
+  value=""
+/>
+`;
+
+exports[`Textarea component Should concat classname in props with Bulma classname 1`] = `
+<textarea
+  className="textarea other-class this-is-a-test"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  rows={4}
+  style={Object {}}
+  value=""
+/>
+`;
+
+exports[`Textarea component Should exist 1`] = `[Function]`;
+
+exports[`Textarea component Should have textarea classname 1`] = `
+<textarea
+  className="textarea"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  rows={4}
+  style={Object {}}
+  value=""
+/>
+`;
+
+exports[`Textarea component Should use inline styles 1`] = `
+<textarea
+  className="textarea"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  rows={4}
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+  value=""
+/>
+`;

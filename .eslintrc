@@ -6,6 +6,12 @@
       "jsx": true
     }
   },
+  "env": {
+    "jest": true
+  },
+  "plugins": [
+    "jest"
+  ],
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "single"],
@@ -21,6 +27,10 @@
     "jsx-a11y/accessible-emoji": 0,
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/href-no-hash": 0,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/valid-expect": "error"
   },
   "globals": {
     "document": true,

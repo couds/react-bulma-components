@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Help component Should be displayed as a successful message 1`] = `
+<p
+  className="help is-success"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</p>
+`;
+
+exports[`Help component Should concat classname in props with Bulma classname 1`] = `
+<p
+  className="help other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</p>
+`;
+
+exports[`Help component Should exist 1`] = `[Function]`;
+
+exports[`Help component Should have help classname 1`] = `
+<p
+  className="help"
+  style={Object {}}
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</p>
+`;
+
+exports[`Help component Should use inline styles 1`] = `
+<p
+  className="help"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</p>
+`;

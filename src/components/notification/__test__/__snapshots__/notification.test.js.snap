@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification component Should concat classname in props with Bulma classname 1`] = `
+<div
+  className="notification other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should exist 1`] = `[Function]`;
+
+exports[`Notification component Should have notification classname 1`] = `
+<div
+  className="notification"
+  style={Object {}}
+>
+  <img
+    alt="placeholder"
+    src="http://bulma.io/images/placeholders/128x128.png"
+  />
+</div>
+`;
+
+exports[`Notification component Should render as Section 1`] = `
+<section
+  className="notification"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Notification component Should use inline styles 1`] = `
+<div
+  className="notification"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color black 1`] = `
+<div
+  className="notification is-black"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color danger 1`] = `
+<div
+  className="notification is-danger"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color dark 1`] = `
+<div
+  className="notification is-dark"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color info 1`] = `
+<div
+  className="notification is-info"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color light 1`] = `
+<div
+  className="notification is-light"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color null 1`] = `
+<div
+  className="notification"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color primary 1`] = `
+<div
+  className="notification is-primary"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color success 1`] = `
+<div
+  className="notification is-success"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color warning 1`] = `
+<div
+  className="notification is-warning"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Notification component Should use use color white 1`] = `
+<div
+  className="notification is-white"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;

@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component Should concat classname in props with Bulma classname 1`] = `
+<section
+  className="hero other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should exist 1`] = `[Function]`;
+
+exports[`Hero component Should expose Hero head, body and footer 1`] = `[Function]`;
+
+exports[`Hero component Should expose Hero head, body and footer 2`] = `[Function]`;
+
+exports[`Hero component Should expose Hero head, body and footer 3`] = `[Function]`;
+
+exports[`Hero component Should have hero classname 1`] = `
+<section
+  className="hero"
+  style={Object {}}
+>
+  Test 
+  <a>
+    Give me
+  </a>
+</section>
+`;
+
+exports[`Hero component Should render Hero with hero head, body and footer 1`] = `
+<section
+  className="hero is-primary is-fullheight"
+  style={Object {}}
+>
+  <header
+    className="hero-head"
+    style={Object {}}
+  >
+    <div
+      className="bd-notification is-info"
+    >
+      Header
+    </div>
+  </header>
+  <div
+    className="hero-body"
+    style={Object {}}
+  >
+    Body
+  </div>
+  <footer
+    className="hero-foot"
+    style={Object {}}
+  >
+    <div
+      className="bd-notification is-danger"
+    >
+      Footer
+    </div>
+  </footer>
+</section>
+`;
+
+exports[`Hero component Should use gradient style 1`] = `
+<section
+  className="hero is-primary is-bold"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use inline styles 1`] = `
+<section
+  className="hero"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color black 1`] = `
+<section
+  className="hero is-black"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color danger 1`] = `
+<section
+  className="hero is-danger"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color dark 1`] = `
+<section
+  className="hero is-dark"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color info 1`] = `
+<section
+  className="hero is-info"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color light 1`] = `
+<section
+  className="hero is-light"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color null 1`] = `
+<section
+  className="hero"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color primary 1`] = `
+<section
+  className="hero is-primary"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color success 1`] = `
+<section
+  className="hero is-success"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color warning 1`] = `
+<section
+  className="hero is-warning"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component Should use use color white 1`] = `
+<section
+  className="hero is-white"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;

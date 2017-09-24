@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading component Should be a subtitle with size rendered as P 1`] = `
+<p
+  className="subtitle is-3"
+  style={Object {}}
+>
+  Subtitle
+</p>
+`;
+
+exports[`Heading component Should be spaced 1`] = `
+<p
+  className="title subtitle is-spaced"
+  style={Object {}}
+>
+  Subtitle
+</p>
+`;
+
+exports[`Heading component Should concat classname in props with Bulma classname 1`] = `
+<h1
+  className="other-class this-is-a-test title subtitle"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</h1>
+`;
+
+exports[`Heading component Should exist 1`] = `[Function]`;
+
+exports[`Heading component Should have title classname 1`] = `
+<h1
+  className="title subtitle"
+  style={Object {}}
+>
+  Test 
+  <a>
+    Give me
+  </a>
+</h1>
+`;
+
+exports[`Heading component Should not be spaced because is subtitle 1`] = `
+<p
+  className="subtitle"
+  style={Object {}}
+>
+  Subtitle
+</p>
+`;
+
+exports[`Heading component Should use inline styles 1`] = `
+<h1
+  className="title subtitle"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</h1>
+`;

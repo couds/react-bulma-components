@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component Should be disabled with placeholder and value 1`] = `
+<input
+  className="input"
+  disabled={true}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder="hello tests"
+  readOnly={false}
+  style={Object {}}
+  type="text"
+  value="TEST"
+/>
+`;
+
+exports[`Input component Should be large and readOnly 1`] = `
+<input
+  className="input is-large"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={true}
+  style={Object {}}
+  type="text"
+  value=""
+/>
+`;
+
+exports[`Input component Should be type email and a with success colors 1`] = `
+<input
+  className="input is-success"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  style={Object {}}
+  type="email"
+  value=""
+/>
+`;
+
+exports[`Input component Should concat classname in props with Bulma classname 1`] = `
+<input
+  className="input other-class this-is-a-test"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  style={Object {}}
+  type="text"
+  value=""
+/>
+`;
+
+exports[`Input component Should exist 1`] = `[Function]`;
+
+exports[`Input component Should have input classname 1`] = `
+<input
+  className="input"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  style={Object {}}
+  type="text"
+  value=""
+/>
+`;
+
+exports[`Input component Should use inline styles 1`] = `
+<input
+  className="input"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  readOnly={false}
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+  type="text"
+  value=""
+/>
+`;

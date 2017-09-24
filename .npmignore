@@ -11,3 +11,8 @@ webpack.config.js
 yarn*
 .npmignore
 reports
+**/__mocks__
+.coveralls.yml
+.travis.yml
+.yarnclean
+jest.json

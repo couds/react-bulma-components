@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box component Should Exist 1`] = `[Function]`;
+
+exports[`Box component Should concat Bulma class with classes in props 1`] = `
+<div
+  className="box other-class test"
+  style={Object {}}
+>
+  Facebook
+</div>
+`;
+
+exports[`Box component Should have box classname 1`] = `
+<div
+  className="box"
+  style={Object {}}
+>
+  Facebook
+</div>
+`;
+
+exports[`Box component Should have custom inline styles 1`] = `
+<section
+  className="box"
+  style={
+    Object {
+      "width": 200,
+      "zIndex": 1,
+    }
+  }
+>
+  This should be a section with custom styles
+</section>
+`;
+
+exports[`Box component Should render as an html section 1`] = `
+<section
+  className="box"
+  style={Object {}}
+>
+  This should be a section
+</section>
+`;

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label component Should concat classname in props with Bulma classname 1`] = `
+<label
+  className="label other-class this-is-a-test"
+  htmlFor=""
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</label>
+`;
+
+exports[`Label component Should exist 1`] = `[Function]`;
+
+exports[`Label component Should have label classname 1`] = `
+<label
+  className="label"
+  htmlFor=""
+  style={Object {}}
+>
+  Test 
+  <a>
+    Give me
+  </a>
+</label>
+`;
+
+exports[`Label component Should use inline styles 1`] = `
+<label
+  className="label"
+  htmlFor=""
+  style={
+    Object {
+      "height": 250,
+    }
+  }
+>
+  <p>
+    Default
+  </p>
+</label>
+`;
