@@ -58,7 +58,7 @@ exports[`Select component Should concat classname in props with Bulma classname 
 
 exports[`Select component Should exist 1`] = `[Function]`;
 
-exports[`Select component Should have control classname 1`] = `
+exports[`Select component Should have select classname 1`] = `
 <div
   className="select"
   style={Object {}}

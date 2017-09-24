@@ -12,7 +12,7 @@ describe('Hero component', () => {
     expect(Hero.Body).toMatchSnapshot();
     expect(Hero.Footer).toMatchSnapshot();
   });
-  it('Should have control classname', () => {
+  it('Should have hero classname', () => {
     const component = renderer.create(
       <Hero>
         Test <a>Give me</a>

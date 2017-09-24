@@ -7,7 +7,7 @@ describe('Input component', () => {
   it('Should exist', () => {
     expect(Input).toMatchSnapshot();
   });
-  it('Should have help classname', () => {
+  it('Should have input classname', () => {
     const component = renderer.create(
       <Input />,
     );

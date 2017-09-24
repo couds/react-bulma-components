@@ -14,7 +14,7 @@ exports[`Label component Should concat classname in props with Bulma classname 1
 
 exports[`Label component Should exist 1`] = `[Function]`;
 
-exports[`Label component Should have control classname 1`] = `
+exports[`Label component Should have label classname 1`] = `
 <label
   className="label"
   htmlFor=""

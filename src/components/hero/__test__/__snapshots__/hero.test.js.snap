@@ -19,7 +19,7 @@ exports[`Hero component Should expose Hero head, body and footer 2`] = `[Functio
 
 exports[`Hero component Should expose Hero head, body and footer 3`] = `[Function]`;
 
-exports[`Hero component Should have control classname 1`] = `
+exports[`Hero component Should have hero classname 1`] = `
 <section
   className="hero"
   style={Object {}}

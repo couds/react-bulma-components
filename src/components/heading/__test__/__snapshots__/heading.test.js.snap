@@ -31,7 +31,7 @@ exports[`Heading component Should concat classname in props with Bulma classname
 
 exports[`Heading component Should exist 1`] = `[Function]`;
 
-exports[`Heading component Should have control classname 1`] = `
+exports[`Heading component Should have title classname 1`] = `
 <h1
   className="title subtitle"
   style={Object {}}

@@ -6,7 +6,7 @@ describe('Label component', () => {
   it('Should exist', () => {
     expect(Label).toMatchSnapshot();
   });
-  it('Should have control classname', () => {
+  it('Should have label classname', () => {
     const component = renderer.create(
       <Label>
         Test <a>Give me</a>

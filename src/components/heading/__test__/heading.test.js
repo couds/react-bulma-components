@@ -6,7 +6,7 @@ describe('Heading component', () => {
   it('Should exist', () => {
     expect(Heading).toMatchSnapshot();
   });
-  it('Should have control classname', () => {
+  it('Should have title classname', () => {
     const component = renderer.create(
       <Heading>
         Test <a>Give me</a>

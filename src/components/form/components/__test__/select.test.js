@@ -6,7 +6,7 @@ describe('Select component', () => {
   it('Should exist', () => {
     expect(Select).toMatchSnapshot();
   });
-  it('Should have control classname', () => {
+  it('Should have select classname', () => {
     const component = renderer.create(
       <Select>
         <option>1</option>

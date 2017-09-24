@@ -48,7 +48,7 @@ exports[`Radio component Should concat classname in props with Bulma classname 1
 
 exports[`Radio component Should exist 1`] = `[Function]`;
 
-exports[`Radio component Should have control classname 1`] = `
+exports[`Radio component Should have radio classname 1`] = `
 <label
   className="radio"
   disabled={false}

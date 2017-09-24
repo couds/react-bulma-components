@@ -6,7 +6,7 @@ describe('Textarea component', () => {
   it('Should exist', () => {
     expect(Textarea).toMatchSnapshot();
   });
-  it('Should have help classname', () => {
+  it('Should have textarea classname', () => {
     const component = renderer.create(
       <Textarea />,
     );

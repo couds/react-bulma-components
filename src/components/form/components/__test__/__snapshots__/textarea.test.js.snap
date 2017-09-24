@@ -50,7 +50,7 @@ exports[`Textarea component Should concat classname in props with Bulma classnam
 
 exports[`Textarea component Should exist 1`] = `[Function]`;
 
-exports[`Textarea component Should have help classname 1`] = `
+exports[`Textarea component Should have textarea classname 1`] = `
 <textarea
   className="textarea"
   disabled={false}

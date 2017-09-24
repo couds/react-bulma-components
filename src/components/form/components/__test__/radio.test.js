@@ -12,7 +12,7 @@ describe('Radio component', () => {
   it('Should exist', () => {
     expect(Radio).toMatchSnapshot();
   });
-  it('Should have control classname', () => {
+  it('Should have radio classname', () => {
     const component = renderer.create(
       <Radio name="test">
         Test <a>Give me</a>
