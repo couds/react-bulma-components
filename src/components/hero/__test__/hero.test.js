@@ -36,7 +36,7 @@ describe('Hero component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should use gradiend style', () => {
+  it('Should use gradient style', () => {
     const component = renderer.create(
       <Hero color="primary" gradient>
         <p>Default</p>

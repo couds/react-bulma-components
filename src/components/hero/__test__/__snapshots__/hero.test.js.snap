@@ -65,7 +65,7 @@ exports[`Hero component Should render Hero with hero head, body and footer 1`] =
 </section>
 `;
 
-exports[`Hero component Should use gradiend style 1`] = `
+exports[`Hero component Should use gradient style 1`] = `
 <section
   className="hero is-primary is-bold"
   style={Object {}}
