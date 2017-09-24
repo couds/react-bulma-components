@@ -53,7 +53,7 @@ storiesOf('Content', module)
         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.&lt;/p&gt;
       &lt;/body&gt;
     &lt;/html&gt;
-    </pre>
+      </pre>
       <p>Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.</p>
       <table>
         <thead>
@@ -146,7 +146,7 @@ storiesOf('Content', module)
         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.&lt;/p&gt;
       &lt;/body&gt;
     &lt;/html&gt;
-    </pre>
+      </pre>
       <p>Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.</p>
       <table>
         <thead>

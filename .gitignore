@@ -61,6 +61,7 @@ typings/
 
 .out
 
+/reports
 /dist
 /lib
 /full

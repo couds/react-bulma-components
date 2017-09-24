@@ -16,7 +16,7 @@ const TagGroup = ({
   >
     {children}
   </span>
-  );
+);
 
 TagGroup.propTypes = {
   children: PropTypes.node,

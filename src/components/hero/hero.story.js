@@ -17,10 +17,10 @@ storiesOf('Hero', module)
             <Container>
               <Heading>
               Hero title Primary
-            </Heading>
+              </Heading>
               <Heading subtitle size={3}>
               Subtitle
-            </Heading>
+              </Heading>
             </Container>
           </Hero.Body>
         </Hero>
@@ -35,7 +35,7 @@ storiesOf('Hero', module)
               </Heading>
               <Heading subtitle size={3}>
               Subtitle
-            </Heading>
+              </Heading>
             </Container>
           </Hero.Body>
         </Hero>
@@ -67,7 +67,7 @@ storiesOf('Hero', module)
               </Heading>
               <Heading subtitle size={3}>
               Subtitle
-            </Heading>
+              </Heading>
             </Container>
           </Hero.Body>
         </Hero>
@@ -82,7 +82,7 @@ storiesOf('Hero', module)
               </Heading>
               <Heading subtitle size={3}>
               Subtitle
-            </Heading>
+              </Heading>
             </Container>
           </Hero.Body>
         </Hero>

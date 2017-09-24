@@ -3,10 +3,11 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
   output: 'full/index',
-  plugins: [
+  rules: [
     {
       test: /\.s(c|a)ss$/,
       loader: 'style-loader!css-loader!sass-loader',
@@ -18,7 +19,7 @@ const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
   ],
 } : {
   output: 'dist/index',
-  plugins: [
+  rules: [
     {
       test: /\.s(c|a)ss$/,
       loader: ExtractTextPlugin.extract({
@@ -49,16 +50,49 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: 'reports/report.html',
+      openAnalyzer: false,
+    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new ExtractTextPlugin({
-      filename: 'react-bulma-components.min.css',
+      filename: 'dist/react-bulma-components.min.css',
       allChunks: true,
     }),
     new OptimizeCssAssetsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false,
+      mangle: false,
+      sourceMap: true,
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        join_vars: true,
+      },
+      output: {
+        comments: false,
+      },
+      exclude: [/\.min\.js$/gi], // skip pre-minified libs
+    }),
   ],
   module: {
     rules: [
@@ -83,11 +117,15 @@ module.exports = {
         test: /\.(jpg|png|gif)$/,
         loader: 'file-loader?name=images/[name].[ext]',
       },
-      ...options.plugins,
+      ...options.rules,
     ],
   },
   resolve: {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx'],
+  },
+  externals: {
+    react: 'commonjs react',
+    'prop-types': 'commonjs prop-types',
   },
 };

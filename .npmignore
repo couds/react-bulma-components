@@ -1,0 +1,13 @@
+.coverage
+.storybook
+docs
+node_modules
+src
+.babelrc
+.eslint*
+.git*
+README.md
+webpack.config.js
+yarn*
+.npmignore
+reports

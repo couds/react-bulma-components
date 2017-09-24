@@ -22,7 +22,7 @@ const Progress = ({
       [`is-${size}`]: size,
     })}
   />
-  );
+);
 
 Progress.propTypes = {
   className: PropTypes.string,

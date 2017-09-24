@@ -18,7 +18,7 @@ const Label = ({
   >
     {children}
   </label>
-  );
+);
 
 Label.propTypes = {
   children: PropTypes.node,

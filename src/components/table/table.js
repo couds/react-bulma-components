@@ -21,7 +21,7 @@ const Table = ({
   >
     {children}
   </table>
-  );
+);
 
 Table.propTypes = {
   children: PropTypes.node,
