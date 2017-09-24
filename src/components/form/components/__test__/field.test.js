@@ -65,15 +65,4 @@ describe('Field component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should have field classname with addons classname', () => {
-    const component = renderer.create(
-      <Field kind="addons">
-        <p className="bd-notification is-success">
-          <p>Default</p>
-          <p>Container</p>
-        </p>
-      </Field>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
 });

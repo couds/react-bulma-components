@@ -1,4 +1,5 @@
 !.svgo.yml
+!istanbul-reports/lib/html/assets
 
 # test directories
 __tests__
