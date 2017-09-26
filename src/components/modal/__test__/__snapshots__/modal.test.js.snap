@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component Should Exist 1`] = `[Function]`;
+
+exports[`Modal component Should have modal classname 1`] = `
+<div
+  className="modal is-active"
+>
+  <div
+    className="modal-background"
+  />
+  <div
+    className="modal-content"
+  >
+    Modal content
+  </div>
+  <button
+    aria-label="close"
+    className="modal-close is-large"
+  />
+</div>
+`;
