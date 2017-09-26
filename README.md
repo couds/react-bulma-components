@@ -72,6 +72,7 @@ The Following componets were ported:
 - Image ([Storybook](http://localhost:6006/?selectedKind=Image)) ([Docs](http://bulma.io/documentation/elements/image/))
 - Level ([Storybook](http://localhost:6006/?selectedKind=Level)) ([Docs](http://bulma.io/documentation/layout/level/))
 - Media ([Storybook](http://localhost:6006/?selectedKind=Media)) ([Docs](http://bulma.io/documentation/layout/media-object/))
+- Modal ([Storybook](http://localhost:6006/?selectedKind=Modal)) ([Docs](http://bulma.io/documentation/components/modal/))
 - Notification ([Storybook](http://localhost:6006/?selectedKind=Notification)) ([Docs](http://bulma.io/documentation/elements/notification/))
 - Progress ([Storybook](http://localhost:6006/?selectedKind=Progress)) ([Docs](http://bulma.io/documentation/elements/progress/))
 - Section ([Storybook](http://localhost:6006/?selectedKind=Section)) ([Docs](http://bulma.io/documentation/layout/section/))

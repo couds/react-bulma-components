@@ -9,6 +9,7 @@ import Image from '../image';
 import Media from '../media';
 import Button from '../button';
 import Content from '../content';
+import Section from '../section';
 import Level from '../level';
 
 class OpenModal extends React.Component {
@@ -41,15 +42,30 @@ class OpenModal extends React.Component {
 }
 
 storiesOf('Modal', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10, display: 'relative' }}>
-      {story()}
-    </div>
-  ))
   .add('Default', withInfo()(() => (
-    <OpenModal>
+    <OpenModal modal={{ closeOnEsc: false }}>
       <Modal.Content>
-        <Image src="http://bulma.io/images/placeholders/1280x960.png" size="4by3" />
+        <Section style={{ backgroundColor: 'white' }}>
+          Click on the {'"X"'} button on the top-right button to close the Modal (pass closeOnEsc=false to the modal to avoid closing it with the keyboard)
+        </Section>
+      </Modal.Content>
+    </OpenModal>
+  )))
+  .add('Close with keyboard', withInfo()(() => (
+    <OpenModal modal={{ showClose: false }}>
+      <Modal.Content>
+        <Section style={{ backgroundColor: 'white' }}>
+          Press ESC on your keyboard to close this modal, Pass  showClose: false if you want to hide the close button
+        </Section>
+      </Modal.Content>
+    </OpenModal>
+  )))
+  .add('Close on click outside', withInfo()(() => (
+    <OpenModal modal={{ closeOnBlur: true, showClose: false }}>
+      <Modal.Content>
+        <Section style={{ backgroundColor: 'white' }}>
+          Pass closeOnBlur: true to enable to close the Modal when the user click outside the main modal container
+        </Section>
       </Modal.Content>
     </OpenModal>
   )))
@@ -71,7 +87,8 @@ storiesOf('Modal', module)
                 <p>
                   <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
                   <br />
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                  If the children of the Modal is a card, the close button will be on the Card Head instead than the top-right corner
+                  You can also pass showClose = false to Card.Head to hide the close button
                 </p>
               </Content>
               <Level breakpoint="mobile">
