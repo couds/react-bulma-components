@@ -32,7 +32,7 @@ Level.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
-  breakpoint: PropTypes.oneOf([breakpoints]),
+  breakpoint: PropTypes.oneOf(breakpoints),
   renderAs: PropTypes.string,
 };
 

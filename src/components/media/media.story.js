@@ -35,8 +35,8 @@ storiesOf('Media', module)
             </Content>
             <Level breakpoint="mobile">
               <Level.Side align="left">
-                <Button color="link">Like</Button>
-                <Button color="link">Share</Button>
+                <Button link>Like</Button>
+                <Button link>Share</Button>
               </Level.Side>
             </Level>
           </Media.Item>
