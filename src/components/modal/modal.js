@@ -17,6 +17,8 @@ export default class Modal extends React.Component {
     closeOnBlur: PropTypes.bool,
     showClose: PropTypes.bool,
     children: PropTypes.element.isRequired,
+    document: PropTypes.object,
+    portalElement: PropTypes.object,
   }
 
   static defaultProps = {
@@ -26,6 +28,9 @@ export default class Modal extends React.Component {
     style: {},
     showClose: true,
     closeOnBlur: false,
+    // Expose mount point for testing
+    document: null,
+    portalElement: null,
   }
 
   static Content = ModalContent
@@ -33,8 +38,12 @@ export default class Modal extends React.Component {
 
   constructor(props) {
     super(props);
-    if (props.show) {
-      this.openModal(props);
+    this.portalElement = props.portalElement || null;
+  }
+
+  componentDidMount() {
+    if (this.props.show) {
+      this.openModal(this.props);
     }
   }
 
@@ -48,33 +57,40 @@ export default class Modal extends React.Component {
     }
   }
 
-  portalElement = null
+  componentWillUnmount() {
+    if (this.props.show) {
+      this.closeModal();
+    }
+  }
 
   openModal = (props) => {
+    /* istanbul ignore next */
+    const d = this.props.document || document;
     const { closeOnEsc, closeOnBlur } = props;
     let { children } = props;
-    let isContent;
+    let isCard;
     try {
-      isContent = React.Children.only(children).type.toString().indexOf('ModalContent') !== -1;
+      isCard = React.Children.only(children).type.toString().indexOf('ModalCard') !== -1;
     } catch (e) {
-      isContent = true;
+      isCard = false;
     }
 
-    const showClose = isContent && this.props.showClose;
+    const showClose = !isCard && this.props.showClose;
 
-    if (!isContent) {
+    if (isCard) {
       children = React.cloneElement(children, {
         onClose: this.props.onClose,
       });
     }
 
     if (!this.portalElement) {
-      this.portalElement = document.createElement('div');
-      document.body.appendChild(this.portalElement);
+      this.portalElement = d.createElement('div');
+      this.portalElement.setAttribute('class', 'modal-container');
+      d.body.appendChild(this.portalElement);
     }
 
     if (closeOnEsc) {
-      document.addEventListener('keydown', this.handleKeydown);
+      d.addEventListener('keydown', this.handleKeydown);
     }
 
     ReactDOM.render(
@@ -90,7 +106,9 @@ export default class Modal extends React.Component {
   }
 
   closeModal = () => {
-    document.removeEventListener('keydown', this.handleKeydown);
+    /* istanbul ignore next */
+    const d = this.props.document || document;
+    d.removeEventListener('keydown', this.handleKeydown);
     ReactDOM.unmountComponentAtNode(this.portalElement);
     this.portalElement.remove();
     this.portalElement = null;
@@ -99,6 +117,8 @@ export default class Modal extends React.Component {
   handleKeydown = (e) => {
     if (e.keyCode === KEYCODES.ESCAPE) {
       this.props.onClose();
+    } else {
+      console.log('other pressed');
     }
   }
 

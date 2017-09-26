@@ -41,7 +41,7 @@ ModalCard.defaultProps = {
   children: null,
   className: '',
   style: {},
-  onClose: () => { console.log('default'); },
+  onClose: null,
 };
 
 ModalCard.Head = ModalCardHead;

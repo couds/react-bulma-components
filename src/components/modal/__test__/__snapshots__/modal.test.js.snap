@@ -2,21 +2,308 @@
 
 exports[`Modal component Should Exist 1`] = `[Function]`;
 
-exports[`Modal component Should have modal classname 1`] = `
+exports[`Modal component Should close the modal 1`] = `
 <div
-  className="modal is-active"
+  class="modal is-active"
+  data-reactroot=""
 >
   <div
-    className="modal-background"
+    class="modal-background"
+    role="presentation"
   />
   <div
-    className="modal-content"
+    class="modal-card"
   >
-    Modal content
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <a
+        class="delete"
+      />
+    </header>
+  </div>
+</div>
+`;
+
+exports[`Modal component Should close the modal if clicked on background 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
   </div>
   <button
     aria-label="close"
-    className="modal-close is-large"
+    class="modal-close is-large"
+  />
+</div>
+`;
+
+exports[`Modal component Should close the modal on ESC key press 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-card"
+  >
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <a
+        class="delete"
+      />
+    </header>
+  </div>
+</div>
+`;
+
+exports[`Modal component Should expose Content and Card's types 1`] = `[Function]`;
+
+exports[`Modal component Should expose Content and Card's types 2`] = `[Function]`;
+
+exports[`Modal component Should expose Content and Card's types 3`] = `[Function]`;
+
+exports[`Modal component Should expose Content and Card's types 4`] = `[Function]`;
+
+exports[`Modal component Should expose Content and Card's types 5`] = `[Function]`;
+
+exports[`Modal component Should expose Content and Card's types 6`] = `[Function]`;
+
+exports[`Modal component Should no try to reopen if other prop change 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+  />
+</div>
+`;
+
+exports[`Modal component Should not close the modal if clicked on background 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+  />
+</div>
+`;
+
+exports[`Modal component Should not close the modal if clicked on background 2`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+  />
+</div>
+`;
+
+exports[`Modal component Should not close the modal on ESC key press 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-card"
+  >
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <a
+        class="delete"
+      />
+    </header>
+  </div>
+</div>
+`;
+
+exports[`Modal component Should not close the modal on other than ESC key press 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-card"
+  >
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <a
+        class="delete"
+      />
+    </header>
+    <section
+      class="modal-card-body"
+    >
+      Body
+    </section>
+    <footer
+      class="modal-card-foot"
+    >
+      Footer
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Modal component Should not recreate DOM element to mount Modal if the element is passed down via props 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+  />
+</div>
+`;
+
+exports[`Modal component Should not show close button 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
+  </div>
+</div>
+`;
+
+exports[`Modal component Should open the modal 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-card"
+  >
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <a
+        class="delete"
+      />
+    </header>
+  </div>
+</div>
+`;
+
+exports[`Modal component Should render any child type 1`] = `
+<div
+  class="modal is-active"
+  data-reactroot=""
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div>
+    CHILDREN
+  </div>
+  <div>
+    CHILDREN
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
   />
 </div>
 `;

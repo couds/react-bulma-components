@@ -33,7 +33,7 @@ ModalCardHead.defaultProps = {
   className: '',
   style: {},
   showClose: true,
-  onClose: () => { console.log('head clone fail'); },
+  onClose: null,
 };
 
 export default ModalCardHead;

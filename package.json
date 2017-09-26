@@ -4,8 +4,8 @@
   "description": "React components for Bulma framework",
   "main": "dist",
   "scripts": {
-    "test": "jest --config=jest.json",
-    "test:cov": "eslint . && jest --coverage --config=jest.json",
+    "test": "jest",
+    "test:cov": "eslint . && jest --coverage",
     "coveralls": "cat ./.coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
     "prepublish": "yarn clean:build && npm run build && yarn clean:test",
@@ -76,6 +76,7 @@
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
     "jest": "21.1.0",
+    "jsdom": "11.2.0",
     "node-sass": "4.5.3",
     "nodemon": "1.12.1",
     "null-loader": "0.1.1",
