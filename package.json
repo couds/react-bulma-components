@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-components",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React components for Bulma framework",
   "main": "dist",
   "scripts": {
@@ -38,7 +38,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.6.1"
+    "react": "^15.6.1",
+    "react-dom": "15.6.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.2.10",
