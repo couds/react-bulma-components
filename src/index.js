@@ -20,4 +20,6 @@ export { default as Table } from './components/table';
 export { default as Tag } from './components/tag';
 export { default as Tile } from './components/tile';
 export { default as Modal } from './components/modal';
+export { default as Dropdown } from './components/dropdown';
+export { default as Icon } from './components/icon';
 

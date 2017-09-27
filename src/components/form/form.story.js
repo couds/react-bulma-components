@@ -5,6 +5,7 @@ import { withInfo } from '@storybook/addon-info';
 
 import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from '.';
 import Button from '../button';
+import Icon from '../icon';
 
 /* eslint-disable react/no-multi-comp */
 const HoC = (Component) => {
@@ -16,7 +17,6 @@ const HoC = (Component) => {
     }
 
     onChange = (evt) => {
-      console.log('new value', evt.target.value);
       this.setState({
         value: evt.target.value,
       });
@@ -37,7 +37,6 @@ const HoCCheckbox = (Component) => {
     }
 
     onChange = (evt) => {
-      console.log('new value', evt.target.checked);
       this.setState({
         checked: evt.target.checked,
       });
@@ -109,7 +108,15 @@ storiesOf('Form', module)
         </Control>
         <Help color="danger">This email is invalid</Help>
       </Field>
-
+      <Field>
+        <Label>With Icons</Label>
+        <Control iconLeft iconRight>
+          <Input color="success" type="email" placeholder="I have icons" />
+          <Icon align="left" icon="bars" />
+          <Icon align="right" icon="bars" />
+        </Control>
+        <Help color="danger">This email is invalid</Help>
+      </Field>
       <Field>
         <Label>Subject</Label>
         <Control>

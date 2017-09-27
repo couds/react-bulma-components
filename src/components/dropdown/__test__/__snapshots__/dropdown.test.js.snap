@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component Should Exist 1`] = `[Function]`;
+
+exports[`Dropdown component Should concat Bulma class with classes in props 1`] = `
+<div
+  className="dropdown other-class"
+  style={Object {}}
+>
+  <div
+    className="dropdown-trigger"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <a
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <span>
+        Item
+      </span>
+      <span
+        className="icon is-small"
+        style={Object {}}
+      >
+        <i
+          className="rbc rbc-angle-down"
+        />
+      </span>
+    </a>
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    >
+      <div
+        className="dropdown-item is-active"
+        onClick={[Function]}
+        role="presentation"
+        title="value"
+      >
+        Item
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown component Should have custom inline styles 1`] = `
+<div
+  className="dropdown"
+  style={
+    Object {
+      "width": 400,
+    }
+  }
+>
+  <div
+    className="dropdown-trigger"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <a
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <span>
+        Item
+      </span>
+      <span
+        className="icon is-small"
+        style={Object {}}
+      >
+        <i
+          className="rbc rbc-angle-down"
+        />
+      </span>
+    </a>
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    >
+      <div
+        className="dropdown-item is-active"
+        onClick={[Function]}
+        role="presentation"
+        title="value"
+      >
+        Item
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown component Should have divider 1`] = `
+<div
+  className="dropdown"
+  style={
+    Object {
+      "width": 400,
+    }
+  }
+>
+  <div
+    className="dropdown-trigger"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <a
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <span>
+        Item
+      </span>
+      <span
+        className="icon is-small"
+        style={Object {}}
+      >
+        <i
+          className="rbc rbc-angle-down"
+        />
+      </span>
+    </a>
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    >
+      <div
+        className="dropdown-item is-active"
+        onClick={[Function]}
+        role="presentation"
+        title="value"
+      >
+        Item
+      </div>
+      <hr
+        className="dropdown-divider"
+        style={Object {}}
+      />
+      <div
+        className="dropdown-item"
+        onClick={[Function]}
+        role="presentation"
+        title="other"
+      >
+        Other
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown component Should have dropdown classname 1`] = `
+<div
+  className="dropdown"
+  style={Object {}}
+>
+  <div
+    className="dropdown-trigger"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <a
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <span>
+        Item
+      </span>
+      <span
+        className="icon is-small"
+        style={Object {}}
+      >
+        <i
+          className="rbc rbc-angle-down"
+        />
+      </span>
+    </a>
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    >
+      <div
+        className="dropdown-item is-active"
+        onClick={[Function]}
+        role="presentation"
+        title="value"
+      >
+        Item
+      </div>
+    </div>
+  </div>
+</div>
+`;
