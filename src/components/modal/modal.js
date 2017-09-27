@@ -117,8 +117,6 @@ export default class Modal extends React.Component {
   handleKeydown = (e) => {
     if (e.keyCode === KEYCODES.ESCAPE) {
       this.props.onClose();
-    } else {
-      console.log('other pressed');
     }
   }
 

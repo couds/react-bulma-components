@@ -1,4 +1,4 @@
-import ReactBulmaComponents from '..';
+import * as ReactBulmaComponents from '..';
 
 describe('ReactBulmaComponents component', () => {
   it('Should Exports all components', () => {

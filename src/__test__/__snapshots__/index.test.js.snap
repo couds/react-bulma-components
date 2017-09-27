@@ -1,3 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReactBulmaComponents component Should Exports all components 1`] = `undefined`;
+exports[`ReactBulmaComponents component Should Exports all components 1`] = `
+Object {
+  "Box": [Function],
+  "Button": [Function],
+  "Columns": [Function],
+  "Container": [Function],
+  "Content": [Function],
+  "Footer": [Function],
+  "Form": Object {
+    "Checkbox": [Function],
+    "Control": [Function],
+    "Field": [Function],
+    "Help": [Function],
+    "Input": [Function],
+    "Label": [Function],
+    "Radio": [Function],
+    "Select": [Function],
+    "Textarea": [Function],
+  },
+  "Heading": [Function],
+  "Hero": [Function],
+  "Image": [Function],
+  "Level": [Function],
+  "Media": [Function],
+  "Modal": [Function],
+  "Notification": [Function],
+  "Progress": [Function],
+  "Section": [Function],
+  "Table": [Function],
+  "Tag": [Function],
+  "Tile": [Function],
+}
+`;

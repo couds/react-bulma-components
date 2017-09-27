@@ -19,4 +19,5 @@ export { default as Section } from './components/section';
 export { default as Table } from './components/table';
 export { default as Tag } from './components/tag';
 export { default as Tile } from './components/tile';
+export { default as Modal } from './components/modal';
 
