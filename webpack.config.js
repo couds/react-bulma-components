@@ -123,6 +123,9 @@ module.exports = {
   resolve: {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx'],
+    alias: {
+      '_variables.sass': path.resolve(__dirname, 'src/components/_variables.sass'),
+    },
   },
   externals: {
     react: 'commonjs react',

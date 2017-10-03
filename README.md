@@ -82,4 +82,31 @@ The Following componets were ported:
 - Tag ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tag)) ([Docs](http://bulma.io/documentation/elements/tag/))
 - Tile ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)) ([Docs](http://bulma.io/documentation/layout/tiles/))
 
+### Override Bulma variables
+
+To Override the variables set by Bulma you will need to create a sass file like this one (_variable.sass)
+
+```sass
+@import '~bulma/sass/utilities/initial-variables.sass';
+
+// ADD HERE variables you want to override
+$primary: #f4f4f4
+
+@import '~bulma/sass/utilities/_all.sass';
+```
+
+After that you will need to add to your webpack configuration an alias pointing to the file
+
+```
+resolve {
+  // Other resolve props
+  alias: {
+    // Other aliases
+    '_variables.sass': path.resolve(__dirname, 'relative/path/to/your/file/from/webpack/config/file'),
+  },
+}
+
+```
+
+
 This page is open source. Noticed a typo? Or something unclear? Improve this page on [GitHub](https://github.com/couds/react-bulma-components/blob/master/README.md)
