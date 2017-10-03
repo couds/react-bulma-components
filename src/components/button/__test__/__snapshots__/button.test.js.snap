@@ -22,6 +22,7 @@ exports[`Button component Should be a default Button 1`] = `
 <a
   className="button"
   disabled={false}
+  href="http://google.com"
   onClick={[Function]}
   style={Object {}}
 />
@@ -45,6 +46,14 @@ exports[`Button component Should be a submit form button 1`] = `
   style={Object {}}
   type="submit"
 />
+`;
+
+exports[`Button component Should render as a React element link with custom href 1`] = `
+<a
+  href="http://google.com"
+>
+  TEST
+</a>
 `;
 
 exports[`Button component Should render as a html button 1`] = `

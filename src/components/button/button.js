@@ -23,10 +23,18 @@ const Button = ({
   disabled,
   remove,
   link,
+  href,
+  hrefAttr,
   ...props
 }) => {
   let Element = props.static ? 'span' : renderAs;
   const otherProps = {};
+  if (href) {
+    otherProps[renderAs === 'a' ? 'href' : hrefAttr] = href;
+    if (renderAs !== 'a' && !hrefAttr) {
+      console.error('warning: if renderAs is different the anchor (a), hrefAttr is required. Check Button props');
+    }
+  }
   if (submit) {
     Element = 'input';
     otherProps.type = 'submit';
@@ -35,6 +43,7 @@ const Button = ({
     Element = 'input';
     otherProps.type = 'reset';
   }
+
   return (
     <Element
       {...otherProps}
@@ -62,8 +71,13 @@ const Button = ({
 Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  href: PropTypes.string,
+  hrefAttr: PropTypes.string,
   style: PropTypes.object,
-  renderAs: PropTypes.oneOf(['a', 'button']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.oneOf(['a', 'button']),
+    PropTypes.func,
+  ]),
   static: PropTypes.bool,
   onClick: PropTypes.func,
   color: PropTypes.oneOf(colors),
@@ -83,6 +97,8 @@ Button.propTypes = {
 Button.defaultProps = {
   children: null,
   className: '',
+  href: '',
+  hrefAttr: '',
   style: {},
   renderAs: 'a',
   onClick: () => null,

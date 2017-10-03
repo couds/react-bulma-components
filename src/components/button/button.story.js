@@ -1,11 +1,25 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 import Button from '.';
 import Section from '../section';
 import Box from '../box';
+
+const Link = ({
+  to,
+  children,
+  className,
+}) => (
+  <a className={className} href={to}>{children}</a>
+);
+
+Link.propTypes = {
+  to: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 storiesOf('Button', module)
   .addDecorator(story => (
@@ -53,22 +67,25 @@ storiesOf('Button', module)
     <Section>
       <Box>
         <Button fullwidth color="primary">
-        Full Width
+          Full Width
         </Button>
         <Button loading color="info">
-        Loading
+          Loading
         </Button>
         <Button outlined color="danger">
-        Warning Outlined
+          Warning Outlined
         </Button>
         <Button inverted color="success">
-        Success Inverted
+          Success Inverted
         </Button>
         <Button disabled color="info">
-        Disabled
+          Disabled
         </Button>
-        <Button link>
-        Link
+        <Button link href="http://google.com">
+          Link
+        </Button>
+        <Button renderAs={Link} hrefAttr="to" color="primary" href="http://google.com">
+          Custom component
         </Button>
 
         <Button remove />

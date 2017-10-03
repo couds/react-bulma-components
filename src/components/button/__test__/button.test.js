@@ -1,12 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Button from '..';
 
+const Link = ({
+  to,
+  children,
+}) => (
+  <a href={to}>{children}</a>
+);
+
+Link.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
 describe('Button component', () => {
   it('Should be a default Button', () => {
     const component = renderer.create(
-      <Button />,
+      <Button href="http://google.com" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -33,6 +46,24 @@ describe('Button component', () => {
       <Button renderAs="button" color="danger" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render as a React element link with custom href', () => {
+    const component = renderer.create(
+      <Button renderAs={Link} href="http://google.com" hrefAttr="to" color="danger" >
+        TEST
+      </Button>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should throw a console.error if no hrefAttr is defined when renderAs different as A and href attr is defined', () => {
+    console.error = jest.genMockFn();
+    renderer.create(
+      <Button renderAs={Link} href="http://google.com" color="danger" >
+        TEST
+      </Button>,
+    );
+    expect(console.error).toHaveBeenCalled();
+    console.error.mockRestore();
   });
   it('Should render be disabled', () => {
     const component = renderer.create(
