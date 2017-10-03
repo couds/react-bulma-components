@@ -14,7 +14,7 @@ const Breadcrumb = ({
 
 }) => {
   if (renderAs !== 'a' && !hrefAttr) {
-    console.warn('if renderAs is different the anchor (a), hrefAttr is required. Check Breadcrumb render method');
+    console.warn('if renderAs is different the anchor (a), hrefAttr is required. Check Breadcrumb props');
   }
   const Element = renderAs;
   return (
