@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-components",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React components for Bulma framework",
   "main": "dist",
   "scripts": {
