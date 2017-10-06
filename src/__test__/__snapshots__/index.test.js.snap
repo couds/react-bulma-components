@@ -25,6 +25,7 @@ Object {
   "Icon": [Function],
   "Image": [Function],
   "Level": [Function],
+  "Loader": [Function],
   "Media": [Function],
   "Modal": [Function],
   "Notification": [Function],
