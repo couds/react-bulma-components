@@ -3,7 +3,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
   output: 'full/index',
@@ -121,7 +121,7 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: ['node_modules'],
+    modules: ['node_modules', './src'],
     extensions: ['.js', '.jsx'],
     alias: {
       '_variables.sass': path.resolve(__dirname, 'src/components/_variables.sass'),
