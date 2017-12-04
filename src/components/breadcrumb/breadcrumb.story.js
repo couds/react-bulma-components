@@ -2,9 +2,11 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs, select, object } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import Section from '../section';
-import Box from '../box';
 import Breadcrumb from '.';
 
 /* eslint-disable react/prop-types */
@@ -15,11 +17,31 @@ const Anchor = ({
 /* eslint-enable react/prop-types */
 
 storiesOf('Breadcrumb', module)
-  .add('Default', withInfo('Breadcrumb Implementation')(() => (
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
     <div>
       <Section>
         <Breadcrumb
-          items={[
+          separator={select('Separator', {
+            undefined: 'Default',
+            arrow: 'Arrow',
+            bullet: 'Bullet',
+            dot: 'Dot',
+            succeeds: 'Succeeds',
+          }, undefined)}
+          align={select('Align', {
+            undefined: 'Default',
+            right: 'Right',
+            center: 'Center',
+          }, undefined)}
+          size={select('Size', {
+            undefined: 'Default',
+            small: 'Small',
+            medium: 'Medium',
+            large: 'Large',
+          }, undefined)}
+          items={object('items', [
             {
               name: 'Storybook',
               url: '#1',
@@ -31,55 +53,8 @@ storiesOf('Breadcrumb', module)
               url: '#3',
               active: true,
             },
-          ]}
+          ])}
         />
       </Section>
     </div>
-  )))
-  .add('Use Custom render Element', withInfo('Breadcrumb Implementation')(() => (
-    <div>
-      <Section>
-        <Breadcrumb
-          renderAs={Anchor}
-          hrefAttr="href"
-          items={[
-            {
-              name: 'Storybook',
-              url: '#1',
-            }, {
-              name: 'Breadcrumb',
-              url: '#2',
-            }, {
-              name: 'Breadcrumb Types',
-              url: '#3',
-              active: true,
-            },
-          ]}
-        />
-      </Section>
-    </div>
-  )))
-  .add('Separators', withInfo('Breadcrumb Separator Implementation')(() => (
-    <Section>
-      {[null, 'arrow', 'dot', 'bullet', 'succeeds'].map(separator => (
-        <Box key={separator}>
-          <Breadcrumb
-            separator={separator}
-            items={[
-              {
-                name: 'Storybook',
-                url: '#1',
-              }, {
-                name: 'Breadcrumb',
-                url: '#2',
-              }, {
-                name: 'Breadcrumb Types',
-                url: '#3',
-                active: true,
-              },
-            ]}
-          />
-        </Box>
-      ))}
-    </Section>
   )));
