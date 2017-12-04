@@ -1,19 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from '../../constants';
-import LevelSide from './components/level-side';
-import LevelItem from './components/level-item';
 
-
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
-
-export default class Level extends PureComponent {
+export default class LevelItem extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
-    breakpoint: PropTypes.oneOf(breakpoints),
     renderAs: PropTypes.string,
   }
 
@@ -21,19 +14,14 @@ export default class Level extends PureComponent {
     children: null,
     className: '',
     style: {},
-    breakpoint: null,
     renderAs: 'div',
   }
-
-  static Side = LevelSide
-  static Item = LevelItem
 
   render() {
     const {
       children,
       className,
       style,
-      breakpoint,
       renderAs,
     } = this.props;
 
@@ -41,8 +29,7 @@ export default class Level extends PureComponent {
     return (
       <Element
         style={style}
-        className={classnames('level', className, {
-          [`is-${breakpoint}`]: breakpoint,
+        className={classnames('level-item', className, {
         })}
       >
         {children}
