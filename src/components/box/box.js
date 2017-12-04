@@ -1,36 +1,36 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Box = ({
-  children,
-  className,
-  style,
-  renderAs,
-}) => {
-  const Element = renderAs;
-  return (
-    <Element
-      style={style}
-      className={classnames('box', className)}
-    >
-      {children}
-    </Element>
-  );
-};
+export default class Box extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    renderAs: PropTypes.string,
+  }
 
-Box.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.string,
-};
-
-Box.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  renderAs: 'div',
-};
-
-export default Box;
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    renderAs: 'div',
+  }
+  render() {
+    const {
+      children,
+      className,
+      style,
+      renderAs,
+    } = this.props;
+    const Element = renderAs;
+    return (
+      <Element
+        style={style}
+        className={classnames('box', className)}
+      >
+        {children}
+      </Element>
+    );
+  }
+}

@@ -1,41 +1,43 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import notification from '../../modifiers/notification';
 
-const Notification = ({
-  children,
-  className,
-  style,
-  renderAs,
-  ...props
-}) => {
-  const Element = renderAs;
-  return (
-    <Element
-      style={style}
-      className={classnames(notification.className({ ...props, notification: true }), className)}
-    >
-      {children}
-    </Element>
-  );
-};
+export default class Notification extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    renderAs: PropTypes.string,
+    ...notification.propTypes,
+  }
 
-Notification.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.string,
-  ...notification.propTypes,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    renderAs: 'div',
+    ...notification.defaultProps,
+  }
 
-Notification.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  renderAs: 'div',
-  ...notification.defaultProps,
-};
+  render() {
+    const {
+      children,
+      className,
+      style,
+      renderAs,
+      ...props
+    } = this.props;
 
-export default Notification;
+    const Element = renderAs;
+    return (
+      <Element
+        style={style}
+        className={classnames(notification.className({ ...props, notification: true }), className)}
+      >
+        {children}
+      </Element>
+    );
+  }
+}

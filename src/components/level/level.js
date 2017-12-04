@@ -1,50 +1,52 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
-import LevelSide from './level-side';
-import LevelItem from './level-item';
+import LevelSide from './components/level-side';
+import LevelItem from './components/level-item';
 
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-const Level = ({
-  children,
-  className,
-  style,
-  breakpoint,
-  renderAs,
-}) => {
-  const Element = renderAs;
-  return (
-    <Element
-      style={style}
-      className={classnames('level', className, {
-        [`is-${breakpoint}`]: breakpoint,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+export default class Level extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    breakpoint: PropTypes.oneOf(breakpoints),
+    renderAs: PropTypes.string,
+  }
 
-Level.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: PropTypes.string,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    breakpoint: null,
+    renderAs: 'div',
+  }
 
-Level.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  breakpoint: null,
-  renderAs: 'div',
-};
+  static Side = LevelSide
+  static Item = LevelItem
 
-Level.Side = LevelSide;
-Level.Item = LevelItem;
+  render() {
+    const {
+      children,
+      className,
+      style,
+      breakpoint,
+      renderAs,
+    } = this.props;
 
-export default Level;
+    const Element = renderAs;
+    return (
+      <Element
+        style={style}
+        className={classnames('level', className, {
+          [`is-${breakpoint}`]: breakpoint,
+        })}
+      >
+        {children}
+      </Element>
+    );
+  }
+}

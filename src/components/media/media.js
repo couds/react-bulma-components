@@ -1,43 +1,45 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import MediaItem from './media-item';
-import MediaContent from './media-content';
+import MediaItem from './components/media-item';
+import MediaContent from './components/media-content';
 
-const Media = ({
-  children,
-  className,
-  style,
-  renderAs,
-}) => {
-  const Element = renderAs;
-  return (
-    <Element
-      style={style}
-      className={classnames('media', className, {
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+export default class Media extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    renderAs: PropTypes.string,
+  }
 
-Media.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.string,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    renderAs: 'article',
+  }
 
-Media.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  renderAs: 'article',
-};
+  static Item = MediaItem
+  static Content = MediaContent
 
-Media.Item = MediaItem;
-Media.Content = MediaContent;
+  render() {
+    const {
+      children,
+      className,
+      style,
+      renderAs,
+    } = this.props;
 
-export default Media;
+    const Element = renderAs;
+    return (
+      <Element
+        style={style}
+        className={classnames('media', className, {
+        })}
+      >
+        {children}
+      </Element>
+    );
+  }
+}

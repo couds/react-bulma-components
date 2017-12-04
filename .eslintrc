@@ -10,7 +10,8 @@
     "jest": true
   },
   "plugins": [
-    "jest"
+    "jest",
+    "react"
   ],
   "rules": {
     "semi": ["error", "always"],
@@ -23,6 +24,7 @@
     "jsx-a11y/media-has-caption": 0,
     "import/prefer-default-export": 0,
     "react/forbid-prop-types": 0,
+    "react/prefer-es6-class": ["error", "always"],
     "max-len": 0,
     "jsx-a11y/accessible-emoji": 0,
     "jsx-a11y/label-has-for": 0,

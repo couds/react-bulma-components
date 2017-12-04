@@ -30,7 +30,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as a static Button', () => {
-    const component = renderer.create(<Button static color="primary" />);
+    const component = renderer.create(<Button isStatic color="primary" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as a html button', () => {
