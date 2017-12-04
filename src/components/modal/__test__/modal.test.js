@@ -8,6 +8,7 @@ describe('Modal component', () => {
   let window;
   let component;
   beforeEach(() => {
+    // eslint-disable-next-line
     window = (new JSDOM()).window;
   });
   afterEach(() => {
@@ -35,8 +36,7 @@ describe('Modal component', () => {
             Modal Title
           </Modal.Card.Title>
         </Modal.Card.Head>
-      </Modal.Card>,
-    );
+      </Modal.Card>);
     component.find('a.delete').simulate('click');
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -53,8 +53,7 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>,
-    );
+      </Modal>);
     expect(window.document.querySelector('div.modal.is-active')).toBeNull();
     component.setProps({ show: true });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
@@ -72,8 +71,7 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('a.delete').click();
@@ -93,8 +91,7 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 27 });
@@ -115,8 +112,7 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 27 });
@@ -143,8 +139,7 @@ describe('Modal component', () => {
             Footer
           </Modal.Card.Foot>
         </Modal.Card>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 23 });
@@ -163,8 +158,7 @@ describe('Modal component', () => {
         <div>
           CHILDREN
         </div>
-      </Modal>,
-    );
+      </Modal>);
     expect(global.console.error).toBeCalled();
     console.error.mockRestore();
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
@@ -176,8 +170,7 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>,
-    );
+      </Modal>);
     component.setProps({ randomProp: 'test' });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
@@ -189,8 +182,7 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>,
-    );
+      </Modal>);
     component.setProps({ show: true });
     expect(window.document.querySelector('div.modal-container')).toBeNull();
     expect(element.querySelector('div.modal.is-active')).toMatchSnapshot();
@@ -204,8 +196,7 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('div.modal-background').click();
@@ -221,8 +212,7 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('div.modal-background').click();
@@ -238,8 +228,7 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>,
-    );
+      </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
   });

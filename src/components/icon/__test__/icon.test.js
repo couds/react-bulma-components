@@ -7,15 +7,11 @@ describe('Icon component', () => {
     expect(Icon).toMatchSnapshot();
   });
   it('Should have box classname', () => {
-    const component = renderer.create(
-      <Icon icon="bars" />,
-    );
+    const component = renderer.create(<Icon icon="bars" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat Bulma class with classes in props', () => {
-    const component = renderer.create(
-      <Icon icon="bars" className="other-class" />,
-    );
+    const component = renderer.create(<Icon icon="bars" className="other-class" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
