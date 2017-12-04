@@ -17,9 +17,8 @@ describe('Breadcrumb component', () => {
     console.warn.mockRestore();
   });
   it('Should be a Breadcrumb', () => {
-    const component = renderer.create(
-      <Breadcrumb
-        items={[
+    const component = renderer.create(<Breadcrumb
+      items={[
           {
             url: '/',
             name: 'Home',
@@ -34,16 +33,14 @@ describe('Breadcrumb component', () => {
             active: true,
           },
         ]}
-      />,
-    );
+    />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   [null, 'arrow', 'dot', 'bullet', 'succeeds'].map(separator => (
     it(`should use separator ${separator}`, () => {
-      const component = renderer.create(
-        <Breadcrumb
-          separator={separator}
-          items={[
+      const component = renderer.create(<Breadcrumb
+        separator={separator}
+        items={[
             {
               name: 'Storybook',
               url: '#1',
@@ -56,16 +53,14 @@ describe('Breadcrumb component', () => {
               active: true,
             },
           ]}
-        />,
-      );
+      />);
       expect(component.toJSON()).toMatchSnapshot();
     })
   ));
   it('Should throw a warning that hrefAttr is not defined', () => {
-    const component = renderer.create(
-      <Breadcrumb
-        renderAs={Anchor}
-        items={[
+    const component = renderer.create(<Breadcrumb
+      renderAs={Anchor}
+      items={[
           {
             url: '/',
             name: 'Home',
@@ -80,17 +75,15 @@ describe('Breadcrumb component', () => {
             active: true,
           },
         ]}
-      />,
-    );
+    />);
     expect(global.console.warn).toBeCalled();
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline style and custom size', () => {
-    const component = renderer.create(
-      <Breadcrumb
-        style={{ marginTop: 10 }}
-        size="large"
-        items={[
+    const component = renderer.create(<Breadcrumb
+      style={{ marginTop: 10 }}
+      size="large"
+      items={[
           {
             url: '/',
             name: 'Home',
@@ -105,8 +98,7 @@ describe('Breadcrumb component', () => {
             active: true,
           },
         ]}
-      />,
-    );
+    />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

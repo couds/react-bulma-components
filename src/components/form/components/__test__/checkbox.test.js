@@ -11,8 +11,7 @@ describe('Checkbox component', () => {
     const component = renderer.create(
       <Checkbox>
         Text
-      </Checkbox>,
-    );
+      </Checkbox>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should change value on change event', () => {
@@ -20,8 +19,7 @@ describe('Checkbox component', () => {
     const component = shallow(
       <Checkbox onChange={spy}>
         Text
-      </Checkbox>,
-    );
+      </Checkbox>);
     component.find('input').simulate('change');
     expect(spy).toHaveBeenCalledTimes(1);
   });

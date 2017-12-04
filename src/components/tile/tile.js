@@ -25,7 +25,8 @@ const Tile = ({
           [`is-${size}`]: size,
           'is-vertical': vertical,
         },
-        notification.className(props))
+        notification.className(props),
+)
       }
     >
       {children}

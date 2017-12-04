@@ -9,8 +9,7 @@ describe('Columns component', () => {
         <Columns.Column>1</Columns.Column>
         <Columns.Column>2</Columns.Column>
         <Columns.Column>3</Columns.Column>
-      </Columns>,
-    );
+      </Columns>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have columns one column half width and 3 other as default', () => {
@@ -20,8 +19,7 @@ describe('Columns component', () => {
         <Columns.Column>2</Columns.Column>
         <Columns.Column>3</Columns.Column>
         <Columns.Column>4</Columns.Column>
-      </Columns>,
-    );
+      </Columns>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have columns one column half width, other narrow and 2 other as default', () => {
@@ -31,8 +29,7 @@ describe('Columns component', () => {
         <Columns.Column narrow>2</Columns.Column>
         <Columns.Column>3</Columns.Column>
         <Columns.Column>4</Columns.Column>
-      </Columns>,
-    );
+      </Columns>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

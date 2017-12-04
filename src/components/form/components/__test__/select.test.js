@@ -12,8 +12,7 @@ describe('Select component', () => {
         <option>1</option>
         <option>2</option>
         <option>3</option>
-      </Select>,
-    );
+      </Select>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -22,8 +21,7 @@ describe('Select component', () => {
         <option>1</option>
         <option>2</option>
         <option>3</option>
-      </Select>,
-    );
+      </Select>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -32,8 +30,7 @@ describe('Select component', () => {
         <option>1</option>
         <option>2</option>
         <option>3</option>
-      </Select>,
-    );
+      </Select>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be large, red, disabled and multioption', () => {
@@ -42,8 +39,7 @@ describe('Select component', () => {
         <option>1</option>
         <option>2</option>
         <option>3</option>
-      </Select>,
-    );
+      </Select>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

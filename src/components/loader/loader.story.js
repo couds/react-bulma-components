@@ -16,7 +16,10 @@ storiesOf('Loader', module)
     <Loader />
   )))
   .add('with inline style', withInfo()(() => (
-    <Loader style={{ width: 300, height: 300, border: '4px solid blue', borderTopColor: 'transparent', borderRightColor: 'transparent' }} />
+    <Loader style={{
+ width: 300, height: 300, border: '4px solid blue', borderTopColor: 'transparent', borderRightColor: 'transparent',
+}}
+    />
   )))
   .add('with other classes', withInfo()(() => (
     <Loader className="loader-override" />

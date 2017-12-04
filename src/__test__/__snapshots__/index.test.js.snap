@@ -28,6 +28,7 @@ Object {
   "Loader": [Function],
   "Media": [Function],
   "Modal": [Function],
+  "Navbar": [Function],
   "Notification": [Function],
   "Progress": [Function],
   "Section": [Function],
