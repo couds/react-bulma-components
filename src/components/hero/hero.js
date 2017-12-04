@@ -1,60 +1,62 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
-import HeroHead from './hero-head';
-import HeroBody from './hero-body';
-import HeroFooter from './hero-footer';
+import HeroHead from './components/hero-head';
+import HeroBody from './components/hero-body';
+import HeroFooter from './components/hero-footer';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Hero = ({
-  children,
-  className,
-  style,
-  renderAs,
-  color,
-  gradient,
-  size,
-}) => {
-  const Element = renderAs;
-  return (
-    <Element
-      style={style}
-      className={classnames('hero', className, {
-        [`is-${color}`]: color,
-        [`is-${size}`]: size,
-        'is-bold': gradient,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+export default class Hero extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    renderAs: PropTypes.string,
+    color: PropTypes.oneOf(colors),
+    gradient: PropTypes.bool,
+    size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
+  }
 
-Hero.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  gradient: PropTypes.bool,
-  size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    renderAs: 'section',
+    color: null,
+    gradient: false,
+    size: null,
+  }
 
-Hero.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  renderAs: 'section',
-  color: null,
-  gradient: false,
-  size: null,
-};
+  static Head = HeroHead
+  static Body = HeroBody
+  static Footer = HeroFooter
 
-Hero.Head = HeroHead;
-Hero.Body = HeroBody;
-Hero.Footer = HeroFooter;
+  render() {
+    const {
+      children,
+      className,
+      style,
+      renderAs,
+      color,
+      gradient,
+      size,
+    } = this.props;
 
-export default Hero;
+    const Element = renderAs;
+    return (
+      <Element
+        style={style}
+        className={classnames('hero', className, {
+          [`is-${color}`]: color,
+          [`is-${size}`]: size,
+          'is-bold': gradient,
+        })}
+      >
+        {children}
+      </Element>
+    );
+  }
+}
