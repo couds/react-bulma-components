@@ -50,6 +50,15 @@ export default class Navbar extends React.PureComponent {
     showMobileMenu: false,
   }
 
+  componentDidMount() {
+    const html = window.document.querySelector('html');
+    let classname = (html.getAttribute('class') || '').replace(/has-navbar-fixed-(top|bottom)/, '');
+    if (this.props.fixed) {
+      classname = `${classname} has-navbar-fixed-${this.props.fixed}`;
+    }
+    html.setAttribute('class', classname);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (canUseDOM && nextProps.fixed !== this.props.fixed) {
       const html = window.document.querySelector('html');
@@ -64,7 +73,6 @@ export default class Navbar extends React.PureComponent {
   toggleMenu = () => {
     this.setState(({ showMobileMenu }) => ({ showMobileMenu: !showMobileMenu }));
   }
-
 
   render() {
     const {

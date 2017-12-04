@@ -2,14 +2,20 @@
 
 exports[`Navbar component Should Exist 1`] = `[Function]`;
 
+exports[`Navbar component Should be fixed on top 1`] = `
+<nav
+  className="navbar is-fixed-top"
+  role="navigation"
+  style={Object {}}
+/>
+`;
+
 exports[`Navbar component Should concat Bulma class with classes in props 1`] = `
 <nav
   className="navbar other-class test"
   role="navigation"
   style={Object {}}
->
-  Facebook
-</nav>
+/>
 `;
 
 exports[`Navbar component Should have Navbar classname 1`] = `
@@ -18,12 +24,89 @@ exports[`Navbar component Should have Navbar classname 1`] = `
   role="navigation"
   style={Object {}}
 >
-  Facebook
+  <div
+    className="navbar-brand"
+    style={Object {}}
+  >
+    <a
+      className="navbar-item"
+      href="#"
+      style={Object {}}
+    >
+      <img
+        alt=""
+        src="/"
+      />
+    </a>
+    <div
+      className="navbar-burger trigger-menu"
+      onClick={[Function]}
+      role="button"
+      style={
+        Object {
+          "outline": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <span />
+      <span />
+      <span />
+    </div>
+  </div>
+  <div>
+    TEST
+  </div>
+  <div
+    className="navbar-menu"
+    style={Object {}}
+  >
+    <div
+      className="navbar-start"
+      style={Object {}}
+    >
+      <a
+        Dropdown={true}
+        className="navbar-item is-hoverable"
+        style={Object {}}
+      >
+        <span
+          className="navbar-link"
+          style={Object {}}
+        >
+          Docs
+        </span>
+        <span
+          className="navbar-dropdown is-boxed"
+          style={Object {}}
+        >
+          <a
+            className="navbar-item"
+            href="#"
+            style={Object {}}
+          >
+            Home
+          </a>
+          <div
+            className="navbar-divider"
+            style={Object {}}
+          />
+          <a
+            className="navbar-item"
+            href="#"
+            style={Object {}}
+          >
+            Home
+          </a>
+        </span>
+      </a>
+    </div>
+  </div>
 </nav>
 `;
 
 exports[`Navbar component Should have custom inline styles 1`] = `
-<section
+<nav
   className="navbar"
   role="navigation"
   style={
@@ -32,9 +115,7 @@ exports[`Navbar component Should have custom inline styles 1`] = `
       "zIndex": 1,
     }
   }
->
-  This should be a section with custom styles
-</section>
+/>
 `;
 
 exports[`Navbar component Should render as an html section 1`] = `
@@ -42,7 +123,5 @@ exports[`Navbar component Should render as an html section 1`] = `
   className="navbar"
   role="navigation"
   style={Object {}}
->
-  This should be a section
-</section>
+/>
 `;
