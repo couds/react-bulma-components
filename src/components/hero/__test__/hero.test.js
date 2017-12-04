@@ -16,32 +16,28 @@ describe('Hero component', () => {
     const component = renderer.create(
       <Hero>
         Test <a>Give me</a>
-      </Hero>,
-    );
+      </Hero>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Hero className="other-class this-is-a-test">
         <p>Default</p>
-      </Hero>,
-    );
+      </Hero>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Hero style={{ height: 250 }}>
         <p>Default</p>
-      </Hero>,
-    );
+      </Hero>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use gradient style', () => {
     const component = renderer.create(
       <Hero color="primary" gradient>
         <p>Default</p>
-      </Hero>,
-    );
+      </Hero>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render Hero with hero head, body and footer', () => {
@@ -56,8 +52,7 @@ describe('Hero component', () => {
         <Hero.Footer renderAs="footer">
           <div className="bd-notification is-danger">Footer</div>
         </Hero.Footer>
-      </Hero>,
-    );
+      </Hero>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   [null]
@@ -67,8 +62,7 @@ describe('Hero component', () => {
         const component = renderer.create(
           <Hero color={color}>
             <p>Default</p>
-          </Hero>,
-        );
+          </Hero>);
         expect(component.toJSON()).toMatchSnapshot();
       })
     ));

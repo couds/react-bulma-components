@@ -17,8 +17,7 @@ describe('Field component', () => {
           <p>Default</p>
           <p>Container</p>
         </p>
-      </Field>,
-    );
+      </Field>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field-label classname', () => {
@@ -28,8 +27,7 @@ describe('Field component', () => {
           <p>Default</p>
           <p>Container</p>
         </p>
-      </Field.Label>,
-    );
+      </Field.Label>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field-body classname', () => {
@@ -39,8 +37,7 @@ describe('Field component', () => {
           <p>Default</p>
           <p>Container</p>
         </p>
-      </Field.Body>,
-    );
+      </Field.Body>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field classname with grouped classname', () => {
@@ -50,8 +47,7 @@ describe('Field component', () => {
           <p>Default</p>
           <p>Container</p>
         </p>
-      </Field>,
-    );
+      </Field>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field classname with addons classname', () => {
@@ -61,8 +57,7 @@ describe('Field component', () => {
           <p>Default</p>
           <p>Container</p>
         </p>
-      </Field>,
-    );
+      </Field>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

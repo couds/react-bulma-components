@@ -16,24 +16,21 @@ describe('Level component', () => {
         <Level.Item>Item 1</Level.Item>
         <Level.Item>Item 2</Level.Item>
         <Level.Item>Item 3</Level.Item>
-      </Level>,
-    );
+      </Level>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Level className="other-class this-is-a-test">
         <p>Default</p>
-      </Level>,
-    );
+      </Level>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Level style={{ height: 250 }}>
         <p>Default</p>
-      </Level>,
-    );
+      </Level>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render Levels with right and left side', () => {
@@ -46,8 +43,7 @@ describe('Level component', () => {
         <Level.Side align="right">
           <Level.Item>Item 3</Level.Item>
         </Level.Side>
-      </Level>,
-    );
+      </Level>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -10,8 +10,7 @@ describe('Footer component', () => {
           <p>Default</p>
           <p>Container</p>
         </p>
-      </Footer>,
-    );
+      </Footer>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

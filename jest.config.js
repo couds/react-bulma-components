@@ -1,4 +1,5 @@
 module.exports = {
+  setupTestFrameworkScriptFile: './__test__/setup.js',
   rootDir: 'src',
   testMatch: ['**/*.test.js'],
   coverageDirectory: '<rootDir>/../.coverage',
@@ -11,10 +12,10 @@ module.exports = {
   coverageReporters: ['lcov', 'text', 'text-summary'],
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
     },
   },
   transform: {
@@ -22,5 +23,6 @@ module.exports = {
   },
   moduleNameMapper: {
     '\\.(css|less|s(c|a)ss)$': '<rootDir>/../__mocks__/style.js',
+    'services(.*)$': '<rootDir>/services$1',
   },
 };

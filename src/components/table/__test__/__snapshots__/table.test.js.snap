@@ -19,7 +19,9 @@ exports[`Table component Should have table classname 1`] = `
   style={Object {}}
 >
   Test 
-  <a>
+  <a
+    href="test"
+  >
     Give me
   </a>
 </table>

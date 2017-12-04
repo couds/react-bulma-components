@@ -49,7 +49,7 @@ class Image extends React.Component {
       alt,
     } = this.props;
 
-    let size = this.props.size;
+    let { size } = this.props;
 
     if (typeof size === 'number') {
       size = `${size}x${size}`;

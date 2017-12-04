@@ -5,7 +5,6 @@ exports[`Modal component Should Exist 1`] = `[Function]`;
 exports[`Modal component Should close the modal 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -33,7 +32,6 @@ exports[`Modal component Should close the modal 1`] = `
 exports[`Modal component Should close the modal if clicked on background 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -54,7 +52,6 @@ exports[`Modal component Should close the modal if clicked on background 1`] = `
 exports[`Modal component Should close the modal on ESC key press 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -94,7 +91,6 @@ exports[`Modal component Should expose Content and Card's types 6`] = `[Function
 exports[`Modal component Should no try to reopen if other prop change 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -115,7 +111,6 @@ exports[`Modal component Should no try to reopen if other prop change 1`] = `
 exports[`Modal component Should not close the modal if clicked on background 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -136,7 +131,6 @@ exports[`Modal component Should not close the modal if clicked on background 1`]
 exports[`Modal component Should not close the modal if clicked on background 2`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -157,7 +151,6 @@ exports[`Modal component Should not close the modal if clicked on background 2`]
 exports[`Modal component Should not close the modal on ESC key press 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -185,7 +178,6 @@ exports[`Modal component Should not close the modal on ESC key press 1`] = `
 exports[`Modal component Should not close the modal on other than ESC key press 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -223,7 +215,6 @@ exports[`Modal component Should not close the modal on other than ESC key press 
 exports[`Modal component Should not recreate DOM element to mount Modal if the element is passed down via props 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -244,7 +235,6 @@ exports[`Modal component Should not recreate DOM element to mount Modal if the e
 exports[`Modal component Should not show close button 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -261,7 +251,6 @@ exports[`Modal component Should not show close button 1`] = `
 exports[`Modal component Should open the modal 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"
@@ -289,7 +278,6 @@ exports[`Modal component Should open the modal 1`] = `
 exports[`Modal component Should render any child type 1`] = `
 <div
   class="modal is-active"
-  data-reactroot=""
 >
   <div
     class="modal-background"

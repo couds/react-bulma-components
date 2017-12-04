@@ -23,9 +23,6 @@ export default class Modal extends React.Component {
 
   static defaultProps = {
     closeOnEsc: true,
-    children: null,
-    className: '',
-    style: {},
     showClose: true,
     closeOnBlur: false,
     // Expose mount point for testing

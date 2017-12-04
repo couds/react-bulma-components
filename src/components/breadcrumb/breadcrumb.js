@@ -57,13 +57,11 @@ Breadcrumb.propTypes = {
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['right', 'center']),
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      active: PropTypes.bool,
-      name: PropTypes.node,
-    }),
-  ),
+  items: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+    name: PropTypes.node,
+  })),
   renderAs: PropTypes.oneOfType([
     PropTypes.oneOf(['a']),
     PropTypes.func,

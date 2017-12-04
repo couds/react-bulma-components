@@ -8,39 +8,27 @@ describe('Input component', () => {
     expect(Input).toMatchSnapshot();
   });
   it('Should have input classname', () => {
-    const component = renderer.create(
-      <Input />,
-    );
+    const component = renderer.create(<Input />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
-      <Input className="other-class this-is-a-test" />,
-    );
+    const component = renderer.create(<Input className="other-class this-is-a-test" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
-    const component = renderer.create(
-      <Input style={{ height: 250 }} />,
-    );
+    const component = renderer.create(<Input style={{ height: 250 }} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be type email and a with success colors', () => {
-    const component = renderer.create(
-      <Input color="success" type="email" />,
-    );
+    const component = renderer.create(<Input color="success" type="email" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be large and readOnly', () => {
-    const component = renderer.create(
-      <Input readOnly size="large" />,
-    );
+    const component = renderer.create(<Input readOnly size="large" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be disabled with placeholder and value', () => {
-    const component = renderer.create(
-      <Input value="TEST" disabled placeholder="hello tests" />,
-    );
+    const component = renderer.create(<Input value="TEST" disabled placeholder="hello tests" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use default event methods', () => {
@@ -48,9 +36,7 @@ describe('Input component', () => {
     const onChange = jest.spyOn(Input.defaultProps, 'onChange');
     const onFocus = jest.spyOn(Input.defaultProps, 'onFocus');
     const onBlur = jest.spyOn(Input.defaultProps, 'onBlur');
-    const component = shallow(
-      <Input value="TEST" disabled placeholder="hello tests" />,
-    );
+    const component = shallow(<Input value="TEST" disabled placeholder="hello tests" />);
 
     component.simulate('change');
     component.simulate('change');

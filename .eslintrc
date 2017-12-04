@@ -30,7 +30,11 @@
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
-    "jest/valid-expect": "error"
+    "jest/valid-expect": "error",
+    "jsx-a11y/click-events-have-key-events": 0,
+    "function-paren-newline": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "object-curly-newline": 0
   },
   "globals": {
     "document": true,

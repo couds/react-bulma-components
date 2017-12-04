@@ -7,6 +7,7 @@ import Dropdown from '..';
 describe('Dropdown component', () => {
   let window;
   beforeEach(() => {
+    // eslint-disable-next-line
     window = (new JSDOM('<body><div id="app-root"></div></body>')).window;
   });
   it('Should Exist', () => {
@@ -18,8 +19,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should add listener do document on mount', () => {
@@ -49,8 +49,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
@@ -59,8 +58,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should print error if value is passed but no onChange Handler', () => {
@@ -70,8 +68,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(global.console.error).toBeCalled();
     console.error.mockRestore();
   });
@@ -85,8 +82,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should open the Dropdown', () => {
@@ -99,8 +95,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(component.state('open')).toBe(false);
     component.find('.dropdown-trigger').simulate('click');
     expect(component.state('open')).toBe(true);
@@ -116,8 +111,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(component.state('open')).toBe(false);
     component.find('.dropdown-trigger').simulate('click', { preventDefault });
     expect(preventDefault).toHaveBeenCalled();
@@ -130,8 +124,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click');
     expect(onChange).toHaveBeenCalledWith('value');
@@ -143,8 +136,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click');
     expect(component.state('open')).toBe(false);
@@ -156,8 +148,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click', { path: [] });
     expect(component.state('open')).toBe(false);
@@ -169,8 +160,7 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>,
-    );
+      </Dropdown>);
     expect(global.console.error).not.toBeCalled();
     component.setProps({ value: 'other', onChange: () => {} });
     expect(global.console.error).not.toBeCalled();
