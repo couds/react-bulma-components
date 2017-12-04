@@ -1,60 +1,61 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import TagGroup from './tag-group';
+import TagGroup from './components/tag-group';
 import CONSTANTS from '../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Tag = ({
-  children,
-  className,
-  style,
-  color,
-  size,
-  rounded,
-  remove,
-  renderAs,
-}) => {
-  const Element = renderAs;
-  return (
-    <Element
-      style={style}
-      className={classnames('tag', className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-        'is-rounded': rounded,
-        'is-delete': remove,
-      })}
-    >
-      {!remove && children}
-    </Element>
-  );
-};
+export default class Tag extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    color: PropTypes.oneOf(colors),
+    size: PropTypes.oneOf(['medium', 'large']),
+    rounded: PropTypes.bool,
+    remove: PropTypes.bool,
+    renderAs: PropTypes.string,
+  }
 
-Tag.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['medium', 'large']),
-  rounded: PropTypes.bool,
-  remove: PropTypes.bool,
-  renderAs: PropTypes.string,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    color: null,
+    size: null,
+    rounded: false,
+    remove: false,
+    renderAs: 'span',
+  }
 
-Tag.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  color: null,
-  size: null,
-  rounded: false,
-  remove: false,
-  renderAs: 'span',
-};
+  static Group = TagGroup
 
-Tag.Group = TagGroup;
-
-export default Tag;
+  render() {
+    const {
+      children,
+      className,
+      style,
+      color,
+      size,
+      rounded,
+      remove,
+      renderAs,
+    } = this.props;
+    const Element = renderAs;
+    return (
+      <Element
+        style={style}
+        className={classnames('tag', className, {
+          [`is-${size}`]: size,
+          [`is-${color}`]: color,
+          'is-rounded': rounded,
+          'is-delete': remove,
+        })}
+      >
+        {!remove && children}
+      </Element>
+    );
+  }
+}
