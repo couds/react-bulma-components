@@ -1,39 +1,43 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Button from '../../../button';
 
-const ModalCardHead = ({
-  children,
-  className,
-  style,
-  showClose,
-  onClose,
-}) => (
-  <header
-    style={style}
-    className={classnames('modal-card-head', className)}
-  >
-    {children}
-    {showClose && <Button remove onClick={onClose} />}
-  </header>
-);
+export default class ModalCardHead extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    showClose: PropTypes.bool,
+    onClose: PropTypes.func,
+  }
 
-ModalCardHead.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  showClose: PropTypes.bool,
-  onClose: PropTypes.func,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+    showClose: true,
+    onClose: null,
+  }
 
-ModalCardHead.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-  showClose: true,
-  onClose: null,
-};
+  render() {
+    const {
+      children,
+      className,
+      style,
+      showClose,
+      onClose,
+    } = this.props;
 
-export default ModalCardHead;
+    return (
+      <header
+        style={style}
+        className={classnames('modal-card-head', className)}
+      >
+        {children}
+        {showClose && <Button remove onClick={onClose} />}
+      </header>
+    );
+  }
+}

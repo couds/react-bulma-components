@@ -1,30 +1,33 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const ModalCardBody = ({
-  children,
-  className,
-  style,
-}) => (
-  <section
-    style={style}
-    className={classnames('modal-card-body', className)}
-  >
-    {children}
-  </section>
-);
+export default class ModalCardBody extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+  }
 
-ModalCardBody.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+  }
 
-ModalCardBody.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-};
-
-export default ModalCardBody;
+  render() {
+    const {
+      children,
+      className,
+      style,
+    } = this.props;
+    return (
+      <section
+        style={style}
+        className={classnames('modal-card-body', className)}
+      >
+        {children}
+      </section>
+    );
+  }
+}
