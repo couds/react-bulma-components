@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-class Image extends React.Component {
+export default class Image extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     src: PropTypes.string,
@@ -67,5 +67,3 @@ class Image extends React.Component {
     );
   }
 }
-
-export default Image;
