@@ -2,26 +2,22 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import MediaItem from './components/media-item';
-import MediaContent from './components/media-content';
-
-export default class Media extends PureComponent {
+export default class MediaItem extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
     renderAs: PropTypes.string,
+    position: PropTypes.oneOf(['center', 'right', 'left']),
   }
 
   static defaultProps = {
     children: null,
     className: '',
     style: {},
-    renderAs: 'article',
+    renderAs: 'div',
+    position: 'center',
   }
-
-  static Item = MediaItem
-  static Content = MediaContent
 
   render() {
     const {
@@ -29,13 +25,19 @@ export default class Media extends PureComponent {
       className,
       style,
       renderAs,
+      ...props
     } = this.props;
 
     const Element = renderAs;
+    let { position } = props;
+    if (position === 'center') {
+      position = 'content';
+    }
     return (
       <Element
         style={style}
-        className={classnames('media', className, {
+        className={classnames(className, {
+          [`media-${position}`]: position,
         })}
       >
         {children}

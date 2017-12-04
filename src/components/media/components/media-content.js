@@ -2,10 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import MediaItem from './components/media-item';
-import MediaContent from './components/media-content';
-
-export default class Media extends PureComponent {
+export default class MediaContent extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -17,11 +14,8 @@ export default class Media extends PureComponent {
     children: null,
     className: '',
     style: {},
-    renderAs: 'article',
+    renderAs: 'div',
   }
-
-  static Item = MediaItem
-  static Content = MediaContent
 
   render() {
     const {
@@ -35,8 +29,7 @@ export default class Media extends PureComponent {
     return (
       <Element
         style={style}
-        className={classnames('media', className, {
-        })}
+        className={classnames(className, 'content')}
       >
         {children}
       </Element>
