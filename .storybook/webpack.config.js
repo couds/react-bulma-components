@@ -18,6 +18,10 @@ module.exports = {
         test: /\.s(c|a)ss$/,
         loader: 'style-loader!css-loader!sass-loader',
       },
+      {
+        test: /\.md$/,
+        use: "raw-loader"
+      }
     ],
   },
   resolve: {

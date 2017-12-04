@@ -2,6 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme, withDocs } from 'storybook-readme';
+import readme from './readme.md';
 
 import Box from '.';
 import Media from '../media';
@@ -14,7 +16,8 @@ storiesOf('Box', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo('Box Implementation')(() => (
+  .addDecorator((story, context) => withInfo('common info')(story)(context))
+  .add('Default', withReadme(readme, () => (
     <Box>
       <Media>
         <Media.Item renderAs="figure" position="left">
