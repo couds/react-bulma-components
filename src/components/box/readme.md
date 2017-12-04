@@ -18,7 +18,7 @@ For example, you can include a media object, Level or any other elements.
 
 |property|propType|required|default|description|
 |---|---|---|---|---|
-|children|node|no|`null`||
-|className|	string|	no|||
-|style|	object|	no|	`{}`||
-|renderAs|	string|	no|div||
+|children|`node`|no|`null`||
+|className|	`string`|	no|||
+|style|	`object`|	no|	`{}`||
+|renderAs|`string` or `ReactElement`|	no|`div`||

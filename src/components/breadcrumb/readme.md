@@ -30,11 +30,11 @@ A simple breadcrumb component to improve your navigation experience ([Bulma docs
 
 |property|propType|required|default|description|
 |--- |--- |--- |--- |--- |
-|className|string|no|||
-|style|object|no|`{}`||
-|separator|enum `['arrow', 'bullet', 'dot', 'succeeds']`|no|`null`||
-|size|enum `['small', 'medium', 'large']`|no|`null`||
-|align|enum `['right', 'center']`|no|`null`||
-|items|Array of `[{ name: String, url: String, active: Bool }]`|no|`[]`||
-|renderAs|no|`a`|||
-|hrefAttr|string|no|`null`| If renderAs is differenct to `a` specify the href attribute of the element (ex: `to` for the `Link` element of react-router)
+|className|`string`|no|||
+|style|`object`|no|`{}`||
+|separator|`enum` `['arrow', 'bullet', 'dot', 'succeeds']`|no|`null`||
+|size|`enum` `['small', 'medium', 'large']`|no|`null`||
+|align|`enum` `['right', 'center']`|no|`null`||
+|items|`Array` of `[{ name: String, url: String, active: Bool }]`|no|`[]`||
+|renderAs|`string` or `ReactElement`|no|`a`|||
+|hrefAttr|`string`|no|`null`| If renderAs is differenct to `a` specify the href attribute of the element (ex: `to` for the `Link` element of react-router)

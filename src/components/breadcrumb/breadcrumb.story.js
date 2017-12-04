@@ -24,23 +24,23 @@ storiesOf('Breadcrumb', module)
       <Section>
         <Breadcrumb
           separator={select('Separator', {
-            undefined: 'Default',
+            '': 'Default',
             arrow: 'Arrow',
             bullet: 'Bullet',
             dot: 'Dot',
             succeeds: 'Succeeds',
-          }, undefined)}
+          }, '')}
           align={select('Align', {
-            undefined: 'Default',
+            '': 'Default',
             right: 'Right',
             center: 'Center',
-          }, undefined)}
+          }, '')}
           size={select('Size', {
-            undefined: 'Default',
+            '': 'Default',
             small: 'Small',
             medium: 'Medium',
             large: 'Large',
-          }, undefined)}
+          }, '')}
           items={object('items', [
             {
               name: 'Storybook',

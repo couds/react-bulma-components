@@ -6,9 +6,9 @@ export default class Breadcrumb extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
-    separator: PropTypes.oneOf([null, 'arrow', 'bullet', 'dot', 'succeeds']),
-    size: PropTypes.oneOf([null, 'small', 'medium', 'large']),
-    align: PropTypes.oneOf([null, 'right', 'center']),
+    separator: PropTypes.oneOf(['', 'arrow', 'bullet', 'dot', 'succeeds']),
+    size: PropTypes.oneOf(['', 'small', 'medium', 'large']),
+    align: PropTypes.oneOf(['', 'right', 'center']),
     items: PropTypes.arrayOf(PropTypes.shape({
       url: PropTypes.string.isRequired,
       active: PropTypes.bool,

@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import Button from '.';
 import Section from '../section';
@@ -27,76 +30,46 @@ storiesOf('Button', module)
       {story()}
     </div>
   ))
-  .add('By Colors', withInfo('Buttons implmentation')(() => (
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
     <Section>
       <Box>
-        <Button>
-        Normal
-        </Button>
-        <Button color="primary">
-        Primary
-        </Button>
-        <Button color="info">
-        Info
-        </Button>
-        <Button color="danger">
-        Danger
-        </Button>
-        <Button color="warning">
-        Warning
-        </Button>
-        <Button color="success">
-        Success
-        </Button>
-        <Button color="white">
-        White
-        </Button>
-        <Button color="light">
-        Light
-        </Button>
-        <Button color="dark">
-        Dark
-        </Button>
-        <Button color="black">
-        Black
-        </Button>
-      </Box>
-    </Section>
-  )))
-  .add('Other Styles', withInfo('Other buttons styles')(() => (
-    <Section>
-      <Box>
-        <Button fullwidth color="primary">
-          Full Width
-        </Button>
-        <Button loading color="info">
-          Loading
-        </Button>
-        <Button outlined color="danger">
-          Warning Outlined
-        </Button>
-        <Button inverted color="success">
-          Success Inverted
-        </Button>
-        <Button disabled color="info">
-          Disabled
-        </Button>
-        <Button link href="http://google.com">
-          Link
-        </Button>
-        <Button renderAs={Link} hrefAttr="to" color="primary" href="http://google.com">
-          Custom component
-        </Button>
-
-        <Button remove />
-        <div style={{
- background: '#4c4c4c', padding: 20, width: 200, margin: 10, display: 'flex', alignItems: 'center', justifyContent: 'center',
-}}
+        <Button
+          color={select('Color', {
+            '': 'default',
+            primary: 'primary',
+            success: 'success',
+            info: 'info',
+            warning: 'warning',
+            danger: 'danger',
+            light: 'light',
+            dark: 'dark',
+            white: 'white',
+            black: 'black',
+          }, '')}
+          state={select('State', {
+            '': 'default',
+            hovered: 'hovered',
+            focused: 'focused',
+            active: 'active',
+          }, '')}
+          size={select('Size', {
+            '': 'Default',
+            small: 'Small',
+            medium: 'Medium',
+            large: 'Large',
+          }, '')}
+          outlined={boolean('Outlined', false)}
+          inverted={boolean('Inverted', false)}
+          fullwidth={boolean('FullWidth', false)}
+          disabled={boolean('Disabled', false)}
+          remove={boolean('Remove', false)}
+          isStatic={boolean('Static', false)}
+          loading={boolean('Loading', false)}
         >
-          <Button inverted outlined type="success">
-          Inverted Outlined
-          </Button>
-        </div>
+          Text of the Button
+        </Button>
       </Box>
     </Section>
   )));

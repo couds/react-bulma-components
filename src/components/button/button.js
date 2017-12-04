@@ -3,32 +3,80 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Button extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string,
-    href: PropTypes.string,
-    hrefAttr: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * Other classes this component will have
+     */
+    className: PropTypes.string,
+    /**
+     * Is button is a link the url where this link goes
+     */
+    href: PropTypes.string,
+    /**
+     * if the element is a link different but is not a html
+     * anchor the equivalent attibute of the href
+     * (ex: For `Link` component from react-router this attribute need to be set to `To`)
+     */
+    hrefAttr: PropTypes.string,
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: PropTypes.oneOfType([
       PropTypes.oneOf(['a', 'button']),
       PropTypes.func,
     ]),
-    onClick: PropTypes.func,
+    /**
+     * The color of button using the classes from Bulma
+     */
     color: PropTypes.oneOf(colors),
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
-    state: PropTypes.oneOf(['hover', 'focus', 'active', 'loading']),
+    /**
+     * The size of button using the classes from Bulma
+     */
+    size: PropTypes.oneOf(['', 'small', 'medium', 'large']),
+    /**
+     * The state of button using the classes from Bulma
+     */
+    state: PropTypes.oneOf(['', 'hovered', 'focused', 'active']),
+    /**
+     * Is the button should be outlined
+     */
     outlined: PropTypes.bool,
+    /**
+     * Is the button should be inverted
+     */
     inverted: PropTypes.bool,
+    /**
+     * Is the button is a from submit button
+     */
     submit: PropTypes.bool,
+    /**
+     * Is the button is a from reset button
+     */
     reset: PropTypes.bool,
+    /**
+     * Is the button should be displayed as loading
+     */
     loading: PropTypes.bool,
+    /**
+     * Is the button should be full width
+     */
     fullwidth: PropTypes.bool,
+    /**
+     * Is the button should be disabled
+     */
     disabled: PropTypes.bool,
+    /**
+     * Is the button should be a remove button
+     */
     remove: PropTypes.bool,
-    link: PropTypes.bool,
+    /**
+     * Is the button should be an static element (`span`)
+     */
     isStatic: PropTypes.bool,
   }
 
@@ -36,14 +84,12 @@ export default class Button extends PureComponent {
     children: null,
     className: '',
     href: '',
-    hrefAttr: '',
+    hrefAttr: 'href',
     style: {},
     renderAs: 'a',
-    onClick: () => null,
-    color: null,
-    link: false,
-    size: null,
-    state: null,
+    color: undefined,
+    size: undefined,
+    state: undefined,
     outlined: false,
     inverted: false,
     submit: false,
@@ -61,7 +107,6 @@ export default class Button extends PureComponent {
       className,
       style,
       renderAs,
-      onClick,
       color,
       size,
       outlined,
@@ -73,20 +118,15 @@ export default class Button extends PureComponent {
       loading,
       disabled,
       remove,
-      link,
       href,
       hrefAttr,
       isStatic,
       ...props
     } = this.props;
     let Element = isStatic ? 'span' : renderAs;
-    const otherProps = {};
-    if (href) {
-      otherProps[renderAs === 'a' ? 'href' : hrefAttr] = href;
-      if (renderAs !== 'a' && !hrefAttr) {
-        console.error('warning: if renderAs is different the anchor (a), hrefAttr is required. Check Button props');
-      }
-    }
+    const otherProps = {
+      [hrefAttr]: href,
+    };
     if (submit) {
       Element = 'input';
       otherProps.type = 'submit';
@@ -102,9 +142,7 @@ export default class Button extends PureComponent {
         {...otherProps}
         style={style}
         disabled={disabled}
-        onClick={onClick}
         className={classnames(className, {
-          'is-link': link,
           [`is-${color}`]: color,
           [`is-${size}`]: size,
           [`is-${state}`]: state,
