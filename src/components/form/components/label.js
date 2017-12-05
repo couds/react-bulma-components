@@ -7,7 +7,13 @@ export default class Label extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * Equivalent to the `for` html label attribute
+     */
     htmlFor: PropTypes.string,
+    /**
+     * The size of button using the classes from Bulma
+     */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
   }
 

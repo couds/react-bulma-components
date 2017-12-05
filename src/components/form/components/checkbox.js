@@ -10,8 +10,17 @@ export default class Checkbox extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * True if this checkbox is disabled
+     */
     disabled: PropTypes.bool,
+    /**
+     * The form value of this checkbox
+     */
     value: PropTypes.string,
+    /**
+     * True if this checkbox is checked
+     */
     checked: PropTypes.bool,
     /**
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)

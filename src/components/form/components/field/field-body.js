@@ -8,6 +8,9 @@ export default class FieldBody extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: PropTypes.string,
   }
 

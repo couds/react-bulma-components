@@ -8,7 +8,13 @@ export default class FieldLabel extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: PropTypes.string,
+    /**
+     * The size of button using the classes from Bulma
+     */
     size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
   }
 

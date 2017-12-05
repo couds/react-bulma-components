@@ -13,12 +13,30 @@ export default class Select extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * The size of button using the classes from Bulma
+     */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    /**
+     * The color of button using the classes from Bulma
+     */
     color: PropTypes.oneOf(colors),
+    /**
+     * True if this element is read-only
+     */
     readOnly: PropTypes.bool,
+    /**
+     * True disable this element
+     */
     disabled: PropTypes.bool,
+    /**
+     * Tru to allow multiple selection
+     */
     multiple: PropTypes.bool,
-    value: PropTypes.string,
+    /**
+     * The value of the element field
+     */
+    value: PropTypes.any,
     /**
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */

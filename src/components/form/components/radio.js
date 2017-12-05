@@ -8,13 +8,23 @@ export default class Radio extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    style: PropTypes.object,
     /**
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
     name: PropTypes.string.isRequired,
-    style: PropTypes.object,
+    /**
+     * True disable this input
+     */
     disabled: PropTypes.bool,
+    /**
+     * True if this checkbox is checked
+     */
     checked: PropTypes.bool,
+    /**
+     * The form value of this radio button
+     */
+    value: PropTypes.any,
     ...events.propTypes,
   }
 
