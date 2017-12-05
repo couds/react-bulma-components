@@ -9,13 +9,6 @@ import readme from './readme.md';
 import Section from '../section';
 import Breadcrumb from '.';
 
-/* eslint-disable react/prop-types */
-const Anchor = ({
-  children,
-  ...props
-}) => (<a className="Others" {...props} >{children}</a>);
-/* eslint-enable react/prop-types */
-
 storiesOf('Breadcrumb', module)
   .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator(withKnobs)
