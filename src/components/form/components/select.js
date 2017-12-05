@@ -19,6 +19,10 @@ export default class Select extends PureComponent {
     disabled: PropTypes.bool,
     multiple: PropTypes.bool,
     value: PropTypes.string,
+    /**
+     * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+     */
+    name: PropTypes.string,
     ...events.propTypes,
   }
 
@@ -32,6 +36,7 @@ export default class Select extends PureComponent {
     readOnly: false,
     disabled: false,
     multiple: false,
+    name: null,
     ...events.defaultProps,
   }
 
@@ -46,6 +51,7 @@ export default class Select extends PureComponent {
       value,
       multiple,
       children,
+      name,
       ...props
     } = this.props;
     return (
@@ -63,6 +69,7 @@ export default class Select extends PureComponent {
           value={value}
           readOnly={readOnly}
           disabled={disabled}
+          name={name}
         >
           {children}
         </select>

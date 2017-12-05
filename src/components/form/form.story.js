@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
@@ -55,7 +55,6 @@ class RadioGroup extends React.Component {
   }
 
   onChange = (evt) => {
-    console.log('new value', evt.target.value);
     this.setState({
       selected: evt.target.value,
     });
@@ -155,4 +154,98 @@ storiesOf('Form', module)
         </Control>
       </Field>
     </div>
-  )));
+  )))
+  .add('Handle Multiple inputs', withInfo({
+    text: `
+    Check [React Docs](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+    `,
+    source: false,
+    propTables: [],
+  })(() => {
+    /* eslint-disable react/no-multi-comp */
+    class MultiInputHandler extends PureComponent {
+      state = {
+        email: '',
+        name: '',
+        password: '',
+        comment: '',
+        gender: '',
+        question: null,
+        termsAccepted: false,
+      }
+
+      onChange = (evt) => {
+        const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
+        this.setState({
+          [evt.target.name]: value,
+        });
+      }
+
+      render() {
+        const { email, name, password, comment, gender, question, termsAccepted } = this.state;
+        return (
+          <div>
+            <Field>
+              <Label>Email</Label>
+              <Control>
+                <Input onChange={this.onChange} name="email" type="email" placeholder="Email input" value={email} />
+              </Control>
+            </Field>
+            <Field>
+              <Label>Name</Label>
+              <Control>
+                <Input onChange={this.onChange} name="name" type="text" placeholder="Name input" value={name} />
+              </Control>
+            </Field>
+            <Field>
+              <Label>Password</Label>
+              <Control>
+                <Input onChange={this.onChange} name="password" type="password" placeholder="Password" value={password} />
+              </Control>
+            </Field>
+            <Field>
+              <Label>Gender</Label>
+              <Control>
+                <Select onChange={this.onChange} name="gender" value={gender}>
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other?</option>
+                </Select>
+              </Control>
+            </Field>
+            <Field>
+              <Label>Message</Label>
+              <Control>
+                <Textarea name="comment" value={comment} onChange={this.onChange} placeholder="Textarea" />
+              </Control>
+            </Field>
+            <Field>
+              <Label>Do you undertood how to use me?</Label>
+              <Control>
+                <Radio onChange={this.onChange} checked={question === 'Yes'} value="Yes" name="question">
+                  Yes
+                </Radio>
+                <Radio onChange={this.onChange} checked={question === 'No'} value="No" name="question" >
+                  No
+                </Radio>
+              </Control>
+            </Field>
+            <Field>
+              <Control>
+                <Checkbox name="termsAccepted" onChange={this.onChange} checked={termsAccepted}>
+                  I agree to the <a href="#agree">terms and conditions</a>
+                </Checkbox>
+              </Control>
+            </Field>
+            <pre>
+              <code>
+                {JSON.stringify(this.state, null, 2)}
+              </code>
+            </pre>
+          </div>
+        );
+      }
+    }
+    return <MultiInputHandler />;
+  }));

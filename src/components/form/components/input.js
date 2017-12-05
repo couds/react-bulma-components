@@ -19,6 +19,10 @@ export default class Input extends PureComponent {
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
     value: PropTypes.string,
+    /**
+     * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+     */
+    name: PropTypes.string,
     ...events.propTypes,
   }
 
@@ -33,6 +37,7 @@ export default class Input extends PureComponent {
     isStatic: false,
     disabled: false,
     placeholder: '',
+    name: null,
     ...events.defaultProps,
   }
 
@@ -48,11 +53,13 @@ export default class Input extends PureComponent {
       disabled,
       placeholder,
       value,
+      name,
       ...props
     } = this.props;
     return (
       <input
         {...events.props(props)}
+        name={name}
         value={value}
         style={style}
         type={type}
