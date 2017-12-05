@@ -13,6 +13,10 @@ export default class Checkbox extends PureComponent {
     disabled: PropTypes.bool,
     value: PropTypes.string,
     checked: PropTypes.bool,
+    /**
+     * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+     */
+    name: PropTypes.string,
     ...events.propTypes,
   }
 
@@ -23,6 +27,7 @@ export default class Checkbox extends PureComponent {
     style: {},
     disabled: false,
     checked: false,
+    name: null,
     ...events.defaultProps,
   }
 
@@ -34,6 +39,7 @@ export default class Checkbox extends PureComponent {
       value,
       children,
       checked,
+      name,
       ...props
     } = this.props;
     return (
@@ -44,6 +50,7 @@ export default class Checkbox extends PureComponent {
       >
         <input
           {...events.props(props)}
+          name={name}
           type="checkbox"
           value={value}
           disabled={disabled}

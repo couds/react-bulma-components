@@ -4,6 +4,7 @@ exports[`Input component Should be disabled with placeholder and value 1`] = `
 <input
   className="input"
   disabled={true}
+  name={null}
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -20,6 +21,7 @@ exports[`Input component Should be large and readOnly 1`] = `
 <input
   className="input is-large"
   disabled={false}
+  name={null}
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -36,6 +38,7 @@ exports[`Input component Should be type email and a with success colors 1`] = `
 <input
   className="input is-success"
   disabled={false}
+  name={null}
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -52,6 +55,7 @@ exports[`Input component Should concat classname in props with Bulma classname 1
 <input
   className="input other-class this-is-a-test"
   disabled={false}
+  name={null}
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -70,6 +74,7 @@ exports[`Input component Should have input classname 1`] = `
 <input
   className="input"
   disabled={false}
+  name={null}
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -86,6 +91,7 @@ exports[`Input component Should use inline styles 1`] = `
 <input
   className="input"
   disabled={false}
+  name={null}
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}

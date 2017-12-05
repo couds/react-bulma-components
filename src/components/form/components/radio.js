@@ -8,6 +8,9 @@ export default class Radio extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    /**
+     * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+     */
     name: PropTypes.string.isRequired,
     style: PropTypes.object,
     disabled: PropTypes.bool,

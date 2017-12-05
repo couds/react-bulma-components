@@ -4,6 +4,7 @@ exports[`Textarea component Should be disabled with placeholder and value 1`] = 
 <textarea
   className="textarea"
   disabled={true}
+  name=""
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -20,6 +21,7 @@ exports[`Textarea component Should be large with 10 rows and readOnly 1`] = `
 <textarea
   className="textarea is-large"
   disabled={false}
+  name=""
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -36,6 +38,7 @@ exports[`Textarea component Should concat classname in props with Bulma classnam
 <textarea
   className="textarea other-class this-is-a-test"
   disabled={false}
+  name=""
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -54,6 +57,7 @@ exports[`Textarea component Should have textarea classname 1`] = `
 <textarea
   className="textarea"
   disabled={false}
+  name=""
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
@@ -70,6 +74,7 @@ exports[`Textarea component Should use inline styles 1`] = `
 <textarea
   className="textarea"
   disabled={false}
+  name=""
   onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}

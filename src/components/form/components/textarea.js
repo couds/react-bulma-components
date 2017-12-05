@@ -19,6 +19,10 @@ export default class Textarea extends PureComponent {
     placeholder: PropTypes.string,
     rows: PropTypes.number,
     value: PropTypes.string,
+    /**
+     * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+     */
+    name: PropTypes.string,
     ...events.propTypes,
   }
 
@@ -32,6 +36,7 @@ export default class Textarea extends PureComponent {
     placeholder: '',
     rows: 4,
     value: '',
+    name: '',
     ...events.defaultProps,
   }
 
@@ -46,10 +51,12 @@ export default class Textarea extends PureComponent {
       placeholder,
       rows,
       value,
+      name,
       ...props
     } = this.props;
     return (
       <textarea
+        name={name}
         {...events.props(props)}
         value={value}
         rows={rows}
