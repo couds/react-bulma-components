@@ -15,8 +15,17 @@ export default class Hero extends PureComponent {
     className: PropTypes.string,
     style: PropTypes.object,
     renderAs: PropTypes.string,
+    /**
+     * The color of the element using the classes from Bulma
+     */
     color: PropTypes.oneOf(colors),
+    /**
+     * **Experimental**: True to use gradient
+     */
     gradient: PropTypes.bool,
+    /**
+     * Size of the element using the bulma classes
+     */
     size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
   }
 
