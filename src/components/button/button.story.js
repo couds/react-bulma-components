@@ -47,6 +47,7 @@ storiesOf('Button', module)
             dark: 'dark',
             white: 'white',
             black: 'black',
+            link: 'link',
           }, '')}
           state={select('State', {
             '': 'default',

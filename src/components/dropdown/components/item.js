@@ -4,9 +4,18 @@ import classnames from 'classnames';
 
 export default class DropdownItem extends PureComponent {
   static propTypes = {
+    /**
+     * @ignore
+     */
     active: PropTypes.bool,
     children: PropTypes.node,
+    /**
+     * Value of this item
+     */
     value: PropTypes.any.isRequired,
+    /**
+     * @ignore
+     */
     onClick: PropTypes.func,
   }
 

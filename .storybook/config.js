@@ -1,7 +1,7 @@
 import { configure, setAddon } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
-console.log('set Options', setOptions);
+import '../src';
 
 setOptions({
   name: 'React Bulma Components',
