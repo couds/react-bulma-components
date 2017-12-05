@@ -18,8 +18,8 @@ export default class Button extends PureComponent {
      */
     href: PropTypes.string,
     /**
-     * if the element is a link different but is not a html
-     * anchor the equivalent attibute of the href
+     * if the element is not an `a` html anchor the
+     * value needs to be equivalent attribute of the href
      * (ex: For `Link` component from react-router this attribute need to be set to `To`)
      */
     hrefAttr: PropTypes.string,

@@ -22,11 +22,11 @@ The classic button, in different colors, sizes, and states ([Bulma docs](https:/
 |style|`object`|no|`{}`|||
 |className|`string`|no|||Other classes this component will have|
 |href|`string`|no|||Is button is a link the url where this link goes|
-|hrefAttr|`string`|no|||if the element is a link different but is not a html anchor the equivalent attibute of the href (ex: For `Link` component from react-router this attribute need to be set to `To`)|
+|hrefAttr|`string`|no|||if the element is not an `a` html anchor the value needs to be equivalent attribute of the href (ex: For `Link` component from react-router this attribute need to be set to `To`)|
 |renderAs|`string` or `ReactElement`|no|`a`||the Html or React element you want to use to render this component|
-|color|`enum ['primary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'white', 'black', 'link']`|no|`null`|`['is-primary', 'is-success', 'is-info', 'is-warning', 'is-danger', 'is-light', 'is-dark', 'is-white', 'is-black', 'is-link']`|The color of button using the classes from Bulma|
-|size|`enum ['small', 'medium', 'large']`|no|`null`|`['is-small', 'is-medium', 'is-large']`|The size of button using the classes from Bulma|
-|state|`enum ['hovered', 'focused', 'active']`|no|`null`|`['is-hovered', 'is-focused', 'is-active']`|The state of button using the classes from Bulma|
+|color|`enum ['primary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'white', 'black', 'link']`|no|`null`|`is-primary`, `is-success`, `is-info`, `is-warning`, `is-danger`, `is-light`, `is-dark`, `is-white`, `is-black`, `is-link`|The color of button using the classes from Bulma|
+|size|`enum ['small', 'medium', 'large']`|no|`null`|`is-small`, `is-medium`, `is-large`|The size of button using the classes from Bulma|
+|state|`enum ['hovered', 'focused', 'active']`|no|`null`|`is-hovered`, `is-focused`, `is-active`|The state of button using the classes from Bulma|
 |outlined|`bool`|no|`false`|`is-outlined`|Is the button should be outlined|
 |inverted|`bool`|no|`false`|`is-inverted`|Is the button should be inverted|
 |submit|`bool`|no|`false`||Is the button is a from submit button|
