@@ -2,6 +2,9 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import Footer from '.';
 import Container from '../container';
@@ -9,7 +12,9 @@ import Content from '../content';
 import Hero from '../hero';
 
 storiesOf('Footer', module)
-  .add('Default', withInfo()(() => (
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
     <Hero size="fullheight">
       <Hero.Head renderAs="header" />
       <Hero.Body />

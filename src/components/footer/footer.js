@@ -14,6 +14,9 @@ export default class Footer extends PureComponent {
     children: null,
     className: '',
     style: {},
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: 'div',
   }
 
