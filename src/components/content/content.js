@@ -7,7 +7,13 @@ export default class Content extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * Size of the Content using the bulma classes
+     */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: PropTypes.string,
   }
 
