@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from '.';
 import Button from '../button';
@@ -83,7 +86,9 @@ storiesOf('Form', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
     <div>
       <Field>
         <Label>Name</Label>
@@ -155,13 +160,7 @@ storiesOf('Form', module)
       </Field>
     </div>
   )))
-  .add('Handle Multiple inputs', withInfo({
-    text: `
-    Check [React Docs](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-    `,
-    source: false,
-    propTables: [],
-  })(() => {
+  .add('Handle Multiple inputs', withReadme(readme, () => {
     /* eslint-disable react/no-multi-comp */
     class MultiInputHandler extends PureComponent {
       state = {
@@ -170,19 +169,37 @@ storiesOf('Form', module)
         password: '',
         comment: '',
         gender: '',
+        framework: [],
         question: null,
         termsAccepted: false,
       }
 
-      onChange = (evt) => {
-        const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
+      onChange = ({ target }) => {
+        let value = target.type === 'checkbox' ? target.checked : target.value;
+        // TODO: BUGGY
+        if (target.multiple) {
+          const oldValues = this.state[target.name];
+          if (oldValues.includes(target.value)) {
+            value = oldValues.filter(x => x !== target.value);
+          } else {
+            value = oldValues.concat([target.value]);
+          }
+        }
         this.setState({
-          [evt.target.name]: value,
+          [target.name]: value,
         });
       }
 
       render() {
-        const { email, name, password, comment, gender, question, termsAccepted } = this.state;
+        const { email,
+          name,
+          password,
+          comment,
+          gender,
+          question,
+          termsAccepted,
+          framework,
+        } = this.state;
         return (
           <div>
             <Field>
@@ -211,6 +228,17 @@ storiesOf('Form', module)
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other?</option>
+                </Select>
+              </Control>
+            </Field>
+            <Field>
+              <Label>Which framekworks are you using?</Label>
+              <Control>
+                <Select multiple onChange={this.onChange} name="framework" value={framework}>
+                  <option>React</option>
+                  <option>Vue</option>
+                  <option>Angula</option>
+                  <option>Other.. Why??</option>
                 </Select>
               </Control>
             </Field>

@@ -4,7 +4,7 @@ exports[`Button component Should be a Large Primary Button 1`] = `
 <a
   className="is-primary is-large button"
   disabled={false}
-  onClick={[Function]}
+  href=""
   style={Object {}}
 />
 `;
@@ -13,7 +13,7 @@ exports[`Button component Should be a Primary Button 1`] = `
 <a
   className="is-primary button"
   disabled={false}
-  onClick={[Function]}
+  href=""
   style={Object {}}
 />
 `;
@@ -23,7 +23,6 @@ exports[`Button component Should be a default Button 1`] = `
   className="button"
   disabled={false}
   href="http://google.com"
-  onClick={[Function]}
   style={Object {}}
 />
 `;
@@ -32,7 +31,7 @@ exports[`Button component Should be a reset form button 1`] = `
 <input
   className="button"
   disabled={false}
-  onClick={[Function]}
+  href=""
   style={Object {}}
   type="reset"
 />
@@ -42,7 +41,7 @@ exports[`Button component Should be a submit form button 1`] = `
 <input
   className="button"
   disabled={false}
-  onClick={[Function]}
+  href=""
   style={Object {}}
   type="submit"
 />
@@ -60,7 +59,7 @@ exports[`Button component Should render as a html button 1`] = `
 <button
   className="is-danger button"
   disabled={false}
-  onClick={[Function]}
+  href=""
   style={Object {}}
 />
 `;
@@ -69,7 +68,7 @@ exports[`Button component Should render as a static Button 1`] = `
 <span
   className="is-primary button"
   disabled={false}
-  onClick={[Function]}
+  href=""
   style={Object {}}
 />
 `;
@@ -78,7 +77,7 @@ exports[`Button component Should render be disabled 1`] = `
 <a
   className="button"
   disabled={true}
-  onClick={[Function]}
+  href=""
   style={Object {}}
 />
 `;

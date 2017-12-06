@@ -2,6 +2,9 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs, number } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import Heading from '.';
 import Box from '../box';
@@ -12,46 +15,30 @@ storiesOf('Heading', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
     <div>
       <Box>
-        <Heading>
+        <Heading size={number('Title', 4, {
+          range: true,
+          min: 1,
+          max: 6,
+          step: 1,
+        })}
+        >
           Title
         </Heading>
-        <Heading subtitle size={6}>
+        <Heading
+          subtitle
+          size={number('Subtitle', 6, {
+            range: true,
+            min: 1,
+            max: 6,
+            step: 1,
+          })}
+        >
           Subtitle
-        </Heading>
-      </Box>
-      <Box>
-        <Heading size={1}>
-          Title
-        </Heading>
-        <Heading subtitle size={3}>
-          Subtitle
-        </Heading>
-      </Box>
-      <Box>
-        <Heading size={2}>
-          Title
-        </Heading>
-        <Heading subtitle size={4}>
-          Subtitle
-        </Heading>
-      </Box>
-      <Box>
-        <Heading size={3}>
-          Title
-        </Heading>
-        <Heading subtitle size={5}>
-          Subtitle
-        </Heading>
-      </Box>
-      <Box>
-        <Heading size={4}>
-          Title
-        </Heading>
-        <Heading subtitle size={6}>
-          Title
         </Heading>
       </Box>
     </div>

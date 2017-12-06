@@ -11,10 +11,25 @@ export default class Field extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: PropTypes.string,
+    /**
+     * Alignment of the breadcrumb, by default is Left
+     */
     align: PropTypes.oneOf(['centered', 'right']),
+    /**
+     * Type of field (see Bulma Field)
+     */
     kind: PropTypes.oneOf(['addons', 'group']),
+    /**
+     * True if is a multiline field
+     */
     multiline: PropTypes.bool,
+    /**
+     * True if you are building a horizontal form
+     */
     horizontal: PropTypes.bool,
   };
 

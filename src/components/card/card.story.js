@@ -2,6 +2,9 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import Card from '.';
 import Media from '../media';
@@ -15,7 +18,9 @@ storiesOf('Card', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
     <Card>
       <Card type="image" size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
       <Card type="content">
@@ -38,7 +43,7 @@ storiesOf('Card', module)
       </Card>
     </Card>
   )))
-  .add('With Footer actions', withInfo()(() => (
+  .add('With Footer actions', withReadme(readme, () => (
     <Card>
       <Card type="header">
         <Card type="header-title">Title</Card>

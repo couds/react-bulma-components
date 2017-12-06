@@ -12,13 +12,28 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 
 export default class Dropdown extends PureComponent {
   static propTypes = {
+    children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
-    children: PropTypes.node,
+    /**
+     * Currently selected value of the dropdown
+     */
     value: PropTypes.any,
+    /**
+     * Function that will be called when the selected value change
+     */
     onChange: PropTypes.func,
+    /**
+     * The color of dropdown using the classes from Bulma
+     */
     color: PropTypes.oneOf(colors),
+    /**
+     * Alignment of the Dropdown, by default is Left
+     */
     align: PropTypes.oneOf(['right']),
+    /**
+     * True if you want to open the dropdown on mouse hover
+     */
     hoverable: PropTypes.bool,
   }
 

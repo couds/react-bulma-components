@@ -8,11 +8,20 @@ const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => 
 export default class Container extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    fluid: PropTypes.bool,
     className: PropTypes.string,
     style: PropTypes.object,
-    breakpoint: PropTypes.oneOf(breakpoints),
+    /**
+     * the Html or React element you want to use to render this component
+     */
     renderAs: PropTypes.string,
+    /**
+     * If you don't want to have a maximum width but want to keep the 24px margin on the left and right sides
+     */
+    fluid: PropTypes.bool,
+    /**
+     * You can have a fullwidth container until those specific breakpoints.
+     */
+    breakpoint: PropTypes.oneOf(breakpoints),
   }
 
   static defaultProps = {

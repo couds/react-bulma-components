@@ -12,13 +12,34 @@ export default class Textarea extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * The size of button using the classes from Bulma
+     */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    /**
+     * The color of button using the classes from Bulma
+     */
     color: PropTypes.oneOf(colors),
+    /**
+     * True if this element is read-only
+     */
     readOnly: PropTypes.bool,
+    /**
+     * True disable this element
+     */
     disabled: PropTypes.bool,
+    /**
+     * The text to be displayed if the input is empty
+     */
     placeholder: PropTypes.string,
-    rows: PropTypes.number,
+    /**
+     * The value of the input field
+     */
     value: PropTypes.string,
+    /**
+     * Number of rows of this textarea
+     */
+    rows: PropTypes.number,
     /**
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */

@@ -23,6 +23,7 @@ exports[`Modal component Should close the modal 1`] = `
       </p>
       <a
         class="delete"
+        href=""
       />
     </header>
   </div>
@@ -70,6 +71,7 @@ exports[`Modal component Should close the modal on ESC key press 1`] = `
       </p>
       <a
         class="delete"
+        href=""
       />
     </header>
   </div>
@@ -169,6 +171,7 @@ exports[`Modal component Should not close the modal on ESC key press 1`] = `
       </p>
       <a
         class="delete"
+        href=""
       />
     </header>
   </div>
@@ -196,6 +199,7 @@ exports[`Modal component Should not close the modal on other than ESC key press 
       </p>
       <a
         class="delete"
+        href=""
       />
     </header>
     <section
@@ -269,6 +273,7 @@ exports[`Modal component Should open the modal 1`] = `
       </p>
       <a
         class="delete"
+        href=""
       />
     </header>
   </div>

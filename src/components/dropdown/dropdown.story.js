@@ -2,39 +2,12 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withReadme } from 'storybook-readme';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import readme from './readme.md';
 
 import Dropdown from '.';
 
-class Wrapper extends React.Component {
-  state = {
-    selected: 'active',
-  }
-  onChange = (selected) => {
-    this.setState({ selected });
-  }
-  render() {
-    return (
-      <Dropdown value={this.state.selected} onChange={this.onChange} color="info" {...this.props} >
-        <Dropdown.Item value="item" >
-          Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Item value="other">
-          Other Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Item value="active">
-          Active Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Item value="other 2">
-          Other Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item value="divider">
-          With divider
-        </Dropdown.Item>
-      </Dropdown>
-    );
-  }
-}
 
 storiesOf('Dropdown', module)
   .addDecorator(story => (
@@ -42,8 +15,25 @@ storiesOf('Dropdown', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
-    <Dropdown>
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator(withKnobs)
+  .add('Default', withReadme(readme, () => (
+    <Dropdown
+      color={select('Color', {
+        '': 'default',
+        primary: 'primary',
+        success: 'success',
+        info: 'info',
+        warning: 'warning',
+        danger: 'danger',
+        light: 'light',
+        dark: 'dark',
+        white: 'white',
+        black: 'black',
+        link: 'link',
+      }, '')}
+      hoverable={boolean('Hoverable', false)}
+    >
       <Dropdown.Item value="item" >
         Dropdown item
       </Dropdown.Item>
@@ -61,26 +51,4 @@ storiesOf('Dropdown', module)
         With divider
       </Dropdown.Item>
     </Dropdown>
-  )))
-  .add('Hoverable', withInfo()(() => (
-    <Dropdown hoverable>
-      <Dropdown.Item value="item" >
-        Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="other">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="active">
-        Active Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="other 2">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item value="divider">
-        With divider
-      </Dropdown.Item>
-    </Dropdown>
-  )))
-  .add('Controlled component', withInfo()(() => <Wrapper />))
-  .add('Controlled component Hoverable', withInfo()(() => <Wrapper hoverable color="dark" />));
+  )));

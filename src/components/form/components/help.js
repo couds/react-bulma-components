@@ -11,8 +11,11 @@ export default class Help extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
-    color: PropTypes.oneOf(colors),
     children: PropTypes.node,
+    /**
+     * The color of button using the classes from Bulma
+     */
+    color: PropTypes.oneOf(colors),
   };
 
   static defaultProps = {
