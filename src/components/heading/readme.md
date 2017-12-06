@@ -1,6 +1,6 @@
 ## Heading Component
 
-A single class to handle WYSIWYG generated content, where only HTML tags are available ([Bulma docs](https://bulma.io/documentation/elements/content/))
+Simple headings to add depth to your page ([Bulma docs](https://bulma.io/documentation/elements/title/))
 
 
 ### Usage:

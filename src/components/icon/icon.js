@@ -9,12 +9,24 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 
 export default class Icon extends PureComponent {
   static propTypes = {
-    icon: PropTypes.string.isRequired,
     children: PropTypes.element,
-    className: PropTypes.string,
     style: PropTypes.object,
+    className: PropTypes.string,
+    /**
+     * Name of the icon embed with bulma-react-components
+     */
+    icon: PropTypes.string.isRequired,
+    /**
+     * Size of the icon
+     */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    /**
+     * Alignment of the icon
+     */
     align: PropTypes.oneOf(['left', 'right']),
+    /**
+     * The color of icon using the classes from Bulma
+     */
     color: PropTypes.oneOf(colors),
   }
 
