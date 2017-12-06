@@ -3,6 +3,7 @@ import * as Form from './components/form';
 
 export { default as Box } from './components/box';
 export { default as Button } from './components/button';
+export { default as Card } from './components/card';
 export { default as Columns } from './components/columns';
 export { default as Container } from './components/container';
 export { default as Content } from './components/content';
@@ -24,4 +25,3 @@ export { default as Dropdown } from './components/dropdown';
 export { default as Icon } from './components/icon';
 export { default as Loader } from './components/loader';
 export { default as Navbar } from './components/navbar';
-
