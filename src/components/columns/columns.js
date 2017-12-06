@@ -12,9 +12,21 @@ export default class Columns extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    /**
+     * Breakpoint where columns become stacked.
+     */
     breakpoint: PropTypes.oneOf(breakpoints),
+    /**
+     * `true` to remove space between columns
+     */
     gapless: PropTypes.bool,
+    /**
+     * `true` if you want to use more than one line if you add more column elements that would fit in a single row.
+     */
     multiline: PropTypes.bool,
+    /**
+     * `true` you want the columns inside to be horizontaly centered
+     */
     centered: PropTypes.bool,
   }
 

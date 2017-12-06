@@ -89,3 +89,35 @@ exports[`Columns component Should have columns one column half width, other narr
   </div>
 </div>
 `;
+
+exports[`Columns component Should have throw warning if deprecated prop is used but render it anyway 1`] = `
+<div
+  className="columns is-multiline"
+  style={Object {}}
+>
+  <div
+    className="column is-half-mobile"
+    style={Object {}}
+  >
+    1
+  </div>
+  <div
+    className="column is-narrow"
+    style={Object {}}
+  >
+    2
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    3
+  </div>
+  <div
+    className="column"
+    style={Object {}}
+  >
+    4
+  </div>
+</div>
+`;

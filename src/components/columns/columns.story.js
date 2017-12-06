@@ -449,11 +449,21 @@ storiesOf('Columns', module)
   .add('Different column size per breakpoint', withInfo('')(() => (
     <Columns breakpoint="mobile">
       <Columns.Column
-        mobileSize="three-quarters"
-        tabletSize="two-thirds"
-        desktopSize="half"
-        widescreenSize="one-third"
-        fullhfSize="one-quarter"
+        mobile={{
+          size: 'three-quarters',
+        }}
+        tablet={{
+          size: 'two-thirds',
+        }}
+        desktop={{
+          size: 'half',
+        }}
+        widescreen={{
+          size: 'one-third',
+        }}
+        fullhd={{
+          size: 'one-quarter',
+        }}
       >
         <p className="bd-notification is-success">
           is-three-quarters-mobile<br />
