@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -10,7 +10,7 @@ import Icon from '../icon';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-class Dropdown extends React.Component {
+export default class Dropdown extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
@@ -32,6 +32,9 @@ class Dropdown extends React.Component {
     align: null,
     hoverable: false,
   }
+
+  static Item = DropdownItem;
+  static Divider = DropdownDivider;
 
   constructor(props) {
     super(props);
@@ -133,9 +136,3 @@ class Dropdown extends React.Component {
     );
   }
 }
-
-Dropdown.Item = DropdownItem;
-Dropdown.Divider = DropdownDivider;
-
-
-export default Dropdown;

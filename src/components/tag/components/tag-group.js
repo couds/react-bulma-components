@@ -2,17 +2,19 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class ModalCardBody extends PureComponent {
+export default class TagGroup extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
+    gapless: PropTypes.bool,
   }
 
   static defaultProps = {
     children: null,
     className: '',
     style: {},
+    gapless: false,
   }
 
   render() {
@@ -20,14 +22,18 @@ export default class ModalCardBody extends PureComponent {
       children,
       className,
       style,
+      gapless,
     } = this.props;
+
     return (
-      <section
+      <span
         style={style}
-        className={classnames('modal-card-body', className)}
+        className={classnames('tags', className, {
+          'has-addons': gapless,
+        })}
       >
         {children}
-      </section>
+      </span>
     );
   }
 }

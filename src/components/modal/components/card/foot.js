@@ -1,30 +1,33 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const ModalCardFoot = ({
-  children,
-  className,
-  style,
-}) => (
-  <footer
-    style={style}
-    className={classnames('modal-card-foot', className)}
-  >
-    {children}
-  </footer>
-);
+export default class ModalCardFoot extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    style: PropTypes.object,
+  }
 
-ModalCardFoot.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-};
+  static defaultProps = {
+    children: null,
+    className: '',
+    style: {},
+  }
 
-ModalCardFoot.defaultProps = {
-  children: null,
-  className: '',
-  style: {},
-};
-
-export default ModalCardFoot;
+  render() {
+    const {
+      children,
+      className,
+      style,
+    } = this.props;
+    return (
+      <footer
+        style={style}
+        className={classnames('modal-card-foot', className)}
+      >
+        {children}
+      </footer>
+    );
+  }
+}

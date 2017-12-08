@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ const KEYCODES = {
   ESCAPE: 27,
 };
 
-export default class Modal extends React.Component {
+export default class Modal extends PureComponent {
   static propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
