@@ -29,7 +29,7 @@ exports[`Button component Should be a default Button 1`] = `
 `;
 
 exports[`Button component Should be a reset form button 1`] = `
-<input
+<button
   className="button"
   disabled={false}
   onClick={[Function]}
@@ -39,7 +39,7 @@ exports[`Button component Should be a reset form button 1`] = `
 `;
 
 exports[`Button component Should be a submit form button 1`] = `
-<input
+<button
   className="button"
   disabled={false}
   onClick={[Function]}

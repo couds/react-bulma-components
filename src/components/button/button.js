@@ -88,11 +88,11 @@ export default class Button extends PureComponent {
       }
     }
     if (submit) {
-      Element = 'input';
+      Element = 'button';
       otherProps.type = 'submit';
     }
     if (reset) {
-      Element = 'input';
+      Element = 'button';
       otherProps.type = 'reset';
     }
 
