@@ -25,3 +25,5 @@ export { default as Dropdown } from './components/dropdown';
 export { default as Icon } from './components/icon';
 export { default as Loader } from './components/loader';
 export { default as Navbar } from './components/navbar';
+export { default as Tabs } from './components/tabs';
+export { default as Pagination } from './components/pagination';
