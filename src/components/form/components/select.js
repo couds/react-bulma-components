@@ -12,7 +12,7 @@ export default class Select extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     color: PropTypes.oneOf(colors),
     readOnly: PropTypes.bool,

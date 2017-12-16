@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 export default class Burger extends React.PureComponent {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     className: PropTypes.string,
     active: PropTypes.bool,
     onClick: PropTypes.func,

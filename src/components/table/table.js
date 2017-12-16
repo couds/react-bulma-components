@@ -6,7 +6,7 @@ export default class Table extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     size: PropTypes.oneOf(['fullwidth', 'narrow']),
     striped: PropTypes.bool,
     bordered: PropTypes.bool,

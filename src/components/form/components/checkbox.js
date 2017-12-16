@@ -9,7 +9,7 @@ export default class Checkbox extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     disabled: PropTypes.bool,
     value: PropTypes.string,
     checked: PropTypes.bool,

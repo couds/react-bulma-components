@@ -11,7 +11,7 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 export default class Textarea extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     color: PropTypes.oneOf(colors),
     readOnly: PropTypes.bool,

@@ -6,7 +6,7 @@ export default class TagGroup extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     gapless: PropTypes.bool,
   }
 

@@ -8,7 +8,7 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 export default class Progress extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     color: PropTypes.oneOf(colors),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     value: PropTypes.number.isRequired,

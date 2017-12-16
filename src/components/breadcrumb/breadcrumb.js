@@ -5,7 +5,7 @@ import classnames from 'classnames';
 export default class Breadcrumb extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     align: PropTypes.oneOf(['right', 'center']),

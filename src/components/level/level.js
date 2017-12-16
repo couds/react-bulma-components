@@ -12,7 +12,7 @@ export default class Level extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     breakpoint: PropTypes.oneOf(breakpoints),
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   }

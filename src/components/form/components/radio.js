@@ -12,7 +12,7 @@ export default class Radio extends PureComponent {
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
     name: PropTypes.string.isRequired,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
     ...events.propTypes,

@@ -27,7 +27,7 @@ const Dropdown = ({
 };
 
 Dropdown.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
   className: PropTypes.string,
   children: PropTypes.node,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

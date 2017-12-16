@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 export default class DropdownDivider extends PureComponent {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     className: PropTypes.string,
   }
 

@@ -34,7 +34,7 @@ const Item = ({
 };
 
 Item.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
   className: PropTypes.string,
   active: PropTypes.bool,
   dropdown: PropTypes.bool,

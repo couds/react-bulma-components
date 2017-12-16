@@ -6,7 +6,7 @@ export default class ModalCardFoot extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
   }
 
   static defaultProps = {

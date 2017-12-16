@@ -12,7 +12,7 @@ export default class Icon extends PureComponent {
     icon: PropTypes.string.isRequired,
     children: PropTypes.element,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     align: PropTypes.oneOf(['left', 'right']),
     color: PropTypes.oneOf(colors),

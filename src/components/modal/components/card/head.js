@@ -8,7 +8,7 @@ export default class ModalCardHead extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     showClose: PropTypes.bool,
     onClose: PropTypes.func,
   }
