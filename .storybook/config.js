@@ -1,10 +1,30 @@
-import { configure } from '@storybook/react';
-import '../src';
+import { configure, setAddon } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
-const context = require.context('../src', true, /\.story\.(js|jsx)$/);
+// deprecated usage of infoAddon
+import infoAddon from '@storybook/addon-info';
 
+setOptions({
+  name: 'React Bulma Components',
+  url: 'https://github.com/couds/react-bulma-components',
+  goFullScreen: false,
+  showLeftPanel: true,
+  showDownPanel: false,
+  showSearchBox: false,
+  downPanelInRight: false,
+  sortStoriesByKind: false,
+  hierarchySeparator: /\/|\./,
+});
+
+// deprecated usage of infoAddon
+setAddon(infoAddon);
+
+require('../src');
+
+// automatically import all story js files that end with *.stories.js
+const req = require.context('../src', true, /\.story\.js$/)
 function loadStories() {
-  context.keys().sort().forEach(context);
+  req.keys().forEach((filename) => req(filename))
 }
 
 configure(loadStories, module);
