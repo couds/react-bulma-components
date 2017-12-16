@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs component Should Exist 1`] = `[Function]`;
+
+exports[`Tabs component Should accept a react Element as renderAs prop 1`] = `
+<p
+  className="tabs"
+  style={Object {}}
+>
+  Custom 
+  <ul>
+    This should be a p element
+  </ul>
+</p>
+`;
+
+exports[`Tabs component Should concat Bulma class with classes in props 1`] = `
+<div
+  className="tabs other-class test"
+  style={Object {}}
+>
+  <ul>
+    Facebook
+  </ul>
+</div>
+`;
+
+exports[`Tabs component Should expose Tab 1`] = `[Function]`;
+
+exports[`Tabs component Should have Tabs classname 1`] = `
+<div
+  className="tabs"
+  style={Object {}}
+>
+  <ul>
+    Facebook
+  </ul>
+</div>
+`;
+
+exports[`Tabs component Should have custom inline styles 1`] = `
+<section
+  className="tabs"
+  style={
+    Object {
+      "width": 200,
+      "zIndex": 1,
+    }
+  }
+>
+  <ul>
+    This should be a section with custom styles
+  </ul>
+</section>
+`;
+
+exports[`Tabs component Should render as an html section 1`] = `
+<section
+  className="tabs"
+  style={Object {}}
+>
+  <ul>
+    This should be a section
+  </ul>
+</section>
+`;
+
+exports[`Tabs component Should render propertly Inside Tabs 1`] = `
+<div
+  className="tabs"
+  style={Object {}}
+>
+  <ul>
+    <li
+      className=""
+      style={Object {}}
+    >
+      <a>
+        Tab 1
+      </a>
+    </li>
+    <li
+      className=""
+      style={Object {}}
+    >
+      <a>
+        Tab 2
+      </a>
+    </li>
+    <li
+      className=""
+      style={Object {}}
+    >
+      <a>
+        Tab 3
+      </a>
+    </li>
+  </ul>
+</div>
+`;
