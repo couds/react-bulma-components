@@ -14,7 +14,7 @@ export default class Level extends PureComponent {
     className: PropTypes.string,
     style: PropTypes.object,
     breakpoint: PropTypes.oneOf(breakpoints),
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   }
 
   static defaultProps = {

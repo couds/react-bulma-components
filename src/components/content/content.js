@@ -8,7 +8,7 @@ export default class Content extends PureComponent {
     className: PropTypes.string,
     style: PropTypes.object,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   }
 
   static defaultProps = {

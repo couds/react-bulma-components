@@ -9,7 +9,7 @@ export default class Card extends PureComponent {
     className: PropTypes.string,
     children: PropTypes.node,
     style: PropTypes.object,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     type: PropTypes.oneOf(['header', 'header-item', 'header-icon', 'footer', 'footer-item', 'image', 'content']),
   }
 

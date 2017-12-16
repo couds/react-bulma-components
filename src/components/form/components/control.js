@@ -8,7 +8,7 @@ export default class Control extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     fullwidth: PropTypes.bool,
     iconLeft: PropTypes.bool,
     iconRight: PropTypes.bool,

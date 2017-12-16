@@ -28,7 +28,7 @@ Container.propTypes = {
   style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node,
-  renderAs: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   position: PropTypes.oneOf(['start', 'end']),
 };
 

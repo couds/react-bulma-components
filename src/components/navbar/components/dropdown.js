@@ -30,7 +30,7 @@ Dropdown.propTypes = {
   style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node,
-  renderAs: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   boxed: PropTypes.bool,
   right: PropTypes.bool,
 };

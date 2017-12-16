@@ -7,7 +7,7 @@ export default class Heading extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
     subtitle: PropTypes.bool,
     heading: PropTypes.bool,

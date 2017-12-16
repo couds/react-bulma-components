@@ -14,7 +14,7 @@ export default class Hero extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     color: PropTypes.oneOf(colors),
     gradient: PropTypes.bool,
     size: PropTypes.oneOf(['medium', 'large', 'fullheight']),

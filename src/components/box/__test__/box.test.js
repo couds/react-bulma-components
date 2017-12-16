@@ -22,4 +22,10 @@ describe('Box component', () => {
     const component = renderer.create(<Box renderAs="section" style={{ width: 200, zIndex: 1 }}>This should be a section with custom styles</Box>);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should accept a react Element as renderAs prop', () => {
+    // eslint-disable-next-line react/prop-types
+    const Custom = props => (<p {...props}>Custom {props.children}</p>);
+    const component = renderer.create(<Box renderAs={Custom}>This should be a p element</Box>);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

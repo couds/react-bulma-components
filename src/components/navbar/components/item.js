@@ -41,7 +41,7 @@ Item.propTypes = {
   dropdownUp: PropTypes.bool,
   hoverable: PropTypes.bool,
   children: PropTypes.node,
-  renderAs: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
 Item.defaultProps = {

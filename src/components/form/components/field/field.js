@@ -11,7 +11,7 @@ export default class Field extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.object,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     align: PropTypes.oneOf(['centered', 'right']),
     kind: PropTypes.oneOf(['addons', 'group']),
     multiline: PropTypes.bool,

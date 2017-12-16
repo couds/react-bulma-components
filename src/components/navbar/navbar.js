@@ -31,7 +31,7 @@ export default class Navbar extends React.PureComponent {
     className: PropTypes.string,
     style: PropTypes.object,
     transparent: PropTypes.bool,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     fixed: PropTypes.oneOf(['top', 'bottom']),
     color: PropTypes.oneOf(colors),
   }
