@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import ModalContent from './components/content';
 import ModalCard from './components/card';
@@ -18,7 +19,6 @@ export default class Modal extends PureComponent {
     showClose: PropTypes.bool,
     children: PropTypes.element.isRequired,
     document: PropTypes.object,
-    portalElement: PropTypes.object,
   }
 
   static defaultProps = {
@@ -27,44 +27,47 @@ export default class Modal extends PureComponent {
     closeOnBlur: false,
     // Expose mount point for testing
     document: null,
-    portalElement: null,
   }
 
   static Content = ModalContent
   static Card = ModalCard
 
-  constructor(props) {
-    super(props);
-    this.portalElement = props.portalElement || null;
-  }
-
-  componentDidMount() {
-    if (this.props.show) {
-      this.openModal(this.props);
-    }
-  }
-
-  componentWillReceiveProps(props) {
-    if (props.show !== this.props.show) {
-      if (props.show) {
-        this.openModal({ ...this.props, ...props });
-      } else {
-        this.closeModal();
+  componentWillMount() {
+    const d = this.getDocument();
+    if (!this.portalElement && d) {
+      this.portalElement = d.createElement('div');
+      this.portalElement.setAttribute('class', 'modal-container');
+      d.body.appendChild(this.portalElement);
+      if (this.props.closeOnEsc) {
+        d.addEventListener('keydown', this.handleKeydown);
       }
     }
   }
 
   componentWillUnmount() {
-    if (this.props.show) {
-      this.closeModal();
+    if (this.props.closeOnEsc) {
+      const d = this.props.document || document;
+      d.addEventListener('keydown', this.handleKeydown);
     }
   }
 
-  openModal = (props) => {
-    /* istanbul ignore next */
-    const d = this.props.document || document;
-    const { closeOnEsc, closeOnBlur } = props;
-    let { children } = props;
+  /* istanbul ignore next */
+  getDocument = () => this.props.document || document
+
+  portalElement = null;
+
+  handleKeydown = (e) => {
+    if (e.keyCode === KEYCODES.ESCAPE && this.props.show) {
+      this.props.onClose();
+    }
+  }
+
+  render() {
+    if (!this.portalElement) {
+      return null;
+    }
+    const { closeOnBlur, show } = this.props;
+    let { children } = this.props;
     let isCard;
     try {
       isCard = React.Children.only(children).type.toString().indexOf('ModalCard') !== -1;
@@ -80,18 +83,11 @@ export default class Modal extends PureComponent {
       });
     }
 
-    if (!this.portalElement) {
-      this.portalElement = d.createElement('div');
-      this.portalElement.setAttribute('class', 'modal-container');
-      d.body.appendChild(this.portalElement);
-    }
-
-    if (closeOnEsc) {
-      d.addEventListener('keydown', this.handleKeydown);
-    }
-
-    ReactDOM.render(
-      <div className="modal is-active">
+    return ReactDOM.createPortal(
+      <div className={classnames('modal', {
+        'is-active': show,
+      })}
+      >
         <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : null} />
         {children}
         {
@@ -101,21 +97,4 @@ export default class Modal extends PureComponent {
       this.portalElement,
     );
   }
-
-  closeModal = () => {
-    /* istanbul ignore next */
-    const d = this.props.document || document;
-    d.removeEventListener('keydown', this.handleKeydown);
-    ReactDOM.unmountComponentAtNode(this.portalElement);
-    this.portalElement.remove();
-    this.portalElement = null;
-  }
-
-  handleKeydown = (e) => {
-    if (e.keyCode === KEYCODES.ESCAPE) {
-      this.props.onClose();
-    }
-  }
-
-  render() { return null; }
 }

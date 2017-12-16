@@ -174,19 +174,6 @@ describe('Modal component', () => {
     component.setProps({ randomProp: 'test' });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
-  it('Should not recreate DOM element to mount Modal if the element is passed down via props', () => {
-    const onClose = jest.fn();
-    const element = window.document.createElement('div');
-    component = mount(
-      <Modal portalElement={element} document={window.document} show={false} onClose={onClose}>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
-    component.setProps({ show: true });
-    expect(window.document.querySelector('div.modal-container')).toBeNull();
-    expect(element.querySelector('div.modal.is-active')).toMatchSnapshot();
-  });
   it('Should close the modal if clicked on background', () => {
     const onClose = jest.fn(() => {
       component.setProps({ show: false });
