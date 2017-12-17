@@ -2,6 +2,16 @@
 
 exports[`Box component Should Exist 1`] = `[Function]`;
 
+exports[`Box component Should accept a react Element as renderAs prop 1`] = `
+<p
+  className="box"
+  style={Object {}}
+>
+  Custom 
+  This should be a p element
+</p>
+`;
+
 exports[`Box component Should concat Bulma class with classes in props 1`] = `
 <div
   className="box other-class test"

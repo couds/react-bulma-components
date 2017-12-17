@@ -10,9 +10,9 @@ export default class Container extends PureComponent {
     children: PropTypes.node,
     fluid: PropTypes.bool,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     breakpoint: PropTypes.oneOf(breakpoints),
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   }
 
   static defaultProps = {

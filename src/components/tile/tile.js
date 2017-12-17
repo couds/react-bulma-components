@@ -8,8 +8,8 @@ export default class Tile extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
-    renderAs: PropTypes.string,
+    style: PropTypes.shape({}),
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
     vertical: PropTypes.bool,
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),

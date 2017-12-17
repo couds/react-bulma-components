@@ -13,7 +13,7 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 export default class Dropdown extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     children: PropTypes.node,
     value: PropTypes.any,
     onChange: PropTypes.func,

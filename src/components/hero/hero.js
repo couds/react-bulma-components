@@ -13,8 +13,8 @@ export default class Hero extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
-    renderAs: PropTypes.string,
+    style: PropTypes.shape({}),
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     color: PropTypes.oneOf(colors),
     gradient: PropTypes.bool,
     size: PropTypes.oneOf(['medium', 'large', 'fullheight']),

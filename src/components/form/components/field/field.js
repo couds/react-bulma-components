@@ -10,8 +10,8 @@ export default class Field extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
-    renderAs: PropTypes.string,
+    style: PropTypes.shape({}),
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     align: PropTypes.oneOf(['centered', 'right']),
     kind: PropTypes.oneOf(['addons', 'group']),
     multiline: PropTypes.bool,

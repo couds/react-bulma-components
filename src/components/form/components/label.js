@@ -6,7 +6,7 @@ export default class Label extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     htmlFor: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
   }

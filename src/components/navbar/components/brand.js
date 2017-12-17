@@ -5,7 +5,7 @@ import Burger from './burger';
 
 export default class Brand extends React.PureComponent {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     className: PropTypes.string,
     children: PropTypes.node,
     active: PropTypes.bool,

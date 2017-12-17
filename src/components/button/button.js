@@ -11,7 +11,7 @@ export default class Button extends PureComponent {
     className: PropTypes.string,
     href: PropTypes.string,
     hrefAttr: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     renderAs: PropTypes.oneOfType([
       PropTypes.oneOf(['a', 'button']),
       PropTypes.func,

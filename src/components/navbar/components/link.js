@@ -22,10 +22,10 @@ const Link = ({
 };
 
 Link.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
   className: PropTypes.string,
   children: PropTypes.node,
-  renderAs: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
 Link.defaultProps = {

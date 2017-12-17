@@ -10,7 +10,7 @@ export default class Column extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     /**
      * The size of the column. the maximun size of a row is 12
      */

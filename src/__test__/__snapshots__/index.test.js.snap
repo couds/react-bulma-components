@@ -31,9 +31,11 @@ Object {
   "Modal": [Function],
   "Navbar": [Function],
   "Notification": [Function],
+  "Pagination": [Function],
   "Progress": [Function],
   "Section": [Function],
   "Table": [Function],
+  "Tabs": [Function],
   "Tag": [Function],
   "Tile": [Function],
 }

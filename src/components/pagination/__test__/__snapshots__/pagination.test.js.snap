@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component Next button should be disabled 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <a
+    className="pagination-previous"
+    disabled={false}
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+    title="This is the first page"
+  >
+    Previous
+  </a>
+  <a
+    className="pagination-next"
+    disabled={true}
+    onClick={undefined}
+    role="button"
+    tabIndex={0}
+  >
+    Next
+  </a>
+  <ul
+    className="pagination-list"
+  >
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 1"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 2"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 3"
+        className="pagination-link is-current"
+        onClick={undefined}
+        role="button"
+        tabIndex={0}
+      >
+        3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Pagination component Pagination Should Exist 1`] = `[Function]`;
+
+exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <a
+    className="pagination-previous"
+    disabled={true}
+    onClick={undefined}
+    role="button"
+    tabIndex={0}
+    title="This is the first page"
+  >
+    Previous
+  </a>
+  <a
+    className="pagination-next"
+    disabled={false}
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Next
+  </a>
+  <ul
+    className="pagination-list"
+  >
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 1"
+        className="pagination-link is-current"
+        onClick={undefined}
+        role="button"
+        tabIndex={0}
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 2"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 3"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Pagination component Should have 5 pages, page 5 active and display pages 3 to 5 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <a
+    className="pagination-previous"
+    disabled={false}
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+    title="This is the first page"
+  >
+    Previous
+  </a>
+  <a
+    className="pagination-next"
+    disabled={true}
+    onClick={undefined}
+    role="button"
+    tabIndex={0}
+  >
+    Next
+  </a>
+  <ul
+    className="pagination-list"
+  >
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 3"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 4"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 5"
+        className="pagination-link is-current"
+        onClick={undefined}
+        role="button"
+        tabIndex={0}
+      >
+        5
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Pagination component Should not display Previous/Next buttons 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <ul
+    className="pagination-list"
+  >
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 1"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 2"
+        className="pagination-link is-current"
+        onClick={undefined}
+        role="button"
+        tabIndex={0}
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 3"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 4"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 5"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        5
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Pagination component Should not display page numbers 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <a
+    className="pagination-previous"
+    disabled={false}
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+    title="This is the first page"
+  >
+    Previous
+  </a>
+  <a
+    className="pagination-next"
+    disabled={true}
+    onClick={undefined}
+    role="button"
+    tabIndex={0}
+  >
+    Next
+  </a>
+</nav>
+`;
+
+exports[`Pagination component Should not render if current page is greater than total pages 1`] = `null`;
+
+exports[`Pagination component Should not render if total pages equals 1 1`] = `null`;

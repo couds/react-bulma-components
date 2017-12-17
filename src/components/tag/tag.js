@@ -11,12 +11,12 @@ export default class Tag extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     color: PropTypes.oneOf(colors),
     size: PropTypes.oneOf(['medium', 'large']),
     rounded: PropTypes.bool,
     remove: PropTypes.bool,
-    renderAs: PropTypes.string,
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   }
 
   static defaultProps = {

@@ -17,7 +17,7 @@ const Menu = ({
 );
 
 Menu.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
   className: PropTypes.string,
   active: PropTypes.bool,
   children: PropTypes.node,

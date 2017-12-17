@@ -212,26 +212,6 @@ exports[`Modal component Should not close the modal on other than ESC key press 
 </div>
 `;
 
-exports[`Modal component Should not recreate DOM element to mount Modal if the element is passed down via props 1`] = `
-<div
-  class="modal is-active"
->
-  <div
-    class="modal-background"
-    role="presentation"
-  />
-  <div
-    class="modal-content"
-  >
-    Content
-  </div>
-  <button
-    aria-label="close"
-    class="modal-close is-large"
-  />
-</div>
-`;
-
 exports[`Modal component Should not show close button 1`] = `
 <div
   class="modal is-active"

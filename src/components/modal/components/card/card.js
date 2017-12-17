@@ -11,7 +11,7 @@ export default class ModalCard extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     onClose: PropTypes.func,
   }
 

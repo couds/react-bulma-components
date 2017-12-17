@@ -34,14 +34,14 @@ const Item = ({
 };
 
 Item.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
   className: PropTypes.string,
   active: PropTypes.bool,
   dropdown: PropTypes.bool,
   dropdownUp: PropTypes.bool,
   hoverable: PropTypes.bool,
   children: PropTypes.node,
-  renderAs: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
 Item.defaultProps = {

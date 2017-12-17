@@ -6,8 +6,8 @@ export default class LevelItem extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
-    renderAs: PropTypes.string,
+    style: PropTypes.shape({}),
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   }
 
   static defaultProps = {

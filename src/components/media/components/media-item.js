@@ -6,8 +6,8 @@ export default class MediaItem extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    style: PropTypes.object,
-    renderAs: PropTypes.string,
+    style: PropTypes.shape({}),
+    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     position: PropTypes.oneOf(['center', 'right', 'left']),
   }
 

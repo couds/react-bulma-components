@@ -10,7 +10,7 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 export default class Input extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.shape({}),
     type: PropTypes.oneOf(['text', 'email', 'tel', 'password']),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     color: PropTypes.oneOf(colors),
