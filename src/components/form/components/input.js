@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import CONSTANTS from '../../../constants';
-import events from '../../../modifiers/events';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -23,7 +22,6 @@ export default class Input extends PureComponent {
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
     name: PropTypes.string,
-    ...events.propTypes,
   }
 
   static defaultProps = {
@@ -38,13 +36,11 @@ export default class Input extends PureComponent {
     disabled: false,
     placeholder: '',
     name: null,
-    ...events.defaultProps,
   }
 
   render() {
     const {
       className,
-      style,
       type,
       size,
       color,
@@ -58,10 +54,9 @@ export default class Input extends PureComponent {
     } = this.props;
     return (
       <input
-        {...events.props(props)}
+        {...props}
         name={name}
         value={value}
-        style={style}
         type={type}
         placeholder={placeholder}
         readOnly={readOnly || isStatic}

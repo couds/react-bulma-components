@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 
 import CONSTANTS from '../../../constants';
-import events from '../../../modifiers/events';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -23,7 +22,6 @@ export default class Select extends PureComponent {
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
     name: PropTypes.string,
-    ...events.propTypes,
   }
 
   static defaultProps = {
@@ -37,7 +35,6 @@ export default class Select extends PureComponent {
     disabled: false,
     multiple: false,
     name: null,
-    ...events.defaultProps,
   }
 
   render() {
@@ -64,7 +61,7 @@ export default class Select extends PureComponent {
         style={style}
       >
         <select
-          {...events.props(props)}
+          {...props}
           multiple={multiple}
           value={value}
           readOnly={readOnly}

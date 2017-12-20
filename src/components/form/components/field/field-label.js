@@ -24,15 +24,15 @@ export default class FieldLabel extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       size,
+      ...props
     } = this.props;
     const Element = renderAs;
 
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('field-label', className, {
           [`is-${size}`]: size,
         })}

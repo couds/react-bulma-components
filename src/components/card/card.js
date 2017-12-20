@@ -25,18 +25,16 @@ export default class Card extends PureComponent {
     const {
       className,
       children,
-      style,
       type,
       renderAs,
       ...props
     } = this.props;
     if (type === 'image') {
-      return <CardImage {...props} style={style} className={className} />;
+      return <CardImage {...props} className={className} />;
     }
     const Element = renderAs;
     return (
       <Element
-        style={style}
         className={classnames(className, {
           [`card-${type}`]: type,
           card: !type,

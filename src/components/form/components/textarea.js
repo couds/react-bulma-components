@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 
 import CONSTANTS from '../../../constants';
-import events from '../../../modifiers/events';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -23,7 +22,6 @@ export default class Textarea extends PureComponent {
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
     name: PropTypes.string,
-    ...events.propTypes,
   }
 
   static defaultProps = {
@@ -37,13 +35,11 @@ export default class Textarea extends PureComponent {
     rows: 4,
     value: '',
     name: '',
-    ...events.defaultProps,
   }
 
   render() {
     const {
       className,
-      style,
       size,
       color,
       readOnly,
@@ -57,10 +53,9 @@ export default class Textarea extends PureComponent {
     return (
       <textarea
         name={name}
-        {...events.props(props)}
+        {...props}
         value={value}
         rows={rows}
-        style={style}
         placeholder={placeholder}
         readOnly={readOnly}
         disabled={disabled}

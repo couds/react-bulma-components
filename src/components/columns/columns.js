@@ -47,21 +47,21 @@ export default class Columns extends PureComponent {
     const {
       children,
       className,
-      style,
       breakpoint,
       gapless,
       multiline,
       centered,
+      ...props
     } = this.props;
     return (
       <div
+        {...props}
         className={classNames(className, 'columns', {
         [`is-${breakpoint}`]: breakpoint,
         'is-gapless': gapless,
         'is-multiline': multiline,
         'is-centered': centered,
       })}
-        style={style}
       >
         {children}
       </div>

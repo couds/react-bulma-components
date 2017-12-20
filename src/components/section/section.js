@@ -23,14 +23,14 @@ export default class Section extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       size,
+      ...props
     } = this.props;
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('section', className, {
           [`is-${size}`]: size,
         })}

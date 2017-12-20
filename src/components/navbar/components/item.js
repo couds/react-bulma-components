@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const Item = ({
-  style,
   className,
   active,
   renderAs,
@@ -19,14 +18,13 @@ const Item = ({
   }
   return (
     <Element
-      style={style}
+      {...props}
       className={classnames('navbar-item', className, {
       'is-active': active,
       'has-dropdown': dropdown,
       'is-hoverable': hoverable,
       'has-dropdown-up': dropdownUp,
     })}
-      {...props}
     >
       {children}
     </Element>

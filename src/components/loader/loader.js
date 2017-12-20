@@ -21,14 +21,14 @@ export default class Loader extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('loader', className)}
       >
         {children}

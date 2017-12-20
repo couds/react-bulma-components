@@ -32,8 +32,6 @@ export default class Modal extends PureComponent {
   static Content = ModalContent
   static Card = ModalCard
 
-  state = { d: null }
-
   componentDidMount() {
     const d = this.getDocument();
     this.portalElement = d.createElement('div');
@@ -53,7 +51,6 @@ export default class Modal extends PureComponent {
     }
   }
 
-  /* istanbul ignore next */
   getDocument = () => {
     if (this.props.document) {
       return this.props.document;
@@ -73,7 +70,7 @@ export default class Modal extends PureComponent {
   }
 
   render() {
-    if (!this.portalElement) {
+    if (!this.getDocument() || !this.portalElement) {
       return null;
     }
     const { closeOnBlur, show } = this.props;

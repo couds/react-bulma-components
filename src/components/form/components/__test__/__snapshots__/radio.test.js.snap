@@ -10,10 +10,6 @@ exports[`Radio component Should be disabled, checked and with value 1`] = `
     checked={true}
     disabled={true}
     name="test"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="radio"
     value="TEST"
   />
@@ -33,10 +29,6 @@ exports[`Radio component Should concat classname in props with Bulma classname 1
     checked={false}
     disabled={false}
     name="test"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="radio"
     value=""
   />
@@ -58,10 +50,6 @@ exports[`Radio component Should have radio classname 1`] = `
     checked={false}
     disabled={false}
     name="test"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="radio"
     value=""
   />
@@ -82,10 +70,6 @@ exports[`Radio component Should show a error on the console because name props i
     checked={true}
     disabled={true}
     name={undefined}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="radio"
     value="TEST"
   />
@@ -109,10 +93,6 @@ exports[`Radio component Should use inline styles 1`] = `
     checked={false}
     disabled={false}
     name="test"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="radio"
     value=""
   />

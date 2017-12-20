@@ -17,6 +17,10 @@ class Pagination extends React.PureComponent {
     previous: PropTypes.node,
     showPrevNext: PropTypes.bool,
     autoHide: PropTypes.bool,
+    /**
+     * Classname of the container of the pagination, this could be used to customize the inner views
+     */
+    className: PropTypes.string,
   }
 
   static defaultProps = {
@@ -28,6 +32,7 @@ class Pagination extends React.PureComponent {
     previous: 'Previous',
     showPrevNext: true,
     autoHide: true,
+    className: '',
   }
 
   goToPage = page => (evt) => {
@@ -56,12 +61,24 @@ class Pagination extends React.PureComponent {
   }
 
   render() {
-    const { current, total, next, previous, showPrevNext, delta, autoHide } = this.props;
+    const {
+      current,
+      total,
+      next,
+      previous,
+      showPrevNext,
+      delta,
+      autoHide,
+      className,
+      onChange,
+      ...props
+    } = this.props;
     if (total <= 1 && autoHide) {
       return null;
     }
 
     if (current > total) {
+      // eslint-disable-next-line no-console
       console.warn('Pagination controller: Current page can not be greater than total');
       return null;
     }
@@ -70,7 +87,11 @@ class Pagination extends React.PureComponent {
     const lastPage = this.lastPage(current, total);
 
     return (
-      <nav className="pagination" aria-label="pagination">
+      <nav
+        {...props}
+        className={classnames('pagination', className)}
+        aria-label="pagination"
+      >
         {
           showPrevNext &&
             <React.Fragment>

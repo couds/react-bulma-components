@@ -38,17 +38,17 @@ export default class Hero extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       color,
       gradient,
       size,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('hero', className, {
           [`is-${color}`]: color,
           [`is-${size}`]: size,

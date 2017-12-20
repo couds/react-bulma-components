@@ -59,13 +59,13 @@ export default class Dropdown extends PureComponent {
 
   checkProps = (props) => {
     if (props.value && !props.onChange) {
+      // eslint-disable-next-line no-console
       console.error('Warning: This is a controlled component without onChange listener, please check the props of the Dropdown component');
     }
   }
 
   close = (evt) => {
     // IDK yet how to test using the ref in enzime
-    /* istanbul ignore next */
     if (this.props.hoverable || (evt && evt.path.find(node => node === this.htmlElement))) {
       return;
     }
@@ -91,13 +91,14 @@ export default class Dropdown extends PureComponent {
 
   render() {
     const {
-      style,
       className,
       children,
       value,
       color,
       align,
       hoverable,
+      onChange,
+      ...props
     } = this.props;
     let current = null;
 
@@ -113,8 +114,8 @@ export default class Dropdown extends PureComponent {
 
     return (
       <div
+        {...props}
         ref={(node) => { this.htmlElement = node; }}
-        style={style}
         className={classnames('dropdown', className, {
           'is-active': this.state.open,
           [`is-${align}`]: align,

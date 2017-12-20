@@ -11,9 +11,11 @@ const Anchor = ({
 
 describe('Breadcrumb component', () => {
   beforeEach(() => {
+    // eslint-disable-next-line no-console
     console.warn = jest.genMockFn();
   });
   afterAll(() => {
+    // eslint-disable-next-line no-console
     console.warn.mockRestore();
   });
   it('Should be a Breadcrumb', () => {

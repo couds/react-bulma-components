@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import Input from '../input';
 
 describe('Input component', () => {
@@ -30,24 +29,5 @@ describe('Input component', () => {
   it('Should be disabled with placeholder and value', () => {
     const component = renderer.create(<Input value="TEST" disabled placeholder="hello tests" />);
     expect(component.toJSON()).toMatchSnapshot();
-  });
-  it('Should use default event methods', () => {
-    const onClick = jest.spyOn(Input.defaultProps, 'onClick');
-    const onChange = jest.spyOn(Input.defaultProps, 'onChange');
-    const onFocus = jest.spyOn(Input.defaultProps, 'onFocus');
-    const onBlur = jest.spyOn(Input.defaultProps, 'onBlur');
-    const component = shallow(<Input value="TEST" disabled placeholder="hello tests" />);
-
-    component.simulate('change');
-    component.simulate('change');
-    component.simulate('focus');
-    component.simulate('blur');
-    component.simulate('click');
-    component.simulate('focus');
-
-    expect(onFocus).toHaveBeenCalledTimes(2);
-    expect(onChange).toHaveBeenCalledTimes(2);
-    expect(onClick).toHaveBeenCalledTimes(1);
-    expect(onBlur).toHaveBeenCalledTimes(1);
   });
 });

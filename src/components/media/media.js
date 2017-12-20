@@ -27,14 +27,14 @@ export default class Media extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('media', className, {
         })}
       >

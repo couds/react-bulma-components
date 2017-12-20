@@ -11,10 +11,6 @@ exports[`Checkbox component Should have checkbox classname 1`] = `
   <input
     disabled={false}
     name={null}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="checkbox"
     value=""
   />

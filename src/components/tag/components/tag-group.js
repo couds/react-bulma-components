@@ -21,13 +21,13 @@ export default class TagGroup extends PureComponent {
     const {
       children,
       className,
-      style,
       gapless,
+      ...props
     } = this.props;
 
     return (
       <span
-        style={style}
+        {...props}
         className={classnames('tags', className, {
           'has-addons': gapless,
         })}

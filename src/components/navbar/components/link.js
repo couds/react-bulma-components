@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const Link = ({
-  style,
   className,
   renderAs,
   children,
@@ -12,9 +11,8 @@ const Link = ({
   const Element = renderAs;
   return (
     <Element
-      style={style}
-      className={classnames('navbar-link', className)}
       {...props}
+      className={classnames('navbar-link', className)}
     >
       {children}
     </Element>

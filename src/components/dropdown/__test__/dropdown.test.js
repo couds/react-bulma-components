@@ -62,6 +62,7 @@ describe('Dropdown component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should print error if value is passed but no onChange Handler', () => {
+    // eslint-disable-next-line no-console
     console.error = jest.genMockFn();
     renderer.create(
       <Dropdown value="value" style={{ width: 400 }}>
@@ -70,6 +71,7 @@ describe('Dropdown component', () => {
         </Dropdown.Item>
       </Dropdown>);
     expect(global.console.error).toBeCalled();
+    // eslint-disable-next-line no-console
     console.error.mockRestore();
   });
   it('Should have divider', () => {
@@ -154,6 +156,7 @@ describe('Dropdown component', () => {
     expect(component.state('open')).toBe(false);
   });
   it('Should change display error message if props change has value but no onChange Handler', () => {
+    // eslint-disable-next-line no-console
     console.error = jest.genMockFn();
     const component = shallow(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
@@ -166,6 +169,7 @@ describe('Dropdown component', () => {
     expect(global.console.error).not.toBeCalled();
     component.setProps({ value: 'other', onChange: null });
     expect(global.console.error).toBeCalled();
+    // eslint-disable-next-line no-console
     console.error.mockRestore();
   });
 });

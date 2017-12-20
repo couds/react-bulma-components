@@ -21,14 +21,14 @@ export default class FieldBody extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
     const Element = renderAs;
 
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('field-body', className, {
         })}
       >

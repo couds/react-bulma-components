@@ -25,16 +25,16 @@ export default class Progress extends PureComponent {
   render() {
     const {
       className,
-      style,
       value,
       max,
       color,
       size,
+      ...props
     } = this.props;
 
     return (
       <progress
-        style={style}
+        {...props}
         value={value}
         max={max}
         className={classnames('progress', className, {

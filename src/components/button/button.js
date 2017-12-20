@@ -59,9 +59,7 @@ export default class Button extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
-      onClick,
       color,
       size,
       outlined,
@@ -84,6 +82,7 @@ export default class Button extends PureComponent {
     if (href) {
       otherProps[renderAs === 'a' ? 'href' : hrefAttr] = href;
       if (renderAs !== 'a' && !hrefAttr) {
+        // eslint-disable-next-line no-console
         console.error('warning: if renderAs is different the anchor (a), hrefAttr is required. Check Button props');
       }
     }
@@ -100,9 +99,7 @@ export default class Button extends PureComponent {
       <Element
         {...props}
         {...otherProps}
-        style={style}
         disabled={disabled}
-        onClick={onClick}
         className={classnames(className, {
           'is-link': link,
           [`is-${color}`]: color,

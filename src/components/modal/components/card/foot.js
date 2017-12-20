@@ -19,11 +19,11 @@ export default class ModalCardFoot extends PureComponent {
     const {
       children,
       className,
-      style,
+      ...props
     } = this.props;
     return (
       <footer
-        style={style}
+        {...props}
         className={classnames('modal-card-foot', className)}
       >
         {children}
