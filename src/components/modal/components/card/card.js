@@ -30,22 +30,22 @@ export default class ModalCard extends PureComponent {
   render() {
     const {
       className,
-      style,
+      onClose,
       ...props
     } = this.props;
 
     const children = React.Children.map(props.children, (child) => {
       if (child.type.toString().indexOf('ModalCardHead') !== -1) {
         return React.cloneElement(child, {
-          onClose: props.onClose,
+          onClose,
         });
       }
       return child;
     });
     return (
       <div
+        {...props}
         className={classnames('modal-card', className)}
-        style={style}
       >
         {children}
       </div>

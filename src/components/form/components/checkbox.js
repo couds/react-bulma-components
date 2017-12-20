@@ -2,9 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import events from '../../../modifiers/events';
-
-
 export default class Checkbox extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
@@ -17,7 +14,6 @@ export default class Checkbox extends PureComponent {
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
     name: PropTypes.string,
-    ...events.propTypes,
   }
 
   static defaultProps = {
@@ -28,7 +24,6 @@ export default class Checkbox extends PureComponent {
     disabled: false,
     checked: false,
     name: null,
-    ...events.defaultProps,
   }
 
   render() {
@@ -49,7 +44,7 @@ export default class Checkbox extends PureComponent {
         style={style}
       >
         <input
-          {...events.props(props)}
+          {...props}
           name={name}
           type="checkbox"
           value={value}

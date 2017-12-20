@@ -45,12 +45,15 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should throw a console.error if no hrefAttr is defined when renderAs different as A and href attr is defined', () => {
+    // eslint-disable-next-line no-console
     console.error = jest.genMockFn();
     renderer.create(
       <Button renderAs={Link} href="http://google.com" color="danger" >
         TEST
       </Button>);
+    // eslint-disable-next-line no-console
     expect(console.error).toHaveBeenCalled();
+    // eslint-disable-next-line no-console
     console.error.mockRestore();
   });
   it('Should render be disabled', () => {

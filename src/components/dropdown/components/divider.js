@@ -14,10 +14,10 @@ export default class DropdownDivider extends PureComponent {
   }
 
   render() {
-    const { style, className } = this.props;
+    const { className, ...props } = this.props;
     return (
       <hr
-        style={style}
+        {...props}
         className={classnames('dropdown-divider', className)}
       />
     );

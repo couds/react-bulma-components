@@ -25,13 +25,13 @@ export default class Help extends PureComponent {
   render() {
     const {
       className,
-      style,
       children,
       color,
+      ...props
     } = this.props;
     return (
       <p
-        style={style}
+        {...props}
         className={classnames('help', className, {
           [`is-${color}`]: color,
         })}

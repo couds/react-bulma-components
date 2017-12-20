@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const Menu = ({
-  style, className, active, children, ...props
+  className,
+  active,
+  children,
+  ...props
 }) => (
   <div
-    style={style}
+    {...props}
     className={classnames('navbar-menu', className, {
       'is-active': active,
     })}
-    {...props}
   >
     {children}
   </div>

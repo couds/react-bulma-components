@@ -21,13 +21,13 @@ export default class HeroFooter extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames(className, 'hero-foot')}
       >
         {children}

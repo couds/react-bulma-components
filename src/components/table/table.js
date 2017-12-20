@@ -25,14 +25,14 @@ export default class Table extends PureComponent {
     const {
       children,
       className,
-      style,
       size,
       striped,
       bordered,
+      ...props
     } = this.props;
     return (
       <table
-        style={style}
+        {...props}
         className={classnames('table', className, {
           [`is-${size}`]: size,
           'is-bordered': bordered,

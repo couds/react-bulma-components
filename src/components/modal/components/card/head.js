@@ -25,14 +25,14 @@ export default class ModalCardHead extends PureComponent {
     const {
       children,
       className,
-      style,
       showClose,
       onClose,
+      ...props
     } = this.props;
 
     return (
       <header
-        style={style}
+        {...props}
         className={classnames('modal-card-head', className)}
       >
         {children}

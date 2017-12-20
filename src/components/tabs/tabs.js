@@ -36,18 +36,18 @@ export default class Tabs extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       align,
       size,
       type,
       fullwidth,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('tabs', className, {
           [`is-${align}`]: align,
           [`is-${size}`]: size,

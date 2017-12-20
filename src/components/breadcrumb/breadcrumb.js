@@ -35,21 +35,22 @@ export default class Breadcrumb extends PureComponent {
   render() {
     const {
       className,
-      style,
       items,
       renderAs,
       hrefAttr,
       separator,
       size,
       align,
+      ...props
     } = this.props;
     if (renderAs !== 'a' && !hrefAttr) {
+      // eslint-disable-next-line no-console
       console.warn('if renderAs is different the anchor (a), hrefAttr is required. Check Breadcrumb props');
     }
     const Element = renderAs;
     return (
       <nav
-        style={style}
+        {...props}
         className={classnames('breadcrumb', className, {
           [`has-${separator}-separator`]: separator,
           [`is-${size}`]: size,
@@ -59,7 +60,7 @@ export default class Breadcrumb extends PureComponent {
         <ul>
           {
             items.map((item) => {
-              const props = {
+              const p = {
                 [renderAs === 'a' ? 'href' : hrefAttr]: item.url,
               };
               return (
@@ -69,7 +70,7 @@ export default class Breadcrumb extends PureComponent {
                     'is-active': item.active,
                   })}
                 >
-                  <Element {...props}>
+                  <Element {...p}>
                     {item.name}
                   </Element>
                 </li>

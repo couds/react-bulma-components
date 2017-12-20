@@ -22,11 +22,15 @@ export default class Brand extends React.PureComponent {
 
   render() {
     const {
-      style, className, children, active, toggleMenu,
+      className,
+      children,
+      active,
+      toggleMenu,
+      ...props
     } = this.props;
     return (
       <div
-        style={style}
+        {...props}
         className={classnames('navbar-brand', className)}
       >
         {React.Children.map(children, (child) => {

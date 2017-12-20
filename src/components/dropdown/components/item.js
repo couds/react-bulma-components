@@ -12,16 +12,16 @@ export default class DropdownItem extends PureComponent {
 
   static defaultProps = {
     active: false,
-    onClick: null,
+    onClick: undefined,
     children: null,
   }
 
   render() {
-    const { active, children, value, onClick } = this.props;
+    const { active, children, value, ...props } = this.props;
     return (
       <div
         title={value}
-        onClick={onClick}
+        {...props}
         role="presentation"
         className={classnames('dropdown-item', {
           'is-active': active,

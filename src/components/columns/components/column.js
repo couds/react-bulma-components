@@ -154,7 +154,6 @@ export default class Column extends PureComponent {
     const {
       children,
       className,
-      style,
       size,
       offset,
       narrow,
@@ -163,7 +162,6 @@ export default class Column extends PureComponent {
       desktop,
       widescreen,
       fullhd,
-
       mobileSize,
       tabletSize,
       desktopSize,
@@ -174,14 +172,17 @@ export default class Column extends PureComponent {
       desktopOffset,
       widescreenOffset,
       fullhdOffset,
+      ...props
     } = this.props;
 
     if (mobileSize || tabletSize || desktopSize || widescreenSize || fullhdSize || mobileOffset || tabletOffset || desktopOffset || widescreenOffset || fullhdOffset) {
+      // eslint-disable-next-line no-console
       console.warn('DEPRECATION Warning: The props: mobileSize tabletSize desktopSize widescreenSize fullhdSize mobileOffset tabletOffset desktopOffset widescreenOffset fullhdOffset are deprecated, please use the mobile.size... alternatives');
     }
 
     return (
       <div
+        {...props}
         className={classNames(className, 'column', {
         [`is-${size}`]: size,
         [`is-${mobile.size || mobileSize}-mobile`]: mobile.size || mobileSize,
@@ -202,7 +203,6 @@ export default class Column extends PureComponent {
         'is-narrow-widescreen': widescreen.narrow,
         'is-narrow-fullhd': fullhd.narrow,
       })}
-        style={style}
       >
         {children}
       </div>

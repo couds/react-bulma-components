@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const Dropdown = ({
-  style,
   className,
   renderAs,
   boxed,
@@ -14,12 +13,11 @@ const Dropdown = ({
   const Element = renderAs;
   return (
     <Element
-      style={style}
+      {...props}
       className={classnames('navbar-dropdown', className, {
         'is-boxed': boxed,
         'is-right': right,
       })}
-      {...props}
     >
       {children}
     </Element>

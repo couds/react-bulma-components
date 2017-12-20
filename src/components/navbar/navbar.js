@@ -78,18 +78,18 @@ export default class Navbar extends React.PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       fixed,
       transparent,
       color,
+      ...props
     } = this.props;
     const Element = renderAs;
 
     return (
       <Element
+        {...props}
         role="navigation"
-        style={style}
         className={classnames('navbar', className, {
           'is-transparent': transparent,
           [`is-fixed-${fixed}`]: fixed,

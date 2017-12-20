@@ -23,13 +23,13 @@ export default class Box extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('box', className)}
       >
         {children}

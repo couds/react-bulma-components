@@ -12,9 +12,6 @@ import Section from '../section';
 import Box from '../box';
 import { Textarea, Field, Control } from '../form';
 
-console.log({ Media, Item: Media.Item });
-
-
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 
 storiesOf('Media', module)

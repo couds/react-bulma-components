@@ -5,9 +5,11 @@ import Pagination from '..';
 
 describe('Pagination component', () => {
   beforeEach(() => {
+    // eslint-disable-next-line no-console
     console.warn = jest.genMockFn();
   });
   afterAll(() => {
+    // eslint-disable-next-line no-console
     console.warn.mockRestore();
   });
   it('Pagination Should Exist', () => {

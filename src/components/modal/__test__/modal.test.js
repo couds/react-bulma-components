@@ -1,7 +1,7 @@
 import React from 'react';
-// import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { JSDOM } from 'jsdom';
+import { renderToString } from 'react-dom/server';
 import Modal from '..';
 
 describe('Modal component', () => {
@@ -148,6 +148,7 @@ describe('Modal component', () => {
     expect(modal).not.toBe(null);
   });
   it('Should render any child type', () => {
+    // eslint-disable-next-line no-console
     console.error = jest.genMockFn();
     const onClose = jest.fn();
     component = mount(
@@ -160,6 +161,7 @@ describe('Modal component', () => {
         </div>
       </Modal>);
     expect(global.console.error).toBeCalled();
+    // eslint-disable-next-line no-console
     console.error.mockRestore();
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
@@ -218,5 +220,26 @@ describe('Modal component', () => {
       </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
+  });
+  it('Should use global scope document', () => {
+    const onClose = jest.fn();
+    component = mount(
+      <Modal show onClose={onClose}>
+        <Modal.Content>
+          Content
+        </Modal.Content>
+      </Modal>);
+    component.setProps({ randomProp: 'test' });
+    expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
+  });
+
+  it('Should render empty because no document on scope', () => {
+    component = renderToString(
+      <Modal show onClose={() => {}}>
+        <Modal.Content>
+          Content
+        </Modal.Content>
+      </Modal>);
+    expect(component).toMatchSnapshot();
   });
 });

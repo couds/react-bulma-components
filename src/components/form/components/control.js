@@ -32,19 +32,19 @@ export default class Control extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       fullwidth,
       iconLeft,
       iconRight,
       loading,
       size,
+      ...props
     } = this.props;
     const Element = renderAs;
 
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('control', className, {
           'is-expanded': fullwidth,
           'has-icons-left': iconLeft,

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const Divider = ({
-  style, className,
+  className,
+  ...props
 }) => (
   <div
-    style={style}
+    {...props}
     className={classnames('navbar-divider', className)}
   />
 );

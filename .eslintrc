@@ -16,7 +16,7 @@
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "single"],
-    "no-console": 0,
+    "no-console": 2,
     "no-param-reassign": 0,
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,

@@ -23,21 +23,18 @@ export default class MediaItem extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      position,
       ...props
     } = this.props;
 
     const Element = renderAs;
-    let { position } = props;
-    if (position === 'center') {
-      position = 'content';
-    }
+    const p = position === 'center' ? 'content' : position;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames(className, {
-          [`media-${position}`]: position,
+          [`media-${p}`]: p,
         })}
       >
         {children}
