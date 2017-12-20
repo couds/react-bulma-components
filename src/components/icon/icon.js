@@ -33,14 +33,14 @@ export default class Icon extends PureComponent {
       size,
       color,
       className,
-      style,
       align,
       children,
+      ...props
     } = this.props;
 
     return (
       <span
-        style={style}
+        {...props}
         className={classnames('icon', className, {
           [`is-${size}`]: size,
           [`is-${align}`]: align,

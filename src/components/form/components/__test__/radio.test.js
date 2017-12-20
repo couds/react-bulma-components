@@ -4,9 +4,11 @@ import Radio from '../radio';
 
 describe('Radio component', () => {
   beforeEach(() => {
+    // eslint-disable-next-line no-console
     console.error = jest.genMockFn();
   });
   afterAll(() => {
+    // eslint-disable-next-line no-console
     console.error.mockRestore();
   });
   it('Should exist', () => {

@@ -29,18 +29,18 @@ export default class Heading extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       size,
       subtitle,
       spaced,
       heading,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames(className, {
           title: !subtitle && !heading,
           subtitle: !heading,

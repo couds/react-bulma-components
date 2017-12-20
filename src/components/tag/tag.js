@@ -36,17 +36,17 @@ export default class Tag extends PureComponent {
     const {
       children,
       className,
-      style,
       color,
       size,
       rounded,
       remove,
       renderAs,
+      ...props
     } = this.props;
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('tag', className, {
           [`is-${size}`]: size,
           [`is-${color}`]: color,

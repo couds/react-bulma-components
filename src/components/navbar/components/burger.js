@@ -26,7 +26,12 @@ export default class Burger extends React.PureComponent {
 
   render() {
     const {
-      style, className, active, onClick, toggleMenu, ...props
+      style,
+      className,
+      active,
+      onClick,
+      toggleMenu,
+      ...props
     } = this.props;
     return (
       <div

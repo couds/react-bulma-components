@@ -32,27 +32,34 @@ export default class Modal extends PureComponent {
   static Content = ModalContent
   static Card = ModalCard
 
-  componentWillMount() {
+  componentDidMount() {
     const d = this.getDocument();
-    if (!this.portalElement && d) {
-      this.portalElement = d.createElement('div');
-      this.portalElement.setAttribute('class', 'modal-container');
-      d.body.appendChild(this.portalElement);
-      if (this.props.closeOnEsc) {
-        d.addEventListener('keydown', this.handleKeydown);
-      }
+    this.portalElement = d.createElement('div');
+    this.portalElement.setAttribute('class', 'modal-container');
+    d.body.appendChild(this.portalElement);
+    if (this.props.closeOnEsc) {
+      d.addEventListener('keydown', this.handleKeydown);
     }
+    // eslint-disable-next-line
+    this.setState({ d });
   }
 
   componentWillUnmount() {
+    const { d } = this.state;
     if (this.props.closeOnEsc) {
-      const d = this.props.document || document;
-      d.addEventListener('keydown', this.handleKeydown);
+      d.removeEventListener('keydown', this.handleKeydown);
     }
   }
 
-  /* istanbul ignore next */
-  getDocument = () => this.props.document || document
+  getDocument = () => {
+    if (this.props.document) {
+      return this.props.document;
+    }
+    if (typeof document !== 'undefined') {
+      return document;
+    }
+    return null;
+  }
 
   portalElement = null;
 
@@ -63,7 +70,7 @@ export default class Modal extends PureComponent {
   }
 
   render() {
-    if (!this.portalElement) {
+    if (!this.getDocument() || !this.portalElement) {
       return null;
     }
     const { closeOnBlur, show } = this.props;

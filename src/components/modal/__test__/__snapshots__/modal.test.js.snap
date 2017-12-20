@@ -275,3 +275,7 @@ exports[`Modal component Should render any child type 1`] = `
   />
 </div>
 `;
+
+exports[`Modal component Should render empty because no document on scope 1`] = `""`;
+
+exports[`Modal component Should use global scope document 1`] = `null`;

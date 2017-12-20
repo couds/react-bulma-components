@@ -23,15 +23,13 @@ export default class Label extends PureComponent {
     const {
       children,
       className,
-      style,
       size,
-      htmlFor,
+      ...props
     } = this.props;
 
     return (
       <label
-        htmlFor={htmlFor}
-        style={style}
+        {...props}
         className={classnames('label', className, {
           [`is-${size}`]: size,
         })}

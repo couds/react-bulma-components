@@ -65,9 +65,8 @@ exports[`Navbar component Should have Navbar classname 1`] = `
       className="navbar-start"
       style={Object {}}
     >
-      <a
-        Dropdown={true}
-        className="navbar-item is-hoverable"
+      <span
+        className="navbar-item has-dropdown is-hoverable"
         style={Object {}}
       >
         <span
@@ -99,7 +98,7 @@ exports[`Navbar component Should have Navbar classname 1`] = `
             Home
           </a>
         </span>
-      </a>
+      </span>
     </div>
   </div>
 </nav>

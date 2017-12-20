@@ -19,11 +19,11 @@ export default class ModalCardBody extends PureComponent {
     const {
       children,
       className,
-      style,
+      ...props
     } = this.props;
     return (
       <section
-        style={style}
+        {...props}
         className={classnames('modal-card-body', className)}
       >
         {children}

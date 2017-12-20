@@ -5,10 +5,10 @@ import classnames from 'classnames';
 const ModalCardTitle = ({
   children,
   className,
-  style,
+  ...props
 }) => (
   <p
-    style={style}
+    {...props}
     className={classnames('modal-card-title', className)}
   >
     {children}

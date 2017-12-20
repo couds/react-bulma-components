@@ -23,15 +23,15 @@ export default class LevelSide extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
       align,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames(className, {
           [`level-${align}`]: align,
         })}

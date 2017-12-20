@@ -45,21 +45,24 @@ export default class Image extends PureComponent {
   render() {
     const {
       className,
-      style,
       alt,
+      size,
+      fallback,
+      src,
+      ...props
     } = this.props;
 
-    let { size } = this.props;
+    let s = this.props.size;
 
     if (typeof size === 'number') {
-      size = `${size}x${size}`;
+      s = `${s}x${s}`;
     }
 
     return (
       <figure
-        style={style}
+        {...props}
         className={classnames('image', className, {
-          [`is-${size}`]: size,
+          [`is-${s}`]: s,
         })}
       >
         <img onError={this.onError} src={this.state.src} alt={alt} />

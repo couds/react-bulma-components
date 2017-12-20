@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import events from '../../../modifiers/events';
-
 export default class Radio extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
@@ -15,7 +13,7 @@ export default class Radio extends PureComponent {
     style: PropTypes.shape({}),
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
-    ...events.propTypes,
+    value: PropTypes.string,
   }
 
   static defaultProps = {
@@ -25,7 +23,6 @@ export default class Radio extends PureComponent {
     style: {},
     disabled: false,
     checked: false,
-    ...events.defaultProps,
   }
 
   render() {
@@ -46,7 +43,7 @@ export default class Radio extends PureComponent {
         style={style}
       >
         <input
-          {...events.props(props)}
+          {...props}
           name={name}
           checked={checked}
           type="radio"

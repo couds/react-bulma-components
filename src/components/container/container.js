@@ -30,13 +30,13 @@ export default class Container extends PureComponent {
       fluid,
       breakpoint,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('container', className, {
           'is-fluid': fluid,
           [`is-${breakpoint}`]: breakpoint,

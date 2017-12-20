@@ -9,10 +9,6 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
     disabled={true}
     multiple={true}
     name={null}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     readOnly={false}
     value=""
   >
@@ -38,10 +34,6 @@ exports[`Select component Should concat classname in props with Bulma classname 
     disabled={false}
     multiple={false}
     name={null}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     readOnly={false}
     value=""
   >
@@ -69,10 +61,6 @@ exports[`Select component Should have select classname 1`] = `
     disabled={false}
     multiple={false}
     name={null}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     readOnly={false}
     value=""
   >
@@ -102,10 +90,6 @@ exports[`Select component Should use inline styles 1`] = `
     disabled={false}
     multiple={false}
     name={null}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     readOnly={false}
     value=""
   >

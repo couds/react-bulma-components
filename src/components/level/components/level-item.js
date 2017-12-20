@@ -21,14 +21,14 @@ export default class LevelItem extends PureComponent {
     const {
       children,
       className,
-      style,
       renderAs,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('level-item', className, {
         })}
       >

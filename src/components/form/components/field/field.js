@@ -34,36 +34,33 @@ export default class Field extends PureComponent {
 
   render() {
     const {
-      children,
       className,
-      style,
       renderAs,
       align,
       multiline,
       horizontal,
+      kind,
       ...props
     } = this.props;
     const Element = renderAs;
-    let kind = null;
+    let k = null;
 
-    if (props.kind === 'addons') {
-      kind = 'has-addons';
-    } else if (props.kind === 'group') {
-      kind = 'is-grouped';
+    if (kind === 'addons') {
+      k = 'has-addons';
+    } else if (kind === 'group') {
+      k = 'is-grouped';
     }
 
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('field', className, {
-          [`${kind}`]: kind,
-          [`${kind}-${align}`]: kind && align,
-          [`${kind}-multiline`]: kind === 'is-grouped' && multiline,
+          [`${k}`]: k,
+          [`${k}-${align}`]: k && align,
+          [`${k}-multiline`]: k === 'is-grouped' && multiline,
           'is-horizontal': horizontal,
         })}
-      >
-        {children}
-      </Element>
+      />
     );
   }
 }

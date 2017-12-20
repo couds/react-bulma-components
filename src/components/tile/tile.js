@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import CONSTANTS from '../../constants';
 
-import notification from '../../modifiers/notification';
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+
 
 export default class Tile extends PureComponent {
   static propTypes = {
@@ -13,7 +15,8 @@ export default class Tile extends PureComponent {
     kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
     vertical: PropTypes.bool,
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-    ...notification.propTypes,
+    color: PropTypes.oneOf(colors),
+    notification: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -24,33 +27,35 @@ export default class Tile extends PureComponent {
     kind: null,
     vertical: false,
     size: null,
-    ...notification.defaultProps,
+    color: null,
+    notification: false,
   }
 
   render() {
     const {
       children,
       className,
-      style,
       renderAs,
       kind,
       vertical,
       size,
+      color,
+      notification,
       ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames(
           'tile', className, {
+            notification,
             [`is-${kind}`]: kind,
             [`is-${size}`]: size,
+            [`is-${color}`]: color,
             'is-vertical': vertical,
-          },
-          notification.className(props),
-  )
+          })
         }
       >
         {children}

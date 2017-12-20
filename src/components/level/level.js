@@ -32,15 +32,15 @@ export default class Level extends PureComponent {
     const {
       children,
       className,
-      style,
       breakpoint,
       renderAs,
+      ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
+        {...props}
         className={classnames('level', className, {
           [`is-${breakpoint}`]: breakpoint,
         })}

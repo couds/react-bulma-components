@@ -2,7 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import notification from '../../modifiers/notification';
+import CONSTANTS from '../../constants';
+
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Notification extends PureComponent {
   static propTypes = {
@@ -10,7 +12,7 @@ export default class Notification extends PureComponent {
     className: PropTypes.string,
     style: PropTypes.shape({}),
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    ...notification.propTypes,
+    color: PropTypes.oneOf(colors),
   }
 
   static defaultProps = {
@@ -18,23 +20,25 @@ export default class Notification extends PureComponent {
     className: '',
     style: {},
     renderAs: 'div',
-    ...notification.defaultProps,
+    color: null,
   }
 
   render() {
     const {
       children,
       className,
-      style,
       renderAs,
+      color,
       ...props
     } = this.props;
 
     const Element = renderAs;
     return (
       <Element
-        style={style}
-        className={classnames(notification.className({ ...props, notification: true }), className)}
+        {...props}
+        className={classnames('notification', {
+          [`is-${color}`]: color,
+        }, className)}
       >
         {children}
       </Element>
