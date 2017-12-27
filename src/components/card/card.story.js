@@ -17,8 +17,8 @@ storiesOf('Card', module)
   ))
   .add('Default', withInfo()(() => (
     <Card>
-      <Card type="image" size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
-      <Card type="content">
+      <Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
+      <Card.Content>
         <Media>
           <Media.Item renderAs="figure" position="left">
             <Image renderAs="p" size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
@@ -35,15 +35,15 @@ storiesOf('Card', module)
           <br />
           <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </Content>
-      </Card>
+      </Card.Content>
     </Card>
   )))
   .add('With Footer actions', withInfo()(() => (
     <Card>
-      <Card type="header">
-        <Card type="header-title">Title</Card>
-      </Card>
-      <Card type="content">
+      <Card.Header>
+        <Card.Header.Title>Title</Card.Header.Title>
+      </Card.Header>
+      <Card.Content>
         <Media>
           <Media.Item renderAs="figure" position="left">
             <Image renderAs="p" size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
@@ -60,11 +60,11 @@ storiesOf('Card', module)
           <br />
           <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </Content>
-      </Card>
-      <Card type="footer">
-        <Card renderAs="a" href="#Yes" type="footer-item">Yes</Card>
-        <Card renderAs="a" href="#No" type="footer-item">No</Card>
-        <Card renderAs="a" href="#Maybe" type="footer-item">Maybe</Card>
-      </Card>
+      </Card.Content>
+      <Card.Footer>
+        <Card.Footer.Item renderAs="a" href="#Yes">Yes</Card.Footer.Item>
+        <Card.Footer.Item renderAs="a" href="#No">No</Card.Footer.Item>
+        <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
+      </Card.Footer>
     </Card>
   )));

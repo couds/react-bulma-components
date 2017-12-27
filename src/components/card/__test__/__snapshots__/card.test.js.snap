@@ -12,13 +12,76 @@ exports[`Card component Should have card classname 1`] = `
 exports[`Card component Should have card-content classname 1`] = `
 <div
   className="card-content"
-  style={Object {}}
 >
   Content
 </div>
 `;
 
+exports[`Card component Should have card-footer's classname 1`] = `
+<div
+  className="card"
+  style={Object {}}
+>
+  <div
+    className="card-footer"
+  >
+    <div
+      className="card-footer-item"
+    >
+      Yes
+    </div>
+    <div
+      className="card-footer-item"
+    >
+      No
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card component Should have card-header's classname 1`] = `
+<div
+  className="card"
+  style={Object {}}
+>
+  <div
+    className="card-header"
+  >
+    <div
+      className="card-header-title"
+    >
+      Title
+    </div>
+    <div
+      className="card-header-icon"
+    >
+      <i
+        className="icon"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Card component Should have card-image classname 1`] = `
+<div
+  className="card-image"
+  style={Object {}}
+>
+  <figure
+    className="image is-4by3"
+    style={Object {}}
+  >
+    <img
+      alt=""
+      onError={[Function]}
+      src="http://bulma.io/images/placeholders/1280x960.png"
+    />
+  </figure>
+</div>
+`;
+
+exports[`Card component Should print deprecation warning 1`] = `
 <div
   className="card-image"
   style={Object {}}

@@ -49,6 +49,7 @@ export default class Modal extends PureComponent {
     if (this.props.closeOnEsc) {
       d.removeEventListener('keydown', this.handleKeydown);
     }
+    this.portalElement.remove();
   }
 
   getDocument = () => {
