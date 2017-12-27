@@ -81,6 +81,7 @@ The Following componets were ported:
 - Navbar ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Navbar)) ([Docs](https://bulma.io/documentation/components/navbar/))
 - Notification ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Notification)) ([Docs](http://bulma.io/documentation/elements/notification/))
 - Pagination ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Pagination)) ([Docs](https://bulma.io/documentation/components/pagination/))
+- Panel ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Panel)) ([Docs](https://bulma.io/documentation/components/panel/))
 - Progress ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Progress)) ([Docs](http://bulma.io/documentation/elements/progress/))
 - Section ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Section)) ([Docs](http://bulma.io/documentation/layout/section/))
 - Tabs ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tabs)) ([Docs](https://bulma.io/documentation/components/tabs/))

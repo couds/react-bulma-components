@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel component Should Exist 1`] = `[Function]`;
+
+exports[`Panel component Should have box classname 1`] = `
+<nav
+  className="panel"
+>
+  <div
+    className="panel-heading"
+  >
+    repositories
+  </div>
+  <div
+    className="panel-block"
+  >
+    <div>
+      Control
+    </div>
+  </div>
+  <div
+    className="panel-tabs panel-tabs"
+  >
+    <a
+      className="is-active"
+    >
+      all
+    </a>
+    <a
+      className=""
+    >
+      public
+    </a>
+    <a
+      className=""
+    >
+      private
+    </a>
+    <a
+      className=""
+    >
+      sources
+    </a>
+    <a
+      className=""
+    >
+      forks
+    </a>
+  </div>
+  <a
+    className="panel-block is-active"
+  >
+    <span
+      className="panel-icon"
+    >
+      <i
+        className="fa fa-bars"
+      />
+    </span>
+    bulma
+  </a>
+  <label
+    className="panel-block panel-block"
+  >
+    <input
+      type="checkbox"
+    />
+    remember me
+  </label>
+  <div
+    className="panel-block"
+  >
+    <button>
+      reset all filters
+    </button>
+  </div>
+</nav>
+`;
