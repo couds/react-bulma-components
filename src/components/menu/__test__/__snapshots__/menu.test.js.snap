@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component Should Exist 1`] = `[Function]`;
+
+exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
+<aside
+  className="menu"
+>
+  <p
+    className="menu-label"
+  >
+    General
+  </p>
+  <ul
+    className="menu-list"
+  >
+    <li>
+      <span
+        className=""
+      >
+        Custom 
+        Dashboard
+      </span>
+    </li>
+    <li>
+      <span
+        className=""
+      >
+        Custom 
+        Customer
+      </span>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
+<aside
+  className="menu"
+>
+  <p
+    className="menu-label"
+  >
+    General
+  </p>
+  <ul
+    className="menu-list"
+  >
+    <li>
+      <a
+        className=""
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <li>
+        <a
+          className="is-active"
+        >
+          Manage Your Team
+        </a>
+        <ul
+          className="menu-list"
+        >
+          <li>
+            <a
+              className=""
+            >
+              Members
+            </a>
+          </li>
+          <li>
+            <a
+              className="is-active"
+            >
+              Plugins
+            </a>
+          </li>
+          <li>
+            <a
+              className=""
+            >
+              Add a member
+            </a>
+          </li>
+        </ul>
+      </li>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`Menu component Should have menu classnames 1`] = `
+<aside
+  className="menu"
+>
+  <p
+    className="menu-label"
+  >
+    General
+  </p>
+  <ul
+    className="menu-list"
+  >
+    <li>
+      <a
+        className=""
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+      >
+        Customer
+      </a>
+    </li>
+  </ul>
+</aside>
+`;
+
+exports[`Menu component Should render custom item child 1`] = `
+<aside
+  className="menu"
+>
+  <p
+    className="menu-label"
+  >
+    General
+  </p>
+  <ul
+    className="menu-list"
+  >
+    <li>
+      <p>
+        Custom children 1
+      </p>
+    </li>
+    <li>
+      <a>
+        Custom children 2
+      </a>
+    </li>
+  </ul>
+</aside>
+`;

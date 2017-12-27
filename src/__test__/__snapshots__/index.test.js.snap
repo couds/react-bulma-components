@@ -28,6 +28,7 @@ Object {
   "Level": [Function],
   "Loader": [Function],
   "Media": [Function],
+  "Menu": [Function],
   "Modal": [Function],
   "Navbar": [Function],
   "Notification": [Function],
