@@ -75,6 +75,7 @@ The Following componets were ported:
 - Level ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Level)) ([Docs](http://bulma.io/documentation/layout/level/))
 - Loader ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Loader))
 - Media ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Media)) ([Docs](http://bulma.io/documentation/layout/media-object/))
+- Message ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Message)) ([Docs](http://bulma.io/documentation/components/message/))
 - Menu ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Menu)) ([Docs](http://bulma.io/documentation/components/menu/))
 - Modal ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Modal)) ([Docs](http://bulma.io/documentation/components/modal/))
 - Navbar ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Navbar)) ([Docs](https://bulma.io/documentation/components/navbar/))

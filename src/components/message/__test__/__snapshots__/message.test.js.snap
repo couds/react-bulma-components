@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component Should Exist 1`] = `[Function]`;
+
+exports[`Message component Should accept a react Element as renderAs prop 1`] = `
+<p
+  className="message"
+  style={Object {}}
+>
+  Custom 
+  This should be a p element
+</p>
+`;
+
+exports[`Message component Should concat Bulma class with classes in props 1`] = `
+<article
+  className="message other-class"
+  style={Object {}}
+>
+  <div
+    className="message-header"
+  >
+    Lorem Ipsum
+  </div>
+  <div
+    className="message-body"
+  >
+    Lorem Ipsum
+  </div>
+</article>
+`;
+
+exports[`Message component Should have custom inline styles 1`] = `
+<section
+  className="message"
+  style={
+    Object {
+      "width": 200,
+      "zIndex": 1,
+    }
+  }
+>
+  This should be a section with custom styles
+</section>
+`;
+
+exports[`Message component Should have message classnames 1`] = `
+<article
+  className="message"
+  style={Object {}}
+>
+  <div
+    className="message-header"
+  >
+    Lorem Ipsum
+  </div>
+  <div
+    className="message-body"
+  >
+    Lorem Ipsum
+  </div>
+</article>
+`;
+
+exports[`Message component Should render as an html section 1`] = `
+<section
+  className="message"
+  style={Object {}}
+>
+  This should be a section
+</section>
+`;

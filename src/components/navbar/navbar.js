@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-// eslint-disable-next-line
 import canUseDOM from '../../services/can-use-dom';
 import Brand from './components/brand';
 import Burger from './components/burger';

@@ -29,6 +29,7 @@ Object {
   "Loader": [Function],
   "Media": [Function],
   "Menu": [Function],
+  "Message": [Function],
   "Modal": [Function],
   "Navbar": [Function],
   "Notification": [Function],
