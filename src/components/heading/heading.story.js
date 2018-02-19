@@ -34,7 +34,7 @@ storiesOf('Heading', module)
         <Heading size={2}>
           Title
         </Heading>
-        <Heading subtitle size={4}>
+        <Heading subtitle size={4} renderAs="h2">
           Subtitle
         </Heading>
       </Box>
@@ -42,7 +42,7 @@ storiesOf('Heading', module)
         <Heading size={3}>
           Title
         </Heading>
-        <Heading subtitle size={5}>
+        <Heading subtitle size={5} renderAs="h2">
           Subtitle
         </Heading>
       </Box>
@@ -50,8 +50,8 @@ storiesOf('Heading', module)
         <Heading size={4}>
           Title
         </Heading>
-        <Heading subtitle size={6}>
-          Title
+        <Heading subtitle size={6} renderAs="h2">
+          Subtitle
         </Heading>
       </Box>
     </div>
