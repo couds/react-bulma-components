@@ -146,6 +146,17 @@ exports[`Hero component Should use use color light 1`] = `
 </section>
 `;
 
+exports[`Hero component Should use use color link 1`] = `
+<section
+  className="hero is-link"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
 exports[`Hero component Should use use color null 1`] = `
 <section
   className="hero"

@@ -114,6 +114,16 @@ exports[`Tag component Should use use color light 1`] = `
 </span>
 `;
 
+exports[`Tag component Should use use color link 1`] = `
+<span
+  className="tag is-link"
+  style={Object {}}
+>
+  tag 
+  link
+</span>
+`;
+
 exports[`Tag component Should use use color null 1`] = `
 <span
   className="tag"
