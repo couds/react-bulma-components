@@ -106,6 +106,17 @@ exports[`Notification component Should use use color light 1`] = `
 </div>
 `;
 
+exports[`Notification component Should use use color link 1`] = `
+<div
+  className="notification is-link"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
 exports[`Notification component Should use use color null 1`] = `
 <div
   className="notification"

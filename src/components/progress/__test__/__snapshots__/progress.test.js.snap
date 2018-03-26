@@ -87,6 +87,15 @@ exports[`Progress component Should use use color light 1`] = `
 />
 `;
 
+exports[`Progress component Should use use color link 1`] = `
+<progress
+  className="progress is-link"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
 exports[`Progress component Should use use color null 1`] = `
 <progress
   className="progress"
