@@ -19,12 +19,14 @@ export default class Modal extends PureComponent {
     showClose: PropTypes.bool,
     children: PropTypes.element.isRequired,
     document: PropTypes.object,
+    className: PropTypes.string,
   }
 
   static defaultProps = {
     closeOnEsc: true,
     showClose: true,
     closeOnBlur: false,
+    className: '',
     // Expose mount point for testing
     document: null,
   }
@@ -74,7 +76,7 @@ export default class Modal extends PureComponent {
     if (!this.getDocument() || !this.portalElement) {
       return null;
     }
-    const { closeOnBlur, show } = this.props;
+    const { closeOnBlur, show, className } = this.props;
     let { children } = this.props;
     let isCard;
     try {
@@ -92,7 +94,7 @@ export default class Modal extends PureComponent {
     }
 
     return ReactDOM.createPortal(
-      <div className={classnames('modal', {
+      <div className={classnames('modal', className, {
         'is-active': show,
       })}
       >
