@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Burger from './burger';
 
-export default class Brand extends React.PureComponent {
+export default class NavbarBrand extends React.PureComponent {
+  static displayName = 'Navbar.Brand'
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,

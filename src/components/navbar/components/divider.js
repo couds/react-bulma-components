@@ -2,24 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Divider = ({
-  className,
-  ...props
-}) => (
-  <div
-    {...props}
-    className={classnames('navbar-divider', className)}
-  />
-);
+export default class NavbarDivider extends React.PureComponent {
+  static displayName = 'Navbar.Divider'
+  static propTypes = {
+    style: PropTypes.shape({}),
+    className: PropTypes.string,
+  }
 
-Divider.propTypes = {
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
-};
+  static defaultProps = {
+    style: {},
+    className: '',
+  }
 
-Divider.defaultProps = {
-  style: {},
-  className: '',
-};
+  render() {
+    const {
+      className,
+      ...props
+    } = this.props;
 
-export default Divider;
+    return (
+      <div
+        {...props}
+        className={classnames('navbar-divider', className)}
+      />
+    );
+  }
+}
+

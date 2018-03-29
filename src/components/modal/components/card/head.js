@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import Button from '../../../button';
 
 export default class ModalCardHead extends PureComponent {
+  static displayName = 'Modal.Card.Head'
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

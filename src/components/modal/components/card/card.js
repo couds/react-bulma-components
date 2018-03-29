@@ -8,6 +8,7 @@ import ModalCardFoot from './foot';
 import ModalCardTitle from './title';
 
 export default class ModalCard extends PureComponent {
+  static displayName = 'Modal.Card'
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

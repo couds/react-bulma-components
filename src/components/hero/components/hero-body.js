@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default class HeroBody extends PureComponent {
+  static displayName = 'Hero.Body'
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

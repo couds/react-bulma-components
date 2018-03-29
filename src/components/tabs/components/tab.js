@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default class Tab extends PureComponent {
+  static displayName = 'Tabs.Tab'
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
