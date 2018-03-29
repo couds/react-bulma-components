@@ -94,12 +94,12 @@ The Following componets were ported:
 To Override the variables set by Bulma you will need to create a sass file like this one (_variable.sass)
 
 ```sass
-@import '~bulma/sass/utilities/initial-variables.sass';
+@import '~bulma/sass/utilities/initial-variables.sass'
 
 // ADD HERE variables you want to override
 $primary: #f4f4f4
 
-@import '~bulma/sass/utilities/_all.sass';
+@import '~bulma/sass/utilities/_all.sass'
 ```
 
 After that you will need to add to your webpack configuration an alias pointing to the file
