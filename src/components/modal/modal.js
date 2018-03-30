@@ -73,10 +73,10 @@ export default class Modal extends PureComponent {
   }
 
   render() {
-    if (!this.getDocument() || !this.portalElement) {
+    const { closeOnBlur, show, className } = this.props;
+    if (!this.getDocument() || !this.portalElement || !show) {
       return null;
     }
-    const { closeOnBlur, show, className } = this.props;
     let { children } = this.props;
     let isCard;
     try {
