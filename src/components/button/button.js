@@ -75,6 +75,7 @@ export default class Button extends PureComponent {
       href,
       hrefAttr,
       isStatic,
+      onClick,
       ...props
     } = this.props;
     let Element = isStatic ? 'span' : renderAs;
@@ -97,9 +98,11 @@ export default class Button extends PureComponent {
 
     return (
       <Element
+        tabIndex={disabled ? -1 : 0}
         {...props}
         {...otherProps}
         disabled={disabled}
+        onClick={disabled ? undefined : onClick}
         className={classnames(className, {
           'is-link': link,
           [`is-${color}`]: color,

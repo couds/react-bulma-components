@@ -17,6 +17,7 @@ exports[`Dropdown component Should concat Bulma class with classes in props 1`] 
       disabled={false}
       onClick={[Function]}
       style={Object {}}
+      tabIndex={0}
     >
       <span>
         Item
@@ -71,6 +72,7 @@ exports[`Dropdown component Should have custom inline styles 1`] = `
       disabled={false}
       onClick={[Function]}
       style={Object {}}
+      tabIndex={0}
     >
       <span>
         Item
@@ -125,6 +127,7 @@ exports[`Dropdown component Should have divider 1`] = `
       disabled={false}
       onClick={[Function]}
       style={Object {}}
+      tabIndex={0}
     >
       <span>
         Item
@@ -187,6 +190,7 @@ exports[`Dropdown component Should have dropdown classname 1`] = `
       disabled={false}
       onClick={[Function]}
       style={Object {}}
+      tabIndex={0}
     >
       <span>
         Item
