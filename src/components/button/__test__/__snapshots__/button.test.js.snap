@@ -6,6 +6,7 @@ exports[`Button component Should be a Large Primary Button 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
 />
 `;
 
@@ -15,6 +16,7 @@ exports[`Button component Should be a Primary Button 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
 />
 `;
 
@@ -25,6 +27,7 @@ exports[`Button component Should be a default Button 1`] = `
   href="http://google.com"
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
 />
 `;
 
@@ -34,6 +37,7 @@ exports[`Button component Should be a reset form button 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
   type="reset"
 />
 `;
@@ -44,6 +48,7 @@ exports[`Button component Should be a submit form button 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
   type="submit"
 />
 `;
@@ -62,6 +67,7 @@ exports[`Button component Should render as a html button 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
 />
 `;
 
@@ -71,6 +77,7 @@ exports[`Button component Should render as a static Button 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
+  tabIndex={0}
 />
 `;
 
@@ -78,7 +85,8 @@ exports[`Button component Should render be disabled 1`] = `
 <a
   className="button"
   disabled={true}
-  onClick={[Function]}
+  onClick={undefined}
   style={Object {}}
+  tabIndex={-1}
 />
 `;

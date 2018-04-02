@@ -74,6 +74,12 @@ describe('Button component', () => {
     component.simulate('click');
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+  it('Should have no dispatch click handler if disabled', () => {
+    const onClick = jest.fn();
+    const component = shallow(<Button disabled onClick={onClick} />);
+    component.simulate('click');
+    expect(onClick).toHaveBeenCalledTimes(0);
+  });
   it('Should have a call default onClick is no listener is set', () => {
     const spy = jest.spyOn(Button.defaultProps, 'onClick');
     const component = shallow(<Button />);
