@@ -7,7 +7,7 @@
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
 
-React components for Bulma framework
+React components for Bulma (v0.7.1) framework
 
 This is a implementation in React of the [Bulma](http://bulma.io/) Framework Component by Jeremy Thomas.
 

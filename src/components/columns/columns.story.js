@@ -33,7 +33,7 @@ storiesOf('Columns', module)
   .add('Sizes by name', withInfo('')(() => (
     <div>
       {Object.keys(CONSTANTS.SIZES).map(size => (
-        <Columns>
+        <Columns key={size}>
           <Columns.Column size={CONSTANTS.SIZES[size]}>
             <p className="bd-notification is-success">{CONSTANTS.SIZES[size]}</p>
           </Columns.Column>
