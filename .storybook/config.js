@@ -8,10 +8,10 @@ setOptions({
   name: 'React Bulma Components',
   url: 'https://github.com/couds/react-bulma-components',
   goFullScreen: false,
-  showLeftPanel: true,
-  showDownPanel: false,
+  showStoriesPanel: true,
+  showAddonPanel: false,
   showSearchBox: false,
-  downPanelInRight: false,
+  addonPanelInRight: false,
   sortStoriesByKind: false,
   hierarchySeparator: /\/|\./,
 });
