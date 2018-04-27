@@ -28,7 +28,6 @@ export default class Button extends PureComponent {
     fullwidth: PropTypes.bool,
     disabled: PropTypes.bool,
     remove: PropTypes.bool,
-    link: PropTypes.bool,
     isStatic: PropTypes.bool,
   }
 
@@ -41,7 +40,6 @@ export default class Button extends PureComponent {
     renderAs: 'a',
     onClick: () => null,
     color: null,
-    link: false,
     size: null,
     state: null,
     outlined: false,
@@ -71,7 +69,6 @@ export default class Button extends PureComponent {
       loading,
       disabled,
       remove,
-      link,
       href,
       hrefAttr,
       isStatic,
@@ -104,7 +101,6 @@ export default class Button extends PureComponent {
         disabled={disabled}
         onClick={disabled ? undefined : onClick}
         className={classnames(className, {
-          'is-link': link,
           [`is-${color}`]: color,
           [`is-${size}`]: size,
           [`is-${state}`]: state,

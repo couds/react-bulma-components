@@ -60,6 +60,9 @@ storiesOf('Button', module)
         <Button color="black">
         Black
         </Button>
+        <Button color="link">
+        Link
+        </Button>
       </Box>
     </Section>
   )))
@@ -80,9 +83,6 @@ storiesOf('Button', module)
         </Button>
         <Button disabled color="info">
           Disabled
-        </Button>
-        <Button link href="http://google.com">
-          Link
         </Button>
         <Button renderAs={Link} hrefAttr="to" color="primary" href="http://google.com">
           Custom component
