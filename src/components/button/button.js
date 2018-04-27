@@ -29,6 +29,7 @@ export default class Button extends PureComponent {
     disabled: PropTypes.bool,
     remove: PropTypes.bool,
     isStatic: PropTypes.bool,
+    text: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -51,6 +52,7 @@ export default class Button extends PureComponent {
     disabled: false,
     remove: false,
     isStatic: false,
+    text: false,
   }
 
   render() {
@@ -73,6 +75,7 @@ export default class Button extends PureComponent {
       hrefAttr,
       isStatic,
       onClick,
+      text,
       ...props
     } = this.props;
     let Element = isStatic ? 'span' : renderAs;
@@ -108,6 +111,7 @@ export default class Button extends PureComponent {
           'is-inverted': inverted,
           'is-fullwidth': fullwidth,
           'is-loading': loading,
+          'is-text': text,
           delete: remove,
           button: !remove,
         })}

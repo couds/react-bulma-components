@@ -87,14 +87,13 @@ storiesOf('Button', module)
         <Button renderAs={Link} hrefAttr="to" color="primary" href="http://google.com">
           Custom component
         </Button>
-
+        <Button text>
+          Underlined Text Button
+        </Button>
         <Button remove />
-        <div style={{
- background: '#4c4c4c', padding: 20, width: 200, margin: 10, display: 'flex', alignItems: 'center', justifyContent: 'center',
-}}
-        >
+        <div style={{ background: '#4c4c4c', padding: 20, width: 200, margin: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Button inverted outlined type="success">
-          Inverted Outlined
+            Inverted Outlined
           </Button>
         </div>
       </Box>
