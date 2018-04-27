@@ -45,28 +45,31 @@ export default class Navbar extends React.PureComponent {
     color: null,
   }
 
+  static getDerivedStateFromProps(nextProps) {
+    if (!canUseDOM) {
+      return null;
+    }
+    const html = window.document.querySelector('html');
+    html.classList.remove('has-navbar-fixed-top');
+    html.classList.remove('has-navbar-fixed-bottom');
+    if (nextProps.fixed) {
+      html.classList.add(`has-navbar-fixed-${nextProps.fixed}`);
+    }
+    return null;
+  }
+
   state = {
     showMobileMenu: false,
   }
 
   componentDidMount() {
-    const html = window.document.querySelector('html');
-    let classname = (html.getAttribute('class') || '').replace(/has-navbar-fixed-(top|bottom)/, '');
     if (this.props.fixed) {
-      classname = `${classname} has-navbar-fixed-${this.props.fixed}`;
+      window.document.querySelector('html').classList.add(`has-navbar-fixed-${this.props.fixed}`);
     }
-    html.setAttribute('class', classname);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (canUseDOM && nextProps.fixed !== this.props.fixed) {
-      const html = window.document.querySelector('html');
-      let classname = (html.getAttribute('class') || '').replace(/has-navbar-fixed-(top|bottom)/, '');
-      if (nextProps.fixed) {
-        classname = `${classname} has-navbar-fixed-${nextProps.fixed}`;
-      }
-      html.setAttribute('class', classname);
-    }
+  componentWillUnmount() {
+    window.document.querySelector('html').classList.remove(`has-navbar-fixed-${this.props.fixed}`);
   }
 
   toggleMenu = () => {
