@@ -68,6 +68,11 @@ export default class Navbar extends React.PureComponent {
     }
   }
 
+  // TODO: Remove this on future releases
+  componentWillReceiveProps(nextProps) {
+    Navbar.getDerivedStateFromProps(nextProps);
+  }
+
   componentWillUnmount() {
     window.document.querySelector('html').classList.remove(`has-navbar-fixed-${this.props.fixed}`);
   }
