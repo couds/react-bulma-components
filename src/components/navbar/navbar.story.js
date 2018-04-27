@@ -107,7 +107,7 @@ storiesOf('Navbar', module)
           </Navbar.Brand>
           <Navbar.Menu>
             <Navbar.Container>
-              <Navbar.Item Dropdown hoverable>
+              <Navbar.Item dropdown hoverable>
                 <Navbar.Link>
                   Docs
                 </Navbar.Link>
