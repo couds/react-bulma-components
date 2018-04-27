@@ -4,7 +4,11 @@ export default {
     THREEQUARTERS: 'three-quarters',
     TWOTHIRDS: 'two-thirds',
     HALF: 'half',
-    ONETHIRDS: 'one-third',
+    ONETHIRD: 'one-third',
     ONEQUARTER: 'one-quarter',
+    ONEFIFTH: 'one-fifth',
+    TWOFIFTHS: 'two-fifths',
+    THREEFIFTHS: 'three-fifths',
+    FOURFIFTHS: 'four-fifths',
   },
 };

@@ -6,6 +6,7 @@ import { withInfo } from '@storybook/addon-info';
 import Columns from '.';
 import Box from '../box';
 import Heading from '../heading';
+import CONSTANTS from './constants';
 
 storiesOf('Columns', module)
   .addDecorator(story => (
@@ -31,62 +32,18 @@ storiesOf('Columns', module)
   )))
   .add('Sizes by name', withInfo('')(() => (
     <div>
-      <Columns>
-        <Columns.Column size="three-quarters">
-          <p className="bd-notification is-success">is-three-quarters</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-info">Auto</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-warning">Auto</p>
-        </Columns.Column>
-      </Columns>
+      {Object.keys(CONSTANTS.SIZES).map(size => (
+        <Columns>
+          <Columns.Column size={CONSTANTS.SIZES[size]}>
+            <p className="bd-notification is-success">{CONSTANTS.SIZES[size]}</p>
+          </Columns.Column>
+          <Columns.Column >
+            <p className="bd-notification is-info">Auto</p>
+          </Columns.Column>
+        </Columns>
+      ))
 
-      <Columns>
-        <Columns.Column size="two-thirds">
-          <p className="bd-notification is-success">is-two-thirds</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-info">Auto</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-warning">Auto</p>
-        </Columns.Column>
-      </Columns>
-
-      <Columns>
-        <Columns.Column size="half">
-          <p className="bd-notification is-success">is-half</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-info">Auto</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-warning">Auto</p>
-        </Columns.Column>
-      </Columns>
-
-      <Columns>
-        <Columns.Column size="one-third">
-          <p className="bd-notification is-success">is-one-thirds</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-info">Auto</p>
-        </Columns.Column>
-        <Columns.Column>
-          <p className="bd-notification is-warning">Auto</p>
-        </Columns.Column>
-      </Columns>
-
-      <Columns>
-        <Columns.Column size="one-quarter">
-          <p className="bd-notification is-success">is-one-quarter</p>
-        </Columns.Column>
-        <Columns.Column >
-          <p className="bd-notification is-info">Auto</p>
-        </Columns.Column>
-      </Columns>
+      }
     </div>
   )))
   .add('Sizes by 12 Columns', withInfo('')(() => (
