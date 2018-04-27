@@ -9,7 +9,7 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 
 export default class Icon extends PureComponent {
   static propTypes = {
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.string,
     children: PropTypes.element,
     className: PropTypes.string,
     style: PropTypes.shape({}),
@@ -25,6 +25,7 @@ export default class Icon extends PureComponent {
     color: null,
     children: null,
     align: null,
+    icon: null,
   }
 
   render() {
