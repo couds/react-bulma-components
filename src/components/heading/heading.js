@@ -43,7 +43,7 @@ export default class Heading extends PureComponent {
         {...props}
         className={classnames(className, {
           title: !subtitle && !heading,
-          subtitle: !heading,
+          subtitle,
           heading,
           [`is-${size}`]: size,
           'is-spaced': spaced && !subtitle,
