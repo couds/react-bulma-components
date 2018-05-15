@@ -16,7 +16,7 @@ export default class Label extends PureComponent {
     className: '',
     style: {},
     size: null,
-    htmlFor: '',
+    htmlFor: null,
   }
 
   render() {
