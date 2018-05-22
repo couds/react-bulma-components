@@ -9,6 +9,7 @@ export default class Heading extends PureComponent {
     style: PropTypes.shape({}),
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    weight: PropTypes.oneOf(['light','normal','semibold','bold']),
     subtitle: PropTypes.bool,
     heading: PropTypes.bool,
     spaced: PropTypes.bool,
@@ -20,6 +21,7 @@ export default class Heading extends PureComponent {
     style: {},
     renderAs: 'h1',
     size: null,
+    weight:'normal',
     subtitle: false,
     heading: false,
     spaced: false,
@@ -32,6 +34,7 @@ export default class Heading extends PureComponent {
       renderAs,
       size,
       subtitle,
+      weight,
       spaced,
       heading,
       ...props
@@ -46,6 +49,7 @@ export default class Heading extends PureComponent {
           subtitle,
           heading,
           [`is-${size}`]: size,
+          [`has-text-weight-${weight}`]: weight,
           'is-spaced': spaced && !subtitle,
         })}
       >
