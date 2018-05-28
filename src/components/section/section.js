@@ -15,7 +15,7 @@ export default class Section extends PureComponent {
     children: null,
     className: '',
     style: {},
-    renderAs: 'div',
+    renderAs: 'section',
     size: null,
   }
 

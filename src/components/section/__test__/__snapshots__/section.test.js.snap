@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Section component Should be Large 1`] = `
-<div
+<section
   className="section is-large"
   style={Object {}}
 >
   <p>
     Default
   </p>
-</div>
+</section>
 `;
 
 exports[`Section component Should concat classname in props with Bulma classname 1`] = `
-<div
+<section
   className="section other-class this-is-a-test"
   style={Object {}}
 >
   <p>
     Default
   </p>
-</div>
+</section>
 `;
 
 exports[`Section component Should exist 1`] = `[Function]`;
 
 exports[`Section component Should have section classname 1`] = `
-<div
+<section
   className="section"
   style={Object {}}
 >
@@ -35,7 +35,7 @@ exports[`Section component Should have section classname 1`] = `
   >
     Give me
   </a>
-</div>
+</section>
 `;
 
 exports[`Section component Should render as nav element 1`] = `
@@ -50,7 +50,7 @@ exports[`Section component Should render as nav element 1`] = `
 `;
 
 exports[`Section component Should use inline styles 1`] = `
-<div
+<section
   className="section"
   style={
     Object {
@@ -61,5 +61,5 @@ exports[`Section component Should use inline styles 1`] = `
   <p>
     Default
   </p>
-</div>
+</section>
 `;
