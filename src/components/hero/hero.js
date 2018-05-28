@@ -17,7 +17,7 @@ export default class Hero extends PureComponent {
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     color: PropTypes.oneOf(colors),
     gradient: PropTypes.bool,
-    size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
+    size: PropTypes.oneOf(['small','medium', 'large', 'fullheight']),
   }
 
   static defaultProps = {
