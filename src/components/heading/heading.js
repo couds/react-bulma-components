@@ -21,7 +21,7 @@ export default class Heading extends PureComponent {
     style: {},
     renderAs: 'h1',
     size: null,
-    weight: 'normal',
+    weight: null,
     subtitle: false,
     heading: false,
     spaced: false,
