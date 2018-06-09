@@ -10,7 +10,7 @@ export default class Input extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.shape({}),
-    type: PropTypes.oneOf(['text', 'email', 'tel', 'password','number']),
+    type: PropTypes.oneOf(['text', 'email', 'tel', 'password', 'number']),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     color: PropTypes.oneOf(colors),
     readOnly: PropTypes.bool,
