@@ -15,7 +15,7 @@ You can find the Storybook of all components [here](https://couds.github.io/reac
 
 ### NOTES:
 
-I will be releasing soon the version 2.0.0 in which I will drop the support of react < 16. this will add the bulma generic helpers as props to all components and refactor all the components (that make sense) to functional ones.
+I will be releasing soon the version 2.0.0 in which I will drop the support of react <= 15. this will add the bulma generic helpers as props to all components and refactor all the components (that make sense) to functional ones.
 
 ### To Install
 
