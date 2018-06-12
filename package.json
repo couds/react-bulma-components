@@ -8,7 +8,7 @@
     "test:cov": "eslint . && jest --coverage",
     "coveralls": "cat ./.coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
-    "prepublish": "yarn clean:build && npm run build && yarn clean:test",
+    "prepare": "yarn clean:build && npm run build && yarn clean:test",
     "clean:build": "rm -rf dist && rm -rf lib && rm -rf full",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",
