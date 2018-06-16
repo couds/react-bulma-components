@@ -28,7 +28,7 @@ import React from 'react';
 // You can import from the global component (you will need to include the css file dist/react-bulma-components.min.css)
 import { Columns } from 'react-bulma-components';
 
-// You can also include the js that also bundle the ccs (do not work with server-side rendering)
+// You can also include the js that also bundle the css (do not work with server-side rendering)
 import { Columns } from 'react-bulma-components/full';
 
 // [RECOMENDED] Or import only the components you will use (this will reduce the total bundle size)
