@@ -107,6 +107,7 @@ export default class Button extends PureComponent {
           [`is-${color}`]: color,
           [`is-${size}`]: size,
           [`is-${state}`]: state,
+          'is-static': isStatic,
           'is-outlined': outlined,
           'is-inverted': inverted,
           'is-fullwidth': fullwidth,
