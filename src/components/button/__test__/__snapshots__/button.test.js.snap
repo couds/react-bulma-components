@@ -73,7 +73,7 @@ exports[`Button component Should render as a html button 1`] = `
 
 exports[`Button component Should render as a static Button 1`] = `
 <span
-  className="is-primary button"
+  className="is-primary is-static button"
   disabled={false}
   onClick={[Function]}
   style={Object {}}
