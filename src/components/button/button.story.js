@@ -96,6 +96,12 @@ storiesOf('Button', module)
             Inverted Outlined
           </Button>
         </div>
+        <Button isStatic>
+           Static Button
+        </Button>
+        <Button rounded>
+           Rounded Button
+        </Button>
       </Box>
     </Section>
   )));
