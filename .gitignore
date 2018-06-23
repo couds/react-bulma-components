@@ -60,6 +60,7 @@ typings/
 .DS_Store
 
 .out
+out*
 
 /reports
 /dist
