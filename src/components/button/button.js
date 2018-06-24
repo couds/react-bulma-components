@@ -29,6 +29,7 @@ export default class Button extends PureComponent {
     disabled: PropTypes.bool,
     remove: PropTypes.bool,
     isStatic: PropTypes.bool,
+    rounded: PropTypes.bool,
     text: PropTypes.bool,
   }
 
@@ -52,6 +53,7 @@ export default class Button extends PureComponent {
     disabled: false,
     remove: false,
     isStatic: false,
+    rounded: false,
     text: false,
   }
 
@@ -74,6 +76,7 @@ export default class Button extends PureComponent {
       href,
       hrefAttr,
       isStatic,
+      rounded,
       onClick,
       text,
       ...props
@@ -108,6 +111,7 @@ export default class Button extends PureComponent {
           [`is-${size}`]: size,
           [`is-${state}`]: state,
           'is-static': isStatic,
+          'is-rounded': rounded,
           'is-outlined': outlined,
           'is-inverted': inverted,
           'is-fullwidth': fullwidth,
