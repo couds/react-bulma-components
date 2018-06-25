@@ -27,7 +27,7 @@ class Pagination extends React.PureComponent {
     total: 1,
     current: 1,
     delta: 1,
-    onChange: () => {},
+    onChange: () => { },
     next: 'Next',
     previous: 'Previous',
     showPrevNext: true,
@@ -45,7 +45,7 @@ class Pagination extends React.PureComponent {
       return 1;
     }
 
-    const page = current - this.props.delta * (current === total ? 2 : 1);
+    const page = current - (this.props.delta * (current === total ? 2 : 1));
 
     return page <= 0 ? 1 : page;
   };
@@ -55,7 +55,7 @@ class Pagination extends React.PureComponent {
       return total;
     }
 
-    const page = current + this.props.delta * (current === 1 ? 2 : 1);
+    const page = current + (this.props.delta * (current === 1 ? 2 : 1));
 
     return page > total ? total : page;
   };
@@ -127,8 +127,10 @@ class Pagination extends React.PureComponent {
                   <React.Fragment>
                     <li>
                       <a
+                        role="button"
                         className="pagination-link"
                         aria-label="Goto page 1"
+                        tabIndex={0}
                         onClick={this.goToPage(1)}
                       >
                         1
@@ -139,7 +141,7 @@ class Pagination extends React.PureComponent {
                     </li>
                   </React.Fragment>
                 )}
-              {Array(lastPage - firstPage + 1)
+              {Array(lastPage - (firstPage + 1))
                 .fill(0)
                 .map((_, i) => (
                   // eslint-disable-next-line react/no-array-index-key
@@ -170,8 +172,10 @@ class Pagination extends React.PureComponent {
                     </li>
                     <li>
                       <a
+                        role="button"
                         className="pagination-link"
                         aria-label={`Goto page ${total}`}
+                        tabIndex={0}
                         onClick={this.goToPage(total)}
                       >
                         {total}
