@@ -17,7 +17,11 @@ export default class Select extends PureComponent {
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     multiple: PropTypes.bool,
-    value: PropTypes.string,
+    loading: PropTypes.bool,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     /**
      * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
      */
@@ -34,6 +38,7 @@ export default class Select extends PureComponent {
     readOnly: false,
     disabled: false,
     multiple: false,
+    loading: false,
     name: null,
   }
 
@@ -43,6 +48,7 @@ export default class Select extends PureComponent {
       style,
       size,
       color,
+      loading,
       readOnly,
       disabled,
       value,
@@ -56,6 +62,7 @@ export default class Select extends PureComponent {
         className={classnames('select', className, {
           [`is-${size}`]: size,
           [`is-${color}`]: color,
+          'is-loading': loading,
           'is-multiple': multiple,
         })}
         style={style}
