@@ -16,12 +16,13 @@ class Pagination extends React.PureComponent {
     /** Text of the Previous button */
     previous: PropTypes.node,
     showPrevNext: PropTypes.bool,
+    showFirstLast: PropTypes.bool,
     autoHide: PropTypes.bool,
     /**
      * Classname of the container of the pagination, this could be used to customize the inner views
      */
     className: PropTypes.string,
-  };
+  }
 
   static defaultProps = {
     total: 1,
@@ -31,6 +32,7 @@ class Pagination extends React.PureComponent {
     next: 'Next',
     previous: 'Previous',
     showPrevNext: true,
+    showFirstLast: false,
     autoHide: true,
     className: '',
   };
@@ -38,7 +40,7 @@ class Pagination extends React.PureComponent {
   goToPage = page => (evt) => {
     evt.preventDefault();
     this.props.onChange(page);
-  };
+  }
 
   firstPage = (current, total) => {
     if (current === 1) {
@@ -48,7 +50,7 @@ class Pagination extends React.PureComponent {
     const page = current - (this.props.delta * (current === total ? 2 : 1));
 
     return page <= 0 ? 1 : page;
-  };
+  }
 
   lastPage = (current, total) => {
     if (current === total) {
@@ -58,7 +60,7 @@ class Pagination extends React.PureComponent {
     const page = current + (this.props.delta * (current === 1 ? 2 : 1));
 
     return page > total ? total : page;
-  };
+  }
 
   render() {
     const {
@@ -67,6 +69,7 @@ class Pagination extends React.PureComponent {
       next,
       previous,
       showPrevNext,
+      showFirstLast,
       delta,
       autoHide,
       className,
@@ -79,9 +82,7 @@ class Pagination extends React.PureComponent {
 
     if (current > total) {
       // eslint-disable-next-line no-console
-      console.warn(
-        'Pagination controller: Current page can not be greater than total',
-      );
+      console.warn('Pagination controller: Current page can not be greater than total');
       return null;
     }
 
@@ -122,7 +123,7 @@ class Pagination extends React.PureComponent {
         {delta > 0 && (
           <React.Fragment>
             <ul className="pagination-list">
-              {current !== 1 &&
+              {showFirstLast && current !== 1 &&
                 current > delta + 1 && (
                   <React.Fragment>
                     <li>
@@ -164,7 +165,7 @@ class Pagination extends React.PureComponent {
                     </a>
                   </li>
                 ))}
-              {current !== total &&
+              {showFirstLast && current !== total &&
                 current + delta < total && (
                   <React.Fragment>
                     <li>
