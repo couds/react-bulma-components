@@ -142,7 +142,7 @@ class Pagination extends React.PureComponent {
                     </li>
                   </React.Fragment>
                 )}
-              {Array(lastPage - firstPage + 1)
+              {Array((lastPage - firstPage) + 1)
                 .fill(0)
                 .map((_, i) => (
                   // eslint-disable-next-line react/no-array-index-key
