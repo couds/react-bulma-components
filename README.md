@@ -120,5 +120,66 @@ resolve {
 
 ```
 
+### Override Bulma variables in CRA _without_ eject
+
+Sometimes, you don't want to eject your CRA (Create React App) application. But how to make custom style variables for Bulma? This is simple and right way to solve it!
+
+First and major, install package `node-sass-chokidar` ([docs](https://www.npmjs.com/package/node-sass-chokidar)):
+
+```bash
+$ npm install --save node-sass-chokidar
+```
+
+Or, if you use yarn:
+
+```bash
+$ yarn add -E node-sass-chokidar
+```
+
+For example, we're using dir structure, like this:
+
+```bash
+├── ...
+├── public
+│   └── ...
+└── src
+    ├── scss
+    │   ├── _variables.scss     <-- Override Bulma variables here
+    │   └── style.scss          <-- Entry styles (main)
+    ├── ...
+    └── style.css               <-- Output CSS file
+
+```
+
+Next, import `./src/style.css` into your main React app file (if not) `./src/index.js`:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+import './style.css'; // <-- This our output CSS file
+
+ReactDOM.render(
+  <App/>,
+  document.getElementById('root')
+);
+```
+
+> Don't forget to import `_variables.scss` into head of `style.scss`.
+
+And now, just add to `scripts` section in your `./package.json` two commands:
+
+```json
+{
+  "scripts": {
+    // ...
+    "build-css": "node-sass-chokidar --include-path ./src/scss --include-path ./node_modules src/scss/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/scss --include-path ./node_modules src/scss/ -o src/ --watch --recursive"
+  }
+}
+```
+
+Open console (in your CRA dir), type `npm run watch-css` or `yarn run watch-css` and hit enter. Now, `node-sass-chokidar` will automatically update `./src/style.css`, when you make any changes in `./src/scss/style.scss` file for you!
 
 This page is open source. Noticed a typo? Or something unclear? Improve this page on [GitHub](https://github.com/couds/react-bulma-components/blob/master/README.md)
