@@ -5,6 +5,7 @@ import Burger from './burger';
 
 export default class NavbarBrand extends React.PureComponent {
   static displayName = 'Navbar.Brand'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,

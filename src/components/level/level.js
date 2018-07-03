@@ -9,6 +9,10 @@ import LevelItem from './components/level-item';
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
 export default class Level extends PureComponent {
+  static Side = LevelSide
+
+  static Item = LevelItem
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -24,9 +28,6 @@ export default class Level extends PureComponent {
     breakpoint: null,
     renderAs: 'div',
   }
-
-  static Side = LevelSide
-  static Item = LevelItem
 
   render() {
     const {

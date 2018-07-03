@@ -1,21 +1,20 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Media from '.';
-import Image from '../image';
-import Content from '../content';
-import Button from '../button';
-import Level from '../level';
-import Section from '../section';
-import Box from '../box';
-import { Textarea, Field, Control } from '../form';
+import Media from 'react-bulma-components/lib/components/media';
+import Image from 'react-bulma-components/lib/components/image';
+import Content from 'react-bulma-components/lib/components/content';
+import Button from 'react-bulma-components/lib/components/button';
+import Level from 'react-bulma-components/lib/components/level';
+import Section from 'react-bulma-components/lib/components/section';
+import Box from 'react-bulma-components/lib/components/box';
+import { Textarea, Field, Control } from 'react-bulma-components/lib/components/form';
 
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 
 storiesOf('Media', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Section>
       <Box>
         <Media>
@@ -41,7 +40,7 @@ storiesOf('Media', module)
       </Box>
     </Section>
   )))
-  .add('Right Media', withInfo()(() => (
+  .add('Right Media', (() => (
     <Section>
       <Box>
         <Media>
@@ -55,7 +54,7 @@ storiesOf('Media', module)
       </Box>
     </Section>
   )))
-  .add('Nested', withInfo()(() => (
+  .add('Nested', (() => (
     <Section>
       <Box>
         <Media renderAs="article">

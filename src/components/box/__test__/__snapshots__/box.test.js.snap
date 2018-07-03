@@ -7,7 +7,7 @@ exports[`Box component Should accept a react Element as renderAs prop 1`] = `
   className="box"
   style={Object {}}
 >
-  Custom 
+  Custom
   This should be a p element
 </p>
 `;

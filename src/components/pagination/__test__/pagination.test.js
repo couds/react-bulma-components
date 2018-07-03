@@ -4,14 +4,6 @@ import { mount } from 'enzyme';
 import Pagination from '..';
 
 describe('Pagination component', () => {
-  beforeEach(() => {
-    // eslint-disable-next-line no-console
-    console.warn = jest.genMockFn();
-  });
-  afterAll(() => {
-    // eslint-disable-next-line no-console
-    console.warn.mockRestore();
-  });
   it('Pagination Should Exist', () => {
     expect(Pagination).toMatchSnapshot();
   });
@@ -41,7 +33,6 @@ describe('Pagination component', () => {
   });
   it('Should not render if current page is greater than total pages', () => {
     const component = renderer.create(<Pagination total={2} current={3} />);
-    expect(global.console.warn).toBeCalled();
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should call to onChange event on click on navigation button', () => {

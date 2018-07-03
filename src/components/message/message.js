@@ -9,6 +9,10 @@ import MessageHeader from './components/header';
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Message extends PureComponent {
+  static Body = MessageBody
+
+  static Header = MessageHeader
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -29,9 +33,6 @@ export default class Message extends PureComponent {
     color: null,
     size: null,
   }
-
-  static Body = MessageBody
-  static Header = MessageHeader
 
   render() {
     const {

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class ModalContent extends PureComponent {
   static displayName = 'Modal.Content'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

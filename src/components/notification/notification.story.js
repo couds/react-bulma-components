@@ -1,14 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Notification from '.';
-import Button from '../button';
-import Section from '../section';
+import Notification from 'react-bulma-components/lib/components/notification';
+import Button from 'react-bulma-components/lib/components/button';
+import Section from 'react-bulma-components/lib/components/section';
 
 storiesOf('Notification', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Section>
       <Notification>
           Lorem ipsum dolor sit amet, consectetur

@@ -7,6 +7,10 @@ import FieldBody from './field-body';
 
 
 export default class Field extends PureComponent {
+  static Label = FieldLabel;
+
+  static Body = FieldBody;
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -28,9 +32,6 @@ export default class Field extends PureComponent {
     multiline: false,
     horizontal: false,
   };
-
-  static Label = FieldLabel;
-  static Body = FieldBody;
 
   render() {
     const {

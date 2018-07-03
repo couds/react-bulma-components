@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class ModalCardBody extends PureComponent {
   static displayName = 'Modal.Card.Body'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

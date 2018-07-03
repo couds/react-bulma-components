@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class MediaItem extends PureComponent {
   static displayName = 'Media.Item'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

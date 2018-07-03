@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarItem extends React.PureComponent {
   static displayName = 'Navbar.Item'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -25,6 +26,7 @@ export default class NavbarItem extends React.PureComponent {
     dropdownUp: false,
     renderAs: 'a',
   }
+
   render() {
     const {
       className,
@@ -56,4 +58,3 @@ export default class NavbarItem extends React.PureComponent {
     );
   }
 }
-

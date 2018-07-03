@@ -53,29 +53,11 @@ exports[`Radio component Should have radio classname 1`] = `
     type="radio"
     value=""
   />
-  Test 
+  Test
+   
   <a>
     Give me
   </a>
-</label>
-`;
-
-exports[`Radio component Should show a error on the console because name props its required 1`] = `
-<label
-  className="radio"
-  disabled={true}
-  style={Object {}}
->
-  <input
-    checked={true}
-    disabled={true}
-    name={undefined}
-    type="radio"
-    value="TEST"
-  />
-  <p>
-    Default
-  </p>
 </label>
 `;
 

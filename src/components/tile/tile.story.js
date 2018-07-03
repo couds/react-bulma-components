@@ -1,16 +1,15 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Tile from '.';
-import Heading from '../heading';
-import Image from '../image';
-import Section from '../section';
-import Box from '../box';
+import Tile from 'react-bulma-components/lib/components/tile';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Image from 'react-bulma-components/lib/components/image';
+import Section from 'react-bulma-components/lib/components/section';
+import Box from 'react-bulma-components/lib/components/box';
 
 storiesOf('Tile', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Section>
       <Box>
         <Tile kind="ancestor">

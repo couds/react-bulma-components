@@ -19,6 +19,7 @@ export default class MessageBody extends PureComponent {
     className: '',
     renderAs: 'div',
   }
+
   render() {
     const {
       children,

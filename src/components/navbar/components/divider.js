@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarDivider extends React.PureComponent {
   static displayName = 'Navbar.Divider'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -28,4 +29,3 @@ export default class NavbarDivider extends React.PureComponent {
     );
   }
 }
-

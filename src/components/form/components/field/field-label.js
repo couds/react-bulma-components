@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 export default class FieldLabel extends PureComponent {
   static displayName = 'Field.Label'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

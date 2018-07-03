@@ -8,7 +8,9 @@ const Link = ({
   to,
   children,
 }) => (
-  <a href={to}>{children}</a>
+  <a href={to}>
+    {children}
+  </a>
 );
 
 Link.propTypes = {
@@ -43,7 +45,7 @@ describe('Button component', () => {
   });
   it('Should render as a React element link with to prop', () => {
     const component = renderer.create(
-      <Button renderAs={Link} to="http://google.com" color="danger" >
+      <Button renderAs={Link} to="http://google.com" color="danger">
         TEST
       </Button>);
     expect(component.toJSON()).toMatchSnapshot();

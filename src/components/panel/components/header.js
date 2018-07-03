@@ -17,6 +17,7 @@ export default class PanelHeader extends PureComponent {
     className: '',
     renderAs: 'div',
   }
+
   render() {
     const {
       className,

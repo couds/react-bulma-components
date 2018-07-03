@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import CardFooterItem from './components/footer-item';
 
 export default class CardFooter extends React.PureComponent {
-  static displayName = 'Card.Footer'
+  static Item = CardFooterItem
 
   static propTypes = {
     className: PropTypes.string,
@@ -15,8 +15,6 @@ export default class CardFooter extends React.PureComponent {
     className: '',
     renderAs: 'div',
   }
-
-  static Item = CardFooterItem
 
   render() {
     const {

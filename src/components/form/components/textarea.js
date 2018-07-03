@@ -60,9 +60,9 @@ export default class Textarea extends PureComponent {
         readOnly={readOnly}
         disabled={disabled}
         className={classnames('textarea', className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-      })}
+          [`is-${size}`]: size,
+          [`is-${color}`]: color,
+        })}
       />
     );
   }

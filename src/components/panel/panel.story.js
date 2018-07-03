@@ -1,12 +1,10 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-
-import Panel from '.';
-import { Control, Input, Checkbox } from '../form';
-import Icon from '../icon';
-import Button from '../button';
+import Panel from 'react-bulma-components/lib/components/panel';
+import { Control, Input, Checkbox } from 'react-bulma-components/lib/components/form';
+import Icon from 'react-bulma-components/lib/components/icon';
+import Button from 'react-bulma-components/lib/components/button';
 
 storiesOf('Panel', module)
   .addDecorator(story => (
@@ -14,7 +12,7 @@ storiesOf('Panel', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Panel>
       <Panel.Header>
         repositories

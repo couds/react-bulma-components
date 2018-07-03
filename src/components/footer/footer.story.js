@@ -1,15 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Footer from '.';
-import Container from '../container';
-import Content from '../content';
-import Hero from '../hero';
+import Footer from 'react-bulma-components/lib/components/footer';
+import Container from 'react-bulma-components/lib/components/container';
+import Content from 'react-bulma-components/lib/components/content';
+import Hero from 'react-bulma-components/lib/components/hero';
 
 storiesOf('Footer', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Hero size="fullheight">
       <Hero.Head renderAs="header" />
       <Hero.Body />

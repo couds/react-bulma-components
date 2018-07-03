@@ -1,11 +1,6 @@
 {
   "extends": "airbnb",
   "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
   "env": {
     "jest": true
   },
@@ -25,6 +20,7 @@
     "import/prefer-default-export": 0,
     "react/forbid-prop-types": 0,
     "react/prefer-es6-class": ["error", "always"],
+    "react/destructuring-assignment": 0,
     "max-len": 0,
     "jsx-a11y/accessible-emoji": 0,
     "jsx-a11y/label-has-for": 0,

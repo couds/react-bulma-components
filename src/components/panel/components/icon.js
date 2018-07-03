@@ -17,6 +17,7 @@ export default class PanelIcon extends PureComponent {
     className: '',
     renderAs: 'span',
   }
+
   render() {
     const {
       className,

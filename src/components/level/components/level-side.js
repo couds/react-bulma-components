@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class LevelSide extends PureComponent {
   static displayName = 'Level.Side'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

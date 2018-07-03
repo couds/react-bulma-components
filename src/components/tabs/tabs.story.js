@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Tabs from '.';
+import { select, boolean } from '@storybook/addon-knobs';
+import Tabs from 'react-bulma-components/lib/components/tabs';
 
 storiesOf('Tabs', module)
   .addDecorator(story => (
@@ -11,8 +11,12 @@ storiesOf('Tabs', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
-    <Tabs type="boxed">
+  .add('Default', (() => (
+    <Tabs
+      type={select('Tab type', {boxed: 'boxed', toggle: 'toggle', 'toggle-rounded': 'toggle-rounded' }, 'boxed')}
+      fullwidth={boolean('Full width', false)}
+      align={select('Align', { Default: null, centered: 'centered', right: 'right' })}
+    >
       <Tabs.Tab active>
         Test
       </Tabs.Tab>

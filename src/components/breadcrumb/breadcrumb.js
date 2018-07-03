@@ -43,10 +43,6 @@ export default class Breadcrumb extends PureComponent {
       align,
       ...props
     } = this.props;
-    if (renderAs !== 'a' && !hrefAttr) {
-      // eslint-disable-next-line no-console
-      console.warn('if renderAs is different the anchor (a), hrefAttr is required. Check Breadcrumb props');
-    }
     const Element = renderAs;
     return (
       <nav

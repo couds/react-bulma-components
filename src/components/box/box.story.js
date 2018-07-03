@@ -1,20 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Box from '.';
-import Media from '../media';
-import Image from '../image';
-import Content from '../content';
+import Box from 'react-bulma-components/lib/components/box';
+import Media from 'react-bulma-components/lib/components/media';
+import Image from 'react-bulma-components/lib/components/image';
+import Content from 'react-bulma-components/lib/components/content';
 
 storiesOf('Box', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo('Box Implementation')(() => (
+  .add('Default', () => (
     <Box>
       <Media>
         <Media.Item renderAs="figure" position="left">
@@ -31,4 +25,4 @@ storiesOf('Box', module)
         </Media.Item>
       </Media>
     </Box>
-  )));
+  ));

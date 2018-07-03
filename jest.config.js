@@ -10,6 +10,10 @@ module.exports = {
     '!**/*.test.js',
   ],
   coverageReporters: ['lcov', 'text', 'text-summary'],
+  moduleDirectories: [
+    'node_modules',
+    '<rootDir>',
+  ],
   coverageThreshold: {
     global: {
       branches: 90,

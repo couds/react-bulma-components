@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from '.';
-import Button from '../button';
-import Icon from '../icon';
+import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from 'react-bulma-components/lib/components/form';
+import Button from 'react-bulma-components/lib/components/button';
+import Icon from 'react-bulma-components/lib/components/icon';
 
 /* eslint-disable react/no-multi-comp */
 const HoC = (Component) => {
@@ -78,12 +77,7 @@ const SelectControlled = HoC(Select);
 const CheckboxControlled = HoCCheckbox(Checkbox);
 
 storiesOf('Form', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <div>
       <Field>
         <Label>Name</Label>
@@ -155,13 +149,7 @@ storiesOf('Form', module)
       </Field>
     </div>
   )))
-  .add('Handle Multiple inputs', withInfo({
-    text: `
-    Check [React Docs](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-    `,
-    source: false,
-    propTables: [],
-  })(() => {
+  .add('Handle Multiple inputs', (() => {
     /* eslint-disable react/no-multi-comp */
     class MultiInputHandler extends PureComponent {
       state = {

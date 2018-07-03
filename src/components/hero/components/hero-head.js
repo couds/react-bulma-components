@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class HeroHead extends PureComponent {
   static displayName = 'Hero.Head'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

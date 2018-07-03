@@ -36,7 +36,8 @@ exports[`Heading component Should have title classname 1`] = `
   className="title"
   style={Object {}}
 >
-  Test 
+  Test
+   
   <a>
     Give me
   </a>

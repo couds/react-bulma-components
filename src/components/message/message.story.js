@@ -1,18 +1,12 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Message from '.';
-import Button from '../button';
+import Message from 'react-bulma-components/lib/components/message';
+import Button from 'react-bulma-components/lib/components/button';
 
 storiesOf('Message', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Message>
       <Message.Header>
         Title
@@ -23,7 +17,7 @@ storiesOf('Message', module)
       </Message.Body>
     </Message>
   )))
-  .add('Color', withInfo()(() => (
+  .add('Color', (() => (
     <React.Fragment>
       <Message color="info">
         <Message.Header>

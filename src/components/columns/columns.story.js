@@ -1,20 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Columns from '.';
-import Box from '../box';
-import Heading from '../heading';
+import Columns from 'react-bulma-components/lib/components/columns';
+import Box from 'react-bulma-components/lib/components/box';
+import Heading from 'react-bulma-components/lib/components/heading';
 import CONSTANTS from './constants';
 
 storiesOf('Columns', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Basic', withInfo('')(() => (
+  .add('Basic', (() => (
     <Columns>
       <Columns.Column>
         <p className="bd-notification is-success">First Column</p>
@@ -30,7 +24,7 @@ storiesOf('Columns', module)
       </Columns.Column>
     </Columns>
   )))
-  .add('Sizes by name', withInfo('')(() => (
+  .add('Sizes by name', (() => (
     <div>
       {Object.keys(CONSTANTS.SIZES).map(size => (
         <Columns key={size}>
@@ -46,7 +40,7 @@ storiesOf('Columns', module)
       }
     </div>
   )))
-  .add('Sizes by 12 Columns', withInfo('')(() => (
+  .add('Sizes by 12 Columns', (() => (
     <div>
       <Columns>
         <Columns.Column size={1}>
@@ -311,7 +305,7 @@ storiesOf('Columns', module)
       </Columns>
     </div>
   )))
-  .add('With Offset', withInfo('')(() => (
+  .add('With Offset', (() => (
     <div>
       <Columns mobile>
         <Columns.Column size="half" offset="one-quarter">
@@ -332,7 +326,7 @@ storiesOf('Columns', module)
       </Columns>
     </div>
   )))
-  .add('Narrow', withInfo('')(() => (
+  .add('Narrow', (() => (
     <Columns>
       <Columns.Column narrow>
         <Box style={{ width: 200 }}>
@@ -348,7 +342,7 @@ storiesOf('Columns', module)
       </Columns.Column>
     </Columns>
   )))
-  .add('Responsive', withInfo('')(() => (
+  .add('Responsive', (() => (
     <div>
       <Box>
         <Heading size={5} renderAs="p">Mobile</Heading>
@@ -403,7 +397,7 @@ storiesOf('Columns', module)
       </Box>
     </div>
   )))
-  .add('Different column size per breakpoint', withInfo('')(() => (
+  .add('Different column size per breakpoint', (() => (
     <Columns breakpoint="mobile">
       <Columns.Column
         mobile={{
@@ -438,7 +432,7 @@ storiesOf('Columns', module)
       </Columns.Column>
     </Columns>
   )))
-  .add('Nested', withInfo('')(() => (
+  .add('Nested', (() => (
     <Columns>
       <Columns.Column size="half">
         <p className="bd-notification is-success">First Column</p>
@@ -467,7 +461,7 @@ storiesOf('Columns', module)
       </Columns.Column>
     </Columns>
   )))
-  .add('gapless columns', withInfo('')(() => (
+  .add('gapless columns', (() => (
     <Columns gapless>
       <Columns.Column>
         <p className="bd-notification is-success"> First Column</p>

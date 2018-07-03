@@ -10,6 +10,12 @@ import HeroFooter from './components/hero-footer';
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Hero extends PureComponent {
+  static Head = HeroHead
+
+  static Body = HeroBody
+
+  static Footer = HeroFooter
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -29,10 +35,6 @@ export default class Hero extends PureComponent {
     gradient: false,
     size: null,
   }
-
-  static Head = HeroHead
-  static Body = HeroBody
-  static Footer = HeroFooter
 
   render() {
     const {

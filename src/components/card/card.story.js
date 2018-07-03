@@ -1,21 +1,20 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Card from '.';
-import Media from '../media';
-import Image from '../image';
-import Content from '../content';
-import Heading from '../heading';
+import Card from 'react-bulma-components/lib/components/card';
+import Media from 'react-bulma-components/lib/components/media';
+import Image from 'react-bulma-components/lib/components/image';
+import Content from 'react-bulma-components/lib/components/content';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 storiesOf('Card', module)
   .addDecorator(story => (
-    <div style={{ margin: '10px auto', width: 450 }}>
+    <div style={{ margin: '0px auto', width: 450 }}>
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Card>
       <Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
       <Card.Content>
@@ -38,7 +37,7 @@ storiesOf('Card', module)
       </Card.Content>
     </Card>
   )))
-  .add('With Footer actions', withInfo()(() => (
+  .add('With Footer actions', (() => (
     <Card>
       <Card.Header>
         <Card.Header.Title>Title</Card.Header.Title>

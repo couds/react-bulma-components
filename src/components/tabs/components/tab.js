@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class Tab extends PureComponent {
   static displayName = 'Tabs.Tab'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -22,6 +23,7 @@ export default class Tab extends PureComponent {
     renderAs: 'a',
     active: false,
   }
+
   render() {
     const {
       children,

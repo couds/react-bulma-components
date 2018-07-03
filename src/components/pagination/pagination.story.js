@@ -1,22 +1,19 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Pagination from '.';
+import Pagination from 'react-bulma-components/lib/components/pagination';
 
 storiesOf('Pagination', module)
   .addDecorator(story => (
-    <div style={{ margin: 50, marginTop: 100 }}>
-      {story()}
-    </div>
+    <div style={{margin: 50}}>{story()}</div>
   ))
-  .add('Default', withInfo('')(() => (
+  .add('Default', (() => (
     <Pagination current={3} total={5} delta={1} />
   )))
-  .add('Without page number', withInfo('')(() => (
+  .add('Without page number', (() => (
     <Pagination current={3} total={5} delta={0} />
   )))
-  .add('Without prev/next button', withInfo('')(() => (
+  .add('Without prev/next button', (() => (
     <Pagination showPrevNext={false} current={3} total={5} delta={1} />
   )));

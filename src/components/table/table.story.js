@@ -1,12 +1,10 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-
-import Table from '.';
+import Table from 'react-bulma-components/lib/components/table';
 
 storiesOf('Table', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Table>
       <thead>
         <tr>

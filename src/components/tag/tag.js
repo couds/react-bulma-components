@@ -8,6 +8,8 @@ import CONSTANTS from '../../constants';
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Tag extends PureComponent {
+  static Group = TagGroup
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -30,7 +32,6 @@ export default class Tag extends PureComponent {
     renderAs: 'span',
   }
 
-  static Group = TagGroup
 
   render() {
     const {

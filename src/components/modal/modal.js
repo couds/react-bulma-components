@@ -11,13 +11,19 @@ const KEYCODES = {
 };
 
 export default class Modal extends PureComponent {
+  static Content = ModalContent
+
+  static Card = ModalCard
+
+  portalElement = null;
+
   static propTypes = {
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     closeOnEsc: PropTypes.bool,
     closeOnBlur: PropTypes.bool,
     showClose: PropTypes.bool,
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     document: PropTypes.object,
     className: PropTypes.string,
   }
@@ -31,15 +37,16 @@ export default class Modal extends PureComponent {
     document: null,
   }
 
-  static Content = ModalContent
-  static Card = ModalCard
+  state = {};
 
   componentDidMount() {
+    const { closeOnEsc } = this.props;
+
     const d = this.getDocument();
     this.portalElement = d.createElement('div');
     this.portalElement.setAttribute('class', 'modal-container');
     d.body.appendChild(this.portalElement);
-    if (this.props.closeOnEsc) {
+    if (closeOnEsc) {
       d.addEventListener('keydown', this.handleKeydown);
     }
     // eslint-disable-next-line
@@ -48,7 +55,8 @@ export default class Modal extends PureComponent {
 
   componentWillUnmount() {
     const { d } = this.state;
-    if (this.props.closeOnEsc) {
+    const { closeOnEsc } = this.props;
+    if (closeOnEsc) {
       d.removeEventListener('keydown', this.handleKeydown);
     }
     this.portalElement.remove();
@@ -58,13 +66,13 @@ export default class Modal extends PureComponent {
     if (this.props.document) {
       return this.props.document;
     }
+
     if (typeof document !== 'undefined') {
       return document;
     }
+
     return null;
   }
-
-  portalElement = null;
 
   handleKeydown = (e) => {
     if (e.keyCode === KEYCODES.ESCAPE && this.props.show) {
@@ -101,8 +109,8 @@ export default class Modal extends PureComponent {
         <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : null} />
         {children}
         {
-          showClose &&
-          <button onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />}
+          showClose
+          && <button type="button" onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />}
       </div>,
       this.portalElement,
     );

@@ -69,7 +69,7 @@ exports[`Tag component Should use use color black 1`] = `
   className="tag is-black"
   style={Object {}}
 >
-  tag 
+  tag
   black
 </span>
 `;
@@ -79,7 +79,7 @@ exports[`Tag component Should use use color danger 1`] = `
   className="tag is-danger"
   style={Object {}}
 >
-  tag 
+  tag
   danger
 </span>
 `;
@@ -89,7 +89,7 @@ exports[`Tag component Should use use color dark 1`] = `
   className="tag is-dark"
   style={Object {}}
 >
-  tag 
+  tag
   dark
 </span>
 `;
@@ -99,7 +99,7 @@ exports[`Tag component Should use use color info 1`] = `
   className="tag is-info"
   style={Object {}}
 >
-  tag 
+  tag
   info
 </span>
 `;
@@ -109,7 +109,7 @@ exports[`Tag component Should use use color light 1`] = `
   className="tag is-light"
   style={Object {}}
 >
-  tag 
+  tag
   light
 </span>
 `;
@@ -119,7 +119,7 @@ exports[`Tag component Should use use color link 1`] = `
   className="tag is-link"
   style={Object {}}
 >
-  tag 
+  tag
   link
 </span>
 `;
@@ -129,7 +129,7 @@ exports[`Tag component Should use use color null 1`] = `
   className="tag"
   style={Object {}}
 >
-  tag 
+  tag
 </span>
 `;
 
@@ -138,7 +138,7 @@ exports[`Tag component Should use use color primary 1`] = `
   className="tag is-primary"
   style={Object {}}
 >
-  tag 
+  tag
   primary
 </span>
 `;
@@ -148,7 +148,7 @@ exports[`Tag component Should use use color success 1`] = `
   className="tag is-success"
   style={Object {}}
 >
-  tag 
+  tag
   success
 </span>
 `;
@@ -158,7 +158,7 @@ exports[`Tag component Should use use color warning 1`] = `
   className="tag is-warning"
   style={Object {}}
 >
-  tag 
+  tag
   warning
 </span>
 `;
@@ -168,7 +168,7 @@ exports[`Tag component Should use use color white 1`] = `
   className="tag is-white"
   style={Object {}}
 >
-  tag 
+  tag
   white
 </span>
 `;

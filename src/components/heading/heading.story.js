@@ -1,18 +1,12 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Heading from '.';
-import Box from '../box';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Box from 'react-bulma-components/lib/components/box';
 
 storiesOf('Heading', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <div>
       <Box>
         <Heading>

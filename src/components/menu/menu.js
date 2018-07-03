@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import MenuList from './components/list';
 
 export default class Menu extends PureComponent {
+  static List = MenuList;
+
   static propTypes = {
     className: PropTypes.string,
     renderAs: PropTypes.oneOfType([
@@ -16,8 +18,6 @@ export default class Menu extends PureComponent {
     className: '',
     renderAs: 'aside',
   }
-
-  static List = MenuList;
 
   render() {
     const {

@@ -33,22 +33,28 @@ describe('Media component', () => {
   });
   it('Should be a Media Content', () => {
     const component = renderer.create(
-      <Media.Content >
-        <p>Lorem Ipsum</p>
+      <Media.Content>
+        <p>
+Lorem Ipsum
+        </p>
       </Media.Content>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Media className="other-class this-is-a-test">
-        <p>Default</p>
+        <p>
+Default
+        </p>
       </Media>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Media style={{ height: 250 }}>
-        <p>Default</p>
+        <p>
+Default
+        </p>
       </Media>);
     expect(component.toJSON()).toMatchSnapshot();
   });
