@@ -11,9 +11,9 @@ import Divider from './components/divider';
 import Link from './components/link';
 import Container from './components/container';
 import CONSTANTS from '../../constants';
+import { ShowContext } from './context';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
-
 
 export default class Navbar extends React.PureComponent {
   static Brand = Brand
@@ -40,6 +40,7 @@ export default class Navbar extends React.PureComponent {
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     fixed: PropTypes.oneOf(['top', 'bottom']),
     color: PropTypes.oneOf(colors),
+    active: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -48,24 +49,18 @@ export default class Navbar extends React.PureComponent {
     style: {},
     renderAs: 'nav',
     transparent: false,
+    active: false,
     fixed: null,
     color: null,
   }
 
-  state = {
-    showMobileMenu: false,
-  }
+  state = {}
 
   componentDidMount() {
     const { fixed } = this.props;
     if (fixed) {
       window.document.querySelector('html').classList.add(`has-navbar-fixed-${this.fixed}`);
     }
-  }
-
-  // TODO: Remove this on future releases
-  componentWillReceiveProps(nextProps) {
-    Navbar.getDerivedStateFromProps(nextProps);
   }
 
   componentWillUnmount() {
@@ -86,10 +81,6 @@ export default class Navbar extends React.PureComponent {
     return null;
   }
 
-  toggleMenu = () => {
-    this.setState(({ showMobileMenu }) => ({ showMobileMenu: !showMobileMenu }));
-  }
-
   render() {
     const {
       children,
@@ -98,33 +89,26 @@ export default class Navbar extends React.PureComponent {
       fixed,
       transparent,
       color,
+      active,
       ...props
     } = this.props;
-
-    const { showMobileMenu } = this.state;
 
     const Element = renderAs;
 
     return (
-      <Element
-        {...props}
-        role="navigation"
-        className={classnames('navbar', className, {
-          'is-transparent': transparent,
-          [`is-fixed-${fixed}`]: fixed,
-          [`is-${color}`]: color,
-        })}
-      >
-        {React.Children.map(children, (child) => {
-          if ([Brand].includes(child.type)) {
-            return React.cloneElement(child, { active: showMobileMenu, toggleMenu: this.toggleMenu });
-          }
-          if ([Menu].includes(child.type)) {
-            return React.cloneElement(child, { active: showMobileMenu });
-          }
-          return child;
-        })}
-      </Element>
+      <ShowContext.Provider value={active}>
+        <Element
+          {...props}
+          role="navigation"
+          className={classnames('navbar', className, {
+            'is-transparent': transparent,
+            [`is-fixed-${fixed}`]: fixed,
+            [`is-${color}`]: color,
+          })}
+        >
+          {children}
+        </Element>
+      </ShowContext.Provider>
     );
   }
 }
