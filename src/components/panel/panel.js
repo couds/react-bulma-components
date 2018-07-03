@@ -8,6 +8,14 @@ import Icon from './components/icon';
 import Tabs from './components/tabs';
 
 export default class Panel extends PureComponent {
+  static Header = Header
+
+  static Tabs = Tabs
+
+  static Block = Block
+
+  static Icon = Icon
+
   static propTypes = {
     className: PropTypes.string,
     renderAs: PropTypes.oneOfType([
@@ -20,11 +28,6 @@ export default class Panel extends PureComponent {
     className: '',
     renderAs: 'nav',
   }
-
-  static Header = Header
-  static Tabs = Tabs
-  static Block = Block
-  static Icon = Icon
 
   render() {
     const {

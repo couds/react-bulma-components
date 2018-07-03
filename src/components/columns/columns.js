@@ -8,6 +8,10 @@ import COLUMN_CONSTANTS from './constants';
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
 export default class Columns extends PureComponent {
+  static Column = Column
+
+  static CONSTANTS = COLUMN_CONSTANTS
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -40,9 +44,6 @@ export default class Columns extends PureComponent {
     multiline: true,
   }
 
-  static Column = Column
-  static CONSTANTS = COLUMN_CONSTANTS
-
   render() {
     const {
       children,
@@ -57,11 +58,11 @@ export default class Columns extends PureComponent {
       <div
         {...props}
         className={classNames(className, 'columns', {
-        [`is-${breakpoint}`]: breakpoint,
-        'is-gapless': gapless,
-        'is-multiline': multiline,
-        'is-centered': centered,
-      })}
+          [`is-${breakpoint}`]: breakpoint,
+          'is-gapless': gapless,
+          'is-multiline': multiline,
+          'is-centered': centered,
+        })}
       >
         {children}
       </div>

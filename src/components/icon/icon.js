@@ -46,7 +46,7 @@ export default class Icon extends PureComponent {
           [`is-${size}`]: size,
           [`is-${align}`]: align,
           [`has-text-${color}`]: color,
-    })}
+        })}
       >
         { children || (
           <i

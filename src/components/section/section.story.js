@@ -1,14 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Section from '.';
-import Container from '../container';
-import Heading from '../heading';
+import Section from 'react-bulma-components/lib/components/section';
+import Container from 'react-bulma-components/lib/components/container';
+import Heading from 'react-bulma-components/lib/components/heading';
 
 storiesOf('Section', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <div>
       <Section>
         <Container>
@@ -44,7 +43,7 @@ storiesOf('Section', module)
       </Section>
     </div>
   )))
-  .add('Medium', withInfo()(() => (
+  .add('Medium', (() => (
     <div>
       <Section size="medium">
         <Container>
@@ -72,7 +71,7 @@ storiesOf('Section', module)
       </Section>
     </div>
   )))
-  .add('Large', withInfo()(() => (
+  .add('Large', (() => (
     <div>
       <Section size="large">
         <Container>

@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Tag from '.';
-import { Field, Control } from '../form';
+import Tag from 'react-bulma-components/lib/components/tag';
+import { Field, Control } from 'react-bulma-components/lib/components/form';
 
 storiesOf('Tag', module)
   .addDecorator(story => (
@@ -12,7 +11,7 @@ storiesOf('Tag', module)
       {story()}
     </div>
   ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Tag>
       Tag Text
     </Tag>
@@ -36,7 +35,7 @@ storiesOf('Tag', module)
       </Tag>
     </Tag.Group>
   ))
-  .add('Group Tags without gap', withInfo()(() => (
+  .add('Group Tags without gap', (() => (
     <div>
       <Tag.Group gapless>
         <Tag>
@@ -54,7 +53,7 @@ storiesOf('Tag', module)
       </Tag.Group>
     </div>
   )))
-  .add('Group Tags without gap multiline', withInfo()(() => (
+  .add('Group Tags without gap multiline', (() => (
     <div>
       <Field multiline kind="group">
         <Control>
@@ -90,7 +89,7 @@ storiesOf('Tag', module)
       </Field>
     </div>
   )))
-  .add('Others', withInfo()(() => (
+  .add('Others', (() => (
     <Tag.Group>
       <Tag rounded>
         Rounded

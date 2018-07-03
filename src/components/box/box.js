@@ -19,6 +19,7 @@ export default class Box extends PureComponent {
     style: {},
     renderAs: 'div',
   }
+
   render() {
     const {
       children,

@@ -5,7 +5,9 @@ import CardHeaderTitle from './components/header-title';
 import CardHeaderIcon from './components/header-icon';
 
 export default class CardHeader extends React.PureComponent {
-  static displayName = 'Card.Header'
+  static Title = CardHeaderTitle
+
+  static Icon = CardHeaderIcon
 
   static propTypes = {
     className: PropTypes.string,
@@ -16,9 +18,6 @@ export default class CardHeader extends React.PureComponent {
     className: '',
     renderAs: 'div',
   }
-
-  static Title = CardHeaderTitle
-  static Icon = CardHeaderIcon
 
   render() {
     const {

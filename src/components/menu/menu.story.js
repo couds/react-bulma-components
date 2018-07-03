@@ -1,17 +1,11 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Menu from '.';
+import Menu from 'react-bulma-components/lib/components/menu';
 
 storiesOf('Menu', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo('')(() => (
+  .add('Default', (() => (
     <Menu>
       <Menu.List title="General">
         <Menu.List.Item>

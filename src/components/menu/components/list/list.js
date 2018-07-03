@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+/* eslint-disable-next-line import/no-cycle */
 import MenuListItem from './components/item';
 
 export default class MenuList extends PureComponent {
-  static displayName = 'Menu.List'
+  static Item = MenuListItem;
 
   static propTypes = {
     className: PropTypes.string,
@@ -16,8 +17,6 @@ export default class MenuList extends PureComponent {
     title: null,
   }
 
-  static Item = MenuListItem;
-
   render() {
     const {
       className,
@@ -27,10 +26,12 @@ export default class MenuList extends PureComponent {
     return (
       <React.Fragment>
         {
-          title &&
+          title
+          && (
           <p className="menu-label">
             {title}
           </p>
+          )
         }
         <ul className={classnames('menu-list', className)} {...props} />
       </React.Fragment>

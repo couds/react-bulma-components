@@ -19,6 +19,7 @@ export default class PanelTabsTab extends PureComponent {
     renderAs: 'a',
     active: false,
   }
+
   render() {
     const {
       className,

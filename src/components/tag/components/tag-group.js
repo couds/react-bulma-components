@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class TagGroup extends PureComponent {
   static displayName = 'Tag.Group'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

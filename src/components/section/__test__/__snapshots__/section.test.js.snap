@@ -29,7 +29,8 @@ exports[`Section component Should have section classname 1`] = `
   className="section"
   style={Object {}}
 >
-  Test 
+  Test
+   
   <a
     href="/"
   >

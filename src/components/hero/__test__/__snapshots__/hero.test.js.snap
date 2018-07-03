@@ -24,7 +24,8 @@ exports[`Hero component Should have hero classname 1`] = `
   className="hero"
   style={Object {}}
 >
-  Test 
+  Test
+   
   <a>
     Give me
   </a>

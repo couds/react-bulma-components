@@ -7,7 +7,7 @@ exports[`Message component Should accept a react Element as renderAs prop 1`] = 
   className="message"
   style={Object {}}
 >
-  Custom 
+  Custom
   This should be a p element
 </p>
 `;

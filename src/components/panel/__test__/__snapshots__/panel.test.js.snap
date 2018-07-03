@@ -70,7 +70,9 @@ exports[`Panel component Should have box classname 1`] = `
   <div
     className="panel-block"
   >
-    <button>
+    <button
+      type="button"
+    >
       reset all filters
     </button>
   </div>

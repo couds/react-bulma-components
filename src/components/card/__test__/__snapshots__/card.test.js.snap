@@ -80,21 +80,3 @@ exports[`Card component Should have card-image classname 1`] = `
   </figure>
 </div>
 `;
-
-exports[`Card component Should print deprecation warning 1`] = `
-<div
-  className="card-image"
-  style={Object {}}
->
-  <figure
-    className="image is-4by3"
-    style={Object {}}
-  >
-    <img
-      alt=""
-      onError={[Function]}
-      src="http://bulma.io/images/placeholders/1280x960.png"
-    />
-  </figure>
-</div>
-`;

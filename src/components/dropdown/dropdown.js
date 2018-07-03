@@ -11,6 +11,10 @@ import Icon from '../icon';
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Dropdown extends PureComponent {
+  static Item = DropdownItem;
+
+  static Divider = DropdownDivider;
+
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.shape({}),
@@ -33,14 +37,6 @@ export default class Dropdown extends PureComponent {
     hoverable: false,
   }
 
-  static Item = DropdownItem;
-  static Divider = DropdownDivider;
-
-  constructor(props) {
-    super(props);
-    this.checkProps(props);
-  }
-
   state = {
     open: false,
   }
@@ -49,19 +45,8 @@ export default class Dropdown extends PureComponent {
     document.addEventListener('click', this.close);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.checkProps({ ...this.props, ...nextProps });
-  }
-
   componentWillUnmount() {
     document.removeEventListener('click', this.close);
-  }
-
-  checkProps = (props) => {
-    if (props.value && !props.onChange) {
-      // eslint-disable-next-line no-console
-      console.error('Warning: This is a controlled component without onChange listener, please check the props of the Dropdown component');
-    }
   }
 
   close = (evt) => {
@@ -79,7 +64,7 @@ export default class Dropdown extends PureComponent {
     if (evt) {
       evt.preventDefault();
     }
-    this.setState({ open: !this.state.open });
+    this.setState(({ open }) => ({ open: !open }));
   }
 
   select = value => () => {
@@ -124,7 +109,9 @@ export default class Dropdown extends PureComponent {
       >
         <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
           <Button color={color}>
-            <span>{current}</span>
+            <span>
+              {current}
+            </span>
             <Icon icon="angle-down" size="small" />
           </Button>
         </div>

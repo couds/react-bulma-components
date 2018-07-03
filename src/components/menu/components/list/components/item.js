@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+/* eslint-disable-next-line import/no-cycle */
 import List from '../list';
 
 export default class MenuListItem extends PureComponent {
-  static displayName = 'Menu.List.Item'
-
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.oneOfType([
@@ -25,6 +24,7 @@ export default class MenuListItem extends PureComponent {
     active: false,
     renderAs: 'a',
   }
+
   render() {
     const {
       children,
@@ -37,7 +37,9 @@ export default class MenuListItem extends PureComponent {
     if (typeof children === 'string') {
       return (
         <li>
-          <Element className={classnames(className, { 'is-active': active })} {...props}>{children}</Element>
+          <Element className={classnames(className, { 'is-active': active })} {...props}>
+            {children}
+          </Element>
         </li>
       );
     }
@@ -46,12 +48,18 @@ export default class MenuListItem extends PureComponent {
       const child = React.Children.only(children);
       return (
         <li>
-          <Element className={classnames(className, { 'is-active': active })} {...props}>{child.props.title}</Element>
+          <Element className={classnames(className, { 'is-active': active })} {...props}>
+            {child.props.title}
+          </Element>
           {React.cloneElement(child, { title: null })}
         </li>
       );
     }
 
-    return <li>{children}</li>;
+    return (
+      <li>
+        {children}
+      </li>
+    );
   }
 }

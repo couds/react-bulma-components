@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
 import Dropdown from '.';
 
@@ -37,12 +36,7 @@ class Wrapper extends React.Component {
 }
 
 storiesOf('Dropdown', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Dropdown>
       <Dropdown.Item value="item" >
         Dropdown item
@@ -62,7 +56,7 @@ storiesOf('Dropdown', module)
       </Dropdown.Item>
     </Dropdown>
   )))
-  .add('Hoverable', withInfo()(() => (
+  .add('Hoverable', (() => (
     <Dropdown hoverable>
       <Dropdown.Item value="item" >
         Dropdown item
@@ -82,5 +76,5 @@ storiesOf('Dropdown', module)
       </Dropdown.Item>
     </Dropdown>
   )))
-  .add('Controlled component', withInfo()(() => <Wrapper />))
-  .add('Controlled component Hoverable', withInfo()(() => <Wrapper hoverable color="dark" />));
+  .add('Controlled component', (() => <Wrapper />))
+  .add('Controlled component Hoverable', (() => <Wrapper hoverable color="dark" />));

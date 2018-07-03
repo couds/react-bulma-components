@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarContainer extends React.PureComponent {
   static displayName = 'Navbar.Container'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -42,4 +43,3 @@ export default class NavbarContainer extends React.PureComponent {
     );
   }
 }
-

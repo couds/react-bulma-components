@@ -95,7 +95,6 @@ exports[`Button component Should render be disabled 1`] = `
 <button
   className="button"
   disabled={true}
-  onClick={undefined}
   style={Object {}}
   tabIndex={-1}
 />

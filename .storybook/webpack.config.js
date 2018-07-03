@@ -1,29 +1,42 @@
-// you can use this file to add your custom webpack plugins, loaders and anything you like.
-// This is just the basic way to add additional webpack configurations.
-// For more information refer the docs: https://storybook.js.org/configurations/custom-webpack-config
-
-// IMPORTANT
-// When you add this file, we won't add the default configurations which is similar
-// to "React Create App". This only has babel loader to load JavaScript.
-
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 
-module.exports = {
-  plugins: [
-    // your custom plugins
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.s(c|a)ss$/,
-        loader: 'style-loader!css-loader!sass-loader',
-      },
-    ],
-  },
-  resolve: {
-    modules: ['node_modules', 'src'],
-    alias: {
-      '_variables.sass': path.resolve(__dirname, '..', 'src/components/_variables.sass'),
+
+module.exports = (baseConfig, env, defaultConfig) => {
+  const config = ({
+    ...defaultConfig,
+    module: {
+      ...defaultConfig.module,
+      rules: [
+        {
+          test: /\.story\.js?$/,
+          loaders: [require.resolve('@storybook/addon-storysource/loader')],
+          enforce: 'pre',
+        },
+        {
+          test: /\.s[ca]ss$/,
+          loader: 'style-loader!css-loader!resolve-url-loader!sass-loader',
+        },
+        ...defaultConfig.module.rules,
+      ],
     },
-  },
+    resolve: {
+      ...defaultConfig.resolve,
+      modules: ['node_modules', 'src', ...defaultConfig.resolve.modules],
+      alias: {
+        ...defaultConfig.resolve.alias,
+        '~_variables.sass': path.resolve(__dirname, '../src/components/_variables.sass'),
+        'react-bulma-components/lib': path.resolve(__dirname, '../src'),
+      }
+      // https://github.com/graphql/graphql-js#using-in-a-browser
+    },
+    plugins: [
+      ...defaultConfig.plugins,
+      // graphql sources check process variable
+      new DefinePlugin({
+        process: JSON.stringify(true),
+      }),
+    ],
+  });
+  return config;
 };

@@ -18,7 +18,7 @@ exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
       <span
         className=""
       >
-        Custom 
+        Custom
         Dashboard
       </span>
     </li>
@@ -26,7 +26,7 @@ exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
       <span
         className=""
       >
-        Custom 
+        Custom
         Customer
       </span>
     </li>

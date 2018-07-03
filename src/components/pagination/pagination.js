@@ -37,25 +37,30 @@ class Pagination extends React.PureComponent {
 
   goToPage = page => (evt) => {
     evt.preventDefault();
-    this.props.onChange(page);
+    const { onChange } = this.props;
+    onChange(page);
   }
 
   firstPage = (current, total) => {
+    const { delta } = this.props;
+
     if (current === 1) {
       return 1;
     }
 
-    const page = current - (this.props.delta * (current === total ? 2 : 1));
+    const page = current - (delta * (current === total ? 2 : 1));
 
     return page <= 0 ? 1 : page;
   }
 
   lastPage = (current, total) => {
+    const { delta } = this.props;
+
     if (current === total) {
       return total;
     }
 
-    const page = current + (this.props.delta * (current === 1 ? 2 : 1));
+    const page = current + (delta * (current === 1 ? 2 : 1));
 
     return page > total ? total : page;
   }
@@ -78,8 +83,6 @@ class Pagination extends React.PureComponent {
     }
 
     if (current > total) {
-      // eslint-disable-next-line no-console
-      console.warn('Pagination controller: Current page can not be greater than total');
       return null;
     }
 
@@ -93,7 +96,8 @@ class Pagination extends React.PureComponent {
         aria-label="pagination"
       >
         {
-          showPrevNext &&
+          showPrevNext
+            && (
             <React.Fragment>
               <a
                 role="button"
@@ -115,9 +119,11 @@ class Pagination extends React.PureComponent {
                 {next}
               </a>
             </React.Fragment>
+            )
         }
         {
-          delta > 0 &&
+          delta > 0
+            && (
             <React.Fragment>
               <ul className="pagination-list">
                 {
@@ -137,10 +143,11 @@ class Pagination extends React.PureComponent {
                         {i + firstPage}
                       </a>
                     </li>
-                    ))
+                  ))
                 }
               </ul>
             </React.Fragment>
+            )
         }
       </nav>
     );

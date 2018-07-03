@@ -6,6 +6,10 @@ import MediaItem from './components/media-item';
 import MediaContent from './components/media-content';
 
 export default class Media extends PureComponent {
+  static Item = MediaItem
+
+  static Content = MediaContent
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -19,9 +23,6 @@ export default class Media extends PureComponent {
     style: {},
     renderAs: 'article',
   }
-
-  static Item = MediaItem
-  static Content = MediaContent
 
   render() {
     const {

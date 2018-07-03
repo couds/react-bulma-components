@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Modal from '.';
-import Image from '../image';
-import Media from '../media';
-import Button from '../button';
-import Content from '../content';
-import Section from '../section';
-import Level from '../level';
+import Modal from 'react-bulma-components/lib/components/modal';
+import Image from 'react-bulma-components/lib/components/image';
+import Media from 'react-bulma-components/lib/components/media';
+import Button from 'react-bulma-components/lib/components/button';
+import Content from 'react-bulma-components/lib/components/content';
+import Section from 'react-bulma-components/lib/components/section';
+import Level from 'react-bulma-components/lib/components/level';
 
 class OpenModal extends React.Component {
   static propTypes = {
@@ -42,7 +41,7 @@ class OpenModal extends React.Component {
 }
 
 storiesOf('Modal', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <OpenModal modal={{ closeOnEsc: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
@@ -51,7 +50,7 @@ storiesOf('Modal', module)
       </Modal.Content>
     </OpenModal>
   )))
-  .add('Close with keyboard', withInfo()(() => (
+  .add('Close with keyboard', (() => (
     <OpenModal modal={{ showClose: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
@@ -60,7 +59,7 @@ storiesOf('Modal', module)
       </Modal.Content>
     </OpenModal>
   )))
-  .add('Close on click outside', withInfo()(() => (
+  .add('Close on click outside', (() => (
     <OpenModal modal={{ closeOnBlur: true, showClose: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
@@ -69,7 +68,7 @@ storiesOf('Modal', module)
       </Modal.Content>
     </OpenModal>
   )))
-  .add('Modal Card', withInfo()(() => (
+  .add('Modal Card', (() => (
     <OpenModal modal={{ closeOnBlur: true }}>
       <Modal.Card>
         <Modal.Card.Head>

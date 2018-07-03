@@ -1,12 +1,11 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Progress from '.';
+import Progress from 'react-bulma-components/lib/components/progress';
 
 storiesOf('Progress', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <div>
       <Progress max={100} value={15} color="primary" size="small" />
       <Progress max={100} value={15} color="info" />

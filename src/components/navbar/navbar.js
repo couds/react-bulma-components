@@ -17,12 +17,19 @@ const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.
 
 export default class Navbar extends React.PureComponent {
   static Brand = Brand
+
   static Burger = Burger
+
   static Menu = Menu
+
   static Item = Item
+
   static Dropdown = Dropdown
+
   static Link = Link
+
   static Divider = Divider
+
   static Container = Container
 
   static propTypes = {
@@ -45,6 +52,27 @@ export default class Navbar extends React.PureComponent {
     color: null,
   }
 
+  state = {
+    showMobileMenu: false,
+  }
+
+  componentDidMount() {
+    const { fixed } = this.props;
+    if (fixed) {
+      window.document.querySelector('html').classList.add(`has-navbar-fixed-${this.fixed}`);
+    }
+  }
+
+  // TODO: Remove this on future releases
+  componentWillReceiveProps(nextProps) {
+    Navbar.getDerivedStateFromProps(nextProps);
+  }
+
+  componentWillUnmount() {
+    const { fixed } = this.props;
+    window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
+  }
+
   static getDerivedStateFromProps(nextProps) {
     if (!canUseDOM) {
       return null;
@@ -56,25 +84,6 @@ export default class Navbar extends React.PureComponent {
       html.classList.add(`has-navbar-fixed-${nextProps.fixed}`);
     }
     return null;
-  }
-
-  state = {
-    showMobileMenu: false,
-  }
-
-  componentDidMount() {
-    if (this.props.fixed) {
-      window.document.querySelector('html').classList.add(`has-navbar-fixed-${this.props.fixed}`);
-    }
-  }
-
-  // TODO: Remove this on future releases
-  componentWillReceiveProps(nextProps) {
-    Navbar.getDerivedStateFromProps(nextProps);
-  }
-
-  componentWillUnmount() {
-    window.document.querySelector('html').classList.remove(`has-navbar-fixed-${this.props.fixed}`);
   }
 
   toggleMenu = () => {
@@ -91,6 +100,9 @@ export default class Navbar extends React.PureComponent {
       color,
       ...props
     } = this.props;
+
+    const { showMobileMenu } = this.state;
+
     const Element = renderAs;
 
     return (
@@ -105,10 +117,10 @@ export default class Navbar extends React.PureComponent {
       >
         {React.Children.map(children, (child) => {
           if ([Brand].includes(child.type)) {
-            return React.cloneElement(child, { active: this.state.showMobileMenu, toggleMenu: this.toggleMenu });
+            return React.cloneElement(child, { active: showMobileMenu, toggleMenu: this.toggleMenu });
           }
           if ([Menu].includes(child.type)) {
-            return React.cloneElement(child, { active: this.state.showMobileMenu });
+            return React.cloneElement(child, { active: showMobileMenu });
           }
           return child;
         })}
@@ -116,4 +128,3 @@ export default class Navbar extends React.PureComponent {
     );
   }
 }
-

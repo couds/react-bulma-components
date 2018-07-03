@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarLink extends React.PureComponent {
   static displayName = 'Navbar.Link'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -17,6 +18,7 @@ export default class NavbarLink extends React.PureComponent {
     children: null,
     renderAs: 'span',
   }
+
   render() {
     const {
       className,
@@ -35,4 +37,3 @@ export default class NavbarLink extends React.PureComponent {
     );
   }
 }
-

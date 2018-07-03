@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class DropdownItem extends PureComponent {
   static displayName = 'Dropdown.Item'
+
   static propTypes = {
     active: PropTypes.bool,
     children: PropTypes.node,

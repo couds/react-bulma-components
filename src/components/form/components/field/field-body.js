@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 export default class FieldBody extends PureComponent {
   static displayName = 'Field.Body'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -18,6 +19,7 @@ export default class FieldBody extends PureComponent {
     style: {},
     renderAs: 'div',
   }
+
   render() {
     const {
       children,

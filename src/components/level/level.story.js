@@ -1,16 +1,15 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Level from '.';
-import { Field, Control, Input } from '../form';
-import Heading from '../heading';
-import Button from '../button';
-import Hero from '../hero';
-import Container from '../container';
-import Box from '../box';
-import Section from '../section';
+import Level from 'react-bulma-components/lib/components/level';
+import { Field, Control, Input } from 'react-bulma-components/lib/components/form';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Button from 'react-bulma-components/lib/components/button';
+import Hero from 'react-bulma-components/lib/components/hero';
+import Container from 'react-bulma-components/lib/components/container';
+import Box from 'react-bulma-components/lib/components/box';
+import Section from 'react-bulma-components/lib/components/section';
 
 const style = { textAlign: 'center' };
 
@@ -24,7 +23,7 @@ storiesOf('Level', module)
       </Hero.Head>
     </Hero>
   ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <Section>
       <Box>
         <Level renderAs="nav">
@@ -59,7 +58,7 @@ storiesOf('Level', module)
       </Box>
     </Section>
   )))
-  .add('Items Centered', withInfo()(() => (
+  .add('Items Centered', (() => (
     <Section>
       <Box>
         <Level renderAs="nav">
@@ -107,7 +106,7 @@ storiesOf('Level', module)
       </Box>
     </Section>
   )))
-  .add('With breakpoint', withInfo()(() => (
+  .add('With breakpoint', (() => (
     ['mobile', null].map(breakpoint => (
       <Section>
         <Heading>{breakpoint || 'Without breakpoint'}</Heading>

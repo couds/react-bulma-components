@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class ModalCardTitle extends React.PureComponent {
   static displayName = 'Modal.Card.Title'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -33,4 +34,3 @@ export default class ModalCardTitle extends React.PureComponent {
     );
   }
 }
-

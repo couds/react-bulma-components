@@ -1,15 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Hero from '.';
-import Heading from '../heading';
-import Section from '../section';
-import Container from '../container';
+import Hero from 'react-bulma-components/lib/components/hero';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Section from 'react-bulma-components/lib/components/section';
+import Container from 'react-bulma-components/lib/components/container';
 
 storiesOf('Hero', module)
-  .add('Default with color', withInfo()(() => (
+  .add('Default with color', (() => (
     <div>
       <Section>
         <Hero color="primary" >
@@ -56,7 +55,7 @@ storiesOf('Hero', module)
       </Section>
     </div>
   )))
-  .add('Gradient (EXPERIMENTAL)', withInfo()(() => (
+  .add('Gradient (EXPERIMENTAL)', (() => (
     <div>
       <Section>
         <Hero color="primary" gradient >
@@ -103,7 +102,7 @@ storiesOf('Hero', module)
       </Section>
     </div>
   )))
-  .add('Differents Sizes', withInfo()(() => (
+  .add('Differents Sizes', (() => (
     <div>
       <Hero color="primary" size="medium" >
         <Hero.Body>
@@ -122,7 +121,7 @@ storiesOf('Hero', module)
       </Hero>
     </div>
   )))
-  .add('Vertical Alignments', withInfo()(() => (
+  .add('Vertical Alignments', (() => (
     <Hero size="fullheight" color="primary" >
       <Hero.Head renderAs="header">
         <div className="bd-notification is-info">Header</div>

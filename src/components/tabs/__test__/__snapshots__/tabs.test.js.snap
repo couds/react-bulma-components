@@ -7,7 +7,7 @@ exports[`Tabs component Should accept a react Element as renderAs prop 1`] = `
   className="tabs"
   style={Object {}}
 >
-  Custom 
+  Custom
   <ul>
     This should be a p element
   </ul>

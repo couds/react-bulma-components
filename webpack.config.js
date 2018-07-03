@@ -1,6 +1,6 @@
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -9,7 +9,7 @@ const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
   output: 'full/index',
   rules: [
     {
-      test: /\.s(c|a)ss$/,
+      test: /\.s?[ca]ss$/,
       loader: 'style-loader!css-loader!sass-loader',
     },
     {
@@ -21,24 +21,34 @@ const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
   output: 'dist/index',
   rules: [
     {
-      test: /\.s(c|a)ss$/,
-      loader: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader!sass-loader',
-      }),
-    },
-    {
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader',
-      }),
+      test: /\.s?[ca]ss$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        {
+          loader: 'css-loader',
+          options: {
+            // If you are having trouble with urls not resolving add this setting.
+            // See https://github.com/webpack-contrib/css-loader#url
+            minimize: false,
+            sourceMap: true,
+          },
+        },
+        {
+          loader: 'resolve-url-loader',
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+          },
+        },
+      ],
     },
   ],
 };
 
-module.exports = {
-  devtool: 'source-maps',
+exports.default = {
+  devtool: 'source-map',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname),
@@ -48,7 +58,26 @@ module.exports = {
     libraryTarget: 'umd',
     library: 'react-bulma-components',
   },
+  watchOptions: {
+    poll: 250,
+    ignored: /node_modules/,
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'react-bulma-components.min',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
+  },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'dist/react-bulma-components.min.css',
+    }),
     new ProgressBarPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
@@ -59,50 +88,28 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    new ExtractTextPlugin({
-      filename: 'dist/react-bulma-components.min.css',
-      allChunks: true,
-    }),
     new OptimizeCssAssetsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      mangle: false,
-      sourceMap: true,
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        join_vars: true,
-      },
-      output: {
-        comments: false,
-      },
-      exclude: [/\.min\.js$/gi], // skip pre-minified libs
-    }),
   ],
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         loader: 'babel-loader',
         query: {
           cacheDirectory: true,
-          presets: ['es2015', 'react'],
-          plugins: ['transform-class-properties', 'transform-object-rest-spread'],
+          presets: [
+            ['env', {
+              targets: {
+                browsers: ['last 2 versions', 'not safari < 11', 'not ie < 11'],
+              },
+            }],
+            'react'],
+          plugins: ['transform-class-properties'],
         },
       },
       {

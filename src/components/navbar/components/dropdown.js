@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarDropdown extends React.PureComponent {
   static displayName = 'Navbar.Dropdown'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -21,6 +22,7 @@ export default class NavbarDropdown extends React.PureComponent {
     boxed: false,
     right: false,
   }
+
   render() {
     const {
       className,
@@ -35,13 +37,12 @@ export default class NavbarDropdown extends React.PureComponent {
       <Element
         {...props}
         className={classnames('navbar-dropdown', className, {
-            'is-boxed': boxed,
-            'is-right': right,
-          })}
+          'is-boxed': boxed,
+          'is-right': right,
+        })}
       >
         {children}
       </Element>
     );
   }
 }
-

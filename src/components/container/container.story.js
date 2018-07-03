@@ -1,14 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Container from '.';
-import Heading from '../heading';
-import Section from '../section';
+import Container from 'react-bulma-components/lib/components/container';
+import Heading from 'react-bulma-components/lib/components/heading';
+import Section from 'react-bulma-components/lib/components/section';
 
 storiesOf('Container', module)
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <div>
       <Section>
         <Container>

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarBurger extends React.PureComponent {
   static displayName = 'Navbar.Burger'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -21,8 +22,9 @@ export default class NavbarBurger extends React.PureComponent {
   }
 
   onClick = (evt) => {
-    this.props.onClick(evt);
-    this.props.toggleMenu();
+    const { onClick, toggleMenu } = this.props;
+    onClick(evt);
+    toggleMenu();
   }
 
   render() {

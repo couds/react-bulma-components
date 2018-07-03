@@ -46,6 +46,7 @@ exports[`Modal component Should close the modal if clicked on background 1`] = `
   <button
     aria-label="close"
     class="modal-close is-large"
+    type="button"
   />
 </div>
 `;
@@ -106,6 +107,7 @@ exports[`Modal component Should no try to reopen if other prop change 1`] = `
   <button
     aria-label="close"
     class="modal-close is-large"
+    type="button"
   />
 </div>
 `;
@@ -126,6 +128,7 @@ exports[`Modal component Should not close the modal if clicked on background 1`]
   <button
     aria-label="close"
     class="modal-close is-large"
+    type="button"
   />
 </div>
 `;
@@ -146,6 +149,7 @@ exports[`Modal component Should not close the modal if clicked on background 2`]
   <button
     aria-label="close"
     class="modal-close is-large"
+    type="button"
   />
 </div>
 `;
@@ -277,6 +281,7 @@ exports[`Modal component Should render any child type 1`] = `
   <button
     aria-label="close"
     class="modal-close is-large"
+    type="button"
   />
 </div>
 `;

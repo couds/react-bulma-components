@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class NavbarMenu extends React.PureComponent {
   static displayName = 'Navbar.Menu'
+
   static propTypes = {
     style: PropTypes.shape({}),
     className: PropTypes.string,
@@ -38,4 +39,3 @@ export default class NavbarMenu extends React.PureComponent {
     );
   }
 }
-

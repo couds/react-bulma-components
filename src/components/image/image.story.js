@@ -1,24 +1,18 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
-import Image from '.';
+import Image from 'react-bulma-components/lib/components/image';
 import CONSTANTS from './constants';
-import Table from '../table';
+import Table from 'react-bulma-components/lib/components/table';
 
 storiesOf('Image', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', withInfo()(() => (
+  .add('Default', (() => (
     <div style={{ width: 320 }}>
       <Image src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
     </div>
   )))
-  .add('Fixed Square', withInfo()(() => (
+  .add('Fixed Square', (() => (
     <Table>
       <thead>
         <tr>
@@ -44,7 +38,7 @@ storiesOf('Image', module)
       </tbody>
     </Table>
   )))
-  .add('Responsive images with ratios', withInfo()(() => (
+  .add('Responsive images with ratios', (() => (
     <Table>
       <thead>
         <tr>

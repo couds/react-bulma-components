@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 export default class HeroFooter extends PureComponent {
   static displayName = 'Hero.Footer'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

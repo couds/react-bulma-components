@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import Menu from '..';
 
@@ -50,7 +51,15 @@ describe('Menu component', () => {
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = props => (<span {...props}>Custom {props.children}</span>);
+    const Custom = props => (
+      <span {...props}>
+Custom
+        {props.children}
+      </span>
+    );
+
+    Custom.propTypes = { children: PropTypes.node.isRequired };
+
     const component = renderer.create(
       <Menu>
         <Menu.List title="General">
@@ -71,10 +80,14 @@ describe('Menu component', () => {
       <Menu>
         <Menu.List title="General">
           <Menu.List.Item>
-            <p>Custom children 1</p>
+            <p>
+Custom children 1
+            </p>
           </Menu.List.Item>
           <Menu.List.Item>
-            <a>Custom children 2</a>
+            <a>
+Custom children 2
+            </a>
           </Menu.List.Item>
         </Menu.List>
       </Menu>,
