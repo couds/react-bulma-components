@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component Should be a Large Primary Button 1`] = `
-<a
+<button
   className="is-primary is-large button"
   disabled={false}
   onClick={[Function]}
@@ -11,7 +11,7 @@ exports[`Button component Should be a Large Primary Button 1`] = `
 `;
 
 exports[`Button component Should be a Primary Button 1`] = `
-<a
+<button
   className="is-primary button"
   disabled={false}
   onClick={[Function]}
@@ -21,10 +21,9 @@ exports[`Button component Should be a Primary Button 1`] = `
 `;
 
 exports[`Button component Should be a default Button 1`] = `
-<a
+<button
   className="button"
   disabled={false}
-  href="http://google.com"
   onClick={[Function]}
   style={Object {}}
   tabIndex={0}
@@ -53,7 +52,18 @@ exports[`Button component Should be a submit form button 1`] = `
 />
 `;
 
-exports[`Button component Should render as a React element link with custom href 1`] = `
+exports[`Button component Should be an anchor button 1`] = `
+<a
+  className="button"
+  disabled={false}
+  href="https://github.com/couds/react-bulma-components"
+  onClick={[Function]}
+  style={Object {}}
+  tabIndex={0}
+/>
+`;
+
+exports[`Button component Should render as a React element link with to prop 1`] = `
 <a
   href="http://google.com"
 >
@@ -82,7 +92,7 @@ exports[`Button component Should render as a static Button 1`] = `
 `;
 
 exports[`Button component Should render be disabled 1`] = `
-<a
+<button
   className="button"
   disabled={true}
   onClick={undefined}

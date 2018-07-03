@@ -9,8 +9,6 @@ export default class Button extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    href: PropTypes.string,
-    hrefAttr: PropTypes.string,
     style: PropTypes.shape({}),
     renderAs: PropTypes.oneOfType([
       PropTypes.oneOf(['a', 'button']),
@@ -36,10 +34,8 @@ export default class Button extends PureComponent {
   static defaultProps = {
     children: null,
     className: '',
-    href: '',
-    hrefAttr: '',
     style: {},
-    renderAs: 'a',
+    renderAs: 'button',
     onClick: () => null,
     color: null,
     size: null,
@@ -73,8 +69,6 @@ export default class Button extends PureComponent {
       loading,
       disabled,
       remove,
-      href,
-      hrefAttr,
       isStatic,
       rounded,
       onClick,
@@ -83,13 +77,6 @@ export default class Button extends PureComponent {
     } = this.props;
     let Element = isStatic ? 'span' : renderAs;
     const otherProps = {};
-    if (href) {
-      otherProps[renderAs === 'a' ? 'href' : hrefAttr] = href;
-      if (renderAs !== 'a' && !hrefAttr) {
-        // eslint-disable-next-line no-console
-        console.error('warning: if renderAs is different the anchor (a), hrefAttr is required. Check Button props');
-      }
-    }
     if (submit) {
       Element = 'button';
       otherProps.type = 'submit';

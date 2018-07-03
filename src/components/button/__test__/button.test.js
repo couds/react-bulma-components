@@ -18,7 +18,11 @@ Link.propTypes = {
 
 describe('Button component', () => {
   it('Should be a default Button', () => {
-    const component = renderer.create(<Button href="http://google.com" />);
+    const component = renderer.create(<Button />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be an anchor button', () => {
+    const component = renderer.create(<Button renderAs="a" href="https://github.com/couds/react-bulma-components" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be a Primary Button', () => {
@@ -37,24 +41,12 @@ describe('Button component', () => {
     const component = renderer.create(<Button renderAs="button" color="danger" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render as a React element link with custom href', () => {
+  it('Should render as a React element link with to prop', () => {
     const component = renderer.create(
-      <Button renderAs={Link} href="http://google.com" hrefAttr="to" color="danger" >
+      <Button renderAs={Link} to="http://google.com" color="danger" >
         TEST
       </Button>);
     expect(component.toJSON()).toMatchSnapshot();
-  });
-  it('Should throw a console.error if no hrefAttr is defined when renderAs different as A and href attr is defined', () => {
-    // eslint-disable-next-line no-console
-    console.error = jest.genMockFn();
-    renderer.create(
-      <Button renderAs={Link} href="http://google.com" color="danger" >
-        TEST
-      </Button>);
-    // eslint-disable-next-line no-console
-    expect(console.error).toHaveBeenCalled();
-    // eslint-disable-next-line no-console
-    console.error.mockRestore();
   });
   it('Should render be disabled', () => {
     const component = renderer.create(<Button disabled />);

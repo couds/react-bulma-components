@@ -37,7 +37,7 @@ describe('Modal component', () => {
           </Modal.Card.Title>
         </Modal.Card.Head>
       </Modal.Card>);
-    component.find('a.delete').simulate('click');
+    component.find('.delete').simulate('click');
     expect(onClose).toHaveBeenCalledTimes(1);
   });
   it('Should open the modal', () => {
@@ -74,7 +74,7 @@ describe('Modal component', () => {
       </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
-    modal.querySelector('a.delete').click();
+    modal.querySelector('.delete').click();
     expect(onClose).toHaveBeenCalledTimes(1);
     expect(window.document.querySelector('div.modal.is-active')).toBeNull();
   });
