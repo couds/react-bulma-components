@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Helper proptypes Should have alignment responsive modifiers 1`] = `"has-text-centered-tablet-only has-text-left-widescreen"`;
+
+exports[`Helper proptypes Should have background color success 1`] = `"has-background-success"`;
+
+exports[`Helper proptypes Should have hidden modifier tablet-only and widescreen 1`] = `"is-hidden-tablet-only is-hidden-widescreen"`;
+
+exports[`Helper proptypes Should have paddingless and clearfix classes 1`] = `"is-clearfix is-paddingless"`;
+
+exports[`Helper proptypes Should have responsive modifier flex-tablet-only and block-widescreen 1`] = `"is-flex-tablet-only is-block-widescreen"`;
+
+exports[`Helper proptypes Should have text color success 1`] = `"has-text-success"`;
+
+exports[`Helper proptypes Should have text helpers 1`] = `"has-text-success has-text-centered has-text-weight-bold is-uppercase is-italic"`;
