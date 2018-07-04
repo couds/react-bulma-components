@@ -22,26 +22,18 @@ export default class Image extends PureComponent {
     fallback: 'http//bulma.io/images/placeholders/480x480.png',
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      src: props.src,
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.src !== this.props.src) {
-      this.setState({
-        src: nextProps.src,
-      });
-    }
-  }
+  state = {}
 
   onError = () => {
     this.setState({
       src: this.props.fallback,
     });
   }
+
+  static getDerivedStateFromProps = (props, state) => ({
+    src: state.default !== props.src ? props.src : state.src,
+    default: props.src,
+  })
 
   render() {
     const {

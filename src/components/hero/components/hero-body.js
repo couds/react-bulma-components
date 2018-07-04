@@ -1,39 +1,36 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class HeroBody extends PureComponent {
-  static displayName = 'Hero.Body'
+const HeroBody = ({
+  children,
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames(className, 'hero-body')}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+HeroBody.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'div',
-  }
+HeroBody.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'div',
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames(className, 'hero-body')}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default HeroBody;

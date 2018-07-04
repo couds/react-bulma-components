@@ -1,53 +1,50 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import LevelSide from './components/level-side';
 import LevelItem from './components/level-item';
 
-
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-export default class Level extends PureComponent {
-  static Side = LevelSide
+const Level = ({
+  children,
+  className,
+  breakpoint,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('level', className, {
+        [`is-${breakpoint}`]: breakpoint,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static Item = LevelItem
+Level.Side = LevelSide;
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    breakpoint: PropTypes.oneOf(breakpoints),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+Level.Item = LevelItem;
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    breakpoint: null,
-    renderAs: 'div',
-  }
+Level.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  breakpoint: PropTypes.oneOf(breakpoints),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      breakpoint,
-      renderAs,
-      ...props
-    } = this.props;
+Level.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  breakpoint: null,
+  renderAs: 'div',
+};
 
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('level', className, {
-          [`is-${breakpoint}`]: breakpoint,
-        })}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default Level;

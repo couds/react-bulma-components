@@ -1,40 +1,38 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class MessageHeader extends PureComponent {
-  static displayName = 'Message.Header'
+const MessageHeader = ({
+  children,
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('message-header', className)}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    renderAs: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-  }
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    renderAs: 'div',
-  }
+MessageHeader.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('message-header', className)}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+MessageHeader.defaultProps = {
+  children: null,
+  className: '',
+  renderAs: 'div',
+};
+
+export default MessageHeader;

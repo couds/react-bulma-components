@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -6,42 +6,40 @@ import CONSTANTS from '../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-export default class Notification extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    color: PropTypes.oneOf(colors),
-  }
+const Notification = ({
+  children,
+  className,
+  renderAs,
+  color,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('notification', {
+        [`is-${color}`]: color,
+      }, className)}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'div',
-    color: null,
-  }
+Notification.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  color: PropTypes.oneOf(colors),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      color,
-      ...props
-    } = this.props;
+Notification.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'div',
+  color: null,
+};
 
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('notification', {
-          [`is-${color}`]: color,
-        }, className)}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default Notification;

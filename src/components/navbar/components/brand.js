@@ -2,34 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class NavbarBrand extends React.PureComponent {
-  static displayName = 'Navbar.Brand'
+const NavbarBrand = ({
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    {...props}
+    className={classnames('navbar-brand', className)}
+  >
+    {children}
+  </div>
+);
 
-  static propTypes = {
-    style: PropTypes.shape({}),
-    className: PropTypes.string,
-    children: PropTypes.node,
-  }
+NavbarBrand.propTypes = {
+  style: PropTypes.shape({}),
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
 
-  static defaultProps = {
-    style: {},
-    className: '',
-    children: null,
-  }
+NavbarBrand.defaultProps = {
+  style: {},
+  className: '',
+  children: null,
+};
 
-  render() {
-    const {
-      className,
-      children,
-      ...props
-    } = this.props;
-    return (
-      <div
-        {...props}
-        className={classnames('navbar-brand', className)}
-      >
-        {children}
-      </div>
-    );
-  }
-}
+export default NavbarBrand;

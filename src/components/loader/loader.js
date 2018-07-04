@@ -1,38 +1,36 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class Loader extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+const Loader = ({
+  children,
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('loader', className)}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'div',
-  }
+Loader.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      ...props
-    } = this.props;
+Loader.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'div',
+};
 
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('loader', className)}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default Loader;

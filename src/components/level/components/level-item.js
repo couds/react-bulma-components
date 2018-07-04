@@ -1,41 +1,37 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class LevelItem extends PureComponent {
-  static displayName = 'Level.Item'
+const LevelItem = ({
+  children,
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('level-item', className, {
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+LevelItem.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'div',
-  }
+LevelItem.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'div',
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('level-item', className, {
-        })}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default LevelItem;

@@ -1,46 +1,43 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 
-export default class FieldLabel extends PureComponent {
-  static displayName = 'Field.Label'
+const FieldLabel = ({
+  children,
+  className,
+  renderAs,
+  size,
+  ...props
+}) => {
+  const Element = renderAs;
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
-  }
+  return (
+    <Element
+      {...props}
+      className={classnames('field-label', className, {
+        [`is-${size}`]: size,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'div',
-    size: null,
-  }
+FieldLabel.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      size,
-      ...props
-    } = this.props;
-    const Element = renderAs;
+FieldLabel.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'div',
+  size: null,
+};
 
-    return (
-      <Element
-        {...props}
-        className={classnames('field-label', className, {
-          [`is-${size}`]: size,
-        })}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default FieldLabel;

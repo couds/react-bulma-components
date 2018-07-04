@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -7,40 +7,39 @@ import Header from './components/header';
 import Icon from './components/icon';
 import Tabs from './components/tabs';
 
-export default class Panel extends PureComponent {
-  static Header = Header
+const Panel = ({
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('panel', className)}
+    />
+  );
+};
 
-  static Tabs = Tabs
+Panel.Header = Header;
 
-  static Block = Block
+Panel.Tabs = Tabs;
 
-  static Icon = Icon
+Panel.Block = Block;
 
-  static propTypes = {
-    className: PropTypes.string,
-    renderAs: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-  }
+Panel.Icon = Icon;
 
-  static defaultProps = {
-    className: '',
-    renderAs: 'nav',
-  }
+Panel.propTypes = {
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
+};
 
-  render() {
-    const {
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('panel', className)}
-      />
-    );
-  }
-}
+Panel.defaultProps = {
+  className: '',
+  renderAs: 'nav',
+};
+
+export default Panel;

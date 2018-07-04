@@ -1,40 +1,39 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class Box extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-  }
+const Box = ({
+  children,
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('box', className)}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'div',
-  }
+Box.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('box', className)}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+Box.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'div',
+};
+
+export default Box;

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -7,45 +7,43 @@ import CardContent from './components/content';
 import CardHeader from './components/header';
 import CardFooter from './components/footer';
 
-export default class Card extends PureComponent {
-  static Image = CardImage
+const Card = ({
+  className,
+  children,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      className={classnames('card', className)}
+      {...props}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static Content = CardContent
+Card.Image = CardImage;
 
-  static Header = CardHeader
+Card.Content = CardContent;
 
-  static Footer = CardFooter
+Card.Header = CardHeader;
 
-  static propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+Card.Footer = CardFooter;
 
-  static defaultProps = {
-    className: '',
-    children: null,
-    style: {},
-    renderAs: 'div',
-  }
+Card.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+};
 
-  render() {
-    const {
-      className,
-      children,
-      renderAs,
-      ...props
-    } = this.props;
+Card.defaultProps = {
+  className: '',
+  children: null,
+  style: {},
+  renderAs: 'div',
+};
 
-    const Element = renderAs;
-    return (
-      <Element
-        className={classnames('card', className)}
-        {...props}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default Card;

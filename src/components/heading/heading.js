@@ -1,60 +1,58 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class Heading extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-    weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
-    subtitle: PropTypes.bool,
-    heading: PropTypes.bool,
-    spaced: PropTypes.bool,
-  }
+const Heading = ({
+  children,
+  className,
+  renderAs,
+  size,
+  subtitle,
+  weight,
+  spaced,
+  heading,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames(className, {
+        title: !subtitle && !heading,
+        subtitle,
+        heading,
+        [`is-${size}`]: size,
+        [`has-text-weight-${weight}`]: weight,
+        'is-spaced': spaced && !subtitle,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'h1',
-    size: null,
-    weight: null,
-    subtitle: false,
-    heading: false,
-    spaced: false,
-  }
+Heading.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
+  subtitle: PropTypes.bool,
+  heading: PropTypes.bool,
+  spaced: PropTypes.bool,
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      size,
-      subtitle,
-      weight,
-      spaced,
-      heading,
-      ...props
-    } = this.props;
+Heading.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'h1',
+  size: null,
+  weight: null,
+  subtitle: false,
+  heading: false,
+  spaced: false,
+};
 
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames(className, {
-          title: !subtitle && !heading,
-          subtitle,
-          heading,
-          [`is-${size}`]: size,
-          [`has-text-weight-${weight}`]: weight,
-          'is-spaced': spaced && !subtitle,
-        })}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+export default Heading;

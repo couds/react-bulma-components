@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
@@ -9,56 +9,55 @@ import HeroFooter from './components/hero-footer';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-export default class Hero extends PureComponent {
-  static Head = HeroHead
+const Hero = ({
+  children,
+  className,
+  renderAs,
+  color,
+  gradient,
+  size,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('hero', className, {
+        [`is-${color}`]: color,
+        [`is-${size}`]: size,
+        'is-bold': gradient,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static Body = HeroBody
 
-  static Footer = HeroFooter
+Hero.Head = HeroHead;
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    color: PropTypes.oneOf(colors),
-    gradient: PropTypes.bool,
-    size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
-  }
+Hero.Body = HeroBody;
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'section',
-    color: null,
-    gradient: false,
-    size: null,
-  }
+Hero.Footer = HeroFooter;
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      color,
-      gradient,
-      size,
-      ...props
-    } = this.props;
+Hero.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  color: PropTypes.oneOf(colors),
+  gradient: PropTypes.bool,
+  size: PropTypes.oneOf(['medium', 'large', 'fullheight']),
+};
 
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('hero', className, {
-          [`is-${color}`]: color,
-          [`is-${size}`]: size,
-          'is-bold': gradient,
-        })}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+Hero.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'section',
+  color: null,
+  gradient: false,
+  size: null,
+};
+
+export default Hero;
