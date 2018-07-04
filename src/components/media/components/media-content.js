@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const MediaContent = ({
   children,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames(className, 'content')}
+      className={classnames(className, modifiers.classnames(allProps), 'content')}
     >
       {children}
     </Element>
@@ -20,6 +22,7 @@ const MediaContent = ({
 };
 
 MediaContent.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -27,6 +30,7 @@ MediaContent.propTypes = {
 };
 
 MediaContent.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

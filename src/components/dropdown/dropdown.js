@@ -7,6 +7,7 @@ import DropdownItem from './components/item';
 import DropdownDivider from './components/divider';
 import Button from '../button';
 import Icon from '../icon';
+import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -16,6 +17,7 @@ export default class Dropdown extends PureComponent {
   static Divider = DropdownDivider;
 
   static propTypes = {
+    ...modifiers.propTypes,
     className: PropTypes.string,
     style: PropTypes.shape({}),
     children: PropTypes.node,
@@ -27,6 +29,7 @@ export default class Dropdown extends PureComponent {
   }
 
   static defaultProps = {
+    ...modifiers.defaultProps,
     className: '',
     style: {},
     value: null,
@@ -83,9 +86,10 @@ export default class Dropdown extends PureComponent {
       align,
       hoverable,
       onChange,
-      ...props
+      ...allProps
     } = this.props;
     let current = null;
+    const props = modifiers.clean(allProps);
 
     const childrenArray = React.Children.map(children, (child, i) => {
       if (i === 0 || child.props.value === value) {
@@ -101,7 +105,7 @@ export default class Dropdown extends PureComponent {
       <div
         {...props}
         ref={(node) => { this.htmlElement = node; }}
-        className={classnames('dropdown', className, {
+        className={classnames('dropdown', modifiers.classnames(allProps), className, {
           'is-active': this.state.open,
           [`is-${align}`]: align,
           'is-hoverable': hoverable,

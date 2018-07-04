@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
+import modifiers from '../../modifiers';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
@@ -11,13 +12,14 @@ const Container = ({
   breakpoint,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('container', className, {
+      className={classnames('container', modifiers.classnames(allProps), className, {
         'is-fluid': fluid,
         [`is-${breakpoint}`]: breakpoint,
       })}
@@ -28,6 +30,7 @@ const Container = ({
 };
 
 Container.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   fluid: PropTypes.bool,
   className: PropTypes.string,
@@ -37,6 +40,7 @@ Container.propTypes = {
 };
 
 Container.defaultProps = {
+  ...modifiers.defaultProps,
   fluid: false,
   children: null,
   breakpoint: null,

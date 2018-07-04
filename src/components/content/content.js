@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../modifiers';
 
 const Content = ({
   children,
   className,
   renderAs,
   size,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('content', className, {
+      className={classnames('content', modifiers.classnames(allProps), className, {
         [`is-${size}`]: size,
       })}
     >
@@ -23,6 +25,7 @@ const Content = ({
 };
 
 Content.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -31,6 +34,7 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

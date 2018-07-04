@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import modifiers from '../../../modifiers';
 
 const Control = ({
   children,
@@ -12,14 +12,14 @@ const Control = ({
   iconRight,
   loading,
   size,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
-
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('control', className, {
+      className={classnames('control', modifiers.classnames(allProps), className, {
         'is-expanded': fullwidth,
         'has-icons-left': iconLeft,
         'has-icons-right': iconRight,
@@ -33,6 +33,7 @@ const Control = ({
 };
 
 Control.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -45,6 +46,7 @@ Control.propTypes = {
 };
 
 Control.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

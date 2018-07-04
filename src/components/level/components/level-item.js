@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const LevelItem = ({
   children,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('level-item', className, {
+      className={classnames('level-item', modifiers.classnames(allProps), className, {
       })}
     >
       {children}
@@ -21,6 +23,7 @@ const LevelItem = ({
 };
 
 LevelItem.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -28,6 +31,7 @@ LevelItem.propTypes = {
 };
 
 LevelItem.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

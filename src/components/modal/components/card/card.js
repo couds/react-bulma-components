@@ -6,12 +6,14 @@ import ModalCardHead from './head';
 import ModalCardBody from './body';
 import ModalCardFoot from './foot';
 import ModalCardTitle from './title';
+import modifiers from '../../../../modifiers';
 
 const ModalCard = ({
   className,
   onClose,
-  ...props
+  ...allProps
 }) => {
+  const props = modifiers.clean(allProps);
   const children = React.Children.map(props.children, (child) => {
     if (child.type.toString().indexOf('ModalCardHead') !== -1) {
       return React.cloneElement(child, {
@@ -23,7 +25,7 @@ const ModalCard = ({
   return (
     <div
       {...props}
-      className={classnames('modal-card', className)}
+      className={classnames('modal-card', modifiers.classnames(allProps), className)}
     >
       {children}
     </div>
@@ -40,6 +42,7 @@ ModalCard.Foot = ModalCardFoot;
 ModalCard.Title = ModalCardTitle;
 
 ModalCard.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -47,6 +50,7 @@ ModalCard.propTypes = {
 };
 
 ModalCard.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

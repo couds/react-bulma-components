@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
@@ -11,19 +11,23 @@ const Help = ({
   className,
   children,
   color,
-  ...props
-}) => (
-  <p
-    {...props}
-    className={classnames('help', className, {
-      [`is-${color}`]: color,
-    })}
-  >
-    {children}
-  </p>
-);
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <p
+      {...props}
+      className={classnames('help', modifiers.classnames(allProps), className, {
+        [`is-${color}`]: color,
+      })}
+    >
+      {children}
+    </p>
+  );
+};
 
 Help.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
@@ -31,6 +35,7 @@ Help.propTypes = {
 };
 
 Help.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

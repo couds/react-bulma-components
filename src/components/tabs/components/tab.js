@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const Tab = ({
   children,
@@ -8,13 +9,14 @@ const Tab = ({
   style,
   renderAs,
   active,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <li
       style={style}
-      className={classnames(className, {
+      className={classnames(className, modifiers.classnames(allProps), {
         'is-active': active,
       })}
     >
@@ -26,6 +28,7 @@ const Tab = ({
 };
 
 Tab.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -37,6 +40,7 @@ Tab.propTypes = {
 };
 
 Tab.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

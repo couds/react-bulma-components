@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
@@ -17,24 +17,28 @@ const Textarea = ({
   rows,
   value,
   name,
-  ...props
-}) => (
-  <textarea
-    name={name}
-    {...props}
-    value={value}
-    rows={rows}
-    placeholder={placeholder}
-    readOnly={readOnly}
-    disabled={disabled}
-    className={classnames('textarea', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-    })}
-  />
-);
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <textarea
+      name={name}
+      {...props}
+      value={value}
+      rows={rows}
+      placeholder={placeholder}
+      readOnly={readOnly}
+      disabled={disabled}
+      className={classnames('textarea', modifiers.classnames(allProps), className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+      })}
+    />
+  );
+};
 
 Textarea.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -51,6 +55,7 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
+  ...modifiers.defaultProps,
   className: '',
   style: {},
   size: null,

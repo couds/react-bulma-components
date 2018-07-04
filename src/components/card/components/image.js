@@ -1,27 +1,33 @@
 import React from 'react';
 import classnames from 'classnames';
 import Image from '../../image';
+import modifiers from '../../../modifiers';
 
-export default class CardImage extends React.PureComponent {
-  static displayName = 'Card.Image'
+const CardImage = ({
+  className,
+  style,
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
 
-  static propTypes = Image.propTypes
+  return (
+    <div
+      style={style}
+      className={classnames('card-image', modifiers.classnames(allProps), className)}
+    >
+      <Image {...props} />
+    </div>
+  );
+};
 
-  static defaultProps = Image.defaultProps
+CardImage.propTypes = {
+  ...modifiers.propTypes,
+  ...Image.propTypes,
+};
 
-  render() {
-    const {
-      className,
-      style,
-      ...props
-    } = this.props;
-    return (
-      <div
-        style={style}
-        className={classnames('card-image', className)}
-      >
-        <Image {...props} />
-      </div>
-    );
-  }
-}
+CardImage.defaultProps = {
+  ...modifiers.defaultProps,
+  ...Image.defaultProps,
+};
+
+export default CardImage;

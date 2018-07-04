@@ -22,8 +22,7 @@ const Box = ({
 };
 
 Box.propTypes = {
-  // ...modifiers.propTypes,
-  paddingless: PropTypes.bool,
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),

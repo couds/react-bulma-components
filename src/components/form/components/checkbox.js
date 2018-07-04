@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const Checkbox = ({
   className,
@@ -10,26 +11,29 @@ const Checkbox = ({
   children,
   checked,
   name,
-  ...props
-}) => (
-  <label
-    disabled={disabled}
-    className={classnames('checkbox', className)}
-    style={style}
-  >
-    <input
-      {...props}
-      name={name}
-      type="checkbox"
-      value={value}
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <label
       disabled={disabled}
-    />
-    {children}
-  </label>
-);
-
+      className={classnames('checkbox', modifiers.classnames(allProps), className)}
+      style={style}
+    >
+      <input
+        {...props}
+        name={name}
+        type="checkbox"
+        value={value}
+        disabled={disabled}
+      />
+      {children}
+    </label>
+  );
+};
 
 Checkbox.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -43,6 +47,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   value: '',

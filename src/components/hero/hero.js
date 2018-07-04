@@ -6,6 +6,7 @@ import CONSTANTS from '../../constants';
 import HeroHead from './components/hero-head';
 import HeroBody from './components/hero-body';
 import HeroFooter from './components/hero-footer';
+import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -16,13 +17,14 @@ const Hero = ({
   color,
   gradient,
   size,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('hero', className, {
+      className={classnames('hero', modifiers.classnames(allProps), className, {
         [`is-${color}`]: color,
         [`is-${size}`]: size,
         'is-bold': gradient,
@@ -41,6 +43,7 @@ Hero.Body = HeroBody;
 Hero.Footer = HeroFooter;
 
 Hero.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -51,6 +54,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

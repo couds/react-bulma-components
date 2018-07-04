@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import modifiers from '../../../modifiers';
 import CONSTANTS from '../../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
@@ -18,31 +18,35 @@ const Select = ({
   multiple,
   children,
   name,
-  ...props
-}) => (
-  <div
-    className={classnames('select', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-      'is-loading': loading,
-      'is-multiple': multiple,
-    })}
-    style={style}
-  >
-    <select
-      {...props}
-      multiple={multiple}
-      value={value}
-      readOnly={readOnly}
-      disabled={disabled}
-      name={name}
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <div
+      className={classnames('select', modifiers.classnames(allProps), className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-loading': loading,
+        'is-multiple': multiple,
+      })}
+      style={style}
     >
-      {children}
-    </select>
-  </div>
-);
+      <select
+        {...props}
+        multiple={multiple}
+        value={value}
+        readOnly={readOnly}
+        disabled={disabled}
+        name={name}
+      >
+        {children}
+      </select>
+    </div>
+  );
+};
 
 Select.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -63,6 +67,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   value: '',

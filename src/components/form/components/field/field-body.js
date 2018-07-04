@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../../modifiers';
 
 const FieldBody = ({
   children,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('field-body', className, {
+      className={classnames('field-body', modifiers.classnames(allProps), className, {
       })}
     >
       {children}
@@ -21,6 +23,7 @@ const FieldBody = ({
 };
 
 FieldBody.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -28,6 +31,7 @@ FieldBody.propTypes = {
 };
 
 FieldBody.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

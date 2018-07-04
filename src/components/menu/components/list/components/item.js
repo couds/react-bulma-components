@@ -3,19 +3,21 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 /* eslint-disable-next-line import/no-cycle */
 import List from '../list';
+import modifiers from '../../../../../modifiers';
 
 const MenuListItem = ({
   children,
   active,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   if (typeof children === 'string') {
     return (
       <li>
-        <Element className={classnames(className, { 'is-active': active })} {...props}>
+        <Element className={classnames(className, modifiers.classnames(allProps), { 'is-active': active })} {...props}>
           {children}
         </Element>
       </li>
@@ -42,6 +44,7 @@ const MenuListItem = ({
 };
 
 MenuListItem.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.string,
@@ -55,6 +58,7 @@ MenuListItem.propTypes = {
 };
 
 MenuListItem.defaultProps = {
+  ...modifiers.defaultProps,
   className: '',
   children: null,
   active: false,
