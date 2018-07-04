@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import CONSTANTS from '../../constants';
+import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -11,13 +12,14 @@ const Notification = ({
   className,
   renderAs,
   color,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('notification', {
+      className={classnames('notification', modifiers.classnames(allProps), {
         [`is-${color}`]: color,
       }, className)}
     >
@@ -27,6 +29,7 @@ const Notification = ({
 };
 
 Notification.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -35,6 +38,7 @@ Notification.propTypes = {
 };
 
 Notification.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

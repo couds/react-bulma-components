@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import FieldLabel from './field-label';
 import FieldBody from './field-body';
-
+import modifiers from '../../../../modifiers';
 
 const Field = ({
   className,
@@ -13,9 +13,10 @@ const Field = ({
   multiline,
   horizontal,
   kind,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   let k = null;
 
   if (kind === 'addons') {
@@ -27,7 +28,7 @@ const Field = ({
   return (
     <Element
       {...props}
-      className={classnames('field', className, {
+      className={classnames('field', modifiers.classnames(allProps), className, {
         [`${k}`]: k,
         [`${k}-${align}`]: k && align,
         [`${k}-multiline`]: k === 'is-grouped' && multiline,
@@ -42,6 +43,7 @@ Field.Label = FieldLabel;
 Field.Body = FieldBody;
 
 Field.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -53,6 +55,7 @@ Field.propTypes = {
 };
 
 Field.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

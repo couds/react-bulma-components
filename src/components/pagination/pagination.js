@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../modifiers';
 
 class Pagination extends React.PureComponent {
   static propTypes = {
+    ...modifiers.propTypes,
     /** Current page */
     current: PropTypes.number,
     /** Total pages in total */
@@ -24,6 +26,7 @@ class Pagination extends React.PureComponent {
   }
 
   static defaultProps = {
+    ...modifiers.defaultProps,
     total: 1,
     current: 1,
     delta: 1,
@@ -76,8 +79,9 @@ class Pagination extends React.PureComponent {
       autoHide,
       className,
       onChange,
-      ...props
+      ...allProps
     } = this.props;
+    const props = modifiers.clean(allProps);
     if (total <= 1 && autoHide) {
       return null;
     }
@@ -92,7 +96,7 @@ class Pagination extends React.PureComponent {
     return (
       <nav
         {...props}
-        className={classnames('pagination', className)}
+        className={classnames('pagination', modifiers.classnames(allProps), className)}
         aria-label="pagination"
       >
         {

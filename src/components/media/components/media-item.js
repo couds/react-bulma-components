@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const MediaItem = ({
   children,
   className,
   renderAs,
   position,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   const p = position === 'center' ? 'content' : position;
   return (
     <Element
       {...props}
-      className={classnames(className, {
+      className={classnames(className, modifiers.classnames(allProps), {
         [`media-${p}`]: p,
       })}
     >
@@ -24,6 +26,7 @@ const MediaItem = ({
 };
 
 MediaItem.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -32,6 +35,7 @@ MediaItem.propTypes = {
 };
 
 MediaItem.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from './constants';
+import modifiers from '../../modifiers';
 
 export default class Image extends PureComponent {
   static propTypes = {
+    ...modifiers.propTypes,
     className: PropTypes.string,
     src: PropTypes.string,
     alt: PropTypes.string,
@@ -14,6 +16,7 @@ export default class Image extends PureComponent {
   }
 
   static defaultProps = {
+    ...modifiers.defaultProps,
     className: '',
     src: '',
     alt: '',
@@ -42,10 +45,10 @@ export default class Image extends PureComponent {
       size,
       fallback,
       src,
-      ...props
+      ...allProps
     } = this.props;
-
-    let s = this.props.size;
+    const props = modifiers.clean(allProps);
+    let s = size;
 
     if (typeof size === 'number') {
       s = `${s}x${s}`;

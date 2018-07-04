@@ -6,17 +6,19 @@ import CardImage from './components/image';
 import CardContent from './components/content';
 import CardHeader from './components/header';
 import CardFooter from './components/footer';
+import modifiers from '../../modifiers';
 
 const Card = ({
   className,
   children,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
-      className={classnames('card', className)}
+      className={classnames('card', modifiers.classnames(allProps), className)}
       {...props}
     >
       {children}
@@ -33,6 +35,7 @@ Card.Header = CardHeader;
 Card.Footer = CardFooter;
 
 Card.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   children: PropTypes.node,
   style: PropTypes.shape({}),
@@ -40,6 +43,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
+  ...modifiers.defaultProps,
   className: '',
   children: null,
   style: {},

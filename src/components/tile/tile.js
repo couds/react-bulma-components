@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
+import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -14,14 +15,15 @@ const Tile = ({
   size,
   color,
   notification,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
       className={classnames(
-        'tile', className, {
+        'tile', className, modifiers.classnames(allProps), {
           notification,
           [`is-${kind}`]: kind,
           [`is-${size}`]: size,
@@ -36,6 +38,7 @@ const Tile = ({
 };
 
 Tile.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -48,6 +51,7 @@ Tile.propTypes = {
 };
 
 Tile.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

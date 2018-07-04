@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const MessageHeader = ({
   children,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('message-header', className)}
+      className={classnames('message-header', modifiers.classnames(allProps), className)}
     >
       {children}
     </Element>
@@ -21,6 +23,7 @@ const MessageHeader = ({
 
 
 MessageHeader.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   renderAs: PropTypes.oneOfType([
@@ -30,6 +33,7 @@ MessageHeader.propTypes = {
 };
 
 MessageHeader.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   renderAs: 'div',

@@ -12,6 +12,7 @@ import Link from './components/link';
 import Container from './components/container';
 import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
+import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -33,6 +34,7 @@ export default class Navbar extends React.PureComponent {
   static Container = Container
 
   static propTypes = {
+    ...modifiers.propTypes,
     children: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.shape({}),
@@ -44,6 +46,7 @@ export default class Navbar extends React.PureComponent {
   }
 
   static defaultProps = {
+    ...modifiers.defaultProps,
     children: null,
     className: '',
     style: {},
@@ -90,9 +93,9 @@ export default class Navbar extends React.PureComponent {
       transparent,
       color,
       active,
-      ...props
+      ...allProps
     } = this.props;
-
+    const props = modifiers.clean(allProps);
     const Element = renderAs;
 
     return (
@@ -100,7 +103,7 @@ export default class Navbar extends React.PureComponent {
         <Element
           {...props}
           role="navigation"
-          className={classnames('navbar', className, {
+          className={classnames('navbar', modifiers.classnames(allProps), className, {
             'is-transparent': transparent,
             [`is-fixed-${fixed}`]: fixed,
             [`is-${color}`]: color,

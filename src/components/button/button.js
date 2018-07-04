@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
+import modifiers from '../../modifiers';
 
 const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -24,9 +25,10 @@ const Button = ({
   rounded,
   onClick,
   text,
-  ...props
+  ...allProps
 }) => {
   let Element = isStatic ? 'span' : renderAs;
+  const props = modifiers.clean(allProps);
   const otherProps = {};
   if (submit) {
     Element = 'button';
@@ -44,7 +46,7 @@ const Button = ({
       {...otherProps}
       disabled={disabled}
       onClick={disabled ? undefined : onClick}
-      className={classnames(className, {
+      className={classnames(className, modifiers.classnames(allProps), {
         [`is-${color}`]: color,
         [`is-${size}`]: size,
         [`is-${state}`]: state,
@@ -65,6 +67,7 @@ const Button = ({
 };
 
 Button.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -90,6 +93,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

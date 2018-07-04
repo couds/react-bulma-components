@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../modifiers';
 
 const Table = ({
   children,
@@ -8,20 +9,25 @@ const Table = ({
   size,
   striped,
   bordered,
-  ...props
-}) => (
-  <table
-    {...props}
-    className={classnames('table', className, {
-      [`is-${size}`]: size,
-      'is-bordered': bordered,
-      'is-striped': striped,
-    })}
-  >
-    {children}
-  </table>
-);
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <table
+      {...props}
+      className={classnames('table', ...modifiers.propTypes, className, {
+        [`is-${size}`]: size,
+        'is-bordered': bordered,
+        'is-striped': striped,
+      })}
+    >
+      {children}
+    </table>
+  );
+};
+
 Table.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -31,6 +37,7 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

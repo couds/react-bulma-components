@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../modifiers';
 
 const Section = ({
   children,
   className,
   renderAs,
   size,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('section', className, {
+      className={classnames('section', modifiers.classnames(allProps), className, {
         [`is-${size}`]: size,
       })}
     >
@@ -23,6 +25,7 @@ const Section = ({
 };
 
 Section.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -31,6 +34,7 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

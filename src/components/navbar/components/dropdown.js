@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const NavbarDropdown = ({
   className,
@@ -8,13 +9,14 @@ const NavbarDropdown = ({
   boxed,
   right,
   children,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('navbar-dropdown', className, {
+      className={classnames('navbar-dropdown', modifiers.classnames(allProps), className, {
         'is-boxed': boxed,
         'is-right': right,
       })}
@@ -25,6 +27,7 @@ const NavbarDropdown = ({
 };
 
 NavbarDropdown.propTypes = {
+  ...modifiers.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
   children: PropTypes.node,
@@ -34,6 +37,7 @@ NavbarDropdown.propTypes = {
 };
 
 NavbarDropdown.defaultProps = {
+  ...modifiers.defaultProps,
   style: {},
   className: '',
   children: null,
