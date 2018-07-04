@@ -1,40 +1,36 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class PanelTabsTab extends PureComponent {
-  static displayName = 'Panel.Tabs.Tab'
+const PanelTabsTab = ({
+  className,
+  renderAs,
+  active,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames(className, {
+        'is-active': active,
+      })}
+    />
+  );
+};
+PanelTabsTab.propTypes = {
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
+  active: PropTypes.bool,
+};
 
-  static propTypes = {
-    className: PropTypes.string,
-    renderAs: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-    active: PropTypes.bool,
-  }
+PanelTabsTab.defaultProps = {
+  className: '',
+  renderAs: 'a',
+  active: false,
+};
 
-  static defaultProps = {
-    className: '',
-    renderAs: 'a',
-    active: false,
-  }
-
-  render() {
-    const {
-      className,
-      renderAs,
-      active,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames(className, {
-          'is-active': active,
-        })}
-      />
-    );
-  }
-}
+export default PanelTabsTab;

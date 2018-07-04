@@ -1,42 +1,41 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class Section extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    size: PropTypes.oneOf(['medium', 'large']),
-  }
+const Section = ({
+  children,
+  className,
+  renderAs,
+  size,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('section', className, {
+        [`is-${size}`]: size,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    renderAs: 'section',
-    size: null,
-  }
+Section.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  size: PropTypes.oneOf(['medium', 'large']),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      renderAs,
-      size,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('section', className, {
-          [`is-${size}`]: size,
-        })}
-      >
-        {children}
-      </Element>
-    );
-  }
-}
+Section.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'section',
+  size: null,
+};
+
+export default Section;

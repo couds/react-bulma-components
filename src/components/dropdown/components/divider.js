@@ -1,27 +1,22 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class DropdownDivider extends PureComponent {
-  static displayName = 'Dropdown.Divider'
+const DropdownDivider = ({ className, ...props }) => (
+  <hr
+    {...props}
+    className={classnames('dropdown-divider', className)}
+  />
+);
 
-  static propTypes = {
-    style: PropTypes.shape({}),
-    className: PropTypes.string,
-  }
+DropdownDivider.propTypes = {
+  style: PropTypes.shape({}),
+  className: PropTypes.string,
+};
 
-  static defaultProps = {
-    style: {},
-    className: '',
-  }
+DropdownDivider.defaultProps = {
+  style: {},
+  className: '',
+};
 
-  render() {
-    const { className, ...props } = this.props;
-    return (
-      <hr
-        {...props}
-        className={classnames('dropdown-divider', className)}
-      />
-    );
-  }
-}
+export default DropdownDivider;

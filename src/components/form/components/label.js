@@ -1,41 +1,37 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class Label extends PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    htmlFor: PropTypes.string,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
-  }
+const Label = ({
+  children,
+  className,
+  size,
+  ...props
+}) => (
+  <label
+    {...props}
+    className={classnames('label', className, {
+      [`is-${size}`]: size,
+    })}
+  >
+    {children}
+  </label>
+);
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    size: null,
-    htmlFor: null,
-  }
+Label.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  htmlFor: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+};
 
-  render() {
-    const {
-      children,
-      className,
-      size,
-      ...props
-    } = this.props;
+Label.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  size: null,
+  htmlFor: null,
+};
 
-    return (
-      <label
-        {...props}
-        className={classnames('label', className, {
-          [`is-${size}`]: size,
-        })}
-      >
-        {children}
-      </label>
-    );
-  }
-}
+export default Label;

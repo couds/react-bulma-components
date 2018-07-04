@@ -1,35 +1,32 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-export default class PanelIcon extends PureComponent {
-  static displayName = 'Panel.Icon'
+const PanelIcon = ({
+  className,
+  renderAs,
+  ...props
+}) => {
+  const Element = renderAs;
+  return (
+    <Element
+      {...props}
+      className={classnames('panel-icon', className)}
+    />
+  );
+};
 
-  static propTypes = {
-    className: PropTypes.string,
-    renderAs: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-  }
+PanelIcon.propTypes = {
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
+};
 
-  static defaultProps = {
-    className: '',
-    renderAs: 'span',
-  }
+PanelIcon.defaultProps = {
+  className: '',
+  renderAs: 'span',
+};
 
-  render() {
-    const {
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element
-        {...props}
-        className={classnames('panel-icon', className)}
-      />
-    );
-  }
-}
+export default PanelIcon;

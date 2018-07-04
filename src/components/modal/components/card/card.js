@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -7,51 +7,50 @@ import ModalCardBody from './body';
 import ModalCardFoot from './foot';
 import ModalCardTitle from './title';
 
-export default class ModalCard extends PureComponent {
-  static Head = ModalCardHead
+const ModalCard = ({
+  className,
+  onClose,
+  ...props
+}) => {
+  const children = React.Children.map(props.children, (child) => {
+    if (child.type.toString().indexOf('ModalCardHead') !== -1) {
+      return React.cloneElement(child, {
+        onClose,
+      });
+    }
+    return child;
+  });
+  return (
+    <div
+      {...props}
+      className={classnames('modal-card', className)}
+    >
+      {children}
+    </div>
+  );
+};
 
-  static Body = ModalCardBody
 
-  static Foot = ModalCardFoot
+ModalCard.Head = ModalCardHead;
 
-  static Title = ModalCardTitle
+ModalCard.Body = ModalCardBody;
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    onClose: PropTypes.func,
-  }
+ModalCard.Foot = ModalCardFoot;
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    onClose: null,
-  }
+ModalCard.Title = ModalCardTitle;
 
-  render() {
-    const {
-      className,
-      onClose,
-      ...props
-    } = this.props;
+ModalCard.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  onClose: PropTypes.func,
+};
 
-    const children = React.Children.map(props.children, (child) => {
-      if (child.type.toString().indexOf('ModalCardHead') !== -1) {
-        return React.cloneElement(child, {
-          onClose,
-        });
-      }
-      return child;
-    });
-    return (
-      <div
-        {...props}
-        className={classnames('modal-card', className)}
-      >
-        {children}
-      </div>
-    );
-  }
-}
+ModalCard.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  onClose: null,
+};
+
+export default ModalCard;

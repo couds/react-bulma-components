@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CONSTANTS from '../../constants';
@@ -7,65 +7,62 @@ import COLUMN_CONSTANTS from './constants';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-export default class Columns extends PureComponent {
-  static Column = Column
+const Columns = ({
+  children,
+  className,
+  breakpoint,
+  gapless,
+  multiline,
+  centered,
+  ...props
+}) => (
+  <div
+    {...props}
+    className={classNames(className, 'columns', {
+      [`is-${breakpoint}`]: breakpoint,
+      'is-gapless': gapless,
+      'is-multiline': multiline,
+      'is-centered': centered,
+    })}
+  >
+    {children}
+  </div>
+);
 
-  static CONSTANTS = COLUMN_CONSTANTS
+Columns.Column = Column;
 
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    /**
+Columns.CONSTANTS = COLUMN_CONSTANTS;
+
+Columns.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  /**
      * Breakpoint where columns become stacked.
      */
-    breakpoint: PropTypes.oneOf(breakpoints),
-    /**
+  breakpoint: PropTypes.oneOf(breakpoints),
+  /**
      * `true` to remove space between columns
      */
-    gapless: PropTypes.bool,
-    /**
+  gapless: PropTypes.bool,
+  /**
      * `true` if you want to use more than one line if you add more column elements that would fit in a single row.
      */
-    multiline: PropTypes.bool,
-    /**
+  multiline: PropTypes.bool,
+  /**
      * `true` you want the columns inside to be horizontaly centered
      */
-    centered: PropTypes.bool,
-  }
+  centered: PropTypes.bool,
+};
 
-  static defaultProps = {
-    children: null,
-    className: '',
-    style: {},
-    breakpoint: null,
-    gapless: false,
-    centered: false,
-    multiline: true,
-  }
+Columns.defaultProps = {
+  children: null,
+  className: '',
+  style: {},
+  breakpoint: null,
+  gapless: false,
+  centered: false,
+  multiline: true,
+};
 
-  render() {
-    const {
-      children,
-      className,
-      breakpoint,
-      gapless,
-      multiline,
-      centered,
-      ...props
-    } = this.props;
-    return (
-      <div
-        {...props}
-        className={classNames(className, 'columns', {
-          [`is-${breakpoint}`]: breakpoint,
-          'is-gapless': gapless,
-          'is-multiline': multiline,
-          'is-centered': centered,
-        })}
-      >
-        {children}
-      </div>
-    );
-  }
-}
+export default Columns;
