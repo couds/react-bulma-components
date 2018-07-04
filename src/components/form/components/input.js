@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import modifiers from '../../../modifiers';
 import CONSTANTS from '../../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
@@ -17,25 +17,29 @@ const Input = ({
   placeholder,
   value,
   name,
-  ...props
-}) => (
-  <input
-    {...props}
-    name={name}
-    value={value}
-    type={type}
-    placeholder={placeholder}
-    readOnly={readOnly || isStatic}
-    disabled={disabled}
-    className={classnames('input', className, {
-      'is-static': isStatic,
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-    })}
-  />
-);
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <input
+      {...props}
+      name={name}
+      value={value}
+      type={type}
+      placeholder={placeholder}
+      readOnly={readOnly || isStatic}
+      disabled={disabled}
+      className={classnames('input', modifiers.classnames(allProps), className, {
+        'is-static': isStatic,
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+      })}
+    />
+  );
+};
 
 Input.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   type: PropTypes.oneOf(['text', 'email', 'tel', 'password', 'number', 'search']),
@@ -53,6 +57,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  ...modifiers.defaultProps,
   className: '',
   value: '',
   style: {},

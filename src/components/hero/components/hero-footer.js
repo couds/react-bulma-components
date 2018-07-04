@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const HeroFooter = ({
   children,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames(className, 'hero-foot')}
+      className={classnames(className, modifiers.classnames(allProps), 'hero-foot')}
     >
       {children}
     </Element>
@@ -20,6 +22,7 @@ const HeroFooter = ({
 };
 
 HeroFooter.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -27,6 +30,7 @@ HeroFooter.propTypes = {
 };
 
 HeroFooter.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

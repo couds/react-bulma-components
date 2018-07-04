@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../modifiers';
 
 const Breadcrumb = ({
   className,
@@ -10,13 +11,14 @@ const Breadcrumb = ({
   separator,
   size,
   align,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <nav
       {...props}
-      className={classnames('breadcrumb', className, {
+      className={classnames('breadcrumb', className, modifiers.classnames(allProps), {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
         [`is-${align}`]: align,
@@ -48,6 +50,7 @@ const Breadcrumb = ({
 };
 
 Breadcrumb.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
@@ -66,6 +69,7 @@ Breadcrumb.propTypes = {
 };
 
 Breadcrumb.defaultProps = {
+  ...modifiers.defaultProps,
   items: [],
   hrefAttr: null,
   separator: null,

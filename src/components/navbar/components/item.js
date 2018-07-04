@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const NavbarItem = ({
   className,
@@ -10,16 +11,17 @@ const NavbarItem = ({
   dropdown,
   dropdownUp,
   hoverable,
-  ...props
+  ...allProps
 }) => {
   let Element = renderAs;
+  const props = modifiers.clean(allProps);
   if (dropdown && Element === 'a') {
     Element = 'span';
   }
   return (
     <Element
       {...props}
-      className={classnames('navbar-item', className, {
+      className={classnames('navbar-item', modifiers.classnames(allProps), className, {
         'is-active': active,
         'has-dropdown': dropdown,
         'is-hoverable': hoverable,
@@ -32,6 +34,7 @@ const NavbarItem = ({
 };
 
 NavbarItem.propTypes = {
+  ...modifiers.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
   active: PropTypes.bool,
@@ -43,6 +46,7 @@ NavbarItem.propTypes = {
 };
 
 NavbarItem.defaultProps = {
+  ...modifiers.defaultProps,
   style: {},
   className: '',
   active: false,

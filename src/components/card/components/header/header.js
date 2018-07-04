@@ -3,31 +3,34 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CardHeaderTitle from './components/header-title';
 import CardHeaderIcon from './components/header-icon';
+import modifiers from '../../../../modifiers';
 
-export default class CardHeader extends React.PureComponent {
-  static Title = CardHeaderTitle
+const CardHeader = ({
+  className,
+  renderAs,
+  ...allProps
+}) => {
+  const Element = renderAs;
+  const props = modifiers.clean(allProps);
+  return (
+    <Element {...props} className={classnames('card-header', modifiers.classnames(allProps), className)} />
+  );
+};
 
-  static Icon = CardHeaderIcon
+CardHeader.Title = CardHeaderTitle;
 
-  static propTypes = {
-    className: PropTypes.string,
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  }
+CardHeader.Icon = CardHeaderIcon;
 
-  static defaultProps = {
-    className: '',
-    renderAs: 'div',
-  }
+CardHeader.propTypes = {
+  ...modifiers.propTypes,
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+};
 
-  render() {
-    const {
-      className,
-      renderAs,
-      ...props
-    } = this.props;
-    const Element = renderAs;
-    return (
-      <Element {...props} className={classnames('card-header', className)} />
-    );
-  }
-}
+CardHeader.defaultProps = {
+  ...modifiers.defaultProps,
+  className: '',
+  renderAs: 'div',
+};
+
+export default CardHeader;

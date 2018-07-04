@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const PanelBlock = ({
   className,
   renderAs,
   active,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('panel-block', className, {
+      className={classnames('panel-block', modifiers.classnames(allProps), className, {
         'is-active': active,
       })}
     />
@@ -20,6 +22,7 @@ const PanelBlock = ({
 };
 
 PanelBlock.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
@@ -29,6 +32,7 @@ PanelBlock.propTypes = {
 };
 
 PanelBlock.defaultProps = {
+  ...modifiers.defaultProps,
   className: '',
   renderAs: 'div',
   active: false,

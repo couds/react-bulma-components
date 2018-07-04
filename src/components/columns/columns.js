@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import CONSTANTS from '../../constants';
 import Column from './components/column';
 import COLUMN_CONSTANTS from './constants';
+import modifiers from '../../modifiers';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
@@ -14,26 +15,30 @@ const Columns = ({
   gapless,
   multiline,
   centered,
-  ...props
-}) => (
-  <div
-    {...props}
-    className={classNames(className, 'columns', {
-      [`is-${breakpoint}`]: breakpoint,
-      'is-gapless': gapless,
-      'is-multiline': multiline,
-      'is-centered': centered,
-    })}
-  >
-    {children}
-  </div>
-);
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <div
+      {...props}
+      className={classNames(className, modifiers.classnames(allProps), 'columns', {
+        [`is-${breakpoint}`]: breakpoint,
+        'is-gapless': gapless,
+        'is-multiline': multiline,
+        'is-centered': centered,
+      })}
+    >
+      {children}
+    </div>
+  );
+};
 
 Columns.Column = Column;
 
 Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -56,6 +61,7 @@ Columns.propTypes = {
 };
 
 Columns.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

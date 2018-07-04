@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tab from './components/tab';
+import modifiers from '../../modifiers';
 
 const Tabs = ({
   children,
@@ -11,13 +12,14 @@ const Tabs = ({
   size,
   type,
   fullwidth,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('tabs', className, {
+      className={classnames('tabs', className, modifiers.classnames(allProps), {
         [`is-${align}`]: align,
         [`is-${size}`]: size,
         // Bulma 0.6.2 is not releaset ATM
@@ -36,6 +38,7 @@ const Tabs = ({
 Tabs.Tab = Tab;
 
 Tabs.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -51,6 +54,7 @@ Tabs.propTypes = {
 };
 
 Tabs.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

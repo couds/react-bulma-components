@@ -1,24 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const TagGroup = ({
   children,
   className,
   gapless,
-  ...props
-}) => (
-  <span
-    {...props}
-    className={classnames('tags', className, {
-      'has-addons': gapless,
-    })}
-  >
-    {children}
-  </span>
-);
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <span
+      {...props}
+      className={classnames('tags', modifiers.classnames(allProps), className, {
+        'has-addons': gapless,
+      })}
+    >
+      {children}
+    </span>
+  );
+};
 
 TagGroup.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -26,6 +31,7 @@ TagGroup.propTypes = {
 };
 
 TagGroup.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

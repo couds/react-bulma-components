@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../../modifiers';
 
 const Radio = ({
   className,
@@ -10,26 +11,30 @@ const Radio = ({
   value,
   name,
   children,
-  ...props
-}) => (
-  <label
-    disabled={disabled}
-    className={classnames('radio', className)}
-    style={style}
-  >
-    <input
-      {...props}
-      name={name}
-      checked={checked}
-      type="radio"
-      value={value}
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <label
       disabled={disabled}
-    />
-    {children}
-  </label>
-);
+      className={classnames('radio', modifiers.classnames(allProps), className)}
+      style={style}
+    >
+      <input
+        {...props}
+        name={name}
+        checked={checked}
+        type="radio"
+        value={value}
+        disabled={disabled}
+      />
+      {children}
+    </label>
+  );
+};
 
 Radio.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   /**
@@ -43,6 +48,7 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   value: '',

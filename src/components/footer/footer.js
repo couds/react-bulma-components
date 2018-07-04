@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import modifiers from '../../modifiers';
 
 const Footer = ({
   children,
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('footer', className)}
+      className={classnames('footer', modifiers.classnames(allProps), className)}
     >
       {children}
     </Element>
@@ -20,6 +22,7 @@ const Footer = ({
 };
 
 Footer.propTypes = {
+  ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -27,6 +30,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
+  ...modifiers.defaultProps,
   children: null,
   className: '',
   style: {},

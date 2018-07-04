@@ -6,17 +6,19 @@ import Block from './components/block';
 import Header from './components/header';
 import Icon from './components/icon';
 import Tabs from './components/tabs';
+import modifiers from '../../modifiers';
 
 const Panel = ({
   className,
   renderAs,
-  ...props
+  ...allProps
 }) => {
   const Element = renderAs;
+  const props = modifiers.clean(allProps);
   return (
     <Element
       {...props}
-      className={classnames('panel', className)}
+      className={classnames('panel', modifiers.classnames(allProps), className)}
     />
   );
 };
@@ -30,6 +32,7 @@ Panel.Block = Block;
 Panel.Icon = Icon;
 
 Panel.propTypes = {
+  ...modifiers.propTypes,
   className: PropTypes.string,
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
@@ -38,6 +41,7 @@ Panel.propTypes = {
 };
 
 Panel.defaultProps = {
+  ...modifiers.defaultProps,
   className: '',
   renderAs: 'nav',
 };

@@ -6,10 +6,37 @@ import Box from 'react-bulma-components/lib/components/box';
 import Media from 'react-bulma-components/lib/components/media';
 import Image from 'react-bulma-components/lib/components/image';
 import Content from 'react-bulma-components/lib/components/content';
+import { boolean } from '@storybook/addon-knobs';
 
 storiesOf('Box', module)
   .add('Default', () => (
-    <Box>
+    <Box
+      paddingless={boolean('paddingless', false)}
+      responsive={{
+        mobile: {
+          display: 'block',
+        },
+        tablet: {
+          display: 'flex',
+        },
+        desktop: {
+          display: 'inline-flex',
+          only: true,
+        },
+        widescreen: {
+          display: 'inline-block',
+        },
+      }}
+      hide={{
+        tablet: {
+          hide: true,
+          only: true,
+        },
+        widescreen: {
+          hide: true,
+        },
+      }}
+    >
       <Media>
         <Media.Item renderAs="figure" position="left">
           <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
