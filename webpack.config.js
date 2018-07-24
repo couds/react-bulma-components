@@ -75,9 +75,6 @@ exports.default = {
     },
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'dist/react-bulma-components.min.css',
-    }),
     new ProgressBarPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
@@ -94,7 +91,15 @@ exports.default = {
       minimize: true,
       debug: false,
     }),
-  ],
+  ].concat(
+    process.env.WEBPACK_ENV === 'INCLUDE_CSS'
+      ? []
+      : [
+        new MiniCssExtractPlugin({
+          filename: 'dist/react-bulma-components.min.css',
+        }),
+      ],
+  ),
   module: {
     rules: [
       {
