@@ -12,6 +12,7 @@ import Link from './components/link';
 import Container from './components/container';
 import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
+import Element from '../element';
 import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
@@ -86,14 +87,12 @@ export default class Navbar extends React.PureComponent {
     const {
       children,
       className,
-      renderAs,
       fixed,
       transparent,
       color,
       active,
       ...props
     } = this.props;
-    const Element = renderAs;
 
     return (
       <ShowContext.Provider value={active}>

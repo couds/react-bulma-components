@@ -10,6 +10,7 @@ Object {
   "Container": [Function],
   "Content": [Function],
   "Dropdown": [Function],
+  "Element": [Function],
   "Footer": [Function],
   "Form": Object {
     "Checkbox": [Function],
