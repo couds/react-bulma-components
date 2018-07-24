@@ -16,6 +16,10 @@ import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
+let htmlClass = '';
+
+export const getHtmlClasses = () => htmlClass;
+
 export default class Navbar extends React.PureComponent {
   static Brand = Brand
 
@@ -59,13 +63,6 @@ export default class Navbar extends React.PureComponent {
 
   state = {}
 
-  componentDidMount() {
-    const { fixed } = this.props;
-    if (fixed) {
-      window.document.querySelector('html').classList.add(`has-navbar-fixed-${this.fixed}`);
-    }
-  }
-
   componentWillUnmount() {
     const { fixed } = this.props;
     window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
@@ -79,6 +76,7 @@ export default class Navbar extends React.PureComponent {
     html.classList.remove('has-navbar-fixed-top');
     html.classList.remove('has-navbar-fixed-bottom');
     if (nextProps.fixed) {
+      htmlClass = `has-navbar-fixed-${nextProps.fixed}`;
       html.classList.add(`has-navbar-fixed-${nextProps.fixed}`);
     }
     return null;
@@ -93,9 +91,8 @@ export default class Navbar extends React.PureComponent {
       transparent,
       color,
       active,
-      ...allProps
+      ...props
     } = this.props;
-    const props = modifiers.clean(allProps);
     const Element = renderAs;
 
     return (
@@ -103,7 +100,7 @@ export default class Navbar extends React.PureComponent {
         <Element
           {...props}
           role="navigation"
-          className={classnames('navbar', modifiers.classnames(allProps), className, {
+          className={classnames('navbar', modifiers.classnames(props), className, {
             'is-transparent': transparent,
             [`is-fixed-${fixed}`]: fixed,
             [`is-${color}`]: color,
