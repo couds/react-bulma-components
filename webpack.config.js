@@ -57,6 +57,7 @@ exports.default = {
     umdNamedDefine: true,
     libraryTarget: 'umd',
     library: 'react-bulma-components',
+    globalObject: process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? 'window' : 'this',
   },
   watchOptions: {
     poll: 250,
