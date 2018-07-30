@@ -36,7 +36,7 @@ describe('Modal component', () => {
     const onClose = jest.fn();
     component = mount(
       <Modal.Card onClose={onClose}>
-        <Modal.Card.Head>
+        <Modal.Card.Head onClose={onClose}>
           <Modal.Card.Title>
             Modal Title
           </Modal.Card.Title>
@@ -70,7 +70,7 @@ describe('Modal component', () => {
     component = mount(
       <Modal document={window.document} show onClose={onClose}>
         <Modal.Card>
-          <Modal.Card.Head>
+          <Modal.Card.Head onClose={onClose}>
             <Modal.Card.Title>
               Modal Title
             </Modal.Card.Title>
@@ -221,17 +221,6 @@ describe('Modal component', () => {
       </Modal>);
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
-  });
-  it.skip('Should use global scope document', () => {
-    const onClose = jest.fn();
-    component = mount(
-      <Modal show onClose={onClose}>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
-    component.setProps({ randomProp: 'test' });
-    expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
 
   it('Should render empty because no document on scope', () => {
