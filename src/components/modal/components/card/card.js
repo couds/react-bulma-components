@@ -11,17 +11,10 @@ import modifiers from '../../../../modifiers';
 const ModalCard = ({
   className,
   onClose,
+  children,
   ...allProps
 }) => {
   const props = modifiers.clean(allProps);
-  const children = React.Children.map(props.children, (child) => {
-    if (child.type.toString().indexOf('ModalCardHead') !== -1) {
-      return React.cloneElement(child, {
-        onClose,
-      });
-    }
-    return child;
-  });
   return (
     <div
       {...props}
