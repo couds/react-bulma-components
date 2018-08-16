@@ -31,6 +31,10 @@ describe('Pagination component', () => {
     const component = renderer.create(<Pagination showPrevNext={false} delta={3} total={5} current={2} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should not display First/Last page buttons', () => {
+    const component = renderer.create(<Pagination showFirstLast={false} delta={3} total={5} current={2} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Next button should be disabled', () => {
     const component = renderer.create(<Pagination total={3} current={3} />);
     expect(component.toJSON()).toMatchSnapshot();

@@ -19,4 +19,7 @@ storiesOf('Pagination', module)
   )))
   .add('Without prev/next button', withInfo('')(() => (
     <Pagination showPrevNext={false} current={3} total={5} delta={1} />
+  )))
+  .add('With last/first pages', withInfo('')(() => (
+    <Pagination showFirstLast current={3} total={5} delta={1} />
   )));

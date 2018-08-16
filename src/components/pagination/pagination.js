@@ -16,6 +16,7 @@ class Pagination extends React.PureComponent {
     /** Text of the Previous button */
     previous: PropTypes.node,
     showPrevNext: PropTypes.bool,
+    showFirstLast: PropTypes.bool,
     autoHide: PropTypes.bool,
     /**
      * Classname of the container of the pagination, this could be used to customize the inner views
@@ -27,13 +28,14 @@ class Pagination extends React.PureComponent {
     total: 1,
     current: 1,
     delta: 1,
-    onChange: () => {},
+    onChange: () => { },
     next: 'Next',
     previous: 'Previous',
     showPrevNext: true,
+    showFirstLast: false,
     autoHide: true,
     className: '',
-  }
+  };
 
   goToPage = page => (evt) => {
     evt.preventDefault();
@@ -67,6 +69,7 @@ class Pagination extends React.PureComponent {
       next,
       previous,
       showPrevNext,
+      showFirstLast,
       delta,
       autoHide,
       className,
@@ -92,56 +95,98 @@ class Pagination extends React.PureComponent {
         className={classnames('pagination', className)}
         aria-label="pagination"
       >
-        {
-          showPrevNext &&
-            <React.Fragment>
-              <a
-                role="button"
-                tabIndex={0}
-                onClick={current === 1 ? undefined : this.goToPage(current - 1)}
-                className="pagination-previous"
-                title="This is the first page"
-                disabled={current === 1}
-              >
-                {previous}
-              </a>
-              <a
-                role="button"
-                tabIndex={0}
-                onClick={current === total ? undefined : this.goToPage(current + 1)}
-                className="pagination-next"
-                disabled={current === total}
-              >
-                {next}
-              </a>
-            </React.Fragment>
-        }
-        {
-          delta > 0 &&
-            <React.Fragment>
-              <ul className="pagination-list">
-                {
-                  Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <li key={i + firstPage}>
+        {showPrevNext && (
+          <React.Fragment>
+            <a
+              role="button"
+              tabIndex={0}
+              onClick={current === 1 ? undefined : this.goToPage(current - 1)}
+              className="pagination-previous"
+              title="This is the first page"
+              disabled={current === 1}
+            >
+              {previous}
+            </a>
+            <a
+              role="button"
+              tabIndex={0}
+              onClick={
+                current === total ? undefined : this.goToPage(current + 1)
+              }
+              className="pagination-next"
+              disabled={current === total}
+            >
+              {next}
+            </a>
+          </React.Fragment>
+        )}
+        {delta > 0 && (
+          <React.Fragment>
+            <ul className="pagination-list">
+              {showFirstLast && current !== 1 &&
+                current > delta + 1 && (
+                  <React.Fragment>
+                    <li>
                       <a
                         role="button"
+                        className="pagination-link"
+                        aria-label="Goto page 1"
                         tabIndex={0}
-                        className={classnames('pagination-link', {
-                          'is-current': current === i + firstPage,
-                        })}
-                        onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
-                        aria-label={`Page ${i + firstPage}`}
-                        aria-current="page"
+                        onClick={this.goToPage(1)}
                       >
-                        {i + firstPage}
+                        1
                       </a>
                     </li>
-                    ))
-                }
-              </ul>
-            </React.Fragment>
-        }
+                    <li>
+                      <span className="pagination-ellipsis">&hellip;</span>
+                    </li>
+                  </React.Fragment>
+                )}
+              {Array((lastPage - firstPage) + 1)
+                .fill(0)
+                .map((_, i) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <li key={i + firstPage}>
+                    <a
+                      role="button"
+                      tabIndex={0}
+                      className={classnames('pagination-link', {
+                        'is-current': current === i + firstPage,
+                      })}
+                      onClick={
+                        current === firstPage + i
+                          ? undefined
+                          : this.goToPage(firstPage + i)
+                      }
+                      aria-label={`Page ${i + firstPage}`}
+                      aria-current="page"
+                    >
+                      {i + firstPage}
+                    </a>
+                  </li>
+                ))}
+              {showFirstLast && current !== total &&
+                current + delta < total && (
+                  <React.Fragment>
+                    <li>
+                      <span className="pagination-ellipsis">&hellip;</span>
+                    </li>
+                    <li>
+                      <a
+                        role="button"
+                        className="pagination-link"
+                        aria-label={`Goto page ${total}`}
+                        tabIndex={0}
+                        onClick={this.goToPage(total)}
+                      >
+                        {total}
+                      </a>
+                    </li>
+                  </React.Fragment>
+                )}
+            </ul>
+          </React.Fragment>
+        )}
       </nav>
     );
   }
