@@ -13,9 +13,10 @@ This is an implementation of the [Bulma](http://bulma.io/) Framework Component i
 
 You can find the Storybook stories of all components [here](https://couds.github.io/react-bulma-components/)
 
-### NOTES:
+### BREAKING CHANGES:
 
-I will soon be releasing the version 2.0.0 in which I will drop the support of React <= 15. This will add the bulma generic helpers as props to all components and refactor all the components (that make sense) to functional ones.
+- Dropped support for react < 16.2
+- Navbar Menu its now a controlled component. there is a prop to show/hide the mobile menu
 
 ### To Install
 
