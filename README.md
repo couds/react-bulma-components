@@ -9,13 +9,13 @@
 
 React components for Bulma (v0.7.1) framework
 
-This is a implementation in React of the [Bulma](http://bulma.io/) Framework Component by Jeremy Thomas.
+This is an implementation of the [Bulma](http://bulma.io/) Framework Component in React by Jeremy Thomas.
 
-You can find the Storybook of all components [here](https://couds.github.io/react-bulma-components/)
+You can find the Storybook stories of all components [here](https://couds.github.io/react-bulma-components/)
 
 ### NOTES:
 
-I will be releasing soon the version 2.0.0 in which I will drop the support of react <= 15. this will add the bulma generic helpers as props to all components and refactor all the components (that make sense) to functional ones.
+I will soon be releasing the version 2.0.0 in which I will drop the support of React <= 15. This will add the bulma generic helpers as props to all components and refactor all the components (that make sense) to functional ones.
 
 ### To Install
 
@@ -28,11 +28,11 @@ import React from 'react';
 // You can import from the global component (you will need to include the css file dist/react-bulma-components.min.css)
 import { Columns } from 'react-bulma-components';
 
-// You can also include the js that also bundle the css (do not work with server-side rendering)
+// You can also include the js that also bundles the css (do not work with server-side rendering)
 import { Columns } from 'react-bulma-components/full';
 
 // [RECOMENDED] Or import only the components you will use (this will reduce the total bundle size)
-// If you use this approach and want to use the global Bulma styles import react-bulma-components/src/index.sass and configure webpack to handle sass files
+// If you use this approach and want to use the global Bulma styles, import react-bulma-components/src/index.sass and configure webpack to handle sass files
 import Columns from 'react-bulma-components/lib/components/columns';
 
 export default () => (
@@ -57,11 +57,11 @@ export default () => (
 
 You can find the documentation in https://couds.github.io/react-bulma-components
 
-Each component import his own sass file, in this way you can reduce your css total file only including the styles you use, to enable this please configure your [Webpack](https://webpack.github.io/) to handle sass files. You can use the webpack.config.js on the root folder of this repository
+Each component imports their own sass file. Thus, you can reduce your css total file size by only including the styles that you will use. To enable this, please configure your [Webpack](https://webpack.github.io/) to handle sass files. You can use the webpack.config.js on the root folder of this repository.
 
-Some componets may vary the api/naming convention with the Bulma Docs, please refear to each storybook to see how to use each component (you can find the source code of the story usin ght button "Show info" on the top-right corner) 
+Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used (you can find the source code of the story by using the button "Show info" on the top-right corner of the page). 
 
-The Following componets were ported:
+The following components were ported:
 
 - Box ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Box)) ([Docs](http://bulma.io/documentation/elements/box/))
 - Breadcrumb ([Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Breadcrumb)) ([Docs](http://bulma.io/documentation/components/breadcrumb/))
@@ -96,7 +96,7 @@ The Following componets were ported:
 
 ### Override Bulma variables
 
-To Override the variables set by Bulma you will need to create a sass file like this one (_variable.sass)
+To override the variables set by Bulma you will need to create a sass file like this one (_variable.sass):
 
 ```sass
 @import '~bulma/sass/utilities/initial-variables.sass'
@@ -107,7 +107,7 @@ $primary: #f4f4f4
 @import '~bulma/sass/utilities/_all.sass'
 ```
 
-After that you will need to add to your webpack configuration an alias pointing to the file
+After that you will need to add an alias pointing to the file to your webpack configuration
 
 ```
 resolve {
@@ -122,9 +122,9 @@ resolve {
 
 ### Override Bulma variables in CRA _without_ eject
 
-Sometimes, you don't want to eject your CRA (Create React App) application. But how to make custom style variables for Bulma? This is simple and right way to solve it!
+Sometimes, you don't want to eject your CRA (Create React App) application. But how to make custom style variables for Bulma? There is a simple and right way to solve it!
 
-First and major, install package `node-sass-chokidar` ([docs](https://www.npmjs.com/package/node-sass-chokidar)):
+First of all, install package `node-sass-chokidar` ([docs](https://www.npmjs.com/package/node-sass-chokidar)):
 
 ```bash
 $ npm install --save node-sass-chokidar
