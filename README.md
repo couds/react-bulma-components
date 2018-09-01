@@ -24,6 +24,8 @@ You can find the Storybook stories of all components [here](https://couds.github
 
 ### To Use
 
+Follow the instructions for creating a `_variables.sass` for your project, then:
+
 ```javascript
 import React from 'react';
 // You can import from the global component (you will need to include the css file dist/react-bulma-components.min.css)
@@ -108,6 +110,8 @@ $primary: #f4f4f4
 @import '~bulma/sass/utilities/_all.sass'
 ```
 
+It may be necessary, depending on your project setup, to create this file, even if you do not intend on overriding default styles.
+
 After that you will need to add an alias pointing to the file to your webpack configuration
 
 ```
@@ -115,10 +119,25 @@ resolve {
   // Other resolve props
   alias: {
     // Other aliases
-    '_variables.sass': path.resolve(__dirname, 'relative/path/to/your/file/from/webpack/config/file'),
+    '_variables.sass': path.resolve(__dirname, 'relative/path/from/webpack/config/to/your/_variables.sass'),
   },
 }
 
+```
+
+For Gatsby.js you can add a `modifyWebpackConfig` export to your `gatsby-node.js` file:
+
+```
+exports.modifyWebpackConfig = ({config, env}) => {
+  config.merge({
+    resolve: {
+      alias: {
+        '_variables.sass': path.resolve(__dirname, 'relative/path/from/webpack/config/to/your/_variables.sass')
+      }
+    }
+  })
+  return config
+}
 ```
 
 ### Override Bulma variables in CRA _without_ eject
