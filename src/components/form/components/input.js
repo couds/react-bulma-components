@@ -42,7 +42,7 @@ Input.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  type: PropTypes.oneOf(['text', 'email', 'tel', 'password', 'number', 'search']),
+  type: PropTypes.oneOf(['text', 'email', 'tel', 'password', 'number', 'search', 'color', 'date']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
