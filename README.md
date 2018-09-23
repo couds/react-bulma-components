@@ -125,7 +125,7 @@ resolve {
 
 ```
 
-For Gatsby.js you can add a `modifyWebpackConfig` export to your `gatsby-node.js` file:
+**For Gatsby.js v1** you can add a `modifyWebpackConfig` export to your `gatsby-node.js` file:
 
 ```
 exports.modifyWebpackConfig = ({config, env}) => {
@@ -137,6 +137,28 @@ exports.modifyWebpackConfig = ({config, env}) => {
     }
   })
   return config
+}
+```
+
+**For Gatsby.js v2** you can add a `onCreateWebpackConfig` export to your `gatsby-node.js` file:
+
+```
+const path = require('path')
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  getConfig,
+  rules,
+  loaders,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '_variables.sass': path.resolve(__dirname, 'relative/path/from/webpack/config/to/your/_variables.sass'),
+      },
+    },
+  })
 }
 ```
 
