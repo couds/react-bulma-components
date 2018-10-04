@@ -12,7 +12,7 @@ const Element = ({
   const props = modifiers.clean(allProps);
   return (
     <RenderAs
-      className={classnames(className, modifiers.classnames(allProps))}
+      className={classnames(className, modifiers.classnames(allProps)) || undefined}
       {...props}
     />
   );
@@ -29,8 +29,8 @@ Element.propTypes = {
 
 Element.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
 };
 

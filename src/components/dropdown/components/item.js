@@ -2,22 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
-const DropdownItem = ({ active, children, value, ...allProps }) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <div
-      title={value}
-      {...props}
-      role="presentation"
-      className={classnames('dropdown-item', modifiers.classnames(allProps), {
-        'is-active': active,
-      })}
-    >
-      {children}
-    </div>
-  );
-};
+const DropdownItem = ({ active, children, value, ...props }) => (
+  <Element
+    title={value}
+    {...props}
+    role="presentation"
+    className={classnames('dropdown-item', {
+      'is-active': active,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 DropdownItem.propTypes = {
   ...modifiers.propTypes,

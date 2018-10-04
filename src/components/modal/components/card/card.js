@@ -7,23 +7,21 @@ import ModalCardBody from './body';
 import ModalCardFoot from './foot';
 import ModalCardTitle from './title';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const ModalCard = ({
   className,
   onClose,
   children,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <div
-      {...props}
-      className={classnames('modal-card', modifiers.classnames(allProps), className)}
-    >
-      {children}
-    </div>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('modal-card', className)}
+  >
+    {children}
+  </Element>
+);
 
 
 ModalCard.Head = ModalCardHead;

@@ -2,29 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarDropdown = ({
   className,
-  renderAs,
   boxed,
   right,
   children,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('navbar-dropdown', modifiers.classnames(allProps), className, {
-        'is-boxed': boxed,
-        'is-right': right,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('navbar-dropdown', className, {
+      'is-boxed': boxed,
+      'is-right': right,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 NavbarDropdown.propTypes = {
   ...modifiers.propTypes,

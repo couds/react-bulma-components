@@ -2,27 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarContainer = ({
   className,
-  renderAs,
   children,
   position,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames({
-        [`navbar-${position}`]: position,
-      }, modifiers.classnames(allProps), className)}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames({
+      [`navbar-${position}`]: position,
+    }, className)}
+  >
+    {children}
+  </Element>
+);
 
 NavbarContainer.propTypes = {
   ...modifiers.propTypes,

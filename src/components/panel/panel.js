@@ -7,21 +7,17 @@ import Header from './components/header';
 import Icon from './components/icon';
 import Tabs from './components/tabs';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const Panel = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('panel', modifiers.classnames(allProps), className)}
-    />
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('panel', className)}
+  />
+);
 
 Panel.Header = Header;
 

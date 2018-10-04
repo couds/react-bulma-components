@@ -2,22 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const ModalCardTitle = ({
   children,
   className,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <p
-      {...props}
-      className={classnames('modal-card-title', modifiers.classnames(allProps), className)}
-    >
-      {children}
-    </p>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('modal-card-title', className)}
+  >
+    {children}
+  </Element>
+);
 
 ModalCardTitle.propTypes = {
   ...modifiers.propTypes,
@@ -30,7 +28,8 @@ ModalCardTitle.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
+  renderAs: 'p',
 };
 
 export default ModalCardTitle;

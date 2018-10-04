@@ -3,21 +3,17 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tab from './components/tab';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const PanelTabs = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('panel-tabs', modifiers.classnames(allProps), className)}
-    />
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('panel-tabs', className)}
+  />
+);
 
 PanelTabs.Tab = Tab;
 

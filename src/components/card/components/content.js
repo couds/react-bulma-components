@@ -2,18 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const CardContent = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element {...props} className={classnames('card-content', modifiers.classnames(allProps), className)} />
-  );
-};
+  ...props
+}) => (
+  <Element {...props} className={classnames('card-content', className)} />
+);
 
 CardContent.propTypes = {
   ...modifiers.propTypes,
@@ -23,7 +19,7 @@ CardContent.propTypes = {
 
 CardContent.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

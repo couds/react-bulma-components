@@ -2,18 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../../../modifiers';
+import Element from '../../../../element';
 
 const CardHeaderTitle = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element {...props} className={classnames('card-header-title', modifiers.classnames(allProps), className)} />
-  );
-};
+  ...props
+}) => (
+  <Element {...props} className={classnames('card-header-title', className)} />
+);
 
 CardHeaderTitle.propTypes = {
   ...modifiers.propTypes,
@@ -23,7 +19,7 @@ CardHeaderTitle.propTypes = {
 
 CardHeaderTitle.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

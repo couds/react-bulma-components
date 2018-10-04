@@ -2,19 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarDivider = ({
   className,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <div
-      {...props}
-      className={classnames('navbar-divider', modifiers.classnames(allProps), className)}
-    />
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('navbar-divider', className)}
+  />
+);
 
 
 NavbarDivider.propTypes = {

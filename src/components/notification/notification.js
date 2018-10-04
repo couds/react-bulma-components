@@ -4,29 +4,25 @@ import classnames from 'classnames';
 
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Notification = ({
   children,
   className,
-  renderAs,
   color,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('notification', modifiers.classnames(allProps), {
-        [`is-${color}`]: color,
-      }, className)}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('notification', {
+      [`is-${color}`]: color,
+    }, className)}
+  >
+    {children}
+  </Element>
+);
 
 Notification.propTypes = {
   ...modifiers.propTypes,

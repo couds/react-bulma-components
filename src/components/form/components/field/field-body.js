@@ -2,25 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const FieldBody = ({
   children,
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('field-body', modifiers.classnames(allProps), className, {
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('field-body', className, {
+    })}
+  >
+    {children}
+  </Element>
+);
 
 FieldBody.propTypes = {
   ...modifiers.propTypes,

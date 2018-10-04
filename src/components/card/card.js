@@ -8,23 +8,20 @@ import CardHeader from './components/header';
 import CardFooter from './components/footer';
 import modifiers from '../../modifiers';
 
+import Element from '../element';
+
 const Card = ({
   className,
   children,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      className={classnames('card', modifiers.classnames(allProps), className)}
-      {...props}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    className={classnames('card', className)}
+    {...props}
+  >
+    {children}
+  </Element>
+);
 
 Card.Image = CardImage;
 

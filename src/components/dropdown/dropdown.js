@@ -32,12 +32,12 @@ export default class Dropdown extends PureComponent {
     ...modifiers.defaultProps,
     className: '',
     style: {},
-    value: null,
+    value: undefined,
     children: [],
-    onChange: null,
-    color: null,
-    align: null,
-    hoverable: false,
+    onChange: undefined,
+    color: undefined,
+    align: undefined,
+    hoverable: undefined,
   }
 
   state = {

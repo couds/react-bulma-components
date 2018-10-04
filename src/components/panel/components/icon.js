@@ -2,21 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const PanelIcon = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('panel-icon', modifiers.classnames(allProps), className)}
-    />
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('panel-icon', className)}
+  />
+);
 
 PanelIcon.propTypes = {
   ...modifiers.propTypes,

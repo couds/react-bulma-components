@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import { ShowContext } from '../context';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarBurger = ({
   style,
@@ -15,7 +16,7 @@ const NavbarBurger = ({
     <ShowContext.Consumer>
       {
       active => (
-        <div
+        <Element
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
@@ -27,7 +28,7 @@ const NavbarBurger = ({
           <span />
           <span />
           <span />
-        </div>
+        </Element>
       )
     }
     </ShowContext.Consumer>

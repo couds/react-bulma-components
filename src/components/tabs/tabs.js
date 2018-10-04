@@ -3,37 +3,33 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tab from './components/tab';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const Tabs = ({
   children,
   className,
-  renderAs,
   align,
   size,
   type,
   fullwidth,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('tabs', className, modifiers.classnames(allProps), {
-        [`is-${align}`]: align,
-        [`is-${size}`]: size,
-        // Bulma 0.6.2 is not releaset ATM
-        'is-toggle': type === 'toggle-rounded',
-        [`is-${type}`]: type,
-        'is-fullwidth': fullwidth,
-      })}
-    >
-      <ul>
-        {children}
-      </ul>
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('tabs', className, {
+      [`is-${align}`]: align,
+      [`is-${size}`]: size,
+      // Bulma 0.6.2 is not releaset ATM
+      'is-toggle': type === 'toggle-rounded',
+      [`is-${type}`]: type,
+      'is-fullwidth': fullwidth,
+    })}
+  >
+    <ul>
+      {children}
+    </ul>
+  </Element>
+);
 
 Tabs.Tab = Tab;
 

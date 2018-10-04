@@ -2,35 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const Control = ({
   children,
   className,
-  renderAs,
   fullwidth,
   iconLeft,
   iconRight,
   loading,
   size,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('control', modifiers.classnames(allProps), className, {
-        'is-expanded': fullwidth,
-        'has-icons-left': iconLeft,
-        'has-icons-right': iconRight,
-        'is-loading': loading,
-        [`is-${size}`]: size,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('control', className, {
+      'is-expanded': fullwidth,
+      'has-icons-left': iconLeft,
+      'has-icons-right': iconRight,
+      'is-loading': loading,
+      [`is-${size}`]: size,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 Control.propTypes = {
   ...modifiers.propTypes,

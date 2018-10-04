@@ -4,25 +4,23 @@ import classnames from 'classnames';
 
 import Button from '../../../button';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const ModalCardHead = ({
   children,
   className,
   showClose,
   onClose,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <header
-      {...props}
-      className={classnames('modal-card-head', modifiers.classnames(allProps), className)}
-    >
-      {children}
-      {showClose && <Button remove onClick={onClose} />}
-    </header>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('modal-card-head', className)}
+  >
+    {children}
+    {showClose && <Button remove onClick={onClose} />}
+  </Element>
+);
 
 ModalCardHead.propTypes = {
   ...modifiers.propTypes,
@@ -40,6 +38,7 @@ ModalCardHead.defaultProps = {
   style: {},
   showClose: true,
   onClose: null,
+  renderAs: 'header',
 };
 
 export default ModalCardHead;

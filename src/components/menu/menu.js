@@ -3,21 +3,17 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import MenuList from './components/list';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const Menu = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('menu', modifiers.classnames(allProps), className)}
-    />
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('menu', className)}
+  />
+);
 
 Menu.List = MenuList;
 

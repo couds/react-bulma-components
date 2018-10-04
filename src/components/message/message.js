@@ -6,31 +6,27 @@ import CONSTANTS from '../../constants';
 import MessageBody from './components/body';
 import MessageHeader from './components/header';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Message = ({
   children,
   className,
-  renderAs,
   color,
   size,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('message', modifiers.classnames(allProps), className, {
-        [`is-${color}`]: color,
-        [`is-${size}`]: size,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('message', className, {
+      [`is-${color}`]: color,
+      [`is-${size}`]: size,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 Message.Body = MessageBody;
 

@@ -2,18 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../../../modifiers';
+import Element from '../../../../element';
 
 const CardFooterItem = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element {...props} className={classnames('card-footer-item', modifiers.classnames(allProps), className)} />
-  );
-};
+  ...props
+}) => (
+  <Element {...props} className={classnames('card-footer-item', className)} />
+);
 
 CardFooterItem.propTypes = {
   ...modifiers.propTypes,

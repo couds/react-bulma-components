@@ -2,22 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const ModalCardFoot = ({
   children,
   className,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <footer
-      {...props}
-      className={classnames('modal-card-foot', modifiers.classnames(allProps), className)}
-    >
-      {children}
-    </footer>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('modal-card-foot', className)}
+  >
+    {children}
+  </Element>
+);
 
 ModalCardFoot.propTypes = {
   ...modifiers.propTypes,
@@ -31,6 +29,7 @@ ModalCardFoot.defaultProps = {
   children: null,
   className: '',
   style: {},
+  renderAs: 'footer',
 };
 
 export default ModalCardFoot;

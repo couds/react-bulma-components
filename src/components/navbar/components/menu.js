@@ -4,30 +4,28 @@ import classnames from 'classnames';
 
 import { ShowContext } from '../context';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarMenu = ({
   className,
   children,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <ShowContext.Consumer>
-      {
+  ...props
+}) => (
+  <ShowContext.Consumer>
+    {
       active => (
-        <div
+        <Element
           {...props}
-          className={classnames('navbar-menu', modifiers.classnames(allProps), className, {
+          className={classnames('navbar-menu', className, {
             'is-active': active,
           })}
         >
           {children}
-        </div>
+        </Element>
       )
     }
-    </ShowContext.Consumer>
-  );
-};
+  </ShowContext.Consumer>
+);
 
 NavbarMenu.propTypes = {
   ...modifiers.propTypes,

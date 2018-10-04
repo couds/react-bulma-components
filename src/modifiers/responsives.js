@@ -50,7 +50,7 @@ export default {
     }),
   },
   defaultProps: {
-    responsive: {},
+    responsive: undefined,
   },
   classnames: props => classnames({
     ...getSizeClassFromProp(props.responsive || {}),

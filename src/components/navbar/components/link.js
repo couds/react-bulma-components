@@ -2,24 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarLink = ({
   className,
-  renderAs,
   children,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('navbar-link', modifiers.classnames(allProps), className)}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('navbar-link', className)}
+  >
+    {children}
+  </Element>
+);
 
 
 NavbarLink.propTypes = {

@@ -4,18 +4,14 @@ import classnames from 'classnames';
 import CardHeaderTitle from './components/header-title';
 import CardHeaderIcon from './components/header-icon';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const CardHeader = ({
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element {...props} className={classnames('card-header', modifiers.classnames(allProps), className)} />
-  );
-};
+  ...props
+}) => (
+  <Element {...props} className={classnames('card-header', className)} />
+);
 
 CardHeader.Title = CardHeaderTitle;
 
@@ -29,7 +25,7 @@ CardHeader.propTypes = {
 
 CardHeader.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

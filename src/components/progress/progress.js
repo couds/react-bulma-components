@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -12,21 +13,19 @@ const Progress = ({
   max,
   color,
   size,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <progress
-      {...props}
-      value={value}
-      max={max}
-      className={classnames('progress', modifiers.classnames(allProps), className, {
-        [`is-${color}`]: color,
-        [`is-${size}`]: size,
-      })}
-    />
-  );
-};
+  ...props
+}) => (
+  <Element
+    renderAs="progress"
+    {...props}
+    value={value}
+    max={max}
+    className={classnames('progress', className, {
+      [`is-${color}`]: color,
+      [`is-${size}`]: size,
+    })}
+  />
+);
 
 Progress.propTypes = {
   ...modifiers.propTypes,

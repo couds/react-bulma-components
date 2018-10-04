@@ -36,6 +36,24 @@ describe('Columns component', () => {
       </Columns>);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should render as paragraph', () => {
+    const component = renderer.create(
+      <Columns renderAs="p">
+        <Columns.Column renderAs="p" size="half">
+1
+        </Columns.Column>
+        <Columns.Column renderAs="p">
+2
+        </Columns.Column>
+        <Columns.Column renderAs="p">
+3
+        </Columns.Column>
+        <Columns.Column renderAs="p">
+4
+        </Columns.Column>
+      </Columns>);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should have columns one column half width, other narrow and 2 other as default', () => {
     const component = renderer.create(
       <Columns>

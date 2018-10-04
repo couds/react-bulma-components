@@ -70,6 +70,7 @@
     "@storybook/core-events": "4.0.0-alpha.11",
     "@storybook/node-logger": "4.0.0-alpha.11",
     "@storybook/react": "4.0.0-alpha.11",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.3",

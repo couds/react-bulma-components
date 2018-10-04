@@ -2,23 +2,18 @@ import React from 'react';
 import classnames from 'classnames';
 import Image from '../../image';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const CardImage = ({
   className,
-  style,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-
-  return (
-    <div
-      style={style}
-      className={classnames('card-image', modifiers.classnames(allProps), className)}
-    >
-      <Image {...props} />
-    </div>
-  );
-};
+  ...props
+}) => (
+  <Element
+    className={classnames('card-image', className)}
+  >
+    <Image {...props} />
+  </Element>
+);
 
 CardImage.propTypes = {
   ...modifiers.propTypes,

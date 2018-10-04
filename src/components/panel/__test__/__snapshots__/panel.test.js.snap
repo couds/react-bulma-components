@@ -26,24 +26,16 @@ exports[`Panel component Should have box classname 1`] = `
     >
       all
     </a>
-    <a
-      className=""
-    >
+    <a>
       public
     </a>
-    <a
-      className=""
-    >
+    <a>
       private
     </a>
-    <a
-      className=""
-    >
+    <a>
       sources
     </a>
-    <a
-      className=""
-    >
+    <a>
       forks
     </a>
   </div>

@@ -2,21 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const MediaItem = ({
   children,
   className,
-  renderAs,
   position,
-  ...allProps
+  ...props
 }) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
   const p = position === 'center' ? 'content' : position;
   return (
     <Element
       {...props}
-      className={classnames(className, modifiers.classnames(allProps), {
+      className={classnames(className, {
         [`media-${p}`]: p,
       })}
     >

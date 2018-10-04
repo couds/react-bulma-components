@@ -3,7 +3,6 @@
 exports[`Heading component Should be a subtitle with size rendered as P 1`] = `
 <p
   className="subtitle is-3"
-  style={Object {}}
 >
   Subtitle
 </p>
@@ -12,7 +11,6 @@ exports[`Heading component Should be a subtitle with size rendered as P 1`] = `
 exports[`Heading component Should be spaced 1`] = `
 <p
   className="title is-spaced"
-  style={Object {}}
 >
   Subtitle
 </p>
@@ -21,7 +19,6 @@ exports[`Heading component Should be spaced 1`] = `
 exports[`Heading component Should concat classname in props with Bulma classname 1`] = `
 <h1
   className="other-class this-is-a-test title"
-  style={Object {}}
 >
   <p>
     Default
@@ -34,7 +31,6 @@ exports[`Heading component Should exist 1`] = `[Function]`;
 exports[`Heading component Should have title classname 1`] = `
 <h1
   className="title"
-  style={Object {}}
 >
   Test
    
@@ -47,7 +43,6 @@ exports[`Heading component Should have title classname 1`] = `
 exports[`Heading component Should not be spaced because is subtitle 1`] = `
 <p
   className="subtitle"
-  style={Object {}}
 >
   Subtitle
 </p>

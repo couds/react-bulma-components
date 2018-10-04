@@ -2,24 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const Loader = ({
   children,
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('loader', modifiers.classnames(allProps), className)}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('loader', className)}
+  >
+    {children}
+  </Element>
+);
 
 Loader.propTypes = {
   ...modifiers.propTypes,

@@ -2,27 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const LevelSide = ({
   children,
   className,
-  renderAs,
   align,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames(className, modifiers.classnames(allProps), {
-        [`level-${align}`]: align,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames(className, {
+      [`level-${align}`]: align,
+    })}
+  >
+    {children}
+  </Element>
+);
 LevelSide.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,

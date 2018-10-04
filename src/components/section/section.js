@@ -2,27 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const Section = ({
   children,
   className,
-  renderAs,
   size,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('section', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('section', className, {
+      [`is-${size}`]: size,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 Section.propTypes = {
   ...modifiers.propTypes,

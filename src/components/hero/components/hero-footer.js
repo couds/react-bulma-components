@@ -2,24 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const HeroFooter = ({
   children,
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames(className, modifiers.classnames(allProps), 'hero-foot')}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames(className, 'hero-foot')}
+  >
+    {children}
+  </Element>
+);
 
 HeroFooter.propTypes = {
   ...modifiers.propTypes,

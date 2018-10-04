@@ -7,34 +7,29 @@ import HeroHead from './components/hero-head';
 import HeroBody from './components/hero-body';
 import HeroFooter from './components/hero-footer';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Hero = ({
   children,
   className,
-  renderAs,
   color,
   gradient,
   size,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('hero', modifiers.classnames(allProps), className, {
-        [`is-${color}`]: color,
-        [`is-${size}`]: size,
-        'is-bold': gradient,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
-
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('hero', className, {
+      [`is-${color}`]: color,
+      [`is-${size}`]: size,
+      'is-bold': gradient,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 Hero.Head = HeroHead;
 

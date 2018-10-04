@@ -9,8 +9,8 @@ export default {
     backgroundColor: PropTypes.string,
   },
   defaultProps: {
-    textColor: null,
-    backgroundColor: null,
+    textColor: undefined,
+    backgroundColor: undefined,
   },
   classnames: props => classnames({
     [`has-text-${props.textColor}`]: props.textColor,

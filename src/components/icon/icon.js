@@ -42,7 +42,7 @@ Icon.propTypes = {
   children: PropTypes.element,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'auto']),
   align: PropTypes.oneOf(['left', 'right']),
   color: PropTypes.oneOf(colors),
 };

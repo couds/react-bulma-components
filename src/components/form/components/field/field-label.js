@@ -2,28 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const FieldLabel = ({
   children,
   className,
-  renderAs,
   size,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-
-  return (
-    <Element
-      {...props}
-      className={classnames('field-label', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('field-label', className, {
+      [`is-${size}`]: size,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 FieldLabel.propTypes = {
   ...modifiers.propTypes,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
@@ -11,23 +12,18 @@ const Container = ({
   fluid,
   breakpoint,
   className,
-  renderAs,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames('container', modifiers.classnames(allProps), className, {
-        'is-fluid': fluid,
-        [`is-${breakpoint}`]: breakpoint,
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames('container', className, {
+      'is-fluid': fluid,
+      [`is-${breakpoint}`]: breakpoint,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 Container.propTypes = {
   ...modifiers.propTypes,
@@ -44,7 +40,7 @@ Container.defaultProps = {
   fluid: false,
   children: null,
   breakpoint: null,
-  className: '',
+  className: undefined,
   style: {},
   renderAs: 'div',
 };

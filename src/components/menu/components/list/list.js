@@ -4,16 +4,15 @@ import classnames from 'classnames';
 /* eslint-disable-next-line import/no-cycle */
 import MenuListItem from './components/item';
 import modifiers from '../../../../modifiers';
+import Element from '../../../element';
 
 const MenuList = ({
   className,
   title,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <React.Fragment>
-      {
+  ...props
+}) => (
+  <React.Fragment>
+    {
         title
         && (
         <p className="menu-label">
@@ -21,10 +20,9 @@ const MenuList = ({
         </p>
         )
       }
-      <ul className={classnames('menu-list', modifiers.classnames(allProps), className)} {...props} />
-    </React.Fragment>
-  );
-};
+    <Element renderAs="ul" className={classnames('menu-list', className)} {...props} />
+  </React.Fragment>
+);
 
 MenuList.Item = MenuListItem;
 

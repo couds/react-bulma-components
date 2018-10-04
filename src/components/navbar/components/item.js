@@ -2,26 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const NavbarItem = ({
   className,
   active,
-  renderAs,
   children,
   dropdown,
   dropdownUp,
   hoverable,
-  ...allProps
+  renderAs,
+  ...props
 }) => {
-  let Element = renderAs;
-  const props = modifiers.clean(allProps);
-  if (dropdown && Element === 'a') {
-    Element = 'span';
+  let as = renderAs;
+  if (dropdown && renderAs === 'a') {
+    as = 'span';
   }
   return (
     <Element
       {...props}
-      className={classnames('navbar-item', modifiers.classnames(allProps), className, {
+      renderAs={as}
+      className={classnames('navbar-item', className, {
         'is-active': active,
         'has-dropdown': dropdown,
         'is-hoverable': hoverable,

@@ -3,39 +3,35 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 const Tile = ({
   children,
   className,
-  renderAs,
   kind,
   vertical,
   size,
   color,
   notification,
-  ...allProps
-}) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <Element
-      {...props}
-      className={classnames(
-        'tile', className, modifiers.classnames(allProps), {
-          notification,
-          [`is-${kind}`]: kind,
-          [`is-${size}`]: size,
-          [`is-${color}`]: color,
-          'is-vertical': vertical,
-        })
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={classnames(
+      'tile', className, {
+        notification,
+        [`is-${kind}`]: kind,
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-vertical': vertical,
+      })
         }
-    >
-      {children}
-    </Element>
-  );
-};
+  >
+    {children}
+  </Element>
+);
 
 Tile.propTypes = {
   ...modifiers.propTypes,

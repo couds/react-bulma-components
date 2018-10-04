@@ -15,17 +15,13 @@ exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
     className="menu-list"
   >
     <li>
-      <span
-        className=""
-      >
+      <span>
         Custom
         Dashboard
       </span>
     </li>
     <li>
-      <span
-        className=""
-      >
+      <span>
         Custom
         Customer
       </span>
@@ -47,9 +43,7 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
     className="menu-list"
   >
     <li>
-      <a
-        className=""
-      >
+      <a>
         Dashboard
       </a>
     </li>
@@ -64,9 +58,7 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
           className="menu-list"
         >
           <li>
-            <a
-              className=""
-            >
+            <a>
               Members
             </a>
           </li>
@@ -78,9 +70,7 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
             </a>
           </li>
           <li>
-            <a
-              className=""
-            >
+            <a>
               Add a member
             </a>
           </li>
@@ -104,16 +94,12 @@ exports[`Menu component Should have menu classnames 1`] = `
     className="menu-list"
   >
     <li>
-      <a
-        className=""
-      >
+      <a>
         Dashboard
       </a>
     </li>
     <li>
-      <a
-        className=""
-      >
+      <a>
         Customer
       </a>
     </li>

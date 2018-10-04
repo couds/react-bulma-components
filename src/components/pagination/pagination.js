@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 class Pagination extends React.PureComponent {
   static propTypes = {
@@ -36,6 +37,7 @@ class Pagination extends React.PureComponent {
     showPrevNext: true,
     autoHide: true,
     className: '',
+    renderAs: 'nav',
   }
 
   goToPage = page => (evt) => {
@@ -79,9 +81,8 @@ class Pagination extends React.PureComponent {
       autoHide,
       className,
       onChange,
-      ...allProps
+      ...props
     } = this.props;
-    const props = modifiers.clean(allProps);
     if (total <= 1 && autoHide) {
       return null;
     }
@@ -94,9 +95,9 @@ class Pagination extends React.PureComponent {
     const lastPage = this.lastPage(current, total);
 
     return (
-      <nav
+      <Element
         {...props}
-        className={classnames('pagination', modifiers.classnames(allProps), className)}
+        className={classnames('pagination', className)}
         aria-label="pagination"
       >
         {
@@ -153,7 +154,7 @@ class Pagination extends React.PureComponent {
             </React.Fragment>
             )
         }
-      </nav>
+      </Element>
     );
   }
 }

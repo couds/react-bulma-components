@@ -4,20 +4,18 @@ import classnames from 'classnames';
 /* eslint-disable-next-line import/no-cycle */
 import List from '../list';
 import modifiers from '../../../../../modifiers';
+import Element from '../../../../element';
 
 const MenuListItem = ({
   children,
   active,
   className,
-  renderAs,
-  ...allProps
+  ...props
 }) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
   if (typeof children === 'string') {
     return (
       <li>
-        <Element className={classnames(className, modifiers.classnames(allProps), { 'is-active': active })} {...props}>
+        <Element className={classnames(className, { 'is-active': active })} {...props}>
           {children}
         </Element>
       </li>
