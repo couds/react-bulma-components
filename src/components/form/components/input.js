@@ -3,40 +3,44 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import CONSTANTS from '../../../constants';
+import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Input = ({
-  className,
-  type,
-  size,
-  color,
-  readOnly,
-  isStatic,
-  disabled,
-  placeholder,
-  value,
-  name,
-  ...allProps
-}) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <input
-      {...props}
-      name={name}
-      value={value}
-      type={type}
-      placeholder={placeholder}
-      readOnly={readOnly || isStatic}
-      disabled={disabled}
-      className={classnames('input', modifiers.classnames(allProps), className, {
-        'is-static': isStatic,
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-      })}
-    />
-  );
-};
+class Input extends React.PureComponent {
+  render() {
+    const {
+      className,
+      type,
+      size,
+      color,
+      readOnly,
+      isStatic,
+      disabled,
+      placeholder,
+      value,
+      name,
+      ...props
+    } = this.props;
+    return (
+      <Element
+        {...props}
+        renderAs="input"
+        name={name}
+        value={value}
+        type={type}
+        placeholder={placeholder}
+        readOnly={readOnly || isStatic}
+        disabled={disabled}
+        className={classnames('input', className, {
+          'is-static': isStatic,
+          [`is-${size}`]: size,
+          [`is-${color}`]: color,
+        })}
+      />
+    );
+  }
+}
 
 Input.propTypes = {
   ...modifiers.propTypes,
