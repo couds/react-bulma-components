@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
+import ButtonGroup from './components/button-group';
 
 const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -67,6 +68,8 @@ const Button = ({
     </Element>
   );
 };
+
+Button.Group = ButtonGroup;
 
 Button.propTypes = {
   ...modifiers.propTypes,

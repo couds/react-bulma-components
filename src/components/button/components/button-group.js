@@ -1,37 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
+import modifiers from '../../../modifiers';
+import Element from '../../element';
 
-const Buttons = ({
+const ButtonGroup = ({
   children,
   className,
   hasAddons,
   position,
+  renderAs,
   ...allProps
 }) => (
-  <div
-    {...modifiers.clean(allProps)}
+  <Element
+    renderAs="div"
     className={classnames('buttons', className, modifiers.classnames(allProps), {
       'has-addons': hasAddons,
       [`is-${[position]}`]: position,
     })}
   >
     {children}
-  </div>
+  </Element>
 );
 
-Buttons.propTypes = {
+ButtonGroup.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   hasAddons: PropTypes.bool,
-  position: PropTypes.oneOf([null, 'centered', 'right']),
+  position: PropTypes.oneOf([undefined, '', 'centered', 'right']),
 };
 
-Buttons.defaultProps = {
+ButtonGroup.defaultProps = {
   className: '',
-  hasAddons: false,
-  position: null,
+  hasAddons: undefined,
+  position: undefined,
 };
 
-export default Buttons;
+export default ButtonGroup;

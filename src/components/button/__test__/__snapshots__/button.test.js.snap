@@ -1,5 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button component Button Group component Should align to the right 1`] = `
+<div
+  className="buttons is-right"
+>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 0
+  </button>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 1
+  </button>
+</div>
+`;
+
+exports[`Button component Button Group component Should be a default list of buttons 1`] = `
+<div
+  className="buttons"
+>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 0
+  </button>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 1
+  </button>
+</div>
+`;
+
+exports[`Button component Button Group component Should be centered 1`] = `
+<div
+  className="buttons is-centered"
+>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 0
+  </button>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 1
+  </button>
+</div>
+`;
+
+exports[`Button component Button Group component Should concat class names in props with Bulma class name 1`] = `
+<div
+  className="buttons super-class-1 dope-class-2"
+>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 0
+  </button>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 1
+  </button>
+</div>
+`;
+
+exports[`Button component Button Group component Should group buttons together 1`] = `
+<div
+  className="buttons has-addons"
+>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 1
+  </button>
+  <button
+    className="button"
+    disabled={false}
+    onClick={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    test 2
+  </button>
+</div>
+`;
+
 exports[`Button component Should be a Large Primary Button 1`] = `
 <button
   className="is-primary is-large button"
@@ -62,6 +187,10 @@ exports[`Button component Should be an anchor button 1`] = `
   tabIndex={0}
 />
 `;
+
+exports[`Button component Should exist 1`] = `[Function]`;
+
+exports[`Button component Should expose Button Group 1`] = `[Function]`;
 
 exports[`Button component Should render as a React element link with to prop 1`] = `
 <a

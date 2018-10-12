@@ -22,6 +22,12 @@ const colors = {
   link: 'link',
 };
 
+const positions = {
+  Default: '',
+  centered: 'centered',
+  right: 'right'
+};
+
 storiesOf('Button', module)
   .addDecorator(story => (
     <div className="button-display">
@@ -79,4 +85,74 @@ storiesOf('Button', module)
         </Button>
       </Section>
     );
-  }));
+  }))
+  .add('Button group', (() => (
+    <Section>
+      <Button.Group position={select('Position', positions)}>
+        <Button
+          renderAs="span"
+          color="success"
+        >
+          Save changes
+        </Button>
+        <Button
+          renderAs="span"
+          color="info"
+        >
+          Save and continue
+        </Button>
+        <Button
+          renderAs="span"
+          color="danger"
+        >
+          Cancel
+        </Button>
+      </Button.Group>
+    </Section>
+  )))
+  .add('Button group addons', (() => (
+    <Section>
+      <Button.Group
+        hasAddons
+        position={select('Position', positions)}
+      >
+          <Button
+            renderAs="span"
+            isSelected
+            color="success"
+          >
+            Yes
+          </Button>
+          <Button renderAs="span">Maybe</Button>
+          <Button renderAs="span">No</Button>
+      </Button.Group>
+      <Button.Group
+        hasAddons
+        position={select('Position', positions)}
+      >
+          <Button renderAs="span">Yes</Button>
+          <Button
+            renderAs="span"
+            isSelected
+            color="info"
+          >
+            Maybe
+          </Button>
+          <Button renderAs="span">No</Button>
+      </Button.Group>
+      <Button.Group
+        hasAddons
+        position={select('Position', positions)}
+      >
+          <Button renderAs="span">Yes</Button>
+          <Button renderAs="span">Maybe</Button>
+          <Button
+            renderAs="span"
+            isSelected
+            color="danger"
+          >
+            No
+          </Button>
+      </Button.Group>
+    </Section>
+  )))
