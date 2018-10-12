@@ -13,7 +13,7 @@ const ButtonGroup = ({
   ...allProps
 }) => (
   <Element
-    renderAs="div"
+    renderAs={renderAs || 'div'}
     className={classnames('buttons', className, modifiers.classnames(allProps), {
       'has-addons': hasAddons,
       [`is-${[position]}`]: position,
