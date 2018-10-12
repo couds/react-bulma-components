@@ -28,12 +28,17 @@ ButtonGroup.propTypes = {
   className: PropTypes.string,
   hasAddons: PropTypes.bool,
   position: PropTypes.oneOf([undefined, '', 'centered', 'right']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]),
 };
 
 ButtonGroup.defaultProps = {
   className: '',
   hasAddons: undefined,
   position: undefined,
+  renderAs: 'div',
 };
 
 export default ButtonGroup;
