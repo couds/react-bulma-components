@@ -10,11 +10,12 @@ const ButtonGroup = ({
   hasAddons,
   position,
   renderAs,
-  ...allProps
+  ...props
 }) => (
   <Element
-    renderAs={renderAs || 'div'}
-    className={classnames('buttons', className, modifiers.classnames(allProps), {
+    {...props}
+    renderAs={renderAs}
+    className={classnames('buttons', className, {
       'has-addons': hasAddons,
       [`is-${[position]}`]: position,
     })}
@@ -27,7 +28,7 @@ ButtonGroup.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   hasAddons: PropTypes.bool,
-  position: PropTypes.oneOf([undefined, '', 'centered', 'right']),
+  position: PropTypes.oneOf(['centered', 'right']),
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
@@ -35,7 +36,8 @@ ButtonGroup.propTypes = {
 };
 
 ButtonGroup.defaultProps = {
-  className: '',
+  ...modifiers.defaultProps,
+  className: undefined,
   hasAddons: undefined,
   position: undefined,
   renderAs: 'div',
