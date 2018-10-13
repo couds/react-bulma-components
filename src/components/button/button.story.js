@@ -23,7 +23,7 @@ const colors = {
 };
 
 const positions = {
-  Default: '',
+  default: '',
   centered: 'centered',
   right: 'right'
 };
@@ -88,7 +88,10 @@ storiesOf('Button', module)
   }))
   .add('Button group', (() => (
     <Section>
-      <Button.Group position={select('Position', positions)}>
+      <Button.Group
+        hasAddons={boolean('hasAddons', false)}
+        position={select('Position', positions)}
+      >
         <Button
           renderAs="span"
           color="success"
@@ -109,50 +112,5 @@ storiesOf('Button', module)
         </Button>
       </Button.Group>
     </Section>
-  )))
-  .add('Button group addons', (() => (
-    <Section>
-      <Button.Group
-        hasAddons
-        position={select('Position', positions)}
-      >
-          <Button
-            renderAs="span"
-            isSelected
-            color="success"
-          >
-            Yes
-          </Button>
-          <Button renderAs="span">Maybe</Button>
-          <Button renderAs="span">No</Button>
-      </Button.Group>
-      <Button.Group
-        hasAddons
-        position={select('Position', positions)}
-      >
-          <Button renderAs="span">Yes</Button>
-          <Button
-            renderAs="span"
-            isSelected
-            color="info"
-          >
-            Maybe
-          </Button>
-          <Button renderAs="span">No</Button>
-      </Button.Group>
-      <Button.Group
-        hasAddons
-        position={select('Position', positions)}
-      >
-          <Button renderAs="span">Yes</Button>
-          <Button renderAs="span">Maybe</Button>
-          <Button
-            renderAs="span"
-            isSelected
-            color="danger"
-          >
-            No
-          </Button>
-      </Button.Group>
-    </Section>
-  )))
+  )));
+  
