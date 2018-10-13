@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
+import ButtonGroup from './components/button-group';
 
 const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -21,6 +22,7 @@ const Button = ({
   loading,
   disabled,
   remove,
+  isSelected,
   isStatic,
   rounded,
   onClick,
@@ -50,6 +52,7 @@ const Button = ({
         [`is-${color}`]: color,
         [`is-${size}`]: size,
         [`is-${state}`]: state,
+        'is-selected': isSelected,
         'is-static': isStatic,
         'is-rounded': rounded,
         'is-outlined': outlined,
@@ -66,13 +69,15 @@ const Button = ({
   );
 };
 
+Button.Group = ButtonGroup;
+
 Button.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([
-    PropTypes.oneOf(['a', 'button']),
+    PropTypes.oneOf(['a', 'button', 'span']),
     PropTypes.func,
   ]),
   onClick: PropTypes.func,
@@ -87,6 +92,7 @@ Button.propTypes = {
   fullwidth: PropTypes.bool,
   disabled: PropTypes.bool,
   remove: PropTypes.bool,
+  isSelected: PropTypes.bool,
   isStatic: PropTypes.bool,
   rounded: PropTypes.bool,
   text: PropTypes.bool,
@@ -110,6 +116,7 @@ Button.defaultProps = {
   loading: false,
   disabled: false,
   remove: false,
+  isSelected: false,
   isStatic: false,
   rounded: false,
   text: false,

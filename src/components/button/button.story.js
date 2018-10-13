@@ -22,6 +22,12 @@ const colors = {
   link: 'link',
 };
 
+const positions = {
+  default: '',
+  centered: 'centered',
+  right: 'right'
+};
+
 storiesOf('Button', module)
   .addDecorator(story => (
     <div className="button-display">
@@ -79,4 +85,32 @@ storiesOf('Button', module)
         </Button>
       </Section>
     );
-  }));
+  }))
+  .add('Button group', (() => (
+    <Section>
+      <Button.Group
+        hasAddons={boolean('hasAddons', false)}
+        position={select('Position', positions)}
+      >
+        <Button
+          renderAs="span"
+          color="success"
+        >
+          Save changes
+        </Button>
+        <Button
+          renderAs="span"
+          color="info"
+        >
+          Save and continue
+        </Button>
+        <Button
+          renderAs="span"
+          color="danger"
+        >
+          Cancel
+        </Button>
+      </Button.Group>
+    </Section>
+  )));
+  
