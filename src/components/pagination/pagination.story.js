@@ -16,4 +16,13 @@ storiesOf('Pagination', module)
   )))
   .add('Without prev/next button', (() => (
     <Pagination showPrevNext={false} current={3} total={5} delta={1} />
+  )))
+  .add('With first/last pages numbers', (() => (
+    <React.Fragment>
+      <Pagination showFirstLast current={3} total={5} delta={1} />
+      <Pagination showFirstLast current={1} total={5} delta={1} />
+      <Pagination showFirstLast current={5} total={5} delta={1} />
+      <Pagination showFirstLast current={2} total={2} delta={1} />
+      <Pagination showFirstLast current={1} total={2} delta={1} />
+    </React.Fragment>
   )));

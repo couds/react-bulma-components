@@ -19,6 +19,7 @@ class Pagination extends React.PureComponent {
     /** Text of the Previous button */
     previous: PropTypes.node,
     showPrevNext: PropTypes.bool,
+    showFirstLast: PropTypes.bool,
     autoHide: PropTypes.bool,
     /**
      * Classname of the container of the pagination, this could be used to customize the inner views
@@ -35,6 +36,7 @@ class Pagination extends React.PureComponent {
     next: 'Next',
     previous: 'Previous',
     showPrevNext: true,
+    showFirstLast: false,
     autoHide: true,
     className: '',
     renderAs: 'nav',
@@ -77,6 +79,7 @@ class Pagination extends React.PureComponent {
       next,
       previous,
       showPrevNext,
+      showFirstLast,
       delta,
       autoHide,
       className,
@@ -132,6 +135,29 @@ class Pagination extends React.PureComponent {
             <React.Fragment>
               <ul className="pagination-list">
                 {
+                  showFirstLast && current !== 1 && firstPage !== 1 && (
+                    <React.Fragment>
+                      <li key={1}>
+                        <a
+                          role="button"
+                          tabIndex={0}
+                          className="pagination-link"
+                          onClick={current === 1 ? undefined : this.goToPage(1)}
+                          aria-label="Page 1"
+                          aria-current="page"
+                        >
+                            1
+                        </a>
+                      </li>
+                      <li>
+                        <span className="pagination-ellipsis">
+                          &hellip;
+                        </span>
+                      </li>
+                    </React.Fragment>
+                  )
+                }
+                {
                   Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
                     // eslint-disable-next-line react/no-array-index-key
                     <li key={i + firstPage}>
@@ -149,6 +175,29 @@ class Pagination extends React.PureComponent {
                       </a>
                     </li>
                   ))
+                }
+                {
+                  showFirstLast && current !== lastPage && total !== lastPage && (
+                    <React.Fragment>
+                      <li key={total}>
+                        <span className="pagination-ellipsis">
+                          &hellip;
+                        </span>
+                      </li>
+                      <li>
+                        <a
+                          role="button"
+                          tabIndex={0}
+                          className="pagination-link"
+                          onClick={current === total ? undefined : this.goToPage(total)}
+                          aria-label={`Page ${total}`}
+                          aria-current="page"
+                        >
+                          {total}
+                        </a>
+                      </li>
+                    </React.Fragment>
+                  )
                 }
               </ul>
             </React.Fragment>
