@@ -11,7 +11,71 @@ exports[`Hero component Should concat classname in props with Bulma classname 1`
 </section>
 `;
 
-exports[`Hero component Should exist 1`] = `[Function]`;
+exports[`Hero component Should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "Body": [Function],
+  "Footer": [Function],
+  "Head": [Function],
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "color": null,
+    "gradient": false,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "section",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "size": null,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "color": [Function],
+    "gradient": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Hero component Should expose Hero head, body and footer 1`] = `[Function]`;
 

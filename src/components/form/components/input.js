@@ -20,11 +20,13 @@ class Input extends React.PureComponent {
       placeholder,
       value,
       name,
+      innerRef,
       ...props
     } = this.props;
     return (
       <Element
         {...props}
+        ref={innerRef}
         renderAs="input"
         name={name}
         value={value}
@@ -75,4 +77,4 @@ Input.defaultProps = {
   name: null,
 };
 
-export default Input;
+export default React.forwardRef((props, ref) => <Input innerRef={ref} {...props} />);

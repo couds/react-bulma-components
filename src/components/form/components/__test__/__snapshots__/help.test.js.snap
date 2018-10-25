@@ -20,7 +20,61 @@ exports[`Help component Should concat classname in props with Bulma classname 1`
 </p>
 `;
 
-exports[`Help component Should exist 1`] = `[Function]`;
+exports[`Help component Should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "color": null,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "p",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "color": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Help component Should have help classname 1`] = `
 <p

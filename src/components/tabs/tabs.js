@@ -5,7 +5,7 @@ import Tab from './components/tab';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Tabs = ({
+const Tabs = React.forwardRef(({
   children,
   className,
   align,
@@ -13,9 +13,10 @@ const Tabs = ({
   type,
   fullwidth,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('tabs', className, {
       [`is-${align}`]: align,
       [`is-${size}`]: size,
@@ -29,7 +30,7 @@ const Tabs = ({
       {children}
     </ul>
   </Element>
-);
+));
 
 Tabs.Tab = Tab;
 

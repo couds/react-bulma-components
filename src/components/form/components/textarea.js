@@ -7,7 +7,7 @@ import CONSTANTS from '../../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Textarea = ({
+const Textarea = React.forwardRef(({
   className,
   size,
   color,
@@ -18,12 +18,13 @@ const Textarea = ({
   value,
   name,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <textarea
       name={name}
       {...props}
+      ref={ref}
       value={value}
       rows={rows}
       placeholder={placeholder}
@@ -35,7 +36,7 @@ const Textarea = ({
       })}
     />
   );
-};
+});
 
 Textarea.propTypes = {
   ...modifiers.propTypes,

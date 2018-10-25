@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import CONSTANTS from './constants';
 import modifiers from '../../modifiers';
 
-export default class Image extends PureComponent {
+class Image extends PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     className: PropTypes.string,
@@ -45,6 +45,7 @@ export default class Image extends PureComponent {
       size,
       fallback,
       src,
+      innerRef,
       ...allProps
     } = this.props;
     const props = modifiers.clean(allProps);
@@ -61,8 +62,10 @@ export default class Image extends PureComponent {
           [`is-${s}`]: s,
         })}
       >
-        <img onError={this.onError} src={this.state.src} alt={alt} />
+        <img ref={innerRef} onError={this.onError} src={this.state.src} alt={alt} />
       </figure>
     );
   }
 }
+
+export default React.forwardRef((props, ref) => <Image innerRef={ref} {...props} />);

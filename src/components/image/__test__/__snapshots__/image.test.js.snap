@@ -26,7 +26,12 @@ exports[`Image component Should be square 1`] = `
 </figure>
 `;
 
-exports[`Image component Should exist 1`] = `[Function]`;
+exports[`Image component Should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "render": [Function],
+}
+`;
 
 exports[`Image component Should have image classname 1`] = `
 <figure

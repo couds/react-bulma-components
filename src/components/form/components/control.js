@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const Control = ({
+const Control = React.forwardRef(({
   children,
   className,
   fullwidth,
@@ -13,9 +13,10 @@ const Control = ({
   loading,
   size,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('control', className, {
       'is-expanded': fullwidth,
       'has-icons-left': iconLeft,
@@ -26,7 +27,7 @@ const Control = ({
   >
     {children}
   </Element>
-);
+));
 
 Control.propTypes = {
   ...modifiers.propTypes,

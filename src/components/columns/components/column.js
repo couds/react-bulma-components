@@ -8,7 +8,7 @@ import Element from '../../element';
 const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   .concat(Object.keys(CONSTANTS.SIZES).map(key => CONSTANTS.SIZES[key]));
 
-const Column = ({
+const Column = React.forwardRef(({
   children,
   className,
   size,
@@ -20,9 +20,10 @@ const Column = ({
   widescreen,
   fullhd,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classNames(className, 'column', {
       [`is-${size}`]: size,
       [`is-${mobile.size}-mobile`]: mobile.size,
@@ -46,7 +47,7 @@ const Column = ({
   >
     {children}
   </Element>
-);
+));
 
 Column.propTypes = {
   ...modifiers.propTypes,

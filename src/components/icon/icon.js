@@ -6,7 +6,7 @@ import CONSTANTS from '../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Icon = ({
+const Icon = React.forwardRef(({
   icon,
   size,
   color,
@@ -14,7 +14,7 @@ const Icon = ({
   align,
   children,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <span
@@ -27,6 +27,7 @@ const Icon = ({
     >
       { children || (
       <i
+        ref={ref}
         className={classnames('rbc', {
           [`rbc-${icon}`]: icon,
         })}
@@ -34,7 +35,7 @@ const Icon = ({
       )}
     </span>
   );
-};
+});
 
 Icon.propTypes = {
   ...modifiers.propTypes,

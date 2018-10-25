@@ -22,7 +22,64 @@ exports[`Section component Should concat classname in props with Bulma classname
 </section>
 `;
 
-exports[`Section component Should exist 1`] = `[Function]`;
+exports[`Section component Should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "section",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "size": null,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Section component Should have section classname 1`] = `
 <section

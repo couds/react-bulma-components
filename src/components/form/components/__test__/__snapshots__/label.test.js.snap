@@ -12,7 +12,64 @@ exports[`Label component Should concat classname in props with Bulma classname 1
 </label>
 `;
 
-exports[`Label component Should exist 1`] = `[Function]`;
+exports[`Label component Should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "htmlFor": null,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "responsive": undefined,
+    "shadowless": undefined,
+    "size": null,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "htmlFor": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Label component Should have label classname 1`] = `
 <label

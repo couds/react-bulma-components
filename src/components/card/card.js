@@ -10,18 +10,19 @@ import modifiers from '../../modifiers';
 
 import Element from '../element';
 
-const Card = ({
+const Card = React.forwardRef(({
   className,
   children,
   ...props
-}) => (
+}, ref) => (
   <Element
+    ref={ref}
     className={classnames('card', className)}
     {...props}
   >
     {children}
   </Element>
-);
+));
 
 Card.Image = CardImage;
 

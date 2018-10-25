@@ -6,11 +6,11 @@ import MenuListItem from './components/item';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const MenuList = ({
+const MenuList = React.forwardRef(({
   className,
   title,
   ...props
-}) => (
+}, ref) => (
   <React.Fragment>
     {
         title
@@ -20,9 +20,9 @@ const MenuList = ({
         </p>
         )
       }
-    <Element renderAs="ul" className={classnames('menu-list', className)} {...props} />
+    <Element ref={ref} renderAs="ul" className={classnames('menu-list', className)} {...props} />
   </React.Fragment>
-);
+));
 
 MenuList.Item = MenuListItem;
 

@@ -5,12 +5,12 @@ import CardFooterItem from './components/footer-item';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const CardFooter = ({
+const CardFooter = React.forwardRef(({
   className,
   ...props
-}) => (
-  <Element {...props} className={classnames('card-footer', className)} />
-);
+}, ref) => (
+  <Element {...props} ref={ref} className={classnames('card-footer', className)} />
+));
 
 CardFooter.Item = CardFooterItem;
 

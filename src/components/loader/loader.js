@@ -4,18 +4,19 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Loader = ({
+const Loader = React.forwardRef(({
   children,
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('loader', className)}
   >
     {children}
   </Element>
-);
+));
 
 Loader.propTypes = {
   ...modifiers.propTypes,

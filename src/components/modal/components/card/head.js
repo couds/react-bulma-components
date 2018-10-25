@@ -6,21 +6,22 @@ import Button from '../../../button';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCardHead = ({
+const ModalCardHead = React.forwardRef(({
   children,
   className,
   showClose,
   onClose,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('modal-card-head', className)}
   >
     {children}
     {showClose && <Button remove onClick={onClose} />}
   </Element>
-);
+));
 
 ModalCardHead.propTypes = {
   ...modifiers.propTypes,

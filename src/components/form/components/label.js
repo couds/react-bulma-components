@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 
-const Label = ({
+const Label = React.forwardRef(({
   children,
   className,
   size,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <label
       {...props}
+      ref={ref}
       className={classnames('label', modifiers.classnames(allProps), className, {
         [`is-${size}`]: size,
       })}
@@ -20,7 +21,7 @@ const Label = ({
       {children}
     </label>
   );
-};
+});
 
 Label.propTypes = {
   ...modifiers.propTypes,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Button from '..';
 
 const Link = ({
@@ -87,6 +87,11 @@ describe('Button component', () => {
     component.simulate('click');
     expect(spy).toHaveBeenCalledTimes(2);
     Button.defaultProps.onClick.mockRestore();
+  });
+  it('Should forward ref', () => {
+    const testRef = React.createRef();
+    mount(<Button ref={testRef} />);
+    expect(testRef.current).not.toBeNull();
   });
   describe('Button Group component', () => {
     it('Should be a default list of buttons', () => {

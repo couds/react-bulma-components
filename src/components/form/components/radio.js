@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 
-const Radio = ({
+const Radio = React.forwardRef(({
   className,
   style,
   disabled,
@@ -12,7 +12,7 @@ const Radio = ({
   name,
   children,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <label
@@ -22,6 +22,7 @@ const Radio = ({
     >
       <input
         {...props}
+        ref={ref}
         name={name}
         checked={checked}
         type="radio"
@@ -31,7 +32,7 @@ const Radio = ({
       {children}
     </label>
   );
-};
+});
 
 Radio.propTypes = {
   ...modifiers.propTypes,

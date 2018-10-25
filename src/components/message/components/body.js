@@ -4,18 +4,19 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const MessageBody = ({
+const MessageBody = React.forwardRef(({
   children,
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('message-body', className)}
   >
     {children}
   </Element>
-);
+));
 
 MessageBody.propTypes = {
   ...modifiers.propTypes,
