@@ -26,6 +26,7 @@ const Checkbox = ({
         type="checkbox"
         value={value}
         disabled={disabled}
+        checked={checked}
       />
       {children}
     </label>
