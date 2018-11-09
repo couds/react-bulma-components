@@ -9,6 +9,7 @@ exports[`Checkbox component Should have checkbox classname 1`] = `
   style={Object {}}
 >
   <input
+    checked={false}
     disabled={false}
     name={null}
     type="checkbox"
