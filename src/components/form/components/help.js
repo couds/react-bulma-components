@@ -16,6 +16,7 @@ const Help = React.forwardRef(({
 }, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('help', className, {
       [`is-${color}`]: color,
     })}
