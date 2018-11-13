@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Icon from '../../icon';
+import Element from '../../element';
 import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-export default class File extends PureComponent {
+export default class InputFile extends PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     className: PropTypes.string,
@@ -25,33 +25,41 @@ export default class File extends PureComponent {
      */
     name: PropTypes.string,
     label: PropTypes.string,
+    icon: PropTypes.element,
   }
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    className: '',
-    style: {},
-    onChange: null,
-    color: null,
-    size: null,
+    className: undefined,
+    style: undefined,
+    onChange: () => {},
+    color: undefined,
+    size: undefined,
     fileName: true,
-    fullwidth: false,
-    right: false,
-    boxed: false,
-    name: null,
+    fullwidth: undefined,
+    right: undefined,
+    boxed: undefined,
+    name: undefined,
+    icon: undefined,
     label: 'Choose a file...',
+  }
+
+  state = {
+    filename: undefined,
   }
 
   select = (event) => {
     if (!this.props.fileName) {
-      return
+      return;
     }
-    const file = event.target
+    const file = event.target;
     if (file && file.files.length > 0) {
-      this.labelElement.innerHTML = file.files[0].name
+      this.setState({
+        filename: file.files[0].name,
+      });
     }
     if (this.props.onChange) {
-      this.props.onChange()
+      this.props.onChange(event);
     }
   }
 
@@ -68,12 +76,14 @@ export default class File extends PureComponent {
       boxed,
       name,
       label,
-      ...allProps
+      icon,
+      ...props
     } = this.props;
-    const props = modifiers.clean(allProps);
+
+    const { filename } = this.state;
 
     return (
-      <div
+      <Element
         style={style}
         className={classnames('file', className, {
           [`is-${size}`]: size,
@@ -94,18 +104,26 @@ export default class File extends PureComponent {
             onChange={this.select}
           />
           <span className="file-cta">
-            <span className="file-icon">
-              <Icon icon="upload" />
-            </span>
+            {
+              icon && (
+                <span className="file-icon">
+                  {icon}
+                </span>
+              )
+            }
             <span className="file-label">
               {label}
             </span>
           </span>
-          {fileName &&
-            <span className="file-name" ref={(node) => { this.labelElement = node }} />
+          {fileName && filename
+            && (
+            <span className="file-name">
+              {filename}
+            </span>
+            )
           }
         </label>
-      </div>
+      </Element>
     );
   }
 }
