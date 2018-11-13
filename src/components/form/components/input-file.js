@@ -49,15 +49,10 @@ export default class InputFile extends PureComponent {
   }
 
   select = (event) => {
-    if (!this.props.fileName) {
-      return;
-    }
-    const file = event.target;
-    if (file && file.files.length > 0) {
-      this.setState({
-        filename: file.files[0].name,
-      });
-    }
+    const { files } = event.target;
+    this.setState({
+      filename: files.length > 0 ? files[0].name : undefined,
+    });
     if (this.props.onChange) {
       this.props.onChange(event);
     }
