@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const CardHeaderTitle = ({
+const CardHeaderTitle = React.forwardRef(({
   className,
   ...props
-}) => (
-  <Element {...props} className={classnames('card-header-title', className)} />
-);
+}, ref) => (
+  <Element {...props} ref={ref} className={classnames('card-header-title', className)} />
+));
 
 CardHeaderTitle.propTypes = {
   ...modifiers.propTypes,

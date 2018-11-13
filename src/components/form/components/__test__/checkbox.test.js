@@ -23,4 +23,8 @@ describe('Checkbox component', () => {
     component.find('input').simulate('change');
     expect(spy).toHaveBeenCalledTimes(1);
   });
+  it('Should set input checked if checked', () => {
+    const component = shallow(<Checkbox checked />);
+    expect(component.find('input').is('[checked]')).toBe(true);
+  });
 });

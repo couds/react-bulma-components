@@ -7,19 +7,20 @@ import MediaContent from './components/media-content';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Media = ({
+const Media = React.forwardRef(({
   children,
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('media', className, {
     })}
   >
     {children}
   </Element>
-);
+));
 Media.Item = MediaItem;
 
 Media.Content = MediaContent;

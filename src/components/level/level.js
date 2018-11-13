@@ -9,21 +9,22 @@ import Element from '../element';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-const Level = ({
+const Level = React.forwardRef(({
   children,
   className,
   breakpoint,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('level', className, {
       [`is-${breakpoint}`]: breakpoint,
     })}
   >
     {children}
   </Element>
-);
+));
 
 Level.Side = LevelSide;
 

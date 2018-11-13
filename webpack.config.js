@@ -109,12 +109,12 @@ exports.default = {
         query: {
           cacheDirectory: true,
           presets: [
-            ['env', {
+            ['@babel/preset-env', {
               targets: {
                 browsers: ['last 2 versions', 'not safari < 11', 'not ie < 11'],
               },
             }],
-            'react'],
+            '@babel/preset-react'],
           plugins: ['transform-class-properties'],
         },
       },

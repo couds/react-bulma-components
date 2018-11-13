@@ -6,7 +6,7 @@ import CONSTANTS from '../../../constants';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Select = ({
+const Select = React.forwardRef(({
   className,
   style,
   size,
@@ -19,7 +19,7 @@ const Select = ({
   children,
   name,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <div
@@ -33,6 +33,7 @@ const Select = ({
     >
       <select
         {...props}
+        ref={ref}
         multiple={multiple}
         value={value}
         readOnly={readOnly}
@@ -43,7 +44,7 @@ const Select = ({
       </select>
     </div>
   );
-};
+});
 
 Select.propTypes = {
   ...modifiers.propTypes,

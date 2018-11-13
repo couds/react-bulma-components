@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help } from 'react-bulma-components/lib/components/form';
+import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help, InputFile } from 'react-bulma-components/lib/components/form';
 import Button from 'react-bulma-components/lib/components/button';
 import Icon from 'react-bulma-components/lib/components/icon';
 
@@ -77,6 +77,9 @@ const SelectControlled = HoC(Select);
 const CheckboxControlled = HoCCheckbox(Checkbox);
 
 storiesOf('Form', module)
+  .addDecorator(story => (
+    <div style={{ margin: 50 }}>{story()}</div>
+  ))
   .add('Default', (() => (
     <div>
       <Field>
@@ -124,6 +127,13 @@ storiesOf('Form', module)
         <Label>Message</Label>
         <Control>
           <Textarea placeholder="Textarea" />
+        </Control>
+      </Field>
+
+      <Field>
+        <Label>File</Label>
+        <Control>
+          <InputFile icon={<Icon icon="upload" />} boxed placeholder="Textarea" />
         </Control>
       </Field>
 

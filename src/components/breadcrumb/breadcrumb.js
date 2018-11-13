@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
 
-const Breadcrumb = ({
+const Breadcrumb = React.forwardRef(({
   className,
   items,
   renderAs,
@@ -12,12 +12,13 @@ const Breadcrumb = ({
   size,
   align,
   ...allProps
-}) => {
+}, ref) => {
   const Element = renderAs;
   const props = modifiers.clean(allProps);
   return (
     <nav
       {...props}
+      ref={ref}
       className={classnames('breadcrumb', className, modifiers.classnames(allProps), {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
@@ -47,7 +48,7 @@ const Breadcrumb = ({
       </ul>
     </nav>
   );
-};
+});
 
 Breadcrumb.propTypes = {
   ...modifiers.propTypes,

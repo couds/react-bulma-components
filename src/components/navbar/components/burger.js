@@ -6,17 +6,18 @@ import { ShowContext } from '../context';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarBurger = ({
+const NavbarBurger = React.forwardRef(({
   style,
   className,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <ShowContext.Consumer>
       {
       active => (
         <Element
+          ref={ref}
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
@@ -33,7 +34,7 @@ const NavbarBurger = ({
     }
     </ShowContext.Consumer>
   );
-};
+});
 
 NavbarBurger.propTypes = {
   ...modifiers.propTypes,

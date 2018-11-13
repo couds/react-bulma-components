@@ -21,26 +21,11 @@ let htmlClass = '';
 
 export const getHtmlClasses = () => htmlClass;
 
-export default class Navbar extends React.PureComponent {
-  static Brand = Brand
-
-  static Burger = Burger
-
-  static Menu = Menu
-
-  static Item = Item
-
-  static Dropdown = Dropdown
-
-  static Link = Link
-
-  static Divider = Divider
-
-  static Container = Container
-
+class Navbar extends React.PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     children: PropTypes.node,
+    innerRef: PropTypes.node,
     className: PropTypes.string,
     style: PropTypes.shape({}),
     transparent: PropTypes.bool,
@@ -53,6 +38,7 @@ export default class Navbar extends React.PureComponent {
   static defaultProps = {
     ...modifiers.defaultProps,
     children: null,
+    innerRef: undefined,
     className: '',
     style: {},
     renderAs: 'nav',
@@ -85,6 +71,7 @@ export default class Navbar extends React.PureComponent {
 
   render() {
     const {
+      innerRef,
       children,
       className,
       fixed,
@@ -98,6 +85,7 @@ export default class Navbar extends React.PureComponent {
       <ShowContext.Provider value={active}>
         <Element
           {...props}
+          ref={innerRef}
           role="navigation"
           className={classnames('navbar', modifiers.classnames(props), className, {
             'is-transparent': transparent,
@@ -111,3 +99,17 @@ export default class Navbar extends React.PureComponent {
     );
   }
 }
+
+// const NavbarRef = React.forwardRef((props, ref) => <Navbar innerRef={ref} {...props} />);
+const NavbarRef = React.forwardRef((props, ref) => <Navbar innerRef={ref} {...props} />);
+
+NavbarRef.Brand = Brand;
+NavbarRef.Burger = Burger;
+NavbarRef.Menu = Menu;
+NavbarRef.Item = Item;
+NavbarRef.Dropdown = Dropdown;
+NavbarRef.Link = Link;
+NavbarRef.Divider = Divider;
+NavbarRef.Container = Container;
+
+export default NavbarRef;

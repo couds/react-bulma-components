@@ -4,15 +4,16 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const PanelHeader = ({
+const PanelHeader = React.forwardRef(({
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('panel-heading', className)}
   />
-);
+));
 
 PanelHeader.propTypes = {
   ...modifiers.propTypes,

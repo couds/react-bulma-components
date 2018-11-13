@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Button from '..';
 
 const Link = ({
@@ -19,6 +19,12 @@ Link.propTypes = {
 };
 
 describe('Button component', () => {
+  it('Should exist', () => {
+    expect(Button).toMatchSnapshot();
+  });
+  it('Should expose Button Group', () => {
+    expect(Button.Group).toMatchSnapshot();
+  });
   it('Should be a default Button', () => {
     const component = renderer.create(<Button />);
     expect(component.toJSON()).toMatchSnapshot();
@@ -81,5 +87,77 @@ describe('Button component', () => {
     component.simulate('click');
     expect(spy).toHaveBeenCalledTimes(2);
     Button.defaultProps.onClick.mockRestore();
+  });
+  it('Should forward ref', () => {
+    const testRef = React.createRef();
+    mount(<Button ref={testRef} />);
+    expect(testRef.current).not.toBeNull();
+  });
+  describe('Button Group component', () => {
+    it('Should be a default list of buttons', () => {
+      const component = renderer.create(
+        <Button.Group>
+          <Button>
+            test 0
+          </Button>
+          <Button>
+            test 1
+          </Button>
+        </Button.Group>,
+      );
+      expect(component).toMatchSnapshot();
+    });
+    it('Should concat class names in props with Bulma class name', () => {
+      const component = renderer.create(
+        <Button.Group className="super-class-1 dope-class-2">
+          <Button>
+            test 0
+          </Button>
+          <Button>
+            test 1
+          </Button>
+        </Button.Group>,
+      );
+      expect(component.toJSON()).toMatchSnapshot();
+    });
+    it('Should group buttons together', () => {
+      const component = renderer.create(
+        <Button.Group hasAddons>
+          <Button>
+            test 1
+          </Button>
+          <Button>
+            test 2
+          </Button>
+        </Button.Group>,
+      );
+      expect(component.toJSON()).toMatchSnapshot();
+    });
+    it('Should be centered', () => {
+      const component = renderer.create(
+        <Button.Group position="centered">
+          <Button>
+            test 0
+          </Button>
+          <Button>
+            test 1
+          </Button>
+        </Button.Group>,
+      );
+      expect(component.toJSON()).toMatchSnapshot();
+    });
+    it('Should align to the right', () => {
+      const component = renderer.create(
+        <Button.Group position="right">
+          <Button>
+            test 0
+          </Button>
+          <Button>
+            test 1
+          </Button>
+        </Button.Group>,
+      );
+      expect(component.toJSON()).toMatchSnapshot();
+    });
   });
 });

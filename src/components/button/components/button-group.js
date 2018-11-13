@@ -4,35 +4,43 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const MessageBody = React.forwardRef(({
+const ButtonGroup = ({
   children,
   className,
+  hasAddons,
+  position,
+  renderAs,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
-    className={classnames('message-body', className)}
+    renderAs={renderAs}
+    className={classnames('buttons', className, {
+      'has-addons': hasAddons,
+      [`is-${[position]}`]: position,
+    })}
   >
     {children}
   </Element>
-));
+);
 
-MessageBody.propTypes = {
+ButtonGroup.propTypes = {
   ...modifiers.propTypes,
-  children: PropTypes.node,
   className: PropTypes.string,
+  hasAddons: PropTypes.bool,
+  position: PropTypes.oneOf(['centered', 'right']),
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
   ]),
 };
 
-MessageBody.defaultProps = {
+ButtonGroup.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
+  className: undefined,
+  hasAddons: undefined,
+  position: undefined,
   renderAs: 'div',
 };
 
-export default MessageBody;
+export default ButtonGroup;

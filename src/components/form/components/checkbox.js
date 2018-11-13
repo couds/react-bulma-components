@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 
-const Checkbox = ({
+const Checkbox = React.forwardRef(({
   className,
   style,
   disabled,
@@ -12,7 +12,7 @@ const Checkbox = ({
   checked,
   name,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <label
@@ -22,15 +22,17 @@ const Checkbox = ({
     >
       <input
         {...props}
+        ref={ref}
         name={name}
         type="checkbox"
         value={value}
         disabled={disabled}
+        checked={checked}
       />
       {children}
     </label>
   );
-};
+});
 
 Checkbox.propTypes = {
   ...modifiers.propTypes,

@@ -22,6 +22,12 @@ const colors = {
   link: 'link',
 };
 
+const positions = {
+  default: '',
+  centered: 'centered',
+  right: 'right'
+};
+
 storiesOf('Button', module)
   .addDecorator(story => (
     <div className="button-display">
@@ -79,4 +85,46 @@ storiesOf('Button', module)
         </Button>
       </Section>
     );
-  }));
+  }))
+  .add('Button group', (() => (
+    <Section>
+      <Button.Group
+        hasAddons={boolean('hasAddons', false)}
+        position={select('Position', positions)}
+      >
+        <Button
+          renderAs="span"
+          color="success"
+        >
+          Save changes
+        </Button>
+        <Button
+          renderAs="span"
+          color="info"
+        >
+          Save and continue
+        </Button>
+        <Button
+          renderAs="span"
+          color="danger"
+        >
+          Cancel
+        </Button>
+      </Button.Group>
+    </Section>
+  )))
+  .add('Ref forwarding', (() => {
+    const ref = React.createRef();
+
+    return (
+      <Section>
+        <Button onClick={() => ref.current.click()}>click other button</Button>
+        <Button
+          ref={ref}
+          onClick={() => console.log('clicked')}>
+          this will be clicked
+        </Button>
+      </Section>
+    )
+  }))
+

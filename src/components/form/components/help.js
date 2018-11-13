@@ -8,21 +8,22 @@ import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Help = ({
+const Help = React.forwardRef(({
   className,
   children,
   color,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('help', className, {
       [`is-${color}`]: color,
     })}
   >
     {children}
   </Element>
-);
+));
 
 Help.propTypes = {
   ...modifiers.propTypes,

@@ -11,16 +11,17 @@ import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Hero = ({
+const Hero = React.forwardRef(({
   children,
   className,
   color,
   gradient,
   size,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('hero', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size,
@@ -29,7 +30,7 @@ const Hero = ({
   >
     {children}
   </Element>
-);
+));
 
 Hero.Head = HeroHead;
 

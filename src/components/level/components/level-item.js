@@ -4,19 +4,20 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const LevelItem = ({
+const LevelItem = React.forwardRef(({
   children,
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('level-item', className, {
     })}
   >
     {children}
   </Element>
-);
+));
 
 LevelItem.propTypes = {
   ...modifiers.propTypes,

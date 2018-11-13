@@ -4,21 +4,22 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarContainer = ({
+const NavbarContainer = React.forwardRef(({
   className,
   children,
   position,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames({
       [`navbar-${position}`]: position,
     }, className)}
   >
     {children}
   </Element>
-);
+));
 
 NavbarContainer.propTypes = {
   ...modifiers.propTypes,
