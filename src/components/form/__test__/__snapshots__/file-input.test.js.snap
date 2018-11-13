@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component Should Exist 1`] = `[Function]`;
+
+exports[`Dropdown component Should render file input tree 1`] = `
+<div
+  className="file"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+      value=""
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+  </label>
+</div>
+`;

@@ -18,6 +18,7 @@ Object {
     "Field": [Function],
     "Help": [Function],
     "Input": [Function],
+    "InputFile": [Function],
     "Label": [Function],
     "Radio": [Function],
     "Select": [Function],

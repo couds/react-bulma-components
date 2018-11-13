@@ -9,3 +9,4 @@ export { default as Select } from './components/select';
 export { default as Checkbox } from './components/checkbox';
 export { default as Radio } from './components/radio';
 export { default as Help } from './components/help';
+export { default as InputFile } from './components/input-file';
