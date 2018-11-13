@@ -510,9 +510,12 @@ Object {
     "Image": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
+        "alt": "",
         "backgroundColor": undefined,
+        "className": "",
         "clearfix": undefined,
         "clipped": undefined,
+        "fallback": "http//bulma.io/images/placeholders/480x480.png",
         "hidden": undefined,
         "invisible": undefined,
         "italic": undefined,
@@ -523,6 +526,9 @@ Object {
         "radiusless": undefined,
         "responsive": undefined,
         "shadowless": undefined,
+        "size": null,
+        "src": "",
+        "style": Object {},
         "textAlignment": undefined,
         "textColor": undefined,
         "textSize": undefined,
@@ -531,9 +537,12 @@ Object {
         "unselectable": undefined,
       },
       "propTypes": Object {
+        "alt": [Function],
         "backgroundColor": [Function],
+        "className": [Function],
         "clearfix": [Function],
         "clipped": [Function],
+        "fallback": [Function],
         "hidden": [Function],
         "invisible": [Function],
         "italic": [Function],
@@ -544,6 +553,9 @@ Object {
         "radiusless": [Function],
         "responsive": [Function],
         "shadowless": [Function],
+        "size": [Function],
+        "src": [Function],
+        "style": [Function],
         "textAlignment": [Function],
         "textColor": [Function],
         "textSize": [Function],
@@ -1552,10 +1564,7 @@ Object {
     },
     "render": [Function],
   },
-  "Image": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
+  "Image": [Function],
   "Level": Object {
     "$$typeof": Symbol(react.forward_ref),
     "Item": Object {

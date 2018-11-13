@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const Table = React.forwardRef(({
   children,
@@ -9,23 +10,21 @@ const Table = React.forwardRef(({
   size,
   striped,
   bordered,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <table
-      {...props}
-      ref={ref}
-      className={classnames('table', ...modifiers.propTypes, className, {
-        [`is-${size}`]: size,
-        'is-bordered': bordered,
-        'is-striped': striped,
-      })}
-    >
-      {children}
-    </table>
-  );
-});
+  ...props
+}, ref) => (
+  <Element
+    renderAs="table"
+    {...props}
+    ref={ref}
+    className={classnames('table', className, {
+      [`is-${size}`]: size,
+      'is-bordered': bordered,
+      'is-striped': striped,
+    })}
+  >
+    {children}
+  </Element>
+));
 
 Table.propTypes = {
   ...modifiers.propTypes,
