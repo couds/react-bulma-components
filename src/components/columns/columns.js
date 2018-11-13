@@ -9,16 +9,17 @@ import Element from '../element';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-const Columns = ({
+const Columns = React.forwardRef(({
   className,
   breakpoint,
   gapless,
   multiline,
   centered,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classNames(className, 'columns', {
       [`is-${breakpoint}`]: breakpoint,
       'is-gapless': gapless,
@@ -26,7 +27,7 @@ const Columns = ({
       'is-centered': centered,
     })}
   />
-);
+));
 
 Columns.Column = Column;
 

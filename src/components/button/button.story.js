@@ -112,5 +112,19 @@ storiesOf('Button', module)
         </Button>
       </Button.Group>
     </Section>
-  )));
-  
+  )))
+  .add('Ref forwarding', (() => {
+    const ref = React.createRef();
+
+    return (
+      <Section>
+        <Button onClick={() => ref.current.click()}>click other button</Button>
+        <Button
+          ref={ref}
+          onClick={() => console.log('clicked')}>
+          this will be clicked
+        </Button>
+      </Section>
+    )
+  }))
+

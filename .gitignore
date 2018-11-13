@@ -71,3 +71,4 @@ out*
 /full
 .coverage
 .vscode
+.cache

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from './constants';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 export default class Image extends PureComponent {
   static propTypes = {
@@ -45,9 +46,8 @@ export default class Image extends PureComponent {
       size,
       fallback,
       src,
-      ...allProps
+      ...props
     } = this.props;
-    const props = modifiers.clean(allProps);
     let s = size;
 
     if (typeof size === 'number') {
@@ -55,14 +55,15 @@ export default class Image extends PureComponent {
     }
 
     return (
-      <figure
+      <Element
         {...props}
+        renderAs="figure"
         className={classnames('image', className, {
           [`is-${s}`]: s,
         })}
       >
         <img onError={this.onError} src={this.state.src} alt={alt} />
-      </figure>
+      </Element>
     );
   }
 }

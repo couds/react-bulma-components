@@ -5,15 +5,16 @@ import MenuList from './components/list';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Menu = ({
+const Menu = React.forwardRef(({
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('menu', className)}
   />
-);
+));
 
 Menu.List = MenuList;
 

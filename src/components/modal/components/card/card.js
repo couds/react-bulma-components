@@ -9,19 +9,20 @@ import ModalCardTitle from './title';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCard = ({
+const ModalCard = React.forwardRef(({
   className,
   onClose,
   children,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('modal-card', className)}
   >
     {children}
   </Element>
-);
+));
 
 
 ModalCard.Head = ModalCardHead;

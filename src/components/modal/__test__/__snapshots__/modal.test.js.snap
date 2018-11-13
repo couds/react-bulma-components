@@ -1,6 +1,336 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal component Should Exist 1`] = `[Function]`;
+exports[`Modal component Should Exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "Card": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "Body": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "backgroundColor": undefined,
+        "children": null,
+        "className": "",
+        "clearfix": undefined,
+        "clipped": undefined,
+        "hidden": undefined,
+        "invisible": undefined,
+        "italic": undefined,
+        "marginless": undefined,
+        "overlay": undefined,
+        "paddingless": undefined,
+        "pull": undefined,
+        "radiusless": undefined,
+        "renderAs": "section",
+        "responsive": undefined,
+        "shadowless": undefined,
+        "style": Object {},
+        "textAlignment": undefined,
+        "textColor": undefined,
+        "textSize": undefined,
+        "textTransform": undefined,
+        "textWeight": undefined,
+        "unselectable": undefined,
+      },
+      "propTypes": Object {
+        "backgroundColor": [Function],
+        "children": [Function],
+        "className": [Function],
+        "clearfix": [Function],
+        "clipped": [Function],
+        "hidden": [Function],
+        "invisible": [Function],
+        "italic": [Function],
+        "marginless": [Function],
+        "overlay": [Function],
+        "paddingless": [Function],
+        "pull": [Function],
+        "radiusless": [Function],
+        "renderAs": [Function],
+        "responsive": [Function],
+        "shadowless": [Function],
+        "style": [Function],
+        "textAlignment": [Function],
+        "textColor": [Function],
+        "textSize": [Function],
+        "textTransform": [Function],
+        "textWeight": [Function],
+        "unselectable": [Function],
+      },
+      "render": [Function],
+    },
+    "Foot": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "backgroundColor": undefined,
+        "children": null,
+        "className": "",
+        "clearfix": undefined,
+        "clipped": undefined,
+        "hidden": undefined,
+        "invisible": undefined,
+        "italic": undefined,
+        "marginless": undefined,
+        "overlay": undefined,
+        "paddingless": undefined,
+        "pull": undefined,
+        "radiusless": undefined,
+        "renderAs": "footer",
+        "responsive": undefined,
+        "shadowless": undefined,
+        "style": Object {},
+        "textAlignment": undefined,
+        "textColor": undefined,
+        "textSize": undefined,
+        "textTransform": undefined,
+        "textWeight": undefined,
+        "unselectable": undefined,
+      },
+      "propTypes": Object {
+        "backgroundColor": [Function],
+        "children": [Function],
+        "className": [Function],
+        "clearfix": [Function],
+        "clipped": [Function],
+        "hidden": [Function],
+        "invisible": [Function],
+        "italic": [Function],
+        "marginless": [Function],
+        "overlay": [Function],
+        "paddingless": [Function],
+        "pull": [Function],
+        "radiusless": [Function],
+        "responsive": [Function],
+        "shadowless": [Function],
+        "style": [Function],
+        "textAlignment": [Function],
+        "textColor": [Function],
+        "textSize": [Function],
+        "textTransform": [Function],
+        "textWeight": [Function],
+        "unselectable": [Function],
+      },
+      "render": [Function],
+    },
+    "Head": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "backgroundColor": undefined,
+        "children": null,
+        "className": "",
+        "clearfix": undefined,
+        "clipped": undefined,
+        "hidden": undefined,
+        "invisible": undefined,
+        "italic": undefined,
+        "marginless": undefined,
+        "onClose": null,
+        "overlay": undefined,
+        "paddingless": undefined,
+        "pull": undefined,
+        "radiusless": undefined,
+        "renderAs": "header",
+        "responsive": undefined,
+        "shadowless": undefined,
+        "showClose": true,
+        "style": Object {},
+        "textAlignment": undefined,
+        "textColor": undefined,
+        "textSize": undefined,
+        "textTransform": undefined,
+        "textWeight": undefined,
+        "unselectable": undefined,
+      },
+      "propTypes": Object {
+        "backgroundColor": [Function],
+        "children": [Function],
+        "className": [Function],
+        "clearfix": [Function],
+        "clipped": [Function],
+        "hidden": [Function],
+        "invisible": [Function],
+        "italic": [Function],
+        "marginless": [Function],
+        "onClose": [Function],
+        "overlay": [Function],
+        "paddingless": [Function],
+        "pull": [Function],
+        "radiusless": [Function],
+        "responsive": [Function],
+        "shadowless": [Function],
+        "showClose": [Function],
+        "style": [Function],
+        "textAlignment": [Function],
+        "textColor": [Function],
+        "textSize": [Function],
+        "textTransform": [Function],
+        "textWeight": [Function],
+        "unselectable": [Function],
+      },
+      "render": [Function],
+    },
+    "Title": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "backgroundColor": undefined,
+        "children": null,
+        "className": "",
+        "clearfix": undefined,
+        "clipped": undefined,
+        "hidden": undefined,
+        "invisible": undefined,
+        "italic": undefined,
+        "marginless": undefined,
+        "overlay": undefined,
+        "paddingless": undefined,
+        "pull": undefined,
+        "radiusless": undefined,
+        "renderAs": "p",
+        "responsive": undefined,
+        "shadowless": undefined,
+        "style": undefined,
+        "textAlignment": undefined,
+        "textColor": undefined,
+        "textSize": undefined,
+        "textTransform": undefined,
+        "textWeight": undefined,
+        "unselectable": undefined,
+      },
+      "propTypes": Object {
+        "backgroundColor": [Function],
+        "children": [Function],
+        "className": [Function],
+        "clearfix": [Function],
+        "clipped": [Function],
+        "hidden": [Function],
+        "invisible": [Function],
+        "italic": [Function],
+        "marginless": [Function],
+        "overlay": [Function],
+        "paddingless": [Function],
+        "pull": [Function],
+        "radiusless": [Function],
+        "responsive": [Function],
+        "shadowless": [Function],
+        "style": [Function],
+        "textAlignment": [Function],
+        "textColor": [Function],
+        "textSize": [Function],
+        "textTransform": [Function],
+        "textWeight": [Function],
+        "unselectable": [Function],
+      },
+      "render": [Function],
+    },
+    "defaultProps": Object {
+      "backgroundColor": undefined,
+      "children": null,
+      "className": "",
+      "clearfix": undefined,
+      "clipped": undefined,
+      "hidden": undefined,
+      "invisible": undefined,
+      "italic": undefined,
+      "marginless": undefined,
+      "onClose": null,
+      "overlay": undefined,
+      "paddingless": undefined,
+      "pull": undefined,
+      "radiusless": undefined,
+      "responsive": undefined,
+      "shadowless": undefined,
+      "style": Object {},
+      "textAlignment": undefined,
+      "textColor": undefined,
+      "textSize": undefined,
+      "textTransform": undefined,
+      "textWeight": undefined,
+      "unselectable": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "onClose": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "Content": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "backgroundColor": undefined,
+      "children": null,
+      "className": "",
+      "clearfix": undefined,
+      "clipped": undefined,
+      "hidden": undefined,
+      "invisible": undefined,
+      "italic": undefined,
+      "marginless": undefined,
+      "overlay": undefined,
+      "paddingless": undefined,
+      "pull": undefined,
+      "radiusless": undefined,
+      "renderAs": "div",
+      "responsive": undefined,
+      "shadowless": undefined,
+      "style": Object {},
+      "textAlignment": undefined,
+      "textColor": undefined,
+      "textSize": undefined,
+      "textTransform": undefined,
+      "textWeight": undefined,
+      "unselectable": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "renderAs": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Modal component Should close the modal 1`] = `
 <div
@@ -27,6 +357,11 @@ exports[`Modal component Should close the modal 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -76,20 +411,660 @@ exports[`Modal component Should close the modal on ESC key press 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
-exports[`Modal component Should expose Content and Card's types 1`] = `[Function]`;
+exports[`Modal component Should close the modal 1`] = `
+<div
+  class="modal is-active"
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-card"
+  >
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <button
+        class="delete"
+        tabindex="0"
+      />
+    </header>
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
+</div>
+`;
 
-exports[`Modal component Should expose Content and Card's types 2`] = `[Function]`;
+exports[`Modal component Should close the modal if clicked on background 1`] = `
+<div
+  class="modal is-active"
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-content"
+  >
+    Content
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
+</div>
+`;
 
-exports[`Modal component Should expose Content and Card's types 3`] = `[Function]`;
+exports[`Modal component Should close the modal on ESC key press 1`] = `
+<div
+  class="modal is-active"
+>
+  <div
+    class="modal-background"
+    role="presentation"
+  />
+  <div
+    class="modal-card"
+  >
+    <header
+      class="modal-card-head"
+    >
+      <p
+        class="modal-card-title"
+      >
+        Modal Title
+      </p>
+      <button
+        class="delete"
+        tabindex="0"
+      />
+    </header>
+  </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
+</div>
+`;
 
-exports[`Modal component Should expose Content and Card's types 4`] = `[Function]`;
+exports[`Modal component Should expose Content and Card's types 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "div",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
-exports[`Modal component Should expose Content and Card's types 5`] = `[Function]`;
+exports[`Modal component Should expose Content and Card's types 2`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "Body": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "backgroundColor": undefined,
+      "children": null,
+      "className": "",
+      "clearfix": undefined,
+      "clipped": undefined,
+      "hidden": undefined,
+      "invisible": undefined,
+      "italic": undefined,
+      "marginless": undefined,
+      "overlay": undefined,
+      "paddingless": undefined,
+      "pull": undefined,
+      "radiusless": undefined,
+      "renderAs": "section",
+      "responsive": undefined,
+      "shadowless": undefined,
+      "style": Object {},
+      "textAlignment": undefined,
+      "textColor": undefined,
+      "textSize": undefined,
+      "textTransform": undefined,
+      "textWeight": undefined,
+      "unselectable": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "renderAs": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "Foot": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "backgroundColor": undefined,
+      "children": null,
+      "className": "",
+      "clearfix": undefined,
+      "clipped": undefined,
+      "hidden": undefined,
+      "invisible": undefined,
+      "italic": undefined,
+      "marginless": undefined,
+      "overlay": undefined,
+      "paddingless": undefined,
+      "pull": undefined,
+      "radiusless": undefined,
+      "renderAs": "footer",
+      "responsive": undefined,
+      "shadowless": undefined,
+      "style": Object {},
+      "textAlignment": undefined,
+      "textColor": undefined,
+      "textSize": undefined,
+      "textTransform": undefined,
+      "textWeight": undefined,
+      "unselectable": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "Head": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "backgroundColor": undefined,
+      "children": null,
+      "className": "",
+      "clearfix": undefined,
+      "clipped": undefined,
+      "hidden": undefined,
+      "invisible": undefined,
+      "italic": undefined,
+      "marginless": undefined,
+      "onClose": null,
+      "overlay": undefined,
+      "paddingless": undefined,
+      "pull": undefined,
+      "radiusless": undefined,
+      "renderAs": "header",
+      "responsive": undefined,
+      "shadowless": undefined,
+      "showClose": true,
+      "style": Object {},
+      "textAlignment": undefined,
+      "textColor": undefined,
+      "textSize": undefined,
+      "textTransform": undefined,
+      "textWeight": undefined,
+      "unselectable": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "onClose": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "showClose": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "Title": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "backgroundColor": undefined,
+      "children": null,
+      "className": "",
+      "clearfix": undefined,
+      "clipped": undefined,
+      "hidden": undefined,
+      "invisible": undefined,
+      "italic": undefined,
+      "marginless": undefined,
+      "overlay": undefined,
+      "paddingless": undefined,
+      "pull": undefined,
+      "radiusless": undefined,
+      "renderAs": "p",
+      "responsive": undefined,
+      "shadowless": undefined,
+      "style": undefined,
+      "textAlignment": undefined,
+      "textColor": undefined,
+      "textSize": undefined,
+      "textTransform": undefined,
+      "textWeight": undefined,
+      "unselectable": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "onClose": null,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "responsive": undefined,
+    "shadowless": undefined,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "onClose": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
-exports[`Modal component Should expose Content and Card's types 6`] = `[Function]`;
+exports[`Modal component Should expose Content and Card's types 3`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "p",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "style": undefined,
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Modal component Should expose Content and Card's types 4`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "onClose": null,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "header",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "showClose": true,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "onClose": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "showClose": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Modal component Should expose Content and Card's types 5`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "section",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Modal component Should expose Content and Card's types 6`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "hidden": undefined,
+    "invisible": undefined,
+    "italic": undefined,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "footer",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Modal component Should no try to reopen if other prop change 1`] = `
 <div
@@ -179,6 +1154,11 @@ exports[`Modal component Should not close the modal on ESC key press 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -217,6 +1197,11 @@ exports[`Modal component Should not close the modal on other than ESC key press 
       Footer
     </footer>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -261,6 +1246,11 @@ exports[`Modal component Should open the modal 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 

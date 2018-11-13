@@ -7,7 +7,7 @@ import ButtonGroup from './components/button-group';
 
 const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Button = ({
+const Button = React.forwardRef(({
   children,
   className,
   renderAs,
@@ -28,7 +28,7 @@ const Button = ({
   onClick,
   text,
   ...allProps
-}) => {
+}, ref) => {
   let Element = isStatic ? 'span' : renderAs;
   const props = modifiers.clean(allProps);
   const otherProps = {};
@@ -43,6 +43,7 @@ const Button = ({
 
   return (
     <Element
+      ref={ref}
       tabIndex={disabled ? -1 : 0}
       {...props}
       {...otherProps}
@@ -67,7 +68,7 @@ const Button = ({
       {children}
     </Element>
   );
-};
+});
 
 Button.Group = ButtonGroup;
 

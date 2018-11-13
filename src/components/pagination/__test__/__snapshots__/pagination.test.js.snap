@@ -65,7 +65,12 @@ exports[`Pagination component Next button should be disabled 1`] = `
 </nav>
 `;
 
-exports[`Pagination component Pagination Should Exist 1`] = `[Function]`;
+exports[`Pagination component Pagination Should Exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "render": [Function],
+}
+`;
 
 exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
 <nav

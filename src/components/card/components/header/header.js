@@ -6,12 +6,12 @@ import CardHeaderIcon from './components/header-icon';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const CardHeader = ({
+const CardHeader = React.forwardRef(({
   className,
   ...props
-}) => (
-  <Element {...props} className={classnames('card-header', className)} />
-);
+}, ref) => (
+  <Element {...props} ref={ref} className={classnames('card-header', className)} />
+));
 
 CardHeader.Title = CardHeaderTitle;
 

@@ -10,15 +10,16 @@ import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Message = ({
+const Message = React.forwardRef(({
   children,
   className,
   color,
   size,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('message', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size,
@@ -26,7 +27,7 @@ const Message = ({
   >
     {children}
   </Element>
-);
+));
 
 Message.Body = MessageBody;
 

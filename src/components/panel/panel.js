@@ -9,15 +9,16 @@ import Tabs from './components/tabs';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Panel = ({
+const Panel = React.forwardRef(({
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('panel', className)}
   />
-);
+));
 
 Panel.Header = Header;
 

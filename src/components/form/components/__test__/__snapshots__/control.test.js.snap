@@ -22,7 +22,72 @@ exports[`Control component Should concat classname in props with Bulma classname
 </div>
 `;
 
-exports[`Control component Should exist 1`] = `[Function]`;
+exports[`Control component Should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": undefined,
+    "children": null,
+    "className": "",
+    "clearfix": undefined,
+    "clipped": undefined,
+    "fullwidth": false,
+    "hidden": undefined,
+    "iconLeft": false,
+    "iconRight": false,
+    "invisible": undefined,
+    "italic": undefined,
+    "loading": false,
+    "marginless": undefined,
+    "overlay": undefined,
+    "paddingless": undefined,
+    "pull": undefined,
+    "radiusless": undefined,
+    "renderAs": "div",
+    "responsive": undefined,
+    "shadowless": undefined,
+    "size": null,
+    "style": Object {},
+    "textAlignment": undefined,
+    "textColor": undefined,
+    "textSize": undefined,
+    "textTransform": undefined,
+    "textWeight": undefined,
+    "unselectable": undefined,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "fullwidth": [Function],
+    "hidden": [Function],
+    "iconLeft": [Function],
+    "iconRight": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "loading": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
 
 exports[`Control component Should have control classname 1`] = `
 <div

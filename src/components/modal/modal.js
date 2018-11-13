@@ -10,14 +10,11 @@ const KEYCODES = {
   ESCAPE: 27,
 };
 
-export default class Modal extends PureComponent {
-  static Content = ModalContent
-
-  static Card = ModalCard
-
+class Modal extends PureComponent {
   portalElement = null;
 
   static propTypes = {
+    innerRef: PropTypes.node,
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     closeOnEsc: PropTypes.bool,
@@ -29,6 +26,7 @@ export default class Modal extends PureComponent {
   }
 
   static defaultProps = {
+    innerRef: undefined,
     closeOnEsc: true,
     showClose: true,
     closeOnBlur: false,
@@ -81,7 +79,7 @@ export default class Modal extends PureComponent {
   }
 
   render() {
-    const { closeOnBlur, show, className } = this.props;
+    const { innerRef, closeOnBlur, show, className } = this.props;
     if (!this.getDocument() || !this.portalElement || !show) {
       return null;
     }
@@ -102,9 +100,11 @@ export default class Modal extends PureComponent {
     }
 
     return ReactDOM.createPortal(
-      <div className={classnames('modal', className, {
-        'is-active': show,
-      })}
+      <div
+        ref={innerRef}
+        className={classnames('modal', className, {
+          'is-active': show,
+        })}
       >
         <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : null} />
         {children}
@@ -116,3 +116,10 @@ export default class Modal extends PureComponent {
     );
   }
 }
+
+const ModalRef = React.forwardRef((props, ref) => <Modal innerRef={ref} {...props} />);
+
+ModalRef.Content = ModalContent;
+ModalRef.Card = ModalCard;
+
+export default ModalRef;

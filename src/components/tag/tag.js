@@ -9,7 +9,7 @@ import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Tag = ({
+const Tag = React.forwardRef(({
   children,
   className,
   color,
@@ -17,9 +17,10 @@ const Tag = ({
   rounded,
   remove,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('tag', className, {
       [`is-${size}`]: size,
       [`is-${color}`]: color,
@@ -29,7 +30,7 @@ const Tag = ({
   >
     {!remove && children}
   </Element>
-);
+));
 
 Tag.Group = TagGroup;
 

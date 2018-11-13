@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 
-const TagGroup = ({
+const TagGroup = React.forwardRef(({
   children,
   className,
   gapless,
   ...allProps
-}) => {
+}, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <span
       {...props}
+      ref={ref}
       className={classnames('tags', modifiers.classnames(allProps), className, {
         'has-addons': gapless,
       })}
@@ -20,7 +21,7 @@ const TagGroup = ({
       {children}
     </span>
   );
-};
+});
 
 TagGroup.propTypes = {
   ...modifiers.propTypes,

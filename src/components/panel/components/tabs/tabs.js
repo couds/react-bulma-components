@@ -5,15 +5,16 @@ import Tab from './components/tab';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const PanelTabs = ({
+const PanelTabs = React.forwardRef(({
   className,
   ...props
-}) => (
+}, ref) => (
   <Element
     {...props}
+    ref={ref}
     className={classnames('panel-tabs', className)}
   />
-);
+));
 
 PanelTabs.Tab = Tab;
 
