@@ -62,7 +62,7 @@ You can find the documentation in https://couds.github.io/react-bulma-components
 
 Each component imports their own sass file. Thus, you can reduce your css total file size by only including the styles that you will use. To enable this, please configure your [Webpack](https://webpack.github.io/) to handle sass files. You can use the webpack.config.js on the root folder of this repository.
 
-Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used (you can find the source code of the story by using the button "Show info" on the top-right corner of the page). 
+Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used (you can find the source code of the story by using the button "Show info" on the top-right corner of the page).
 
 The following components were ported:
 
@@ -162,66 +162,19 @@ exports.onCreateWebpackConfig = ({
 }
 ```
 
-### Override Bulma variables in CRA _without_ eject
+### Override Bulma variables in Create React App
 
-Sometimes, you don't want to eject your CRA (Create React App) application. But how to make custom style variables for Bulma? There is a simple and right way to solve it!
+Create React App 2 now supports automatic SASS compilation, meaning that all you need to do to get Bulma working is [follow the instructions provided by the CRA team](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-sass-stylesheet) and create a SASS file in your project with the following code:
 
-First of all, install package `node-sass-chokidar` ([docs](https://www.npmjs.com/package/node-sass-chokidar)):
+```sass
+// Any Bulma variables I want to override go here...
+$family-sans-serif: 'Overpass', sans-serif
 
-```bash
-$ npm install --save node-sass-chokidar
+@import '~react-bulma-components/src/index'
 ```
 
-Or, if you use yarn:
+Of course, as per the CRA team's instructions, make sure to import this stylesheet somewhere in your CRA app:
 
-```bash
-$ yarn add -E node-sass-chokidar
+```js
+import './App.sass';
 ```
-
-For example, we're using dir structure, like this:
-
-```bash
-├── ...
-├── public
-│   └── ...
-└── src
-    ├── scss
-    │   ├── _variables.scss     <-- Override Bulma variables here
-    │   └── style.scss          <-- Entry styles (main)
-    ├── ...
-    └── style.css               <-- Output CSS file
-
-```
-
-Next, import `./src/style.css` into your main React app file (if not) `./src/index.js`:
-
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
-import './style.css'; // <-- This our output CSS file
-
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root')
-);
-```
-
-> Don't forget to import `_variables.scss` into head of `style.scss`.
-
-And now, just add to `scripts` section in your `./package.json` two commands:
-
-```json
-{
-  "scripts": {
-    // ...
-    "build-css": "node-sass-chokidar --include-path ./src/scss --include-path ./node_modules src/scss/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/scss --include-path ./node_modules src/scss/ -o src/ --watch --recursive"
-  }
-}
-```
-
-Open console (in your CRA dir), type `npm run watch-css` or `yarn run watch-css` and hit enter. Now, `node-sass-chokidar` will automatically update `./src/style.css`, when you make any changes in `./src/scss/style.scss` file for you!
-
-This page is open source. Noticed a typo? Or something unclear? Improve this page on [GitHub](https://github.com/couds/react-bulma-components/blob/master/README.md)
