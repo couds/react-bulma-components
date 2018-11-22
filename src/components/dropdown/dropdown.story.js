@@ -1,8 +1,11 @@
 import React from 'react';
 
+import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 import Dropdown from '.';
+import Container from '../container';
+import Section from '../section';
 
 class Wrapper extends React.Component {
   state = {
@@ -76,5 +79,33 @@ storiesOf('Dropdown', module)
       </Dropdown.Item>
     </Dropdown>
   )))
+  .add('Alignment', () => (
+    <div>
+      <Container>
+        <Section size="large">
+          <Dropdown
+            right={boolean('right', false)}
+            up={boolean('up', false)}>
+            <Dropdown.Item value="item" >
+              Dropdown item
+            </Dropdown.Item>
+            <Dropdown.Item value="other">
+              Other Dropdown item
+            </Dropdown.Item>
+            <Dropdown.Item value="active">
+              Active Dropdown item
+            </Dropdown.Item>
+            <Dropdown.Item value="other 2">
+              Other Dropdown item
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item value="divider">
+              With divider
+            </Dropdown.Item>
+          </Dropdown>
+        </Section>
+      </Container>
+    </div>
+  ))
   .add('Controlled component', (() => <Wrapper />))
   .add('Controlled component Hoverable', (() => <Wrapper hoverable color="dark" />));

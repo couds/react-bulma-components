@@ -68,6 +68,30 @@ describe('Dropdown component', () => {
       </Dropdown>);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be right-aligned', () => {
+    const component = renderer.create(
+      <Dropdown right>
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+        <Dropdown.Item value="other">
+          Other
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should appear above the dropdown button', () => {
+    const component = renderer.create(
+      <Dropdown up>
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+        <Dropdown.Item value="other">
+          Other
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should open the Dropdown', () => {
     const component = shallow(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>

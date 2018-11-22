@@ -24,7 +24,9 @@ export default class Dropdown extends PureComponent {
     value: PropTypes.any,
     onChange: PropTypes.func,
     color: PropTypes.oneOf(colors),
-    align: PropTypes.oneOf(['right']),
+    right: PropTypes.bool,
+    up: PropTypes.bool,
+    // align: PropTypes.oneOf(['right']),
     hoverable: PropTypes.bool,
   }
 
@@ -83,7 +85,9 @@ export default class Dropdown extends PureComponent {
       children,
       value,
       color,
-      align,
+      // align,
+      right,
+      up,
       hoverable,
       onChange,
       ...allProps
@@ -107,7 +111,9 @@ export default class Dropdown extends PureComponent {
         ref={(node) => { this.htmlElement = node; }}
         className={classnames('dropdown', modifiers.classnames(allProps), className, {
           'is-active': this.state.open,
-          [`is-${align}`]: align,
+          'is-right': right,
+          'is-up': up,
+          // [`is-${align}`]: align,
           'is-hoverable': hoverable,
         })}
       >
