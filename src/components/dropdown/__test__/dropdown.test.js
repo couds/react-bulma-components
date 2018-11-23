@@ -90,7 +90,7 @@ describe('Dropdown component', () => {
           Other
         </Dropdown.Item>
       </Dropdown>);
-      expect(component.toJSON()).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should appear above the dropdown button', () => {
     const component = renderer.create(
