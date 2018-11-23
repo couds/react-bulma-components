@@ -24,6 +24,7 @@ export default class Dropdown extends PureComponent {
     value: PropTypes.any,
     onChange: PropTypes.func,
     color: PropTypes.oneOf(colors),
+    right: PropTypes.bool,
     up: PropTypes.bool,
     align: PropTypes.oneOf(['right']),
     hoverable: PropTypes.bool,
@@ -85,6 +86,7 @@ export default class Dropdown extends PureComponent {
       value,
       color,
       align,
+      right,
       up,
       hoverable,
       onChange,
@@ -103,6 +105,11 @@ export default class Dropdown extends PureComponent {
       } : {});
     });
 
+    if (align === 'right') {
+      // eslint-disable-next-line no-console
+      console.warn('react-bulma-components: "Align" prop will be replaced by "right" prop in future releases. Please update your code to avoid breaking changes.');
+    }
+
     return (
       <div
         {...props}
@@ -110,7 +117,7 @@ export default class Dropdown extends PureComponent {
         className={classnames('dropdown', modifiers.classnames(allProps), className, {
           'is-active': this.state.open,
           'is-up': up,
-          [`is-${align}`]: align,
+          'is-right': right || align === 'right',
           'is-hoverable': hoverable,
         })}
       >

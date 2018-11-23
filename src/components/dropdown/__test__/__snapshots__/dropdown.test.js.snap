@@ -63,8 +63,7 @@ exports[`Dropdown component Should appear above the dropdown button 1`] = `
 
 exports[`Dropdown component Should be right-aligned 1`] = `
 <div
-  className="dropdown"
-  right={true}
+  className="dropdown is-right"
   style={Object {}}
 >
   <div
