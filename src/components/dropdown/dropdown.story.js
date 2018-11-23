@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 import Dropdown from '.';
 import Container from '../container';
 import Section from '../section';
+
+const alignment = {
+  Default: '',
+  right: 'right'
+}
 
 class Wrapper extends React.Component {
   state = {
@@ -84,7 +89,7 @@ storiesOf('Dropdown', module)
       <Container>
         <Section size="large">
           <Dropdown
-            right={boolean('right', false)}
+            align={select('align', alignment)}
             up={boolean('up', false)}>
             <Dropdown.Item value="item" >
               Dropdown item
