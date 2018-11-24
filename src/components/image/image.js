@@ -11,6 +11,7 @@ export default class Image extends PureComponent {
     className: PropTypes.string,
     src: PropTypes.string,
     alt: PropTypes.string,
+    rounded: PropTypes.bool,
     style: PropTypes.shape({}),
     size: PropTypes.oneOf(CONSTANTS.SIZES),
     fallback: PropTypes.string,
@@ -21,6 +22,7 @@ export default class Image extends PureComponent {
     className: '',
     src: '',
     alt: '',
+    rounded: false,
     style: {},
     size: null,
     fallback: 'http//bulma.io/images/placeholders/480x480.png',
@@ -45,6 +47,7 @@ export default class Image extends PureComponent {
       alt,
       size,
       fallback,
+      rounded,
       src,
       ...props
     } = this.props;
@@ -62,7 +65,14 @@ export default class Image extends PureComponent {
           [`is-${s}`]: s,
         })}
       >
-        <img onError={this.onError} src={this.state.src} alt={alt} />
+        <img
+          className={classnames(className, {
+            'is-rounded': rounded,
+          })}
+          onError={this.onError}
+          src={this.state.src}
+          alt={alt}
+        />
       </Element>
     );
   }

@@ -18,6 +18,11 @@ describe('Image component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  it('Should be rounded', () => {
+    const component = renderer.create(<Image rounded src="http://mydomain.com/image" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   it('Should be 32x32', () => {
     const component = renderer.create(<Image size={32} src="http://mydomain.com/image" />);
     expect(component.toJSON()).toMatchSnapshot();

@@ -7,6 +7,21 @@ exports[`Image component Should be 32x32 1`] = `
 >
   <img
     alt=""
+    className=""
+    onError={[Function]}
+    src="http://mydomain.com/image"
+  />
+</figure>
+`;
+
+exports[`Image component Should be rounded 1`] = `
+<figure
+  className="image"
+  style={Object {}}
+>
+  <img
+    alt=""
+    className="is-rounded"
     onError={[Function]}
     src="http://mydomain.com/image"
   />
@@ -20,6 +35,7 @@ exports[`Image component Should be square 1`] = `
 >
   <img
     alt=""
+    className=""
     onError={[Function]}
     src="http://mydomain.com/image"
   />
@@ -35,6 +51,7 @@ exports[`Image component Should have image classname 1`] = `
 >
   <img
     alt=""
+    className=""
     onError={[Function]}
     src="http://mydomain.com/image"
   />

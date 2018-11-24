@@ -73,6 +73,7 @@ exports[`Card component Should have card-image classname 1`] = `
   >
     <img
       alt=""
+      className=""
       onError={[Function]}
       src="http://bulma.io/images/placeholders/1280x960.png"
     />
