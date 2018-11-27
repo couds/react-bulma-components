@@ -66,7 +66,7 @@ export default class Image extends PureComponent {
         })}
       >
         <img
-          className={classnames(className, {
+          className={classnames({
             'is-rounded': rounded,
           })}
           onError={this.onError}
