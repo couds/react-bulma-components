@@ -44,17 +44,18 @@ class Modal extends PureComponent {
     this.portalElement = d.createElement('div');
     this.portalElement.setAttribute('class', 'modal-container');
     d.body.appendChild(this.portalElement);
-    if (closeOnEsc) {
-      d.addEventListener('keydown', this.handleKeydown);
-    }
     // eslint-disable-next-line
-    this.setState({ d });
+    this.setState({ d }, () => {
+      if (closeOnEsc) {
+        d.addEventListener('keydown', this.handleKeydown);
+      }
+    });
   }
 
   componentWillUnmount() {
     const { d } = this.state;
     const { closeOnEsc } = this.props;
-    if (closeOnEsc) {
+    if (closeOnEsc && d) {
       d.removeEventListener('keydown', this.handleKeydown);
     }
     this.portalElement.remove();
@@ -109,8 +110,10 @@ class Modal extends PureComponent {
         <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : null} />
         {children}
         {
-          showClose
-          && <button type="button" onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />}
+          showClose && (
+            <button type="button" onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />
+          )
+        }
       </div>,
       this.portalElement,
     );
