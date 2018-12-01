@@ -40,23 +40,22 @@ class Modal extends PureComponent {
   componentDidMount() {
     const { closeOnEsc } = this.props;
 
-    const d = this.getDocument();
-    this.portalElement = d.createElement('div');
+    const doc = this.getDocument();
+    this.portalElement = doc.createElement('div');
     this.portalElement.setAttribute('class', 'modal-container');
-    d.body.appendChild(this.portalElement);
+    doc.body.appendChild(this.portalElement);
     // eslint-disable-next-line
-    this.setState({ d }, () => {
-      if (closeOnEsc) {
-        d.addEventListener('keydown', this.handleKeydown);
-      }
-    });
+    if (closeOnEsc) {
+      doc.addEventListener('keydown', this.handleKeydown);
+    }
+    this.forceUpdate();
   }
 
   componentWillUnmount() {
-    const { d } = this.state;
+    const doc = this.getDocument();
     const { closeOnEsc } = this.props;
-    if (closeOnEsc && d) {
-      d.removeEventListener('keydown', this.handleKeydown);
+    if (closeOnEsc && doc) {
+      doc.removeEventListener('keydown', this.handleKeydown);
     }
     this.portalElement.remove();
   }
