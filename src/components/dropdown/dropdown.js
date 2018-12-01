@@ -56,7 +56,7 @@ export default class Dropdown extends PureComponent {
 
   close = (evt) => {
     // IDK yet how to test using the ref in enzime
-    if (this.props.hoverable || (evt && evt.path.find(node => node === this.htmlElement))) {
+    if (this.props.hoverable || (evt && this.htmlElement.contains(evt.target))) {
       return;
     }
     this.setState({ open: false });

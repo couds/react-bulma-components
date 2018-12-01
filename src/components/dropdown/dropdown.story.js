@@ -45,7 +45,7 @@ class Wrapper extends React.Component {
 
 storiesOf('Dropdown', module)
   .add('Default', (() => (
-    <Dropdown>
+    <Dropdown value="item">
       <Dropdown.Item value="item" >
         Dropdown item
       </Dropdown.Item>
@@ -65,7 +65,7 @@ storiesOf('Dropdown', module)
     </Dropdown>
   )))
   .add('Hoverable', (() => (
-    <Dropdown hoverable>
+    <Dropdown hoverable value="item">
       <Dropdown.Item value="item" >
         Dropdown item
       </Dropdown.Item>
@@ -91,6 +91,7 @@ storiesOf('Dropdown', module)
           <Dropdown
             align={select('align (deprecated; will be removed in future releases)', alignment)}
             right={boolean('right (will replace "align" prop)', false)}
+            value="item"
             up={boolean('up', false)}>
             <Dropdown.Item value="item" >
               Dropdown item
