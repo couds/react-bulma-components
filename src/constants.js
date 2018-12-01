@@ -5,6 +5,7 @@ export default {
     MOBILE: 'mobile',
     WIDESCREEN: 'widescreen',
     FULLHD: 'fullhd',
+    TOUCH: 'touch',
   },
   COLORS: {
     PRIMARY: 'primary',

@@ -19,6 +19,7 @@ const Column = React.forwardRef(({
   desktop,
   widescreen,
   fullhd,
+  touch,
   ...props
 }, ref) => (
   <Element
@@ -26,11 +27,13 @@ const Column = React.forwardRef(({
     ref={ref}
     className={classNames(className, 'column', {
       [`is-${size}`]: size,
+      [`is-${touch.size}-mobile`]: touch.size,
       [`is-${mobile.size}-mobile`]: mobile.size,
       [`is-${tablet.size}-tablet`]: tablet.size,
       [`is-${desktop.size}-desktop`]: desktop.size,
       [`is-${widescreen.size}-widescreen`]: widescreen.size,
       [`is-${fullhd.size}-fullhd`]: fullhd.size,
+      [`is-offset-${touch.offset}-mobile`]: touch.offset,
       [`is-offset-${mobile.offset}-mobile`]: mobile.offset,
       [`is-offset-${tablet.offset}-tablet`]: tablet.offset,
       [`is-offset-${desktop.offset}-desktop`]: desktop.offset,
@@ -38,6 +41,7 @@ const Column = React.forwardRef(({
       [`is-offset-${fullhd.offset}-fullhd`]: fullhd.offset,
       [`is-offset-${offset}`]: offset,
       'is-narrow': narrow,
+      'is-narrow-touch': touch.narrow,
       'is-narrow-mobile': mobile.narrow,
       'is-narrow-tablet': tablet.narrow,
       'is-narrow-desktop': desktop.narrow,
@@ -55,7 +59,7 @@ Column.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   /**
-   * The size of the column. the maximun size of a row is 12
+   * The size of the column. the maximum size of a row is 12
    */
   size: PropTypes.oneOf(sizes),
   /**
@@ -66,6 +70,14 @@ Column.propTypes = {
    * If you want a column to only take the space it needs, use the narrow modifier. The other column(s) will fill up the remaining space.
    */
   narrow: PropTypes.bool,
+  /**
+   * Size, Offset and Narrow props for Mobile devices (Up to 768px)
+   */
+  touch: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
   /**
    * Size, Offset and Narrow props for Mobile devices (Up to 768px)
    */
