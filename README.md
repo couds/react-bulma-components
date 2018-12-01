@@ -13,10 +13,14 @@ This is an implementation of the [Bulma](http://bulma.io/) Framework Component i
 
 You can find the Storybook stories of all components [here](https://couds.github.io/react-bulma-components/)
 
-### BREAKING CHANGES:
+### V2 Documentation
 
-- Dropped support for react < 16.2
-- Navbar Menu its now a controlled component. there is a prop to show/hide the mobile menu
+- If you are using v2 please see the Readme on [Here](https://couds.github.io/react-bulma-components/)
+
+### BREAKING CHANGES V2 -> V3:
+
+- Now the alias needed to override Bulma variables (and/or use the directly the sass files) it `_variables.sass` instead of `~_variables.sass`, this it to add compatibility with CRA v2.
+- Please check the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
 
 ### To Install
 
@@ -99,7 +103,7 @@ The following components were ported:
 
 ### Override Bulma variables
 
-To override the variables set by Bulma you will need to create a sass file like this one (_variable.sass):
+To override the variables set by Bulma you will need to create a sass file like this one (_variables.sass):
 
 ```sass
 @import '~bulma/sass/utilities/initial-variables.sass'
