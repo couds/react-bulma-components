@@ -159,7 +159,7 @@ exports.onCreateWebpackConfig = ({
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        '_variables.sass': path.resolve(__dirname, 'relative/path/from/webpack/config/to/your/_variables.sass'),
+        './_variables.sass': path.resolve(__dirname, 'relative/path/from/webpack/config/to/your/_variables.sass'),
       },
     },
   })
