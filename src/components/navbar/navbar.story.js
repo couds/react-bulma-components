@@ -4,10 +4,8 @@ import React, { Fragment } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
-import { Field, Control } from 'react-bulma-components/lib/components/form';
-import Button from 'react-bulma-components/lib/components/button';
 import Navbar from 'react-bulma-components/lib/components/navbar';
-import CONSTANTS from '../../constants';
+import Box from '../box';
 
 const colors = {
   Default: '',
@@ -24,6 +22,14 @@ const colors = {
 };
 
 storiesOf('Navbar', module)
+  .addDecorator(story => (
+    <div>
+      {story()}
+      <Box style={{ margin: '15px auto', maxWidth: '75vw' }}>
+        Check the Know tab to see the behavior of this component
+      </Box>
+    </div>
+  ))
   .add('Default', (() => {
     return (
       <Navbar
@@ -36,9 +42,9 @@ storiesOf('Navbar', module)
           <Navbar.Item renderAs="a" href="#">
             <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
           </Navbar.Item>
-          <Navbar.Burger active={open} onClick={() => this.setState(state => { open: !state.open } )} />
+          <Navbar.Burger />
         </Navbar.Brand>
-        <Navbar.Menu  active={open}>
+        <Navbar.Menu >
           <Navbar.Container>
             <Navbar.Item href="#">
                   Second
