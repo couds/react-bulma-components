@@ -13,6 +13,11 @@ This is an implementation of the [Bulma](http://bulma.io/) Framework Component i
 
 You can find the Storybook stories of all components [here](https://couds.github.io/react-bulma-components/)
 
+### V3
+
+- Currently V3 its in beta. You can try it wirh `npm install react-bulma-component@next`.
+- There may be some bugs in this version please be sure to **test** it before using it on you project
+
 ### V2 Documentation
 
 - If you are using v2 please see the Readme on [Here](https://couds.github.io/react-bulma-components/)
