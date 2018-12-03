@@ -124,7 +124,7 @@ It may be necessary, depending on your project setup, to create this file, even 
 After that you will need to add an alias pointing to the file to your webpack configuration
 
 ```
-resolve {
+resolve: {
   // Other resolve props
   alias: {
     // Other aliases
