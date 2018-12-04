@@ -699,7 +699,7 @@ declare const Heading: React.ForwardRefExoticComponent<
 interface HeroModifierProps {
   color?: Color;
   gradient?: boolean;
-  size?: "medium" | "large" | "fullheight";
+  size?: "small" | "medium" | "large" | "fullheight";
 }
 interface HeroProps extends Omit<ElementProps, "color">, HeroModifierProps {
   children?: React.ReactNode;
