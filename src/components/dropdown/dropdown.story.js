@@ -2,6 +2,7 @@ import React from 'react';
 
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import Dropdown from '.';
 import Container from '../container';
@@ -45,7 +46,7 @@ class Wrapper extends React.Component {
 
 storiesOf('Dropdown', module)
   .add('Default', (() => (
-    <Dropdown value="item">
+    <Dropdown onChange={action('select')}>
       <Dropdown.Item value="item" >
         Dropdown item
       </Dropdown.Item>
