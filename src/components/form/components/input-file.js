@@ -80,6 +80,7 @@ export default class InputFile extends PureComponent {
     return (
       <Element
         style={style}
+        {...props}
         className={classnames('file', className, {
           [`is-${size}`]: size,
           [`is-${color}`]: color,
@@ -91,7 +92,6 @@ export default class InputFile extends PureComponent {
       >
         <label className="file-label">
           <input
-            {...props}
             name={name}
             value=""
             type="file"
