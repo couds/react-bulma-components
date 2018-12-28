@@ -1336,7 +1336,7 @@ declare const Section: React.ForwardRefExoticComponent<
 /*** Table ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/table/table.js
 interface TableModifierProps {
-  size?: "fullWidth" | "narrow";
+  size?: "fullwidth" | "narrow";
   striped?: boolean;
   bordered?: boolean;
 }
