@@ -10,7 +10,7 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 ### V3
 
-- Currently V3 its in beta. You can try it wirh `npm install react-bulma-component@next`.
+- Currently V3 its in beta. You can try it wirh `npm install react-bulma-components@next`.
 - There may be some bugs in this version please be sure to **test** it before using it on you project
 
 ### V2 Documentation
