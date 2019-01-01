@@ -31,7 +31,7 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 Currently there are two ways to use this library depending of your needs and configuration:
 
 - **Basic**: You import from the main module the components and include the css your self (No treeshaking by default, no bulma variables override)
-- **Advanced**: You import from the lib folder the components you need, this is the more versatile way but need some extra configuration (See [Advanced Setup](https://github.com/couds/react-bulma-components#advanced-setup) section)
+- **Advanced**: You import from the lib folder the components you need, this is the more versatile way but need some extra configuration (See [Advanced Setup](https://github.com/couds/react-bulma-components#advanced) section)
 
 #### Basic
 
