@@ -54,6 +54,18 @@ This configuration its recomended it you answer yes to one of the following ques
 - I'm worried about the final size of my bundle?
 - I need to override the default Bulma variables?
 
+
+
+In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your mail scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
+
+```scss
+@import "~react-bulma-components/src/index.sass"
+
+// Other styles
+```
+
+You can start using the library like this
+
 ```javascript
 import React from 'react';
 import Button from 'react-bulma-components/lib/components/button';
