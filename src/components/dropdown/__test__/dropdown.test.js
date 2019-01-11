@@ -190,19 +190,22 @@ describe('Dropdown component', () => {
       </Dropdown>);
     expect(component).toMatchSnapshot();
   });
-  it('Should show the label of the dropdown item when one is clicked instead of the passed custom label ', () => {
-    const onChange = jest.fn();
+  it('Should show custom label when active valued is undefined/empty', () => {
     const component = shallow(
-      <Dropdown label="test label" onChange={onChange}>
+      <Dropdown label="test label" value="">
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
       </Dropdown>);
-    expect(component.state('showCustomLabel')).toEqual(true);
     expect(component.find('span').text()).toEqual('test label');
-
-    component.find(Dropdown.Item).simulate('click');
-    expect(component.state('showCustomLabel')).toEqual(false);
+  });
+  it('Should show the label of the dropdown item when value of it is the active value', () => {
+    const component = shallow(
+      <Dropdown label="test label" value="value">
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
     expect(component.find('span').text()).toEqual('Item');
   });
 });

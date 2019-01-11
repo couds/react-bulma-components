@@ -15,7 +15,7 @@ const alignment = {
 
 class Wrapper extends React.Component {
   state = {
-    selected: 'active',
+    selected: '',
   }
   onChange = (selected) => {
     this.setState({ selected });

@@ -46,7 +46,6 @@ export default class Dropdown extends PureComponent {
 
   state = {
     open: false,
-    showCustomLabel: true,
   }
 
   componentDidMount() {
@@ -77,7 +76,6 @@ export default class Dropdown extends PureComponent {
 
   select = value => () => {
     if (this.props.onChange) {
-      this.setState({ showCustomLabel: false });
       this.props.onChange(value);
     }
     this.close();
@@ -97,11 +95,11 @@ export default class Dropdown extends PureComponent {
       onChange,
       ...allProps
     } = this.props;
-    let current = null;
+    let current = label;
     const props = modifiers.clean(allProps);
 
     const childrenArray = React.Children.map(children, (child, i) => {
-      if (child.type === DropdownItem && (i === 0 || child.props.value === value)) {
+      if (child.type === DropdownItem && ((i === 0 && !label) || child.props.value === value)) {
         current = child.props.children;
       }
       return React.cloneElement(child, child.type === DropdownItem ? {
@@ -129,7 +127,7 @@ export default class Dropdown extends PureComponent {
         <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
           <Button color={color}>
             <span>
-              {this.state.showCustomLabel && label ? label : current}
+              {current}
             </span>
             <Icon icon="angle-down" size="small" />
           </Button>
