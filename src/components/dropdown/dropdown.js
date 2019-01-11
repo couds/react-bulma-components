@@ -41,7 +41,7 @@ export default class Dropdown extends PureComponent {
     color: undefined,
     align: undefined,
     hoverable: undefined,
-    label: '',
+    label: undefined,
   }
 
   state = {
