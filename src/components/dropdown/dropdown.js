@@ -28,6 +28,7 @@ export default class Dropdown extends PureComponent {
     up: PropTypes.bool,
     align: PropTypes.oneOf(['right']),
     hoverable: PropTypes.bool,
+    label: PropTypes.string,
   }
 
   static defaultProps = {
@@ -40,10 +41,12 @@ export default class Dropdown extends PureComponent {
     color: undefined,
     align: undefined,
     hoverable: undefined,
+    label: '',
   }
 
   state = {
     open: false,
+    showCustomLabel: true,
   }
 
   componentDidMount() {
@@ -74,6 +77,7 @@ export default class Dropdown extends PureComponent {
 
   select = value => () => {
     if (this.props.onChange) {
+      this.setState({ showCustomLabel: false });
       this.props.onChange(value);
     }
     this.close();
@@ -89,6 +93,7 @@ export default class Dropdown extends PureComponent {
       right,
       up,
       hoverable,
+      label,
       onChange,
       ...allProps
     } = this.props;
@@ -124,7 +129,7 @@ export default class Dropdown extends PureComponent {
         <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
           <Button color={color}>
             <span>
-              {current}
+              {this.state.showCustomLabel && label ? label : current}
             </span>
             <Icon icon="angle-down" size="small" />
           </Button>

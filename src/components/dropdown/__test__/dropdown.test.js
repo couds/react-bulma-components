@@ -172,4 +172,37 @@ describe('Dropdown component', () => {
     component.find(Dropdown.Item).simulate('click', { path: [] });
     expect(component.state('open')).toBe(false);
   });
+  it('Should show custom label passed to the label prop', () => {
+    const component = renderer.create(
+      <Dropdown label="test label">
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component).toMatchSnapshot();
+  });
+  it('Should show the label of the first dropdown item when no custom label is passed', () => {
+    const component = renderer.create(
+      <Dropdown>
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component).toMatchSnapshot();
+  });
+  it('Should show the label of the dropdown item when one is clicked instead of the passed custom label ', () => {
+    const onChange = jest.fn();
+    const component = shallow(
+      <Dropdown label="test label" onChange={onChange}>
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component.state('showCustomLabel')).toEqual(true);
+    expect(component.find('span').text()).toEqual('test label');
+
+    component.find(Dropdown.Item).simulate('click');
+    expect(component.state('showCustomLabel')).toEqual(false);
+    expect(component.find('span').text()).toEqual('Item');
+  });
 });
