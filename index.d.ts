@@ -587,7 +587,8 @@ interface InputProps
     | "search"
     | "color"
     | "date"
-    | "time";
+    | "time"
+    | "datetime-local";
 }
 declare const Input: React.ForwardRefExoticComponent<
   React.PropsWithoutRef<InputProps> & React.RefAttributes<"input">
