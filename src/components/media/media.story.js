@@ -19,7 +19,7 @@ storiesOf('Media', module)
       <Box>
         <Media>
           <Media.Item renderAs="figure" position="left">
-            <Image renderAs="p" size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+            <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </Media.Item>
           <Media.Item>
             <Content>
@@ -59,7 +59,7 @@ storiesOf('Media', module)
       <Box>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} renderAs="p" />
+            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Content>
@@ -74,7 +74,7 @@ storiesOf('Media', module)
 
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/128x128.png" size={48} renderAs="p" />
+                <Image src="http://bulma.io/images/placeholders/128x128.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -99,7 +99,7 @@ storiesOf('Media', module)
 
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/96x96.png" size={48} renderAs="p" />
+                <Image src="http://bulma.io/images/placeholders/96x96.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -117,7 +117,7 @@ storiesOf('Media', module)
         </Media>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} renderAs="p" />
+            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Field>
