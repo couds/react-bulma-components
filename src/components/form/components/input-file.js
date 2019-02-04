@@ -1,10 +1,9 @@
-import React, { PureComponent } from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import Element from '../../element';
-import modifiers from '../../../modifiers';
-
+import React, { PureComponent } from 'react';
 import CONSTANTS from '../../../constants';
+import modifiers from '../../../modifiers';
+import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -25,8 +24,8 @@ export default class InputFile extends PureComponent {
      */
     name: PropTypes.string,
     label: PropTypes.string,
-    icon: PropTypes.element,
-  }
+    icon: PropTypes.element
+  };
 
   static defaultProps = {
     ...modifiers.defaultProps,
@@ -41,22 +40,22 @@ export default class InputFile extends PureComponent {
     boxed: undefined,
     name: undefined,
     icon: undefined,
-    label: 'Choose a file...',
-  }
+    label: 'Choose a file...'
+  };
 
   state = {
-    filename: undefined,
-  }
+    filename: undefined
+  };
 
-  select = (event) => {
+  select = event => {
     const { files } = event.target;
     this.setState({
-      filename: files.length > 0 ? files[0].name : undefined,
+      filename: files.length > 0 ? files[0].name : undefined
     });
     if (this.props.onChange) {
       this.props.onChange(event);
     }
-  }
+  };
 
   render() {
     const {
@@ -81,42 +80,22 @@ export default class InputFile extends PureComponent {
       <Element
         style={style}
         {...props}
-        className={classnames('file', className, {
+        className={cn('file', className, {
           [`is-${size}`]: size,
           [`is-${color}`]: color,
           'has-name': !fileName,
           'is-right': right,
           'is-boxed': boxed,
-          'is-fullwidth': fullwidth,
+          'is-fullwidth': fullwidth
         })}
       >
         <label className="file-label">
-          <input
-            name={name}
-            value=""
-            type="file"
-            className="file-input"
-            onChange={this.select}
-          />
+          <input name={name} value="" type="file" className="file-input" onChange={this.select} />
           <span className="file-cta">
-            {
-              icon && (
-                <span className="file-icon">
-                  {icon}
-                </span>
-              )
-            }
-            <span className="file-label">
-              {label}
-            </span>
+            {icon && <span className="file-icon">{icon}</span>}
+            <span className="file-label">{label}</span>
           </span>
-          {fileName && filename
-            && (
-            <span className="file-name">
-              {filename}
-            </span>
-            )
-          }
+          {fileName && filename && <span className="file-name">{filename}</span>}
         </label>
       </Element>
     );

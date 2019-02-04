@@ -5,7 +5,7 @@ export default {
     MOBILE: 'mobile',
     WIDESCREEN: 'widescreen',
     FULLHD: 'fullhd',
-    TOUCH: 'touch',
+    TOUCH: 'touch'
   },
   COLORS: {
     PRIMARY: 'primary',
@@ -17,6 +17,6 @@ export default {
     DARK: 'dark',
     WHITE: 'white',
     BLACK: 'black',
-    LINK: 'link',
-  },
+    LINK: 'link'
+  }
 };

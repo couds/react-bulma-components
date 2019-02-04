@@ -1,26 +1,23 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const CardHeaderTitle = React.forwardRef(({
-  className,
-  ...props
-}, ref) => (
-  <Element {...props} ref={ref} className={classnames('card-header-title', className)} />
+const CardHeaderTitle = React.forwardRef(({ className, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('card-header-title', className)} />
 ));
 
 CardHeaderTitle.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 CardHeaderTitle.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default CardHeaderTitle;

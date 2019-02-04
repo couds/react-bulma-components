@@ -1,7 +1,7 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
 import { JSDOM } from 'jsdom';
+import React from 'react';
 import { renderToString } from 'react-dom/server';
+import renderer from 'react-test-renderer';
 import Navbar, { getHtmlClasses } from '..';
 
 describe('Navbar component', () => {
@@ -9,12 +9,12 @@ describe('Navbar component', () => {
   let component;
   beforeEach(() => {
     // eslint-disable-next-line
-    window = (new JSDOM('<!doctype html><html><body><div id="app-root"></div></body></html>')).window;
+    window = new JSDOM('<!doctype html><html><body><div id="app-root"></div></body></html>').window;
 
     global.window = window;
     global.document = window.document;
     global.navigator = {
-      userAgent: 'node.js',
+      userAgent: 'node.js'
     };
   });
   afterEach(() => {
@@ -41,28 +41,21 @@ describe('Navbar component', () => {
           </Navbar.Item>
           <Navbar.Burger className="trigger-menu" />
         </Navbar.Brand>
-        <div>
-TEST
-        </div>
+        <div>TEST</div>
         <Navbar.Menu>
           <Navbar.Container>
             <Navbar.Item dropdown hoverable>
-              <Navbar.Link>
-                Docs
-              </Navbar.Link>
+              <Navbar.Link>Docs</Navbar.Link>
               <Navbar.Dropdown boxed>
-                <Navbar.Item href="#">
-                  Home
-                </Navbar.Item>
+                <Navbar.Item href="#">Home</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item href="#">
-                  Home
-                </Navbar.Item>
+                <Navbar.Item href="#">Home</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Container>
         </Navbar.Menu>
-      </Navbar>);
+      </Navbar>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat Bulma class with classes in props', () => {

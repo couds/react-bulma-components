@@ -1,19 +1,14 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const FieldLabel = ({
-  children,
-  className,
-  size,
-  ...props
-}) => (
+const FieldLabel = ({ children, className, size, ...props }) => (
   <Element
     {...props}
-    className={classnames('field-label', className, {
-      [`is-${size}`]: size,
+    className={cn('field-label', className, {
+      [`is-${size}`]: size
     })}
   >
     {children}
@@ -26,7 +21,7 @@ FieldLabel.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large'])
 };
 
 FieldLabel.defaultProps = {
@@ -35,7 +30,7 @@ FieldLabel.defaultProps = {
   className: '',
   style: {},
   renderAs: 'div',
-  size: null,
+  size: null
 };
 
 export default FieldLabel;

@@ -1,21 +1,16 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 
-const Label = React.forwardRef(({
-  children,
-  className,
-  size,
-  ...allProps
-}, ref) => {
+const Label = React.forwardRef(({ children, className, size, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <label
       {...props}
       ref={ref}
-      className={classnames('label', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
+      className={cn('label', modifiers.classnames(allProps), className, {
+        [`is-${size}`]: size
       })}
     >
       {children}
@@ -29,7 +24,7 @@ Label.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   htmlFor: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
 Label.defaultProps = {
@@ -38,7 +33,7 @@ Label.defaultProps = {
   className: '',
   style: {},
   size: null,
-  htmlFor: null,
+  htmlFor: null
 };
 
 export default Label;

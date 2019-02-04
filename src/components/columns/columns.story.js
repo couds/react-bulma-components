@@ -1,14 +1,12 @@
-import React from 'react';
-
 import { storiesOf } from '@storybook/react';
-
-import Columns from 'react-bulma-components/lib/components/columns';
+import React from 'react';
 import Box from 'react-bulma-components/lib/components/box';
+import Columns from 'react-bulma-components/lib/components/columns';
 import Heading from 'react-bulma-components/lib/components/heading';
 import CONSTANTS from './constants';
 
 storiesOf('Columns', module)
-  .add('Basic', (() => (
+  .add('Basic', () => (
     <Columns>
       <Columns.Column>
         <p className="bd-notification is-success">First Column</p>
@@ -23,24 +21,22 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning">Fourth Column</p>
       </Columns.Column>
     </Columns>
-  )))
-  .add('Sizes by name', (() => (
+  ))
+  .add('Sizes by name', () => (
     <div>
       {Object.keys(CONSTANTS.SIZES).map(size => (
         <Columns key={size}>
           <Columns.Column size={CONSTANTS.SIZES[size]}>
             <p className="bd-notification is-success">{CONSTANTS.SIZES[size]}</p>
           </Columns.Column>
-          <Columns.Column >
+          <Columns.Column>
             <p className="bd-notification is-info">Auto</p>
           </Columns.Column>
         </Columns>
-      ))
-
-      }
+      ))}
     </div>
-  )))
-  .add('Sizes by 12 Columns', (() => (
+  ))
+  .add('Sizes by 12 Columns', () => (
     <div>
       <Columns>
         <Columns.Column size={1}>
@@ -304,48 +300,69 @@ storiesOf('Columns', module)
         </Columns.Column>
       </Columns>
     </div>
-  )))
-  .add('With Offset', (() => (
+  ))
+  .add('With Offset', () => (
     <div>
       <Columns mobile>
         <Columns.Column size="half" offset="one-quarter">
-          <p className="bd-notification is-info">size half<br />offset one-quarter</p>
+          <p className="bd-notification is-info">
+            size half
+            <br />
+            offset one-quarter
+          </p>
         </Columns.Column>
       </Columns>
 
       <Columns mobile>
         <Columns.Column size={4} offset={8}>
-          <p className="bd-notification is-info">size 4<br />offset 8</p>
+          <p className="bd-notification is-info">
+            size 4<br />
+            offset 8
+          </p>
         </Columns.Column>
       </Columns>
 
       <Columns mobile>
         <Columns.Column size={11} offset={1}>
-          <p className="bd-notification is-info">size 11<br />offset 1</p>
+          <p className="bd-notification is-info">
+            size 11
+            <br />
+            offset 1
+          </p>
         </Columns.Column>
       </Columns>
     </div>
-  )))
-  .add('Narrow', (() => (
+  ))
+  .add('Narrow', () => (
     <Columns>
       <Columns.Column narrow>
         <Box style={{ width: 200 }}>
-          <Heading size={5} renderAs="p">Narrow column</Heading>
-          <Heading subtitle renderAs="p">This column is only 200px wide.</Heading>
+          <Heading size={5} renderAs="p">
+            Narrow column
+          </Heading>
+          <Heading subtitle renderAs="p">
+            This column is only 200px wide.
+          </Heading>
         </Box>
       </Columns.Column>
       <Columns.Column>
         <Box>
-          <Heading size={5} renderAs="p">Flexible column</Heading>
-          <Heading subtitle renderAs="p">This column will take up the remaining space available.</Heading>
+          <Heading size={5} renderAs="p">
+            Flexible column
+          </Heading>
+          <Heading subtitle renderAs="p">
+            This column will take up the remaining space available.
+          </Heading>
         </Box>
       </Columns.Column>
     </Columns>
-  )))
-  .add('Responsive', (() => (
+  ))
+  .add('Responsive', () => (
     <div>
       <Box>
-        <Heading size={5} renderAs="p">Mobile</Heading>
+        <Heading size={5} renderAs="p">
+          Mobile
+        </Heading>
         <Columns breakpoint="mobile">
           <Columns.Column>
             <p className="bd-notification is-success">First Column</p>
@@ -362,7 +379,9 @@ storiesOf('Columns', module)
         </Columns>
       </Box>
       <Box>
-        <Heading renderAs="p" size={5}>Tablet</Heading>
+        <Heading renderAs="p" size={5}>
+          Tablet
+        </Heading>
         <Columns breakpoint="tablet">
           <Columns.Column>
             <p className="bd-notification is-success">First Column</p>
@@ -379,7 +398,9 @@ storiesOf('Columns', module)
         </Columns>
       </Box>
       <Box>
-        <Heading renderAs="p" size={5}>Desktop</Heading>
+        <Heading renderAs="p" size={5}>
+          Desktop
+        </Heading>
         <Columns breakpoint="desktop">
           <Columns.Column>
             <p className="bd-notification is-success">First Column</p>
@@ -396,32 +417,32 @@ storiesOf('Columns', module)
         </Columns>
       </Box>
     </div>
-  )))
-  .add('Different column size per breakpoint', (() => (
+  ))
+  .add('Different column size per breakpoint', () => (
     <Columns breakpoint="mobile">
       <Columns.Column
         mobile={{
-          size: 'three-quarters',
+          size: 'three-quarters'
         }}
         tablet={{
-          size: 'two-thirds',
+          size: 'two-thirds'
         }}
         desktop={{
-          size: 'half',
+          size: 'half'
         }}
         widescreen={{
-          size: 'one-third',
+          size: 'one-third'
         }}
         fullhd={{
-          size: 'one-quarter',
+          size: 'one-quarter'
         }}
       >
         <p className="bd-notification is-success">
-          is-three-quarters-mobile<br />
-          is-two-thirds-tablet<br />
-          is-half-desktop
-          is-one-third-widescreen
-          is-one-quarter-fullhd
+          is-three-quarters-mobile
+          <br />
+          is-two-thirds-tablet
+          <br />
+          is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
         </p>
       </Columns.Column>
       <Columns.Column className="column">
@@ -431,8 +452,8 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning">1</p>
       </Columns.Column>
     </Columns>
-  )))
-  .add('Nested', (() => (
+  ))
+  .add('Nested', () => (
     <Columns>
       <Columns.Column size="half">
         <p className="bd-notification is-success">First Column</p>
@@ -460,8 +481,8 @@ storiesOf('Columns', module)
         </Columns>
       </Columns.Column>
     </Columns>
-  )))
-  .add('gapless columns', (() => (
+  ))
+  .add('gapless columns', () => (
     <Columns gapless>
       <Columns.Column>
         <p className="bd-notification is-success"> First Column</p>
@@ -473,4 +494,4 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning"> Last Column</p>
       </Columns.Column>
     </Columns>
-  )));
+  ));

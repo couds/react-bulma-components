@@ -1,19 +1,19 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
+import CONSTANTS from '../../constants';
+import modifiers from '../../modifiers';
 import canUseDOM from '../../services/can-use-dom';
+import Element from '../element';
 import Brand from './components/brand';
 import Burger from './components/burger';
-import Menu from './components/menu';
-import Item from './components/item';
-import Dropdown from './components/dropdown';
-import Divider from './components/divider';
-import Link from './components/link';
 import Container from './components/container';
-import CONSTANTS from '../../constants';
+import Divider from './components/divider';
+import Dropdown from './components/dropdown';
+import Item from './components/item';
+import Link from './components/link';
+import Menu from './components/menu';
 import { ShowContext } from './context';
-import Element from '../element';
-import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -32,8 +32,8 @@ class Navbar extends React.PureComponent {
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     fixed: PropTypes.oneOf(['top', 'bottom']),
     color: PropTypes.oneOf(colors),
-    active: PropTypes.bool,
-  }
+    active: PropTypes.bool
+  };
 
   static defaultProps = {
     ...modifiers.defaultProps,
@@ -45,10 +45,10 @@ class Navbar extends React.PureComponent {
     transparent: false,
     active: false,
     fixed: null,
-    color: null,
-  }
+    color: null
+  };
 
-  state = {}
+  state = {};
 
   componentWillUnmount() {
     const { fixed } = this.props;
@@ -70,16 +70,7 @@ class Navbar extends React.PureComponent {
   }
 
   render() {
-    const {
-      innerRef,
-      children,
-      className,
-      fixed,
-      transparent,
-      color,
-      active,
-      ...props
-    } = this.props;
+    const { innerRef, children, className, fixed, transparent, color, active, ...props } = this.props;
 
     return (
       <ShowContext.Provider value={active}>
@@ -87,10 +78,10 @@ class Navbar extends React.PureComponent {
           {...props}
           ref={innerRef}
           role="navigation"
-          className={classnames('navbar', modifiers.classnames(props), className, {
+          className={cn('navbar', modifiers.classnames(props), className, {
             'is-transparent': transparent,
             [`is-fixed-${fixed}`]: fixed,
-            [`is-${color}`]: color,
+            [`is-${color}`]: color
           })}
         >
           {children}

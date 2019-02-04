@@ -1,25 +1,15 @@
-import React from 'react';
-import classnames from 'classnames';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-
-import CardImage from './components/image';
-import CardContent from './components/content';
-import CardHeader from './components/header';
-import CardFooter from './components/footer';
+import React from 'react';
 import modifiers from '../../modifiers';
-
 import Element from '../element';
+import CardContent from './components/content';
+import CardFooter from './components/footer';
+import CardHeader from './components/header';
+import CardImage from './components/image';
 
-const Card = React.forwardRef(({
-  className,
-  children,
-  ...props
-}, ref) => (
-  <Element
-    ref={ref}
-    className={classnames('card', className)}
-    {...props}
-  >
+const Card = React.forwardRef(({ className, children, ...props }, ref) => (
+  <Element ref={ref} className={cn('card', className)} {...props}>
     {children}
   </Element>
 ));
@@ -37,7 +27,7 @@ Card.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Card.defaultProps = {
@@ -45,7 +35,7 @@ Card.defaultProps = {
   className: '',
   children: null,
   style: {},
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default Card;

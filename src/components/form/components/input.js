@@ -1,8 +1,8 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+import React from 'react';
 import CONSTANTS from '../../../constants';
+import modifiers from '../../../modifiers';
 import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
@@ -34,10 +34,10 @@ class Input extends React.PureComponent {
         placeholder={placeholder}
         readOnly={readOnly || isStatic}
         disabled={disabled}
-        className={classnames('input', className, {
+        className={cn('input', className, {
           'is-static': isStatic,
           [`is-${size}`]: size,
-          [`is-${color}`]: color,
+          [`is-${color}`]: color
         })}
       />
     );
@@ -48,7 +48,18 @@ Input.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  type: PropTypes.oneOf(['text', 'email', 'tel', 'password', 'number', 'search', 'color', 'date', 'time', 'datetime-local']),
+  type: PropTypes.oneOf([
+    'text',
+    'email',
+    'tel',
+    'password',
+    'number',
+    'search',
+    'color',
+    'date',
+    'time',
+    'datetime-local'
+  ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
@@ -59,7 +70,7 @@ Input.propTypes = {
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
-  name: PropTypes.string,
+  name: PropTypes.string
 };
 
 Input.defaultProps = {
@@ -74,7 +85,7 @@ Input.defaultProps = {
   isStatic: false,
   disabled: false,
   placeholder: '',
-  name: null,
+  name: null
 };
 
 export default React.forwardRef((props, ref) => <Input innerRef={ref} {...props} />);

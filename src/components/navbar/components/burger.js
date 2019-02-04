@@ -1,28 +1,22 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import { ShowContext } from '../context';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
+import { ShowContext } from '../context';
 
-const NavbarBurger = React.forwardRef(({
-  style,
-  className,
-  ...allProps
-}, ref) => {
+const NavbarBurger = React.forwardRef(({ style, className, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <ShowContext.Consumer>
-      {
-      active => (
+      {active => (
         <Element
           ref={ref}
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
-          className={classnames('navbar-burger', modifiers.classnames(allProps), className, {
-            'is-active': active,
+          className={cn('navbar-burger', modifiers.classnames(allProps), className, {
+            'is-active': active
           })}
           {...props}
         >
@@ -30,8 +24,7 @@ const NavbarBurger = React.forwardRef(({
           <span />
           <span />
         </Element>
-      )
-    }
+      )}
     </ShowContext.Consumer>
   );
 });
@@ -40,14 +33,14 @@ NavbarBurger.propTypes = {
   ...modifiers.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 NavbarBurger.defaultProps = {
   ...modifiers.defaultProps,
   style: {},
   className: '',
-  onClick: () => {},
+  onClick: () => {}
 };
 
 export default NavbarBurger;

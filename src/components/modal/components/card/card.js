@@ -1,29 +1,18 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import ModalCardHead from './head';
-import ModalCardBody from './body';
-import ModalCardFoot from './foot';
-import ModalCardTitle from './title';
+import React from 'react';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
+import ModalCardBody from './body';
+import ModalCardFoot from './foot';
+import ModalCardHead from './head';
+import ModalCardTitle from './title';
 
-const ModalCard = React.forwardRef(({
-  className,
-  onClose,
-  children,
-  ...props
-}, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={classnames('modal-card', className)}
-  >
+const ModalCard = React.forwardRef(({ className, onClose, children, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('modal-card', className)}>
     {children}
   </Element>
 ));
-
 
 ModalCard.Head = ModalCardHead;
 
@@ -38,7 +27,7 @@ ModalCard.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  onClose: PropTypes.func,
+  onClose: PropTypes.func
 };
 
 ModalCard.defaultProps = {
@@ -46,7 +35,7 @@ ModalCard.defaultProps = {
   children: null,
   className: '',
   style: {},
-  onClose: null,
+  onClose: null
 };
 
 export default ModalCard;

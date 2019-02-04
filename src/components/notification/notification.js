@@ -1,25 +1,23 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
+import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Notification = React.forwardRef(({
-  children,
-  className,
-  color,
-  ...props
-}, ref) => (
+const Notification = React.forwardRef(({ children, className, color, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('notification', {
-      [`is-${color}`]: color,
-    }, className)}
+    className={cn(
+      'notification',
+      {
+        [`is-${color}`]: color
+      },
+      className
+    )}
   >
     {children}
   </Element>
@@ -31,7 +29,7 @@ Notification.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOf(colors)
 };
 
 Notification.defaultProps = {
@@ -40,7 +38,7 @@ Notification.defaultProps = {
   className: '',
   style: {},
   renderAs: 'div',
-  color: null,
+  color: null
 };
 
 export default Notification;

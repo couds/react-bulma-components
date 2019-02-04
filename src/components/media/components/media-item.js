@@ -1,22 +1,17 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const MediaItem = React.forwardRef(({
-  children,
-  className,
-  position,
-  ...props
-}, ref) => {
+const MediaItem = React.forwardRef(({ children, className, position, ...props }, ref) => {
   const p = position === 'center' ? 'content' : position;
   return (
     <Element
       {...props}
       ref={ref}
-      className={classnames(className, {
-        [`media-${p}`]: p,
+      className={cn(className, {
+        [`media-${p}`]: p
       })}
     >
       {children}
@@ -30,7 +25,7 @@ MediaItem.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  position: PropTypes.oneOf(['center', 'right', 'left']),
+  position: PropTypes.oneOf(['center', 'right', 'left'])
 };
 
 MediaItem.defaultProps = {
@@ -39,7 +34,7 @@ MediaItem.defaultProps = {
   className: '',
   style: {},
   renderAs: 'div',
-  position: 'center',
+  position: 'center'
 };
 
 export default MediaItem;

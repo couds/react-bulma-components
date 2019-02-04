@@ -7,14 +7,11 @@ describe('Container component', () => {
     const component = renderer.create(
       <Container>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Container>);
+      </Container>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
@@ -26,30 +23,27 @@ Container
           widescreen: {
             display: {
               value: 'block',
-              only: true,
-            },
+              only: true
+            }
           },
           touch: {
             display: {
-              value: 'flex',
-            },
+              value: 'flex'
+            }
           },
           desktop: {
             hide: {
-              value: true,
-            },
-          },
+              value: true
+            }
+          }
         }}
       >
         <p className="bd-notification is-success">
-          <p>
-            Default
-          </p>
-          <p>
-            Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Container>);
+      </Container>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

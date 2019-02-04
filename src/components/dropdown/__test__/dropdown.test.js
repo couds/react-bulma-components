@@ -1,13 +1,13 @@
+import { mount, shallow } from 'enzyme';
+import { JSDOM } from 'jsdom';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow, mount } from 'enzyme';
-import { JSDOM } from 'jsdom';
 import Dropdown from '..';
 
 describe('Dropdown component', () => {
   beforeEach(() => {
     // eslint-disable-next-line
-    global.window = (new JSDOM('<body><div id="app-root"></div></body>')).window;
+    global.window = new JSDOM('<body><div id="app-root"></div></body>').window;
   });
   it('Should Exist', () => {
     expect(Dropdown).toMatchSnapshot();
@@ -15,10 +15,9 @@ describe('Dropdown component', () => {
   it('Should have dropdown classname', () => {
     const component = renderer.create(
       <Dropdown value="value" onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should add listener do document on mount', () => {
@@ -26,13 +25,11 @@ describe('Dropdown component', () => {
     global.window.document.addEventListener = jest.fn();
     const component = mount(
       <Dropdown value="value" onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
+        <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>,
       {
-        attachTo: app,
-      },
+        attachTo: app
+      }
     );
     expect(window.document.addEventListener).toHaveBeenCalled();
     component.unmount();
@@ -40,81 +37,64 @@ describe('Dropdown component', () => {
   it('Should concat Bulma class with classes in props', () => {
     const component = renderer.create(
       <Dropdown value="value" className="other-class" onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
     const component = renderer.create(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have divider', () => {
     const component = renderer.create(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
+        <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item value="other">
-          Other
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="other">Other</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be right-aligned when using "right" prop', () => {
     const component = renderer.create(
       <Dropdown right>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-        <Dropdown.Item value="other">
-          Other
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+        <Dropdown.Item value="other">Other</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('should also be right-aligned when using "align" prop', () => {
     const component = renderer.create(
       <Dropdown align="right">
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-        <Dropdown.Item value="other">
-          Other
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+        <Dropdown.Item value="other">Other</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should appear above the dropdown button', () => {
     const component = renderer.create(
       <Dropdown up>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-        <Dropdown.Item value="other">
-          Other
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+        <Dropdown.Item value="other">Other</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should open the Dropdown', () => {
     const component = shallow(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
+        <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item value="other">
-          Other
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="other">Other</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.state('open')).toBe(false);
     component.find('.dropdown-trigger').simulate('click');
     expect(component.state('open')).toBe(true);
@@ -123,14 +103,11 @@ describe('Dropdown component', () => {
     const preventDefault = jest.fn();
     const component = shallow(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
+        <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item value="other">
-          Other
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="other">Other</Dropdown.Item>
+      </Dropdown>
+    );
     expect(component.state('open')).toBe(false);
     component.find('.dropdown-trigger').simulate('click', { preventDefault });
     expect(preventDefault).toHaveBeenCalled();
@@ -140,10 +117,9 @@ describe('Dropdown component', () => {
     const onChange = jest.fn();
     const component = shallow(
       <Dropdown value="" hoverable style={{ width: 400 }} onChange={onChange}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>
+    );
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click');
     expect(onChange).toHaveBeenCalledWith('value');
@@ -152,10 +128,9 @@ describe('Dropdown component', () => {
   it('Should close on select', () => {
     const component = shallow(
       <Dropdown>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>
+    );
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click');
     expect(component.state('open')).toBe(false);
@@ -164,10 +139,9 @@ describe('Dropdown component', () => {
     const onChange = jest.fn();
     const component = shallow(
       <Dropdown value="" style={{ width: 400 }} onChange={onChange}>
-        <Dropdown.Item value="value">
-          Item
-        </Dropdown.Item>
-      </Dropdown>);
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>
+    );
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click', { path: [] });
     expect(component.state('open')).toBe(false);

@@ -1,42 +1,32 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import modifiers from '../../../modifiers';
-
+import React from 'react';
 import CONSTANTS from '../../../constants';
+import modifiers from '../../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Textarea = React.forwardRef(({
-  className,
-  size,
-  color,
-  readOnly,
-  disabled,
-  placeholder,
-  rows,
-  value,
-  name,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <textarea
-      name={name}
-      {...props}
-      ref={ref}
-      value={value}
-      rows={rows}
-      placeholder={placeholder}
-      readOnly={readOnly}
-      disabled={disabled}
-      className={classnames('textarea', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-      })}
-    />
-  );
-});
+const Textarea = React.forwardRef(
+  ({ className, size, color, readOnly, disabled, placeholder, rows, value, name, ...allProps }, ref) => {
+    const props = modifiers.clean(allProps);
+    return (
+      <textarea
+        name={name}
+        {...props}
+        ref={ref}
+        value={value}
+        rows={rows}
+        placeholder={placeholder}
+        readOnly={readOnly}
+        disabled={disabled}
+        className={cn('textarea', modifiers.classnames(allProps), className, {
+          [`is-${size}`]: size,
+          [`is-${color}`]: color
+        })}
+      />
+    );
+  }
+);
 
 Textarea.propTypes = {
   ...modifiers.propTypes,
@@ -52,7 +42,7 @@ Textarea.propTypes = {
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
-  name: PropTypes.string,
+  name: PropTypes.string
 };
 
 Textarea.defaultProps = {
@@ -66,7 +56,7 @@ Textarea.defaultProps = {
   placeholder: '',
   rows: 4,
   value: '',
-  name: '',
+  name: ''
 };
 
 export default Textarea;

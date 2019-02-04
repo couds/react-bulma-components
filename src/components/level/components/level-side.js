@@ -1,20 +1,15 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const LevelSide = React.forwardRef(({
-  children,
-  className,
-  align,
-  ...props
-}, ref) => (
+const LevelSide = React.forwardRef(({ children, className, align, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames(className, {
-      [`level-${align}`]: align,
+    className={cn(className, {
+      [`level-${align}`]: align
     })}
   >
     {children}
@@ -26,7 +21,7 @@ LevelSide.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.string,
+  align: PropTypes.string
 };
 
 LevelSide.defaultProps = {
@@ -35,7 +30,7 @@ LevelSide.defaultProps = {
   className: '',
   style: {},
   renderAs: 'div',
-  align: 'left',
+  align: 'left'
 };
 
 export default LevelSide;

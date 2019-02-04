@@ -1,13 +1,12 @@
+import cn from 'classnames';
+import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import ModalContent from './components/content';
 import ModalCard from './components/card';
+import ModalContent from './components/content';
 
 const KEYCODES = {
-  ESCAPE: 27,
+  ESCAPE: 27
 };
 
 class Modal extends PureComponent {
@@ -22,8 +21,8 @@ class Modal extends PureComponent {
     showClose: PropTypes.bool,
     children: PropTypes.node.isRequired,
     document: PropTypes.object,
-    className: PropTypes.string,
-  }
+    className: PropTypes.string
+  };
 
   static defaultProps = {
     innerRef: undefined,
@@ -32,8 +31,8 @@ class Modal extends PureComponent {
     closeOnBlur: false,
     className: '',
     // Expose mount point for testing
-    document: null,
-  }
+    document: null
+  };
 
   state = {};
 
@@ -70,13 +69,13 @@ class Modal extends PureComponent {
     }
 
     return null;
-  }
+  };
 
-  handleKeydown = (e) => {
+  handleKeydown = e => {
     if (e.keyCode === KEYCODES.ESCAPE && this.props.show) {
       this.props.onClose();
     }
-  }
+  };
 
   render() {
     const { innerRef, closeOnBlur, show, className } = this.props;
@@ -86,7 +85,10 @@ class Modal extends PureComponent {
     let { children } = this.props;
     let isCard;
     try {
-      isCard = React.Children.only(children).type.toString().indexOf('ModalCard') !== -1;
+      isCard =
+        React.Children.only(children)
+          .type.toString()
+          .indexOf('ModalCard') !== -1;
     } catch (e) {
       isCard = false;
     }
@@ -95,26 +97,24 @@ class Modal extends PureComponent {
 
     if (isCard) {
       children = React.cloneElement(children, {
-        onClose: this.props.onClose,
+        onClose: this.props.onClose
       });
     }
 
     return ReactDOM.createPortal(
       <div
         ref={innerRef}
-        className={classnames('modal', className, {
-          'is-active': show,
+        className={cn('modal', className, {
+          'is-active': show
         })}
       >
         <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : null} />
         {children}
-        {
-          showClose && (
-            <button type="button" onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />
-          )
-        }
+        {showClose && (
+          <button type="button" onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />
+        )}
       </div>,
-      this.portalElement,
+      this.portalElement
     );
   }
 }

@@ -1,28 +1,22 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import CONSTANTS from '../../constants';
-
-import MessageBody from './components/body';
-import MessageHeader from './components/header';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
+import MessageBody from './components/body';
+import MessageHeader from './components/header';
+
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Message = React.forwardRef(({
-  children,
-  className,
-  color,
-  size,
-  ...props
-}, ref) => (
+const Message = React.forwardRef(({ children, className, color, size, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('message', className, {
+    className={cn('message', className, {
       [`is-${color}`]: color,
-      [`is-${size}`]: size,
+      [`is-${size}`]: size
     })}
   >
     {children}
@@ -38,12 +32,9 @@ Message.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOf(colors)
 };
 
 Message.defaultProps = {
@@ -53,7 +44,7 @@ Message.defaultProps = {
   style: {},
   renderAs: 'article',
   color: null,
-  size: null,
+  size: null
 };
 
 export default Message;

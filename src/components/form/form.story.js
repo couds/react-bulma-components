@@ -1,25 +1,35 @@
-import React, { PureComponent } from 'react';
-
 import { storiesOf } from '@storybook/react';
-
-import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help, InputFile } from 'react-bulma-components/lib/components/form';
+import React, { PureComponent } from 'react';
 import Button from 'react-bulma-components/lib/components/button';
+
+import {
+  Checkbox,
+  Control,
+  Field,
+  Help,
+  Input,
+  InputFile,
+  Label,
+  Radio,
+  Select,
+  Textarea
+} from 'react-bulma-components/lib/components/form';
 import Icon from 'react-bulma-components/lib/components/icon';
 
 /* eslint-disable react/no-multi-comp */
-const HoC = (Component) => {
+const HoC = Component => {
   class Controlled extends React.Component {
-    static displayName = 'Select'
+    static displayName = 'Select';
 
     state = {
-      value: '',
-    }
+      value: ''
+    };
 
-    onChange = (evt) => {
+    onChange = evt => {
       this.setState({
-        value: evt.target.value,
+        value: evt.target.value
       });
-    }
+    };
 
     render() {
       return <Component onChange={this.onChange} value={this.state.value} {...this.props} />;
@@ -28,18 +38,18 @@ const HoC = (Component) => {
   return Controlled;
 };
 
-const HoCCheckbox = (Component) => {
+const HoCCheckbox = Component => {
   class Controlled extends React.Component {
-    static displayName = 'Checkbox'
+    static displayName = 'Checkbox';
     state = {
-      checked: false,
-    }
+      checked: false
+    };
 
-    onChange = (evt) => {
+    onChange = evt => {
       this.setState({
-        checked: evt.target.checked,
+        checked: evt.target.checked
       });
-    }
+    };
 
     render() {
       return <Component onChange={this.onChange} checked={this.state.checked} {...this.props} />;
@@ -50,14 +60,14 @@ const HoCCheckbox = (Component) => {
 
 class RadioGroup extends React.Component {
   state = {
-    selected: null,
-  }
+    selected: null
+  };
 
-  onChange = (evt) => {
+  onChange = evt => {
     this.setState({
-      selected: evt.target.value,
+      selected: evt.target.value
     });
-  }
+  };
 
   render() {
     return (
@@ -65,7 +75,7 @@ class RadioGroup extends React.Component {
         <Radio onChange={this.onChange} checked={this.state.selected === 'Yes'} value="Yes" name="question">
           Yes
         </Radio>
-        <Radio onChange={this.onChange} checked={this.state.selected === 'No'} value="No" name="question" >
+        <Radio onChange={this.onChange} checked={this.state.selected === 'No'} value="No" name="question">
           No
         </Radio>
       </Control>
@@ -77,10 +87,8 @@ const SelectControlled = HoC(Select);
 const CheckboxControlled = HoCCheckbox(Checkbox);
 
 storiesOf('Form', module)
-  .addDecorator(story => (
-    <div style={{ margin: 50 }}>{story()}</div>
-  ))
-  .add('Default', (() => (
+  .addDecorator(story => <div style={{ margin: 50 }}>{story()}</div>)
+  .add('Default', () => (
     <div>
       <Field>
         <Label>Name</Label>
@@ -158,8 +166,8 @@ storiesOf('Form', module)
         </Control>
       </Field>
     </div>
-  )))
-  .add('Handle Multiple inputs', (() => {
+  ))
+  .add('Handle Multiple inputs', () => {
     /* eslint-disable react/no-multi-comp */
     class MultiInputHandler extends PureComponent {
       state = {
@@ -169,15 +177,15 @@ storiesOf('Form', module)
         comment: '',
         gender: '',
         question: null,
-        termsAccepted: false,
-      }
+        termsAccepted: false
+      };
 
-      onChange = (evt) => {
+      onChange = evt => {
         const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
         this.setState({
-          [evt.target.name]: value,
+          [evt.target.name]: value
         });
-      }
+      };
 
       render() {
         const { email, name, password, comment, gender, question, termsAccepted } = this.state;
@@ -198,7 +206,13 @@ storiesOf('Form', module)
             <Field>
               <Label>Password</Label>
               <Control>
-                <Input onChange={this.onChange} name="password" type="password" placeholder="Password" value={password} />
+                <Input
+                  onChange={this.onChange}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                />
               </Control>
             </Field>
             <Field>
@@ -224,7 +238,7 @@ storiesOf('Form', module)
                 <Radio onChange={this.onChange} checked={question === 'Yes'} value="Yes" name="question">
                   Yes
                 </Radio>
-                <Radio onChange={this.onChange} checked={question === 'No'} value="No" name="question" >
+                <Radio onChange={this.onChange} checked={question === 'No'} value="No" name="question">
                   No
                 </Radio>
               </Control>
@@ -237,13 +251,11 @@ storiesOf('Form', module)
               </Control>
             </Field>
             <pre>
-              <code>
-                {JSON.stringify(this.state, null, 2)}
-              </code>
+              <code>{JSON.stringify(this.state, null, 2)}</code>
             </pre>
           </div>
         );
       }
     }
     return <MultiInputHandler />;
-  }));
+  });

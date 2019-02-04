@@ -1,30 +1,23 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React from 'react';
 import CONSTANTS from '../../constants';
-import Column from './components/column';
-import COLUMN_CONSTANTS from './constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import Column from './components/column';
+import COLUMN_CONSTANTS from './constants';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-const Columns = React.forwardRef(({
-  className,
-  breakpoint,
-  gapless,
-  multiline,
-  centered,
-  ...props
-}, ref) => (
+const Columns = React.forwardRef(({ className, breakpoint, gapless, multiline, centered, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classNames(className, 'columns', {
+    className={cn(className, 'columns', {
       [`is-${breakpoint}`]: breakpoint,
       'is-gapless': gapless,
       'is-multiline': multiline,
-      'is-centered': centered,
+      'is-centered': centered
     })}
   />
 ));
@@ -39,21 +32,21 @@ Columns.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   /**
-     * Breakpoint where columns become stacked.
-     */
+   * Breakpoint where columns become stacked.
+   */
   breakpoint: PropTypes.oneOf(breakpoints),
   /**
-     * `true` to remove space between columns
-     */
+   * `true` to remove space between columns
+   */
   gapless: PropTypes.bool,
   /**
-     * `true` if you want to use more than one line if you add more column elements that would fit in a single row.
-     */
+   * `true` if you want to use more than one line if you add more column elements that would fit in a single row.
+   */
   multiline: PropTypes.bool,
   /**
-     * `true` you want the columns inside to be horizontaly centered
-     */
-  centered: PropTypes.bool,
+   * `true` you want the columns inside to be horizontaly centered
+   */
+  centered: PropTypes.bool
 };
 
 Columns.defaultProps = {
@@ -64,7 +57,7 @@ Columns.defaultProps = {
   breakpoint: null,
   gapless: false,
   centered: false,
-  multiline: true,
+  multiline: true
 };
 
 export default Columns;

@@ -1,26 +1,23 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const CardFooterItem = React.forwardRef(({
-  className,
-  ...props
-}, ref) => (
-  <Element {...props} ref={ref} className={classnames('card-footer-item', className)} />
+const CardFooterItem = React.forwardRef(({ className, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('card-footer-item', className)} />
 ));
 
 CardFooterItem.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 CardFooterItem.defaultProps = {
   ...modifiers.defaultProps,
   className: '',
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default CardFooterItem;

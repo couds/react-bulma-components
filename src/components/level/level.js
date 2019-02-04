@@ -1,25 +1,20 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import CONSTANTS from '../../constants';
-import LevelSide from './components/level-side';
-import LevelItem from './components/level-item';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import LevelItem from './components/level-item';
+import LevelSide from './components/level-side';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
-const Level = React.forwardRef(({
-  children,
-  className,
-  breakpoint,
-  ...props
-}, ref) => (
+const Level = React.forwardRef(({ children, className, breakpoint, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('level', className, {
-      [`is-${breakpoint}`]: breakpoint,
+    className={cn('level', className, {
+      [`is-${breakpoint}`]: breakpoint
     })}
   >
     {children}
@@ -36,7 +31,7 @@ Level.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Level.defaultProps = {
@@ -45,7 +40,7 @@ Level.defaultProps = {
   className: '',
   style: {},
   breakpoint: null,
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default Level;

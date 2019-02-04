@@ -1,6 +1,6 @@
-import React from 'react';
 import { mount } from 'enzyme';
 import { JSDOM } from 'jsdom';
+import React from 'react';
 import { renderToString } from 'react-dom/server';
 import Modal from '..';
 
@@ -9,7 +9,7 @@ describe('Modal component', () => {
   let component;
   beforeEach(() => {
     // eslint-disable-next-line
-    window = (new JSDOM()).window;
+    window = new JSDOM().window;
     global.window = window;
     global.document = window.document;
   });
@@ -24,7 +24,7 @@ describe('Modal component', () => {
   it('Should Exist', () => {
     expect(Modal).toMatchSnapshot();
   });
-  it('Should expose Content and Card\'s types', () => {
+  it("Should expose Content and Card's types", () => {
     expect(Modal.Content).toMatchSnapshot();
     expect(Modal.Card).toMatchSnapshot();
     expect(Modal.Card.Title).toMatchSnapshot();
@@ -37,11 +37,10 @@ describe('Modal component', () => {
     component = mount(
       <Modal.Card onClose={onClose}>
         <Modal.Card.Head onClose={onClose}>
-          <Modal.Card.Title>
-            Modal Title
-          </Modal.Card.Title>
+          <Modal.Card.Title>Modal Title</Modal.Card.Title>
         </Modal.Card.Head>
-      </Modal.Card>);
+      </Modal.Card>
+    );
     component.find('.delete').simulate('click');
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -53,12 +52,11 @@ describe('Modal component', () => {
       <Modal document={window.document} show={false} onClose={onClose}>
         <Modal.Card>
           <Modal.Card.Head>
-            <Modal.Card.Title>
-              Modal Title
-            </Modal.Card.Title>
+            <Modal.Card.Title>Modal Title</Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>
+    );
     expect(window.document.querySelector('div.modal.is-active')).toBeNull();
     component.setProps({ show: true });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
@@ -71,12 +69,11 @@ describe('Modal component', () => {
       <Modal document={window.document} show onClose={onClose}>
         <Modal.Card>
           <Modal.Card.Head onClose={onClose}>
-            <Modal.Card.Title>
-              Modal Title
-            </Modal.Card.Title>
+            <Modal.Card.Title>Modal Title</Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('.delete').click();
@@ -91,12 +88,11 @@ describe('Modal component', () => {
       <Modal document={window.document} show onClose={onClose}>
         <Modal.Card>
           <Modal.Card.Head>
-            <Modal.Card.Title>
-              Modal Title
-            </Modal.Card.Title>
+            <Modal.Card.Title>Modal Title</Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 27 });
@@ -112,12 +108,11 @@ describe('Modal component', () => {
       <Modal closeOnEsc={false} document={window.document} show onClose={onClose}>
         <Modal.Card>
           <Modal.Card.Head>
-            <Modal.Card.Title>
-              Modal Title
-            </Modal.Card.Title>
+            <Modal.Card.Title>Modal Title</Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 27 });
@@ -133,18 +128,13 @@ describe('Modal component', () => {
       <Modal closeOnEsc document={window.document} show onClose={onClose}>
         <Modal.Card>
           <Modal.Card.Head>
-            <Modal.Card.Title>
-              Modal Title
-            </Modal.Card.Title>
+            <Modal.Card.Title>Modal Title</Modal.Card.Title>
           </Modal.Card.Head>
-          <Modal.Card.Body>
-            Body
-          </Modal.Card.Body>
-          <Modal.Card.Foot>
-            Footer
-          </Modal.Card.Foot>
+          <Modal.Card.Body>Body</Modal.Card.Body>
+          <Modal.Card.Foot>Footer</Modal.Card.Foot>
         </Modal.Card>
-      </Modal>);
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 23 });
@@ -157,23 +147,19 @@ describe('Modal component', () => {
     const onClose = jest.fn();
     component = mount(
       <Modal document={window.document} show onClose={onClose}>
-        <div>
-          CHILDREN
-        </div>
-        <div>
-          CHILDREN
-        </div>
-      </Modal>);
+        <div>CHILDREN</div>
+        <div>CHILDREN</div>
+      </Modal>
+    );
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
   it('Should no try to reopen if other prop change', () => {
     const onClose = jest.fn();
     component = mount(
       <Modal document={window.document} show onClose={onClose}>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
+        <Modal.Content>Content</Modal.Content>
+      </Modal>
+    );
     component.setProps({ randomProp: 'test' });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
@@ -183,10 +169,9 @@ describe('Modal component', () => {
     });
     component = mount(
       <Modal document={window.document} show onClose={onClose} closeOnBlur>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
+        <Modal.Content>Content</Modal.Content>
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('div.modal-background').click();
@@ -199,10 +184,9 @@ describe('Modal component', () => {
     });
     component = mount(
       <Modal closeOnBlur={false} document={window.document} show onClose={onClose}>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
+        <Modal.Content>Content</Modal.Content>
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('div.modal-background').click();
@@ -215,10 +199,9 @@ describe('Modal component', () => {
     });
     component = mount(
       <Modal showClose={false} document={window.document} show onClose={onClose}>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
+        <Modal.Content>Content</Modal.Content>
+      </Modal>
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
   });
@@ -226,10 +209,9 @@ describe('Modal component', () => {
   it('Should render empty because no document on scope', () => {
     component = renderToString(
       <Modal show onClose={() => {}}>
-        <Modal.Content>
-          Content
-        </Modal.Content>
-      </Modal>);
+        <Modal.Content>Content</Modal.Content>
+      </Modal>
+    );
     expect(component).toMatchSnapshot();
   });
 });

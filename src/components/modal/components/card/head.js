@@ -1,23 +1,12 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import Button from '../../../button';
+import React from 'react';
 import modifiers from '../../../../modifiers';
+import Button from '../../../button';
 import Element from '../../../element';
 
-const ModalCardHead = React.forwardRef(({
-  children,
-  className,
-  showClose,
-  onClose,
-  ...props
-}, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={classnames('modal-card-head', className)}
-  >
+const ModalCardHead = React.forwardRef(({ children, className, showClose, onClose, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('modal-card-head', className)}>
     {children}
     {showClose && <Button remove onClick={onClose} />}
   </Element>
@@ -29,7 +18,7 @@ ModalCardHead.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   showClose: PropTypes.bool,
-  onClose: PropTypes.func,
+  onClose: PropTypes.func
 };
 
 ModalCardHead.defaultProps = {
@@ -39,7 +28,7 @@ ModalCardHead.defaultProps = {
   style: {},
   showClose: true,
   onClose: null,
-  renderAs: 'header',
+  renderAs: 'header'
 };
 
 export default ModalCardHead;

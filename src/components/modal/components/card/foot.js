@@ -1,19 +1,11 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCardFoot = React.forwardRef(({
-  children,
-  className,
-  ...props
-}, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={classnames('modal-card-foot', className)}
-  >
+const ModalCardFoot = React.forwardRef(({ children, className, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('modal-card-foot', className)}>
     {children}
   </Element>
 ));
@@ -22,7 +14,7 @@ ModalCardFoot.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.shape({})
 };
 
 ModalCardFoot.defaultProps = {
@@ -30,7 +22,7 @@ ModalCardFoot.defaultProps = {
   children: null,
   className: '',
   style: {},
-  renderAs: 'footer',
+  renderAs: 'footer'
 };
 
 export default ModalCardFoot;

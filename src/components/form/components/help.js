@@ -1,24 +1,18 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import modifiers from '../../../modifiers';
-
+import React from 'react';
 import CONSTANTS from '../../../constants';
+import modifiers from '../../../modifiers';
 import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Help = React.forwardRef(({
-  className,
-  children,
-  color,
-  ...props
-}, ref) => (
+const Help = React.forwardRef(({ className, children, color, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('help', className, {
-      [`is-${color}`]: color,
+    className={cn('help', className, {
+      [`is-${color}`]: color
     })}
   >
     {children}
@@ -29,7 +23,7 @@ Help.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 Help.defaultProps = {
@@ -37,7 +31,7 @@ Help.defaultProps = {
   children: null,
   className: '',
   color: null,
-  renderAs: 'p',
+  renderAs: 'p'
 };
 
 export default Help;

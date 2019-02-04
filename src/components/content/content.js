@@ -1,20 +1,15 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Content = React.forwardRef(({
-  children,
-  className,
-  size,
-  ...props
-}, ref) => (
+const Content = React.forwardRef(({ children, className, size, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('content', className, {
-      [`is-${size}`]: size,
+    className={cn('content', className, {
+      [`is-${size}`]: size
     })}
   >
     {children}
@@ -27,7 +22,7 @@ Content.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Content.defaultProps = {
@@ -36,7 +31,7 @@ Content.defaultProps = {
   className: undefined,
   style: {},
   size: null,
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default Content;

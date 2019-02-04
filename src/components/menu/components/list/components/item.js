@@ -1,21 +1,16 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-/* eslint-disable-next-line import/no-cycle */
-import List from '../list';
+import React from 'react';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
+/* eslint-disable-next-line import/no-cycle */
+import List from '../list';
 
-const MenuListItem = React.forwardRef(({
-  children,
-  active,
-  className,
-  ...props
-}, ref) => {
+const MenuListItem = React.forwardRef(({ children, active, className, ...props }, ref) => {
   if (typeof children === 'string') {
     return (
       <li ref={ref}>
-        <Element className={classnames(className, { 'is-active': active })} {...props}>
+        <Element className={cn(className, { 'is-active': active })} {...props}>
           {children}
         </Element>
       </li>
@@ -26,7 +21,7 @@ const MenuListItem = React.forwardRef(({
     const child = React.Children.only(children);
     return (
       <li ref={ref}>
-        <Element className={classnames(className, { 'is-active': active })} {...props}>
+        <Element className={cn(className, { 'is-active': active })} {...props}>
           {child.props.title}
         </Element>
         {React.cloneElement(child, { title: null })}
@@ -34,25 +29,15 @@ const MenuListItem = React.forwardRef(({
     );
   }
 
-  return (
-    <li ref={ref}>
-      {children}
-    </li>
-  );
+  return <li ref={ref}>{children}</li>;
 });
 
 MenuListItem.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   active: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 MenuListItem.defaultProps = {
@@ -60,7 +45,7 @@ MenuListItem.defaultProps = {
   className: '',
   children: null,
   active: false,
-  renderAs: 'a',
+  renderAs: 'a'
 };
 
 export default MenuListItem;

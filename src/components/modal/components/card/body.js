@@ -1,19 +1,11 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCardBody = React.forwardRef(({
-  children,
-  className,
-  ...props
-}, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={classnames('modal-card-body', className)}
-  >
+const ModalCardBody = React.forwardRef(({ children, className, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('modal-card-body', className)}>
     {children}
   </Element>
 ));
@@ -23,7 +15,7 @@ ModalCardBody.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.string,
+  renderAs: PropTypes.string
 };
 
 ModalCardBody.defaultProps = {
@@ -31,7 +23,7 @@ ModalCardBody.defaultProps = {
   children: null,
   className: '',
   style: {},
-  renderAs: 'section',
+  renderAs: 'section'
 };
 
 export default ModalCardBody;

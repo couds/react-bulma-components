@@ -1,33 +1,19 @@
-import React from 'react';
-
+import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-
-import { select, boolean } from '@storybook/addon-knobs';
+import React from 'react';
 import Tabs from 'react-bulma-components/lib/components/tabs';
 
 storiesOf('Tabs', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', (() => (
+  .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
+  .add('Default', () => (
     <Tabs
-      type={select('Tab type', {boxed: 'boxed', toggle: 'toggle', 'toggle-rounded': 'toggle-rounded' }, 'boxed')}
+      type={select('Tab type', { boxed: 'boxed', toggle: 'toggle', 'toggle-rounded': 'toggle-rounded' }, 'boxed')}
       fullwidth={boolean('Full width', false)}
       align={select('Align', { Default: null, centered: 'centered', right: 'right' })}
     >
-      <Tabs.Tab active>
-        Test
-      </Tabs.Tab>
-      <Tabs.Tab>
-        Test
-      </Tabs.Tab>
-      <Tabs.Tab>
-        Test
-      </Tabs.Tab>
-      <Tabs.Tab>
-        Test
-      </Tabs.Tab>
+      <Tabs.Tab active>Test</Tabs.Tab>
+      <Tabs.Tab>Test</Tabs.Tab>
+      <Tabs.Tab>Test</Tabs.Tab>
+      <Tabs.Tab>Test</Tabs.Tab>
     </Tabs>
-  )));
+  ));

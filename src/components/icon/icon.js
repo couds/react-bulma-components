@@ -1,37 +1,29 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import modifiers from '../../modifiers';
+import React from 'react';
 import CONSTANTS from '../../constants';
+import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Icon = React.forwardRef(({
-  icon,
-  size,
-  color,
-  className,
-  align,
-  children,
-  ...allProps
-}, ref) => {
+const Icon = React.forwardRef(({ icon, size, color, className, align, children, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <span
       {...props}
-      className={classnames('icon', modifiers.classnames(allProps), className, {
+      className={cn('icon', modifiers.classnames(allProps), className, {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
-        [`has-text-${color}`]: color,
+        [`has-text-${color}`]: color
       })}
     >
-      { children || (
-      <i
-        ref={ref}
-        className={classnames('rbc', {
-          [`rbc-${icon}`]: icon,
-        })}
-      />
+      {children || (
+        <i
+          ref={ref}
+          className={cn('rbc', {
+            [`rbc-${icon}`]: icon
+          })}
+        />
       )}
     </span>
   );
@@ -45,7 +37,7 @@ Icon.propTypes = {
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large', 'auto']),
   align: PropTypes.oneOf(['left', 'right']),
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOf(colors)
 };
 
 Icon.defaultProps = {
@@ -56,7 +48,7 @@ Icon.defaultProps = {
   color: null,
   children: null,
   align: null,
-  icon: null,
+  icon: null
 };
 
 export default Icon;

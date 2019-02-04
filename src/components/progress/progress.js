@@ -1,29 +1,22 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Progress = React.forwardRef(({
-  className,
-  value,
-  max,
-  color,
-  size,
-  ...props
-}, ref) => (
+const Progress = React.forwardRef(({ className, value, max, color, size, ...props }, ref) => (
   <Element
     ref={ref}
     renderAs="progress"
     {...props}
     value={value}
     max={max}
-    className={classnames('progress', className, {
+    className={cn('progress', className, {
       [`is-${color}`]: color,
-      [`is-${size}`]: size,
+      [`is-${size}`]: size
     })}
   />
 ));
@@ -35,7 +28,7 @@ Progress.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired
 };
 
 Progress.defaultProps = {
@@ -43,7 +36,7 @@ Progress.defaultProps = {
   className: '',
   style: {},
   color: null,
-  size: null,
+  size: null
 };
 
 export default Progress;

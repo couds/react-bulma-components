@@ -1,20 +1,12 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import FieldLabel from './field-label';
-import FieldBody from './field-body';
+import React from 'react';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
+import FieldBody from './field-body';
+import FieldLabel from './field-label';
 
-const Field = ({
-  className,
-  align,
-  multiline,
-  horizontal,
-  kind,
-  ...props
-}) => {
+const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
   let k = null;
 
   if (kind === 'addons') {
@@ -26,11 +18,11 @@ const Field = ({
   return (
     <Element
       {...props}
-      className={classnames('field', className, {
+      className={cn('field', className, {
         [`${k}`]: k,
         [`${k}-${align}`]: k && align,
         [`${k}-multiline`]: k === 'is-grouped' && multiline,
-        'is-horizontal': horizontal,
+        'is-horizontal': horizontal
       })}
     />
   );
@@ -49,7 +41,7 @@ Field.propTypes = {
   align: PropTypes.oneOf(['centered', 'right']),
   kind: PropTypes.oneOf(['addons', 'group']),
   multiline: PropTypes.bool,
-  horizontal: PropTypes.bool,
+  horizontal: PropTypes.bool
 };
 
 Field.defaultProps = {
@@ -61,7 +53,7 @@ Field.defaultProps = {
   align: null,
   kind: null,
   multiline: false,
-  horizontal: false,
+  horizontal: false
 };
 
 export default Field;

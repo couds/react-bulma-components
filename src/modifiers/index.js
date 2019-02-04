@@ -1,7 +1,7 @@
-import classnames from 'classnames';
+import cn from 'classnames';
+import colors from './colors';
 import helpers from './helpers';
 import responsive from './responsives';
-import colors from './colors';
 import typography from './typography';
 
 const compose = (...fns) => args => fns.reduce((arg, fn) => fn(arg), args);
@@ -11,24 +11,26 @@ export default {
     ...helpers.propTypes,
     ...responsive.propTypes,
     ...colors.propTypes,
-    ...typography.propTypes,
+    ...typography.propTypes
   },
   defaultProps: {
     ...helpers.defaultProps,
     ...responsive.defaultProps,
     ...colors.defaultProps,
-    ...typography.defaultProps,
+    ...typography.defaultProps
   },
-  classnames: props => classnames(
-    helpers.classnames(props),
-    responsive.classnames(props),
-    colors.classnames(props),
-    typography.classnames(props),
-  ),
-  clean: props => compose(
-    helpers.clean,
-    responsive.clean,
-    colors.clean,
-    typography.clean,
-  )(props),
+  classnames: props =>
+    cn(
+      helpers.classnames(props),
+      responsive.classnames(props),
+      colors.classnames(props),
+      typography.classnames(props)
+    ),
+  clean: props =>
+    compose(
+      helpers.clean,
+      responsive.clean,
+      colors.clean,
+      typography.clean
+    )(props)
 };

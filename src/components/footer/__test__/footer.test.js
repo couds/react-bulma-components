@@ -7,14 +7,11 @@ describe('Footer component', () => {
     const component = renderer.create(
       <Footer>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Footer>);
+      </Footer>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -1,18 +1,11 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const HeroBody = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames(className, 'hero-body')}
-  >
+const HeroBody = ({ children, className, ...props }) => (
+  <Element {...props} className={cn(className, 'hero-body')}>
     {children}
   </Element>
 );
@@ -22,7 +15,7 @@ HeroBody.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 HeroBody.defaultProps = {
@@ -30,7 +23,7 @@ HeroBody.defaultProps = {
   children: null,
   className: '',
   style: {},
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default HeroBody;

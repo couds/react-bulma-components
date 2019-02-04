@@ -1,20 +1,15 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Section = React.forwardRef(({
-  children,
-  className,
-  size,
-  ...props
-}, ref) => (
+const Section = React.forwardRef(({ children, className, size, ...props }, ref) => (
   <Element
     ref={ref}
     {...props}
-    className={classnames('section', className, {
-      [`is-${size}`]: size,
+    className={cn('section', className, {
+      [`is-${size}`]: size
     })}
   >
     {children}
@@ -27,7 +22,7 @@ Section.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  size: PropTypes.oneOf(['medium', 'large']),
+  size: PropTypes.oneOf(['medium', 'large'])
 };
 
 Section.defaultProps = {
@@ -36,7 +31,7 @@ Section.defaultProps = {
   className: '',
   style: {},
   renderAs: 'section',
-  size: null,
+  size: null
 };
 
 export default Section;

@@ -1,31 +1,23 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import CONSTANTS from '../../constants';
-
-import HeroHead from './components/hero-head';
-import HeroBody from './components/hero-body';
-import HeroFooter from './components/hero-footer';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import HeroBody from './components/hero-body';
+import HeroFooter from './components/hero-footer';
+import HeroHead from './components/hero-head';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Hero = React.forwardRef(({
-  children,
-  className,
-  color,
-  gradient,
-  size,
-  ...props
-}, ref) => (
+const Hero = React.forwardRef(({ children, className, color, gradient, size, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('hero', className, {
+    className={cn('hero', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size,
-      'is-bold': gradient,
+      'is-bold': gradient
     })}
   >
     {children}
@@ -46,7 +38,7 @@ Hero.propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight'])
 };
 
 Hero.defaultProps = {
@@ -57,7 +49,7 @@ Hero.defaultProps = {
   renderAs: 'section',
   color: null,
   gradient: false,
-  size: null,
+  size: null
 };
 
 export default Hero;

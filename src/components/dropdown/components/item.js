@@ -1,6 +1,6 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
@@ -9,8 +9,8 @@ const DropdownItem = ({ active, children, value, ...props }) => (
     title={value}
     {...props}
     role="presentation"
-    className={classnames('dropdown-item', {
-      'is-active': active,
+    className={cn('dropdown-item', {
+      'is-active': active
     })}
   >
     {children}
@@ -22,14 +22,14 @@ DropdownItem.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
   value: PropTypes.any.isRequired,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 DropdownItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
   onClick: undefined,
-  children: null,
+  children: null
 };
 
 export default DropdownItem;

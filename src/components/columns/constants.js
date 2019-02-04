@@ -1,4 +1,3 @@
-
 export default {
   SIZES: {
     THREEQUARTERS: 'three-quarters',
@@ -9,6 +8,6 @@ export default {
     ONEFIFTH: 'one-fifth',
     TWOFIFTHS: 'two-fifths',
     THREEFIFTHS: 'three-fifths',
-    FOURFIFTHS: 'four-fifths',
-  },
+    FOURFIFTHS: 'four-fifths'
+  }
 };

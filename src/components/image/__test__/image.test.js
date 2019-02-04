@@ -1,6 +1,6 @@
+import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import Image from '..';
 
 describe('Image component', () => {
@@ -29,9 +29,7 @@ describe('Image component', () => {
   });
 
   it('Should have use default image if error encounter', () => {
-    const component = shallow(
-      <Image src="http://mydomain.com/image" fallback="http://mydomain.com/default" />,
-    );
+    const component = shallow(<Image src="http://mydomain.com/image" fallback="http://mydomain.com/default" />);
     const image = component.find('img');
     image.simulate('error');
     expect(component.find('img').props()).toHaveProperty('src', 'http://mydomain.com/default');

@@ -23,12 +23,10 @@ describe('Progress component', () => {
     const component = renderer.create(<Progress value={30} max={100} size="large" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  [null]
-    .concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]))
-    .map(color => (
-      it(`Should use use color ${color}`, () => {
-        const component = renderer.create(<Progress value={30} max={100} color={color} />);
-        expect(component.toJSON()).toMatchSnapshot();
-      })
-    ));
+  [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key])).map(color =>
+    it(`Should use use color ${color}`, () => {
+      const component = renderer.create(<Progress value={30} max={100} color={color} />);
+      expect(component.toJSON()).toMatchSnapshot();
+    })
+  );
 });

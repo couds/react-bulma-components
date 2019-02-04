@@ -14,70 +14,55 @@ describe('Field component', () => {
     const component = renderer.create(
       <Field>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Field>);
+      </Field>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field-label classname', () => {
     const component = renderer.create(
       <Field.Label>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Field.Label>);
+      </Field.Label>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field-body classname', () => {
     const component = renderer.create(
       <Field.Body>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Field.Body>);
+      </Field.Body>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field classname with grouped classname', () => {
     const component = renderer.create(
       <Field kind="group">
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Field>);
+      </Field>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have field classname with addons classname', () => {
     const component = renderer.create(
       <Field kind="addons">
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
-      </Field>);
+      </Field>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

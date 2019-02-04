@@ -1,31 +1,22 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import TagGroup from './components/tag-group';
+import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import TagGroup from './components/tag-group';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Tag = React.forwardRef(({
-  children,
-  className,
-  color,
-  size,
-  rounded,
-  remove,
-  ...props
-}, ref) => (
+const Tag = React.forwardRef(({ children, className, color, size, rounded, remove, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames('tag', className, {
+    className={cn('tag', className, {
       [`is-${size}`]: size,
       [`is-${color}`]: color,
       'is-rounded': rounded,
-      'is-delete': remove,
+      'is-delete': remove
     })}
   >
     {!remove && children}
@@ -43,7 +34,7 @@ Tag.propTypes = {
   size: PropTypes.oneOf(['medium', 'large']),
   rounded: PropTypes.bool,
   remove: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Tag.defaultProps = {
@@ -55,7 +46,7 @@ Tag.defaultProps = {
   size: null,
   rounded: false,
   remove: false,
-  renderAs: 'span',
+  renderAs: 'span'
 };
 
 export default Tag;

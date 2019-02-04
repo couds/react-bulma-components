@@ -1,29 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { storiesOf } from '@storybook/react';
-
-import Modal from 'react-bulma-components/lib/components/modal';
-import Image from 'react-bulma-components/lib/components/image';
-import Media from 'react-bulma-components/lib/components/media';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Button from 'react-bulma-components/lib/components/button';
 import Content from 'react-bulma-components/lib/components/content';
-import Section from 'react-bulma-components/lib/components/section';
+import Image from 'react-bulma-components/lib/components/image';
 import Level from 'react-bulma-components/lib/components/level';
+import Media from 'react-bulma-components/lib/components/media';
+import Modal from 'react-bulma-components/lib/components/modal';
+import Section from 'react-bulma-components/lib/components/section';
 
 class OpenModal extends React.Component {
   static propTypes = {
     modal: PropTypes.object,
-    children: PropTypes.node.isRequired,
-  }
+    children: PropTypes.node.isRequired
+  };
 
   static defaultProps = {
-    modal: {},
-  }
+    modal: {}
+  };
 
   state = {
-    show: false,
-  }
+    show: false
+  };
 
   open = () => this.setState({ show: true });
   close = () => this.setState({ show: false });
@@ -41,25 +39,26 @@ class OpenModal extends React.Component {
 }
 
 storiesOf('Modal', module)
-  .add('Default', (() => (
+  .add('Default', () => (
     <OpenModal modal={{ closeOnEsc: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
-          Click on the {'"X"'} button on the top-right button to close the Modal (pass closeOnEsc=false to the modal to avoid closing it with the keyboard)
+          Click on the {'"X"'} button on the top-right button to close the Modal (pass closeOnEsc=false to the modal to
+          avoid closing it with the keyboard)
         </Section>
       </Modal.Content>
     </OpenModal>
-  )))
-  .add('Close with keyboard', (() => (
+  ))
+  .add('Close with keyboard', () => (
     <OpenModal modal={{ showClose: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
-          Press ESC on your keyboard to close this modal, Pass  showClose: false if you want to hide the close button
+          Press ESC on your keyboard to close this modal, Pass showClose: false if you want to hide the close button
         </Section>
       </Modal.Content>
     </OpenModal>
-  )))
-  .add('Close on click outside', (() => (
+  ))
+  .add('Close on click outside', () => (
     <OpenModal modal={{ closeOnBlur: true, showClose: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
@@ -67,14 +66,12 @@ storiesOf('Modal', module)
         </Section>
       </Modal.Content>
     </OpenModal>
-  )))
-  .add('Modal Card', (() => (
+  ))
+  .add('Modal Card', () => (
     <OpenModal modal={{ closeOnBlur: true }}>
       <Modal.Card>
         <Modal.Card.Head>
-          <Modal.Card.Title>
-            Title
-          </Modal.Card.Title>
+          <Modal.Card.Title>Title</Modal.Card.Title>
         </Modal.Card.Head>
         <Modal.Card.Body>
           <Media>
@@ -86,8 +83,8 @@ storiesOf('Modal', module)
                 <p>
                   <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
                   <br />
-                  If the children of the Modal is a card, the close button will be on the Card Head instead than the top-right corner
-                  You can also pass showClose = false to Card.Head to hide the close button
+                  If the children of the Modal is a card, the close button will be on the Card Head instead than the
+                  top-right corner You can also pass showClose = false to Card.Head to hide the close button
                 </p>
               </Content>
               <Level breakpoint="mobile">
@@ -100,10 +97,8 @@ storiesOf('Modal', module)
           </Media>
         </Modal.Card.Body>
         <Modal.Card.Foot style={{ alignItems: 'center', justifyContent: 'center' }}>
-          <p>
-            Lorem Ipsum...
-          </p>
+          <p>Lorem Ipsum...</p>
         </Modal.Card.Foot>
       </Modal.Card>
     </OpenModal>
-  )));
+  ));

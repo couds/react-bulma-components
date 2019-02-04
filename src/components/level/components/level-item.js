@@ -1,20 +1,11 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const LevelItem = React.forwardRef(({
-  children,
-  className,
-  ...props
-}, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={classnames('level-item', className, {
-    })}
-  >
+const LevelItem = React.forwardRef(({ children, className, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('level-item', className, {})}>
     {children}
   </Element>
 ));
@@ -24,7 +15,7 @@ LevelItem.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 LevelItem.defaultProps = {
@@ -32,7 +23,7 @@ LevelItem.defaultProps = {
   children: null,
   className: '',
   style: {},
-  renderAs: 'div',
+  renderAs: 'div'
 };
 
 export default LevelItem;

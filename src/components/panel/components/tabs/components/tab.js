@@ -1,37 +1,30 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const PanelTabsTab = React.forwardRef(({
-  className,
-  active,
-  ...props
-}, ref) => (
+const PanelTabsTab = React.forwardRef(({ className, active, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
-    className={classnames(className, {
-      'is-active': active,
+    className={cn(className, {
+      'is-active': active
     })}
   />
 ));
 PanelTabsTab.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
-  active: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  active: PropTypes.bool
 };
 
 PanelTabsTab.defaultProps = {
   ...modifiers.defaultProps,
   className: '',
   renderAs: 'a',
-  active: false,
+  active: false
 };
 
 export default PanelTabsTab;

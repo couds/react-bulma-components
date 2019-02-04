@@ -1,9 +1,7 @@
-
 /* eslint-disable react/no-multi-comp, react/prop-types */
-import React, { Fragment } from 'react';
-
+import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { select, boolean } from '@storybook/addon-knobs';
+import React from 'react';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 import Box from '../box';
 
@@ -18,7 +16,7 @@ const colors = {
   black: 'black',
   light: 'light',
   dark: 'dark',
-  link: 'link',
+  link: 'link'
 };
 
 storiesOf('Navbar', module)
@@ -30,7 +28,7 @@ storiesOf('Navbar', module)
       </Box>
     </div>
   ))
-  .add('Default', (() => {
+  .add('Default', () => {
     return (
       <Navbar
         color={select('Color', colors)}
@@ -40,22 +38,23 @@ storiesOf('Navbar', module)
       >
         <Navbar.Brand>
           <Navbar.Item renderAs="a" href="#">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: a modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            />
           </Navbar.Item>
           <Navbar.Burger />
         </Navbar.Brand>
-        <Navbar.Menu >
+        <Navbar.Menu>
           <Navbar.Container>
-            <Navbar.Item href="#">
-                  Second
-            </Navbar.Item>
+            <Navbar.Item href="#">Second</Navbar.Item>
           </Navbar.Container>
           <Navbar.Container position="end">
-            <Navbar.Item href="#">
-                  At the end
-            </Navbar.Item>
+            <Navbar.Item href="#">At the end</Navbar.Item>
           </Navbar.Container>
         </Navbar.Menu>
       </Navbar>
-    )
-  }));
+    );
+  });

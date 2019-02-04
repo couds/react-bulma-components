@@ -1,39 +1,32 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarItem = React.forwardRef(({
-  className,
-  active,
-  children,
-  dropdown,
-  dropdownUp,
-  hoverable,
-  renderAs,
-  ...props
-}, ref) => {
-  let as = renderAs;
-  if (dropdown && renderAs === 'a') {
-    as = 'span';
+const NavbarItem = React.forwardRef(
+  ({ className, active, children, dropdown, dropdownUp, hoverable, renderAs, ...props }, ref) => {
+    let as = renderAs;
+    if (dropdown && renderAs === 'a') {
+      as = 'span';
+    }
+    return (
+      <Element
+        {...props}
+        ref={ref}
+        renderAs={as}
+        className={cn('navbar-item', className, {
+          'is-active': active,
+          'has-dropdown': dropdown,
+          'is-hoverable': hoverable,
+          'has-dropdown-up': dropdownUp
+        })}
+      >
+        {children}
+      </Element>
+    );
   }
-  return (
-    <Element
-      {...props}
-      ref={ref}
-      renderAs={as}
-      className={classnames('navbar-item', className, {
-        'is-active': active,
-        'has-dropdown': dropdown,
-        'is-hoverable': hoverable,
-        'has-dropdown-up': dropdownUp,
-      })}
-    >
-      {children}
-    </Element>
-  );
-});
+);
 
 NavbarItem.propTypes = {
   ...modifiers.propTypes,
@@ -44,7 +37,7 @@ NavbarItem.propTypes = {
   dropdownUp: PropTypes.bool,
   hoverable: PropTypes.bool,
   children: PropTypes.node,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 NavbarItem.defaultProps = {
@@ -56,7 +49,7 @@ NavbarItem.defaultProps = {
   dropdown: false,
   hoverable: false,
   dropdownUp: false,
-  renderAs: 'a',
+  renderAs: 'a'
 };
 
 export default NavbarItem;

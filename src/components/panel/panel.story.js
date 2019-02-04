@@ -1,22 +1,15 @@
-import React from 'react';
-
 import { storiesOf } from '@storybook/react';
-import Panel from 'react-bulma-components/lib/components/panel';
-import { Control, Input, Checkbox } from 'react-bulma-components/lib/components/form';
-import Icon from 'react-bulma-components/lib/components/icon';
+import React from 'react';
 import Button from 'react-bulma-components/lib/components/button';
+import { Checkbox, Control, Input } from 'react-bulma-components/lib/components/form';
+import Icon from 'react-bulma-components/lib/components/icon';
+import Panel from 'react-bulma-components/lib/components/panel';
 
 storiesOf('Panel', module)
-  .addDecorator(story => (
-    <div style={{ margin: 10 }}>
-      {story()}
-    </div>
-  ))
-  .add('Default', (() => (
+  .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
+  .add('Default', () => (
     <Panel>
-      <Panel.Header>
-        repositories
-      </Panel.Header>
+      <Panel.Header>repositories</Panel.Header>
       <Panel.Block>
         <Control>
           <Input size="small" type="text" placeholder="search" />
@@ -58,9 +51,9 @@ storiesOf('Panel', module)
         remember me
       </Panel.Block>
       <Panel.Block>
-        <Button fullwidth color="link" outlined >
+        <Button fullwidth color="link" outlined>
           reset all filters
         </Button>
       </Panel.Block>
     </Panel>
-  )));
+  ));

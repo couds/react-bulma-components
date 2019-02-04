@@ -1,21 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import renderer from 'react-test-renderer';
 import { mount, shallow } from 'enzyme';
+import PropTypes from 'prop-types';
+import React from 'react';
+import renderer from 'react-test-renderer';
 import Button from '..';
 
-const Link = ({
-  to,
-  children,
-}) => (
-  <a href={to}>
-    {children}
-  </a>
-);
+const Link = ({ to, children }) => <a href={to}>{children}</a>;
 
 Link.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 describe('Button component', () => {
@@ -53,7 +46,8 @@ describe('Button component', () => {
     const component = renderer.create(
       <Button renderAs={Link} to="http://google.com" color="danger">
         TEST
-      </Button>);
+      </Button>
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render be disabled', () => {
@@ -97,65 +91,45 @@ describe('Button component', () => {
     it('Should be a default list of buttons', () => {
       const component = renderer.create(
         <Button.Group>
-          <Button>
-            test 0
-          </Button>
-          <Button>
-            test 1
-          </Button>
-        </Button.Group>,
+          <Button>test 0</Button>
+          <Button>test 1</Button>
+        </Button.Group>
       );
       expect(component).toMatchSnapshot();
     });
     it('Should concat class names in props with Bulma class name', () => {
       const component = renderer.create(
         <Button.Group className="super-class-1 dope-class-2">
-          <Button>
-            test 0
-          </Button>
-          <Button>
-            test 1
-          </Button>
-        </Button.Group>,
+          <Button>test 0</Button>
+          <Button>test 1</Button>
+        </Button.Group>
       );
       expect(component.toJSON()).toMatchSnapshot();
     });
     it('Should group buttons together', () => {
       const component = renderer.create(
         <Button.Group hasAddons>
-          <Button>
-            test 1
-          </Button>
-          <Button>
-            test 2
-          </Button>
-        </Button.Group>,
+          <Button>test 1</Button>
+          <Button>test 2</Button>
+        </Button.Group>
       );
       expect(component.toJSON()).toMatchSnapshot();
     });
     it('Should be centered', () => {
       const component = renderer.create(
         <Button.Group position="centered">
-          <Button>
-            test 0
-          </Button>
-          <Button>
-            test 1
-          </Button>
-        </Button.Group>,
+          <Button>test 0</Button>
+          <Button>test 1</Button>
+        </Button.Group>
       );
       expect(component.toJSON()).toMatchSnapshot();
     });
     it('Should align to the right', () => {
       const component = renderer.create(
         <Button.Group position="right">
-          <Button>
-            test 0
-          </Button>
-          <Button>
-            test 1
-          </Button>
-        </Button.Group>,
+          <Button>test 0</Button>
+          <Button>test 1</Button>
+        </Button.Group>
       );
       expect(component.toJSON()).toMatchSnapshot();
     });

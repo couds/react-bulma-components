@@ -1,5 +1,5 @@
-import './index.sass';
 import * as Form from './components/form';
+import './index.sass';
 
 export { default as Box } from './components/box';
 export { default as Button } from './components/button';

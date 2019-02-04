@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
-import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-
+import { boolean, select } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Box from 'react-bulma-components/lib/components/box';
 import Button from 'react-bulma-components/lib/components/button';
 import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
 
 const colors = {
   Default: '',
@@ -19,7 +18,7 @@ const colors = {
   black: 'black',
   light: 'light',
   dark: 'dark',
-  link: 'link',
+  link: 'link'
 };
 
 const positions = {
@@ -29,16 +28,10 @@ const positions = {
 };
 
 storiesOf('Button', module)
-  .addDecorator(story => (
-    <div className="button-display">
-      {story()}
-    </div>
-  ))
-  .add('Default', (() => (
+  .addDecorator(story => <div className="button-display">{story()}</div>)
+  .add('Default', () => (
     <Section>
-      <Box>
-        Play with the button props using the knobs addon panel at the bottom
-      </Box>
+      <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
         fullwidth={boolean('Full width', false)}
         color={select('Color', colors)}
@@ -56,13 +49,9 @@ storiesOf('Button', module)
         Button
       </Button>
     </Section>
-  )))
-  .add('As another React element', (() => {
-    const CustomComponent = ({
-      customProp,
-      children,
-      className,
-    }) => (
+  ))
+  .add('As another React element', () => {
+    const CustomComponent = ({ customProp, children, className }) => (
       <a className={className} href={customProp}>
         {children}
       </a>
@@ -71,60 +60,41 @@ storiesOf('Button', module)
     CustomComponent.propTypes = {
       customProp: PropTypes.string.isRequired,
       className: PropTypes.string.isRequired,
-      children: PropTypes.node.isRequired,
+      children: PropTypes.node.isRequired
     };
 
     return (
       <Section>
-        <Button
-          color="info"
-          renderAs={CustomComponent}
-          customProp="https://github.com/couds/react-bulma-components"
-        >
+        <Button color="info" renderAs={CustomComponent} customProp="https://github.com/couds/react-bulma-components">
           Button rendered using another React Component with props
         </Button>
       </Section>
     );
-  }))
-  .add('Button group', (() => (
+  })
+  .add('Button group', () => (
     <Section>
-      <Button.Group
-        hasAddons={boolean('hasAddons', false)}
-        position={select('Position', positions)}
-      >
-        <Button
-          renderAs="span"
-          color="success"
-        >
+      <Button.Group hasAddons={boolean('hasAddons', false)} position={select('Position', positions)}>
+        <Button renderAs="span" color="success">
           Save changes
         </Button>
-        <Button
-          renderAs="span"
-          color="info"
-        >
+        <Button renderAs="span" color="info">
           Save and continue
         </Button>
-        <Button
-          renderAs="span"
-          color="danger"
-        >
+        <Button renderAs="span" color="danger">
           Cancel
         </Button>
       </Button.Group>
     </Section>
-  )))
-  .add('Ref forwarding', (() => {
+  ))
+  .add('Ref forwarding', () => {
     const ref = React.createRef();
 
     return (
       <Section>
         <Button onClick={() => ref.current.click()}>click other button</Button>
-        <Button
-          ref={ref}
-          onClick={() => console.log('clicked')}>
+        <Button ref={ref} onClick={() => console.log('clicked')}>
           this will be clicked
         </Button>
       </Section>
-    )
-  }))
-
+    );
+  });

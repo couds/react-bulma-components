@@ -1,23 +1,13 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import MediaItem from './components/media-item';
-import MediaContent from './components/media-content';
+import React from 'react';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import MediaContent from './components/media-content';
+import MediaItem from './components/media-item';
 
-const Media = React.forwardRef(({
-  children,
-  className,
-  ...props
-}, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={classnames('media', className, {
-    })}
-  >
+const Media = React.forwardRef(({ children, className, ...props }, ref) => (
+  <Element {...props} ref={ref} className={cn('media', className, {})}>
     {children}
   </Element>
 ));
@@ -30,7 +20,7 @@ Media.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Media.defaultProps = {
@@ -38,7 +28,7 @@ Media.defaultProps = {
   children: null,
   className: '',
   style: {},
-  renderAs: 'article',
+  renderAs: 'article'
 };
 
 export default Media;

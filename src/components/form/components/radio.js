@@ -1,34 +1,13 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../../modifiers';
 
-const Radio = React.forwardRef(({
-  className,
-  style,
-  disabled,
-  checked,
-  value,
-  name,
-  children,
-  ...allProps
-}, ref) => {
+const Radio = React.forwardRef(({ className, style, disabled, checked, value, name, children, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
-    <label
-      disabled={disabled}
-      className={classnames('radio', modifiers.classnames(allProps), className)}
-      style={style}
-    >
-      <input
-        {...props}
-        ref={ref}
-        name={name}
-        checked={checked}
-        type="radio"
-        value={value}
-        disabled={disabled}
-      />
+    <label disabled={disabled} className={cn('radio', modifiers.classnames(allProps), className)} style={style}>
+      <input {...props} ref={ref} name={name} checked={checked} type="radio" value={value} disabled={disabled} />
       {children}
     </label>
   );
@@ -45,7 +24,7 @@ Radio.propTypes = {
   style: PropTypes.shape({}),
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
-  value: PropTypes.string,
+  value: PropTypes.string
 };
 
 Radio.defaultProps = {
@@ -55,7 +34,7 @@ Radio.defaultProps = {
   value: '',
   style: {},
   disabled: false,
-  checked: false,
+  checked: false
 };
 
 export default Radio;

@@ -1,13 +1,12 @@
-import React, { PureComponent } from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
+import React, { PureComponent } from 'react';
 import CONSTANTS from '../../constants';
-import DropdownItem from './components/item';
-import DropdownDivider from './components/divider';
+import modifiers from '../../modifiers';
 import Button from '../button';
 import Icon from '../icon';
-import modifiers from '../../modifiers';
+import DropdownDivider from './components/divider';
+import DropdownItem from './components/item';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -27,8 +26,8 @@ export default class Dropdown extends PureComponent {
     right: PropTypes.bool,
     up: PropTypes.bool,
     align: PropTypes.oneOf(['right']),
-    hoverable: PropTypes.bool,
-  }
+    hoverable: PropTypes.bool
+  };
 
   static defaultProps = {
     ...modifiers.defaultProps,
@@ -39,12 +38,12 @@ export default class Dropdown extends PureComponent {
     onChange: undefined,
     color: undefined,
     align: undefined,
-    hoverable: undefined,
-  }
+    hoverable: undefined
+  };
 
   state = {
-    open: false,
-  }
+    open: false
+  };
 
   componentDidMount() {
     document.addEventListener('click', this.close);
@@ -54,15 +53,15 @@ export default class Dropdown extends PureComponent {
     document.removeEventListener('click', this.close);
   }
 
-  close = (evt) => {
+  close = evt => {
     // IDK yet how to test using the ref in enzime
     if (this.props.hoverable || (evt && this.htmlElement.contains(evt.target))) {
       return;
     }
     this.setState({ open: false });
-  }
+  };
 
-  toggle = (evt) => {
+  toggle = evt => {
     if (this.props.hoverable) {
       return;
     }
@@ -70,28 +69,17 @@ export default class Dropdown extends PureComponent {
       evt.preventDefault();
     }
     this.setState(({ open }) => ({ open: !open }));
-  }
+  };
 
   select = value => () => {
     if (this.props.onChange) {
       this.props.onChange(value);
     }
     this.close();
-  }
+  };
 
   render() {
-    const {
-      className,
-      children,
-      value,
-      color,
-      align,
-      right,
-      up,
-      hoverable,
-      onChange,
-      ...allProps
-    } = this.props;
+    const { className, children, value, color, align, right, up, hoverable, onChange, ...allProps } = this.props;
     let current = null;
     const props = modifiers.clean(allProps);
 
@@ -99,40 +87,45 @@ export default class Dropdown extends PureComponent {
       if (child.type === DropdownItem && (i === 0 || child.props.value === value)) {
         current = child.props.children;
       }
-      return React.cloneElement(child, child.type === DropdownItem ? {
-        active: child.props.value === value,
-        onClick: this.select(child.props.value),
-      } : {});
+      return React.cloneElement(
+        child,
+        child.type === DropdownItem
+          ? {
+              active: child.props.value === value,
+              onClick: this.select(child.props.value)
+            }
+          : {}
+      );
     });
 
     if (align === 'right') {
       // eslint-disable-next-line no-console
-      console.warn('react-bulma-components: "Align" prop will be replaced by "right" prop in future releases. Please update your code to avoid breaking changes.');
+      console.warn(
+        'react-bulma-components: "Align" prop will be replaced by "right" prop in future releases. Please update your code to avoid breaking changes.'
+      );
     }
 
     return (
       <div
         {...props}
-        ref={(node) => { this.htmlElement = node; }}
-        className={classnames('dropdown', modifiers.classnames(allProps), className, {
+        ref={node => {
+          this.htmlElement = node;
+        }}
+        className={cn('dropdown', modifiers.classnames(allProps), className, {
           'is-active': this.state.open,
           'is-up': up,
           'is-right': right || align === 'right',
-          'is-hoverable': hoverable,
+          'is-hoverable': hoverable
         })}
       >
         <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
           <Button color={color}>
-            <span>
-              {current}
-            </span>
+            <span>{current}</span>
             <Icon icon="angle-down" size="small" />
           </Button>
         </div>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">
-          <div className="dropdown-content">
-            {childrenArray}
-          </div>
+          <div className="dropdown-content">{childrenArray}</div>
         </div>
       </div>
     );

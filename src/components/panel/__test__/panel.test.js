@@ -9,30 +9,16 @@ describe('Panel component', () => {
   it('Should have box classname', () => {
     const component = renderer.create(
       <Panel>
-        <Panel.Header>
-        repositories
-        </Panel.Header>
+        <Panel.Header>repositories</Panel.Header>
         <Panel.Block>
-          <div>
-            Control
-          </div>
+          <div>Control</div>
         </Panel.Block>
         <Panel.Tabs className="panel-tabs">
-          <Panel.Tabs.Tab active>
-all
-          </Panel.Tabs.Tab>
-          <Panel.Tabs.Tab>
-public
-          </Panel.Tabs.Tab>
-          <Panel.Tabs.Tab>
-private
-          </Panel.Tabs.Tab>
-          <Panel.Tabs.Tab>
-sources
-          </Panel.Tabs.Tab>
-          <Panel.Tabs.Tab>
-forks
-          </Panel.Tabs.Tab>
+          <Panel.Tabs.Tab active>all</Panel.Tabs.Tab>
+          <Panel.Tabs.Tab>public</Panel.Tabs.Tab>
+          <Panel.Tabs.Tab>private</Panel.Tabs.Tab>
+          <Panel.Tabs.Tab>sources</Panel.Tabs.Tab>
+          <Panel.Tabs.Tab>forks</Panel.Tabs.Tab>
         </Panel.Tabs>
         <Panel.Block renderAs="a" active>
           <Panel.Icon>
@@ -45,11 +31,9 @@ forks
           remember me
         </Panel.Block>
         <Panel.Block>
-          <button type="button">
-            reset all filters
-          </button>
+          <button type="button">reset all filters</button>
         </Panel.Block>
-      </Panel>,
+      </Panel>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

@@ -1,5 +1,5 @@
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 
 export default {
   propTypes: {
@@ -7,21 +7,22 @@ export default {
     textAlignment: PropTypes.oneOf(['centered', 'justified', 'left', 'right']),
     textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
     textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
-    italic: PropTypes.bool,
+    italic: PropTypes.bool
   },
   defaultProps: {
     textSize: undefined,
     textAlignment: undefined,
     textTransform: undefined,
     italic: undefined,
-    textWeight: undefined,
+    textWeight: undefined
   },
-  classnames: props => classnames({
-    [`has-text-${props.textAlignment}`]: props.textAlignment,
-    [`has-text-weight-${props.textWeight}`]: props.textWeight,
-    [`is-size-${props.textSize}`]: props.textSize,
-    [`is-${props.textTransform}`]: props.textTransform,
-    'is-italic': props.italic,
-  }),
-  clean: ({ textWeight, textTransform, italic, textSize, textAlignment, ...props }) => props,
+  classnames: props =>
+    cn({
+      [`has-text-${props.textAlignment}`]: props.textAlignment,
+      [`has-text-weight-${props.textWeight}`]: props.textWeight,
+      [`is-size-${props.textSize}`]: props.textSize,
+      [`is-${props.textTransform}`]: props.textTransform,
+      'is-italic': props.italic
+    }),
+  clean: ({ textWeight, textTransform, italic, textSize, textAlignment, ...props }) => props
 };

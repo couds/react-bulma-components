@@ -1,25 +1,18 @@
-import React from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Table = React.forwardRef(({
-  children,
-  className,
-  size,
-  striped,
-  bordered,
-  ...props
-}, ref) => (
+const Table = React.forwardRef(({ children, className, size, striped, bordered, ...props }, ref) => (
   <Element
     renderAs="table"
     {...props}
     ref={ref}
-    className={classnames('table', className, {
+    className={cn('table', className, {
       [`is-${size}`]: size,
       'is-bordered': bordered,
-      'is-striped': striped,
+      'is-striped': striped
     })}
   >
     {children}
@@ -33,7 +26,7 @@ Table.propTypes = {
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(['fullwidth', 'narrow']),
   striped: PropTypes.bool,
-  bordered: PropTypes.bool,
+  bordered: PropTypes.bool
 };
 
 Table.defaultProps = {
@@ -43,7 +36,7 @@ Table.defaultProps = {
   style: {},
   size: 'fullwidth',
   striped: true,
-  bordered: false,
+  bordered: false
 };
 
 export default Table;
