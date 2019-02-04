@@ -15,7 +15,7 @@ import Link from './components/link';
 import Menu from './components/menu';
 import { ShowContext } from './context';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 let htmlClass = '';
 

@@ -58,7 +58,7 @@ describe('Hero component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key])).map(color =>
+  [null].concat(Object.values(CONSTANTS.COLORS)).map(color =>
     it(`Should use use color ${color}`, () => {
       const component = renderer.create(
         <Hero color={color}>

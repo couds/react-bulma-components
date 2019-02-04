@@ -8,7 +8,7 @@ import Element from '../element';
 import MessageBody from './components/body';
 import MessageHeader from './components/header';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Message = React.forwardRef(({ children, className, color, size, ...props }, ref) => (
   <Element

@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Progress = React.forwardRef(({ className, value, max, color, size, ...props }, ref) => (
   <Element

@@ -7,7 +7,7 @@ import Element from '../element';
 import Column from './components/column';
 import COLUMN_CONSTANTS from './constants';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
+const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
 
 const Columns = React.forwardRef(({ className, breakpoint, gapless, multiline, centered, ...props }, ref) => (
   <Element

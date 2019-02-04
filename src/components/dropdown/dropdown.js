@@ -8,7 +8,7 @@ import Icon from '../icon';
 import DropdownDivider from './components/divider';
 import DropdownItem from './components/item';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 export default class Dropdown extends PureComponent {
   static Item = DropdownItem;

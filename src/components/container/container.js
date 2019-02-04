@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
+const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
 
 const Container = React.forwardRef(({ children, fluid, breakpoint, className, ...props }, ref) => (
   <Element

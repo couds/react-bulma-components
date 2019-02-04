@@ -4,7 +4,7 @@ import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Textarea = React.forwardRef(
   ({ className, size, color, readOnly, disabled, placeholder, rows, value, name, ...allProps }, ref) => {

@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import TagGroup from './components/tag-group';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Tag = React.forwardRef(({ children, className, color, size, rounded, remove, ...props }, ref) => (
   <Element
