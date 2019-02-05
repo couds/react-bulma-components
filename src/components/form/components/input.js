@@ -60,7 +60,7 @@ Input.propTypes = {
     'time',
     'datetime-local'
   ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
   isStatic: PropTypes.bool,

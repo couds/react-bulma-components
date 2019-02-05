@@ -20,12 +20,7 @@ export default {
     ...typography.defaultProps
   },
   classnames: props =>
-    cn(
-      helpers.classnames(props),
-      responsive.classnames(props),
-      colors.classnames(props),
-      typography.classnames(props)
-    ),
+    cn(helpers.classnames(props), responsive.classnames(props), colors.classnames(props), typography.classnames(props)),
   clean: props =>
     compose(
       helpers.clean,

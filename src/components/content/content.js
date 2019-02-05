@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
@@ -21,7 +22,7 @@ Content.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 

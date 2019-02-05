@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 import Tab from './components/tab';
@@ -31,7 +32,7 @@ Tabs.propTypes = {
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   align: PropTypes.oneOf(['centered', 'right']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   /** This is called style on Bulma documentation */
   type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
   fullwidth: PropTypes.bool

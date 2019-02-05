@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 
 const Breadcrumb = React.forwardRef(
@@ -44,7 +45,7 @@ Breadcrumb.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   align: PropTypes.oneOf(['right', 'center']),
   items: PropTypes.arrayOf(
     PropTypes.shape({

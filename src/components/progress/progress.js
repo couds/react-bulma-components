@@ -26,7 +26,7 @@ Progress.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired
 };

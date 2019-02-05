@@ -33,7 +33,7 @@ Message.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors)
 };
 

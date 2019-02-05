@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
@@ -32,7 +33,7 @@ Control.propTypes = {
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
   loading: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES))
 };
 
 Control.defaultProps = {

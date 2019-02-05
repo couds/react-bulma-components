@@ -77,8 +77,7 @@ exports[`Label component Should have label classname 1`] = `
   htmlFor={null}
   style={Object {}}
 >
-  Test
-   
+  Test 
   <a>
     Give me
   </a>

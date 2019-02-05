@@ -43,7 +43,7 @@ Select.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,

@@ -5,9 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import CONSTANTS from '../constants';
 
-const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(
-  Object.keys(CONSTANTS.SIZES).map(key => CONSTANTS.SIZES[key])
-);
+const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(Object.values(CONSTANTS.SIZES));
 
 const Column = React.forwardRef(
   (

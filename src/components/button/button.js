@@ -85,7 +85,7 @@ Button.propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.oneOf(['a', 'button', 'span']), PropTypes.func]),
   onClick: PropTypes.func,
   color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   state: PropTypes.oneOf(['hover', 'focus', 'active', 'loading']),
   outlined: PropTypes.bool,
   inverted: PropTypes.bool,

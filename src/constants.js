@@ -18,5 +18,10 @@ export default {
     WHITE: 'white',
     BLACK: 'black',
     LINK: 'link'
+  },
+  SIZES: {
+    SMALL: 'small',
+    MEDIUM: 'medium',
+    LARGE: 'large'
   }
 };

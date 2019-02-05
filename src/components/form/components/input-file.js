@@ -14,7 +14,7 @@ export default class InputFile extends PureComponent {
     style: PropTypes.shape({}),
     onChange: PropTypes.func,
     color: PropTypes.oneOf(colors),
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
     fileName: PropTypes.bool,
     fullwidth: PropTypes.bool,
     right: PropTypes.bool,

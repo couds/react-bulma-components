@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
 const Label = React.forwardRef(({ children, className, size, ...allProps }, ref) => {
@@ -24,7 +25,7 @@ Label.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   htmlFor: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES))
 };
 
 Label.defaultProps = {
