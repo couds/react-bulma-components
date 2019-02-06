@@ -58,7 +58,7 @@ storiesOf('Media', module)
       <Box>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64}/>
+            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Content>
@@ -76,7 +76,7 @@ storiesOf('Media', module)
 
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/128x128.png" size={48}/>
+                <Image src="http://bulma.io/images/placeholders/128x128.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -107,7 +107,7 @@ storiesOf('Media', module)
 
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/96x96.png" size={48}/>
+                <Image src="http://bulma.io/images/placeholders/96x96.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -129,7 +129,7 @@ storiesOf('Media', module)
         </Media>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64}/>
+            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Field>
