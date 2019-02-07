@@ -172,4 +172,40 @@ describe('Dropdown component', () => {
     component.find(Dropdown.Item).simulate('click', { path: [] });
     expect(component.state('open')).toBe(false);
   });
+  it('Should show custom label passed to the label prop', () => {
+    const component = renderer.create(
+      <Dropdown label="test label">
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component).toMatchSnapshot();
+  });
+  it('Should show the label of the first dropdown item when no custom label is passed', () => {
+    const component = renderer.create(
+      <Dropdown>
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component).toMatchSnapshot();
+  });
+  it('Should show custom label when active valued is undefined/empty', () => {
+    const component = shallow(
+      <Dropdown label="test label" value="">
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component.find('span').text()).toEqual('test label');
+  });
+  it('Should show the label of the dropdown item when value of it is the active value', () => {
+    const component = shallow(
+      <Dropdown label="test label" value="value">
+        <Dropdown.Item value="value">
+          Item
+        </Dropdown.Item>
+      </Dropdown>);
+    expect(component.find('span').text()).toEqual('Item');
+  });
 });
