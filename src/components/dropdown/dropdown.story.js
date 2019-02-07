@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Dropdown from '.';
@@ -13,14 +13,20 @@ const alignment = {
 
 class Wrapper extends React.Component {
   state = {
-    selected: 'active'
+    selected: ''
   };
   onChange = selected => {
     this.setState({ selected });
   };
   render() {
     return (
-      <Dropdown value={this.state.selected} onChange={this.onChange} color="info" {...this.props}>
+      <Dropdown
+        {...this.props}
+        value={this.state.selected}
+        onChange={this.onChange}
+        color="info"
+        label={text('label', '')}
+      >
         <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
         <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
         <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
@@ -34,7 +40,7 @@ class Wrapper extends React.Component {
 
 storiesOf('Dropdown', module)
   .add('Default', () => (
-    <Dropdown onChange={action('select')}>
+    <Dropdown onChange={action('select')} label={text('label', '')}>
       <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
       <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
       <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
@@ -44,7 +50,7 @@ storiesOf('Dropdown', module)
     </Dropdown>
   ))
   .add('Hoverable', () => (
-    <Dropdown hoverable value="item">
+    <Dropdown hoverable value="item" label={text('label', '')}>
       <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
       <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
       <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
@@ -62,6 +68,7 @@ storiesOf('Dropdown', module)
             right={boolean('right (will replace "align" prop)', false)}
             value="item"
             up={boolean('up', false)}
+            label={text('label', '')}
           >
             <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
             <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>

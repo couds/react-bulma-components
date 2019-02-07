@@ -25,7 +25,8 @@ export default class Dropdown extends PureComponent {
     color: PropTypes.oneOf(colors),
     right: PropTypes.bool,
     up: PropTypes.bool,
-    hoverable: PropTypes.bool
+    hoverable: PropTypes.bool,
+    label: PropTypes.string
   };
 
   static defaultProps = {
@@ -36,7 +37,8 @@ export default class Dropdown extends PureComponent {
     children: [],
     onChange: undefined,
     color: undefined,
-    hoverable: undefined
+    hoverable: undefined,
+    label: undefined
   };
 
   state = {
@@ -77,12 +79,12 @@ export default class Dropdown extends PureComponent {
   };
 
   render() {
-    const { className, children, value, color, right, up, hoverable, onChange, ...allProps } = this.props;
-    let current = null;
+    const { className, children, value, color, right, up, label, hoverable, onChange, ...allProps } = this.props;
+    let current = label;
     const props = modifiers.clean(allProps);
 
     const childrenArray = React.Children.map(children, (child, i) => {
-      if (child.type === DropdownItem && (i === 0 || child.props.value === value)) {
+      if (child.type === DropdownItem && ((i === 0 && !label) || child.props.value === value)) {
         current = child.props.children;
       }
       return React.cloneElement(

@@ -343,3 +343,105 @@ exports[`Dropdown component Should have dropdown classname 1`] = `
   </div>
 </div>
 `;
+
+exports[`Dropdown component Should show custom label passed to the label prop 1`] = `
+<div
+  className="dropdown"
+  style={Object {}}
+>
+  <div
+    className="dropdown-trigger"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <button
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+      tabIndex={0}
+    >
+      <span>
+        test label
+      </span>
+      <span
+        className="icon is-small"
+        style={Object {}}
+      >
+        <i
+          className="rbc rbc-angle-down"
+        />
+      </span>
+    </button>
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    >
+      <div
+        className="dropdown-item"
+        onClick={[Function]}
+        role="presentation"
+        title="value"
+      >
+        Item
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown component Should show the label of the first dropdown item when no custom label is passed 1`] = `
+<div
+  className="dropdown"
+  style={Object {}}
+>
+  <div
+    className="dropdown-trigger"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <button
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      style={Object {}}
+      tabIndex={0}
+    >
+      <span>
+        Item
+      </span>
+      <span
+        className="icon is-small"
+        style={Object {}}
+      >
+        <i
+          className="rbc rbc-angle-down"
+        />
+      </span>
+    </button>
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    >
+      <div
+        className="dropdown-item"
+        onClick={[Function]}
+        role="presentation"
+        title="value"
+      >
+        Item
+      </div>
+    </div>
+  </div>
+</div>
+`;
