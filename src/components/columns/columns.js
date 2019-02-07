@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import Column from './components/column';
+import { Element } from '../element';
+import { Column } from './components/column';
 import COLUMN_CONSTANTS from './constants';
 
 const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
 
-const Columns = React.forwardRef(({ className, breakpoint, gapless, multiline, centered, ...props }, ref) => (
+export const Columns = React.forwardRef(({ className, breakpoint, gapless, multiline, centered, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Tag from '..';
+import { Tag } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Tag component', () => {

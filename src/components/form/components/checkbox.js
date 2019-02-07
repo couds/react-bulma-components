@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
 
-const Checkbox = React.forwardRef(
+export const Checkbox = React.forwardRef(
   ({ className, style, disabled, value, children, checked, name, ...allProps }, ref) => {
     const props = modifiers.clean(allProps);
     return (
@@ -39,5 +39,3 @@ Checkbox.defaultProps = {
   checked: false,
   name: null
 };
-
-export default Checkbox;

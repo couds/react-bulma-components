@@ -3,9 +3,9 @@ import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Box from 'react-bulma-components/lib/components/box';
-import Button from 'react-bulma-components/lib/components/button';
-import Section from 'react-bulma-components/lib/components/section';
+import { Box } from '../box';
+import { Button } from '../button';
+import { Section } from '../section';
 
 const colors = {
   Default: '',

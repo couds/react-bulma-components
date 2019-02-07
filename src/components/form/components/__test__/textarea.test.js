@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Textarea from '../textarea';
+import { Textarea } from '../textarea';
 
 describe('Textarea component', () => {
   it('Should exist', () => {

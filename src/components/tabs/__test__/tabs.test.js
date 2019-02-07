@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Tabs from '..';
+import { Tabs } from '..';
 
 describe('Tabs component', () => {
   it('Should Exist', () => {

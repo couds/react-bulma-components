@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Container from '..';
+import { Container } from '..';
 
 describe('Container component', () => {
   it('Should have container classname', () => {

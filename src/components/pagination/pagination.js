@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
-class Pagination extends React.PureComponent {
+export class PaginationEl extends React.PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     innerRef: PropTypes.node,
@@ -152,4 +152,4 @@ class Pagination extends React.PureComponent {
   }
 }
 
-export default React.forwardRef((props, ref) => <Pagination innerRef={ref} {...props} />);
+export const Pagination = React.forwardRef((props, ref) => <PaginationEl innerRef={ref} {...props} />);

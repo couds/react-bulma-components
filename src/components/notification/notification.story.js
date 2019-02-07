@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Button from 'react-bulma-components/lib/components/button';
-import Notification from 'react-bulma-components/lib/components/notification';
-import Section from 'react-bulma-components/lib/components/section';
+import { Button } from '../button';
+import { Notification } from '../notification';
+import { Section } from '../section';
 
 storiesOf('Notification', module).add('Default', () => (
   <Section>

@@ -2,11 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import Element from '../../../element';
-/* eslint-disable-next-line import/no-cycle */
-import MenuListItem from './components/item';
+import { Element } from '../../../element';
+import { MenuListItem } from './components/item';
 
-const MenuList = React.forwardRef(({ className, title, ...props }, ref) => (
+export const MenuList = React.forwardRef(({ className, title, ...props }, ref) => (
   <React.Fragment>
     {title && <p className="menu-label">{title}</p>}
     <Element ref={ref} renderAs="ul" className={cn('menu-list', className)} {...props} />
@@ -26,5 +25,3 @@ MenuList.defaultProps = {
   className: '',
   title: null
 };
-
-export default MenuList;

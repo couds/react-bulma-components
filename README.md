@@ -68,7 +68,7 @@ You can start using the library like this
 
 ```javascript
 import React from 'react';
-import Button from 'react-bulma-components/lib/components/button';
+import { Button } from '@/components/button';
 
 export default () => (
   <Button color="primary">My Bulma button</Button>

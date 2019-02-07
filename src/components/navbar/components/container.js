@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const NavbarContainer = React.forwardRef(({ className, children, position, ...props }, ref) => (
+export const NavbarContainer = React.forwardRef(({ className, children, position, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -36,5 +36,3 @@ NavbarContainer.defaultProps = {
   renderAs: 'div',
   position: 'start'
 };
-
-export default NavbarContainer;

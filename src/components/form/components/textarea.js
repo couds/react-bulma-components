@@ -6,7 +6,7 @@ import modifiers from '../../../modifiers';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Textarea = React.forwardRef(
+export const Textarea = React.forwardRef(
   ({ className, size, color, readOnly, disabled, placeholder, rows, value, name, ...allProps }, ref) => {
     const props = modifiers.clean(allProps);
     return (
@@ -58,5 +58,3 @@ Textarea.defaultProps = {
   value: '',
   name: ''
 };
-
-export default Textarea;

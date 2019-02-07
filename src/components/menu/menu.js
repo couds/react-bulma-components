@@ -2,10 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import MenuList from './components/list';
+import { Element } from '../element';
+import { MenuList } from './components/list';
 
-const Menu = React.forwardRef(({ className, ...props }, ref) => (
+export const Menu = React.forwardRef(({ className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('menu', className)} />
 ));
 
@@ -22,5 +22,3 @@ Menu.defaultProps = {
   className: '',
   renderAs: 'aside'
 };
-
-export default Menu;

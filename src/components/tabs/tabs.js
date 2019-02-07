@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import Tab from './components/tab';
+import { Element } from '../element';
+import { Tab } from './components/tab';
 
-const Tabs = React.forwardRef(({ children, className, align, size, type, fullwidth, ...props }, ref) => (
+export const Tabs = React.forwardRef(({ children, className, align, size, type, fullwidth, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -49,5 +49,3 @@ Tabs.defaultProps = {
   type: null,
   fullwidth: false
 };
-
-export default Tabs;

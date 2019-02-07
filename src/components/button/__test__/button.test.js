@@ -2,7 +2,7 @@ import { mount, shallow } from 'enzyme';
 import PropTypes from 'prop-types';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Button from '..';
+import { Button } from '..';
 
 const Link = ({ to, children }) => <a href={to}>{children}</a>;
 

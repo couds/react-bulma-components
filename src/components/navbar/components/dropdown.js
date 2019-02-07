@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const NavbarDropdown = React.forwardRef(({ className, boxed, right, children, ...props }, ref) => (
+export const NavbarDropdown = React.forwardRef(({ className, boxed, right, children, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -36,5 +36,3 @@ NavbarDropdown.defaultProps = {
   boxed: false,
   right: false
 };
-
-export default NavbarDropdown;

@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Button from 'react-bulma-components/lib/components/button';
-import Content from 'react-bulma-components/lib/components/content';
-import Image from 'react-bulma-components/lib/components/image';
-import Level from 'react-bulma-components/lib/components/level';
-import Media from 'react-bulma-components/lib/components/media';
-import Modal from 'react-bulma-components/lib/components/modal';
-import Section from 'react-bulma-components/lib/components/section';
+import { Button } from '../button';
+import { Content } from '../content';
+import { Image } from '../image';
+import { Level } from '../level';
+import { Media } from '../media';
+import { Modal } from '../modal';
+import { Section } from '../section';
 
 class OpenModal extends React.Component {
   static propTypes = {

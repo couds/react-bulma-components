@@ -1,3 +1,3 @@
 import './content.sass';
 
-export { default } from './content';
+export * from './content';

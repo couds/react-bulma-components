@@ -4,15 +4,15 @@ import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import canUseDOM from '../../services/can-use-dom';
-import Element from '../element';
-import Brand from './components/brand';
-import Burger from './components/burger';
-import Container from './components/container';
-import Divider from './components/divider';
-import Dropdown from './components/dropdown';
-import Item from './components/item';
-import Link from './components/link';
-import Menu from './components/menu';
+import { Element } from '../element';
+import { NavbarBrand } from './components/brand';
+import { NavbarBurger } from './components/burger';
+import { NavbarContainer } from './components/container';
+import { NavbarDivider } from './components/divider';
+import { NavbarDropdown } from './components/dropdown';
+import { NavbarItem } from './components/item';
+import { NavbarLink } from './components/link';
+import { NavbarMenu } from './components/menu';
 import { ShowContext } from './context';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
@@ -21,7 +21,7 @@ let htmlClass = '';
 
 export const getHtmlClasses = () => htmlClass;
 
-class Navbar extends React.PureComponent {
+class NavbarEl extends React.PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     children: PropTypes.node,
@@ -92,15 +92,13 @@ class Navbar extends React.PureComponent {
 }
 
 // const NavbarRef = React.forwardRef((props, ref) => <Navbar innerRef={ref} {...props} />);
-const NavbarRef = React.forwardRef((props, ref) => <Navbar innerRef={ref} {...props} />);
+export const Navbar = React.forwardRef((props, ref) => <NavbarEl innerRef={ref} {...props} />);
 
-NavbarRef.Brand = Brand;
-NavbarRef.Burger = Burger;
-NavbarRef.Menu = Menu;
-NavbarRef.Item = Item;
-NavbarRef.Dropdown = Dropdown;
-NavbarRef.Link = Link;
-NavbarRef.Divider = Divider;
-NavbarRef.Container = Container;
-
-export default NavbarRef;
+Navbar.Brand = NavbarBrand;
+Navbar.Burger = NavbarBurger;
+Navbar.Menu = NavbarMenu;
+Navbar.Item = NavbarItem;
+Navbar.Dropdown = NavbarDropdown;
+Navbar.Link = NavbarLink;
+Navbar.Divider = NavbarDivider;
+Navbar.Container = NavbarContainer;

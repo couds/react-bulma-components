@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import { JSDOM } from 'jsdom';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Modal from '..';
+import { Modal } from '..';
 
 describe('Modal component', () => {
   let window;

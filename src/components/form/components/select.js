@@ -6,7 +6,7 @@ import modifiers from '../../../modifiers';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Select = React.forwardRef(
+export const Select = React.forwardRef(
   (
     { className, style, size, color, loading, readOnly, disabled, value, multiple, children, name, ...allProps },
     ref
@@ -70,5 +70,3 @@ Select.defaultProps = {
   loading: false,
   name: null
 };
-
-export default Select;

@@ -1,10 +1,10 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Box from 'react-bulma-components/lib/components/box';
-import Content from 'react-bulma-components/lib/components/content';
-import Image from 'react-bulma-components/lib/components/image';
-import Media from 'react-bulma-components/lib/components/media';
+import { Box } from '../box';
+import { Content } from '../content';
+import { Image } from '../image';
+import { Media } from '../media';
 
 storiesOf('Box', module).add('Default', () => (
   <Box

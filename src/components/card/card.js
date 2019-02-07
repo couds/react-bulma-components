@@ -2,13 +2,13 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import CardContent from './components/content';
-import CardFooter from './components/footer';
-import CardHeader from './components/header';
-import CardImage from './components/image';
+import { Element } from '../element';
+import { CardContent } from './components/content';
+import { CardFooter } from './components/footer';
+import { CardHeader } from './components/header';
+import { CardImage } from './components/image';
 
-const Card = React.forwardRef(({ className, children, ...props }, ref) => (
+export const Card = React.forwardRef(({ className, children, ...props }, ref) => (
   <Element ref={ref} className={cn('card', className)} {...props}>
     {children}
   </Element>
@@ -37,5 +37,3 @@ Card.defaultProps = {
   style: {},
   renderAs: 'div'
 };
-
-export default Card;

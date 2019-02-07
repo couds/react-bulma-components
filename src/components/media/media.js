@@ -2,11 +2,11 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import MediaContent from './components/media-content';
-import MediaItem from './components/media-item';
+import { Element } from '../element';
+import { MediaContent } from './components/media-content';
+import { MediaItem } from './components/media-item';
 
-const Media = React.forwardRef(({ children, className, ...props }, ref) => (
+export const Media = React.forwardRef(({ children, className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('media', className, {})}>
     {children}
   </Element>

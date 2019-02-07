@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const HeroHead = ({ children, className, ...props }) => (
+export const HeroHead = ({ children, className, ...props }) => (
   <Element {...props} className={cn(className, 'hero-head')}>
     {children}
   </Element>
@@ -25,5 +25,3 @@ HeroHead.defaultProps = {
   style: {},
   renderAs: 'div'
 };
-
-export default HeroHead;

@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const NavbarLink = React.forwardRef(({ className, children, ...props }, ref) => (
+export const NavbarLink = React.forwardRef(({ className, children, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('navbar-link', className)}>
     {children}
   </Element>
@@ -25,5 +25,3 @@ NavbarLink.defaultProps = {
   children: null,
   renderAs: 'span'
 };
-
-export default NavbarLink;

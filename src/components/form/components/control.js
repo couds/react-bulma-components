@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const Control = React.forwardRef(
+export const Control = React.forwardRef(
   ({ children, className, fullwidth, iconLeft, iconRight, loading, size, ...props }, ref) => (
     <Element
       {...props}
@@ -48,5 +48,3 @@ Control.defaultProps = {
   loading: false,
   size: null
 };
-
-export default Control;

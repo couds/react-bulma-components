@@ -2,24 +2,26 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
-const Heading = React.forwardRef(({ children, className, size, subtitle, weight, spaced, heading, ...props }, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={cn(className, {
-      title: !subtitle && !heading,
-      subtitle,
-      heading,
-      [`is-${size}`]: size,
-      [`has-text-weight-${weight}`]: weight,
-      'is-spaced': spaced && !subtitle
-    })}
-  >
-    {children}
-  </Element>
-));
+export const Heading = React.forwardRef(
+  ({ children, className, size, subtitle, weight, spaced, heading, ...props }, ref) => (
+    <Element
+      {...props}
+      ref={ref}
+      className={cn(className, {
+        title: !subtitle && !heading,
+        subtitle,
+        heading,
+        [`is-${size}`]: size,
+        [`has-text-weight-${weight}`]: weight,
+        'is-spaced': spaced && !subtitle
+      })}
+    >
+      {children}
+    </Element>
+  )
+);
 
 Heading.propTypes = {
   ...modifiers.propTypes,
@@ -44,5 +46,3 @@ Heading.defaultProps = {
   heading: false,
   spaced: false
 };
-
-export default Heading;

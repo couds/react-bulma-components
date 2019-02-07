@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
 const ButtonGroup = ({ children, className, hasAddons, position, renderAs, ...props }) => (
   <Element

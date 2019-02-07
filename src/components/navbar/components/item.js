@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const NavbarItem = React.forwardRef(
+export const NavbarItem = React.forwardRef(
   ({ className, active, children, dropdown, dropdownUp, hoverable, renderAs, ...props }, ref) => {
     let as = renderAs;
     if (dropdown && renderAs === 'a') {
@@ -51,5 +51,3 @@ NavbarItem.defaultProps = {
   dropdownUp: false,
   renderAs: 'a'
 };
-
-export default NavbarItem;

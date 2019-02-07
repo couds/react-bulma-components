@@ -1,3 +1,3 @@
 import './tile.sass';
 
-export { default } from './tile';
+export * from './tile';

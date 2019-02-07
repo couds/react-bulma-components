@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Box from 'react-bulma-components/lib/components/box';
-import Button from 'react-bulma-components/lib/components/button';
-import Container from 'react-bulma-components/lib/components/container';
-import { Control, Field, Input } from 'react-bulma-components/lib/components/form';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Hero from 'react-bulma-components/lib/components/hero';
-import Level from 'react-bulma-components/lib/components/level';
-import Section from 'react-bulma-components/lib/components/section';
+import { Box } from '../box';
+import { Button } from '../button';
+import { Container } from '../container';
+import { Control, Field, Input } from '../form';
+import { Heading } from '../heading';
+import { Hero } from '../hero';
+import { Level } from '../level';
+import { Section } from '../section';
 
 const style = { textAlign: 'center' };
 

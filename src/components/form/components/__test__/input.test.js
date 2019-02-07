@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Input from '../input';
+import { Input } from '../input';
 
 describe('Input component', () => {
   it('Should exist', () => {

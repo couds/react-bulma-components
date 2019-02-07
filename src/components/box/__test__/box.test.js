@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Box from '..';
+import { Box } from '..';
 
 describe('Box component', () => {
   it('Should Exist', () => {

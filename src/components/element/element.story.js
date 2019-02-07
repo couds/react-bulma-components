@@ -1,7 +1,7 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Element from 'react-bulma-components/lib/components/element';
+import { Element } from '../element';
 
 storiesOf('Element', module).add('Default', () => (
   <Element

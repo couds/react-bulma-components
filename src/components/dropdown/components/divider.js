@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
 
-const DropdownDivider = ({ className, ...allProps }) => {
+export const DropdownDivider = ({ className, ...allProps }) => {
   const props = modifiers.clean(allProps);
   return <hr {...props} className={cn('dropdown-divider', modifiers.classnames(allProps), className)} />;
 };
@@ -19,5 +19,3 @@ DropdownDivider.defaultProps = {
   style: {},
   className: ''
 };
-
-export default DropdownDivider;

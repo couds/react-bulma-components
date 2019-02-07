@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import TagGroup from './components/tag-group';
+import { Element } from '../element';
+import { TagGroup } from './components/tag-group';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Tag = React.forwardRef(({ children, className, color, size, rounded, remove, ...props }, ref) => (
+export const Tag = React.forwardRef(({ children, className, color, size, rounded, remove, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -48,5 +48,3 @@ Tag.defaultProps = {
   remove: false,
   renderAs: 'span'
 };
-
-export default Tag;

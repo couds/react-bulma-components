@@ -1,8 +1,8 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Image from 'react-bulma-components/lib/components/image';
-import Table from 'react-bulma-components/lib/components/table';
+import { Image } from '../image';
+import { Table } from '../table';
 import CONSTANTS from './constants';
 
 storiesOf('Image', module)

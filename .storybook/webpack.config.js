@@ -27,7 +27,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
       alias: {
         ...defaultConfig.resolve.alias,
         '~_variables.sass': path.resolve(__dirname, '../src/components/_variables.sass'),
-        'react-bulma-components/lib': path.resolve(__dirname, '../src'),
+        '@': path.resolve(__dirname, '../src'),
       }
       // https://github.com/graphql/graphql-js#using-in-a-browser
     },

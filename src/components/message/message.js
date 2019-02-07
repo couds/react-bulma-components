@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
-
-import MessageBody from './components/body';
-import MessageHeader from './components/header';
+import { Element } from '../element';
+import { MessageBody } from './components/body';
+import { MessageHeader } from './components/header';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Message = React.forwardRef(({ children, className, color, size, ...props }, ref) => (
+export const Message = React.forwardRef(({ children, className, color, size, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -46,5 +45,3 @@ Message.defaultProps = {
   color: null,
   size: null
 };
-
-export default Message;

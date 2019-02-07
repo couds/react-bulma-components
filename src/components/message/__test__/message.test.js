@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Message from '..';
+import { Message } from '..';
 
 describe('Message component', () => {
   it('Should Exist', () => {

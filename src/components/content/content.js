@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
-const Content = React.forwardRef(({ children, className, size, ...props }, ref) => (
+export const Content = React.forwardRef(({ children, className, size, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -34,5 +34,3 @@ Content.defaultProps = {
   size: null,
   renderAs: 'div'
 };
-
-export default Content;

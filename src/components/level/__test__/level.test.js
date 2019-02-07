@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Level from '..';
+import { Level } from '..';
 
 describe('Level component', () => {
   it('Should exist', () => {

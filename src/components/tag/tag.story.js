@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Control, Field } from 'react-bulma-components/lib/components/form';
-import Tag from 'react-bulma-components/lib/components/tag';
+import { Control, Field } from '../form';
+import { Tag } from '../tag';
 
 storiesOf('Tag', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)

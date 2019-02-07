@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Notification = React.forwardRef(({ children, className, color, ...props }, ref) => (
+export const Notification = React.forwardRef(({ children, className, color, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -40,5 +40,3 @@ Notification.defaultProps = {
   renderAs: 'div',
   color: null
 };
-
-export default Notification;

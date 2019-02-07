@@ -2,7 +2,7 @@ import { JSDOM } from 'jsdom';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import renderer from 'react-test-renderer';
-import Navbar, { getHtmlClasses } from '..';
+import { getHtmlClasses, Navbar } from '..';
 
 describe('Navbar component', () => {
   let window;

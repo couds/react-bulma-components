@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Columns from '..';
+import { Columns } from '..';
 
 describe('Columns component', () => {
   it('Should have columns classname', () => {

@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const PanelBlock = React.forwardRef(({ className, active, ...props }, ref) => (
+export const PanelBlock = React.forwardRef(({ className, active, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -27,5 +27,3 @@ PanelBlock.defaultProps = {
   renderAs: 'div',
   active: false
 };
-
-export default PanelBlock;

@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../../modifiers';
-import Element from '../../../../element';
+import { Element } from '../../../../element';
 
-const CardHeaderIcon = React.forwardRef(({ className, ...props }, ref) => (
+export const CardHeaderIcon = React.forwardRef(({ className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('card-header-icon', className)} />
 ));
 
@@ -19,5 +19,3 @@ CardHeaderIcon.defaultProps = {
   className: undefined,
   renderAs: 'div'
 };
-
-export default CardHeaderIcon;

@@ -2,14 +2,14 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
-import ModalCard from './components/card';
-import ModalContent from './components/content';
+import { ModalCard } from './components/card';
+import { ModalContent } from './components/content';
 
 const KEYCODES = {
   ESCAPE: 27
 };
 
-class Modal extends PureComponent {
+export class ModalEl extends PureComponent {
   portalElement = null;
 
   static propTypes = {
@@ -119,9 +119,7 @@ class Modal extends PureComponent {
   }
 }
 
-const ModalRef = React.forwardRef((props, ref) => <Modal innerRef={ref} {...props} />);
+export const Modal = React.forwardRef((props, ref) => <ModalEl innerRef={ref} {...props} />);
 
-ModalRef.Content = ModalContent;
-ModalRef.Card = ModalCard;
-
-export default ModalRef;
+Modal.Content = ModalContent;
+Modal.Card = ModalCard;

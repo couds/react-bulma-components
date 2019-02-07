@@ -1,3 +1,3 @@
 import './columns.sass';
 
-export { default } from './columns';
+export * from './columns';

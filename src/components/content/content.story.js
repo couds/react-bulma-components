@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Content from 'react-bulma-components/lib/components/content';
+import { Content } from '../content';
 
 storiesOf('Content', module)
   .add('Default', () => (

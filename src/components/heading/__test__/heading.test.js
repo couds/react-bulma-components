@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Heading from '..';
+import { Heading } from '..';
 
 describe('Heading component', () => {
   it('Should exist', () => {

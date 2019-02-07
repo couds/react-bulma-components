@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Pagination from '..';
+import { Pagination } from '..';
 
 describe('Pagination component', () => {
   it('Pagination Should Exist', () => {

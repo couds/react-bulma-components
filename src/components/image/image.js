@@ -2,10 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 import CONSTANTS from './constants';
 
-export default class Image extends PureComponent {
+export class Image extends PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     className: PropTypes.string,

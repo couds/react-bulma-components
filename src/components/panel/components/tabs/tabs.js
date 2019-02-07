@@ -2,14 +2,14 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import Element from '../../../element';
-import Tab from './components/tab';
+import { Element } from '../../../element';
+import { PanelTabsTab } from './components/tab';
 
-const PanelTabs = React.forwardRef(({ className, ...props }, ref) => (
+export const PanelTabs = React.forwardRef(({ className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('panel-tabs', className)} />
 ));
 
-PanelTabs.Tab = Tab;
+PanelTabs.Tab = PanelTabsTab;
 
 PanelTabs.propTypes = {
   ...modifiers.propTypes,
@@ -22,5 +22,3 @@ PanelTabs.defaultProps = {
   className: '',
   renderAs: 'div'
 };
-
-export default PanelTabs;

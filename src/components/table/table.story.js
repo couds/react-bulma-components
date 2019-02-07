@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Table from 'react-bulma-components/lib/components/table';
+import { Table } from '../table';
 
 storiesOf('Table', module).add('Default', () => (
   <Table>

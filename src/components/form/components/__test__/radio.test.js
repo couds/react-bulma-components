@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Radio from '../radio';
+import { Radio } from '../radio';
 
 describe('Radio component', () => {
   it('Should exist', () => {

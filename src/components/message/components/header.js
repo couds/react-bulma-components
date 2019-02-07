@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const MessageHeader = React.forwardRef(({ children, className, ...props }, ref) => (
+export const MessageHeader = React.forwardRef(({ children, className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('message-header', className)}>
     {children}
   </Element>
@@ -23,5 +23,3 @@ MessageHeader.defaultProps = {
   className: '',
   renderAs: 'div'
 };
-
-export default MessageHeader;

@@ -4,7 +4,7 @@ import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-const Label = React.forwardRef(({ children, className, size, ...allProps }, ref) => {
+export const Label = React.forwardRef(({ children, className, size, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <label
@@ -36,5 +36,3 @@ Label.defaultProps = {
   size: null,
   htmlFor: null
 };
-
-export default Label;

@@ -1,8 +1,8 @@
 import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Box from 'react-bulma-components/lib/components/box';
-import Breadcrumb from 'react-bulma-components/lib/components/breadcrumb';
+import { Box } from '../box';
+import { Breadcrumb } from '../breadcrumb';
 
 storiesOf('Breadcrumb', module)
   .add('Default', () => (

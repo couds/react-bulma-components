@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
-const Table = React.forwardRef(({ children, className, size, striped, bordered, ...props }, ref) => (
+export const Table = React.forwardRef(({ children, className, size, striped, bordered, ...props }, ref) => (
   <Element
     renderAs="table"
     {...props}
@@ -38,5 +38,3 @@ Table.defaultProps = {
   striped: true,
   bordered: false
 };
-
-export default Table;

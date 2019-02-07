@@ -1,7 +1,7 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Tabs from 'react-bulma-components/lib/components/tabs';
+import Tabs from '../tabs';
 
 storiesOf('Tabs', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)

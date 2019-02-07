@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Control from '../control';
+import { Control } from '../control';
 
 describe('Control component', () => {
   it('Should exist', () => {

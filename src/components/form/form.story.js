@@ -1,20 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React, { PureComponent } from 'react';
-import Button from 'react-bulma-components/lib/components/button';
-
-import {
-  Checkbox,
-  Control,
-  Field,
-  Help,
-  Input,
-  InputFile,
-  Label,
-  Radio,
-  Select,
-  Textarea
-} from 'react-bulma-components/lib/components/form';
-import Icon from 'react-bulma-components/lib/components/icon';
+import { Button } from '../button';
+import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Textarea } from '../form';
+import { Icon } from '../icon';
 
 /* eslint-disable react/no-multi-comp */
 const HoC = Component => {

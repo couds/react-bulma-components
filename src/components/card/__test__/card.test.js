@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Card from '..';
+import { Card } from '..';
 
 describe('Card component', () => {
   it('Should have card classname', () => {

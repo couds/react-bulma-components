@@ -1,3 +1,3 @@
 import './heading.sass';
 
-export { default } from './heading';
+export * from './heading';

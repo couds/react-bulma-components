@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
-const Section = React.forwardRef(({ children, className, size, ...props }, ref) => (
+export const Section = React.forwardRef(({ children, className, size, ...props }, ref) => (
   <Element
     ref={ref}
     {...props}
@@ -33,5 +33,3 @@ Section.defaultProps = {
   renderAs: 'section',
   size: null
 };
-
-export default Section;

@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const DropdownItem = ({ active, children, value, ...props }) => (
+export const DropdownItem = ({ active, children, value, ...props }) => (
   <Element
     title={value}
     {...props}
@@ -31,5 +31,3 @@ DropdownItem.defaultProps = {
   onClick: undefined,
   children: null
 };
-
-export default DropdownItem;

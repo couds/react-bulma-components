@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const MediaItem = React.forwardRef(({ children, className, position, ...props }, ref) => {
+export const MediaItem = React.forwardRef(({ children, className, position, ...props }, ref) => {
   const p = position === 'center' ? 'content' : position;
   return (
     <Element
@@ -36,5 +36,3 @@ MediaItem.defaultProps = {
   renderAs: 'div',
   position: 'center'
 };
-
-export default MediaItem;

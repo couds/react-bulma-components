@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Icon from 'react-bulma-components/lib/components/icon';
+import { Icon } from '../icon';
 
 storiesOf('Icon', module)
   .add('Default', () => (

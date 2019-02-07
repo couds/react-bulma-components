@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import Element from '../../../element';
+import { Element } from '../../../element';
 
-const FieldBody = ({ children, className, ...props }) => (
+export const FieldBody = ({ children, className, ...props }) => (
   <Element {...props} className={cn('field-body', className, {})}>
     {children}
   </Element>
@@ -25,5 +25,3 @@ FieldBody.defaultProps = {
   style: {},
   renderAs: 'div'
 };
-
-export default FieldBody;

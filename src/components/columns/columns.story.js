@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Box from 'react-bulma-components/lib/components/box';
-import Columns from 'react-bulma-components/lib/components/columns';
-import Heading from 'react-bulma-components/lib/components/heading';
+import { Box } from '../box';
+import { Columns } from '../columns';
+import { Heading } from '../heading';
 import CONSTANTS from './constants';
 
 storiesOf('Columns', module)

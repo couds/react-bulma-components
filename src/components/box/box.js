@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
-const Box = React.forwardRef(({ children, className, ...props }, ref) => (
+export const Box = React.forwardRef(({ children, className, ...props }, ref) => (
   <Element ref={ref} {...props} className={cn('box', className)}>
     {children}
   </Element>
@@ -25,5 +25,3 @@ Box.defaultProps = {
   style: {},
   renderAs: 'div'
 };
-
-export default Box;

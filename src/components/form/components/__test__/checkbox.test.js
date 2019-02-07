@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Checkbox from '../checkbox';
+import { Checkbox } from '../checkbox';
 
 describe('Checkbox component', () => {
   it('Should Exists', () => {

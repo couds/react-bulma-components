@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Button from '../button';
-import Icon from '../icon';
-import DropdownDivider from './components/divider';
-import DropdownItem from './components/item';
+import { Button } from '../button';
+import { Icon } from '../icon';
+import { DropdownDivider } from './components/divider';
+import { DropdownItem } from './components/item';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-export default class Dropdown extends PureComponent {
+export class Dropdown extends PureComponent {
   static Item = DropdownItem;
 
   static Divider = DropdownDivider;

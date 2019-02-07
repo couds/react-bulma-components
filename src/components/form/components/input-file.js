@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-export default class InputFile extends PureComponent {
+export class InputFile extends PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
     className: PropTypes.string,

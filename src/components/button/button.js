@@ -7,7 +7,7 @@ import ButtonGroup from './components/button-group';
 
 const colors = [null, ''].concat(Object.values(CONSTANTS.COLORS));
 
-const Button = React.forwardRef(
+export const Button = React.forwardRef(
   (
     {
       children,
@@ -124,5 +124,3 @@ Button.defaultProps = {
   rounded: false,
   text: false
 };
-
-export default Button;

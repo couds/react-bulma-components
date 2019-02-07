@@ -1,12 +1,12 @@
 import './form.sass';
 
-export { default as Field } from './components/field';
-export { default as Control } from './components/control';
-export { default as Input } from './components/input';
-export { default as Label } from './components/label';
-export { default as Textarea } from './components/textarea';
-export { default as Select } from './components/select';
-export { default as Checkbox } from './components/checkbox';
-export { default as Radio } from './components/radio';
-export { default as Help } from './components/help';
-export { default as InputFile } from './components/input-file';
+export * from './components/field';
+export * from './components/control';
+export * from './components/input';
+export * from './components/label';
+export * from './components/textarea';
+export * from './components/select';
+export * from './components/checkbox';
+export * from './components/radio';
+export * from './components/help';
+export * from './components/input-file';

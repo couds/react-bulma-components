@@ -2,9 +2,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 
-const Tab = React.forwardRef(({ children, className, style, active, ...props }, ref) => (
+export const Tab = React.forwardRef(({ children, className, style, active, ...props }, ref) => (
   <li
     ref={ref}
     style={style}
@@ -33,5 +33,3 @@ Tab.defaultProps = {
   renderAs: 'a',
   active: false
 };
-
-export default Tab;

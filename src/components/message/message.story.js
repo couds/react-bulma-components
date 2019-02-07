@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Button from 'react-bulma-components/lib/components/button';
-import Message from 'react-bulma-components/lib/components/message';
+import { Button } from '../button';
+import { Message } from '../message';
 
 storiesOf('Message', module)
   .add('Default', () => (

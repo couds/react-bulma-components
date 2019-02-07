@@ -2,10 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import Button from '../../../button';
-import Element from '../../../element';
+import { Button } from '../../../button';
+import { Element } from '../../../element';
 
-const ModalCardHead = React.forwardRef(({ children, className, showClose, onClose, ...props }, ref) => (
+export const ModalCardHead = React.forwardRef(({ children, className, showClose, onClose, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('modal-card-head', className)}>
     {children}
     {showClose && <Button remove onClick={onClose} />}
@@ -30,5 +30,3 @@ ModalCardHead.defaultProps = {
   onClose: null,
   renderAs: 'header'
 };
-
-export default ModalCardHead;

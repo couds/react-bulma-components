@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Hero from '..';
+import { Hero } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Hero component', () => {

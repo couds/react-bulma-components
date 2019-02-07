@@ -2,11 +2,11 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import Element from '../../../element';
-import FieldBody from './field-body';
-import FieldLabel from './field-label';
+import { Element } from '../../../element';
+import { FieldBody } from './field-body';
+import { FieldLabel } from './field-label';
 
-const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
+export const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
   let k = null;
 
   if (kind === 'addons') {
@@ -55,5 +55,3 @@ Field.defaultProps = {
   multiline: false,
   horizontal: false
 };
-
-export default Field;

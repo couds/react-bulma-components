@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Icon = React.forwardRef(({ icon, size, color, className, align, children, ...allProps }, ref) => {
+export const Icon = React.forwardRef(({ icon, size, color, className, align, children, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <span
@@ -50,5 +50,3 @@ Icon.defaultProps = {
   align: null,
   icon: null
 };
-
-export default Icon;

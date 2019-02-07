@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Menu from 'react-bulma-components/lib/components/menu';
+import Menu from '../menu';
 
 storiesOf('Menu', module).add('Default', () => (
   <Menu>

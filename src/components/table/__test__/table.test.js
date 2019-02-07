@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Table from '..';
+import { Table } from '..';
 
 describe('Table component', () => {
   it('Should exist', () => {

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import HeroBody from './components/hero-body';
-import HeroFooter from './components/hero-footer';
-import HeroHead from './components/hero-head';
+import { Element } from '../element';
+import { HeroBody } from './components/hero-body';
+import { HeroFooter } from './components/hero-footer';
+import { HeroHead } from './components/hero-head';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Hero = React.forwardRef(({ children, className, color, gradient, size, ...props }, ref) => (
+export const Hero = React.forwardRef(({ children, className, color, gradient, size, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -51,5 +51,3 @@ Hero.defaultProps = {
   gradient: false,
   size: null
 };
-
-export default Hero;

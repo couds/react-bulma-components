@@ -2,10 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 import { ShowContext } from '../context';
 
-const NavbarBurger = React.forwardRef(({ style, className, ...allProps }, ref) => {
+export const NavbarBurger = React.forwardRef(({ style, className, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <ShowContext.Consumer>

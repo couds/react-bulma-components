@@ -2,8 +2,8 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Navbar from 'react-bulma-components/lib/components/navbar';
-import Box from '../box';
+import { Box } from '../box';
+import Navbar from '../navbar';
 
 const colors = {
   Default: '',

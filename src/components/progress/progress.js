@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Progress = React.forwardRef(({ className, value, max, color, size, ...props }, ref) => (
+export const Progress = React.forwardRef(({ className, value, max, color, size, ...props }, ref) => (
   <Element
     ref={ref}
     renderAs="progress"
@@ -38,5 +38,3 @@ Progress.defaultProps = {
   color: null,
   size: null
 };
-
-export default Progress;

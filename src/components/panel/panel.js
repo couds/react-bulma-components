@@ -2,23 +2,23 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
-import Element from '../element';
-import Block from './components/block';
-import Header from './components/header';
-import Icon from './components/icon';
-import Tabs from './components/tabs';
+import { Element } from '../element';
+import { PanelBlock } from './components/block';
+import { PanelHeader } from './components/header';
+import { PanelIcon } from './components/icon';
+import { PanelTabs } from './components/tabs';
 
-const Panel = React.forwardRef(({ className, ...props }, ref) => (
+export const Panel = React.forwardRef(({ className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('panel', className)} />
 ));
 
-Panel.Header = Header;
+Panel.Header = PanelHeader;
 
-Panel.Tabs = Tabs;
+Panel.Tabs = PanelTabs;
 
-Panel.Block = Block;
+Panel.Block = PanelBlock;
 
-Panel.Icon = Icon;
+Panel.Icon = PanelIcon;
 
 Panel.propTypes = {
   ...modifiers.propTypes,

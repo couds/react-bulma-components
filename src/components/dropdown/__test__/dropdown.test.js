@@ -2,7 +2,7 @@ import { mount, shallow } from 'enzyme';
 import { JSDOM } from 'jsdom';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Dropdown from '..';
+import { Dropdown } from '../dropdown';
 
 describe('Dropdown component', () => {
   beforeEach(() => {

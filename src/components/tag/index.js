@@ -1,3 +1,3 @@
 import './tag.sass';
 
-export { default } from './tag';
+export * from './tag';

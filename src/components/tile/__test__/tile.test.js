@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Tile from '..';
+import { Tile } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Tile component', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Select from '../select';
+import { Select } from '../select';
 
 describe('Select component', () => {
   it('Should exist', () => {

@@ -2,11 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../../modifiers';
-import Element from '../../../../element';
-/* eslint-disable-next-line import/no-cycle */
-import List from '../list';
+import { Element } from '../../../../element';
+import { MenuList } from '../list';
 
-const MenuListItem = React.forwardRef(({ children, active, className, ...props }, ref) => {
+export const MenuListItem = React.forwardRef(({ children, active, className, ...props }, ref) => {
   if (typeof children === 'string') {
     return (
       <li ref={ref}>
@@ -17,7 +16,7 @@ const MenuListItem = React.forwardRef(({ children, active, className, ...props }
     );
   }
 
-  if (React.Children.only(children).type === List) {
+  if (React.Children.only(children).type === MenuList) {
     const child = React.Children.only(children);
     return (
       <li ref={ref}>
@@ -47,5 +46,3 @@ MenuListItem.defaultProps = {
   active: false,
   renderAs: 'a'
 };
-
-export default MenuListItem;

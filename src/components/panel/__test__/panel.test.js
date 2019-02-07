@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Panel from '..';
+import { Panel } from '../panel';
 
 describe('Panel component', () => {
   it('Should Exist', () => {

@@ -1,3 +1,3 @@
 import './image.sass';
 
-export { default } from './image';
+export * from './image';

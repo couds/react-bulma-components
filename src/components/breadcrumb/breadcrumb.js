@@ -4,7 +4,7 @@ import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 
-const Breadcrumb = React.forwardRef(
+export const Breadcrumb = React.forwardRef(
   ({ className, items, renderAs, hrefAttr, separator, size, align, ...allProps }, ref) => {
     const Element = renderAs;
     const props = modifiers.clean(allProps);
@@ -69,5 +69,3 @@ Breadcrumb.defaultProps = {
   size: null,
   align: null
 };
-
-export default Breadcrumb;

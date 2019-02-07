@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import Element from '../element';
+import { Element } from '../element';
 
 const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
 
-const Container = React.forwardRef(({ children, fluid, breakpoint, className, ...props }, ref) => (
+export const Container = React.forwardRef(({ children, fluid, breakpoint, className, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -39,5 +39,3 @@ Container.defaultProps = {
   style: {},
   renderAs: 'div'
 };
-
-export default Container;

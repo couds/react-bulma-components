@@ -2,10 +2,10 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import Element from '../../element';
+import { Element } from '../../element';
 import { ShowContext } from '../context';
 
-const NavbarMenu = React.forwardRef(({ className, children, ...props }, ref) => (
+export const NavbarMenu = React.forwardRef(({ className, children, ...props }, ref) => (
   <ShowContext.Consumer>
     {active => (
       <Element
@@ -34,5 +34,3 @@ NavbarMenu.defaultProps = {
   className: '',
   children: null
 };
-
-export default NavbarMenu;

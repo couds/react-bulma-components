@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
 
-const TagGroup = React.forwardRef(({ children, className, gapless, ...allProps }, ref) => {
+export const TagGroup = React.forwardRef(({ children, className, gapless, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <span
@@ -33,5 +33,3 @@ TagGroup.defaultProps = {
   style: {},
   gapless: false
 };
-
-export default TagGroup;
