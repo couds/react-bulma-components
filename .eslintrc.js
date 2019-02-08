@@ -12,24 +12,20 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    'jest/globals': true,
+    'jest/globals': true
   },
   extends: [
     'eslint:recommended',
     'plugin:jest/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'prettier/react',
+    'prettier/react'
   ],
   plugins: ['jest', 'react', 'prettier'],
   rules: {
+    'react/display-name': 0,
     'prettier/prettier': 'error',
     'no-console': 'off'
-  },
-  settings: {
-    flowtype: {
-      onlyFilesWithFlowAnnotation: true
-    }
   },
   overrides: [
     {
