@@ -12,7 +12,7 @@ export const Element = React.forwardRef(({ className, renderAs, ...allProps }, r
 Element.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.node])
 };
 
 Element.defaultProps = {
