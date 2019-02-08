@@ -113,40 +113,40 @@ Column.propTypes = {
 
 Column.defaultProps = {
   ...modifiers.defaultProps,
-  children: undefined,
+  children: null,
   className: '',
   style: {},
-  size: undefined,
-  offset: undefined,
-  narrow: undefined,
+  size: null,
+  offset: null,
+  narrow: false,
   mobile: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined
+    size: null,
+    offset: null,
+    narrow: false
   },
   touch: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined
+    size: null,
+    offset: null,
+    narrow: false
   },
   tablet: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined
+    size: null,
+    offset: null,
+    narrow: false
   },
   desktop: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined
+    size: null,
+    offset: null,
+    narrow: false
   },
   widescreen: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined
+    size: null,
+    offset: null,
+    narrow: false
   },
   fullhd: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined
+    size: null,
+    offset: null,
+    narrow: false
   }
 };

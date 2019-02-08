@@ -4,7 +4,7 @@ import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Select = React.forwardRef(
   (
@@ -68,5 +68,5 @@ Select.defaultProps = {
   disabled: false,
   multiple: false,
   loading: false,
-  name: null
+  name: ''
 };

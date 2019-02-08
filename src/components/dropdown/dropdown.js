@@ -8,7 +8,7 @@ import { Icon } from '../icon';
 import { DropdownDivider } from './components/divider';
 import { DropdownItem } from './components/item';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export class Dropdown extends PureComponent {
   static Item = DropdownItem;
@@ -33,12 +33,12 @@ export class Dropdown extends PureComponent {
     ...modifiers.defaultProps,
     className: '',
     style: {},
-    value: undefined,
+    value: null,
     children: [],
-    onChange: undefined,
-    color: undefined,
-    hoverable: undefined,
-    label: undefined
+    onChange: () => {},
+    color: null,
+    hoverable: false,
+    label: ''
   };
 
   state = {

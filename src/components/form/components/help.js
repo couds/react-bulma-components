@@ -5,7 +5,7 @@ import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Help = React.forwardRef(({ className, children, color, ...props }, ref) => (
   <Element

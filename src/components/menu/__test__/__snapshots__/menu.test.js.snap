@@ -160,6 +160,7 @@ Object {
 exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
 <aside
   className="menu"
+  style={Object {}}
 >
   <p
     className="menu-label"
@@ -168,15 +169,20 @@ exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
   </p>
   <ul
     className="menu-list"
+    style={Object {}}
   >
     <li>
-      <span>
+      <span
+        style={Object {}}
+      >
         Custom
         Dashboard
       </span>
     </li>
     <li>
-      <span>
+      <span
+        style={Object {}}
+      >
         Custom
         Customer
       </span>
@@ -188,6 +194,7 @@ exports[`Menu component Should accept a react Element as renderAs prop 1`] = `
 exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
 <aside
   className="menu"
+  style={Object {}}
 >
   <p
     className="menu-label"
@@ -196,9 +203,12 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
   </p>
   <ul
     className="menu-list"
+    style={Object {}}
   >
     <li>
-      <a>
+      <a
+        style={Object {}}
+      >
         Dashboard
       </a>
     </li>
@@ -206,26 +216,33 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
       <li>
         <a
           className="is-active"
+          style={Object {}}
         >
           Manage Your Team
         </a>
         <ul
           className="menu-list"
+          style={Object {}}
         >
           <li>
-            <a>
+            <a
+              style={Object {}}
+            >
               Members
             </a>
           </li>
           <li>
             <a
               className="is-active"
+              style={Object {}}
             >
               Plugins
             </a>
           </li>
           <li>
-            <a>
+            <a
+              style={Object {}}
+            >
               Add a member
             </a>
           </li>
@@ -239,6 +256,7 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
 exports[`Menu component Should have menu classnames 1`] = `
 <aside
   className="menu"
+  style={Object {}}
 >
   <p
     className="menu-label"
@@ -247,14 +265,19 @@ exports[`Menu component Should have menu classnames 1`] = `
   </p>
   <ul
     className="menu-list"
+    style={Object {}}
   >
     <li>
-      <a>
+      <a
+        style={Object {}}
+      >
         Dashboard
       </a>
     </li>
     <li>
-      <a>
+      <a
+        style={Object {}}
+      >
         Customer
       </a>
     </li>
@@ -265,6 +288,7 @@ exports[`Menu component Should have menu classnames 1`] = `
 exports[`Menu component Should render custom item child 1`] = `
 <aside
   className="menu"
+  style={Object {}}
 >
   <p
     className="menu-label"
@@ -273,6 +297,7 @@ exports[`Menu component Should render custom item child 1`] = `
   </p>
   <ul
     className="menu-list"
+    style={Object {}}
   >
     <li>
       <p>

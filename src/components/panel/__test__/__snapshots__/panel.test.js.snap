@@ -310,14 +310,17 @@ Object {
 exports[`Panel component Should have box classname 1`] = `
 <nav
   className="panel"
+  style={Object {}}
 >
   <div
     className="panel-heading"
+    style={Object {}}
   >
     repositories
   </div>
   <div
     className="panel-block"
+    style={Object {}}
   >
     <div>
       Control
@@ -325,30 +328,42 @@ exports[`Panel component Should have box classname 1`] = `
   </div>
   <div
     className="panel-tabs panel-tabs"
+    style={Object {}}
   >
     <a
       className="is-active"
+      style={Object {}}
     >
       all
     </a>
-    <a>
+    <a
+      style={Object {}}
+    >
       public
     </a>
-    <a>
+    <a
+      style={Object {}}
+    >
       private
     </a>
-    <a>
+    <a
+      style={Object {}}
+    >
       sources
     </a>
-    <a>
+    <a
+      style={Object {}}
+    >
       forks
     </a>
   </div>
   <a
     className="panel-block is-active"
+    style={Object {}}
   >
     <span
       className="panel-icon"
+      style={Object {}}
     >
       <i
         className="fa fa-bars"
@@ -358,6 +373,7 @@ exports[`Panel component Should have box classname 1`] = `
   </a>
   <label
     className="panel-block panel-block"
+    style={Object {}}
   >
     <input
       type="checkbox"
@@ -366,6 +382,7 @@ exports[`Panel component Should have box classname 1`] = `
   </label>
   <div
     className="panel-block"
+    style={Object {}}
   >
     <button
       type="button"

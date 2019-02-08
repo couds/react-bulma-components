@@ -8,6 +8,7 @@ export default {
     TOUCH: 'touch'
   },
   COLORS: {
+    NONE: null,
     PRIMARY: 'primary',
     SUCCESS: 'success',
     INFO: 'info',
@@ -20,6 +21,7 @@ export default {
     LINK: 'link'
   },
   SIZES: {
+    AUTO: null,
     SMALL: 'small',
     MEDIUM: 'medium',
     LARGE: 'large'

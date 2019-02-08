@@ -4,6 +4,7 @@ exports[`Pagination component Next button should be disabled 1`] = `
 <nav
   aria-label="pagination"
   className="pagination"
+  style={Object {}}
 >
   <a
     className="pagination-previous"
@@ -76,6 +77,7 @@ exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
 <nav
   aria-label="pagination"
   className="pagination"
+  style={Object {}}
 >
   <a
     className="pagination-previous"
@@ -141,6 +143,7 @@ exports[`Pagination component Should have 5 pages, page 5 active and display pag
 <nav
   aria-label="pagination"
   className="pagination"
+  style={Object {}}
 >
   <a
     className="pagination-previous"
@@ -206,6 +209,7 @@ exports[`Pagination component Should not display Previous/Next buttons 1`] = `
 <nav
   aria-label="pagination"
   className="pagination"
+  style={Object {}}
 >
   <ul
     className="pagination-list"
@@ -277,6 +281,7 @@ exports[`Pagination component Should not display page numbers 1`] = `
 <nav
   aria-label="pagination"
   className="pagination"
+  style={Object {}}
 >
   <a
     className="pagination-previous"

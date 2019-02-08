@@ -7,7 +7,7 @@ import { Element } from '../element';
 import { MessageBody } from './components/body';
 import { MessageHeader } from './components/header';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Message = React.forwardRef(({ children, className, color, size, ...props }, ref) => (
   <Element

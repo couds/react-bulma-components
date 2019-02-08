@@ -29,7 +29,7 @@ Content.propTypes = {
 Content.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: undefined,
+  className: '',
   style: {},
   size: null,
   renderAs: 'div'

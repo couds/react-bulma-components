@@ -31,9 +31,9 @@ Tabs.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.oneOf(['centered', 'right']),
+  align: PropTypes.oneOf([null, 'centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
+  type: PropTypes.oneOf([null, 'toggle', 'boxed', 'toggle-rounded']),
   fullwidth: PropTypes.bool
 };
 

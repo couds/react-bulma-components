@@ -251,7 +251,9 @@ exports[`Tabs component Should render propertly Inside Tabs 1`] = `
       className=""
       style={Object {}}
     >
-      <a>
+      <a
+        style={Object {}}
+      >
         Tab 1
       </a>
     </li>
@@ -259,7 +261,9 @@ exports[`Tabs component Should render propertly Inside Tabs 1`] = `
       className=""
       style={Object {}}
     >
-      <a>
+      <a
+        style={Object {}}
+      >
         Tab 2
       </a>
     </li>
@@ -267,7 +271,9 @@ exports[`Tabs component Should render propertly Inside Tabs 1`] = `
       className=""
       style={Object {}}
     >
-      <a>
+      <a
+        style={Object {}}
+      >
         Tab 3
       </a>
     </li>

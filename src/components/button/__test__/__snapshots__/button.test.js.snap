@@ -3,6 +3,7 @@
 exports[`Button component Button Group component Should align to the right 1`] = `
 <div
   className="buttons is-right"
+  style={Object {}}
 >
   <button
     className="button"
@@ -28,6 +29,7 @@ exports[`Button component Button Group component Should align to the right 1`] =
 exports[`Button component Button Group component Should be a default list of buttons 1`] = `
 <div
   className="buttons"
+  style={Object {}}
 >
   <button
     className="button"
@@ -53,6 +55,7 @@ exports[`Button component Button Group component Should be a default list of but
 exports[`Button component Button Group component Should be centered 1`] = `
 <div
   className="buttons is-centered"
+  style={Object {}}
 >
   <button
     className="button"
@@ -78,6 +81,7 @@ exports[`Button component Button Group component Should be centered 1`] = `
 exports[`Button component Button Group component Should concat class names in props with Bulma class name 1`] = `
 <div
   className="buttons super-class-1 dope-class-2"
+  style={Object {}}
 >
   <button
     className="button"
@@ -103,6 +107,7 @@ exports[`Button component Button Group component Should concat class names in pr
 exports[`Button component Button Group component Should group buttons together 1`] = `
 <div
   className="buttons has-addons"
+  style={Object {}}
 >
   <button
     className="button"

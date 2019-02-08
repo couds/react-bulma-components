@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 import { Element } from '../element';
 import { TagGroup } from './components/tag-group';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Tag = React.forwardRef(({ children, className, color, size, rounded, remove, ...props }, ref) => (
   <Element
@@ -31,7 +31,7 @@ Tag.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['medium', 'large']),
+  size: PropTypes.oneOf([null, 'medium', 'large']),
   rounded: PropTypes.bool,
   remove: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])

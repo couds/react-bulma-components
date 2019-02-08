@@ -36,7 +36,7 @@ describe('Tag component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  [null].concat(Object.values(CONSTANTS.COLORS)).map(color =>
+  Object.values(CONSTANTS.COLORS).map(color =>
     it(`Should use use color ${color}`, () => {
       const component = renderer.create(
         <Tag color={color}>

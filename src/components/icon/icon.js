@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 
 import '@mdi/font/css/materialdesignicons.css';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 const iconSizes = {
   auto: null,
@@ -57,12 +57,12 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   ...modifiers.defaultProps,
-  className: undefined,
+  className: '',
   style: {},
-  size: undefined,
-  color: undefined,
+  size: null,
+  color: null,
   children: null,
-  align: undefined,
+  align: 'auto',
   icon: undefined,
   iconSize: undefined
 };

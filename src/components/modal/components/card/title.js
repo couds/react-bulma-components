@@ -21,6 +21,6 @@ ModalCardTitle.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: undefined,
+  style: {},
   renderAs: 'p'
 };

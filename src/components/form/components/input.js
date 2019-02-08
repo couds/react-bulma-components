@@ -5,7 +5,7 @@ import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Input = React.forwardRef(
   ({ className, type, size, color, readOnly, isStatic, disabled, placeholder, value, name, ...props }, ref) => (
@@ -69,5 +69,5 @@ Input.defaultProps = {
   isStatic: false,
   disabled: false,
   placeholder: '',
-  name: null
+  name: ''
 };

@@ -35,7 +35,7 @@ Container.defaultProps = {
   fluid: false,
   children: null,
   breakpoint: null,
-  className: undefined,
+  className: '',
   style: {},
   renderAs: 'div'
 };

@@ -5,7 +5,7 @@ import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export class InputFile extends PureComponent {
   static propTypes = {
@@ -29,17 +29,17 @@ export class InputFile extends PureComponent {
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    className: undefined,
-    style: undefined,
+    className: '',
+    style: {},
     onChange: () => {},
-    color: undefined,
-    size: undefined,
+    color: null,
+    size: null,
     fileName: true,
-    fullwidth: undefined,
-    right: undefined,
-    boxed: undefined,
-    name: undefined,
-    icon: undefined,
+    fullwidth: false,
+    right: false,
+    boxed: false,
+    name: '',
+    icon: null,
     label: 'Choose a file...'
   };
 

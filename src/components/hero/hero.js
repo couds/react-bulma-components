@@ -8,7 +8,7 @@ import { HeroBody } from './components/hero-body';
 import { HeroFooter } from './components/hero-footer';
 import { HeroHead } from './components/hero-head';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Hero = React.forwardRef(({ children, className, color, gradient, size, ...props }, ref) => (
   <Element

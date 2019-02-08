@@ -16,6 +16,6 @@ CardHeaderIcon.propTypes = {
 
 CardHeaderIcon.defaultProps = {
   ...modifiers.defaultProps,
-  className: undefined,
+  className: '',
   renderAs: 'div'
 };

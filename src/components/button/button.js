@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import ButtonGroup from './components/button-group';
 
-const colors = [null, ''].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Button = React.forwardRef(
   (
@@ -86,7 +86,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  state: PropTypes.oneOf(['hover', 'focus', 'active', 'loading']),
+  state: PropTypes.oneOf([null, 'hover', 'focus', 'active', 'loading']),
   outlined: PropTypes.bool,
   inverted: PropTypes.bool,
   submit: PropTypes.bool,
@@ -107,7 +107,7 @@ Button.defaultProps = {
   className: '',
   style: {},
   renderAs: 'button',
-  onClick: () => null,
+  onClick: () => {},
   color: null,
   size: null,
   state: null,

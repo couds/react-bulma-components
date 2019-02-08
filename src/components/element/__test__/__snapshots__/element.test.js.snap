@@ -5,7 +5,7 @@ Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
     "backgroundColor": undefined,
-    "className": undefined,
+    "className": "",
     "clearfix": undefined,
     "clipped": undefined,
     "hidden": undefined,
@@ -19,7 +19,7 @@ Object {
     "renderAs": "div",
     "responsive": undefined,
     "shadowless": undefined,
-    "style": undefined,
+    "style": Object {},
     "textAlignment": undefined,
     "textColor": undefined,
     "textSize": undefined,
@@ -55,7 +55,9 @@ Object {
 `;
 
 exports[`Element component Should accept a react Element as renderAs prop 1`] = `
-<p>
+<p
+  style={Object {}}
+>
   Custom
   This should be a p element
 </p>
@@ -64,6 +66,7 @@ exports[`Element component Should accept a react Element as renderAs prop 1`] = 
 exports[`Element component Should have helpers classnames 1`] = `
 <div
   className="is-pulled-left has-text-white"
+  style={Object {}}
 >
   Facebook
 </div>

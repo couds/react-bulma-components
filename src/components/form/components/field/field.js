@@ -38,8 +38,8 @@ Field.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.oneOf(['centered', 'right']),
-  kind: PropTypes.oneOf(['addons', 'group']),
+  align: PropTypes.oneOf([null, 'centered', 'right']),
+  kind: PropTypes.oneOf([null, 'addons', 'group']),
   multiline: PropTypes.bool,
   horizontal: PropTypes.bool
 };

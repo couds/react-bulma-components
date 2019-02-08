@@ -182,11 +182,13 @@ exports[`Message component Should concat Bulma class with classes in props 1`] =
 >
   <div
     className="message-header"
+    style={Object {}}
   >
     Lorem Ipsum
   </div>
   <div
     className="message-body"
+    style={Object {}}
   >
     Lorem Ipsum
   </div>
@@ -214,11 +216,13 @@ exports[`Message component Should have message classnames 1`] = `
 >
   <div
     className="message-header"
+    style={Object {}}
   >
     Lorem Ipsum
   </div>
   <div
     className="message-body"
+    style={Object {}}
   >
     Lorem Ipsum
   </div>

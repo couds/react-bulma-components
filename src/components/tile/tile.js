@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 export const Tile = React.forwardRef(
   ({ children, className, kind, vertical, size, color, notification, ...props }, ref) => (
@@ -31,9 +31,9 @@ Tile.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
+  kind: PropTypes.oneOf([null, 'ancestor', 'parent', 'child']),
   vertical: PropTypes.bool,
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  size: PropTypes.oneOf([null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   color: PropTypes.oneOf(colors),
   notification: PropTypes.bool
 };

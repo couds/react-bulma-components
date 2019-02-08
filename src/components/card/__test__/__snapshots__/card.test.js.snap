@@ -12,6 +12,7 @@ exports[`Card component Should have card classname 1`] = `
 exports[`Card component Should have card-content classname 1`] = `
 <div
   className="card-content"
+  style={Object {}}
 >
   Content
 </div>
@@ -24,14 +25,17 @@ exports[`Card component Should have card-footer's classname 1`] = `
 >
   <div
     className="card-footer"
+    style={Object {}}
   >
     <div
       className="card-footer-item"
+      style={Object {}}
     >
       Yes
     </div>
     <div
       className="card-footer-item"
+      style={Object {}}
     >
       No
     </div>
@@ -46,14 +50,17 @@ exports[`Card component Should have card-header's classname 1`] = `
 >
   <div
     className="card-header"
+    style={Object {}}
   >
     <div
       className="card-header-title"
+      style={Object {}}
     >
       Title
     </div>
     <div
       className="card-header-icon"
+      style={Object {}}
     >
       <i
         className="icon"
@@ -66,6 +73,7 @@ exports[`Card component Should have card-header's classname 1`] = `
 exports[`Card component Should have card-image classname 1`] = `
 <div
   className="card-image"
+  style={Object {}}
 >
   <figure
     className="image is-4by3"

@@ -15,7 +15,7 @@ import { NavbarLink } from './components/link';
 import { NavbarMenu } from './components/menu';
 import { ShowContext } from './context';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = Object.values(CONSTANTS.COLORS);
 
 let htmlClass = '';
 
@@ -30,7 +30,7 @@ class NavbarEl extends React.PureComponent {
     style: PropTypes.shape({}),
     transparent: PropTypes.bool,
     renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    fixed: PropTypes.oneOf(['top', 'bottom']),
+    fixed: PropTypes.oneOf([null, 'top', 'bottom']),
     color: PropTypes.oneOf(colors),
     active: PropTypes.bool
   };
@@ -38,7 +38,7 @@ class NavbarEl extends React.PureComponent {
   static defaultProps = {
     ...modifiers.defaultProps,
     children: null,
-    innerRef: undefined,
+    innerRef: null,
     className: '',
     style: {},
     renderAs: 'nav',

@@ -46,7 +46,7 @@ Breadcrumb.propTypes = {
   style: PropTypes.shape({}),
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  align: PropTypes.oneOf(['right', 'center']),
+  align: PropTypes.oneOf([null, 'right', 'center']),
   items: PropTypes.arrayOf(
     PropTypes.shape({
       url: PropTypes.string.isRequired,

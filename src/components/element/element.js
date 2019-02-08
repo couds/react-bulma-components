@@ -12,12 +12,12 @@ export const Element = React.forwardRef(({ className, renderAs, ...allProps }, r
 Element.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.node])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Element.defaultProps = {
   ...modifiers.defaultProps,
-  className: undefined,
-  style: undefined,
+  className: '',
+  style: {},
   renderAs: 'div'
 };

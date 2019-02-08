@@ -16,6 +16,6 @@ CardContent.propTypes = {
 
 CardContent.defaultProps = {
   ...modifiers.defaultProps,
-  className: undefined,
+  className: '',
   renderAs: 'div'
 };

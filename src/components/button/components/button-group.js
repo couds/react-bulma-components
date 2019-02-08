@@ -23,17 +23,17 @@ ButtonGroup.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   hasAddons: PropTypes.bool,
-  position: PropTypes.oneOf(['centered', 'right']),
+  position: PropTypes.oneOf([null, 'centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 ButtonGroup.defaultProps = {
   ...modifiers.defaultProps,
-  className: undefined,
-  hasAddons: undefined,
-  position: undefined,
-  size: undefined,
+  className: '',
+  hasAddons: false,
+  position: null,
+  size: null,
   renderAs: 'div'
 };
 
