@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
+const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);
 
 export const Container = React.forwardRef(({ children, fluid, breakpoint, className, ...props }, ref) => (
   <Element

@@ -1,5 +1,6 @@
 export default {
   BREAKPOINTS: {
+    NONE: null,
     DESKTOP: 'desktop',
     TABLET: 'tablet',
     MOBILE: 'mobile',

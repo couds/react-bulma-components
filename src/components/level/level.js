@@ -7,7 +7,7 @@ import { Element } from '../element';
 import LevelItem from './components/level-item';
 import LevelSide from './components/level-side';
 
-const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
+const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);
 
 export const Level = React.forwardRef(({ children, className, breakpoint, ...props }, ref) => (
   <Element
