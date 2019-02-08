@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../button';
 import { Checkbox, Control, Input } from '../form';
 import { Icon } from '../icon';
-import Panel from '../panel';
+import { Panel } from '../panel';
 
 storiesOf('Panel', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)

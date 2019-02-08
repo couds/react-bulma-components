@@ -1,30 +1,15 @@
 # <div style="display: flex; align-items: center"><img src="https://raw.githubusercontent.com/couds/react-bulma-components/master/docs/images/logo.png" width="40" style="margin-top: 3px" /><span>React-bulma-components</span></div>
 
-
 [![Build Status](https://travis-ci.org/couds/react-bulma-components.svg?branch=master)](https://travis-ci.org/couds/react-bulma-components)
 [![Coverage Status](https://coveralls.io/repos/github/couds/react-bulma-components/badge.svg?branch=master)](https://coveralls.io/github/couds/react-bulma-components?branch=master)
 [![Release Version](https://img.shields.io/github/release/couds/react-bulma-components.svg)](https://github.com/couds/react-bulma-components)
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
-React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
-
-### V3
-
-- Currently V3 its in beta. You can try it wirh `npm install react-bulma-components@next`.
-- There may be some bugs in this version please be sure to **test** it before using it on you project
-
-### V2 Documentation
-
-- If you are using v2 please see the Readme on [Here](https://couds.github.io/react-bulma-components/)
-
-### BREAKING CHANGES V2 -> V3:
-
-- Now the alias needed to override Bulma variables (and/or use the directly the sass files) it `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- Please check the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
+React components for [Bulma](http://bulma.io/) (v0.7.3) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
 ### To Install
 
-```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
+`npm install react-bulma-components` or `yarn add -E react-bulma-components`
 
 ### To Use
 
@@ -42,9 +27,7 @@ import React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button } from 'react-bulma-components';
 
-export default () => (
-  <Button color="primary">My Bulma button</Button>
-)
+export default () => <Button color="primary">My Bulma button</Button>;
 ```
 
 #### Advanced
@@ -54,14 +37,10 @@ This configuration its recomended it you answer yes to one of the following ques
 - I'm worried about the final size of my bundle?
 - I need to override the default Bulma variables?
 
-
-
 In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your mail scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
 
 ```scss
-@import "~react-bulma-components/src/index.sass"
-
-// Other styles
+@import '~react-bulma-components/src/index.sass';
 ```
 
 You can start using the library like this
@@ -70,9 +49,7 @@ You can start using the library like this
 import React from 'react';
 import { Button } from '@/components/button';
 
-export default () => (
-  <Button color="primary">My Bulma button</Button>
-)
+export default () => <Button color="primary">My Bulma button</Button>;
 ```
 
 Before you use this configuration you need to setup a `_variables.sass` file somewhere in your project (I recomment inside your `src` folder). This file will alow you to override bulma variables if need it like:
@@ -106,6 +83,7 @@ Inside the resolve directive setup your webpack to use modules from the folder w
 Install node-sass to enable the sass compiles on your project.
 
 After that update your scripts in the `package.json` to add the folder to your path
+
 ```
 "scripts": {
   "start": "NODE_PATH=./src react-scripts start",
@@ -131,7 +109,6 @@ plugins: [
     }
     ...
 ]
-
 ```
 
 #### Next.js
@@ -141,15 +118,17 @@ Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packa
 Now on your `next.config.js` configure yout sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
 
 ```javascript
-const withSass = require('@zeit/next-sass')
+const withSass = require('@zeit/next-sass');
 const withTM = require('next-plugin-transpile-modules');
 
-module.exports = withTM(withSass({
+module.exports = withTM(
+  withSass({
     transpileModules: ['react-bulma-components'],
     sassLoaderOptions: {
-        includePaths: ["./src"]
-    },
-}))
+      includePaths: ['./src']
+    }
+  })
+);
 ```
 
 ### Documentation
@@ -162,35 +141,35 @@ Some components may vary the api/naming convention with the Bulma Docs. Please r
 
 The following components were ported:
 
-|Component|Storybook|Bulma docs|
-|---|---|---|
-|Box|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Box)|[Docs](http://bulma.io/documentation/elements/box/)|
-|Breadcrumb|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Breadcrumb)|[Docs](http://bulma.io/documentation/components/breadcrumb/)|
-|Button|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Button)|[Docs](http://bulma.io/documentation/elements/button/)|
-|Card|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Card)|[Docs](http://bulma.io/documentation/components/card/)|
-|Column|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Columns)|[Docs](http://bulma.io/documentation/columns/basics/)|
-|Container |[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Container)|[Docs](http://bulma.io/documentation/layout/container/)|
-|Content |[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Content)|[Docs](http://bulma.io/documentation/elements/content/)|
-|Dropdown |[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Dropdown)|[Docs](http://bulma.io/documentation/components/dropdown/)|
-|Footer |[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Footer)|[Docs](http://bulma.io/documentation/layout/footer/)|
-|Form |[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Form)|[Docs](http://bulma.io/documentation/form/general/)|
-|Heading |Title, Subtitle and heading on Bulma [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Heading)|[Docs](http://bulma.io/documentation/elements/title/)|
-|Hero|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Hero)|[Docs](http://bulma.io/documentation/layout/hero/)|
-|Icon|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Icon)|[Docs](http://bulma.io/documentation/elements/icon/)|
-|Image|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Image)|[Docs](http://bulma.io/documentation/elements/image/)|
-|Level|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Level)|[Docs](http://bulma.io/documentation/layout/level/)|
-|Loader|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Loader)| -- |
-|Media|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Media)|[Docs](http://bulma.io/documentation/layout/media-object/)|
-|Message|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Message)|[Docs](http://bulma.io/documentation/components/message/)|
-|Menu|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Menu)|[Docs](http://bulma.io/documentation/components/menu/)|
-|Modal|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Modal)|[Docs](http://bulma.io/documentation/components/modal/)|
-|Navbar|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Navbar)|[Docs](https://bulma.io/documentation/components/navbar/)|
-|Notification|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Notification)|[Docs](http://bulma.io/documentation/elements/notification/)|
-|Pagination|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Pagination)|[Docs](https://bulma.io/documentation/components/pagination/)|
-|Panel|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Panel)|[Docs](https://bulma.io/documentation/components/panel/)
-|Progress|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Progress)|[Docs](http://bulma.io/documentation/elements/progress/)
-|Section|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Section)|[Docs](http://bulma.io/documentation/layout/section/)
-|Tabs|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tabs)|[Docs](https://bulma.io/documentation/components/tabs/)
-|Table|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Table)|[Docs](http://bulma.io/documentation/elements/table/)
-|Tag|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tag)|[Docs](http://bulma.io/documentation/elements/tag/)
-|Tile|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)|[Docs](http://bulma.io/documentation/layout/tiles/)
+| Component    | Storybook                                                                              | Bulma docs                                                    |
+| ------------ | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Box          | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Box)          | [Docs](http://bulma.io/documentation/elements/box/)           |
+| Breadcrumb   | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Breadcrumb)   | [Docs](http://bulma.io/documentation/components/breadcrumb/)  |
+| Button       | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Button)       | [Docs](http://bulma.io/documentation/elements/button/)        |
+| Card         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Card)         | [Docs](http://bulma.io/documentation/components/card/)        |
+| Column       | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Columns)      | [Docs](http://bulma.io/documentation/columns/basics/)         |
+| Container    | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Container)    | [Docs](http://bulma.io/documentation/layout/container/)       |
+| Content      | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Content)      | [Docs](http://bulma.io/documentation/elements/content/)       |
+| Dropdown     | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Dropdown)     | [Docs](http://bulma.io/documentation/components/dropdown/)    |
+| Footer       | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Footer)       | [Docs](http://bulma.io/documentation/layout/footer/)          |
+| Form         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Form)         | [Docs](http://bulma.io/documentation/form/general/)           |
+| Heading      | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Heading)      | [Docs](http://bulma.io/documentation/elements/title/)         |
+| Hero         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Hero)         | [Docs](http://bulma.io/documentation/layout/hero/)            |
+| Icon         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Icon)         | [Docs](http://bulma.io/documentation/elements/icon/)          |
+| Image        | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Image)        | [Docs](http://bulma.io/documentation/elements/image/)         |
+| Level        | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Level)        | [Docs](http://bulma.io/documentation/layout/level/)           |
+| Loader       | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Loader)       | --                                                            |
+| Media        | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Media)        | [Docs](http://bulma.io/documentation/layout/media-object/)    |
+| Message      | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Message)      | [Docs](http://bulma.io/documentation/components/message/)     |
+| Menu         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Menu)         | [Docs](http://bulma.io/documentation/components/menu/)        |
+| Modal        | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Modal)        | [Docs](http://bulma.io/documentation/components/modal/)       |
+| Navbar       | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Navbar)       | [Docs](https://bulma.io/documentation/components/navbar/)     |
+| Notification | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Notification) | [Docs](http://bulma.io/documentation/elements/notification/)  |
+| Pagination   | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Pagination)   | [Docs](https://bulma.io/documentation/components/pagination/) |
+| Panel        | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Panel)        | [Docs](https://bulma.io/documentation/components/panel/)      |
+| Progress     | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Progress)     | [Docs](http://bulma.io/documentation/elements/progress/)      |
+| Section      | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Section)      | [Docs](http://bulma.io/documentation/layout/section/)         |
+| Tabs         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tabs)         | [Docs](https://bulma.io/documentation/components/tabs/)       |
+| Table        | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Table)        | [Docs](http://bulma.io/documentation/elements/table/)         |
+| Tag          | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tag)          | [Docs](http://bulma.io/documentation/elements/tag/)           |
+| Tile         | [Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)         | [Docs](http://bulma.io/documentation/layout/tiles/)           |

@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/couds/react-bulma-components#readme",
   "dependencies": {
-    "bulma": "0.7.3"
+    "bulma": "0.7.4"
   },
   "peerDependencies": {
     "prop-types": ">=15.6.0",
