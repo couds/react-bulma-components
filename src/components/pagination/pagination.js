@@ -1,155 +1,74 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import ReactPaginate from 'react-paginate';
+import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export class PaginationEl extends React.PureComponent {
-  static propTypes = {
-    ...modifiers.propTypes,
-    innerRef: PropTypes.node,
-    /** Current page */
-    current: PropTypes.number,
-    /** Total pages in total */
-    total: PropTypes.number,
-    /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
-    delta: PropTypes.number,
-    onChange: PropTypes.func,
-    /** Text of the Next button */
-    next: PropTypes.node,
-    /** Text of the Previous button */
-    previous: PropTypes.node,
-    showPrevNext: PropTypes.bool,
-    autoHide: PropTypes.bool,
-    /**
-     * Classname of the container of the pagination, this could be used to customize the inner views
-     */
-    className: PropTypes.string
-  };
+export const Pagination = React.forwardRef(
+  (
+    { current, total, delta, showPrevNext, next, previous, position, size, rounded, className, onChange, ...props },
+    ref
+  ) => (
+    <Element
+      {...props}
+      ref={ref}
+      className={cn('pagination', className, {
+        [`is-rounded`]: rounded,
+        [`is-${size}`]: size,
+        [`is-${position}`]: position
+      })}
+      aria-label="pagination"
+    >
+      <ReactPaginate
+        previousLabel={showPrevNext && previous}
+        previousLinkClassName={showPrevNext && 'pagination-previous'}
+        nextLabel={showPrevNext && next}
+        nextLinkClassName={showPrevNext && 'pagination-next'}
+        breakLinkClassName={'pagination-ellipsis'}
+        activeLinkClassName={'is-current'}
+        pageCount={total}
+        forcePage={current}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={delta}
+        onPageChange={onChange}
+        pageLinkClassName={'pagination-link'}
+        containerClassName={'pagination-list'}
+        activeClassName={'active'}
+      />
+    </Element>
+  )
+);
 
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    innerRef: undefined,
-    total: 1,
-    current: 1,
-    delta: 1,
-    onChange: () => {},
-    next: 'Next',
-    previous: 'Previous',
-    showPrevNext: true,
-    autoHide: true,
-    className: '',
-    renderAs: 'nav'
-  };
+Pagination.propTypes = {
+  ...modifiers.propTypes,
+  current: PropTypes.number,
+  total: PropTypes.number,
+  delta: PropTypes.number,
+  onChange: PropTypes.func,
+  next: PropTypes.node,
+  previous: PropTypes.node,
+  position: PropTypes.oneOf([null, 'centered', 'right']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  showPrevNext: PropTypes.bool,
+  rounded: PropTypes.bool,
+  autoHide: PropTypes.bool,
+  className: PropTypes.string
+};
 
-  goToPage = page => evt => {
-    evt.preventDefault();
-    const { onChange } = this.props;
-    onChange(page);
-  };
-
-  firstPage = (current, total) => {
-    const { delta } = this.props;
-
-    if (current === 1) {
-      return 1;
-    }
-
-    const page = current - delta * (current === total ? 2 : 1);
-
-    return page <= 0 ? 1 : page;
-  };
-
-  lastPage = (current, total) => {
-    const { delta } = this.props;
-
-    if (current === total) {
-      return total;
-    }
-
-    const page = current + delta * (current === 1 ? 2 : 1);
-
-    return page > total ? total : page;
-  };
-
-  render() {
-    const {
-      innerRef,
-      current,
-      total,
-      next,
-      previous,
-      showPrevNext,
-      delta,
-      autoHide,
-      className,
-      onChange,
-      ...props
-    } = this.props;
-    if (total <= 1 && autoHide) {
-      return null;
-    }
-
-    if (current > total) {
-      return null;
-    }
-
-    const firstPage = this.firstPage(current, total);
-    const lastPage = this.lastPage(current, total);
-
-    return (
-      <Element {...props} ref={innerRef} className={cn('pagination', className)} aria-label="pagination">
-        {showPrevNext && (
-          <React.Fragment>
-            <a
-              role="button"
-              tabIndex={0}
-              onClick={current === 1 ? undefined : this.goToPage(current - 1)}
-              className="pagination-previous"
-              title="This is the first page"
-              disabled={current === 1}
-            >
-              {previous}
-            </a>
-            <a
-              role="button"
-              tabIndex={0}
-              onClick={current === total ? undefined : this.goToPage(current + 1)}
-              className="pagination-next"
-              disabled={current === total}
-            >
-              {next}
-            </a>
-          </React.Fragment>
-        )}
-        {delta > 0 && (
-          <React.Fragment>
-            <ul className="pagination-list">
-              {Array(lastPage - firstPage + 1)
-                .fill(0)
-                .map((_, i) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <li key={i + firstPage}>
-                    <a
-                      role="button"
-                      tabIndex={0}
-                      className={cn('pagination-link', {
-                        'is-current': current === i + firstPage
-                      })}
-                      onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
-                      aria-label={`Page ${i + firstPage}`}
-                      aria-current="page"
-                    >
-                      {i + firstPage}
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </React.Fragment>
-        )}
-      </Element>
-    );
-  }
-}
-
-export const Pagination = React.forwardRef((props, ref) => <PaginationEl innerRef={ref} {...props} />);
+Pagination.defaultProps = {
+  ...modifiers.defaultProps,
+  total: 1,
+  current: 0,
+  delta: 5,
+  onChange: () => {},
+  next: 'Next',
+  previous: 'Previous',
+  position: null,
+  size: null,
+  showPrevNext: false,
+  rounded: false,
+  className: '',
+  renderAs: 'nav'
+};
