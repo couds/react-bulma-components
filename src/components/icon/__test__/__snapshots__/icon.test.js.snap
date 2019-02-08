@@ -4,15 +4,16 @@ exports[`Icon component Should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
-    "align": null,
+    "align": undefined,
     "backgroundColor": undefined,
     "children": null,
-    "className": "",
+    "className": undefined,
     "clearfix": undefined,
     "clipped": undefined,
-    "color": null,
+    "color": undefined,
     "hidden": undefined,
-    "icon": null,
+    "icon": undefined,
+    "iconSize": undefined,
     "invisible": undefined,
     "italic": undefined,
     "marginless": undefined,
@@ -22,7 +23,7 @@ Object {
     "radiusless": undefined,
     "responsive": undefined,
     "shadowless": undefined,
-    "size": null,
+    "size": undefined,
     "style": Object {},
     "textAlignment": undefined,
     "textColor": undefined,
@@ -41,6 +42,7 @@ Object {
     "color": [Function],
     "hidden": [Function],
     "icon": [Function],
+    "iconSize": [Function],
     "invisible": [Function],
     "italic": [Function],
     "marginless": [Function],
@@ -69,7 +71,7 @@ exports[`Icon component Should concat Bulma class with classes in props 1`] = `
   style={Object {}}
 >
   <i
-    className="rbc rbc-bars"
+    className="mdi mdi-bars"
   />
 </span>
 `;
@@ -80,7 +82,7 @@ exports[`Icon component Should have box classname 1`] = `
   style={Object {}}
 >
   <i
-    className="rbc rbc-bars"
+    className="mdi mdi-bars"
   />
 </span>
 `;

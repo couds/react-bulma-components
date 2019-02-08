@@ -47,8 +47,8 @@
   },
   "peerDependencies": {
     "prop-types": ">=15.6.0",
-    "react": "16.3.0",
-    "react-dom": "16.3.0"
+    "react": "16.7.0",
+    "react-dom": "16.7.0"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -56,6 +56,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.3.2",
     "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
+    "@mdi/font": "^3.4.93",
     "@storybook/addon-a11y": "4.1.11",
     "@storybook/addon-actions": "4.1.11",
     "@storybook/addon-centered": "4.1.11",

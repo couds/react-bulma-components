@@ -33,7 +33,6 @@ Tabs.propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   align: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  /** This is called style on Bulma documentation */
   type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
   fullwidth: PropTypes.bool
 };

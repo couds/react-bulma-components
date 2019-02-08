@@ -27,7 +27,7 @@ exports[`Dropdown component Should appear above the dropdown button 1`] = `
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -86,7 +86,7 @@ exports[`Dropdown component Should be right-aligned when using "right" prop 1`] 
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -145,7 +145,7 @@ exports[`Dropdown component Should concat Bulma class with classes in props 1`] 
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -200,7 +200,7 @@ exports[`Dropdown component Should have custom inline styles 1`] = `
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -255,7 +255,7 @@ exports[`Dropdown component Should have divider 1`] = `
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -318,7 +318,7 @@ exports[`Dropdown component Should have dropdown classname 1`] = `
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -369,7 +369,7 @@ exports[`Dropdown component Should show custom label passed to the label prop 1`
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>
@@ -420,7 +420,7 @@ exports[`Dropdown component Should show the label of the first dropdown item whe
         style={Object {}}
       >
         <i
-          className="rbc rbc-angle-down"
+          className="mdi mdi-angle-down mdi-mdi-18px"
         />
       </span>
     </button>

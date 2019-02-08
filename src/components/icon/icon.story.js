@@ -5,14 +5,14 @@ import { Icon } from '../icon';
 storiesOf('Icon', module)
   .add('Default', () => (
     <div>
-      <Icon icon="bars" color="info" />
-      <Icon icon="angle-down" />
+      <Icon icon="star" color="info" />
+      <Icon icon="shield-account" />
     </div>
   ))
   .add('Custom Icon', () => (
     <div>
       <Icon>
-        <span className="rbc rbc-bars" />
+        <span className="mdi mdi-menu mdi-48px" />
       </Icon>
     </div>
   ));
