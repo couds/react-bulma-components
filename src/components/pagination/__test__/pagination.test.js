@@ -37,7 +37,7 @@ describe('Pagination component', () => {
   });
   it('Should call to onChange event on click on navigation button', () => {
     const onChange = jest.fn();
-    const component = mount(<Pagination total={2} current={1} onChange={onChange} />);
+    const component = mount(<Pagination total={5} current={0} showPrevNext onChange={onChange} />);
     component.find('a.pagination-next').simulate('click');
     expect(onChange).toHaveBeenCalledTimes(1);
   });
