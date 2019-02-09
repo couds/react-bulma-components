@@ -4,22 +4,41 @@ import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 
-import '@mdi/font/css/materialdesignicons.css';
-
 const colors = Object.values(CONSTANTS.COLORS);
 
 const iconSizes = {
-  auto: null,
-  small: 'mdi-18px',
-  medium: 'mdi-24px',
-  large: 'mdi-36px',
-  big: 'mdi-48px'
+  mdi: {
+    auto: null,
+    small: 'mdi-18px',
+    medium: 'mdi-24px',
+    large: 'mdi-36px',
+    big: 'mdi-48px'
+  },
+  fas: {
+    auto: null,
+    small: null,
+    medium: 'fa-lg',
+    large: 'fa-2x',
+    big: 'fa-3x'
+  }
 };
 
 export const Icon = React.forwardRef(
-  ({ icon, iconSize, size, color, className, align, children, ...allProps }, ref) => {
+  ({ icon, iconSize, size, color, className, align, children, pack, ...allProps }, ref) => {
     const props = modifiers.clean(allProps);
-    const _iconSize = iconSize ? iconSizes[iconSize] : size ? iconSizes[size] : undefined;
+    const iconSizeOf = iconSize ? iconSizes[pack][iconSize] : size ? iconSizes[pack][size] : undefined;
+    const iconPack =
+      pack === 'mdi'
+        ? cn('mdi', {
+            [`mdi-${icon}`]: icon,
+            [`mdi-${iconSizeOf}`]: iconSizeOf
+          })
+        : pack === 'fas'
+        ? cn('fas', {
+            [`fa-${icon}`]: icon,
+            [`fa-${iconSizeOf}`]: iconSizeOf
+          })
+        : '';
     return (
       <span
         {...props}
@@ -29,15 +48,7 @@ export const Icon = React.forwardRef(
           [`has-text-${color}`]: color
         })}
       >
-        {children || (
-          <i
-            ref={ref}
-            className={cn('mdi', {
-              [`mdi-${icon}`]: icon,
-              [`mdi-${_iconSize}`]: _iconSize
-            })}
-          />
-        )}
+        {children || <i ref={ref} className={iconPack} />}
       </span>
     );
   }
@@ -52,6 +63,7 @@ Icon.propTypes = {
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   align: PropTypes.oneOf(['left', 'right']),
+  pack: PropTypes.oneOf(['mdi', 'fas']),
   color: PropTypes.oneOf(colors)
 };
 
@@ -64,5 +76,6 @@ Icon.defaultProps = {
   children: null,
   align: 'auto',
   icon: undefined,
-  iconSize: undefined
+  iconSize: undefined,
+  pack: 'mdi'
 };
