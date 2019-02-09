@@ -15,7 +15,7 @@ export const NavbarBurger = React.forwardRef(({ style, className, ...allProps },
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
-          className={cn('navbar-burger', modifiers.classnames(allProps), className, {
+          className={cn('navbar-burger', modifiers.getClassName(allProps), className, {
             'is-active': active
           })}
           {...props}

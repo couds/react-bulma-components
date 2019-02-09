@@ -7,7 +7,7 @@ export const Radio = React.forwardRef(
   ({ className, style, disabled, checked, value, name, children, ...allProps }, ref) => {
     const props = modifiers.clean(allProps);
     return (
-      <label disabled={disabled} className={cn('radio', modifiers.classnames(allProps), className)} style={style}>
+      <label disabled={disabled} className={cn('radio', modifiers.getClassName(allProps), className)} style={style}>
         <input {...props} ref={ref} name={name} checked={checked} type="radio" value={value} disabled={disabled} />
         {children}
       </label>

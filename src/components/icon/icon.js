@@ -42,7 +42,7 @@ export const Icon = React.forwardRef(
     return (
       <span
         {...props}
-        className={cn('icon', modifiers.classnames(allProps), className, {
+        className={cn('icon', modifiers.getClassName(allProps), className, {
           [`is-${size}`]: size,
           [`is-${align}`]: align,
           [`has-text-${color}`]: color

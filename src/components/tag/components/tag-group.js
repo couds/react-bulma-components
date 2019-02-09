@@ -9,7 +9,7 @@ export const TagGroup = React.forwardRef(({ children, className, gapless, ...all
     <span
       {...props}
       ref={ref}
-      className={cn('tags', modifiers.classnames(allProps), className, {
+      className={cn('tags', modifiers.getClassName(allProps), className, {
         'has-addons': gapless
       })}
     >

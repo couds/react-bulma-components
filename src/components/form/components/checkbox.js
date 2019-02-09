@@ -7,7 +7,7 @@ export const Checkbox = React.forwardRef(
   ({ className, style, disabled, value, children, checked, name, ...allProps }, ref) => {
     const props = modifiers.clean(allProps);
     return (
-      <label disabled={disabled} className={cn('checkbox', modifiers.classnames(allProps), className)} style={style}>
+      <label disabled={disabled} className={cn('checkbox', modifiers.getClassName(allProps), className)} style={style}>
         <input {...props} ref={ref} name={name} type="checkbox" value={value} disabled={disabled} checked={checked} />
         {children}
       </label>

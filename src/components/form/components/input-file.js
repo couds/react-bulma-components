@@ -61,6 +61,7 @@ export class InputFile extends PureComponent {
     const {
       className,
       style,
+      // eslint-disable-next-line no-unused-vars
       onChange,
       color,
       size,

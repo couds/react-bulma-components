@@ -10,7 +10,7 @@ export const Label = React.forwardRef(({ children, className, size, ...allProps 
     <label
       {...props}
       ref={ref}
-      className={cn('label', modifiers.classnames(allProps), className, {
+      className={cn('label', modifiers.getClassName(allProps), className, {
         [`is-${size}`]: size
       })}
     >

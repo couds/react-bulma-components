@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -53,7 +54,7 @@ export default {
   defaultProps: {
     responsive: undefined
   },
-  classnames: props =>
+  getClassName: props =>
     cn({
       ...getSizeClassFromProp(props.responsive || {})
     }),

@@ -14,7 +14,7 @@ export const Select = React.forwardRef(
     const props = modifiers.clean(allProps);
     return (
       <div
-        className={cn('select', modifiers.classnames(allProps), className, {
+        className={cn('select', modifiers.getClassName(allProps), className, {
           [`is-${size}`]: size,
           [`is-${color}`]: color,
           'is-loading': loading,

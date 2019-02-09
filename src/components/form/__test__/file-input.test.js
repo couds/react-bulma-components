@@ -31,7 +31,7 @@ describe('Dropdown component', () => {
       }
     });
     expect(component.state('filename')).toBe('dummyValue.something');
-    expect(onChange).toBeCalled();
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('should call onChange without file data', () => {
@@ -43,6 +43,6 @@ describe('Dropdown component', () => {
       }
     });
     expect(component.state('filename')).toBe(undefined);
-    expect(onChange).toBeCalled();
+    expect(onChange).toHaveBeenCalled();
   });
 });

@@ -19,7 +19,7 @@ export const Textarea = React.forwardRef(
         placeholder={placeholder}
         readOnly={readOnly}
         disabled={disabled}
-        className={cn('textarea', modifiers.classnames(allProps), className, {
+        className={cn('textarea', modifiers.getClassName(allProps), className, {
           [`is-${size}`]: size,
           [`is-${color}`]: color
         })}

@@ -79,6 +79,7 @@ export class Dropdown extends PureComponent {
   };
 
   render() {
+    // eslint-disable-next-line no-unused-vars
     const { className, children, value, color, right, up, label, hoverable, onChange, ...allProps } = this.props;
     let current = label;
     const props = modifiers.clean(allProps);
@@ -104,7 +105,7 @@ export class Dropdown extends PureComponent {
         ref={node => {
           this.htmlElement = node;
         }}
-        className={cn('dropdown', modifiers.classnames(allProps), className, {
+        className={cn('dropdown', modifiers.getClassName(allProps), className, {
           'is-active': this.state.open,
           'is-up': up,
           'is-right': right,

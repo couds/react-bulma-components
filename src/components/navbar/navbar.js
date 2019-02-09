@@ -78,7 +78,7 @@ class NavbarEl extends React.PureComponent {
           {...props}
           ref={innerRef}
           role="navigation"
-          className={cn('navbar', modifiers.classnames(props), className, {
+          className={cn('navbar', modifiers.getClassName(props), className, {
             'is-transparent': transparent,
             [`is-fixed-${fixed}`]: fixed,
             [`is-${color}`]: color

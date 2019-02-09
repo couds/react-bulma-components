@@ -19,8 +19,13 @@ export default {
     ...colors.defaultProps,
     ...typography.defaultProps
   },
-  classnames: props =>
-    cn(helpers.classnames(props), responsive.classnames(props), colors.classnames(props), typography.classnames(props)),
+  getClassName: props =>
+    cn(
+      helpers.getClassName(props),
+      responsive.getClassName(props),
+      colors.getClassName(props),
+      typography.getClassName(props)
+    ),
   clean: props =>
     compose(
       helpers.clean,

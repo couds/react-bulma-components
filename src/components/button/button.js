@@ -53,7 +53,7 @@ export const Button = React.forwardRef(
         {...otherProps}
         disabled={disabled}
         onClick={disabled ? undefined : onClick}
-        className={cn(className, modifiers.classnames(allProps), {
+        className={cn(className, modifiers.getClassName(allProps), {
           [`is-${color}`]: color,
           [`is-${size}`]: size,
           [`is-${state}`]: state,

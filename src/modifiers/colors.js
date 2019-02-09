@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -29,10 +30,10 @@ export default {
     backgroundColor: PropTypes.oneOf(colors)
   },
   defaultProps: {
-    textColor: undefined,
-    backgroundColor: undefined
+    textColor: null,
+    backgroundColor: null
   },
-  classnames: props =>
+  getClassName: props =>
     cn({
       [`has-text-${props.textColor}`]: props.textColor,
       [`has-background-${props.backgroundColor}`]: props.backgroundColor

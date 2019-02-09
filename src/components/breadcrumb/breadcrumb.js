@@ -12,7 +12,7 @@ export const Breadcrumb = React.forwardRef(
       <nav
         {...props}
         ref={ref}
-        className={cn('breadcrumb', className, modifiers.classnames(allProps), {
+        className={cn('breadcrumb', className, modifiers.getClassName(allProps), {
           [`has-${separator}-separator`]: separator,
           [`is-${size}`]: size,
           [`is-${align}`]: align

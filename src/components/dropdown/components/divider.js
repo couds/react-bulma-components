@@ -5,7 +5,7 @@ import modifiers from '../../../modifiers';
 
 export const DropdownDivider = ({ className, ...allProps }) => {
   const props = modifiers.clean(allProps);
-  return <hr {...props} className={cn('dropdown-divider', modifiers.classnames(allProps), className)} />;
+  return <hr {...props} className={cn('dropdown-divider', modifiers.getClassName(allProps), className)} />;
 };
 
 DropdownDivider.propTypes = {

@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 export default {
   propTypes: {
     clearfix: PropTypes.bool,
-    pull: PropTypes.oneOf([undefined, 'right', 'left']),
+    pull: PropTypes.oneOf([null, 'right', 'left']),
     marginless: PropTypes.bool,
     paddingless: PropTypes.bool,
     overlay: PropTypes.bool,
@@ -16,19 +17,19 @@ export default {
     hidden: PropTypes.bool
   },
   defaultProps: {
-    clearfix: undefined,
-    pull: undefined,
-    marginless: undefined,
-    paddingless: undefined,
-    overlay: undefined,
-    clipped: undefined,
-    radiusless: undefined,
-    shadowless: undefined,
-    unselectable: undefined,
-    invisible: undefined,
-    hidden: undefined
+    clearfix: false,
+    pull: null,
+    marginless: false,
+    paddingless: false,
+    overlay: false,
+    clipped: false,
+    radiusless: false,
+    shadowless: false,
+    unselectable: false,
+    invisible: false,
+    hidden: false
   },
-  classnames: props =>
+  getClassName: props =>
     cn({
       'is-clearfix': props.clearfix,
       [`is-pulled-${props.pull}`]: props.pull,

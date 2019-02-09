@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 export const Element = React.forwardRef(({ className, renderAs, ...allProps }, ref) => {
   const RenderAs = renderAs;
   const props = modifiers.clean(allProps);
-  return <RenderAs ref={ref} className={cn(className, modifiers.classnames(allProps)) || undefined} {...props} />;
+  return <RenderAs ref={ref} className={cn(className, modifiers.getClassName(allProps)) || undefined} {...props} />;
 });
 
 Element.propTypes = {

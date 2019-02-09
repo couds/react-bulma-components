@@ -42,6 +42,7 @@ export class Image extends PureComponent {
   });
 
   render() {
+    // eslint-disable-next-line
     const { className, alt, size, fallback, rounded, src, ...props } = this.props;
     let s = size;
 
