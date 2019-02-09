@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
 
-export const TagGroup = React.forwardRef(({ children, className, gapless, ...allProps }, ref) => {
+export const Tags = React.forwardRef(({ children, className, gapless, ...allProps }, ref) => {
   const props = modifiers.clean(allProps);
   return (
     <span
@@ -18,7 +18,7 @@ export const TagGroup = React.forwardRef(({ children, className, gapless, ...all
   );
 });
 
-TagGroup.propTypes = {
+Tags.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
@@ -26,7 +26,7 @@ TagGroup.propTypes = {
   gapless: PropTypes.bool
 };
 
-TagGroup.defaultProps = {
+Tags.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',

@@ -4,26 +4,30 @@ import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
-import { TagGroup } from './components/tag-group';
+import { Tags } from './components/tags';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Tag = React.forwardRef(({ children, className, color, size, rounded, remove, ...props }, ref) => (
-  <Element
-    {...props}
-    ref={ref}
-    className={cn('tag', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-      'is-rounded': rounded,
-      'is-delete': remove
-    })}
-  >
-    {!remove && children}
-  </Element>
-));
+export const Tag = React.forwardRef(
+  ({ children, className, color, close, size, ellipsis, rounded, remove, onClick, ...props }, ref) => (
+    <Element
+      {...props}
+      ref={ref}
+      onClick={remove && onClick}
+      className={cn('tag', className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-rounded': rounded,
+        'is-delete': remove
+      })}
+    >
+      {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
+      {!remove && close && <button onClick={onClick} className="delete is-small" />}
+    </Element>
+  )
+);
 
-Tag.Group = TagGroup;
+Tag.Group = Tags;
 
 Tag.propTypes = {
   ...modifiers.propTypes,
@@ -34,6 +38,9 @@ Tag.propTypes = {
   size: PropTypes.oneOf([null, 'medium', 'large']),
   rounded: PropTypes.bool,
   remove: PropTypes.bool,
+  close: PropTypes.bool,
+  ellipsis: PropTypes.bool,
+  onClick: PropTypes.func,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
@@ -46,5 +53,8 @@ Tag.defaultProps = {
   size: null,
   rounded: false,
   remove: false,
+  close: false,
+  ellipsis: false,
+  onClick: () => {},
   renderAs: 'span'
 };

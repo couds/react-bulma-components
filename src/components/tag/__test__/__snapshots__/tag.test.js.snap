@@ -3,9 +3,14 @@
 exports[`Tag component Should be Large 1`] = `
 <span
   className="tag is-large"
+  onClick={false}
   style={Object {}}
 >
-  Tag Large
+  <span
+    className=""
+  >
+    Tag Large
+  </span>
 </span>
 `;
 
@@ -16,15 +21,25 @@ exports[`Tag component Should be group tags 1`] = `
 >
   <span
     className="tag"
+    onClick={false}
     style={Object {}}
   >
-    Tag 1
+    <span
+      className=""
+    >
+      Tag 1
+    </span>
   </span>
   <span
     className="tag"
+    onClick={false}
     style={Object {}}
   >
-    Tag 2
+    <span
+      className=""
+    >
+      Tag 2
+    </span>
   </span>
 </span>
 `;
@@ -32,9 +47,14 @@ exports[`Tag component Should be group tags 1`] = `
 exports[`Tag component Should concat classname in props with Bulma classname 1`] = `
 <span
   className="tag other-class this-is-a-test"
+  onClick={false}
   style={Object {}}
 >
-  Tag name
+  <span
+    className=""
+  >
+    Tag name
+  </span>
 </span>
 `;
 
@@ -101,11 +121,14 @@ Object {
     "className": "",
     "clearfix": false,
     "clipped": false,
+    "close": false,
     "color": null,
+    "ellipsis": false,
     "hidden": false,
     "invisible": false,
     "italic": false,
     "marginless": false,
+    "onClick": [Function],
     "overlay": false,
     "paddingless": false,
     "pull": null,
@@ -130,11 +153,14 @@ Object {
     "className": [Function],
     "clearfix": [Function],
     "clipped": [Function],
+    "close": [Function],
     "color": [Function],
+    "ellipsis": [Function],
     "hidden": [Function],
     "invisible": [Function],
     "italic": [Function],
     "marginless": [Function],
+    "onClick": [Function],
     "overlay": [Function],
     "paddingless": [Function],
     "pull": [Function],
@@ -217,130 +243,195 @@ Object {
 exports[`Tag component Should have tag classname 1`] = `
 <span
   className="tag"
+  onClick={false}
   style={Object {}}
 >
-  Tag name
+  <span
+    className=""
+  >
+    Tag name
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use inline styles 1`] = `
 <span
   className="tag"
+  onClick={false}
   style={
     Object {
       "width": 250,
     }
   }
 >
-  Tag name
+  <span
+    className=""
+  >
+    Tag name
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color black 1`] = `
 <span
   className="tag is-black"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  black
+  <span
+    className=""
+  >
+    tag
+    black
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color danger 1`] = `
 <span
   className="tag is-danger"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  danger
+  <span
+    className=""
+  >
+    tag
+    danger
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color dark 1`] = `
 <span
   className="tag is-dark"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  dark
+  <span
+    className=""
+  >
+    tag
+    dark
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color info 1`] = `
 <span
   className="tag is-info"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  info
+  <span
+    className=""
+  >
+    tag
+    info
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color light 1`] = `
 <span
   className="tag is-light"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  light
+  <span
+    className=""
+  >
+    tag
+    light
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color link 1`] = `
 <span
   className="tag is-link"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  link
+  <span
+    className=""
+  >
+    tag
+    link
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color null 1`] = `
 <span
   className="tag"
+  onClick={false}
   style={Object {}}
 >
-  tag
+  <span
+    className=""
+  >
+    tag
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color primary 1`] = `
 <span
   className="tag is-primary"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  primary
+  <span
+    className=""
+  >
+    tag
+    primary
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color success 1`] = `
 <span
   className="tag is-success"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  success
+  <span
+    className=""
+  >
+    tag
+    success
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color warning 1`] = `
 <span
   className="tag is-warning"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  warning
+  <span
+    className=""
+  >
+    tag
+    warning
+  </span>
 </span>
 `;
 
 exports[`Tag component Should use use color white 1`] = `
 <span
   className="tag is-white"
+  onClick={false}
   style={Object {}}
 >
-  tag
-  white
+  <span
+    className=""
+  >
+    tag
+    white
+  </span>
 </span>
 `;

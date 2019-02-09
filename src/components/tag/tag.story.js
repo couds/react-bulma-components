@@ -8,22 +8,22 @@ storiesOf('Tag', module)
   .add('Default', () => <Tag>Tag Text</Tag>)
   .add('Group Tags', () => (
     <Tag.Group>
-      <Tag color="primary">Tag Text</Tag>
-      <Tag color="success">Tag Text</Tag>
-      <Tag color="danger">Tag Text</Tag>
-      <Tag color="warrning">Tag Text</Tag>
-      <Tag color="info">Tag Text</Tag>
+      <Tag close color="primary">Tag Text</Tag>
+      <Tag close color="success">Tag Text</Tag>
+      <Tag close color="danger">Tag Text</Tag>
+      <Tag close color="warning">Tag Text</Tag>
+      <Tag close color="info">Tag Text</Tag>
     </Tag.Group>
   ))
   .add('Group Tags without gap', () => (
     <div>
       <Tag.Group gapless>
-        <Tag>Tag Text</Tag>
+        <Tag ellipsis>Very long tag with some</Tag>
         <Tag color="primary">Tag Text</Tag>
       </Tag.Group>
       <Tag.Group gapless>
         <Tag color="danger">Delete</Tag>
-        <Tag remove renderAs="a" />
+        <Tag remove color="warning" renderAs="a"/>
       </Tag.Group>
     </div>
   ))
@@ -54,6 +54,6 @@ storiesOf('Tag', module)
   .add('Others', () => (
     <Tag.Group>
       <Tag rounded>Rounded</Tag>
-      <Tag remove />
+      <Tag remove>{' '}</Tag>
     </Tag.Group>
   ));
