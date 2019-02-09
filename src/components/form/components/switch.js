@@ -8,7 +8,7 @@ import './switch.sass';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Switch = ({ className, style, disabled, value, children, checked, name, ...allProps }) => {
+export const Switch = ({ className, style, disabled, value, children, checked, color, size, name, ...allProps }) => {
   const props = modifiers.clean(allProps);
   const [isMouseDown, setMouseDown] = useState(false);
   return (
@@ -21,7 +21,13 @@ export const Switch = ({ className, style, disabled, value, children, checked, n
       disabled={disabled}
     >
       <input {...props} name={name} type="checkbox" value={value} disabled={disabled} checked={checked} />
-      <span className={cn('check', { 'is-elastic': isMouseDown && !disabled })} />
+      <span
+        className={cn('check', {
+          'is-elastic': isMouseDown && !disabled,
+          [`is-${color}`]: color,
+          [`is-${size}`]: size
+        })}
+      />
       <span className="control-label">{children}</span>
     </label>
   );
@@ -33,6 +39,7 @@ Switch.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   disabled: PropTypes.bool,
   value: PropTypes.string,
   checked: PropTypes.bool,
@@ -44,8 +51,9 @@ Switch.defaultProps = {
   children: null,
   className: '',
   value: '',
-  color: null,
   style: {},
+  color: null,
+  size: null,
   disabled: false,
   checked: false,
   name: null
