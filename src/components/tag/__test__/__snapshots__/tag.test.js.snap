@@ -31,16 +31,10 @@ exports[`Tag component Should be group tags 1`] = `
     </span>
   </span>
   <span
-    className="tag"
+    className="tag is-delete"
     onClick={[Function]}
     style={Object {}}
-  >
-    <span
-      className=""
-    >
-      Tag 2
-    </span>
-  </span>
+  />
 </span>
 `;
 
@@ -238,6 +232,24 @@ Object {
   },
   "render": [Function],
 }
+`;
+
+exports[`Tag component Should have close button 1`] = `
+<span
+  className="tag"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag Large
+  </span>
+  <button
+    className="delete is-small"
+    onClick={[Function]}
+  />
+</span>
 `;
 
 exports[`Tag component Should have tag classname 1`] = `

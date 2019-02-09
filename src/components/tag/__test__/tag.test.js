@@ -26,12 +26,16 @@ describe('Tag component', () => {
     const component = renderer.create(<Tag size="large">Tag Large</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should have close button', () => {
+    const component = renderer.create(<Tag close>Tag Large</Tag>);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 
   it('Should be group tags', () => {
     const component = renderer.create(
       <Tag.Group gapless>
         <Tag>Tag 1</Tag>
-        <Tag>Tag 2</Tag>
+        <Tag remove />
       </Tag.Group>
     );
     expect(component.toJSON()).toMatchSnapshot();
