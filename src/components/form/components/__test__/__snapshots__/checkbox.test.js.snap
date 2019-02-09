@@ -10,6 +10,7 @@ Object {
     "className": "",
     "clearfix": false,
     "clipped": false,
+    "color": null,
     "disabled": false,
     "hidden": false,
     "invisible": false,
@@ -22,6 +23,7 @@ Object {
     "radiusless": false,
     "responsive": undefined,
     "shadowless": false,
+    "size": null,
     "style": Object {},
     "textAlignment": null,
     "textColor": null,
@@ -38,6 +40,7 @@ Object {
     "className": [Function],
     "clearfix": [Function],
     "clipped": [Function],
+    "color": [Function],
     "disabled": [Function],
     "hidden": [Function],
     "invisible": [Function],
@@ -50,6 +53,7 @@ Object {
     "radiusless": [Function],
     "responsive": [Function],
     "shadowless": [Function],
+    "size": [Function],
     "style": [Function],
     "textAlignment": [Function],
     "textColor": [Function],
@@ -65,7 +69,7 @@ Object {
 
 exports[`Checkbox component Should have checkbox classname 1`] = `
 <label
-  className="checkbox"
+  className="b-checkbox checkbox"
   disabled={false}
   style={Object {}}
 >
@@ -76,6 +80,13 @@ exports[`Checkbox component Should have checkbox classname 1`] = `
     type="checkbox"
     value=""
   />
-  Text
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    Text
+  </span>
 </label>
 `;

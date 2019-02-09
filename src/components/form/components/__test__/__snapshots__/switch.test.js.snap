@@ -13,7 +13,6 @@ exports[`Switch component Should have checkbox classname 1`] = `
 >
   <input
     checked={false}
-    color={null}
     disabled={false}
     name={null}
     type="checkbox"

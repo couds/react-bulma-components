@@ -39,7 +39,7 @@ const HoCCheckbox = Component => {
     };
 
     render() {
-      return <Component onChange={this.onChange} checked={this.state.checked} {...this.props} />;
+      return <Component color="info" onChange={this.onChange} checked={this.state.checked} {...this.props} />;
     }
   }
   return Controlled;
