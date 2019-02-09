@@ -1,11 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box component Should Exist 1`] = `
+exports[`Loader component Should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
     "backgroundColor": null,
-    "children": null,
     "className": "",
     "clearfix": false,
     "clipped": false,
@@ -30,7 +29,6 @@ Object {
   },
   "propTypes": Object {
     "backgroundColor": [Function],
-    "children": [Function],
     "className": [Function],
     "clearfix": [Function],
     "clipped": [Function],
@@ -38,6 +36,7 @@ Object {
     "invisible": [Function],
     "italic": [Function],
     "marginless": [Function],
+    "onClick": [Function],
     "overlay": [Function],
     "paddingless": [Function],
     "pull": [Function],
@@ -57,21 +56,35 @@ Object {
 }
 `;
 
-exports[`Box component Should concat Bulma class with classes in props 1`] = `
+exports[`Loader component Should concat Bulma class with classes in props 1`] = `
 <div
   className="loader other-class test"
   style={Object {}}
-/>
+>
+  <div
+    className="loader-background"
+  />
+  <div
+    className="loader-icon"
+  />
+</div>
 `;
 
-exports[`Box component Should have box classname 1`] = `
+exports[`Loader component Should have box classname 1`] = `
 <div
   className="loader"
   style={Object {}}
-/>
+>
+  <div
+    className="loader-background"
+  />
+  <div
+    className="loader-icon"
+  />
+</div>
 `;
 
-exports[`Box component Should have custom inline styles 1`] = `
+exports[`Loader component Should have custom inline styles 1`] = `
 <section
   className="loader"
   style={
@@ -80,12 +93,26 @@ exports[`Box component Should have custom inline styles 1`] = `
       "zIndex": 1,
     }
   }
-/>
+>
+  <div
+    className="loader-background"
+  />
+  <div
+    className="loader-icon"
+  />
+</section>
 `;
 
-exports[`Box component Should render as an html section 1`] = `
+exports[`Loader component Should render as an html section 1`] = `
 <section
   className="loader"
   style={Object {}}
-/>
+>
+  <div
+    className="loader-background"
+  />
+  <div
+    className="loader-icon"
+  />
+</section>
 `;
