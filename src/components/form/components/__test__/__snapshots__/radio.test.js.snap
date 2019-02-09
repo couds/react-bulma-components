@@ -2,7 +2,7 @@
 
 exports[`Radio component Should be disabled, checked and with value 1`] = `
 <label
-  className="radio"
+  className="b-radio radio"
   disabled={true}
   style={Object {}}
 >
@@ -13,15 +13,22 @@ exports[`Radio component Should be disabled, checked and with value 1`] = `
     type="radio"
     value="TEST"
   />
-  <p>
-    Default
-  </p>
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    <p>
+      Default
+    </p>
+  </span>
 </label>
 `;
 
 exports[`Radio component Should concat classname in props with Bulma classname 1`] = `
 <label
-  className="radio other-class this-is-a-test"
+  className="b-radio radio other-class this-is-a-test"
   disabled={false}
   style={Object {}}
 >
@@ -32,9 +39,16 @@ exports[`Radio component Should concat classname in props with Bulma classname 1
     type="radio"
     value=""
   />
-  <p>
-    Default
-  </p>
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    <p>
+      Default
+    </p>
+  </span>
 </label>
 `;
 
@@ -48,17 +62,20 @@ Object {
     "className": "",
     "clearfix": false,
     "clipped": false,
+    "color": null,
     "disabled": false,
     "hidden": false,
     "invisible": false,
     "italic": false,
     "marginless": false,
+    "name": null,
     "overlay": false,
     "paddingless": false,
     "pull": null,
     "radiusless": false,
     "responsive": undefined,
     "shadowless": false,
+    "size": null,
     "style": Object {},
     "textAlignment": null,
     "textColor": null,
@@ -75,6 +92,7 @@ Object {
     "className": [Function],
     "clearfix": [Function],
     "clipped": [Function],
+    "color": [Function],
     "disabled": [Function],
     "hidden": [Function],
     "invisible": [Function],
@@ -87,6 +105,7 @@ Object {
     "radiusless": [Function],
     "responsive": [Function],
     "shadowless": [Function],
+    "size": [Function],
     "style": [Function],
     "textAlignment": [Function],
     "textColor": [Function],
@@ -102,7 +121,7 @@ Object {
 
 exports[`Radio component Should have radio classname 1`] = `
 <label
-  className="radio"
+  className="b-radio radio"
   disabled={false}
   style={Object {}}
 >
@@ -113,16 +132,23 @@ exports[`Radio component Should have radio classname 1`] = `
     type="radio"
     value=""
   />
-  Test 
-  <a>
-    Give me
-  </a>
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    Test 
+    <a>
+      Give me
+    </a>
+  </span>
 </label>
 `;
 
 exports[`Radio component Should use inline styles 1`] = `
 <label
-  className="radio"
+  className="b-radio radio"
   disabled={false}
   style={
     Object {
@@ -137,8 +163,15 @@ exports[`Radio component Should use inline styles 1`] = `
     type="radio"
     value=""
   />
-  <p>
-    Default
-  </p>
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    <p>
+      Default
+    </p>
+  </span>
 </label>
 `;
