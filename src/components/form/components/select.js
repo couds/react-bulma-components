@@ -6,8 +6,6 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-import './select.sass';
-
 export const Select = React.forwardRef(
   (
     {

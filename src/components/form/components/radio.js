@@ -4,8 +4,6 @@ import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-import './radio.sass';
-
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const Radio = React.forwardRef(

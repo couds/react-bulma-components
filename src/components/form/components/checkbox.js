@@ -4,8 +4,6 @@ import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-import './checkbox.sass';
-
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const Checkbox = React.forwardRef(

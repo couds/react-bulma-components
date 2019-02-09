@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-import './switch.sass';
-
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const Switch = ({ className, style, disabled, value, children, checked, color, size, name, ...allProps }) => {
