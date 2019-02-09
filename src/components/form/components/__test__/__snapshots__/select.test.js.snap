@@ -6,10 +6,10 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
   style={Object {}}
 >
   <select
+    aria-readonly={false}
     disabled={true}
     multiple={true}
     name=""
-    readOnly={false}
     value=""
   >
     <option>
@@ -31,10 +31,10 @@ exports[`Select component Should concat classname in props with Bulma classname 
   style={Object {}}
 >
   <select
+    aria-readonly={false}
     disabled={false}
     multiple={false}
     name=""
-    readOnly={false}
     value=""
   >
     <option>
@@ -61,6 +61,7 @@ Object {
     "clipped": false,
     "color": null,
     "disabled": false,
+    "empty": false,
     "hidden": false,
     "invisible": false,
     "italic": false,
@@ -74,6 +75,7 @@ Object {
     "radiusless": false,
     "readOnly": false,
     "responsive": undefined,
+    "rounded": false,
     "shadowless": false,
     "size": null,
     "style": Object {},
@@ -93,6 +95,7 @@ Object {
     "clipped": [Function],
     "color": [Function],
     "disabled": [Function],
+    "empty": [Function],
     "hidden": [Function],
     "invisible": [Function],
     "italic": [Function],
@@ -106,6 +109,7 @@ Object {
     "radiusless": [Function],
     "readOnly": [Function],
     "responsive": [Function],
+    "rounded": [Function],
     "shadowless": [Function],
     "size": [Function],
     "style": [Function],
@@ -127,10 +131,10 @@ exports[`Select component Should have select classname 1`] = `
   style={Object {}}
 >
   <select
+    aria-readonly={false}
     disabled={false}
     multiple={false}
     name=""
-    readOnly={false}
     value=""
   >
     <option>
@@ -156,10 +160,10 @@ exports[`Select component Should use inline styles 1`] = `
   }
 >
   <select
+    aria-readonly={false}
     disabled={false}
     multiple={false}
     name=""
-    readOnly={false}
     value=""
   >
     <option>

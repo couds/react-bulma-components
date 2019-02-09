@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Dropdown } from '.';
+import { Dropdown } from '../dropdown';
 import { Container } from '../container';
 import { Section } from '../section';
 

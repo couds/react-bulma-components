@@ -16,7 +16,6 @@ describe('Element component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should accept a react Element as renderAs prop', () => {
-    // eslint-disable-next-line react/prop-types
     const Custom = props => (
       <p {...props}>
         Custom

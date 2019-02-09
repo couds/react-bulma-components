@@ -1,0 +1,18 @@
+@import '../../utils.sass'
+
+.select
+  select
+    padding-right: 2.5em
+    option
+      color: $grey-dark
+      padding: 0.25em 0.5em
+    option:disabled
+      cursor: not-allowed
+      opacity: 0.5
+    optgroup
+      color: $grey-light
+      font-weight: $weight-normal
+      font-style: normal
+      padding: 0.25em 0
+  &.is-empty select
+    color: rgba($grey, 0.7)

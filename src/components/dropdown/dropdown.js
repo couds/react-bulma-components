@@ -115,7 +115,7 @@ export class Dropdown extends PureComponent {
         <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
           <Button color={color}>
             <span>{current}</span>
-            <Icon icon="angle-down" size="small" />
+            <Icon icon="chevron-down" />
           </Button>
         </div>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">

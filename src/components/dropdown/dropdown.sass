@@ -1,13 +1,72 @@
 @import '../utils.sass'
 @import '~bulma/sass/components/dropdown.sass'
 
-.dropdown-item
-  cursor: pointer
-  &:hover
-    background-color: $dropdown-item-hover-background-color
-    color: $dropdown-item-hover-color
-  &.is-active
-    background-color: $dropdown-item-active-background-color
-    color: $dropdown-item-active-color
-  *
-    color: $dropdown-item-color
+.dropdown
+  & + .dropdown
+    margin-left: 0.5em
+  .background
+    +overlay
+    position: fixed
+    background-color: rgba($black, 0.86)
+    z-index: 10
+    cursor: pointer
+    +desktop
+      display: none
+  .dropdown-menu
+    .dropdown-item
+      &.is-disabled
+        cursor: not-allowed
+        &:hover
+          background: inherit
+          color: inherit
+    .has-link a
+      @extend .dropdown-item
+      padding-right: 3rem
+      white-space: nowrap
+  &:not(.is-disabled)
+    .dropdown-menu
+      .dropdown-item
+        &.is-disabled
+          opacity: 0.5
+  .navbar-item
+    height: 100%
+  &.is-disabled
+    opacity: 0.5
+    cursor: not-allowed
+    .dropdown-trigger
+      pointer-events: none
+  &.is-inline
+    .dropdown-menu
+      position: static
+      display: inline-block
+      padding: 0
+  &.is-top-right
+    .dropdown-menu
+      top: auto
+      bottom: 100%
+  &.is-top-left
+    .dropdown-menu
+      top: auto
+      bottom: 100%
+      right: 0
+      left: auto
+  &.is-bottom-left
+    .dropdown-menu
+      right: 0
+      left: auto
+  +touch
+    &.is-mobile-modal
+      .dropdown-menu
+        position: fixed
+        width: calc(100vw - 40px)
+        max-width: 460px
+        max-height: calc(100vh - 120px)
+        top: 25% !important
+        left: 50% !important
+        bottom: auto !important
+        right: auto !important
+        transform: translate3d(-50%, -25%, 0)
+        white-space: normal
+        overflow-y: auto
+        .dropdown-item
+          padding: 1rem 1.5rem

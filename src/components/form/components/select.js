@@ -6,9 +6,26 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
+import './select.sass';
+
 export const Select = React.forwardRef(
   (
-    { className, style, size, color, loading, readOnly, disabled, value, multiple, children, name, ...allProps },
+    {
+      className,
+      style,
+      size,
+      color,
+      loading,
+      rounded,
+      empty,
+      readOnly,
+      disabled,
+      value,
+      multiple,
+      children,
+      name,
+      ...allProps
+    },
     ref
   ) => {
     const props = modifiers.clean(allProps);
@@ -18,6 +35,8 @@ export const Select = React.forwardRef(
           [`is-${size}`]: size,
           [`is-${color}`]: color,
           'is-loading': loading,
+          'is-rounded': rounded,
+          'is-empty': empty,
           'is-multiple': multiple
         })}
         style={style}
@@ -27,7 +46,7 @@ export const Select = React.forwardRef(
           ref={ref}
           multiple={multiple}
           value={value}
-          readOnly={readOnly}
+          aria-readonly={readOnly}
           disabled={disabled}
           name={name}
         >
@@ -48,11 +67,10 @@ Select.propTypes = {
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
+  rounded: PropTypes.bool,
+  empty: PropTypes.bool,
   loading: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
   name: PropTypes.string
 };
 
@@ -67,6 +85,8 @@ Select.defaultProps = {
   readOnly: false,
   disabled: false,
   multiple: false,
+  rounded: false,
+  empty: false,
   loading: false,
   name: ''
 };
