@@ -13,7 +13,7 @@ export const Tag = React.forwardRef(
     <Element
       {...props}
       ref={ref}
-      onClick={remove && onClick}
+      onClick={() => remove && onClick()}
       className={cn('tag', className, {
         [`is-${size}`]: size,
         [`is-${color}`]: color,
