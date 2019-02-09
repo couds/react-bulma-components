@@ -13,6 +13,7 @@ Object {
     "color": null,
     "disabled": false,
     "hidden": false,
+    "indeterminate": false,
     "invisible": false,
     "italic": false,
     "marginless": false,
@@ -43,6 +44,7 @@ Object {
     "color": [Function],
     "disabled": [Function],
     "hidden": [Function],
+    "indeterminate": [Function],
     "invisible": [Function],
     "italic": [Function],
     "marginless": [Function],
@@ -76,6 +78,7 @@ exports[`Checkbox component Should have checkbox classname 1`] = `
   <input
     checked={false}
     disabled={false}
+    indeterminate={false}
     name={null}
     type="checkbox"
     value=""

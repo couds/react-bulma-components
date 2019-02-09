@@ -9,7 +9,7 @@ import './checkbox.sass';
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const Checkbox = React.forwardRef(
-  ({ className, style, disabled, value, children, checked, color, size, name, ...allProps }, ref) => {
+  ({ className, style, disabled, value, children, checked, color, size, indeterminate, name, ...allProps }, ref) => {
     const props = modifiers.clean(allProps);
     return (
       <label
@@ -17,7 +17,16 @@ export const Checkbox = React.forwardRef(
         className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
         style={style}
       >
-        <input {...props} ref={ref} name={name} type="checkbox" value={value} disabled={disabled} checked={checked} />
+        <input
+          {...props}
+          ref={ref}
+          name={name}
+          type="checkbox"
+          value={value}
+          disabled={disabled}
+          checked={checked}
+          indeterminate={indeterminate}
+        />
         <span
           className={cn('check', {
             [`is-${color}`]: color,
@@ -40,9 +49,7 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool,
   value: PropTypes.string,
   checked: PropTypes.bool,
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
+  indeterminate: PropTypes.bool,
   name: PropTypes.string
 };
 
@@ -56,5 +63,6 @@ Checkbox.defaultProps = {
   size: null,
   disabled: false,
   checked: false,
+  indeterminate: false,
   name: null
 };
