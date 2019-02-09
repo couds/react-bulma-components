@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import canUseDOM from '../../services/can-use-dom';
 import { Element } from '../element';
 import { NavbarBrand } from './components/brand';
 import { NavbarBurger } from './components/burger';
@@ -56,7 +55,7 @@ class NavbarEl extends React.PureComponent {
   }
 
   static getDerivedStateFromProps(nextProps) {
-    if (!canUseDOM) {
+    if (!CONSTANTS.IS_CLIENT) {
       return null;
     }
     const html = window.document.querySelector('html');

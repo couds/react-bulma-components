@@ -1,3 +1,21 @@
-@import '../utils.sass'
+@import '../../utils/_all.sass'
 @import '~bulma/sass/components/pagination.sass'
 
+.pagination
+  .pagination-next,
+  .pagination-previous
+    padding-left: 0.25em
+    padding-right: 0.25em
+    &.is-disabled
+      pointer-events: none
+      cursor: not-allowed
+      opacity: 0.5
+  &.is-simple
+    justify-content: normal
+    &.is-centered
+      justify-content: center
+    &.is-right
+      justify-content: flex-end
+  .is-current
+    pointer-events: none
+    cursor: not-allowed

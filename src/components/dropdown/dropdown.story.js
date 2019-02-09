@@ -64,7 +64,6 @@ storiesOf('Dropdown', module)
       <Container>
         <Section size="large">
           <Dropdown
-            align={select('align (deprecated; will be removed in future releases)', alignment)}
             right={boolean('right (will replace "align" prop)', false)}
             value="item"
             up={boolean('up', false)}

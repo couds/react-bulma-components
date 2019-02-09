@@ -1,4 +1,5 @@
 export default {
+  IS_CLIENT: !!(typeof window !== 'undefined' && window.document && window.document.createElement),
   BREAKPOINTS: {
     NONE: null,
     DESKTOP: 'desktop',
