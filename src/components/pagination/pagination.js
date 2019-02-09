@@ -23,9 +23,9 @@ export const Pagination = React.forwardRef(
     >
       <ReactPaginate
         previousLabel={showPrevNext && previous}
-        previousLinkClassName={showPrevNext && 'pagination-previous'}
+        previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
         nextLabel={showPrevNext && next}
-        nextLinkClassName={showPrevNext && 'pagination-next'}
+        nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
         breakLinkClassName={'pagination-ellipsis'}
         activeLinkClassName={'is-current'}
         pageCount={total}

@@ -14,7 +14,7 @@ exports[`Pagination component Next button should be disabled 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -65,7 +65,7 @@ exports[`Pagination component Next button should be disabled 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -163,7 +163,7 @@ exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -216,7 +216,7 @@ exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -241,7 +241,7 @@ exports[`Pagination component Should have 5 pages, page 5 active and display pag
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -318,7 +318,7 @@ exports[`Pagination component Should have 5 pages, page 5 active and display pag
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -343,7 +343,7 @@ exports[`Pagination component Should not display Previous/Next buttons 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -422,7 +422,7 @@ exports[`Pagination component Should not display Previous/Next buttons 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -447,7 +447,7 @@ exports[`Pagination component Should not display page numbers 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -524,7 +524,7 @@ exports[`Pagination component Should not display page numbers 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -549,7 +549,7 @@ exports[`Pagination component Should not render if current page is greater than 
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -587,7 +587,7 @@ exports[`Pagination component Should not render if current page is greater than 
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -612,7 +612,7 @@ exports[`Pagination component Should not render if total pages equals 1 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -637,7 +637,7 @@ exports[`Pagination component Should not render if total pages equals 1 1`] = `
     >
       <a
         aria-disabled="false"
-        className={false}
+        className=""
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"

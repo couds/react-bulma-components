@@ -1265,7 +1265,7 @@ Object {
   "Icon": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "align": "auto",
+      "align": null,
       "backgroundColor": null,
       "children": null,
       "className": "",
@@ -1273,8 +1273,8 @@ Object {
       "clipped": false,
       "color": null,
       "hidden": false,
-      "icon": undefined,
-      "iconSize": undefined,
+      "icon": "",
+      "iconSize": null,
       "invisible": false,
       "italic": false,
       "marginless": false,

@@ -28,6 +28,6 @@ DropdownItem.propTypes = {
 DropdownItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
-  onClick: undefined,
+  onClick: () => {},
   children: null
 };

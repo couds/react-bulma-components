@@ -19,7 +19,7 @@ export const Loader = React.forwardRef(({ overlay, onClick, className, ...props 
 
 Loader.propTypes = {
   ...modifiers.propTypes,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])

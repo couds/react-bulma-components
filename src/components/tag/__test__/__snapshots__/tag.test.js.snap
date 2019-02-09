@@ -3,7 +3,7 @@
 exports[`Tag component Should be Large 1`] = `
 <span
   className="tag is-large"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -21,7 +21,7 @@ exports[`Tag component Should be group tags 1`] = `
 >
   <span
     className="tag"
-    onClick={false}
+    onClick={[Function]}
     style={Object {}}
   >
     <span
@@ -32,7 +32,7 @@ exports[`Tag component Should be group tags 1`] = `
   </span>
   <span
     className="tag"
-    onClick={false}
+    onClick={[Function]}
     style={Object {}}
   >
     <span
@@ -47,7 +47,7 @@ exports[`Tag component Should be group tags 1`] = `
 exports[`Tag component Should concat classname in props with Bulma classname 1`] = `
 <span
   className="tag other-class this-is-a-test"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -243,7 +243,7 @@ Object {
 exports[`Tag component Should have tag classname 1`] = `
 <span
   className="tag"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -257,7 +257,7 @@ exports[`Tag component Should have tag classname 1`] = `
 exports[`Tag component Should use inline styles 1`] = `
 <span
   className="tag"
-  onClick={false}
+  onClick={[Function]}
   style={
     Object {
       "width": 250,
@@ -275,7 +275,7 @@ exports[`Tag component Should use inline styles 1`] = `
 exports[`Tag component Should use use color black 1`] = `
 <span
   className="tag is-black"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -290,7 +290,7 @@ exports[`Tag component Should use use color black 1`] = `
 exports[`Tag component Should use use color danger 1`] = `
 <span
   className="tag is-danger"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -305,7 +305,7 @@ exports[`Tag component Should use use color danger 1`] = `
 exports[`Tag component Should use use color dark 1`] = `
 <span
   className="tag is-dark"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -320,7 +320,7 @@ exports[`Tag component Should use use color dark 1`] = `
 exports[`Tag component Should use use color info 1`] = `
 <span
   className="tag is-info"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -335,7 +335,7 @@ exports[`Tag component Should use use color info 1`] = `
 exports[`Tag component Should use use color light 1`] = `
 <span
   className="tag is-light"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -350,7 +350,7 @@ exports[`Tag component Should use use color light 1`] = `
 exports[`Tag component Should use use color link 1`] = `
 <span
   className="tag is-link"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -365,7 +365,7 @@ exports[`Tag component Should use use color link 1`] = `
 exports[`Tag component Should use use color null 1`] = `
 <span
   className="tag"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -379,7 +379,7 @@ exports[`Tag component Should use use color null 1`] = `
 exports[`Tag component Should use use color primary 1`] = `
 <span
   className="tag is-primary"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -394,7 +394,7 @@ exports[`Tag component Should use use color primary 1`] = `
 exports[`Tag component Should use use color success 1`] = `
 <span
   className="tag is-success"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -409,7 +409,7 @@ exports[`Tag component Should use use color success 1`] = `
 exports[`Tag component Should use use color warning 1`] = `
 <span
   className="tag is-warning"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span
@@ -424,7 +424,7 @@ exports[`Tag component Should use use color warning 1`] = `
 exports[`Tag component Should use use color white 1`] = `
 <span
   className="tag is-white"
-  onClick={false}
+  onClick={[Function]}
   style={Object {}}
 >
   <span

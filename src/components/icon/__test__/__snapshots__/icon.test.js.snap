@@ -4,7 +4,7 @@ exports[`Icon component Should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
-    "align": "auto",
+    "align": null,
     "backgroundColor": null,
     "children": null,
     "className": "",
@@ -12,8 +12,8 @@ Object {
     "clipped": false,
     "color": null,
     "hidden": false,
-    "icon": undefined,
-    "iconSize": undefined,
+    "icon": "",
+    "iconSize": null,
     "invisible": false,
     "italic": false,
     "marginless": false,
@@ -69,7 +69,7 @@ Object {
 
 exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 <span
-  className="icon other-class is-auto"
+  className="icon other-class"
   style={Object {}}
 >
   <i
@@ -80,7 +80,7 @@ exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 
 exports[`Icon component Should have box classname 1`] = `
 <span
-  className="icon is-auto"
+  className="icon"
   style={Object {}}
 >
   <i

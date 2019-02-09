@@ -23,7 +23,7 @@ exports[`Dropdown component Should appear above the dropdown button 1`] = `
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -84,7 +84,7 @@ exports[`Dropdown component Should be right-aligned when using "right" prop 1`] 
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -145,7 +145,7 @@ exports[`Dropdown component Should concat Bulma class with classes in props 1`] 
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -201,7 +201,7 @@ exports[`Dropdown component Should have custom inline styles 1`] = `
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -257,7 +257,7 @@ exports[`Dropdown component Should have divider 1`] = `
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -322,7 +322,7 @@ exports[`Dropdown component Should have dropdown classname 1`] = `
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -374,7 +374,7 @@ exports[`Dropdown component Should show custom label passed to the label prop 1`
         test label
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
@@ -426,7 +426,7 @@ exports[`Dropdown component Should show the label of the first dropdown item whe
         Item
       </span>
       <span
-        className="icon is-auto"
+        className="icon"
         style={Object {}}
       >
         <i
