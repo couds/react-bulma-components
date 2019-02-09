@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch component Should Exists 1`] = `[Function]`;
+
+exports[`Switch component Should have checkbox classname 1`] = `
+<label
+  className="switch"
+  disabled={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}
+>
+  <input
+    checked={false}
+    color={null}
+    disabled={false}
+    name={null}
+    type="checkbox"
+    value=""
+  />
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    Text
+  </span>
+</label>
+`;

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { PureComponent } from 'react';
 import { Button } from '../button';
-import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Textarea } from '../form';
+import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Switch, Textarea } from '../form';
 import { Icon } from '../icon';
 
 /* eslint-disable react/no-multi-comp */
@@ -28,7 +28,6 @@ const HoC = Component => {
 
 const HoCCheckbox = Component => {
   class Controlled extends React.Component {
-    static displayName = 'Checkbox';
     state = {
       checked: false
     };
@@ -73,6 +72,7 @@ class RadioGroup extends React.Component {
 /* eslint-enable react/no-multi-comp */
 const SelectControlled = HoC(Select);
 const CheckboxControlled = HoCCheckbox(Checkbox);
+const SwitchControlled = HoCCheckbox(Switch);
 
 storiesOf('Form', module)
   .addDecorator(story => <div style={{ margin: 50 }}>{story()}</div>)
@@ -129,7 +129,7 @@ storiesOf('Form', module)
       <Field>
         <Label>File</Label>
         <Control>
-          <InputFile icon={<Icon icon="upload" />} boxed placeholder="Textarea" />
+          <InputFile icon={<Icon icon="upload" />} placeholder="Textarea" />
         </Control>
       </Field>
 
@@ -138,6 +138,14 @@ storiesOf('Form', module)
           <CheckboxControlled>
             I agree to the <a href="#agree">terms and conditions</a>
           </CheckboxControlled>
+        </Control>
+      </Field>
+
+      <Field>
+        <Control>
+          <SwitchControlled>
+            I want to receive the newsletter
+          </SwitchControlled>
         </Control>
       </Field>
 

@@ -3584,6 +3584,7 @@ Object {
     },
     "render": [Function],
   },
+  "Switch": [Function],
   "Table": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {

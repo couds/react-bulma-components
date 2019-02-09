@@ -432,6 +432,7 @@ Object {
     },
     "render": [Function],
   },
+  "Switch": [Function],
   "Textarea": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
