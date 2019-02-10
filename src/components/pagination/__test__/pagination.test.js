@@ -42,7 +42,10 @@ describe('Pagination component', () => {
     expect(onChange).toHaveBeenCalledTimes(1);
     component.find('a.pagination-previous').simulate('click');
     expect(onChange).toHaveBeenCalledTimes(2);
-    component.find('a.pagination-link').at(1).simulate('click');
+    component
+      .find('a.pagination-link')
+      .at(1)
+      .simulate('click');
     expect(onChange).toHaveBeenCalledTimes(3);
   });
 });
