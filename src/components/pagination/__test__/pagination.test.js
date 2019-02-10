@@ -16,11 +16,11 @@ describe('Pagination component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not display page numbers', () => {
-    const component = renderer.create(<Pagination delta={0} total={5} current={5} />);
+    const component = renderer.create(<Pagination showPrevNext delta={0} total={5} current={5} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not display Previous/Next buttons', () => {
-    const component = renderer.create(<Pagination showPrevNext={false} delta={3} total={5} current={2} />);
+    const component = renderer.create(<Pagination delta={3} total={5} current={2} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Next button should be disabled', () => {
@@ -40,5 +40,9 @@ describe('Pagination component', () => {
     const component = mount(<Pagination total={5} current={0} showPrevNext onChange={onChange} />);
     component.find('a.pagination-next').simulate('click');
     expect(onChange).toHaveBeenCalledTimes(1);
+    component.find('a.pagination-previous').simulate('click');
+    expect(onChange).toHaveBeenCalledTimes(2);
+    component.find('a.pagination-link').at(1).simulate('click');
+    expect(onChange).toHaveBeenCalledTimes(3);
   });
 });

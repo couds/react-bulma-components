@@ -2,6 +2,35 @@
 
 exports[`Switch component Should Exists 1`] = `[Function]`;
 
+exports[`Switch component Should be disabled 1`] = `
+<label
+  className="switch"
+  disabled={true}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}
+>
+  <input
+    checked={false}
+    disabled={true}
+    name={null}
+    type="checkbox"
+    value=""
+  />
+  <span
+    className="check"
+  />
+  <span
+    className="control-label"
+  >
+    Text
+  </span>
+</label>
+`;
+
+exports[`Switch component Should be elastic 1`] = `ShallowWrapper {}`;
+
 exports[`Switch component Should have checkbox classname 1`] = `
 <label
   className="switch"
@@ -20,6 +49,60 @@ exports[`Switch component Should have checkbox classname 1`] = `
   />
   <span
     className="check"
+  />
+  <span
+    className="control-label"
+  >
+    Text
+  </span>
+</label>
+`;
+
+exports[`Switch component Should have info color classname 1`] = `
+<label
+  className="switch"
+  disabled={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}
+>
+  <input
+    checked={false}
+    disabled={false}
+    name={null}
+    type="checkbox"
+    value=""
+  />
+  <span
+    className="check is-info"
+  />
+  <span
+    className="control-label"
+  >
+    Text
+  </span>
+</label>
+`;
+
+exports[`Switch component Should have medium classname 1`] = `
+<label
+  className="switch"
+  disabled={false}
+  onMouseDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseUp={[Function]}
+  style={Object {}}
+>
+  <input
+    checked={false}
+    disabled={false}
+    name={null}
+    type="checkbox"
+    value=""
+  />
+  <span
+    className="check is-medium"
   />
   <span
     className="control-label"

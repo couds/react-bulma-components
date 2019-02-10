@@ -447,12 +447,14 @@ exports[`Pagination component Should not display page numbers 1`] = `
     >
       <a
         aria-disabled="false"
-        className=""
+        className="pagination-previous"
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
         tabIndex="0"
-      />
+      >
+        Previous
+      </a>
     </li>
     <li>
       <a
@@ -524,12 +526,14 @@ exports[`Pagination component Should not display page numbers 1`] = `
     >
       <a
         aria-disabled="false"
-        className=""
+        className="pagination-next"
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
         tabIndex="0"
-      />
+      >
+        Next
+      </a>
     </li>
   </ul>
 </nav>

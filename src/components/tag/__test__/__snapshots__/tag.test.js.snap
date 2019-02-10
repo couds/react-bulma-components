@@ -252,6 +252,28 @@ exports[`Tag component Should have close button 1`] = `
 </span>
 `;
 
+exports[`Tag component Should have info color 1`] = `
+<span
+  className="tag is-info"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag Large
+  </span>
+</span>
+`;
+
+exports[`Tag component Should have remove button 1`] = `
+<span
+  className="tag is-delete"
+  onClick={[Function]}
+  style={Object {}}
+/>
+`;
+
 exports[`Tag component Should have tag classname 1`] = `
 <span
   className="tag"
@@ -262,6 +284,20 @@ exports[`Tag component Should have tag classname 1`] = `
     className=""
   >
     Tag name
+  </span>
+</span>
+`;
+
+exports[`Tag component Should trim content 1`] = `
+<span
+  className="tag"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className="has-ellipsis"
+  >
+    Very large text with some extras
   </span>
 </span>
 `;
