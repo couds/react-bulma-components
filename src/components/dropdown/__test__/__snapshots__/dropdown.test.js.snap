@@ -1,458 +1,403 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown component Should Exist 1`] = `[Function]`;
-
 exports[`Dropdown component Should appear above the dropdown button 1`] = `
-<div
-  className="dropdown is-up"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown is-up"
+    data-testid="dropdown-container"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
-      </div>
-      <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="other"
-      >
-        Other
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="other"
+        >
+          Other
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should be right-aligned when using "right" prop 1`] = `
-<div
-  className="dropdown is-right"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown is-right"
+    data-testid="dropdown-container"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
-      </div>
-      <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="other"
-      >
-        Other
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="other"
+        >
+          Other
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should concat Bulma class with classes in props 1`] = `
-<div
-  className="dropdown other-class"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown other-class"
+    data-testid="dropdown-container"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item is-active"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
+        <div
+          class="dropdown-item is-active"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should have custom inline styles 1`] = `
-<div
-  className="dropdown"
-  style={
-    Object {
-      "width": 400,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown"
+    data-testid="dropdown-container"
+    style="width: 400px;"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item is-active"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
+        <div
+          class="dropdown-item is-active"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should have divider 1`] = `
-<div
-  className="dropdown"
-  style={
-    Object {
-      "width": 400,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown"
+    data-testid="dropdown-container"
+    style="width: 400px;"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item is-active"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
-      </div>
-      <hr
-        className="dropdown-divider"
-        style={Object {}}
-      />
-      <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="other"
-      >
-        Other
+        <div
+          class="dropdown-item is-active"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
+        <hr
+          class="dropdown-divider"
+        />
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="other"
+        >
+          Other
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should have dropdown classname 1`] = `
-<div
-  className="dropdown"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown"
+    data-testid="dropdown-container"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item is-active"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
+        <div
+          class="dropdown-item is-active"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should show custom label passed to the label prop 1`] = `
-<div
-  className="dropdown"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        test label
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown"
+    data-testid="dropdown-container"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          test label
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Dropdown component Should show the label of the first dropdown item when no custom label is passed 1`] = `
-<div
-  className="dropdown"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="dropdown-trigger"
-    onClick={[Function]}
-    role="presentation"
-  >
-    <button
-      className="button"
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-      tabIndex={0}
-    >
-      <span>
-        Item
-      </span>
-      <span
-        className="icon"
-        style={Object {}}
-      >
-        <i
-          className="mdi mdi-chevron-down"
-        />
-      </span>
-    </button>
-  </div>
-  <div
-    className="dropdown-menu"
-    id="dropdown-menu"
-    role="menu"
+    class="dropdown"
+    data-testid="dropdown-container"
   >
     <div
-      className="dropdown-content"
+      data-testid="dropdown-trigger"
+      role="presentation"
+    >
+      <button
+        class="button"
+        tabindex="0"
+      >
+        <span>
+          Item
+        </span>
+        <span
+          class="icon"
+        >
+          <i
+            class="mdi mdi-chevron-down"
+          />
+        </span>
+      </button>
+    </div>
+    <div
+      class="dropdown-menu"
+      id="dropdown-menu"
+      role="menu"
     >
       <div
-        className="dropdown-item"
-        onClick={[Function]}
-        role="presentation"
-        style={Object {}}
-        title="value"
+        class="dropdown-content"
       >
-        Item
+        <div
+          class="dropdown-item"
+          role="presentation"
+          title="value"
+        >
+          Item
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

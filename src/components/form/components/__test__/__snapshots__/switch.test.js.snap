@@ -1,113 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Switch component Should Exists 1`] = `[Function]`;
-
 exports[`Switch component Should be disabled 1`] = `
-<label
-  className="switch"
-  disabled={true}
-  onMouseDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseUp={[Function]}
-  style={Object {}}
->
-  <input
-    checked={false}
-    disabled={true}
-    name={null}
-    type="checkbox"
-    value=""
-  />
-  <span
-    className="check"
-  />
-  <span
-    className="control-label"
+<DocumentFragment>
+  <label
+    class="switch"
+    disabled=""
   >
-    Text
-  </span>
-</label>
+    <input
+      disabled=""
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="check"
+      data-testid="switch-check"
+    />
+    <span
+      class="control-label"
+    >
+      Text
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
-exports[`Switch component Should be elastic 1`] = `ShallowWrapper {}`;
-
 exports[`Switch component Should have checkbox classname 1`] = `
-<label
-  className="switch"
-  disabled={false}
-  onMouseDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseUp={[Function]}
-  style={Object {}}
->
-  <input
-    checked={false}
-    disabled={false}
-    name={null}
-    type="checkbox"
-    value=""
-  />
-  <span
-    className="check"
-  />
-  <span
-    className="control-label"
+<DocumentFragment>
+  <label
+    class="switch"
   >
-    Text
-  </span>
-</label>
+    <input
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="check"
+      data-testid="switch-check"
+    />
+    <span
+      class="control-label"
+    >
+      Text
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`Switch component Should have info color classname 1`] = `
-<label
-  className="switch"
-  disabled={false}
-  onMouseDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseUp={[Function]}
-  style={Object {}}
->
-  <input
-    checked={false}
-    disabled={false}
-    name={null}
-    type="checkbox"
-    value=""
-  />
-  <span
-    className="check is-info"
-  />
-  <span
-    className="control-label"
+<DocumentFragment>
+  <label
+    class="switch"
   >
-    Text
-  </span>
-</label>
+    <input
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="check is-info"
+      data-testid="switch-check"
+    />
+    <span
+      class="control-label"
+    >
+      Text
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`Switch component Should have medium classname 1`] = `
-<label
-  className="switch"
-  disabled={false}
-  onMouseDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseUp={[Function]}
-  style={Object {}}
->
-  <input
-    checked={false}
-    disabled={false}
-    name={null}
-    type="checkbox"
-    value=""
-  />
-  <span
-    className="check is-medium"
-  />
-  <span
-    className="control-label"
+<DocumentFragment>
+  <label
+    class="switch"
   >
-    Text
-  </span>
-</label>
+    <input
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="check is-medium"
+      data-testid="switch-check"
+    />
+    <span
+      class="control-label"
+    >
+      Text
+    </span>
+  </label>
+</DocumentFragment>
 `;

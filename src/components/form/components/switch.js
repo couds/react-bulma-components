@@ -6,9 +6,17 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
+export const switchStateHook = () => {
+  const [isMouseDown, setMouseDown] = useState(false);
+  return {
+    isMouseDown,
+    setMouseDown
+  };
+};
+
 export const Switch = ({ className, style, disabled, value, children, checked, color, size, name, ...allProps }) => {
   const props = modifiers.clean(allProps);
-  const [isMouseDown, setMouseDown] = useState(false);
+  const { isMouseDown, setMouseDown } = switchStateHook();
   return (
     <label
       className={cn('switch', modifiers.getClassName(allProps), className)}
@@ -25,6 +33,7 @@ export const Switch = ({ className, style, disabled, value, children, checked, c
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}
+        data-testid="switch-check"
       />
       <span className="control-label">{children}</span>
     </label>

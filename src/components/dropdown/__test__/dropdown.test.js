@@ -1,172 +1,158 @@
-import { mount, shallow } from 'enzyme';
 import { JSDOM } from 'jsdom';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { Dropdown } from '../dropdown';
+import { act, fireEvent, render, testHook } from 'react-testing-library';
+import { Dropdown, dropdownStateHook } from '../dropdown';
 
 describe('Dropdown component', () => {
   beforeEach(() => {
-    // eslint-disable-next-line
     global.window = new JSDOM('<body><div id="app-root"></div></body>').window;
   });
-  it('Should Exist', () => {
-    expect(Dropdown).toMatchSnapshot();
-  });
   it('Should have dropdown classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown value="value" onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should add listener do document on mount', () => {
-    const app = global.window.document.querySelector('#app-root');
     global.window.document.addEventListener = jest.fn();
-    const component = mount(
+    render(
       <Dropdown value="value" onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
-      </Dropdown>,
-      {
-        attachTo: app
-      }
+      </Dropdown>
     );
     expect(window.document.addEventListener).toHaveBeenCalled();
-    component.unmount();
   });
   it('Should concat Bulma class with classes in props', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown value="value" className="other-class" onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should have divider', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item value="other">Other</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should be right-aligned when using "right" prop', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown right>
         <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Item value="other">Other</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should appear above the dropdown button', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown up>
         <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Item value="other">Other</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should open the Dropdown', () => {
-    const component = shallow(
+    const { getByTestId } = render(
       <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item value="other">Other</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.state('open')).toBe(false);
-    component.find('.dropdown-trigger').simulate('click');
-    expect(component.state('open')).toBe(true);
+    expect(getByTestId('dropdown-container')).not.toHaveClass('is-active');
+    fireEvent.click(getByTestId('dropdown-trigger'));
+    expect(getByTestId('dropdown-container')).toHaveClass('is-active');
   });
-  it('Should open the Dropdown and prevent default event (not to navigate if a link is on the dropdown trigger)', () => {
-    const preventDefault = jest.fn();
-    const component = shallow(
-      <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
-        <Dropdown.Item value="value">Item</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item value="other">Other</Dropdown.Item>
-      </Dropdown>
-    );
-    expect(component.state('open')).toBe(false);
-    component.find('.dropdown-trigger').simulate('click', { preventDefault });
-    expect(preventDefault).toHaveBeenCalled();
-    expect(component.state('open')).toBe(true);
-  });
-  it('Should change the value', () => {
+  it('Should select the new value', async () => {
     const onChange = jest.fn();
-    const component = shallow(
-      <Dropdown value="" hoverable style={{ width: 400 }} onChange={onChange}>
-        <Dropdown.Item value="value">Item</Dropdown.Item>
+    const { getByTestId } = render(
+      <Dropdown hoverable value="" style={{ width: 400 }} onChange={onChange}>
+        <Dropdown.Item data-testid="foo" value="value">
+          Foo
+        </Dropdown.Item>
       </Dropdown>
     );
-    component.find('.dropdown-trigger').simulate('click');
-    component.find(Dropdown.Item).simulate('click');
+    fireEvent.mouseOver(getByTestId('dropdown-trigger'));
+    fireEvent.click(getByTestId('foo'));
     expect(onChange).toHaveBeenCalledWith('value');
-    expect(component.state('open')).toBe(false);
   });
-  it('Should close on select', () => {
-    const component = shallow(
-      <Dropdown>
-        <Dropdown.Item value="value">Item</Dropdown.Item>
-      </Dropdown>
-    );
-    component.find('.dropdown-trigger').simulate('click');
-    component.find(Dropdown.Item).simulate('click');
-    expect(component.state('open')).toBe(false);
-  });
-  it('Should close the dropdown', () => {
+  it('Should select the new value and close the dropdown', async () => {
     const onChange = jest.fn();
-    const component = shallow(
+    const { getByTestId } = render(
       <Dropdown value="" style={{ width: 400 }} onChange={onChange}>
-        <Dropdown.Item value="value">Item</Dropdown.Item>
+        <Dropdown.Item data-testid="foo" value="value">
+          Foo
+        </Dropdown.Item>
       </Dropdown>
     );
-    component.find('.dropdown-trigger').simulate('click');
-    component.find(Dropdown.Item).simulate('click', { path: [] });
-    expect(component.state('open')).toBe(false);
+    fireEvent.click(getByTestId('dropdown-trigger'));
+    fireEvent.click(getByTestId('foo'));
+    expect(onChange).toHaveBeenCalledWith('value');
+    expect(getByTestId('dropdown-container')).not.toHaveClass('is-active');
   });
   it('Should show custom label passed to the label prop', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown label="test label">
         <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should show the label of the first dropdown item when no custom label is passed', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Dropdown>
         <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should show custom label when active valued is undefined/empty', () => {
-    const component = shallow(
+    const { getByTestId } = render(
       <Dropdown label="test label" value="">
         <Dropdown.Item value="value">Item</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.find('span').text()).toEqual('test label');
+    expect(getByTestId('dropdown-trigger')).toHaveTextContent('test label');
   });
   it('Should show the label of the dropdown item when value of it is the active value', () => {
-    const component = shallow(
+    const { getByTestId } = render(
       <Dropdown label="test label" value="value">
-        <Dropdown.Item value="value">Item</Dropdown.Item>
+        <Dropdown.Item value="value">Bar</Dropdown.Item>
       </Dropdown>
     );
-    expect(component.find('span').text()).toEqual('Item');
+    expect(getByTestId('dropdown-trigger')).toHaveTextContent('Bar');
+  });
+  it('should accepts default initial values', () => {
+    let open;
+    testHook(() => ({ open } = dropdownStateHook()));
+
+    expect(open).toBe(false);
+  });
+  it('should provides an `setOpen` function', () => {
+    let open, setOpen;
+    testHook(() => ({ open, setOpen } = dropdownStateHook()));
+
+    expect(open).toBe(false);
+    act(() => {
+      setOpen(true);
+    });
+    expect(open).toBe(true);
   });
 });

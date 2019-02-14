@@ -1,42 +1,66 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Switch } from '../switch';
+import { act, testHook, render, fireEvent } from 'react-testing-library';
+import { Switch, switchStateHook } from '../switch';
 
 describe('Switch component', () => {
   let component;
-  it('Should Exists', () => {
-    expect(Switch).toMatchSnapshot();
-  });
   it('Should have checkbox classname', () => {
-    component = renderer.create(<Switch>Text</Switch>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Switch>Text</Switch>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should change value on change event', () => {
     const spy = jest.fn();
-    component = shallow(<Switch onChange={spy}>Text</Switch>);
-    component.find('input').simulate('change');
+    const { getByLabelText } = render(<Switch onChange={spy}>Text</Switch>);
+    fireEvent.click(getByLabelText(/Text/i));
     expect(spy).toHaveBeenCalledTimes(1);
   });
   it('Should have info color classname', () => {
-    component = renderer.create(<Switch color="info">Text</Switch>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Switch color="info">Text</Switch>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should have medium classname', () => {
-    component = renderer.create(<Switch size="medium">Text</Switch>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Switch size="medium">Text</Switch>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should be disabled', () => {
-    component = renderer.create(<Switch disabled>Text</Switch>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Switch disabled>Text</Switch>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should be elastic', () => {
-    component = shallow(<Switch>Text</Switch>);
-    component.props().onMouseDown();
-    expect(component).toMatchSnapshot();
+    const { getByLabelText, getByTestId } = render(<Switch>Text</Switch>);
+    fireEvent.mouseDown(getByLabelText(/Text/i));
+    expect(getByTestId('switch-check')).toHaveClass('is-elastic');
+  });
+  it('Should not be elastic', () => {
+    const { getByLabelText, getByTestId } = render(<Switch>Text</Switch>);
+    fireEvent.mouseOut(getByLabelText(/Text/i));
+    expect(getByTestId('switch-check')).not.toHaveClass('is-elastic');
+  });
+  it('Should not be elastic 2', () => {
+    const { getByLabelText, getByTestId } = render(<Switch>Text</Switch>);
+    fireEvent.mouseUp(getByLabelText(/Text/i));
+    expect(getByTestId('switch-check')).not.toHaveClass('is-elastic');
   });
   it('Should set input checked if checked', () => {
     component = shallow(<Switch checked />);
     expect(component.find('input').is('[checked]')).toBe(true);
+  });
+  it('should accepts default initial values', () => {
+    let isMouseDown;
+    testHook(() => ({ isMouseDown } = switchStateHook()));
+
+    expect(isMouseDown).toBe(false);
+  });
+  it('should provides an `setOpen` function', () => {
+    let isMouseDown, setMouseDown;
+    testHook(() => ({ isMouseDown, setMouseDown } = switchStateHook()));
+
+    expect(isMouseDown).toBe(false);
+    act(() => {
+      setMouseDown(true);
+    });
+    expect(isMouseDown).toBe(true);
   });
 });
