@@ -1,7 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { act, testHook, render, fireEvent } from 'react-testing-library';
+import { act, fireEvent, render, testHook } from 'react-testing-library';
 import { Switch, switchStateHook } from '../switch';
 
 describe('Switch component', () => {

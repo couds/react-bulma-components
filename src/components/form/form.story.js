@@ -143,9 +143,7 @@ storiesOf('Form', module)
 
       <Field>
         <Control>
-          <SwitchControlled>
-            I want to receive the newsletter
-          </SwitchControlled>
+          <SwitchControlled>I want to receive the newsletter</SwitchControlled>
         </Control>
       </Field>
 
