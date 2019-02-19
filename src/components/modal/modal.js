@@ -68,7 +68,12 @@ export const Modal = React.forwardRef((props, ref) => {
         'is-active': show
       })}
     >
-      <div role="presentation" data-testid="modal-background" className="modal-background" onClick={closeOnBlur ? props.onClose : null} />
+      <div
+        role="presentation"
+        data-testid="modal-background"
+        className="modal-background"
+        onClick={closeOnBlur ? props.onClose : null}
+      />
       {children}
       {showClose && (
         <button
