@@ -1,6 +1,4 @@
-import { mount } from 'enzyme';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
 import { fireEvent, render } from 'react-testing-library';
 import { Modal } from '..';
 
