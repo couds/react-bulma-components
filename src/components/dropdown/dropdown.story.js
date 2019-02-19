@@ -2,8 +2,8 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Dropdown } from '../dropdown';
 import { Container } from '../container';
+import { Dropdown } from '../dropdown';
 import { Section } from '../section';
 
 const alignment = {

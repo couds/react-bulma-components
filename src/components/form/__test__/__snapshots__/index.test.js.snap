@@ -514,6 +514,5 @@ Object {
     },
     "render": [Function],
   },
-  "switchStateHook": [Function],
 }
 `;

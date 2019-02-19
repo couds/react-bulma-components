@@ -4039,8 +4039,6 @@ Object {
     },
     "render": [Function],
   },
-  "dropdownStateHook": [Function],
   "getHtmlClasses": [Function],
-  "switchStateHook": [Function],
 }
 `;

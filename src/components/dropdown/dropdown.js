@@ -10,12 +10,6 @@ import { DropdownItem } from './components/item';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const dropdownStateHook = () => {
-  const [open, setOpen] = useState(false);
-
-  return { open, setOpen };
-};
-
 export const Dropdown = ({ className, children, value, color, right, up, label, hoverable, onChange, ...allProps }) => {
   useEffect(() => {
     document.addEventListener('click', close);
@@ -25,7 +19,7 @@ export const Dropdown = ({ className, children, value, color, right, up, label, 
     };
   });
 
-  const { open, setOpen } = dropdownStateHook();
+  const [open, setOpen] = useState(false);
 
   const props = modifiers.clean(allProps);
 

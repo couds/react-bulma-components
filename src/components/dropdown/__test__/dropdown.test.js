@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom';
 import React from 'react';
-import { act, fireEvent, render, testHook } from 'react-testing-library';
-import { Dropdown, dropdownStateHook } from '../dropdown';
+import { fireEvent, render } from 'react-testing-library';
+import { Dropdown } from '../dropdown';
 
 describe('Dropdown component', () => {
   beforeEach(() => {
@@ -138,21 +138,5 @@ describe('Dropdown component', () => {
       </Dropdown>
     );
     expect(getByTestId('dropdown-trigger')).toHaveTextContent('Bar');
-  });
-  it('should accepts default initial values', () => {
-    let open;
-    testHook(() => ({ open } = dropdownStateHook()));
-
-    expect(open).toBe(false);
-  });
-  it('should provides an `setOpen` function', () => {
-    let open, setOpen;
-    testHook(() => ({ open, setOpen } = dropdownStateHook()));
-
-    expect(open).toBe(false);
-    act(() => {
-      setOpen(true);
-    });
-    expect(open).toBe(true);
   });
 });

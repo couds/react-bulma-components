@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { act, fireEvent, render, testHook } from 'react-testing-library';
-import { Switch, switchStateHook } from '../switch';
+import { fireEvent, render } from 'react-testing-library';
+import { Switch } from '../switch';
 
 describe('Switch component', () => {
   let component;
@@ -45,21 +45,5 @@ describe('Switch component', () => {
   it('Should set input checked if checked', () => {
     component = shallow(<Switch checked />);
     expect(component.find('input').is('[checked]')).toBe(true);
-  });
-  it('should accepts default initial values', () => {
-    let isMouseDown;
-    testHook(() => ({ isMouseDown } = switchStateHook()));
-
-    expect(isMouseDown).toBe(false);
-  });
-  it('should provides an `setOpen` function', () => {
-    let isMouseDown, setMouseDown;
-    testHook(() => ({ isMouseDown, setMouseDown } = switchStateHook()));
-
-    expect(isMouseDown).toBe(false);
-    act(() => {
-      setMouseDown(true);
-    });
-    expect(isMouseDown).toBe(true);
   });
 });
