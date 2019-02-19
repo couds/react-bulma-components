@@ -21,10 +21,11 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react'
   ],
-  plugins: ['jest', 'react', 'prettier'],
+  plugins: ['jest', 'react', 'prettier', 'react-hooks'],
   rules: {
     'react/display-name': 0,
     'prettier/prettier': 'error',
+    'react-hooks/rules-of-hooks': 'error',
     'no-console': 'off'
   },
   overrides: [

@@ -12,15 +12,17 @@ import { Section } from '../section';
 class OpenModal extends React.Component {
   static propTypes = {
     modal: PropTypes.object,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    show: PropTypes.bool
   };
 
   static defaultProps = {
-    modal: {}
+    modal: {},
+    show: false
   };
 
   state = {
-    show: false
+    show: this.props.show
   };
 
   open = () => this.setState({ show: true });
@@ -50,7 +52,7 @@ storiesOf('Modal', module)
     </OpenModal>
   ))
   .add('Close with keyboard', () => (
-    <OpenModal modal={{ showClose: false }}>
+    <OpenModal show modal={{ showClose: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
           Press ESC on your keyboard to close this modal, Pass showClose: false if you want to hide the close button
@@ -59,7 +61,7 @@ storiesOf('Modal', module)
     </OpenModal>
   ))
   .add('Close on click outside', () => (
-    <OpenModal modal={{ closeOnBlur: true, showClose: false }}>
+    <OpenModal show modal={{ closeOnBlur: true, showClose: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
           Pass closeOnBlur: true to enable to close the Modal when the user click outside the main modal container
@@ -70,7 +72,7 @@ storiesOf('Modal', module)
   .add('Modal Card', () => (
     <OpenModal modal={{ closeOnBlur: true }}>
       <Modal.Card>
-        <Modal.Card.Head>
+        <Modal.Card.Head onClose={() => {}}>
           <Modal.Card.Title>Title</Modal.Card.Title>
         </Modal.Card.Head>
         <Modal.Card.Body>
