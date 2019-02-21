@@ -1,230 +1,191 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Notification component Should use use color black 1`] = `
-<div
-  className="notification is-black"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-black"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color danger 1`] = `
-<div
-  className="notification is-danger"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-danger"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color dark 1`] = `
-<div
-  className="notification is-dark"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-dark"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color info 1`] = `
-<div
-  className="notification is-info"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-info"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color light 1`] = `
-<div
-  className="notification is-light"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-light"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color link 1`] = `
-<div
-  className="notification is-link"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-link"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color null 1`] = `
-<div
-  className="notification"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color primary 1`] = `
-<div
-  className="notification is-primary"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-primary"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color success 1`] = `
-<div
-  className="notification is-success"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-success"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color warning 1`] = `
-<div
-  className="notification is-warning"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-warning"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component Should use use color white 1`] = `
-<div
-  className="notification is-white"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification is-white"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component should concat classname in props with classname 1`] = `
-<div
-  className="notification other-class this-is-a-test"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
-exports[`Notification component should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "div",
-    "responsive": undefined,
-    "shadowless": false,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
+<DocumentFragment>
+  <div
+    class="notification other-class this-is-a-test"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Notification component should have notification classname 1`] = `
-<div
-  className="notification"
-  style={Object {}}
->
-  <img
-    alt="placeholder"
-    src="http://bulma.io/images/placeholders/128x128.png"
+<DocumentFragment>
+  <div
+    class="notification"
+  >
+    <img
+      alt="placeholder"
+      src="http://bulma.io/images/placeholders/128x128.png"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Notification component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="notification"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Notification component should render as Section 1`] = `
-<section
-  className="notification"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</section>
+<DocumentFragment>
+  <section
+    class="notification"
+  >
+    <p>
+      Default
+    </p>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`Notification component should use inline styles 1`] = `
-<div
-  className="notification"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
-  <p>
-    Default
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="notification"
+    style="height: 250px;"
+  >
+    <p>
+      Default
+    </p>
+  </div>
+</DocumentFragment>
 `;
