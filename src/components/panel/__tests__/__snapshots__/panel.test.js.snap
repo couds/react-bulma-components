@@ -1,394 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Panel component should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Block": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "active": false,
-      "backgroundColor": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "active": [Function],
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Header": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Icon": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "renderAs": "span",
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Tabs": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "Tab": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "defaultProps": Object {
-        "active": false,
-        "backgroundColor": null,
-        "className": "",
-        "clearfix": false,
-        "clipped": false,
-        "hidden": false,
-        "invisible": false,
-        "italic": false,
-        "marginless": false,
-        "overlay": false,
-        "paddingless": false,
-        "pull": null,
-        "radiusless": false,
-        "renderAs": "a",
-        "responsive": undefined,
-        "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
-        "unselectable": false,
-      },
-      "propTypes": Object {
-        "active": [Function],
-        "backgroundColor": [Function],
-        "className": [Function],
-        "clearfix": [Function],
-        "clipped": [Function],
-        "hidden": [Function],
-        "invisible": [Function],
-        "italic": [Function],
-        "marginless": [Function],
-        "overlay": [Function],
-        "paddingless": [Function],
-        "pull": [Function],
-        "radiusless": [Function],
-        "renderAs": [Function],
-        "responsive": [Function],
-        "shadowless": [Function],
-        "textAlignment": [Function],
-        "textColor": [Function],
-        "textSize": [Function],
-        "textTransform": [Function],
-        "textWeight": [Function],
-        "unselectable": [Function],
-      },
-      "render": [Function],
-    },
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "nav",
-    "responsive": undefined,
-    "shadowless": false,
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
+exports[`Panel component should render 1`] = `
+<DocumentFragment>
+  <nav
+    class="panel"
+  />
+</DocumentFragment>
 `;
 
-exports[`Panel component should have box classname 1`] = `
-<nav
-  className="panel"
-  style={Object {}}
->
+exports[`Panel component should render 2`] = `
+<DocumentFragment>
   <div
-    className="panel-heading"
-    style={Object {}}
-  >
-    repositories
-  </div>
+    class="panel-block"
+  />
+</DocumentFragment>
+`;
+
+exports[`Panel component should render 3`] = `
+<DocumentFragment>
   <div
-    className="panel-block"
-    style={Object {}}
+    class="panel-heading"
+  />
+</DocumentFragment>
+`;
+
+exports[`Panel component should render 4`] = `
+<DocumentFragment>
+  <span
+    class="panel-icon"
+  />
+</DocumentFragment>
+`;
+
+exports[`Panel component should render 5`] = `
+<DocumentFragment>
+  <div
+    class="panel-tabs"
+  />
+</DocumentFragment>
+`;
+
+exports[`Panel component should render with all 1`] = `
+<DocumentFragment>
+  <nav
+    class="panel"
   >
-    <div>
-      Control
+    <div
+      class="panel-heading"
+    >
+      repositories
     </div>
-  </div>
-  <div
-    className="panel-tabs panel-tabs"
-    style={Object {}}
-  >
+    <div
+      class="panel-block"
+    >
+      <div>
+        Control
+      </div>
+    </div>
+    <div
+      class="panel-tabs panel-tabs"
+    >
+      <a
+        class="is-active"
+      >
+        all
+      </a>
+      <a>
+        public
+      </a>
+      <a>
+        private
+      </a>
+      <a>
+        sources
+      </a>
+      <a>
+        forks
+      </a>
+    </div>
     <a
-      className="is-active"
-      style={Object {}}
+      class="panel-block is-active"
     >
-      all
+      <span
+        class="panel-icon"
+      >
+        <i
+          class="fa fa-bars"
+        />
+      </span>
+      bulma
     </a>
-    <a
-      style={Object {}}
+    <label
+      class="panel-block panel-block"
     >
-      public
-    </a>
-    <a
-      style={Object {}}
-    >
-      private
-    </a>
-    <a
-      style={Object {}}
-    >
-      sources
-    </a>
-    <a
-      style={Object {}}
-    >
-      forks
-    </a>
-  </div>
-  <a
-    className="panel-block is-active"
-    style={Object {}}
-  >
-    <span
-      className="panel-icon"
-      style={Object {}}
-    >
-      <i
-        className="fa fa-bars"
+      <input
+        type="checkbox"
       />
-    </span>
-    bulma
-  </a>
-  <label
-    className="panel-block panel-block"
-    style={Object {}}
-  >
-    <input
-      type="checkbox"
-    />
-    remember me
-  </label>
-  <div
-    className="panel-block"
-    style={Object {}}
-  >
-    <button
-      type="button"
+      remember me
+    </label>
+    <div
+      class="panel-block"
     >
-      reset all filters
-    </button>
-  </div>
-</nav>
+      <button
+        type="button"
+      >
+        reset all filters
+      </button>
+    </div>
+  </nav>
+</DocumentFragment>
 `;

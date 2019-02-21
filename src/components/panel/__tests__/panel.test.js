@@ -1,13 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Panel } from '../panel';
 
 describe('Panel component', () => {
-  it('should Exist', () => {
-    expect(Panel).toMatchSnapshot();
+  it.each([[Panel], [Panel.Block], [Panel.Header], [Panel.Icon], [Panel.Tabs]])('should render', Component => {
+    const { asFragment } = render(<Component />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('should have box classname', () => {
-    const component = renderer.create(
+  it('should render with all', () => {
+    const { asFragment } = render(
       <Panel>
         <Panel.Header>repositories</Panel.Header>
         <Panel.Block>
@@ -35,6 +36,6 @@ describe('Panel component', () => {
         </Panel.Block>
       </Panel>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
