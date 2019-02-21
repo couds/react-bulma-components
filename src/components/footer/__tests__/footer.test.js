@@ -1,17 +1,17 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Footer } from '..';
 
 describe('Footer component', () => {
   it('Should have footer classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Footer>
-        <p className="bd-notification is-success">
+        <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>
-        </p>
+        </div>
       </Footer>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

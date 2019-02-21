@@ -1,19 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component Should have footer classname 1`] = `
-<div
-  className="footer"
-  style={Object {}}
->
-  <p
-    className="bd-notification is-success"
+<DocumentFragment>
+  <div
+    class="footer"
   >
-    <p>
-      Default
-    </p>
-    <p>
-      Container
-    </p>
-  </p>
-</div>
+    <div
+      class="bd-notification is-success"
+    >
+      <p>
+        Default
+      </p>
+      <p>
+        Container
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
 `;
