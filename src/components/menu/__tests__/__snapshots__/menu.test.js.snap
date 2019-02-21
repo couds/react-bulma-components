@@ -1,314 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu component should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "List": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "Item": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "defaultProps": Object {
-        "active": false,
-        "backgroundColor": null,
-        "children": null,
-        "className": "",
-        "clearfix": false,
-        "clipped": false,
-        "hidden": false,
-        "invisible": false,
-        "italic": false,
-        "marginless": false,
-        "overlay": false,
-        "paddingless": false,
-        "pull": null,
-        "radiusless": false,
-        "renderAs": "a",
-        "responsive": undefined,
-        "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
-        "unselectable": false,
-      },
-      "propTypes": Object {
-        "active": [Function],
-        "backgroundColor": [Function],
-        "children": [Function],
-        "className": [Function],
-        "clearfix": [Function],
-        "clipped": [Function],
-        "hidden": [Function],
-        "invisible": [Function],
-        "italic": [Function],
-        "marginless": [Function],
-        "overlay": [Function],
-        "paddingless": [Function],
-        "pull": [Function],
-        "radiusless": [Function],
-        "renderAs": [Function],
-        "responsive": [Function],
-        "shadowless": [Function],
-        "textAlignment": [Function],
-        "textColor": [Function],
-        "textSize": [Function],
-        "textTransform": [Function],
-        "textWeight": [Function],
-        "unselectable": [Function],
-      },
-      "render": [Function],
-    },
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "title": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "title": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "aside",
-    "responsive": undefined,
-    "shadowless": false,
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
 exports[`Menu component should accept a react Element as renderAs prop 1`] = `
-<aside
-  className="menu"
-  style={Object {}}
->
-  <p
-    className="menu-label"
+<DocumentFragment>
+  <aside
+    class="menu"
   >
-    General
-  </p>
-  <ul
-    className="menu-list"
-    style={Object {}}
-  >
-    <li>
-      <span
-        style={Object {}}
-      >
-        Custom
-        Dashboard
-      </span>
-    </li>
-    <li>
-      <span
-        style={Object {}}
-      >
-        Custom
-        Customer
-      </span>
-    </li>
-  </ul>
-</aside>
+    <p
+      class="menu-label"
+    >
+      General
+    </p>
+    <ul
+      class="menu-list"
+    >
+      <li>
+        <span>
+          CustomDashboard
+        </span>
+      </li>
+      <li>
+        <span>
+          CustomCustomer
+        </span>
+      </li>
+    </ul>
+  </aside>
+</DocumentFragment>
 `;
 
 exports[`Menu component should concat Menu.List to display as submenus 1`] = `
-<aside
-  className="menu"
-  style={Object {}}
->
-  <p
-    className="menu-label"
+<DocumentFragment>
+  <aside
+    class="menu"
   >
-    General
-  </p>
-  <ul
-    className="menu-list"
-    style={Object {}}
-  >
-    <li>
-      <a
-        style={Object {}}
-      >
-        Dashboard
-      </a>
-    </li>
-    <li>
+    <p
+      class="menu-label"
+    >
+      General
+    </p>
+    <ul
+      class="menu-list"
+    >
+      <li>
+        <a>
+          Dashboard
+        </a>
+      </li>
+      <li />
       <li>
         <a
-          className="is-active"
-          style={Object {}}
+          class="is-active"
         >
           Manage Your Team
         </a>
         <ul
-          className="menu-list"
-          style={Object {}}
+          class="menu-list"
         >
           <li>
-            <a
-              style={Object {}}
-            >
+            <a>
               Members
             </a>
           </li>
           <li>
             <a
-              className="is-active"
-              style={Object {}}
+              class="is-active"
             >
               Plugins
             </a>
           </li>
           <li>
-            <a
-              style={Object {}}
-            >
+            <a>
               Add a member
             </a>
           </li>
         </ul>
       </li>
-    </li>
-  </ul>
-</aside>
+    </ul>
+  </aside>
+</DocumentFragment>
 `;
 
-exports[`Menu component should have menu classnames 1`] = `
-<aside
-  className="menu"
-  style={Object {}}
->
-  <p
-    className="menu-label"
+exports[`Menu component should have render all 1`] = `
+<DocumentFragment>
+  <aside
+    class="menu"
   >
-    General
-  </p>
+    <p
+      class="menu-label"
+    >
+      General
+    </p>
+    <ul
+      class="menu-list"
+    >
+      <li>
+        <a>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a>
+          Customer
+        </a>
+      </li>
+    </ul>
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`Menu component should render 1`] = `
+<DocumentFragment>
+  <aside
+    class="menu"
+  >
+    Content
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`Menu component should render 2`] = `
+<DocumentFragment>
   <ul
-    className="menu-list"
-    style={Object {}}
+    class="menu-list"
   >
-    <li>
-      <a
-        style={Object {}}
-      >
-        Dashboard
-      </a>
-    </li>
-    <li>
-      <a
-        style={Object {}}
-      >
-        Customer
-      </a>
-    </li>
+    Content
   </ul>
-</aside>
+</DocumentFragment>
+`;
+
+exports[`Menu component should render 3`] = `
+<DocumentFragment>
+  <li>
+    <a>
+      Content
+    </a>
+  </li>
+</DocumentFragment>
 `;
 
 exports[`Menu component should render custom item child 1`] = `
-<aside
-  className="menu"
-  style={Object {}}
->
-  <p
-    className="menu-label"
+<DocumentFragment>
+  <aside
+    class="menu"
   >
-    General
-  </p>
-  <ul
-    className="menu-list"
-    style={Object {}}
-  >
-    <li>
-      <p>
-        Custom children 1
-      </p>
-    </li>
-    <li>
-      <a>
-        Custom children 2
-      </a>
-    </li>
-  </ul>
-</aside>
+    <p
+      class="menu-label"
+    >
+      General
+    </p>
+    <ul
+      class="menu-list"
+    >
+      <li>
+        <p>
+          Custom children 1
+        </p>
+      </li>
+      <li>
+        <a>
+          Custom children 2
+        </a>
+      </li>
+    </ul>
+  </aside>
+</DocumentFragment>
 `;

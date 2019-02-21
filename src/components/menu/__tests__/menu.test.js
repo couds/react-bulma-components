@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Menu } from '..';
 
 describe('Menu component', () => {
-  it('should Exist', () => {
-    expect(Menu).toMatchSnapshot();
+  it.each([[Menu], [Menu.List], [Menu.List.Item]])('should render', Component => {
+    const { asFragment } = render(<Component>Content</Component>);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('should have menu classnames', () => {
-    const component = renderer.create(
+  it('should have render all', () => {
+    const { asFragment } = render(
       <Menu>
         <Menu.List title="General">
           <Menu.List.Item>Dashboard</Menu.List.Item>
@@ -16,10 +17,10 @@ describe('Menu component', () => {
         </Menu.List>
       </Menu>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat Menu.List to display as submenus', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Menu>
         <Menu.List title="General">
           <Menu.List.Item>Dashboard</Menu.List.Item>
@@ -35,10 +36,9 @@ describe('Menu component', () => {
         </Menu.List>
       </Menu>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should accept a react Element as renderAs prop', () => {
-    // eslint-disable-next-line react/prop-types
     const Custom = props => (
       <span {...props}>
         Custom
@@ -48,7 +48,7 @@ describe('Menu component', () => {
 
     Custom.propTypes = { children: PropTypes.node.isRequired };
 
-    const component = renderer.create(
+    const { asFragment } = render(
       <Menu>
         <Menu.List title="General">
           <Menu.List.Item renderAs={Custom}>Dashboard</Menu.List.Item>
@@ -56,11 +56,10 @@ describe('Menu component', () => {
         </Menu.List>
       </Menu>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render custom item child', () => {
-    // eslint-disable-next-line react/prop-types
-    const component = renderer.create(
+    const { asFragment } = render(
       <Menu>
         <Menu.List title="General">
           <Menu.List.Item>
@@ -72,6 +71,6 @@ describe('Menu component', () => {
         </Menu.List>
       </Menu>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
