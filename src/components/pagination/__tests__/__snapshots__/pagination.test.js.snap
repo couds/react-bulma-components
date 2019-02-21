@@ -1,653 +1,490 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination component Next button should be disabled 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 2"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          3
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        2
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 3"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        3
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-  </ul>
-</nav>
-`;
-
-exports[`Pagination component Pagination Should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "current": 0,
-    "delta": 5,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "next": "Next",
-    "onChange": [Function],
-    "overlay": false,
-    "paddingless": false,
-    "position": null,
-    "previous": "Previous",
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "nav",
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": false,
-    "showPrevNext": false,
-    "size": null,
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "total": 1,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "autoHide": [Function],
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "current": [Function],
-    "delta": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "next": [Function],
-    "onChange": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "position": [Function],
-    "previous": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "showPrevNext": [Function],
-    "size": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "total": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Pagination component should have 3 pages and page 1 active 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        1
-      </a>
-    </li>
-    <li
-      className="active"
-    >
-      <a
-        aria-current="page"
-        aria-label="Page 2 is your current page"
-        className="pagination-link is-current"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="active"
       >
-        2
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 3"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-current="page"
+          aria-label="Page 2 is your current page"
+          class="pagination-link is-current"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          3
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        3
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-  </ul>
-</nav>
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Pagination component should have 5 pages, page 5 active and display pages 3 to 5 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 2"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          5
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        2
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 3"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        3
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 4"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        4
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 5"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        5
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-  </ul>
-</nav>
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Pagination component should not display Previous/Next buttons 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 2"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="active"
       >
-        2
-      </a>
-    </li>
-    <li
-      className="active"
-    >
-      <a
-        aria-current="page"
-        aria-label="Page 3 is your current page"
-        className="pagination-link is-current"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-current="page"
+          aria-label="Page 3 is your current page"
+          class="pagination-link is-current"
+          role="button"
+          tabindex="0"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          5
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        3
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 4"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        4
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 5"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        5
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-  </ul>
-</nav>
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Pagination component should not display page numbers 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className="pagination-previous"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        Previous
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-disabled="false"
+          class="pagination-previous"
+          role="button"
+          tabindex="0"
+        >
+          Previous
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="break"
       >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 2"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          class="pagination-ellipsis"
+          role="button"
+          tabindex="0"
+        >
+          ...
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          5
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        2
-      </a>
-    </li>
-    <li
-      className="break"
-    >
-      <a
-        className="pagination-ellipsis"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        ...
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 4"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        4
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 5"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        5
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className="pagination-next"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        Next
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          aria-disabled="false"
+          class="pagination-next"
+          role="button"
+          tabindex="0"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Pagination component should not render if current page is greater than total pages 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        1
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 2"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="next"
       >
-        2
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-  </ul>
-</nav>
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Pagination component should not render if total pages equals 1 1`] = `
-<nav
-  aria-label="pagination"
-  className="pagination"
-  style={Object {}}
->
-  <ul
-    className="pagination-list"
+<DocumentFragment>
+  <nav
+    aria-label="pagination"
+    class="pagination"
   >
-    <li
-      className="previous"
+    <ul
+      class="pagination-list"
     >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-    <li>
-      <a
-        aria-current={null}
-        aria-label="Page 1"
-        className="pagination-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
+      <li
+        class="previous"
       >
-        1
-      </a>
-    </li>
-    <li
-      className="next"
-    >
-      <a
-        aria-disabled="false"
-        className=""
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-    </li>
-  </ul>
-</nav>
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="pagination-link"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="next"
+      >
+        <a
+          aria-disabled="false"
+          class=""
+          role="button"
+          tabindex="0"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
