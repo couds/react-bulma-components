@@ -1,6 +1,6 @@
-import { render, fireEvent } from 'react-testing-library';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { fireEvent, render } from 'react-testing-library';
 import { Button } from '..';
 
 const Link = ({ to, children }) => <a href={to}>{children}</a>;

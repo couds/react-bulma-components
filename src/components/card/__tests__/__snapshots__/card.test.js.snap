@@ -1,90 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card component Should have card classname 1`] = `
-<div
-  className="card"
-  style={Object {}}
->
-  Card Content
-</div>
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    Card Content
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Card component Should have card-content classname 1`] = `
-<div
-  className="card-content"
-  style={Object {}}
->
-  Content
-</div>
+<DocumentFragment>
+  <div
+    class="card-content"
+  >
+    Content
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Card component Should have card-footer's classname 1`] = `
-<div
-  className="card"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="card-footer"
-    style={Object {}}
+    class="card"
   >
     <div
-      className="card-footer-item"
-      style={Object {}}
+      class="card-footer"
     >
-      Yes
-    </div>
-    <div
-      className="card-footer-item"
-      style={Object {}}
-    >
-      No
+      <div
+        class="card-footer-item"
+      >
+        Yes
+      </div>
+      <div
+        class="card-footer-item"
+      >
+        No
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Card component Should have card-header's classname 1`] = `
-<div
-  className="card"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="card-header"
-    style={Object {}}
+    class="card"
   >
     <div
-      className="card-header-title"
-      style={Object {}}
+      class="card-header"
     >
-      Title
-    </div>
-    <div
-      className="card-header-icon"
-      style={Object {}}
-    >
-      <i
-        className="icon"
-      />
+      <div
+        class="card-header-title"
+      >
+        Title
+      </div>
+      <div
+        class="card-header-icon"
+      >
+        <i
+          class="icon"
+        />
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Card component Should have card-image classname 1`] = `
-<div
-  className="card-image"
-  style={Object {}}
->
-  <figure
-    className="image is-4by3"
-    style={Object {}}
+<DocumentFragment>
+  <div
+    class="card-image"
   >
-    <img
-      alt=""
-      className=""
-      onError={[Function]}
-      src="http://bulma.io/images/placeholders/1280x960.png"
-    />
-  </figure>
-</div>
+    <figure
+      class="image is-4by3"
+    >
+      <img
+        alt=""
+        class=""
+        src="http://bulma.io/images/placeholders/1280x960.png"
+      />
+    </figure>
+  </div>
+</DocumentFragment>
 `;
