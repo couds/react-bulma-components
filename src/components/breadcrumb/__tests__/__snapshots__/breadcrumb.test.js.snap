@@ -1,264 +1,268 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb component Should be a Breadcrumb 1`] = `
-<nav
-  className="breadcrumb"
-  style={Object {}}
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="/"
+<DocumentFragment>
+  <nav
+    class="breadcrumb"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Home
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="/section"
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Section
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="/detail"
+        <a
+          href="/section"
+        >
+          Section
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Details
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="/detail"
+        >
+          Details
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Breadcrumb component Should use inline style and custom size 1`] = `
-<nav
-  className="breadcrumb is-large"
-  style={
-    Object {
-      "marginTop": 10,
-    }
-  }
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="/"
+<DocumentFragment>
+  <nav
+    class="breadcrumb is-large"
+    style="margin-top: 10px;"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Home
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="/section"
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Section
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="/detail"
+        <a
+          href="/section"
+        >
+          Section
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Details
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="/detail"
+        >
+          Details
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Breadcrumb component should use separator arrow 1`] = `
-<nav
-  className="breadcrumb has-arrow-separator"
-  style={Object {}}
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="#1"
+<DocumentFragment>
+  <nav
+    class="breadcrumb has-arrow-separator"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Storybook
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="#2"
+        <a
+          href="#1"
+        >
+          Storybook
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Breadcrumb
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="#3"
+        <a
+          href="#2"
+        >
+          Breadcrumb
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Breadcrumb Types
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="#3"
+        >
+          Breadcrumb Types
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Breadcrumb component should use separator bullet 1`] = `
-<nav
-  className="breadcrumb has-bullet-separator"
-  style={Object {}}
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="#1"
+<DocumentFragment>
+  <nav
+    class="breadcrumb has-bullet-separator"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Storybook
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="#2"
+        <a
+          href="#1"
+        >
+          Storybook
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Breadcrumb
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="#3"
+        <a
+          href="#2"
+        >
+          Breadcrumb
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Breadcrumb Types
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="#3"
+        >
+          Breadcrumb Types
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Breadcrumb component should use separator dot 1`] = `
-<nav
-  className="breadcrumb has-dot-separator"
-  style={Object {}}
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="#1"
+<DocumentFragment>
+  <nav
+    class="breadcrumb has-dot-separator"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Storybook
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="#2"
+        <a
+          href="#1"
+        >
+          Storybook
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Breadcrumb
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="#3"
+        <a
+          href="#2"
+        >
+          Breadcrumb
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Breadcrumb Types
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="#3"
+        >
+          Breadcrumb Types
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Breadcrumb component should use separator null 1`] = `
-<nav
-  className="breadcrumb"
-  style={Object {}}
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="#1"
+<DocumentFragment>
+  <nav
+    class="breadcrumb"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Storybook
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="#2"
+        <a
+          href="#1"
+        >
+          Storybook
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Breadcrumb
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="#3"
+        <a
+          href="#2"
+        >
+          Breadcrumb
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Breadcrumb Types
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="#3"
+        >
+          Breadcrumb Types
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;
 
 exports[`Breadcrumb component should use separator succeeds 1`] = `
-<nav
-  className="breadcrumb has-succeeds-separator"
-  style={Object {}}
->
-  <ul>
-    <li
-      className=""
-    >
-      <a
-        href="#1"
+<DocumentFragment>
+  <nav
+    class="breadcrumb has-succeeds-separator"
+  >
+    <ul>
+      <li
+        class=""
       >
-        Storybook
-      </a>
-    </li>
-    <li
-      className=""
-    >
-      <a
-        href="#2"
+        <a
+          href="#1"
+        >
+          Storybook
+        </a>
+      </li>
+      <li
+        class=""
       >
-        Breadcrumb
-      </a>
-    </li>
-    <li
-      className="is-active"
-    >
-      <a
-        href="#3"
+        <a
+          href="#2"
+        >
+          Breadcrumb
+        </a>
+      </li>
+      <li
+        class="is-active"
       >
-        Breadcrumb Types
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          href="#3"
+        >
+          Breadcrumb Types
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
 `;

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Box } from '..';
 import { render } from 'react-testing-library';
+import { Box } from '..';
 
 describe('Box component', () => {
   it('Should have box classname', () => {
