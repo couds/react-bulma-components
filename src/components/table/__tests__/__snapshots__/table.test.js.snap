@@ -1,102 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table component should concat classname in props with classname 1`] = `
-<table
-  className="table other-class this-is-a-test is-fullwidth is-striped"
-  style={Object {}}
->
+<DocumentFragment>
   <p>
     Default
   </p>
-</table>
+  <table
+    class="table other-class this-is-a-test is-fullwidth is-striped"
+  />
+</DocumentFragment>
 `;
 
-exports[`Table component should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "bordered": false,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "size": "fullwidth",
-    "striped": true,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "bordered": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "striped": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Table component should have table classname 1`] = `
-<table
-  className="table is-fullwidth is-striped"
-  style={Object {}}
->
-  Test 
-  <a
-    href="test"
-  >
-    Give me
-  </a>
-</table>
+exports[`Table component should render 1`] = `
+<DocumentFragment>
+  <table
+    class="table is-fullwidth is-striped"
+  />
+</DocumentFragment>
 `;
 
 exports[`Table component should use inline styles 1`] = `
-<table
-  className="table is-fullwidth is-striped"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
+<DocumentFragment>
   <p>
     Default
   </p>
-</table>
+  <table
+    class="table is-fullwidth is-striped"
+    style="height: 250px;"
+  />
+</DocumentFragment>
 `;
