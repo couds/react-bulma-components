@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Progress } from '..';
 import CONSTANTS from '../../../constants';
 
@@ -8,25 +8,27 @@ describe('Progress component', () => {
     expect(Progress).toMatchSnapshot();
   });
   it('should have notification classname', () => {
-    const component = renderer.create(<Progress value={30} max={100} />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Progress value={30} max={100} />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat classname in props with classname', () => {
-    const component = renderer.create(<Progress value={30} max={100} className="other-class this-is-a-test" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Progress value={30} max={100} className="other-class this-is-a-test" />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should use inline styles', () => {
-    const component = renderer.create(<Progress value={30} max={100} style={{ width: 250 }} />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Progress value={30} max={100} style={{ width: 250 }} />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should be Large', () => {
-    const component = renderer.create(<Progress value={30} max={100} size="large" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { container } = render(<Progress value={30} max={100} size="large" />);
+    expect(container.firstChild).toHaveClass('is-large');
   });
-  Object.values(CONSTANTS.COLORS).map(color =>
-    it(`Should use use color ${color}`, () => {
-      const component = renderer.create(<Progress value={30} max={100} color={color} />);
-      expect(component.toJSON()).toMatchSnapshot();
-    })
-  );
+  Object.values(CONSTANTS.COLORS)
+    .filter(c => c)
+    .map(color =>
+      it(`Should use use color ${color}`, () => {
+        const { container } = render(<Progress value={30} max={100} color={color} />);
+        expect(container.firstChild).toHaveClass(`is-${color}`);
+      })
+    );
 });
