@@ -1,51 +1,48 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Hero } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Hero component', () => {
-  it('should exist', () => {
-    expect(Hero).toMatchSnapshot();
-  });
   it('should expose Hero head, body and footer', () => {
-    expect(Hero.Head).toMatchSnapshot();
-    expect(Hero.Body).toMatchSnapshot();
-    expect(Hero.Footer).toMatchSnapshot();
+    expect(Hero.Head).toBeDefined();
+    expect(Hero.Body).toBeDefined();
+    expect(Hero.Footer).toBeDefined();
   });
   it('should have hero classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Hero>
         Test <a>Give me</a>
       </Hero>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Hero className="other-class this-is-a-test">
         <p>Default</p>
       </Hero>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should use inline styles', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Hero style={{ height: 250 }}>
         <p>Default</p>
       </Hero>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should use gradient style', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Hero color="primary" gradient>
         <p>Default</p>
       </Hero>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render Hero with hero head, body and footer', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Hero size="fullheight" color="primary">
         <Hero.Head renderAs="header">
           <div className="bd-notification is-info">Header</div>
@@ -56,16 +53,16 @@ describe('Hero component', () => {
         </Hero.Footer>
       </Hero>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   Object.values(CONSTANTS.COLORS).map(color =>
     it(`Should use use color ${color}`, () => {
-      const component = renderer.create(
+      const { asFragment } = render(
         <Hero color={color}>
           <p>Default</p>
         </Hero>
       );
-      expect(component.toJSON()).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     })
   );
 });

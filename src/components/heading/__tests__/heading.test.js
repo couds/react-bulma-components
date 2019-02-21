@@ -3,9 +3,6 @@ import { render } from 'react-testing-library';
 import { Heading } from '..';
 
 describe('Heading component', () => {
-  it('should exist', () => {
-    expect(Heading).toMatchSnapshot();
-  });
   it('should have title classname', () => {
     const { asFragment } = render(
       <Heading>
