@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Heading } from '..';
 
 describe('Heading component', () => {
@@ -7,51 +7,51 @@ describe('Heading component', () => {
     expect(Heading).toMatchSnapshot();
   });
   it('should have title classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Heading>
         Test <a>Give me</a>
       </Heading>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Heading className="other-class this-is-a-test">
         <p>Default</p>
       </Heading>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should use inline styles', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Heading style={{ height: 250 }}>
         <p>Default</p>
       </Heading>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should be a subtitle with size rendered as P', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Heading size={3} subtitle renderAs="p">
         Subtitle
       </Heading>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should not be spaced because is subtitle', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Heading spaced subtitle renderAs="p">
         Subtitle
       </Heading>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should be spaced', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Heading spaced renderAs="p">
         Subtitle
       </Heading>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

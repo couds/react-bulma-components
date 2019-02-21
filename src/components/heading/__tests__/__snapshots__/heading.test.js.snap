@@ -1,32 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Heading component should be a subtitle with size rendered as P 1`] = `
-<p
-  className="subtitle is-3"
-  style={Object {}}
->
-  Subtitle
-</p>
+<DocumentFragment>
+  <p
+    class="subtitle is-3"
+  >
+    Subtitle
+  </p>
+</DocumentFragment>
 `;
 
 exports[`Heading component should be spaced 1`] = `
-<p
-  className="title is-spaced"
-  style={Object {}}
->
-  Subtitle
-</p>
+<DocumentFragment>
+  <p
+    class="title is-spaced"
+  >
+    Subtitle
+  </p>
+</DocumentFragment>
 `;
 
 exports[`Heading component should concat classname in props with Bulma classname 1`] = `
-<h1
-  className="other-class this-is-a-test title"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</h1>
+<DocumentFragment>
+  <h1
+    class="other-class this-is-a-test title"
+  >
+    <p>
+      Default
+    </p>
+  </h1>
+</DocumentFragment>
 `;
 
 exports[`Heading component should exist 1`] = `
@@ -95,37 +98,37 @@ Object {
 `;
 
 exports[`Heading component should have title classname 1`] = `
-<h1
-  className="title"
-  style={Object {}}
->
-  Test 
-  <a>
-    Give me
-  </a>
-</h1>
+<DocumentFragment>
+  <h1
+    class="title"
+  >
+    Test 
+    <a>
+      Give me
+    </a>
+  </h1>
+</DocumentFragment>
 `;
 
 exports[`Heading component should not be spaced because is subtitle 1`] = `
-<p
-  className="subtitle"
-  style={Object {}}
->
-  Subtitle
-</p>
+<DocumentFragment>
+  <p
+    class="subtitle"
+  >
+    Subtitle
+  </p>
+</DocumentFragment>
 `;
 
 exports[`Heading component should use inline styles 1`] = `
-<h1
-  className="title"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
-  <p>
-    Default
-  </p>
-</h1>
+<DocumentFragment>
+  <h1
+    class="title"
+    style="height: 250px;"
+  >
+    <p>
+      Default
+    </p>
+  </h1>
+</DocumentFragment>
 `;
