@@ -1,19 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Element } from '..';
 
 describe('Element component', () => {
-  it('Should Exist', () => {
-    expect(Element).toMatchSnapshot();
-  });
   it('Should have helpers classnames', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Element textColor="white" pull="left">
         Facebook
       </Element>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should accept a react Element as renderAs prop', () => {
     const Custom = props => (
@@ -25,7 +22,7 @@ describe('Element component', () => {
 
     Custom.propTypes = { children: PropTypes.node.isRequired };
 
-    const component = renderer.create(<Element renderAs={Custom}>This should be a p element</Element>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Element renderAs={Custom}>This should be a p element</Element>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
