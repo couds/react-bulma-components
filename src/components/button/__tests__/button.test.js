@@ -68,11 +68,11 @@ describe('Button component', () => {
     expect(onClick).toHaveBeenCalledTimes(0);
   });
   it('should have a call default onClick is no listener is set', () => {
-    const spy = jest.spyOn(Button.defaultProps, 'onClick');
-    const { container } = render(<Button />);
+    const onChange = jest.spyOn(Button.defaultProps, 'onClick');
+    const { container } = render(<Button>Action</Button>);
     fireEvent.click(container.firstChild);
     fireEvent.click(container.firstChild);
-    expect(spy).toHaveBeenCalledTimes(2);
+    expect(onChange).toHaveBeenCalledTimes(2);
     Button.defaultProps.onClick.mockRestore();
   });
   it('should forward ref', () => {

@@ -1,12 +1,10 @@
 import { JSDOM } from 'jsdom';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { getHtmlClasses, Navbar } from '..';
 
 describe('Navbar component', () => {
-  let window;
-  let component;
   beforeEach(() => {
     // eslint-disable-next-line
     window = new JSDOM('<!doctype html><html><body><div id="app-root"></div></body></html>').window;
@@ -17,13 +15,20 @@ describe('Navbar component', () => {
       userAgent: 'node.js'
     };
   });
-  afterEach(() => {
-    if (component && component.unmount) {
-      component.unmount();
-    }
-  });
-  it('should Exist', () => {
-    expect(Navbar).toMatchSnapshot();
+
+  it.each([
+    [Navbar],
+    [Navbar.Brand],
+    [Navbar.Burger],
+    [Navbar.Container],
+    [Navbar.Divider],
+    [Navbar.Dropdown],
+    [Navbar.Item],
+    [Navbar.Link],
+    [Navbar.Menu]
+  ])('should render', Component => {
+    const { asFragment } = render(<Component />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render on server side', () => {
@@ -33,7 +38,7 @@ describe('Navbar component', () => {
   });
 
   it('should have Navbar classname', () => {
-    component = renderer.create(
+    const { asFragment, unmount } = render(
       <Navbar>
         <Navbar.Brand>
           <Navbar.Item renderAs="a" href="#">
@@ -56,23 +61,28 @@ describe('Navbar component', () => {
         </Navbar.Menu>
       </Navbar>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+    unmount();
   });
   it('should concat Bulma class with classes in props', () => {
-    component = renderer.create(<Navbar className="other-class test" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment, unmount } = render(<Navbar className="other-class test" />);
+    expect(asFragment()).toMatchSnapshot();
+    unmount();
   });
   it('should render as an html section', () => {
-    component = renderer.create(<Navbar renderAs="section" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment, unmount } = render(<Navbar renderAs="section" />);
+    expect(asFragment()).toMatchSnapshot();
+    unmount();
   });
   it('should have custom inline styles', () => {
-    component = renderer.create(<Navbar style={{ width: 200, zIndex: 1 }} />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment, unmount } = render(<Navbar style={{ width: 200, zIndex: 1 }} />);
+    expect(asFragment()).toMatchSnapshot();
+    unmount();
   });
 
   it('should be fixed on top', () => {
-    component = renderer.create(<Navbar fixed="top" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment, unmount } = render(<Navbar fixed="top" />);
+    expect(asFragment()).toMatchSnapshot();
+    unmount();
   });
 });

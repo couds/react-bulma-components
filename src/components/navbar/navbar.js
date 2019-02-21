@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
@@ -20,84 +20,73 @@ let htmlClass = '';
 
 export const getHtmlClasses = () => htmlClass;
 
-class NavbarEl extends React.PureComponent {
-  static propTypes = {
-    ...modifiers.propTypes,
-    children: PropTypes.node,
-    innerRef: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    transparent: PropTypes.bool,
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    fixed: PropTypes.oneOf([null, 'top', 'bottom']),
-    color: PropTypes.oneOf(colors),
-    active: PropTypes.bool
-  };
-
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    children: null,
-    innerRef: null,
-    className: '',
-    style: {},
-    renderAs: 'nav',
-    transparent: false,
-    active: false,
-    fixed: null,
-    color: null
-  };
-
-  state = {};
-
-  componentWillUnmount() {
-    const { fixed } = this.props;
-    window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
-  }
-
-  static getDerivedStateFromProps(nextProps) {
+export const Navbar = React.forwardRef(({ children, className, fixed, transparent, color, active, ...props }, ref) => {
+  useEffect(() => {
     if (!CONSTANTS.IS_CLIENT) {
       return null;
     }
+
     const html = window.document.querySelector('html');
     html.classList.remove('has-navbar-fixed-top');
     html.classList.remove('has-navbar-fixed-bottom');
-    if (nextProps.fixed) {
-      htmlClass = `has-navbar-fixed-${nextProps.fixed}`;
-      html.classList.add(`has-navbar-fixed-${nextProps.fixed}`);
+
+    if (fixed) {
+      htmlClass = `has-navbar-fixed-${fixed}`;
+      html.classList.add(`has-navbar-fixed-${fixed}`);
     }
-    return null;
-  }
 
-  render() {
-    const { innerRef, children, className, fixed, transparent, color, active, ...props } = this.props;
+    return () => {
+      window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
+    };
+  });
 
-    return (
-      <ShowContext.Provider value={active}>
-        <Element
-          {...props}
-          ref={innerRef}
-          role="navigation"
-          className={cn('navbar', modifiers.getClassName(props), className, {
-            'is-transparent': transparent,
-            [`is-fixed-${fixed}`]: fixed,
-            [`is-${color}`]: color
-          })}
-        >
-          {children}
-        </Element>
-      </ShowContext.Provider>
-    );
-  }
-}
+  return (
+    <ShowContext.Provider value={active}>
+      <Element
+        {...props}
+        ref={ref}
+        role="navigation"
+        className={cn('navbar', modifiers.getClassName(props), className, {
+          'is-transparent': transparent,
+          [`is-fixed-${fixed}`]: fixed,
+          [`is-${color}`]: color
+        })}
+      >
+        {children}
+      </Element>
+    </ShowContext.Provider>
+  );
+});
 
-// const NavbarRef = React.forwardRef((props, ref) => <Navbar innerRef={ref} {...props} />);
-export const Navbar = React.forwardRef((props, ref) => <NavbarEl innerRef={ref} {...props} />);
+Navbar.propTypes = {
+  ...modifiers.propTypes,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  transparent: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  fixed: PropTypes.oneOf([null, 'top', 'bottom']),
+  color: PropTypes.oneOf(colors),
+  active: PropTypes.bool
+};
+
+Navbar.defaultProps = {
+  ...modifiers.defaultProps,
+  children: null,
+  className: '',
+  style: {},
+  renderAs: 'nav',
+  transparent: false,
+  active: false,
+  fixed: null,
+  color: null
+};
 
 Navbar.Brand = NavbarBrand;
 Navbar.Burger = NavbarBurger;
-Navbar.Menu = NavbarMenu;
-Navbar.Item = NavbarItem;
-Navbar.Dropdown = NavbarDropdown;
-Navbar.Link = NavbarLink;
-Navbar.Divider = NavbarDivider;
 Navbar.Container = NavbarContainer;
+Navbar.Divider = NavbarDivider;
+Navbar.Dropdown = NavbarDropdown;
+Navbar.Item = NavbarItem;
+Navbar.Link = NavbarLink;
+Navbar.Menu = NavbarMenu;
