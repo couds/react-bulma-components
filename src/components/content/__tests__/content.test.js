@@ -1,17 +1,17 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Content } from '..';
 
 describe('Content component', () => {
   it('Should have content classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Content>
-        <p className="bd-notification is-success">
+        <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>
-        </p>
+        </div>
       </Content>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
