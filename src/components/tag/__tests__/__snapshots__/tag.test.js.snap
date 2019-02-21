@@ -261,21 +261,6 @@ exports[`Tag component should have remove button 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Tag component should have tag classname 1`] = `
-<DocumentFragment>
-  <span
-    class="tag"
-    data-testid="tag"
-  >
-    <span
-      class=""
-    >
-      Tag name
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
 exports[`Tag component should render 1`] = `
 <DocumentFragment>
   <span
