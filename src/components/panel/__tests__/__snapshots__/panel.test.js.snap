@@ -40,6 +40,12 @@ exports[`Panel component should render 5`] = `
 </DocumentFragment>
 `;
 
+exports[`Panel component should render 6`] = `
+<DocumentFragment>
+  <a />
+</DocumentFragment>
+`;
+
 exports[`Panel component should render with all 1`] = `
 <DocumentFragment>
   <nav
