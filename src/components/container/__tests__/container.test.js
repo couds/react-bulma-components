@@ -1,22 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Container } from '..';
 
 describe('Container component', () => {
   it('Should have container classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Container>
-        <p className="bd-notification is-success">
+        <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>
-        </p>
+        </div>
       </Container>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('Should have helper classnames', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Container
         paddingless
         responsive={{
@@ -38,12 +38,12 @@ describe('Container component', () => {
           }
         }}
       >
-        <p className="bd-notification is-success">
+        <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>
-        </p>
+        </div>
       </Container>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
