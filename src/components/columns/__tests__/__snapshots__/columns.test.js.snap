@@ -1,123 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Columns component Should have columns classname 1`] = `
-<div
-  className="columns is-multiline"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="column"
-    style={Object {}}
+    class="columns is-multiline"
   >
-    1
+    <div
+      class="column"
+    >
+      1
+    </div>
+    <div
+      class="column"
+    >
+      2
+    </div>
+    <div
+      class="column"
+    >
+      3
+    </div>
   </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    2
-  </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    3
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Columns component Should have columns one column half width and 3 other as default 1`] = `
-<div
-  className="columns is-multiline"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="column is-half"
-    style={Object {}}
+    class="columns is-multiline"
   >
-    1
+    <div
+      class="column is-half"
+    >
+      1
+    </div>
+    <div
+      class="column"
+    >
+      2
+    </div>
+    <div
+      class="column"
+    >
+      3
+    </div>
+    <div
+      class="column"
+    >
+      4
+    </div>
   </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    2
-  </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    3
-  </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    4
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Columns component Should have columns one column half width, other narrow and 2 other as default 1`] = `
-<div
-  className="columns is-multiline"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="column is-half"
-    style={Object {}}
+    class="columns is-multiline"
   >
-    1
+    <div
+      class="column is-half"
+    >
+      1
+    </div>
+    <div
+      class="column is-narrow"
+    >
+      2
+    </div>
+    <div
+      class="column"
+    >
+      3
+    </div>
+    <div
+      class="column"
+    >
+      4
+    </div>
   </div>
-  <div
-    className="column is-narrow"
-    style={Object {}}
-  >
-    2
-  </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    3
-  </div>
-  <div
-    className="column"
-    style={Object {}}
-  >
-    4
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Columns component Should render as paragraph 1`] = `
-<p
-  className="columns is-multiline"
-  style={Object {}}
->
+<DocumentFragment>
   <p
-    className="column is-half"
-    style={Object {}}
+    class="columns is-multiline"
+  />
+  <p
+    class="column is-half"
   >
     1
   </p>
   <p
-    className="column"
-    style={Object {}}
+    class="column"
   >
     2
   </p>
   <p
-    className="column"
-    style={Object {}}
+    class="column"
   >
     3
   </p>
   <p
-    className="column"
-    style={Object {}}
+    class="column"
   >
     4
   </p>
-</p>
+  <p />
+</DocumentFragment>
 `;

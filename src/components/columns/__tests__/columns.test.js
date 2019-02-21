@@ -1,20 +1,20 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Columns } from '..';
 
 describe('Columns component', () => {
   it('Should have columns classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Columns>
         <Columns.Column>1</Columns.Column>
         <Columns.Column>2</Columns.Column>
         <Columns.Column>3</Columns.Column>
       </Columns>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should have columns one column half width and 3 other as default', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Columns>
         <Columns.Column size="half">1</Columns.Column>
         <Columns.Column>2</Columns.Column>
@@ -22,10 +22,10 @@ describe('Columns component', () => {
         <Columns.Column>4</Columns.Column>
       </Columns>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should render as paragraph', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Columns renderAs="p">
         <Columns.Column renderAs="p" size="half">
           1
@@ -35,10 +35,10 @@ describe('Columns component', () => {
         <Columns.Column renderAs="p">4</Columns.Column>
       </Columns>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('Should have columns one column half width, other narrow and 2 other as default', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Columns>
         <Columns.Column size="half">1</Columns.Column>
         <Columns.Column narrow>2</Columns.Column>
@@ -46,6 +46,6 @@ describe('Columns component', () => {
         <Columns.Column>4</Columns.Column>
       </Columns>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
