@@ -6,10 +6,10 @@ describe('Help component', () => {
   it('should have help classname', () => {
     const { asFragment } = render(
       <Help>
-        <p className="bd-notification is-success">
+        <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>
-        </p>
+        </div>
       </Help>
     );
     expect(asFragment()).toMatchSnapshot();

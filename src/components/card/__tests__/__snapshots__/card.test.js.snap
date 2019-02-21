@@ -79,6 +79,7 @@ exports[`Card component should have card-image classname 1`] = `
       <img
         alt=""
         class=""
+        data-testid="image-img"
         src="http://bulma.io/images/placeholders/1280x960.png"
       />
     </figure>

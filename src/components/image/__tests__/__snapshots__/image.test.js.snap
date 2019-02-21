@@ -1,59 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image component should be 32x32 1`] = `
-<figure
-  className="image is-32x32"
-  style={Object {}}
->
-  <img
-    alt=""
-    className=""
-    onError={[Function]}
-    src="http://mydomain.com/image"
-  />
-</figure>
+<DocumentFragment>
+  <figure
+    class="image is-32x32"
+  >
+    <img
+      alt=""
+      class=""
+      data-testid="image-img"
+      src="http://mydomain.com/image"
+    />
+  </figure>
+</DocumentFragment>
 `;
 
 exports[`Image component should be rounded 1`] = `
-<figure
-  className="image"
-  style={Object {}}
->
-  <img
-    alt=""
-    className="is-rounded"
-    onError={[Function]}
-    src="http://mydomain.com/image"
-  />
-</figure>
+<DocumentFragment>
+  <figure
+    class="image"
+  >
+    <img
+      alt=""
+      class="is-rounded"
+      data-testid="image-img"
+      src="http://mydomain.com/image"
+    />
+  </figure>
+</DocumentFragment>
 `;
 
 exports[`Image component should be square 1`] = `
-<figure
-  className="image is-square"
-  style={Object {}}
->
-  <img
-    alt=""
-    className=""
-    onError={[Function]}
-    src="http://mydomain.com/image"
-  />
-</figure>
+<DocumentFragment>
+  <figure
+    class="image is-square"
+  >
+    <img
+      alt=""
+      class=""
+      data-testid="image-img"
+      src="http://mydomain.com/image"
+    />
+  </figure>
+</DocumentFragment>
 `;
 
-exports[`Image component should exist 1`] = `[Function]`;
-
 exports[`Image component should have image classname 1`] = `
-<figure
-  className="image"
-  style={Object {}}
->
-  <img
-    alt=""
-    className=""
-    onError={[Function]}
-    src="http://mydomain.com/image"
-  />
-</figure>
+<DocumentFragment>
+  <figure
+    class="image"
+  >
+    <img
+      alt=""
+      class=""
+      data-testid="image-img"
+      src="http://mydomain.com/image"
+    />
+  </figure>
+</DocumentFragment>
 `;
