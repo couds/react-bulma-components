@@ -1,323 +1,203 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component Button Group component Should align to the right 1`] = `
-<div
-  className="buttons is-right"
-  style={Object {}}
->
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="buttons is-right"
   >
-    test 0
-  </button>
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
-  >
-    test 1
-  </button>
-</div>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 0
+    </button>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 1
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button component Button Group component Should be a default list of buttons 1`] = `
-<div
-  className="buttons"
-  style={Object {}}
->
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="buttons"
   >
-    test 0
-  </button>
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
-  >
-    test 1
-  </button>
-</div>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 0
+    </button>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 1
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button component Button Group component Should be centered 1`] = `
-<div
-  className="buttons is-centered"
-  style={Object {}}
->
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="buttons is-centered"
   >
-    test 0
-  </button>
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
-  >
-    test 1
-  </button>
-</div>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 0
+    </button>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 1
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button component Button Group component Should concat class names in props with Bulma class name 1`] = `
-<div
-  className="buttons super-class-1 dope-class-2"
-  style={Object {}}
->
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="buttons super-class-1 dope-class-2"
   >
-    test 0
-  </button>
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
-  >
-    test 1
-  </button>
-</div>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 0
+    </button>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 1
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button component Button Group component Should group buttons together 1`] = `
-<div
-  className="buttons has-addons"
-  style={Object {}}
->
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="buttons has-addons"
   >
-    test 1
-  </button>
-  <button
-    className="button"
-    disabled={false}
-    onClick={[Function]}
-    style={Object {}}
-    tabIndex={0}
-  >
-    test 2
-  </button>
-</div>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 1
+    </button>
+    <button
+      class="button"
+      tabindex="0"
+    >
+      test 2
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button component Should be a Large Primary Button 1`] = `
-<button
-  className="is-primary is-large button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-/>
+<DocumentFragment>
+  <button
+    class="is-primary is-large button"
+    tabindex="0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should be a Primary Button 1`] = `
-<button
-  className="is-primary button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-/>
+<DocumentFragment>
+  <button
+    class="is-primary button"
+    tabindex="0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should be a default Button 1`] = `
-<button
-  className="button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-/>
+<DocumentFragment>
+  <button
+    class="button"
+    tabindex="0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should be a reset form button 1`] = `
-<button
-  className="button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-  type="reset"
-/>
+<DocumentFragment>
+  <button
+    class="button"
+    tabindex="0"
+    type="reset"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should be a submit form button 1`] = `
-<button
-  className="button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-  type="submit"
-/>
+<DocumentFragment>
+  <button
+    class="button"
+    tabindex="0"
+    type="submit"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should be an anchor button 1`] = `
-<a
-  className="button"
-  disabled={false}
-  href="https://github.com/couds/react-bulma-components"
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-/>
-`;
-
-exports[`Button component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Group": [Function],
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "disabled": false,
-    "fullwidth": false,
-    "hidden": false,
-    "inverted": false,
-    "invisible": false,
-    "isSelected": false,
-    "isStatic": false,
-    "italic": false,
-    "loading": false,
-    "marginless": false,
-    "onClick": [Function],
-    "outlined": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "remove": false,
-    "renderAs": "button",
-    "reset": false,
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": false,
-    "size": null,
-    "state": null,
-    "style": Object {},
-    "submit": false,
-    "text": false,
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "disabled": [Function],
-    "fullwidth": [Function],
-    "hidden": [Function],
-    "inverted": [Function],
-    "invisible": [Function],
-    "isSelected": [Function],
-    "isStatic": [Function],
-    "italic": [Function],
-    "loading": [Function],
-    "marginless": [Function],
-    "onClick": [Function],
-    "outlined": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "remove": [Function],
-    "renderAs": [Function],
-    "reset": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "state": [Function],
-    "style": [Function],
-    "submit": [Function],
-    "text": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
+<DocumentFragment>
+  <a
+    class="button"
+    href="https://github.com/couds/react-bulma-components"
+    tabindex="0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should expose Button Group 1`] = `[Function]`;
 
 exports[`Button component Should render as a React element link with to prop 1`] = `
-<a
-  href="http://google.com"
->
-  TEST
-</a>
+<DocumentFragment>
+  <a
+    href="http://google.com"
+  >
+    TEST
+  </a>
+</DocumentFragment>
 `;
 
 exports[`Button component Should render as a html button 1`] = `
-<button
-  className="is-danger button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-/>
+<DocumentFragment>
+  <button
+    class="is-danger button"
+    tabindex="0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should render as a static Button 1`] = `
-<span
-  className="is-primary is-static button"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
-  tabIndex={0}
-/>
+<DocumentFragment>
+  <span
+    class="is-primary is-static button"
+    tabindex="0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Button component Should render be disabled 1`] = `
-<button
-  className="button"
-  disabled={true}
-  style={Object {}}
-  tabIndex={-1}
-/>
+<DocumentFragment>
+  <button
+    class="button"
+    disabled=""
+    tabindex="-1"
+  />
+</DocumentFragment>
 `;
