@@ -1,44 +1,44 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Message } from '..';
 
 describe('Message component', () => {
-  it('should Exist', () => {
-    expect(Message).toMatchSnapshot();
+  it.each([[Message], [Message.Header], [Message.Body]])('should render', Component => {
+    const { asFragment } = render(<Component>Content</Component>);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('should have message classnames', () => {
-    const component = renderer.create(
+  it('should render with all', () => {
+    const { asFragment } = render(
       <Message>
         <Message.Header>Lorem Ipsum</Message.Header>
         <Message.Body>Lorem Ipsum</Message.Body>
       </Message>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat classname in props with classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Message className="other-class">
         <Message.Header>Lorem Ipsum</Message.Header>
         <Message.Body>Lorem Ipsum</Message.Body>
       </Message>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render as an html section', () => {
-    const component = renderer.create(<Message renderAs="section">This should be a section</Message>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Message renderAs="section">This should be a section</Message>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should have custom inline styles', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Message renderAs="section" style={{ width: 200, zIndex: 1 }}>
         This should be a section with custom styles
       </Message>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should accept a react Element as renderAs prop', () => {
-    // eslint-disable-next-line react/prop-types
     const Custom = props => (
       <p {...props}>
         Custom
@@ -47,7 +47,7 @@ describe('Message component', () => {
     );
     Custom.propTypes = { children: PropTypes.node.isRequired };
 
-    const component = renderer.create(<Message renderAs={Custom}>This should be a p element</Message>);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Message renderAs={Custom}>This should be a p element</Message>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

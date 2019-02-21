@@ -1,239 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Message component should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Body": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "children": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Header": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "children": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "article",
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
 exports[`Message component should accept a react Element as renderAs prop 1`] = `
-<p
-  className="message"
-  style={Object {}}
->
-  Custom
-  This should be a p element
-</p>
+<DocumentFragment>
+  <p
+    class="message"
+  >
+    CustomThis should be a p element
+  </p>
+</DocumentFragment>
 `;
 
 exports[`Message component should concat classname in props with classname 1`] = `
-<article
-  className="message other-class"
-  style={Object {}}
->
-  <div
-    className="message-header"
-    style={Object {}}
+<DocumentFragment>
+  <article
+    class="message other-class"
   >
-    Lorem Ipsum
-  </div>
-  <div
-    className="message-body"
-    style={Object {}}
-  >
-    Lorem Ipsum
-  </div>
-</article>
+    <div
+      class="message-header"
+    >
+      Lorem Ipsum
+    </div>
+    <div
+      class="message-body"
+    >
+      Lorem Ipsum
+    </div>
+  </article>
+</DocumentFragment>
 `;
 
 exports[`Message component should have custom inline styles 1`] = `
-<section
-  className="message"
-  style={
-    Object {
-      "width": 200,
-      "zIndex": 1,
-    }
-  }
->
-  This should be a section with custom styles
-</section>
+<DocumentFragment>
+  <section
+    class="message"
+    style="width: 200px; z-index: 1;"
+  >
+    This should be a section with custom styles
+  </section>
+</DocumentFragment>
 `;
 
-exports[`Message component should have message classnames 1`] = `
-<article
-  className="message"
-  style={Object {}}
->
-  <div
-    className="message-header"
-    style={Object {}}
+exports[`Message component should render 1`] = `
+<DocumentFragment>
+  <article
+    class="message"
   >
-    Lorem Ipsum
-  </div>
+    Content
+  </article>
+</DocumentFragment>
+`;
+
+exports[`Message component should render 2`] = `
+<DocumentFragment>
   <div
-    className="message-body"
-    style={Object {}}
+    class="message-header"
   >
-    Lorem Ipsum
+    Content
   </div>
-</article>
+</DocumentFragment>
+`;
+
+exports[`Message component should render 3`] = `
+<DocumentFragment>
+  <div
+    class="message-body"
+  >
+    Content
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Message component should render as an html section 1`] = `
-<section
-  className="message"
-  style={Object {}}
->
-  This should be a section
-</section>
+<DocumentFragment>
+  <section
+    class="message"
+  >
+    This should be a section
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Message component should render with all 1`] = `
+<DocumentFragment>
+  <article
+    class="message"
+  >
+    <div
+      class="message-header"
+    >
+      Lorem Ipsum
+    </div>
+    <div
+      class="message-body"
+    >
+      Lorem Ipsum
+    </div>
+  </article>
+</DocumentFragment>
 `;
