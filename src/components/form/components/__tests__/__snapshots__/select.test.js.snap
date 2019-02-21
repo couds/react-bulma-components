@@ -25,7 +25,7 @@ exports[`Select component should be large, red, disabled and multioption 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Select component should concat classname in props with Bulma classname 1`] = `
+exports[`Select component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
     class="select other-class this-is-a-test"
@@ -48,7 +48,7 @@ exports[`Select component should concat classname in props with Bulma classname 
 </DocumentFragment>
 `;
 
-exports[`Select component should have select classname 1`] = `
+exports[`Select component should render 1`] = `
 <DocumentFragment>
   <div
     class="select"
@@ -59,12 +59,6 @@ exports[`Select component should have select classname 1`] = `
     >
       <option>
         1
-      </option>
-      <option>
-        2
-      </option>
-      <option>
-        3
       </option>
     </select>
   </div>

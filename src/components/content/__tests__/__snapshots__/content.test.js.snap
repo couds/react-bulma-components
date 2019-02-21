@@ -1,20 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Content component should have content classname 1`] = `
+exports[`Content component should render 1`] = `
 <DocumentFragment>
   <div
     class="content"
-  >
-    <div
-      class="bd-notification is-success"
-    >
-      <p>
-        Default
-      </p>
-      <p>
-        Container
-      </p>
-    </div>
-  </div>
+  />
 </DocumentFragment>
 `;

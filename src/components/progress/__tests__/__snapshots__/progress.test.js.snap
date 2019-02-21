@@ -108,7 +108,7 @@ exports[`Progress component should be Large 1`] = `
 />
 `;
 
-exports[`Progress component should concat classname in props with Bulma classname 1`] = `
+exports[`Progress component should concat classname in props with classname 1`] = `
 <progress
   className="progress other-class this-is-a-test"
   max={100}

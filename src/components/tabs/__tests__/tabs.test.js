@@ -13,7 +13,7 @@ describe('Tabs component', () => {
     const component = renderer.create(<Tabs>Facebook</Tabs>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('should concat Bulma class with classes in props', () => {
+  it('should concat classname in props with classname', () => {
     const component = renderer.create(<Tabs className="other-class test">Facebook</Tabs>);
     expect(component.toJSON()).toMatchSnapshot();
   });

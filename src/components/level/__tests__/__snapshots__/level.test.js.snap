@@ -1,38 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Level component should concat classname in props with Bulma classname 1`] = `
+exports[`Level component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
     class="level other-class this-is-a-test"
-  >
-    <p>
-      Default
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Level component should have level classname 1`] = `
-<DocumentFragment>
-  <div
-    class="level"
   >
     <div
       class="level-item"
     >
       Item 1
     </div>
-    <div
-      class="level-item"
-    >
-      Item 2
-    </div>
-    <div
-      class="level-item"
-    >
-      Item 3
-    </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`Level component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="level"
+  />
+</DocumentFragment>
+`;
+
+exports[`Level component should render 2`] = `
+<DocumentFragment>
+  <div
+    class="level-left"
+  />
+</DocumentFragment>
+`;
+
+exports[`Level component should render 3`] = `
+<DocumentFragment>
+  <div
+    class="level-item"
+  />
 </DocumentFragment>
 `;
 
@@ -74,9 +76,11 @@ exports[`Level component should use inline styles 1`] = `
     class="level"
     style="height: 250px;"
   >
-    <p>
-      Default
-    </p>
+    <div
+      class="level-item"
+    >
+      Item 1
+    </div>
   </div>
 </DocumentFragment>
 `;

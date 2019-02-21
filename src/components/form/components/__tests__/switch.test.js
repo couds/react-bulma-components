@@ -5,7 +5,7 @@ import { Switch } from '../switch';
 
 describe('Switch component', () => {
   let component;
-  it('should have checkbox classname', () => {
+  it('should render', () => {
     const { asFragment } = render(<Switch>Text</Switch>);
     expect(asFragment()).toMatchSnapshot();
   });

@@ -3,17 +3,15 @@ import { render } from 'react-testing-library';
 import { Select } from '../select';
 
 describe('Select component', () => {
-  it('should have select classname', () => {
+  it('should render', () => {
     const { asFragment } = render(
       <Select>
         <option>1</option>
-        <option>2</option>
-        <option>3</option>
       </Select>
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Select className="other-class this-is-a-test">
         <option>1</option>

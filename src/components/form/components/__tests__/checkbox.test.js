@@ -3,7 +3,7 @@ import { fireEvent, render } from 'react-testing-library';
 import { Checkbox } from '../checkbox';
 
 describe('Checkbox component', () => {
-  it('should have checkbox classname', () => {
+  it('should render', () => {
     const { asFragment } = render(<Checkbox>Text</Checkbox>);
     expect(asFragment()).toMatchSnapshot();
   });

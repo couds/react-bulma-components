@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Control {asFragment} should be fullwidth, loading and size = large 1`] = `
+exports[`Control component should be fullwidth, loading and size = large 1`] = `
 <DocumentFragment>
   <div
     class="control is-expanded is-loading is-large"
@@ -12,7 +12,7 @@ exports[`Control {asFragment} should be fullwidth, loading and size = large 1`] 
 </DocumentFragment>
 `;
 
-exports[`Control {asFragment} should concat classname in props with Bulma classname 1`] = `
+exports[`Control component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
     class="control other-class this-is-a-test"
@@ -24,26 +24,15 @@ exports[`Control {asFragment} should concat classname in props with Bulma classn
 </DocumentFragment>
 `;
 
-exports[`Control {asFragment} should have control classname 1`] = `
+exports[`Control component should render 1`] = `
 <DocumentFragment>
   <div
     class="control"
-  >
-    <p
-      class="bd-notification is-success"
-    />
-    <p>
-      Default
-    </p>
-    <p>
-      Container
-    </p>
-    <p />
-  </div>
+  />
 </DocumentFragment>
 `;
 
-exports[`Control {asFragment} should render as a html section element 1`] = `
+exports[`Control component should render as a html section element 1`] = `
 <DocumentFragment>
   <section
     class="control"
@@ -55,7 +44,7 @@ exports[`Control {asFragment} should render as a html section element 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Control {asFragment} should use inline styles 1`] = `
+exports[`Control component should use inline styles 1`] = `
 <DocumentFragment>
   <div
     class="control"

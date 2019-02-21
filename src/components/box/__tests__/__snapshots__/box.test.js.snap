@@ -10,20 +10,10 @@ exports[`Box component should accept a react Element as renderAs prop 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Box component should concat Bulma class with classes in props 1`] = `
+exports[`Box component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
     class="box other-class test"
-  >
-    Facebook
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Box component should have box classname 1`] = `
-<DocumentFragment>
-  <div
-    class="box"
   >
     Facebook
   </div>
@@ -48,5 +38,13 @@ exports[`Box component should render as an html section 1`] = `
   >
     This should be a section
   </section>
+</DocumentFragment>
+`;
+
+exports[`Box component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="box"
+  />
 </DocumentFragment>
 `;

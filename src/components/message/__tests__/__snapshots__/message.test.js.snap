@@ -175,7 +175,7 @@ exports[`Message component should accept a react Element as renderAs prop 1`] = 
 </p>
 `;
 
-exports[`Message component should concat Bulma class with classes in props 1`] = `
+exports[`Message component should concat classname in props with classname 1`] = `
 <article
   className="message other-class"
   style={Object {}}

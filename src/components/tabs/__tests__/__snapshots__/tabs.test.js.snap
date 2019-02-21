@@ -133,7 +133,7 @@ exports[`Tabs component should accept a react Element as renderAs prop 1`] = `
 </p>
 `;
 
-exports[`Tabs component should concat Bulma class with classes in props 1`] = `
+exports[`Tabs component should concat classname in props with classname 1`] = `
 <div
   className="tabs other-class test"
   style={Object {}}

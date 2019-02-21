@@ -3,12 +3,12 @@ import renderer from 'react-test-renderer';
 import { Media } from '..';
 
 describe('Media component', () => {
-  it('should exist', () => {
-    expect(Media).toMatchSnapshot();
+  it('should render', () => {
+    expect(<Media />).toMatchSnapshot();
   });
   it('should expose Level Side and Item', () => {
-    expect(Media.Content).toMatchSnapshot();
-    expect(Media.Item).toMatchSnapshot();
+    expect(<Media.Content />).toMatchSnapshot();
+    expect(<Media.Item />).toMatchSnapshot();
   });
   it('should have media classname', () => {
     const component = renderer.create(
@@ -42,7 +42,7 @@ describe('Media component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const component = renderer.create(
       <Media className="other-class this-is-a-test">
         <p>Default</p>

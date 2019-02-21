@@ -15,7 +15,7 @@ describe('Notification component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const component = renderer.create(
       <Notification className="other-class this-is-a-test">
         <p>Default</p>

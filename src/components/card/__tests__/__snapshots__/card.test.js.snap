@@ -1,29 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card component Should have card-footer's classname 1`] = `
-<DocumentFragment>
-  <div
-    class="card"
-  >
-    <div
-      class="card-footer"
-    >
-      <div
-        class="card-footer-item"
-      >
-        Yes
-      </div>
-      <div
-        class="card-footer-item"
-      >
-        No
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Card component Should have card-header's classname 1`] = `
+exports[`Card component Should render card-header 1`] = `
 <DocumentFragment>
   <div
     class="card"
@@ -48,27 +25,62 @@ exports[`Card component Should have card-header's classname 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Card component should have card classname 1`] = `
+exports[`Card component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  />
+</DocumentFragment>
+`;
+
+exports[`Card component should render 2`] = `
+<DocumentFragment>
+  <div
+    class="card-content"
+  />
+</DocumentFragment>
+`;
+
+exports[`Card component should render 3`] = `
+<DocumentFragment>
+  <div
+    class="card-footer"
+  />
+</DocumentFragment>
+`;
+
+exports[`Card component should render 4`] = `
+<DocumentFragment>
+  <div
+    class="card-header"
+  />
+</DocumentFragment>
+`;
+
+exports[`Card component should render card-footer 1`] = `
 <DocumentFragment>
   <div
     class="card"
   >
-    Card Content
+    <div
+      class="card-footer"
+    >
+      <div
+        class="card-footer-item"
+      >
+        Yes
+      </div>
+      <div
+        class="card-footer-item"
+      >
+        No
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`Card component should have card-content classname 1`] = `
-<DocumentFragment>
-  <div
-    class="card-content"
-  >
-    Content
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Card component should have card-image classname 1`] = `
+exports[`Card component should render card-image 1`] = `
 <DocumentFragment>
   <div
     class="card-image"

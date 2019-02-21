@@ -24,28 +24,6 @@ exports[`Switch component should be disabled 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch component should have checkbox classname 1`] = `
-<DocumentFragment>
-  <label
-    class="switch"
-  >
-    <input
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="check"
-      data-testid="switch-check"
-    />
-    <span
-      class="control-label"
-    >
-      Text
-    </span>
-  </label>
-</DocumentFragment>
-`;
-
 exports[`Switch component should have info color classname 1`] = `
 <DocumentFragment>
   <label
@@ -79,6 +57,28 @@ exports[`Switch component should have medium classname 1`] = `
     />
     <span
       class="check is-medium"
+      data-testid="switch-check"
+    />
+    <span
+      class="control-label"
+    >
+      Text
+    </span>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Switch component should render 1`] = `
+<DocumentFragment>
+  <label
+    class="switch"
+  >
+    <input
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="check"
       data-testid="switch-check"
     />
     <span

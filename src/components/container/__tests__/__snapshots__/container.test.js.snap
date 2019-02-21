@@ -1,24 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container component should have container classname 1`] = `
-<DocumentFragment>
-  <div
-    class="container"
-  >
-    <div
-      class="bd-notification is-success"
-    >
-      <p>
-        Default
-      </p>
-      <p>
-        Container
-      </p>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Container component should have helper classnames 1`] = `
 <DocumentFragment>
   <div
@@ -35,5 +16,13 @@ exports[`Container component should have helper classnames 1`] = `
       </p>
     </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`Container component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  />
 </DocumentFragment>
 `;

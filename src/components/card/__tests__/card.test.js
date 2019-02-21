@@ -3,25 +3,15 @@ import { render } from 'react-testing-library';
 import { Card } from '..';
 
 describe('Card component', () => {
-  it('should export Content, Footer, Header and Image as static properties', () => {
-    expect(Card.Content).toBeDefined();
-    expect(Card.Footer).toBeDefined();
-    expect(Card.Header).toBeDefined();
-    expect(Card.Image).toBeDefined();
-  });
-  it('should have card classname', () => {
-    const { asFragment } = render(<Card>Card Content</Card>);
+  it.each([[Card], [Card.Content], [Card.Footer], [Card.Header]])('should render', Component => {
+    const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should have card-image classname', () => {
+  it('should render card-image', () => {
     const { asFragment } = render(<Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should have card-content classname', () => {
-    const { asFragment } = render(<Card.Content>Content</Card.Content>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-  it("Should have card-header's classname", () => {
+  it('Should render card-header', () => {
     const { asFragment } = render(
       <Card>
         <Card.Header>
@@ -34,7 +24,7 @@ describe('Card component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it("Should have card-footer's classname", () => {
+  it('should render card-footer', () => {
     const { asFragment } = render(
       <Card>
         <Card.Footer>

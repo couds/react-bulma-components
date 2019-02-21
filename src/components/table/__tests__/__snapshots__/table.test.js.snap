@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table component should concat classname in props with Bulma classname 1`] = `
+exports[`Table component should concat classname in props with classname 1`] = `
 <table
   className="table other-class this-is-a-test is-fullwidth is-striped"
   style={Object {}}

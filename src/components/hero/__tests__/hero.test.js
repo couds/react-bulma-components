@@ -4,41 +4,20 @@ import { Hero } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Hero component', () => {
-  it('should expose Hero head, body and footer', () => {
-    expect(Hero.Head).toBeDefined();
-    expect(Hero.Body).toBeDefined();
-    expect(Hero.Footer).toBeDefined();
-  });
-  it('should have hero classname', () => {
-    const { asFragment } = render(
-      <Hero>
-        Test <a>Give me</a>
-      </Hero>
-    );
+  it.each([[Hero], [Hero.Head], [Hero.Body], [Hero.Footer]])('should render', Component => {
+    const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
-    const { asFragment } = render(
-      <Hero className="other-class this-is-a-test">
-        <p>Default</p>
-      </Hero>
-    );
+  it('should concat classname in props with classname', () => {
+    const { asFragment } = render(<Hero className="other-class this-is-a-test" />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should use inline styles', () => {
-    const { asFragment } = render(
-      <Hero style={{ height: 250 }}>
-        <p>Default</p>
-      </Hero>
-    );
+    const { asFragment } = render(<Hero style={{ height: 250 }} />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should use gradient style', () => {
-    const { asFragment } = render(
-      <Hero color="primary" gradient>
-        <p>Default</p>
-      </Hero>
-    );
+    const { asFragment } = render(<Hero color="primary" gradient />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should render Hero with hero head, body and footer', () => {

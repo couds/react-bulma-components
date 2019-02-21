@@ -38,7 +38,7 @@ exports[`Input component should be type email and a with success colors 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input component should concat classname in props with Bulma classname 1`] = `
+exports[`Input component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <input
     class="input other-class this-is-a-test"
@@ -50,7 +50,7 @@ exports[`Input component should concat classname in props with Bulma classname 1
 </DocumentFragment>
 `;
 
-exports[`Input component should have input classname 1`] = `
+exports[`Input component should render 1`] = `
 <DocumentFragment>
   <input
     class="input"

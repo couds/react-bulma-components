@@ -3,15 +3,11 @@ import { render } from 'react-testing-library';
 import { Label } from '../label';
 
 describe('Label component', () => {
-  it('should have label classname', () => {
-    const { asFragment } = render(
-      <Label>
-        Test <a>Give me</a>
-      </Label>
-    );
+  it('should render', () => {
+    const { asFragment } = render(<Label />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Label className="other-class this-is-a-test">
         <p>Default</p>

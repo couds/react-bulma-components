@@ -8,7 +8,7 @@ exports[`Element component should accept a react Element as renderAs prop 1`] = 
 </DocumentFragment>
 `;
 
-exports[`Element component should have helpers classnames 1`] = `
+exports[`Element component should render 1`] = `
 <DocumentFragment>
   <div
     class="is-pulled-left has-text-white"

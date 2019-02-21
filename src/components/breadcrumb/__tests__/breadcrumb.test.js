@@ -3,7 +3,11 @@ import { render } from 'react-testing-library';
 import { Breadcrumb } from '..';
 
 describe('Breadcrumb component', () => {
-  it('should be a Breadcrumb', () => {
+  it('should render', () => {
+    const { asFragment } = render(<Breadcrumb />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('should render list of items', () => {
     const { asFragment } = render(
       <Breadcrumb
         items={[

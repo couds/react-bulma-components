@@ -63,7 +63,7 @@ exports[`Button component Button Group component should be centered 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button component Button Group component should concat class names in props with Bulma class name 1`] = `
+exports[`Button component Button Group component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
     class="buttons super-class-1 dope-class-2"
@@ -123,15 +123,6 @@ exports[`Button component should be a Primary Button 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button component should be a default Button 1`] = `
-<DocumentFragment>
-  <button
-    class="button"
-    tabindex="0"
-  />
-</DocumentFragment>
-`;
-
 exports[`Button component should be a reset form button 1`] = `
 <DocumentFragment>
   <button
@@ -162,7 +153,26 @@ exports[`Button component should be an anchor button 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button component should expose Button Group 1`] = `[Function]`;
+exports[`Button component should render 1`] = `
+<DocumentFragment>
+  <button
+    class="button"
+    tabindex="0"
+  >
+    Content
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button component should render 2`] = `
+<DocumentFragment>
+  <div
+    class="buttons"
+  >
+    Content
+  </div>
+</DocumentFragment>
+`;
 
 exports[`Button component should render as a React element link with to prop 1`] = `
 <DocumentFragment>

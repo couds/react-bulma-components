@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon component should concat Bulma class with classes in props 1`] = `
+exports[`Icon component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <span
     class="icon other-class"
@@ -12,7 +12,7 @@ exports[`Icon component should concat Bulma class with classes in props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Icon component should have box classname 1`] = `
+exports[`Icon component should render 1`] = `
 <DocumentFragment>
   <span
     class="icon"

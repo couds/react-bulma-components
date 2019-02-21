@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 import { Radio } from '../radio';
 
 describe('Radio component', () => {
-  it('should have radio classname', () => {
+  it('should render', () => {
     const { asFragment } = render(
       <Radio name="test">
         Test <a>Give me</a>
@@ -11,7 +11,7 @@ describe('Radio component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Radio name="test" className="other-class this-is-a-test">
         <p>Default</p>

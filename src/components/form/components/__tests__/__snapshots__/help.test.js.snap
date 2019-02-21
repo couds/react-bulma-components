@@ -12,7 +12,7 @@ exports[`Help component should be displayed as a successful message 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Help component should concat classname in props with Bulma classname 1`] = `
+exports[`Help component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <p
     class="help other-class this-is-a-test"
@@ -24,22 +24,11 @@ exports[`Help component should concat classname in props with Bulma classname 1`
 </DocumentFragment>
 `;
 
-exports[`Help component should have help classname 1`] = `
+exports[`Help component should render 1`] = `
 <DocumentFragment>
   <p
     class="help"
   />
-  <div
-    class="bd-notification is-success"
-  >
-    <p>
-      Default
-    </p>
-    <p>
-      Container
-    </p>
-  </div>
-  <p />
 </DocumentFragment>
 `;
 

@@ -1,25 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { Loader } from '..';
+import { render } from 'react-testing-library';
+import { Loader } from '../loader';
 
 describe('Loader component', () => {
-  it('should Exist', () => {
-    expect(Loader).toMatchSnapshot();
+  it('should render', () => {
+    const { asFragment } = render(<Loader />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('should have box classname', () => {
-    const component = renderer.create(<Loader />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-  it('should concat Bulma class with classes in props', () => {
-    const component = renderer.create(<Loader className="other-class test" />);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should concat classname in props with classname', () => {
+    const { asFragment } = render(<Loader className="other-class test" />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render as an html section', () => {
-    const component = renderer.create(<Loader renderAs="section" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Loader renderAs="section" />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should have custom inline styles', () => {
-    const component = renderer.create(<Loader renderAs="section" style={{ width: 200, zIndex: 1 }} />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Loader renderAs="section" style={{ width: 200, zIndex: 1 }} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

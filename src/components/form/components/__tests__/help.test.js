@@ -3,18 +3,11 @@ import { render } from 'react-testing-library';
 import { Help } from '../help';
 
 describe('Help component', () => {
-  it('should have help classname', () => {
-    const { asFragment } = render(
-      <Help>
-        <div className="bd-notification is-success">
-          <p>Default</p>
-          <p>Container</p>
-        </div>
-      </Help>
-    );
+  it('should render', () => {
+    const { asFragment } = render(<Help />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Help className="other-class this-is-a-test">
         <p>Default</p>

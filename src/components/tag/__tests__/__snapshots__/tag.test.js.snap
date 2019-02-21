@@ -202,7 +202,7 @@ exports[`Tag component should be group tags 1`] = `
 </span>
 `;
 
-exports[`Tag component should concat classname in props with Bulma classname 1`] = `
+exports[`Tag component should concat classname in props with classname 1`] = `
 <span
   className="tag other-class this-is-a-test"
   onClick={[Function]}

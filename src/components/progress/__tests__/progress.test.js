@@ -11,7 +11,7 @@ describe('Progress component', () => {
     const component = renderer.create(<Progress value={30} max={100} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const component = renderer.create(<Progress value={30} max={100} className="other-class this-is-a-test" />);
     expect(component.toJSON()).toMatchSnapshot();
   });

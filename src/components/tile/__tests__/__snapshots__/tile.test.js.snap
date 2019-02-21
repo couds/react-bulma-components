@@ -121,7 +121,7 @@ exports[`Tile component Should use use color white 1`] = `
 </div>
 `;
 
-exports[`Tile component should concat classname in props with Bulma classname 1`] = `
+exports[`Tile component should concat classname in props with classname 1`] = `
 <div
   className="tile other-class this-is-a-test"
   style={Object {}}

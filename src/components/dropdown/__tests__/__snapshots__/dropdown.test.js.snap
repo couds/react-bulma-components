@@ -108,7 +108,7 @@ exports[`Dropdown component should be right-aligned when using "right" prop 1`] 
 </DocumentFragment>
 `;
 
-exports[`Dropdown component should concat Bulma class with classes in props 1`] = `
+exports[`Dropdown component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
     class="dropdown other-class"
@@ -261,7 +261,7 @@ exports[`Dropdown component should have divider 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Dropdown component should have dropdown classname 1`] = `
+exports[`Dropdown component should render 1`] = `
 <DocumentFragment>
   <div
     class="dropdown"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox component should have checkbox classname 1`] = `
+exports[`Checkbox component should render 1`] = `
 <DocumentFragment>
   <label
     class="b-checkbox checkbox"

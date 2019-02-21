@@ -3,11 +3,11 @@ import { render } from 'react-testing-library';
 import { Input } from '../input';
 
 describe('Input component', () => {
-  it('should have input classname', () => {
+  it('should render', () => {
     const { asFragment } = render(<Input />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(<Input className="other-class this-is-a-test" />);
     expect(asFragment()).toMatchSnapshot();
   });

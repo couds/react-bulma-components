@@ -8,10 +8,7 @@ describe('Input file component', () => {
   beforeEach(() => {
     global.window = new JSDOM('<body><div id="app-root"></div></body>').window;
   });
-  it('should Exist', () => {
-    expect(InputFile).toMatchSnapshot();
-  });
-  it('should render file input tree', () => {
+  it('should render', () => {
     const { asFragment } = render(<InputFile onChange={() => {}} />);
     expect(asFragment()).toMatchSnapshot();
   });

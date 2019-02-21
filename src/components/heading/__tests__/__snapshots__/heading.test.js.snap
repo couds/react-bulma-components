@@ -20,28 +20,11 @@ exports[`Heading component should be spaced 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Heading component should concat classname in props with Bulma classname 1`] = `
+exports[`Heading component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <h1
     class="other-class this-is-a-test title"
-  >
-    <p>
-      Default
-    </p>
-  </h1>
-</DocumentFragment>
-`;
-
-exports[`Heading component should have title classname 1`] = `
-<DocumentFragment>
-  <h1
-    class="title"
-  >
-    Test 
-    <a>
-      Give me
-    </a>
-  </h1>
+  />
 </DocumentFragment>
 `;
 
@@ -55,15 +38,19 @@ exports[`Heading component should not be spaced because is subtitle 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Heading component should render 1`] = `
+<DocumentFragment>
+  <h1
+    class="title"
+  />
+</DocumentFragment>
+`;
+
 exports[`Heading component should use inline styles 1`] = `
 <DocumentFragment>
   <h1
     class="title"
     style="height: 250px;"
-  >
-    <p>
-      Default
-    </p>
-  </h1>
+  />
 </DocumentFragment>
 `;

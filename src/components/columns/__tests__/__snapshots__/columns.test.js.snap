@@ -1,29 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Columns component should have columns classname 1`] = `
-<DocumentFragment>
-  <div
-    class="columns is-multiline"
-  >
-    <div
-      class="column"
-    >
-      1
-    </div>
-    <div
-      class="column"
-    >
-      2
-    </div>
-    <div
-      class="column"
-    >
-      3
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Columns component should have columns one column half width and 3 other as default 1`] = `
 <DocumentFragment>
   <div
@@ -79,6 +55,22 @@ exports[`Columns component should have columns one column half width, other narr
       4
     </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`Columns component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="columns is-multiline"
+  />
+</DocumentFragment>
+`;
+
+exports[`Columns component should render 2`] = `
+<DocumentFragment>
+  <div
+    class="column"
+  />
 </DocumentFragment>
 `;
 

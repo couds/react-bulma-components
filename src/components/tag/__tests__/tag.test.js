@@ -15,7 +15,7 @@ describe('Tag component', () => {
     const component = renderer.create(<Tag>Tag name</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const component = renderer.create(<Tag className="other-class this-is-a-test">Tag name</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });

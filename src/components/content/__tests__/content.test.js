@@ -3,15 +3,8 @@ import { render } from 'react-testing-library';
 import { Content } from '..';
 
 describe('Content component', () => {
-  it('should have content classname', () => {
-    const { asFragment } = render(
-      <Content>
-        <div className="bd-notification is-success">
-          <p>Default</p>
-          <p>Container</p>
-        </div>
-      </Content>
-    );
+  it('should render', () => {
+    const { asFragment } = render(<Content />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

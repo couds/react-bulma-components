@@ -45,7 +45,7 @@ exports[`Image component should be square 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Image component should have image classname 1`] = `
+exports[`Image component should render 1`] = `
 <DocumentFragment>
   <figure
     class="image"

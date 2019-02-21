@@ -1,24 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field component should have field classname 1`] = `
-<DocumentFragment>
-  <div
-    class="field"
-  >
-    <div
-      class="bd-notification is-success"
-    >
-      <p>
-        Default
-      </p>
-      <p>
-        Container
-      </p>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Field component should have field classname with addons classname 1`] = `
 <DocumentFragment>
   <div
@@ -57,40 +38,26 @@ exports[`Field component should have field classname with grouped classname 1`] 
 </DocumentFragment>
 `;
 
-exports[`Field component should have field-body classname 1`] = `
+exports[`Field component should render 1`] = `
 <DocumentFragment>
   <div
-    class="field-body"
-  >
-    <div
-      class="bd-notification is-success"
-    >
-      <p>
-        Default
-      </p>
-      <p>
-        Container
-      </p>
-    </div>
-  </div>
+    class="field"
+  />
 </DocumentFragment>
 `;
 
-exports[`Field component should have field-label classname 1`] = `
+exports[`Field component should render 2`] = `
 <DocumentFragment>
   <div
     class="field-label"
-  >
-    <div
-      class="bd-notification is-success"
-    >
-      <p>
-        Default
-      </p>
-      <p>
-        Container
-      </p>
-    </div>
-  </div>
+  />
+</DocumentFragment>
+`;
+
+exports[`Field component should render 3`] = `
+<DocumentFragment>
+  <div
+    class="field-body"
+  />
 </DocumentFragment>
 `;

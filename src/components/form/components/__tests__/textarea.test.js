@@ -3,14 +3,11 @@ import { render } from 'react-testing-library';
 import { Textarea } from '../textarea';
 
 describe('Textarea component', () => {
-  it('should exist', () => {
-    expect(Textarea).toMatchSnapshot();
-  });
-  it('should have textarea classname', () => {
+  it('should render', () => {
     const { asFragment } = render(<Textarea />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(<Textarea className="other-class this-is-a-test" />);
     expect(asFragment()).toMatchSnapshot();
   });

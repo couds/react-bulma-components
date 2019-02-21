@@ -27,7 +27,7 @@ exports[`Radio component should be disabled, checked and with value 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Radio component should concat classname in props with Bulma classname 1`] = `
+exports[`Radio component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <label
     class="b-radio radio other-class this-is-a-test"
@@ -51,7 +51,7 @@ exports[`Radio component should concat classname in props with Bulma classname 1
 </DocumentFragment>
 `;
 
-exports[`Radio component should have radio classname 1`] = `
+exports[`Radio component should render 1`] = `
 <DocumentFragment>
   <label
     class="b-radio radio"

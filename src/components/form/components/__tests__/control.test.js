@@ -2,19 +2,12 @@ import React from 'react';
 import { render } from 'react-testing-library';
 import { Control } from '../control';
 
-describe('Control {asFragment}', () => {
-  it('should have control classname', () => {
-    const { asFragment } = render(
-      <Control>
-        <p className="bd-notification is-success">
-          <p>Default</p>
-          <p>Container</p>
-        </p>
-      </Control>
-    );
+describe('Control component', () => {
+  it('should render', () => {
+    const { asFragment } = render(<Control />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Control className="other-class this-is-a-test">
         <p>Default</p>

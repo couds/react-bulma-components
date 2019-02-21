@@ -132,28 +132,43 @@ exports[`Hero component Should use use color white 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Hero component should concat classname in props with Bulma classname 1`] = `
+exports[`Hero component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <section
     class="hero other-class this-is-a-test"
-  >
-    <p>
-      Default
-    </p>
-  </section>
+  />
 </DocumentFragment>
 `;
 
-exports[`Hero component should have hero classname 1`] = `
+exports[`Hero component should render 1`] = `
 <DocumentFragment>
   <section
     class="hero"
-  >
-    Test 
-    <a>
-      Give me
-    </a>
-  </section>
+  />
+</DocumentFragment>
+`;
+
+exports[`Hero component should render 2`] = `
+<DocumentFragment>
+  <div
+    class="hero-head"
+  />
+</DocumentFragment>
+`;
+
+exports[`Hero component should render 3`] = `
+<DocumentFragment>
+  <div
+    class="hero-body"
+  />
+</DocumentFragment>
+`;
+
+exports[`Hero component should render 4`] = `
+<DocumentFragment>
+  <div
+    class="hero-foot"
+  />
 </DocumentFragment>
 `;
 
@@ -193,11 +208,7 @@ exports[`Hero component should use gradient style 1`] = `
 <DocumentFragment>
   <section
     class="hero is-primary is-bold"
-  >
-    <p>
-      Default
-    </p>
-  </section>
+  />
 </DocumentFragment>
 `;
 
@@ -206,10 +217,6 @@ exports[`Hero component should use inline styles 1`] = `
   <section
     class="hero"
     style="height: 250px;"
-  >
-    <p>
-      Default
-    </p>
-  </section>
+  />
 </DocumentFragment>
 `;

@@ -4,11 +4,11 @@ import { render } from 'react-testing-library';
 import { Box } from '..';
 
 describe('Box component', () => {
-  it('should have box classname', () => {
-    const { asFragment } = render(<Box>Facebook</Box>);
+  it('should render', () => {
+    const { asFragment } = render(<Box />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat Bulma class with classes in props', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(<Box className="other-class test">Facebook</Box>);
     expect(asFragment()).toMatchSnapshot();
   });

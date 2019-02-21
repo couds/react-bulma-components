@@ -7,7 +7,7 @@ describe('Dropdown component', () => {
   beforeEach(() => {
     global.window = new JSDOM('<body><div id="app-root"></div></body>').window;
   });
-  it('should have dropdown classname', () => {
+  it('should render', () => {
     const { asFragment } = render(
       <Dropdown value="value" onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>
@@ -24,7 +24,7 @@ describe('Dropdown component', () => {
     );
     expect(window.document.addEventListener).toHaveBeenCalled();
   });
-  it('should concat Bulma class with classes in props', () => {
+  it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Dropdown value="value" className="other-class" onChange={() => {}}>
         <Dropdown.Item value="value">Item</Dropdown.Item>

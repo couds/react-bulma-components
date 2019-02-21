@@ -3,14 +3,8 @@ import { render } from 'react-testing-library';
 import { Columns } from '..';
 
 describe('Columns component', () => {
-  it('should have columns classname', () => {
-    const { asFragment } = render(
-      <Columns>
-        <Columns.Column>1</Columns.Column>
-        <Columns.Column>2</Columns.Column>
-        <Columns.Column>3</Columns.Column>
-      </Columns>
-    );
+  it.each([[Columns], [Columns.Column]])('should render', Component => {
+    const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should have columns one column half width and 3 other as default', () => {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Label component should concat classname in props with Bulma classname 1`] = `
+exports[`Label component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <label
     class="label other-class this-is-a-test"
@@ -12,16 +12,11 @@ exports[`Label component should concat classname in props with Bulma classname 1
 </DocumentFragment>
 `;
 
-exports[`Label component should have label classname 1`] = `
+exports[`Label component should render 1`] = `
 <DocumentFragment>
   <label
     class="label"
-  >
-    Test 
-    <a>
-      Give me
-    </a>
-  </label>
+  />
 </DocumentFragment>
 `;
 

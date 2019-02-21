@@ -3,28 +3,16 @@ import { render } from 'react-testing-library';
 import { Heading } from '..';
 
 describe('Heading component', () => {
-  it('should have title classname', () => {
-    const { asFragment } = render(
-      <Heading>
-        Test <a>Give me</a>
-      </Heading>
-    );
+  it('should render', () => {
+    const { asFragment } = render(<Heading />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should concat classname in props with Bulma classname', () => {
-    const { asFragment } = render(
-      <Heading className="other-class this-is-a-test">
-        <p>Default</p>
-      </Heading>
-    );
+  it('should concat classname in props with classname', () => {
+    const { asFragment } = render(<Heading className="other-class this-is-a-test" />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should use inline styles', () => {
-    const { asFragment } = render(
-      <Heading style={{ height: 250 }}>
-        <p>Default</p>
-      </Heading>
-    );
+    const { asFragment } = render(<Heading style={{ height: 250 }} />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should be a subtitle with size rendered as P', () => {

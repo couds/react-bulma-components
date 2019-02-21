@@ -3,7 +3,7 @@ import { fireEvent, render } from 'react-testing-library';
 import { Image } from '..';
 
 describe('Image component', () => {
-  it('should have image classname', () => {
+  it('should render', () => {
     const { asFragment } = render(<Image src="http://mydomain.com/image" />);
     expect(asFragment()).toMatchSnapshot();
   });

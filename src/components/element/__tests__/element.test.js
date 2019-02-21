@@ -4,7 +4,7 @@ import { render } from 'react-testing-library';
 import { Element } from '..';
 
 describe('Element component', () => {
-  it('should have helpers classnames', () => {
+  it('should render', () => {
     const { asFragment } = render(
       <Element textColor="white" pull="left">
         Facebook

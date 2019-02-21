@@ -16,7 +16,7 @@ describe('Message component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('should concat Bulma class with classes in props', () => {
+  it('should concat classname in props with classname', () => {
     const component = renderer.create(
       <Message className="other-class">
         <Message.Header>Lorem Ipsum</Message.Header>

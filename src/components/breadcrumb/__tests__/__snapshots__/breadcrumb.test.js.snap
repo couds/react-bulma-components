@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumb component should be a Breadcrumb 1`] = `
+exports[`Breadcrumb component should render 1`] = `
+<DocumentFragment>
+  <nav
+    class="breadcrumb"
+  >
+    <ul />
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Breadcrumb component should render list of items 1`] = `
 <DocumentFragment>
   <nav
     class="breadcrumb"

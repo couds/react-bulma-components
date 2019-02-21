@@ -11,11 +11,8 @@ Link.propTypes = {
 };
 
 describe('Button component', () => {
-  it('should expose Button Group', () => {
-    expect(Button.Group).toMatchSnapshot();
-  });
-  it('should be a default Button', () => {
-    const { asFragment } = render(<Button />);
+  it.each([[Button], [Button.Group]])('should render', Component => {
+    const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should be an anchor button', () => {
@@ -93,7 +90,7 @@ describe('Button component', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
-    it('should concat class names in props with Bulma class name', () => {
+    it('should concat classname in props with classname', () => {
       const { asFragment } = render(
         <Button.Group className="super-class-1 dope-class-2">
           <Button>test 0</Button>
