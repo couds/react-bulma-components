@@ -1,49 +1,42 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Section } from '..';
 
 describe('Section component', () => {
-  it('should exist', () => {
-    expect(Section).toMatchSnapshot();
-  });
-  it('should have section classname', () => {
-    const component = renderer.create(
-      <Section>
-        Test <a href="/">Give me</a>
-      </Section>
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should render', () => {
+    const { asFragment } = render(<Section />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat classname in props with classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Section className="other-class this-is-a-test">
         <p>Default</p>
       </Section>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should use inline styles', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Section style={{ height: 250 }}>
         <p>Default</p>
       </Section>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should be Large', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Section size="large">
         <p>Default</p>
       </Section>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render as nav element', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Section renderAs="nav">
         <p>Default</p>
       </Section>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
