@@ -1,61 +1,46 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Media } from '..';
 
 describe('Media component', () => {
-  it('should render', () => {
-    expect(<Media />).toMatchSnapshot();
+  it.each([[Media], [Media.Content], [Media.Item]])('should render', Component => {
+    const { asFragment } = render(<Component />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('should expose Level Side and Item', () => {
-    expect(<Media.Content />).toMatchSnapshot();
-    expect(<Media.Item />).toMatchSnapshot();
+  it('should use inline styles', () => {
+    const { asFragment } = render(<Media style={{ height: 250 }} />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should have media classname', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Media>
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
       </Media>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should hbe a Media Item', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Media.Item renderAs="figure" position="left">
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
       </Media.Item>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should hbe a Media Item Centered', () => {
-    const component = renderer.create(
+    const { asFragment } = render(
       <Media.Item renderAs="figure" position="center">
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
       </Media.Item>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should be a Media Content', () => {
-    const component = renderer.create(
-      <Media.Content>
-        <p>Lorem Ipsum</p>
-      </Media.Content>
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Media.Content>Content</Media.Content>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat classname in props with classname', () => {
-    const component = renderer.create(
-      <Media className="other-class this-is-a-test">
-        <p>Default</p>
-      </Media>
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-  it('should use inline styles', () => {
-    const component = renderer.create(
-      <Media style={{ height: 250 }}>
-        <p>Default</p>
-      </Media>
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Media className="other-class this-is-a-test">Content</Media>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

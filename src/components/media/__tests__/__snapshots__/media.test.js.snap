@@ -1,153 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Media component should be a Media Content 1`] = `
-<div
-  className="content"
-  style={Object {}}
->
-  <p>
-    Lorem Ipsum
-  </p>
-</div>
+<DocumentFragment>
+  <div
+    class="content"
+  >
+    Content
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Media component should concat classname in props with classname 1`] = `
-<article
-  className="media other-class this-is-a-test"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</article>
-`;
-
-exports[`Media component should expose Level Side and Item 1`] = `
-<ForwardRef
-  backgroundColor={null}
-  className=""
-  clearfix={false}
-  clipped={false}
-  hidden={false}
-  invisible={false}
-  italic={false}
-  marginless={false}
-  overlay={false}
-  paddingless={false}
-  pull={null}
-  radiusless={false}
-  renderAs="div"
-  shadowless={false}
-  style={Object {}}
-  textAlignment={null}
-  textColor={null}
-  textSize={null}
-  textTransform={null}
-  textWeight={null}
-  unselectable={false}
-/>
-`;
-
-exports[`Media component should expose Level Side and Item 2`] = `
-<ForwardRef
-  backgroundColor={null}
-  className=""
-  clearfix={false}
-  clipped={false}
-  hidden={false}
-  invisible={false}
-  italic={false}
-  marginless={false}
-  overlay={false}
-  paddingless={false}
-  position="center"
-  pull={null}
-  radiusless={false}
-  renderAs="div"
-  shadowless={false}
-  style={Object {}}
-  textAlignment={null}
-  textColor={null}
-  textSize={null}
-  textTransform={null}
-  textWeight={null}
-  unselectable={false}
-/>
+<DocumentFragment>
+  <article
+    class="media other-class this-is-a-test"
+  >
+    Content
+  </article>
+</DocumentFragment>
 `;
 
 exports[`Media component should have media classname 1`] = `
-<article
-  className="media"
-  style={Object {}}
->
-  <img
-    alt="placeholder"
-    src="http://bulma.io/images/placeholders/128x128.png"
-  />
-</article>
+<DocumentFragment>
+  <article
+    class="media"
+  >
+    <img
+      alt="placeholder"
+      src="http://bulma.io/images/placeholders/128x128.png"
+    />
+  </article>
+</DocumentFragment>
 `;
 
 exports[`Media component should hbe a Media Item 1`] = `
-<figure
-  className="media-left"
-  style={Object {}}
->
-  <img
-    alt="placeholder"
-    src="http://bulma.io/images/placeholders/128x128.png"
-  />
-</figure>
+<DocumentFragment>
+  <figure
+    class="media-left"
+  >
+    <img
+      alt="placeholder"
+      src="http://bulma.io/images/placeholders/128x128.png"
+    />
+  </figure>
+</DocumentFragment>
 `;
 
 exports[`Media component should hbe a Media Item Centered 1`] = `
-<figure
-  className="media-content"
-  style={Object {}}
->
-  <img
-    alt="placeholder"
-    src="http://bulma.io/images/placeholders/128x128.png"
-  />
-</figure>
+<DocumentFragment>
+  <figure
+    class="media-content"
+  >
+    <img
+      alt="placeholder"
+      src="http://bulma.io/images/placeholders/128x128.png"
+    />
+  </figure>
+</DocumentFragment>
 `;
 
 exports[`Media component should render 1`] = `
-<ForwardRef
-  backgroundColor={null}
-  className=""
-  clearfix={false}
-  clipped={false}
-  hidden={false}
-  invisible={false}
-  italic={false}
-  marginless={false}
-  overlay={false}
-  paddingless={false}
-  pull={null}
-  radiusless={false}
-  renderAs="article"
-  shadowless={false}
-  style={Object {}}
-  textAlignment={null}
-  textColor={null}
-  textSize={null}
-  textTransform={null}
-  textWeight={null}
-  unselectable={false}
-/>
+<DocumentFragment>
+  <article
+    class="media"
+  />
+</DocumentFragment>
+`;
+
+exports[`Media component should render 2`] = `
+<DocumentFragment>
+  <div
+    class="content"
+  />
+</DocumentFragment>
+`;
+
+exports[`Media component should render 3`] = `
+<DocumentFragment>
+  <div
+    class="media-content"
+  />
+</DocumentFragment>
 `;
 
 exports[`Media component should use inline styles 1`] = `
-<article
-  className="media"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
-  <p>
-    Default
-  </p>
-</article>
+<DocumentFragment>
+  <article
+    class="media"
+    style="height: 250px;"
+  />
+</DocumentFragment>
 `;
