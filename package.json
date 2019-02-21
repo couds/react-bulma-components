@@ -107,6 +107,7 @@
     "file-loader": "^3.0.1",
     "jest": "^24.1.0",
     "jest-dom": "^3.1.2",
+    "jest-watch-typeahead": "^0.2.1",
     "jsdom": "^13.2.0",
     "mini-css-extract-plugin": "^0.5.0",
     "moment": "^2.24.0",

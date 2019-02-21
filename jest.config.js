@@ -1,5 +1,5 @@
 module.exports = {
-  setupFilesAfterEnv: ['./__test__/setup.js'],
+  setupFilesAfterEnv: ['./__tests__/setup.js'],
   rootDir: 'src',
   testMatch: ['**/*.test.js'],
   coverageDirectory: '<rootDir>/../.coverage',
@@ -17,6 +17,7 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest'
   },
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   moduleNameMapper: {
     '\\.(css|less|s(c|a)ss)$': '<rootDir>/../__mocks__/style.js',
     'services(.*)$': '<rootDir>/services$1'
