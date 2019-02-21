@@ -1,17 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Icon } from '..';
 
 describe('Icon component', () => {
-  it('should Exist', () => {
-    expect(Icon).toMatchSnapshot();
-  });
   it('should have box classname', () => {
-    const component = renderer.create(<Icon icon="bars" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Icon icon="bars" />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should concat Bulma class with classes in props', () => {
-    const component = renderer.create(<Icon icon="bars" className="other-class" />);
-    expect(component.toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Icon icon="bars" className="other-class" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

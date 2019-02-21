@@ -1,90 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon component should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "align": null,
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "hidden": false,
-    "icon": "",
-    "iconSize": null,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "pack": "mdi",
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "align": [Function],
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "icon": [Function],
-    "iconSize": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "pack": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
 exports[`Icon component should concat Bulma class with classes in props 1`] = `
-<span
-  className="icon other-class"
-  style={Object {}}
->
-  <i
-    className="mdi mdi-bars"
-  />
-</span>
+<DocumentFragment>
+  <span
+    class="icon other-class"
+  >
+    <i
+      class="mdi mdi-bars"
+    />
+  </span>
+</DocumentFragment>
 `;
 
 exports[`Icon component should have box classname 1`] = `
-<span
-  className="icon"
-  style={Object {}}
->
-  <i
-    className="mdi mdi-bars"
-  />
-</span>
+<DocumentFragment>
+  <span
+    class="icon"
+  >
+    <i
+      class="mdi mdi-bars"
+    />
+  </span>
+</DocumentFragment>
 `;
