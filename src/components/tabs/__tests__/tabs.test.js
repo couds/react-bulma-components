@@ -3,25 +3,25 @@ import renderer from 'react-test-renderer';
 import { Tabs } from '..';
 
 describe('Tabs component', () => {
-  it('Should Exist', () => {
+  it('should Exist', () => {
     expect(Tabs).toMatchSnapshot();
   });
-  it('Should expose Tab', () => {
+  it('should expose Tab', () => {
     expect(Tabs.Tab).toMatchSnapshot();
   });
-  it('Should have Tabs classname', () => {
+  it('should have Tabs classname', () => {
     const component = renderer.create(<Tabs>Facebook</Tabs>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat Bulma class with classes in props', () => {
+  it('should concat Bulma class with classes in props', () => {
     const component = renderer.create(<Tabs className="other-class test">Facebook</Tabs>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render as an html section', () => {
+  it('should render as an html section', () => {
     const component = renderer.create(<Tabs renderAs="section">This should be a section</Tabs>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should have custom inline styles', () => {
+  it('should have custom inline styles', () => {
     const component = renderer.create(
       <Tabs renderAs="section" style={{ width: 200, zIndex: 1 }}>
         This should be a section with custom styles
@@ -29,7 +29,7 @@ describe('Tabs component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should accept a react Element as renderAs prop', () => {
+  it('should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
     const Custom = ({ children, ...props }) => (
       <p {...props}>
@@ -40,7 +40,7 @@ describe('Tabs component', () => {
     const component = renderer.create(<Tabs renderAs={Custom}>This should be a p element</Tabs>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render propertly Inside Tabs', () => {
+  it('should render propertly Inside Tabs', () => {
     const component = renderer.create(
       <Tabs>
         <Tabs.Tab>Tab 1</Tabs.Tab>

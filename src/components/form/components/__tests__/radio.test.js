@@ -1,41 +1,38 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Radio } from '../radio';
 
 describe('Radio component', () => {
-  it('Should exist', () => {
-    expect(Radio).toMatchSnapshot();
-  });
-  it('Should have radio classname', () => {
-    const component = renderer.create(
+  it('should have radio classname', () => {
+    const { asFragment } = render(
       <Radio name="test">
         Test <a>Give me</a>
       </Radio>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
+  it('should concat classname in props with Bulma classname', () => {
+    const { asFragment } = render(
       <Radio name="test" className="other-class this-is-a-test">
         <p>Default</p>
       </Radio>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
-    const component = renderer.create(
+  it('should use inline styles', () => {
+    const { asFragment } = render(
       <Radio name="test" style={{ height: 250 }}>
         <p>Default</p>
       </Radio>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should be disabled, checked and with value', () => {
-    const component = renderer.create(
+  it('should be disabled, checked and with value', () => {
+    const { asFragment } = render(
       <Radio name="test" value="TEST" checked disabled>
         <p>Default</p>
       </Radio>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,49 +1,46 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Select } from '../select';
 
 describe('Select component', () => {
-  it('Should exist', () => {
-    expect(Select).toMatchSnapshot();
-  });
-  it('Should have select classname', () => {
-    const component = renderer.create(
+  it('should have select classname', () => {
+    const { asFragment } = render(
       <Select>
         <option>1</option>
         <option>2</option>
         <option>3</option>
       </Select>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
+  it('should concat classname in props with Bulma classname', () => {
+    const { asFragment } = render(
       <Select className="other-class this-is-a-test">
         <option>1</option>
         <option>2</option>
         <option>3</option>
       </Select>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
-    const component = renderer.create(
+  it('should use inline styles', () => {
+    const { asFragment } = render(
       <Select style={{ width: '100%' }}>
         <option>1</option>
         <option>2</option>
         <option>3</option>
       </Select>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should be large, red, disabled and multioption', () => {
-    const component = renderer.create(
+  it('should be large, red, disabled and multioption', () => {
+    const { asFragment } = render(
       <Select color="danger" size="large" multiple disabled>
         <option>1</option>
         <option>2</option>
         <option>3</option>
       </Select>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

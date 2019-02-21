@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer';
 import { Table } from '..';
 
 describe('Table component', () => {
-  it('Should exist', () => {
+  it('should exist', () => {
     expect(Table).toMatchSnapshot();
   });
-  it('Should have table classname', () => {
+  it('should have table classname', () => {
     const component = renderer.create(
       <Table>
         Test <a href="test">Give me</a>
@@ -14,7 +14,7 @@ describe('Table component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Table className="other-class this-is-a-test">
         <p>Default</p>
@@ -22,7 +22,7 @@ describe('Table component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
+  it('should use inline styles', () => {
     const component = renderer.create(
       <Table style={{ height: 250 }}>
         <p>Default</p>

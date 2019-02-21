@@ -1,112 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Help component Should be displayed as a successful message 1`] = `
-<p
-  className="help is-success"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</p>
-`;
-
-exports[`Help component Should concat classname in props with Bulma classname 1`] = `
-<p
-  className="help other-class this-is-a-test"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</p>
-`;
-
-exports[`Help component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "p",
-    "responsive": undefined,
-    "shadowless": false,
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Help component Should have help classname 1`] = `
-<p
-  className="help"
-  style={Object {}}
->
+exports[`Help component should be displayed as a successful message 1`] = `
+<DocumentFragment>
   <p
-    className="bd-notification is-success"
-  >
-    <p>
-      Default
-    </p>
-    <p>
-      Container
-    </p>
-  </p>
-</p>
-`;
-
-exports[`Help component Should use inline styles 1`] = `
-<p
-  className="help"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
+    class="help is-success"
+  />
   <p>
     Default
   </p>
-</p>
+  <p />
+</DocumentFragment>
+`;
+
+exports[`Help component should concat classname in props with Bulma classname 1`] = `
+<DocumentFragment>
+  <p
+    class="help other-class this-is-a-test"
+  />
+  <p>
+    Default
+  </p>
+  <p />
+</DocumentFragment>
+`;
+
+exports[`Help component should have help classname 1`] = `
+<DocumentFragment>
+  <p
+    class="help"
+  />
+  <p
+    class="bd-notification is-success"
+  />
+  <p>
+    Default
+  </p>
+  <p>
+    Container
+  </p>
+  <p />
+  <p />
+</DocumentFragment>
+`;
+
+exports[`Help component should use inline styles 1`] = `
+<DocumentFragment>
+  <p
+    class="help"
+    style="height: 250px;"
+  />
+  <p>
+    Default
+  </p>
+  <p />
+</DocumentFragment>
 `;

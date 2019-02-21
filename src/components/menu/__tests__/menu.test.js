@@ -4,10 +4,10 @@ import renderer from 'react-test-renderer';
 import { Menu } from '..';
 
 describe('Menu component', () => {
-  it('Should Exist', () => {
+  it('should Exist', () => {
     expect(Menu).toMatchSnapshot();
   });
-  it('Should have menu classnames', () => {
+  it('should have menu classnames', () => {
     const component = renderer.create(
       <Menu>
         <Menu.List title="General">
@@ -18,7 +18,7 @@ describe('Menu component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat Menu.List to display as submenus', () => {
+  it('should concat Menu.List to display as submenus', () => {
     const component = renderer.create(
       <Menu>
         <Menu.List title="General">
@@ -37,7 +37,7 @@ describe('Menu component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should accept a react Element as renderAs prop', () => {
+  it('should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
     const Custom = props => (
       <span {...props}>
@@ -58,7 +58,7 @@ describe('Menu component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render custom item child', () => {
+  it('should render custom item child', () => {
     // eslint-disable-next-line react/prop-types
     const component = renderer.create(
       <Menu>

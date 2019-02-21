@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table component Should concat classname in props with Bulma classname 1`] = `
+exports[`Table component should concat classname in props with Bulma classname 1`] = `
 <table
   className="table other-class this-is-a-test is-fullwidth is-striped"
   style={Object {}}
@@ -11,7 +11,7 @@ exports[`Table component Should concat classname in props with Bulma classname 1
 </table>
 `;
 
-exports[`Table component Should exist 1`] = `
+exports[`Table component should exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
@@ -72,7 +72,7 @@ Object {
 }
 `;
 
-exports[`Table component Should have table classname 1`] = `
+exports[`Table component should have table classname 1`] = `
 <table
   className="table is-fullwidth is-striped"
   style={Object {}}
@@ -86,7 +86,7 @@ exports[`Table component Should have table classname 1`] = `
 </table>
 `;
 
-exports[`Table component Should use inline styles 1`] = `
+exports[`Table component should use inline styles 1`] = `
 <table
   className="table is-fullwidth is-striped"
   style={

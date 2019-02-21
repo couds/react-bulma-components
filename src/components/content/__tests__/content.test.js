@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 import { Content } from '..';
 
 describe('Content component', () => {
-  it('Should have content classname', () => {
+  it('should have content classname', () => {
     const { asFragment } = render(
       <Content>
         <div className="bd-notification is-success">

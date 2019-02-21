@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container component Should have container classname 1`] = `
+exports[`Container component should have container classname 1`] = `
 <DocumentFragment>
   <div
     class="container"
@@ -19,7 +19,7 @@ exports[`Container component Should have container classname 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Container component Should have helper classnames 1`] = `
+exports[`Container component should have helper classnames 1`] = `
 <DocumentFragment>
   <div
     class="container is-paddingless is-block-widescreen-only is-flex-touch is-hidden-desktop"

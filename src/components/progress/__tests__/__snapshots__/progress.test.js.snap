@@ -1,104 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Progress component Should be Large 1`] = `
-<progress
-  className="progress is-large"
-  max={100}
-  style={Object {}}
-  value={30}
-/>
-`;
-
-exports[`Progress component Should concat classname in props with Bulma classname 1`] = `
-<progress
-  className="progress other-class this-is-a-test"
-  max={100}
-  style={Object {}}
-  value={30}
-/>
-`;
-
-exports[`Progress component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "max": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Progress component Should have notification classname 1`] = `
-<progress
-  className="progress"
-  max={100}
-  style={Object {}}
-  value={30}
-/>
-`;
-
-exports[`Progress component Should use inline styles 1`] = `
-<progress
-  className="progress"
-  max={100}
-  style={
-    Object {
-      "width": 250,
-    }
-  }
-  value={30}
-/>
-`;
-
 exports[`Progress component Should use use color black 1`] = `
 <progress
   className="progress is-black"
@@ -194,6 +95,105 @@ exports[`Progress component Should use use color white 1`] = `
   className="progress is-white"
   max={100}
   style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component should be Large 1`] = `
+<progress
+  className="progress is-large"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component should concat classname in props with Bulma classname 1`] = `
+<progress
+  className="progress other-class this-is-a-test"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": null,
+    "className": "",
+    "clearfix": false,
+    "clipped": false,
+    "color": null,
+    "hidden": false,
+    "invisible": false,
+    "italic": false,
+    "marginless": false,
+    "overlay": false,
+    "paddingless": false,
+    "pull": null,
+    "radiusless": false,
+    "responsive": undefined,
+    "shadowless": false,
+    "size": null,
+    "style": Object {},
+    "textAlignment": null,
+    "textColor": null,
+    "textSize": null,
+    "textTransform": null,
+    "textWeight": null,
+    "unselectable": false,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "color": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "max": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+    "value": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Progress component should have notification classname 1`] = `
+<progress
+  className="progress"
+  max={100}
+  style={Object {}}
+  value={30}
+/>
+`;
+
+exports[`Progress component should use inline styles 1`] = `
+<progress
+  className="progress"
+  max={100}
+  style={
+    Object {
+      "width": 250,
+    }
+  }
   value={30}
 />
 `;

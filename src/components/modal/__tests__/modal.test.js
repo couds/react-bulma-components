@@ -3,7 +3,7 @@ import { fireEvent, render } from 'react-testing-library';
 import { Modal } from '..';
 
 describe('Modal component', () => {
-  it('Should render modal-card-head', () => {
+  it('should render modal-card-head', () => {
     const onClose = jest.fn();
     const { container, unmount } = render(
       <Modal.Card onClose={onClose}>
@@ -16,7 +16,7 @@ describe('Modal component', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
     unmount();
   });
-  it('Should open the modal', () => {
+  it('should open the modal', () => {
     const onClose = jest.fn();
     const getComponent = show => (
       <Modal show={show} onClose={onClose}>
@@ -33,7 +33,7 @@ describe('Modal component', () => {
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
     unmount();
   });
-  it('Should close the modal', () => {
+  it('should close the modal', () => {
     const onClose = jest.fn();
     const { getByTestId, asFragment, unmount } = render(
       <Modal show onClose={onClose}>
@@ -49,7 +49,7 @@ describe('Modal component', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
     unmount();
   });
-  it('Should call close the modal on ESC key press', () => {
+  it('should call close the modal on ESC key press', () => {
     const onClose = jest.fn();
     const { asFragment, unmount } = render(
       <Modal show onClose={onClose}>
@@ -66,7 +66,7 @@ describe('Modal component', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
     unmount();
   });
-  it('Should not close the modal on ESC key press', () => {
+  it('should not close the modal on ESC key press', () => {
     const onClose = jest.fn();
     const { asFragment, unmount } = render(
       <Modal closeOnEsc={false} show onClose={onClose}>
@@ -84,7 +84,7 @@ describe('Modal component', () => {
     expect(onClose).not.toHaveBeenCalled();
     unmount();
   });
-  it('Should not close the modal on other than ESC key press', () => {
+  it('should not close the modal on other than ESC key press', () => {
     const onClose = jest.fn();
     const { asFragment, unmount } = render(
       <Modal show onClose={onClose}>
@@ -102,7 +102,7 @@ describe('Modal component', () => {
     expect(onClose).not.toHaveBeenCalled();
     unmount();
   });
-  it('Should render any child type', () => {
+  it('should render any child type', () => {
     const onClose = jest.fn();
     const { asFragment, unmount } = render(
       <Modal show onClose={onClose}>
@@ -113,7 +113,7 @@ describe('Modal component', () => {
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
-  it('Should close the modal if clicked on background', () => {
+  it('should close the modal if clicked on background', () => {
     const onClose = jest.fn();
     const { getByTestId, asFragment, unmount } = render(
       <Modal show onClose={onClose} closeOnBlur>
@@ -125,7 +125,7 @@ describe('Modal component', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
     unmount();
   });
-  it('Should not close the modal if clicked on background', () => {
+  it('should not close the modal if clicked on background', () => {
     const onClose = jest.fn();
     const { getByTestId, asFragment, unmount } = render(
       <Modal show onClose={onClose} closeOnBlur={false}>
@@ -137,7 +137,7 @@ describe('Modal component', () => {
     expect(onClose).not.toHaveBeenCalled();
     unmount();
   });
-  it('Should not show close button', () => {
+  it('should not show close button', () => {
     const onClose = jest.fn();
     const { asFragment, unmount } = render(
       <Modal showClose={false} show onClose={onClose}>
@@ -148,7 +148,7 @@ describe('Modal component', () => {
     unmount();
   });
 
-  it('Should render empty because no document on scope', () => {
+  it('should render empty because no document on scope', () => {
     const onClose = jest.fn();
     const { asFragment, unmount } = render(
       <Modal show onClose={onClose}>

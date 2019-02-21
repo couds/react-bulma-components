@@ -1,180 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select component Should be large, red, disabled and multioption 1`] = `
-<div
-  className="select is-large is-danger is-multiple"
-  style={Object {}}
->
-  <select
-    aria-readonly={false}
-    disabled={true}
-    multiple={true}
-    name=""
-    value=""
+exports[`Select component should be large, red, disabled and multioption 1`] = `
+<DocumentFragment>
+  <div
+    class="select is-large is-danger is-multiple"
   >
-    <option>
-      1
-    </option>
-    <option>
-      2
-    </option>
-    <option>
-      3
-    </option>
-  </select>
-</div>
+    <select
+      aria-readonly="false"
+      disabled=""
+      multiple=""
+      name=""
+    >
+      <option>
+        1
+      </option>
+      <option>
+        2
+      </option>
+      <option>
+        3
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Select component Should concat classname in props with Bulma classname 1`] = `
-<div
-  className="select other-class this-is-a-test"
-  style={Object {}}
->
-  <select
-    aria-readonly={false}
-    disabled={false}
-    multiple={false}
-    name=""
-    value=""
+exports[`Select component should concat classname in props with Bulma classname 1`] = `
+<DocumentFragment>
+  <div
+    class="select other-class this-is-a-test"
   >
-    <option>
-      1
-    </option>
-    <option>
-      2
-    </option>
-    <option>
-      3
-    </option>
-  </select>
-</div>
+    <select
+      aria-readonly="false"
+      name=""
+    >
+      <option>
+        1
+      </option>
+      <option>
+        2
+      </option>
+      <option>
+        3
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Select component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "disabled": false,
-    "empty": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "loading": false,
-    "marginless": false,
-    "multiple": false,
-    "name": "",
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "readOnly": false,
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-    "value": "",
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "disabled": [Function],
-    "empty": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "loading": [Function],
-    "marginless": [Function],
-    "multiple": [Function],
-    "name": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "readOnly": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
+exports[`Select component should have select classname 1`] = `
+<DocumentFragment>
+  <div
+    class="select"
+  >
+    <select
+      aria-readonly="false"
+      name=""
+    >
+      <option>
+        1
+      </option>
+      <option>
+        2
+      </option>
+      <option>
+        3
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Select component Should have select classname 1`] = `
-<div
-  className="select"
-  style={Object {}}
->
-  <select
-    aria-readonly={false}
-    disabled={false}
-    multiple={false}
-    name=""
-    value=""
+exports[`Select component should use inline styles 1`] = `
+<DocumentFragment>
+  <div
+    class="select"
+    style="width: 100%;"
   >
-    <option>
-      1
-    </option>
-    <option>
-      2
-    </option>
-    <option>
-      3
-    </option>
-  </select>
-</div>
-`;
-
-exports[`Select component Should use inline styles 1`] = `
-<div
-  className="select"
-  style={
-    Object {
-      "width": "100%",
-    }
-  }
->
-  <select
-    aria-readonly={false}
-    disabled={false}
-    multiple={false}
-    name=""
-    value=""
-  >
-    <option>
-      1
-    </option>
-    <option>
-      2
-    </option>
-    <option>
-      3
-    </option>
-  </select>
-</div>
+    <select
+      aria-readonly="false"
+      name=""
+    >
+      <option>
+        1
+      </option>
+      <option>
+        2
+      </option>
+      <option>
+        3
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
 `;

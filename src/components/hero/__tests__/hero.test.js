@@ -4,15 +4,15 @@ import { Hero } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Hero component', () => {
-  it('Should exist', () => {
+  it('should exist', () => {
     expect(Hero).toMatchSnapshot();
   });
-  it('Should expose Hero head, body and footer', () => {
+  it('should expose Hero head, body and footer', () => {
     expect(Hero.Head).toMatchSnapshot();
     expect(Hero.Body).toMatchSnapshot();
     expect(Hero.Footer).toMatchSnapshot();
   });
-  it('Should have hero classname', () => {
+  it('should have hero classname', () => {
     const component = renderer.create(
       <Hero>
         Test <a>Give me</a>
@@ -20,7 +20,7 @@ describe('Hero component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Hero className="other-class this-is-a-test">
         <p>Default</p>
@@ -28,7 +28,7 @@ describe('Hero component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
+  it('should use inline styles', () => {
     const component = renderer.create(
       <Hero style={{ height: 250 }}>
         <p>Default</p>
@@ -36,7 +36,7 @@ describe('Hero component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should use gradient style', () => {
+  it('should use gradient style', () => {
     const component = renderer.create(
       <Hero color="primary" gradient>
         <p>Default</p>
@@ -44,7 +44,7 @@ describe('Hero component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render Hero with hero head, body and footer', () => {
+  it('should render Hero with hero head, body and footer', () => {
     const component = renderer.create(
       <Hero size="fullheight" color="primary">
         <Hero.Head renderAs="header">

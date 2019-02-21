@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal component Should call close the modal on ESC key press 1`] = `<DocumentFragment />`;
+exports[`Modal component should call close the modal on ESC key press 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should close the modal 1`] = `<DocumentFragment />`;
+exports[`Modal component should close the modal 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should close the modal if clicked on background 1`] = `<DocumentFragment />`;
+exports[`Modal component should close the modal if clicked on background 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should not close the modal if clicked on background 1`] = `<DocumentFragment />`;
+exports[`Modal component should not close the modal if clicked on background 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should not close the modal on ESC key press 1`] = `<DocumentFragment />`;
+exports[`Modal component should not close the modal on ESC key press 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should not close the modal on other than ESC key press 1`] = `<DocumentFragment />`;
+exports[`Modal component should not close the modal on other than ESC key press 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should not show close button 1`] = `<DocumentFragment />`;
+exports[`Modal component should not show close button 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should open the modal 1`] = `
+exports[`Modal component should open the modal 1`] = `
 <div
   class="modal is-active"
   data-testid="modal-container"
@@ -46,6 +46,6 @@ exports[`Modal component Should open the modal 1`] = `
 </div>
 `;
 
-exports[`Modal component Should render any child type 1`] = `<DocumentFragment />`;
+exports[`Modal component should render any child type 1`] = `<DocumentFragment />`;
 
-exports[`Modal component Should render empty because no document on scope 1`] = `<DocumentFragment />`;
+exports[`Modal component should render empty because no document on scope 1`] = `<DocumentFragment />`;

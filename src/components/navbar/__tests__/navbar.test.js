@@ -22,7 +22,7 @@ describe('Navbar component', () => {
       component.unmount();
     }
   });
-  it('Should Exist', () => {
+  it('should Exist', () => {
     expect(Navbar).toMatchSnapshot();
   });
 
@@ -32,7 +32,7 @@ describe('Navbar component', () => {
     expect(getHtmlClasses()).toMatchSnapshot('top');
   });
 
-  it('Should have Navbar classname', () => {
+  it('should have Navbar classname', () => {
     component = renderer.create(
       <Navbar>
         <Navbar.Brand>
@@ -58,20 +58,20 @@ describe('Navbar component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat Bulma class with classes in props', () => {
+  it('should concat Bulma class with classes in props', () => {
     component = renderer.create(<Navbar className="other-class test" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render as an html section', () => {
+  it('should render as an html section', () => {
     component = renderer.create(<Navbar renderAs="section" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should have custom inline styles', () => {
+  it('should have custom inline styles', () => {
     component = renderer.create(<Navbar style={{ width: 200, zIndex: 1 }} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  it('Should be fixed on top', () => {
+  it('should be fixed on top', () => {
     component = renderer.create(<Navbar fixed="top" />);
     expect(component.toJSON()).toMatchSnapshot();
   });

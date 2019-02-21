@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 import { Container } from '..';
 
 describe('Container component', () => {
-  it('Should have container classname', () => {
+  it('should have container classname', () => {
     const { asFragment } = render(
       <Container>
         <div className="bd-notification is-success">
@@ -15,7 +15,7 @@ describe('Container component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('Should have helper classnames', () => {
+  it('should have helper classnames', () => {
     const { asFragment } = render(
       <Container
         paddingless

@@ -1,325 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tag component Should be Large 1`] = `
-<span
-  className="tag is-large"
-  onClick={[Function]}
-  style={Object {}}
->
-  <span
-    className=""
-  >
-    Tag Large
-  </span>
-</span>
-`;
-
-exports[`Tag component Should be group tags 1`] = `
-<span
-  className="tags has-addons"
-  style={Object {}}
->
-  <span
-    className="tag"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    <span
-      className=""
-    >
-      Tag 1
-    </span>
-  </span>
-  <span
-    className="tag is-delete"
-    onClick={[Function]}
-    style={Object {}}
-  />
-</span>
-`;
-
-exports[`Tag component Should concat classname in props with Bulma classname 1`] = `
-<span
-  className="tag other-class this-is-a-test"
-  onClick={[Function]}
-  style={Object {}}
->
-  <span
-    className=""
-  >
-    Tag name
-  </span>
-</span>
-`;
-
-exports[`Tag component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Group": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "children": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "gapless": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "responsive": undefined,
-      "shadowless": false,
-      "style": Object {},
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "gapless": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "close": false,
-    "color": null,
-    "ellipsis": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "onClick": [Function],
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "remove": false,
-    "renderAs": "span",
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "close": [Function],
-    "color": [Function],
-    "ellipsis": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "onClick": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "remove": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Tag component Should expose Tag Group 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "gapless": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "gapless": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Tag component Should have close button 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
-  <span
-    className=""
-  >
-    Tag Large
-  </span>
-  <button
-    className="delete is-small"
-    onClick={[Function]}
-  />
-</span>
-`;
-
-exports[`Tag component Should have info color 1`] = `
-<span
-  className="tag is-info"
-  onClick={[Function]}
-  style={Object {}}
->
-  <span
-    className=""
-  >
-    Tag Large
-  </span>
-</span>
-`;
-
-exports[`Tag component Should have remove button 1`] = `
-<span
-  className="tag is-delete"
-  onClick={[Function]}
-  style={Object {}}
-/>
-`;
-
-exports[`Tag component Should have tag classname 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
-  <span
-    className=""
-  >
-    Tag name
-  </span>
-</span>
-`;
-
-exports[`Tag component Should trim content 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
-  <span
-    className="has-ellipsis"
-  >
-    Very large text with some extras
-  </span>
-</span>
-`;
-
-exports[`Tag component Should use inline styles 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={
-    Object {
-      "width": 250,
-    }
-  }
->
-  <span
-    className=""
-  >
-    Tag name
-  </span>
-</span>
-`;
-
 exports[`Tag component Should use use color black 1`] = `
 <span
   className="tag is-black"
@@ -480,6 +160,326 @@ exports[`Tag component Should use use color white 1`] = `
   >
     tag
     white
+  </span>
+</span>
+`;
+
+exports[`Tag component should be Large 1`] = `
+<span
+  className="tag is-large"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag Large
+  </span>
+</span>
+`;
+
+exports[`Tag component should be group tags 1`] = `
+<span
+  className="tags has-addons"
+  style={Object {}}
+>
+  <span
+    className="tag"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <span
+      className=""
+    >
+      Tag 1
+    </span>
+  </span>
+  <span
+    className="tag is-delete"
+    onClick={[Function]}
+    style={Object {}}
+  />
+</span>
+`;
+
+exports[`Tag component should concat classname in props with Bulma classname 1`] = `
+<span
+  className="tag other-class this-is-a-test"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag name
+  </span>
+</span>
+`;
+
+exports[`Tag component should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "Group": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "backgroundColor": null,
+      "children": null,
+      "className": "",
+      "clearfix": false,
+      "clipped": false,
+      "gapless": false,
+      "hidden": false,
+      "invisible": false,
+      "italic": false,
+      "marginless": false,
+      "overlay": false,
+      "paddingless": false,
+      "pull": null,
+      "radiusless": false,
+      "responsive": undefined,
+      "shadowless": false,
+      "style": Object {},
+      "textAlignment": null,
+      "textColor": null,
+      "textSize": null,
+      "textTransform": null,
+      "textWeight": null,
+      "unselectable": false,
+    },
+    "propTypes": Object {
+      "backgroundColor": [Function],
+      "children": [Function],
+      "className": [Function],
+      "clearfix": [Function],
+      "clipped": [Function],
+      "gapless": [Function],
+      "hidden": [Function],
+      "invisible": [Function],
+      "italic": [Function],
+      "marginless": [Function],
+      "overlay": [Function],
+      "paddingless": [Function],
+      "pull": [Function],
+      "radiusless": [Function],
+      "responsive": [Function],
+      "shadowless": [Function],
+      "style": [Function],
+      "textAlignment": [Function],
+      "textColor": [Function],
+      "textSize": [Function],
+      "textTransform": [Function],
+      "textWeight": [Function],
+      "unselectable": [Function],
+    },
+    "render": [Function],
+  },
+  "defaultProps": Object {
+    "backgroundColor": null,
+    "children": null,
+    "className": "",
+    "clearfix": false,
+    "clipped": false,
+    "close": false,
+    "color": null,
+    "ellipsis": false,
+    "hidden": false,
+    "invisible": false,
+    "italic": false,
+    "marginless": false,
+    "onClick": [Function],
+    "overlay": false,
+    "paddingless": false,
+    "pull": null,
+    "radiusless": false,
+    "remove": false,
+    "renderAs": "span",
+    "responsive": undefined,
+    "rounded": false,
+    "shadowless": false,
+    "size": null,
+    "style": Object {},
+    "textAlignment": null,
+    "textColor": null,
+    "textSize": null,
+    "textTransform": null,
+    "textWeight": null,
+    "unselectable": false,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "close": [Function],
+    "color": [Function],
+    "ellipsis": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "onClick": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "remove": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "rounded": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Tag component should expose Tag Group 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": null,
+    "children": null,
+    "className": "",
+    "clearfix": false,
+    "clipped": false,
+    "gapless": false,
+    "hidden": false,
+    "invisible": false,
+    "italic": false,
+    "marginless": false,
+    "overlay": false,
+    "paddingless": false,
+    "pull": null,
+    "radiusless": false,
+    "responsive": undefined,
+    "shadowless": false,
+    "style": Object {},
+    "textAlignment": null,
+    "textColor": null,
+    "textSize": null,
+    "textTransform": null,
+    "textWeight": null,
+    "unselectable": false,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "gapless": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Tag component should have close button 1`] = `
+<span
+  className="tag"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag Large
+  </span>
+  <button
+    className="delete is-small"
+    onClick={[Function]}
+  />
+</span>
+`;
+
+exports[`Tag component should have info color 1`] = `
+<span
+  className="tag is-info"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag Large
+  </span>
+</span>
+`;
+
+exports[`Tag component should have remove button 1`] = `
+<span
+  className="tag is-delete"
+  onClick={[Function]}
+  style={Object {}}
+/>
+`;
+
+exports[`Tag component should have tag classname 1`] = `
+<span
+  className="tag"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className=""
+  >
+    Tag name
+  </span>
+</span>
+`;
+
+exports[`Tag component should trim content 1`] = `
+<span
+  className="tag"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <span
+    className="has-ellipsis"
+  >
+    Very large text with some extras
+  </span>
+</span>
+`;
+
+exports[`Tag component should use inline styles 1`] = `
+<span
+  className="tag"
+  onClick={[Function]}
+  style={
+    Object {
+      "width": 250,
+    }
+  }
+>
+  <span
+    className=""
+  >
+    Tag name
   </span>
 </span>
 `;

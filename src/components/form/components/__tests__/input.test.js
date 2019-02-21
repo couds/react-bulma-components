@@ -1,33 +1,30 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Input } from '../input';
 
 describe('Input component', () => {
-  it('Should exist', () => {
-    expect(Input).toMatchSnapshot();
+  it('should have input classname', () => {
+    const { asFragment } = render(<Input />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should have input classname', () => {
-    const component = renderer.create(<Input />);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should concat classname in props with Bulma classname', () => {
+    const { asFragment } = render(<Input className="other-class this-is-a-test" />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(<Input className="other-class this-is-a-test" />);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should use inline styles', () => {
+    const { asFragment } = render(<Input style={{ height: 250 }} />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
-    const component = renderer.create(<Input style={{ height: 250 }} />);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should be type email and a with success colors', () => {
+    const { asFragment } = render(<Input color="success" type="email" />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should be type email and a with success colors', () => {
-    const component = renderer.create(<Input color="success" type="email" />);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should be large and readOnly', () => {
+    const { asFragment } = render(<Input readOnly size="large" />);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should be large and readOnly', () => {
-    const component = renderer.create(<Input readOnly size="large" />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-  it('Should be disabled with placeholder and value', () => {
-    const component = renderer.create(<Input value="TEST" disabled placeholder="hello tests" />);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should be disabled with placeholder and value', () => {
+    const { asFragment } = render(<Input value="TEST" disabled placeholder="hello tests" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

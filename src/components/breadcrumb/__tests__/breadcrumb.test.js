@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 import { Breadcrumb } from '..';
 
 describe('Breadcrumb component', () => {
-  it('Should be a Breadcrumb', () => {
+  it('should be a Breadcrumb', () => {
     const { asFragment } = render(
       <Breadcrumb
         items={[
@@ -50,7 +50,7 @@ describe('Breadcrumb component', () => {
       expect(asFragment()).toMatchSnapshot();
     })
   );
-  it('Should use inline style and custom size', () => {
+  it('should use inline style and custom size', () => {
     const { asFragment } = render(
       <Breadcrumb
         style={{ marginTop: 10 }}

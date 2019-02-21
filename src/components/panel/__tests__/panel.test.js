@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer';
 import { Panel } from '../panel';
 
 describe('Panel component', () => {
-  it('Should Exist', () => {
+  it('should Exist', () => {
     expect(Panel).toMatchSnapshot();
   });
-  it('Should have box classname', () => {
+  it('should have box classname', () => {
     const component = renderer.create(
       <Panel>
         <Panel.Header>repositories</Panel.Header>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box component Should accept a react Element as renderAs prop 1`] = `
+exports[`Box component should accept a react Element as renderAs prop 1`] = `
 <DocumentFragment>
   <p
     class="box"
@@ -10,7 +10,7 @@ exports[`Box component Should accept a react Element as renderAs prop 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Box component Should concat Bulma class with classes in props 1`] = `
+exports[`Box component should concat Bulma class with classes in props 1`] = `
 <DocumentFragment>
   <div
     class="box other-class test"
@@ -20,7 +20,7 @@ exports[`Box component Should concat Bulma class with classes in props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Box component Should have box classname 1`] = `
+exports[`Box component should have box classname 1`] = `
 <DocumentFragment>
   <div
     class="box"
@@ -30,7 +30,7 @@ exports[`Box component Should have box classname 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Box component Should have custom inline styles 1`] = `
+exports[`Box component should have custom inline styles 1`] = `
 <DocumentFragment>
   <section
     class="box"
@@ -41,7 +41,7 @@ exports[`Box component Should have custom inline styles 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Box component Should render as an html section 1`] = `
+exports[`Box component should render as an html section 1`] = `
 <DocumentFragment>
   <section
     class="box"

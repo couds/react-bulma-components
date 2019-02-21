@@ -5,45 +5,45 @@ import { Tag } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Tag component', () => {
-  it('Should exist', () => {
+  it('should exist', () => {
     expect(Tag).toMatchSnapshot();
   });
-  it('Should expose Tag Group', () => {
+  it('should expose Tag Group', () => {
     expect(Tag.Group).toMatchSnapshot();
   });
-  it('Should have tag classname', () => {
+  it('should have tag classname', () => {
     const component = renderer.create(<Tag>Tag name</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
+  it('should concat classname in props with Bulma classname', () => {
     const component = renderer.create(<Tag className="other-class this-is-a-test">Tag name</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
+  it('should use inline styles', () => {
     const component = renderer.create(<Tag style={{ width: 250 }}>Tag name</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should be Large', () => {
+  it('should be Large', () => {
     const component = renderer.create(<Tag size="large">Tag Large</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should have info color', () => {
+  it('should have info color', () => {
     const component = renderer.create(<Tag color="info">Tag Large</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should have close button', () => {
+  it('should have close button', () => {
     const component = renderer.create(<Tag close>Tag Large</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should have remove button', () => {
+  it('should have remove button', () => {
     const component = renderer.create(<Tag remove>Very large text with some extras</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should trim content', () => {
+  it('should trim content', () => {
     const component = renderer.create(<Tag ellipsis>Very large text with some extras</Tag>);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should trigger onClick event on close button', () => {
+  it('should trigger onClick event on close button', () => {
     const onClick = jest.fn();
     const component = shallow(
       <Tag close onClick={onClick}>
@@ -53,13 +53,13 @@ describe('Tag component', () => {
     component.find('button').simulate('click');
     expect(onClick).toHaveBeenCalled();
   });
-  it('Should trigger onClick event on remove button', () => {
+  it('should trigger onClick event on remove button', () => {
     const onClick = jest.fn();
     const component = shallow(<Tag remove onClick={onClick} />);
     component.find('.tag').simulate('click');
     expect(onClick).toHaveBeenCalled();
   });
-  it('Should be group tags', () => {
+  it('should be group tags', () => {
     const component = renderer.create(
       <Tag.Group gapless>
         <Tag>Tag 1</Tag>

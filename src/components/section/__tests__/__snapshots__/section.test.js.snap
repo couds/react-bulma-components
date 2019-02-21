@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Section component Should be Large 1`] = `
+exports[`Section component should be Large 1`] = `
 <section
   className="section is-large"
   style={Object {}}
@@ -11,7 +11,7 @@ exports[`Section component Should be Large 1`] = `
 </section>
 `;
 
-exports[`Section component Should concat classname in props with Bulma classname 1`] = `
+exports[`Section component should concat classname in props with Bulma classname 1`] = `
 <section
   className="section other-class this-is-a-test"
   style={Object {}}
@@ -22,7 +22,7 @@ exports[`Section component Should concat classname in props with Bulma classname
 </section>
 `;
 
-exports[`Section component Should exist 1`] = `
+exports[`Section component should exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
@@ -81,7 +81,7 @@ Object {
 }
 `;
 
-exports[`Section component Should have section classname 1`] = `
+exports[`Section component should have section classname 1`] = `
 <section
   className="section"
   style={Object {}}
@@ -95,7 +95,7 @@ exports[`Section component Should have section classname 1`] = `
 </section>
 `;
 
-exports[`Section component Should render as nav element 1`] = `
+exports[`Section component should render as nav element 1`] = `
 <nav
   className="section"
   style={Object {}}
@@ -106,7 +106,7 @@ exports[`Section component Should render as nav element 1`] = `
 </nav>
 `;
 
-exports[`Section component Should use inline styles 1`] = `
+exports[`Section component should use inline styles 1`] = `
 <section
   className="section"
   style={

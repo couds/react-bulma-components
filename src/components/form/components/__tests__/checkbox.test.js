@@ -1,24 +1,24 @@
-import { shallow } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { fireEvent, render } from 'react-testing-library';
 import { Checkbox } from '../checkbox';
 
 describe('Checkbox component', () => {
-  it('Should Exists', () => {
-    expect(Checkbox).toMatchSnapshot();
+  it('should have checkbox classname', () => {
+    const { asFragment } = render(<Checkbox>Text</Checkbox>);
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should have checkbox classname', () => {
-    const component = renderer.create(<Checkbox>Text</Checkbox>);
-    expect(component.toJSON()).toMatchSnapshot();
+  it('should render unchecked', () => {
+    const { getByTestId } = render(<Checkbox />);
+    expect(getByTestId('checkbox-input')).not.toHaveAttribute('checked', '');
   });
-  it('Should change value on change event', () => {
-    const spy = jest.fn();
-    const component = shallow(<Checkbox onChange={spy}>Text</Checkbox>);
-    component.find('input').simulate('change');
-    expect(spy).toHaveBeenCalledTimes(1);
+  it('should set input checked if checked', () => {
+    const { getByTestId } = render(<Checkbox checked />);
+    expect(getByTestId('checkbox-input')).toHaveAttribute('checked', '');
   });
-  it('Should set input checked if checked', () => {
-    const component = shallow(<Checkbox checked />);
-    expect(component.find('input').is('[checked]')).toBe(true);
+  it('should change value on change event', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(<Checkbox onChange={onChange}>Text</Checkbox>);
+    fireEvent.click(getByTestId('checkbox-label'));
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 });

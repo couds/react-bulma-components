@@ -1,45 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Textarea component Should be disabled with placeholder and value 1`] = `
-<textarea
-  className="textarea"
-  disabled={true}
-  name=""
-  placeholder="hello tests"
-  readOnly={false}
-  rows={4}
-  style={Object {}}
-  value="TEST"
-/>
+exports[`Textarea component should be disabled with placeholder and value 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea"
+    disabled=""
+    name=""
+    placeholder="hello tests"
+    rows="4"
+  >
+    TEST
+  </textarea>
+</DocumentFragment>
 `;
 
-exports[`Textarea component Should be large with 10 rows and readOnly 1`] = `
-<textarea
-  className="textarea is-large"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={true}
-  rows={10}
-  style={Object {}}
-  value=""
-/>
+exports[`Textarea component should be large with 10 rows and readOnly 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea is-large"
+    name=""
+    placeholder=""
+    readonly=""
+    rows="10"
+  />
+</DocumentFragment>
 `;
 
-exports[`Textarea component Should concat classname in props with Bulma classname 1`] = `
-<textarea
-  className="textarea other-class this-is-a-test"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  rows={4}
-  style={Object {}}
-  value=""
-/>
+exports[`Textarea component should concat classname in props with Bulma classname 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea other-class this-is-a-test"
+    name=""
+    placeholder=""
+    rows="4"
+  />
+</DocumentFragment>
 `;
 
-exports[`Textarea component Should exist 1`] = `
+exports[`Textarea component should exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
@@ -108,32 +106,25 @@ Object {
 }
 `;
 
-exports[`Textarea component Should have textarea classname 1`] = `
-<textarea
-  className="textarea"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  rows={4}
-  style={Object {}}
-  value=""
-/>
+exports[`Textarea component should have textarea classname 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea"
+    name=""
+    placeholder=""
+    rows="4"
+  />
+</DocumentFragment>
 `;
 
-exports[`Textarea component Should use inline styles 1`] = `
-<textarea
-  className="textarea"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  rows={4}
-  style={
-    Object {
-      "height": 250,
-    }
-  }
-  value=""
-/>
+exports[`Textarea component should use inline styles 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea"
+    name=""
+    placeholder=""
+    rows="4"
+    style="height: 250px;"
+  />
+</DocumentFragment>
 `;

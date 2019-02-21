@@ -1,121 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tile component Should concat classname in props with Bulma classname 1`] = `
-<div
-  className="tile other-class this-is-a-test"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
-exports[`Tile component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "kind": null,
-    "marginless": false,
-    "notification": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "div",
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-    "vertical": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "kind": [Function],
-    "marginless": [Function],
-    "notification": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "vertical": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Tile component Should have notification classname 1`] = `
-<div
-  className="tile"
-  style={Object {}}
->
-  <img
-    alt="placeholder"
-    src="http://bulma.io/images/placeholders/128x128.png"
-  />
-</div>
-`;
-
-exports[`Tile component Should render as Section 1`] = `
-<section
-  className="tile"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</section>
-`;
-
-exports[`Tile component Should use inline styles 1`] = `
-<div
-  className="tile"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
 exports[`Tile component Should use use color black 1`] = `
 <div
   className="tile notification is-black"
@@ -230,6 +114,122 @@ exports[`Tile component Should use use color white 1`] = `
 <div
   className="tile notification is-white"
   style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Tile component should concat classname in props with Bulma classname 1`] = `
+<div
+  className="tile other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Tile component should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "defaultProps": Object {
+    "backgroundColor": null,
+    "children": null,
+    "className": "",
+    "clearfix": false,
+    "clipped": false,
+    "color": null,
+    "hidden": false,
+    "invisible": false,
+    "italic": false,
+    "kind": null,
+    "marginless": false,
+    "notification": false,
+    "overlay": false,
+    "paddingless": false,
+    "pull": null,
+    "radiusless": false,
+    "renderAs": "div",
+    "responsive": undefined,
+    "shadowless": false,
+    "size": null,
+    "style": Object {},
+    "textAlignment": null,
+    "textColor": null,
+    "textSize": null,
+    "textTransform": null,
+    "textWeight": null,
+    "unselectable": false,
+    "vertical": false,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "color": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "kind": [Function],
+    "marginless": [Function],
+    "notification": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+    "vertical": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Tile component should have notification classname 1`] = `
+<div
+  className="tile"
+  style={Object {}}
+>
+  <img
+    alt="placeholder"
+    src="http://bulma.io/images/placeholders/128x128.png"
+  />
+</div>
+`;
+
+exports[`Tile component should render as Section 1`] = `
+<section
+  className="tile"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Tile component should use inline styles 1`] = `
+<div
+  className="tile"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
 >
   <p>
     Default

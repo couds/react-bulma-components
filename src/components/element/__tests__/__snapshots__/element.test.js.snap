@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Element component Should accept a react Element as renderAs prop 1`] = `
+exports[`Element component should accept a react Element as renderAs prop 1`] = `
 <DocumentFragment>
   <p>
     CustomThis should be a p element
@@ -8,7 +8,7 @@ exports[`Element component Should accept a react Element as renderAs prop 1`] = 
 </DocumentFragment>
 `;
 
-exports[`Element component Should have helpers classnames 1`] = `
+exports[`Element component should have helpers classnames 1`] = `
 <DocumentFragment>
   <div
     class="is-pulled-left has-text-white"

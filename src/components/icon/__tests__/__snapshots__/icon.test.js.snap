@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon component Should Exist 1`] = `
+exports[`Icon component should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
@@ -67,7 +67,7 @@ Object {
 }
 `;
 
-exports[`Icon component Should concat Bulma class with classes in props 1`] = `
+exports[`Icon component should concat Bulma class with classes in props 1`] = `
 <span
   className="icon other-class"
   style={Object {}}
@@ -78,7 +78,7 @@ exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 </span>
 `;
 
-exports[`Icon component Should have box classname 1`] = `
+exports[`Icon component should have box classname 1`] = `
 <span
   className="icon"
   style={Object {}}

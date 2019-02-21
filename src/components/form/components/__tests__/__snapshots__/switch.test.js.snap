@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Switch component Should be disabled 1`] = `
+exports[`Switch component should be disabled 1`] = `
 <DocumentFragment>
   <label
     class="switch"
@@ -24,7 +24,7 @@ exports[`Switch component Should be disabled 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch component Should have checkbox classname 1`] = `
+exports[`Switch component should have checkbox classname 1`] = `
 <DocumentFragment>
   <label
     class="switch"
@@ -46,7 +46,7 @@ exports[`Switch component Should have checkbox classname 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch component Should have info color classname 1`] = `
+exports[`Switch component should have info color classname 1`] = `
 <DocumentFragment>
   <label
     class="switch"
@@ -68,7 +68,7 @@ exports[`Switch component Should have info color classname 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch component Should have medium classname 1`] = `
+exports[`Switch component should have medium classname 1`] = `
 <DocumentFragment>
   <label
     class="switch"

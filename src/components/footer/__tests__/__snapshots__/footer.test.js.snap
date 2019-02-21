@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer component Should have footer classname 1`] = `
+exports[`Footer component should have footer classname 1`] = `
 <DocumentFragment>
   <div
     class="footer"

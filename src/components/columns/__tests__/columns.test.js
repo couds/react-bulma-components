@@ -3,7 +3,7 @@ import { render } from 'react-testing-library';
 import { Columns } from '..';
 
 describe('Columns component', () => {
-  it('Should have columns classname', () => {
+  it('should have columns classname', () => {
     const { asFragment } = render(
       <Columns>
         <Columns.Column>1</Columns.Column>
@@ -13,7 +13,7 @@ describe('Columns component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Should have columns one column half width and 3 other as default', () => {
+  it('should have columns one column half width and 3 other as default', () => {
     const { asFragment } = render(
       <Columns>
         <Columns.Column size="half">1</Columns.Column>
@@ -24,7 +24,7 @@ describe('Columns component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Should render as paragraph', () => {
+  it('should render as paragraph', () => {
     const { asFragment } = render(
       <Columns renderAs="p">
         <Columns.Column renderAs="p" size="half">
@@ -37,7 +37,7 @@ describe('Columns component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Should have columns one column half width, other narrow and 2 other as default', () => {
+  it('should have columns one column half width, other narrow and 2 other as default', () => {
     const { asFragment } = render(
       <Columns>
         <Columns.Column size="half">1</Columns.Column>

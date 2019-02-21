@@ -1,101 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Label component Should concat classname in props with Bulma classname 1`] = `
-<label
-  className="label other-class this-is-a-test"
-  htmlFor={null}
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</label>
+exports[`Label component should concat classname in props with Bulma classname 1`] = `
+<DocumentFragment>
+  <label
+    class="label other-class this-is-a-test"
+  >
+    <p>
+      Default
+    </p>
+  </label>
+</DocumentFragment>
 `;
 
-exports[`Label component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "hidden": false,
-    "htmlFor": null,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "hidden": [Function],
-    "htmlFor": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
+exports[`Label component should have label classname 1`] = `
+<DocumentFragment>
+  <label
+    class="label"
+  >
+    Test 
+    <a>
+      Give me
+    </a>
+  </label>
+</DocumentFragment>
 `;
 
-exports[`Label component Should have label classname 1`] = `
-<label
-  className="label"
-  htmlFor={null}
-  style={Object {}}
->
-  Test 
-  <a>
-    Give me
-  </a>
-</label>
-`;
-
-exports[`Label component Should use inline styles 1`] = `
-<label
-  className="label"
-  htmlFor={null}
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
-  <p>
-    Default
-  </p>
-</label>
+exports[`Label component should use inline styles 1`] = `
+<DocumentFragment>
+  <label
+    class="label"
+    style="height: 250px;"
+  >
+    <p>
+      Default
+    </p>
+  </label>
+</DocumentFragment>
 `;

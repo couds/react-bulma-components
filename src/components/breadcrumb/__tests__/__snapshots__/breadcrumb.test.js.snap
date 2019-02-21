@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumb component Should be a Breadcrumb 1`] = `
+exports[`Breadcrumb component should be a Breadcrumb 1`] = `
 <DocumentFragment>
   <nav
     class="breadcrumb"
@@ -38,7 +38,7 @@ exports[`Breadcrumb component Should be a Breadcrumb 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Breadcrumb component Should use inline style and custom size 1`] = `
+exports[`Breadcrumb component should use inline style and custom size 1`] = `
 <DocumentFragment>
   <nav
     class="breadcrumb is-large"

@@ -1,24 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader component should Exist 1`] = `
+exports[`Input file component should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
     "backgroundColor": null,
+    "boxed": false,
     "className": "",
     "clearfix": false,
     "clipped": false,
+    "color": null,
+    "fullWidth": false,
+    "hasName": true,
     "hidden": false,
+    "icon": null,
     "invisible": false,
     "italic": false,
+    "label": "Choose a file...",
     "marginless": false,
+    "name": "",
+    "onChange": [Function],
     "overlay": false,
     "paddingless": false,
     "pull": null,
     "radiusless": false,
-    "renderAs": "div",
     "responsive": undefined,
+    "right": false,
     "shadowless": false,
+    "size": null,
     "style": Object {},
     "textAlignment": null,
     "textColor": null,
@@ -29,21 +38,29 @@ Object {
   },
   "propTypes": Object {
     "backgroundColor": [Function],
+    "boxed": [Function],
     "className": [Function],
     "clearfix": [Function],
     "clipped": [Function],
+    "color": [Function],
+    "fullWidth": [Function],
+    "hasName": [Function],
     "hidden": [Function],
+    "icon": [Function],
     "invisible": [Function],
     "italic": [Function],
+    "label": [Function],
     "marginless": [Function],
-    "onClick": [Function],
+    "name": [Function],
+    "onChange": [Function],
     "overlay": [Function],
     "paddingless": [Function],
     "pull": [Function],
     "radiusless": [Function],
-    "renderAs": [Function],
     "responsive": [Function],
+    "right": [Function],
     "shadowless": [Function],
+    "size": [Function],
     "style": [Function],
     "textAlignment": [Function],
     "textColor": [Function],
@@ -56,63 +73,31 @@ Object {
 }
 `;
 
-exports[`Loader component should concat Bulma class with classes in props 1`] = `
-<div
-  className="loader other-class test"
-  style={Object {}}
->
+exports[`Input file component should render file input tree 1`] = `
+<DocumentFragment>
   <div
-    className="loader-background"
-  />
-  <div
-    className="loader-icon"
-  />
-</div>
-`;
-
-exports[`Loader component should have box classname 1`] = `
-<div
-  className="loader"
-  style={Object {}}
->
-  <div
-    className="loader-background"
-  />
-  <div
-    className="loader-icon"
-  />
-</div>
-`;
-
-exports[`Loader component should have custom inline styles 1`] = `
-<section
-  className="loader"
-  style={
-    Object {
-      "width": 200,
-      "zIndex": 1,
-    }
-  }
->
-  <div
-    className="loader-background"
-  />
-  <div
-    className="loader-icon"
-  />
-</section>
-`;
-
-exports[`Loader component should render as an html section 1`] = `
-<section
-  className="loader"
-  style={Object {}}
->
-  <div
-    className="loader-background"
-  />
-  <div
-    className="loader-icon"
-  />
-</section>
+    class="file"
+  >
+    <label
+      class="file-label"
+    >
+      <input
+        class="file-input"
+        data-testid="file-input"
+        name=""
+        type="file"
+        value=""
+      />
+      <span
+        class="file-cta"
+      >
+        <span
+          class="file-label"
+        >
+          Choose a file...
+        </span>
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
 `;

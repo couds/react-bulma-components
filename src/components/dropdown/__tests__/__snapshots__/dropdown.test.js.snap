@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown component Should appear above the dropdown button 1`] = `
+exports[`Dropdown component should appear above the dropdown button 1`] = `
 <DocumentFragment>
   <div
     class="dropdown is-up"
@@ -54,7 +54,7 @@ exports[`Dropdown component Should appear above the dropdown button 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should be right-aligned when using "right" prop 1`] = `
+exports[`Dropdown component should be right-aligned when using "right" prop 1`] = `
 <DocumentFragment>
   <div
     class="dropdown is-right"
@@ -108,7 +108,7 @@ exports[`Dropdown component Should be right-aligned when using "right" prop 1`] 
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should concat Bulma class with classes in props 1`] = `
+exports[`Dropdown component should concat Bulma class with classes in props 1`] = `
 <DocumentFragment>
   <div
     class="dropdown other-class"
@@ -155,7 +155,7 @@ exports[`Dropdown component Should concat Bulma class with classes in props 1`] 
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should have custom inline styles 1`] = `
+exports[`Dropdown component should have custom inline styles 1`] = `
 <DocumentFragment>
   <div
     class="dropdown"
@@ -203,7 +203,7 @@ exports[`Dropdown component Should have custom inline styles 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should have divider 1`] = `
+exports[`Dropdown component should have divider 1`] = `
 <DocumentFragment>
   <div
     class="dropdown"
@@ -261,7 +261,7 @@ exports[`Dropdown component Should have divider 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should have dropdown classname 1`] = `
+exports[`Dropdown component should have dropdown classname 1`] = `
 <DocumentFragment>
   <div
     class="dropdown"
@@ -308,7 +308,7 @@ exports[`Dropdown component Should have dropdown classname 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should show custom label passed to the label prop 1`] = `
+exports[`Dropdown component should show custom label passed to the label prop 1`] = `
 <DocumentFragment>
   <div
     class="dropdown"
@@ -355,7 +355,7 @@ exports[`Dropdown component Should show custom label passed to the label prop 1`
 </DocumentFragment>
 `;
 
-exports[`Dropdown component Should show the label of the first dropdown item when no custom label is passed 1`] = `
+exports[`Dropdown component should show the label of the first dropdown item when no custom label is passed 1`] = `
 <DocumentFragment>
   <div
     class="dropdown"

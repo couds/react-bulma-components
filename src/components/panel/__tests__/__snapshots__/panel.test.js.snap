@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Panel component Should Exist 1`] = `
+exports[`Panel component should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "Block": Object {
@@ -307,7 +307,7 @@ Object {
 }
 `;
 
-exports[`Panel component Should have box classname 1`] = `
+exports[`Panel component should have box classname 1`] = `
 <nav
   className="panel"
   style={Object {}}

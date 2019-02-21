@@ -1,13 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Help } from '../help';
 
 describe('Help component', () => {
-  it('Should exist', () => {
-    expect(Help).toMatchSnapshot();
-  });
-  it('Should have help classname', () => {
-    const component = renderer.create(
+  it('should have help classname', () => {
+    const { asFragment } = render(
       <Help>
         <p className="bd-notification is-success">
           <p>Default</p>
@@ -15,30 +12,30 @@ describe('Help component', () => {
         </p>
       </Help>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
+  it('should concat classname in props with Bulma classname', () => {
+    const { asFragment } = render(
       <Help className="other-class this-is-a-test">
         <p>Default</p>
       </Help>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
-    const component = renderer.create(
+  it('should use inline styles', () => {
+    const { asFragment } = render(
       <Help style={{ height: 250 }}>
         <p>Default</p>
       </Help>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should be displayed as a successful message', () => {
-    const component = renderer.create(
+  it('should be displayed as a successful message', () => {
+    const { asFragment } = render(
       <Help color="success">
         <p>Default</p>
       </Help>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

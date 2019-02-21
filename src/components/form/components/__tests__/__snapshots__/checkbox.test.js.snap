@@ -1,95 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox component Should Exists 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "checked": false,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "disabled": false,
-    "hidden": false,
-    "indeterminate": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "name": null,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-    "value": "",
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "checked": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "disabled": [Function],
-    "hidden": [Function],
-    "indeterminate": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "name": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Checkbox component Should have checkbox classname 1`] = `
-<label
-  className="b-checkbox checkbox"
-  disabled={false}
-  style={Object {}}
->
-  <input
-    checked={false}
-    disabled={false}
-    indeterminate={false}
-    name={null}
-    type="checkbox"
-    value=""
-  />
-  <span
-    className="check"
-  />
-  <span
-    className="control-label"
+exports[`Checkbox component should have checkbox classname 1`] = `
+<DocumentFragment>
+  <label
+    class="b-checkbox checkbox"
+    data-testid="checkbox-label"
   >
-    Text
-  </span>
-</label>
+    <input
+      data-testid="checkbox-input"
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="check"
+      data-testid="checkbox-check"
+    />
+    <span
+      class="control-label"
+    >
+      Text
+    </span>
+  </label>
+</DocumentFragment>
 `;

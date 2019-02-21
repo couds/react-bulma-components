@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Heading component Should be a subtitle with size rendered as P 1`] = `
+exports[`Heading component should be a subtitle with size rendered as P 1`] = `
 <p
   className="subtitle is-3"
   style={Object {}}
@@ -9,7 +9,7 @@ exports[`Heading component Should be a subtitle with size rendered as P 1`] = `
 </p>
 `;
 
-exports[`Heading component Should be spaced 1`] = `
+exports[`Heading component should be spaced 1`] = `
 <p
   className="title is-spaced"
   style={Object {}}
@@ -18,7 +18,7 @@ exports[`Heading component Should be spaced 1`] = `
 </p>
 `;
 
-exports[`Heading component Should concat classname in props with Bulma classname 1`] = `
+exports[`Heading component should concat classname in props with Bulma classname 1`] = `
 <h1
   className="other-class this-is-a-test title"
   style={Object {}}
@@ -29,7 +29,7 @@ exports[`Heading component Should concat classname in props with Bulma classname
 </h1>
 `;
 
-exports[`Heading component Should exist 1`] = `
+exports[`Heading component should exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "defaultProps": Object {
@@ -94,7 +94,7 @@ Object {
 }
 `;
 
-exports[`Heading component Should have title classname 1`] = `
+exports[`Heading component should have title classname 1`] = `
 <h1
   className="title"
   style={Object {}}
@@ -106,7 +106,7 @@ exports[`Heading component Should have title classname 1`] = `
 </h1>
 `;
 
-exports[`Heading component Should not be spaced because is subtitle 1`] = `
+exports[`Heading component should not be spaced because is subtitle 1`] = `
 <p
   className="subtitle"
   style={Object {}}
@@ -115,7 +115,7 @@ exports[`Heading component Should not be spaced because is subtitle 1`] = `
 </p>
 `;
 
-exports[`Heading component Should use inline styles 1`] = `
+exports[`Heading component should use inline styles 1`] = `
 <h1
   className="title"
   style={

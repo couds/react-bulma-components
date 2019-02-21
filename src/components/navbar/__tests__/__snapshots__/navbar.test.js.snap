@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar component Should Exist 1`] = `
+exports[`Navbar component should Exist 1`] = `
 Object {
   "$$typeof": Symbol(react.forward_ref),
   "Brand": Object {
@@ -443,7 +443,7 @@ Object {
 }
 `;
 
-exports[`Navbar component Should be fixed on top 1`] = `
+exports[`Navbar component should be fixed on top 1`] = `
 <nav
   className="navbar is-fixed-top"
   role="navigation"
@@ -451,7 +451,7 @@ exports[`Navbar component Should be fixed on top 1`] = `
 />
 `;
 
-exports[`Navbar component Should concat Bulma class with classes in props 1`] = `
+exports[`Navbar component should concat Bulma class with classes in props 1`] = `
 <nav
   className="navbar other-class test"
   role="navigation"
@@ -459,7 +459,7 @@ exports[`Navbar component Should concat Bulma class with classes in props 1`] = 
 />
 `;
 
-exports[`Navbar component Should have Navbar classname 1`] = `
+exports[`Navbar component should have Navbar classname 1`] = `
 <nav
   className="navbar"
   role="navigation"
@@ -545,7 +545,7 @@ exports[`Navbar component Should have Navbar classname 1`] = `
 </nav>
 `;
 
-exports[`Navbar component Should have custom inline styles 1`] = `
+exports[`Navbar component should have custom inline styles 1`] = `
 <nav
   className="navbar"
   role="navigation"
@@ -558,7 +558,7 @@ exports[`Navbar component Should have custom inline styles 1`] = `
 />
 `;
 
-exports[`Navbar component Should render as an html section 1`] = `
+exports[`Navbar component should render as an html section 1`] = `
 <section
   className="navbar"
   role="navigation"

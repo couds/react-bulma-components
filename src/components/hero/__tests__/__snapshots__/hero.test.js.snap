@@ -1,160 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hero component Should concat classname in props with Bulma classname 1`] = `
-<section
-  className="hero other-class this-is-a-test"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</section>
-`;
-
-exports[`Hero component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Body": [Function],
-  "Footer": [Function],
-  "Head": [Function],
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "gradient": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "renderAs": "section",
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "gradient": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Hero component Should expose Hero head, body and footer 1`] = `[Function]`;
-
-exports[`Hero component Should expose Hero head, body and footer 2`] = `[Function]`;
-
-exports[`Hero component Should expose Hero head, body and footer 3`] = `[Function]`;
-
-exports[`Hero component Should have hero classname 1`] = `
-<section
-  className="hero"
-  style={Object {}}
->
-  Test 
-  <a>
-    Give me
-  </a>
-</section>
-`;
-
-exports[`Hero component Should render Hero with hero head, body and footer 1`] = `
-<section
-  className="hero is-primary is-fullheight"
-  style={Object {}}
->
-  <header
-    className="hero-head"
-    style={Object {}}
-  >
-    <div
-      className="bd-notification is-info"
-    >
-      Header
-    </div>
-  </header>
-  <div
-    className="hero-body"
-    style={Object {}}
-  >
-    Body
-  </div>
-  <footer
-    className="hero-foot"
-    style={Object {}}
-  >
-    <div
-      className="bd-notification is-danger"
-    >
-      Footer
-    </div>
-  </footer>
-</section>
-`;
-
-exports[`Hero component Should use gradient style 1`] = `
-<section
-  className="hero is-primary is-bold"
-  style={Object {}}
->
-  <p>
-    Default
-  </p>
-</section>
-`;
-
-exports[`Hero component Should use inline styles 1`] = `
-<section
-  className="hero"
-  style={
-    Object {
-      "height": 250,
-    }
-  }
->
-  <p>
-    Default
-  </p>
-</section>
-`;
-
 exports[`Hero component Should use use color black 1`] = `
 <section
   className="hero is-black"
@@ -269,6 +114,161 @@ exports[`Hero component Should use use color white 1`] = `
 <section
   className="hero is-white"
   style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component should concat classname in props with Bulma classname 1`] = `
+<section
+  className="hero other-class this-is-a-test"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component should exist 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "Body": [Function],
+  "Footer": [Function],
+  "Head": [Function],
+  "defaultProps": Object {
+    "backgroundColor": null,
+    "children": null,
+    "className": "",
+    "clearfix": false,
+    "clipped": false,
+    "color": null,
+    "gradient": false,
+    "hidden": false,
+    "invisible": false,
+    "italic": false,
+    "marginless": false,
+    "overlay": false,
+    "paddingless": false,
+    "pull": null,
+    "radiusless": false,
+    "renderAs": "section",
+    "responsive": undefined,
+    "shadowless": false,
+    "size": null,
+    "style": Object {},
+    "textAlignment": null,
+    "textColor": null,
+    "textSize": null,
+    "textTransform": null,
+    "textWeight": null,
+    "unselectable": false,
+  },
+  "propTypes": Object {
+    "backgroundColor": [Function],
+    "children": [Function],
+    "className": [Function],
+    "clearfix": [Function],
+    "clipped": [Function],
+    "color": [Function],
+    "gradient": [Function],
+    "hidden": [Function],
+    "invisible": [Function],
+    "italic": [Function],
+    "marginless": [Function],
+    "overlay": [Function],
+    "paddingless": [Function],
+    "pull": [Function],
+    "radiusless": [Function],
+    "renderAs": [Function],
+    "responsive": [Function],
+    "shadowless": [Function],
+    "size": [Function],
+    "style": [Function],
+    "textAlignment": [Function],
+    "textColor": [Function],
+    "textSize": [Function],
+    "textTransform": [Function],
+    "textWeight": [Function],
+    "unselectable": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Hero component should expose Hero head, body and footer 1`] = `[Function]`;
+
+exports[`Hero component should expose Hero head, body and footer 2`] = `[Function]`;
+
+exports[`Hero component should expose Hero head, body and footer 3`] = `[Function]`;
+
+exports[`Hero component should have hero classname 1`] = `
+<section
+  className="hero"
+  style={Object {}}
+>
+  Test 
+  <a>
+    Give me
+  </a>
+</section>
+`;
+
+exports[`Hero component should render Hero with hero head, body and footer 1`] = `
+<section
+  className="hero is-primary is-fullheight"
+  style={Object {}}
+>
+  <header
+    className="hero-head"
+    style={Object {}}
+  >
+    <div
+      className="bd-notification is-info"
+    >
+      Header
+    </div>
+  </header>
+  <div
+    className="hero-body"
+    style={Object {}}
+  >
+    Body
+  </div>
+  <footer
+    className="hero-foot"
+    style={Object {}}
+  >
+    <div
+      className="bd-notification is-danger"
+    >
+      Footer
+    </div>
+  </footer>
+</section>
+`;
+
+exports[`Hero component should use gradient style 1`] = `
+<section
+  className="hero is-primary is-bold"
+  style={Object {}}
+>
+  <p>
+    Default
+  </p>
+</section>
+`;
+
+exports[`Hero component should use inline styles 1`] = `
+<section
+  className="hero"
+  style={
+    Object {
+      "height": 250,
+    }
+  }
 >
   <p>
     Default

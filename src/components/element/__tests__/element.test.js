@@ -4,7 +4,7 @@ import { render } from 'react-testing-library';
 import { Element } from '..';
 
 describe('Element component', () => {
-  it('Should have helpers classnames', () => {
+  it('should have helpers classnames', () => {
     const { asFragment } = render(
       <Element textColor="white" pull="left">
         Facebook
@@ -12,7 +12,7 @@ describe('Element component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Should accept a react Element as renderAs prop', () => {
+  it('should accept a react Element as renderAs prop', () => {
     const Custom = props => (
       <p {...props}>
         Custom

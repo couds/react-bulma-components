@@ -1,154 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component Should be disabled with placeholder and value 1`] = `
-<input
-  className="input"
-  disabled={true}
-  name=""
-  placeholder="hello tests"
-  readOnly={false}
-  style={Object {}}
-  type="text"
-  value="TEST"
-/>
+exports[`Input component should be disabled with placeholder and value 1`] = `
+<DocumentFragment>
+  <input
+    class="input"
+    disabled=""
+    name=""
+    placeholder="hello tests"
+    type="text"
+    value="TEST"
+  />
+</DocumentFragment>
 `;
 
-exports[`Input component Should be large and readOnly 1`] = `
-<input
-  className="input is-large"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={true}
-  style={Object {}}
-  type="text"
-  value=""
-/>
+exports[`Input component should be large and readOnly 1`] = `
+<DocumentFragment>
+  <input
+    class="input is-large"
+    name=""
+    placeholder=""
+    readonly=""
+    type="text"
+    value=""
+  />
+</DocumentFragment>
 `;
 
-exports[`Input component Should be type email and a with success colors 1`] = `
-<input
-  className="input is-success"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  style={Object {}}
-  type="email"
-  value=""
-/>
+exports[`Input component should be type email and a with success colors 1`] = `
+<DocumentFragment>
+  <input
+    class="input is-success"
+    name=""
+    placeholder=""
+    type="email"
+    value=""
+  />
+</DocumentFragment>
 `;
 
-exports[`Input component Should concat classname in props with Bulma classname 1`] = `
-<input
-  className="input other-class this-is-a-test"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  style={Object {}}
-  type="text"
-  value=""
-/>
+exports[`Input component should concat classname in props with Bulma classname 1`] = `
+<DocumentFragment>
+  <input
+    class="input other-class this-is-a-test"
+    name=""
+    placeholder=""
+    type="text"
+    value=""
+  />
+</DocumentFragment>
 `;
 
-exports[`Input component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "color": null,
-    "disabled": false,
-    "hidden": false,
-    "invisible": false,
-    "isStatic": false,
-    "italic": false,
-    "marginless": false,
-    "name": "",
-    "overlay": false,
-    "paddingless": false,
-    "placeholder": "",
-    "pull": null,
-    "radiusless": false,
-    "readOnly": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "type": "text",
-    "unselectable": false,
-    "value": "",
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "disabled": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "isStatic": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "name": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "placeholder": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "readOnly": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "type": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
+exports[`Input component should have input classname 1`] = `
+<DocumentFragment>
+  <input
+    class="input"
+    name=""
+    placeholder=""
+    type="text"
+    value=""
+  />
+</DocumentFragment>
 `;
 
-exports[`Input component Should have input classname 1`] = `
-<input
-  className="input"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  style={Object {}}
-  type="text"
-  value=""
-/>
-`;
-
-exports[`Input component Should use inline styles 1`] = `
-<input
-  className="input"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  style={
-    Object {
-      "height": 250,
-    }
-  }
-  type="text"
-  value=""
-/>
+exports[`Input component should use inline styles 1`] = `
+<DocumentFragment>
+  <input
+    class="input"
+    name=""
+    placeholder=""
+    style="height: 250px;"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
 `;

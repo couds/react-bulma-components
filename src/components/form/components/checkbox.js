@@ -14,6 +14,7 @@ export const Checkbox = React.forwardRef(
         disabled={disabled}
         className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
         style={style}
+        data-testid="checkbox-label"
       >
         <input
           {...props}
@@ -24,12 +25,14 @@ export const Checkbox = React.forwardRef(
           disabled={disabled}
           checked={checked}
           indeterminate={indeterminate}
+          data-testid="checkbox-input"
         />
         <span
           className={cn('check', {
             [`is-${color}`]: color,
             [`is-${size}`]: size
           })}
+          data-testid="checkbox-check"
         />
         <span className="control-label">{children}</span>
       </label>

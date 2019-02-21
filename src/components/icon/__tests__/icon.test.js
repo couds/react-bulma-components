@@ -3,14 +3,14 @@ import renderer from 'react-test-renderer';
 import { Icon } from '..';
 
 describe('Icon component', () => {
-  it('Should Exist', () => {
+  it('should Exist', () => {
     expect(Icon).toMatchSnapshot();
   });
-  it('Should have box classname', () => {
+  it('should have box classname', () => {
     const component = renderer.create(<Icon icon="bars" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should concat Bulma class with classes in props', () => {
+  it('should concat Bulma class with classes in props', () => {
     const component = renderer.create(<Icon icon="bars" className="other-class" />);
     expect(component.toJSON()).toMatchSnapshot();
   });

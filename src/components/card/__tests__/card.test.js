@@ -3,15 +3,21 @@ import { render } from 'react-testing-library';
 import { Card } from '..';
 
 describe('Card component', () => {
-  it('Should have card classname', () => {
+  it('should export Content, Footer, Header and Image as static properties', () => {
+    expect(Card.Content).toBeDefined();
+    expect(Card.Footer).toBeDefined();
+    expect(Card.Header).toBeDefined();
+    expect(Card.Image).toBeDefined();
+  });
+  it('should have card classname', () => {
     const { asFragment } = render(<Card>Card Content</Card>);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Should have card-image classname', () => {
+  it('should have card-image classname', () => {
     const { asFragment } = render(<Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Should have card-content classname', () => {
+  it('should have card-content classname', () => {
     const { asFragment } = render(<Card.Content>Content</Card.Content>);
     expect(asFragment()).toMatchSnapshot();
   });

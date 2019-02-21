@@ -1,13 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import { Control } from '../control';
 
-describe('Control component', () => {
-  it('Should exist', () => {
-    expect(Control).toMatchSnapshot();
-  });
-  it('Should have control classname', () => {
-    const component = renderer.create(
+describe('Control {asFragment}', () => {
+  it('should have control classname', () => {
+    const { asFragment } = render(
       <Control>
         <p className="bd-notification is-success">
           <p>Default</p>
@@ -15,38 +12,38 @@ describe('Control component', () => {
         </p>
       </Control>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(
+  it('should concat classname in props with Bulma classname', () => {
+    const { asFragment } = render(
       <Control className="other-class this-is-a-test">
         <p>Default</p>
       </Control>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should use inline styles', () => {
-    const component = renderer.create(
+  it('should use inline styles', () => {
+    const { asFragment } = render(
       <Control style={{ height: 250 }}>
         <p>Default</p>
       </Control>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should render as a html section element', () => {
-    const component = renderer.create(
+  it('should render as a html section element', () => {
+    const { asFragment } = render(
       <Control renderAs="section">
         <p>Default</p>
       </Control>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
-  it('Should be fullwidth, loading and size = large', () => {
-    const component = renderer.create(
+  it('should be fullwidth, loading and size = large', () => {
+    const { asFragment } = render(
       <Control fullwidth loading size="large">
         <p>Default</p>
       </Control>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
