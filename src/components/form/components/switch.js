@@ -17,8 +17,17 @@ export const Switch = ({ className, style, disabled, value, children, checked, c
       onMouseUp={() => setMouseDown(false)}
       onMouseOut={() => setMouseDown(false)}
       disabled={disabled}
+      data-testid="switch-label"
     >
-      <input {...props} name={name} type="checkbox" value={value} disabled={disabled} checked={checked} />
+      <input
+        {...props}
+        name={name}
+        type="checkbox"
+        value={value}
+        disabled={disabled}
+        checked={checked}
+        data-testid="switch-input"
+      />
       <span
         className={cn('check', {
           'is-elastic': isMouseDown && !disabled,

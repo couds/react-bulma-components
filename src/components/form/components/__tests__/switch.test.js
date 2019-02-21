@@ -1,10 +1,8 @@
-import { shallow } from 'enzyme';
 import React from 'react';
 import { fireEvent, render } from 'react-testing-library';
 import { Switch } from '../switch';
 
 describe('Switch component', () => {
-  let component;
   it('should render', () => {
     const { asFragment } = render(<Switch>Text</Switch>);
     expect(asFragment()).toMatchSnapshot();
@@ -43,7 +41,7 @@ describe('Switch component', () => {
     expect(getByTestId('switch-check')).not.toHaveClass('is-elastic');
   });
   it('should set input checked if checked', () => {
-    component = shallow(<Switch checked />);
-    expect(component.find('input').is('[checked]')).toBe(true);
+    const { getByTestId } = render(<Switch checked />);
+    expect(getByTestId('switch-input')).toHaveAttribute('checked', '');
   });
 });

@@ -4,9 +4,11 @@ exports[`Switch component should be disabled 1`] = `
 <DocumentFragment>
   <label
     class="switch"
+    data-testid="switch-label"
     disabled=""
   >
     <input
+      data-testid="switch-input"
       disabled=""
       type="checkbox"
       value=""
@@ -28,8 +30,10 @@ exports[`Switch component should have info color classname 1`] = `
 <DocumentFragment>
   <label
     class="switch"
+    data-testid="switch-label"
   >
     <input
+      data-testid="switch-input"
       type="checkbox"
       value=""
     />
@@ -50,8 +54,10 @@ exports[`Switch component should have medium classname 1`] = `
 <DocumentFragment>
   <label
     class="switch"
+    data-testid="switch-label"
   >
     <input
+      data-testid="switch-input"
       type="checkbox"
       value=""
     />
@@ -72,8 +78,10 @@ exports[`Switch component should render 1`] = `
 <DocumentFragment>
   <label
     class="switch"
+    data-testid="switch-label"
   >
     <input
+      data-testid="switch-input"
       type="checkbox"
       value=""
     />
