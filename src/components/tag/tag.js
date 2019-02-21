@@ -14,6 +14,7 @@ export const Tag = React.forwardRef(
       {...props}
       ref={ref}
       onClick={() => remove && onClick()}
+      data-testid="tag"
       className={cn('tag', className, {
         [`is-${size}`]: size,
         [`is-${color}`]: color,
@@ -22,7 +23,7 @@ export const Tag = React.forwardRef(
       })}
     >
       {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
-      {!remove && close && <button onClick={onClick} className="delete is-small" />}
+      {!remove && close && <button onClick={onClick} className="delete is-small" data-testid="tag-delete" />}
     </Element>
   )
 );

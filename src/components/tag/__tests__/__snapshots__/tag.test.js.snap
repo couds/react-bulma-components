@@ -1,485 +1,329 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag component Should use use color black 1`] = `
-<span
-  className="tag is-black"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-black"
+    data-testid="tag"
   >
-    tag
-    black
+    <span
+      class=""
+    >
+      tagblack
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color danger 1`] = `
-<span
-  className="tag is-danger"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-danger"
+    data-testid="tag"
   >
-    tag
-    danger
+    <span
+      class=""
+    >
+      tagdanger
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color dark 1`] = `
-<span
-  className="tag is-dark"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-dark"
+    data-testid="tag"
   >
-    tag
-    dark
+    <span
+      class=""
+    >
+      tagdark
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color info 1`] = `
-<span
-  className="tag is-info"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-info"
+    data-testid="tag"
   >
-    tag
-    info
+    <span
+      class=""
+    >
+      taginfo
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color light 1`] = `
-<span
-  className="tag is-light"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-light"
+    data-testid="tag"
   >
-    tag
-    light
+    <span
+      class=""
+    >
+      taglight
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color link 1`] = `
-<span
-  className="tag is-link"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-link"
+    data-testid="tag"
   >
-    tag
-    link
+    <span
+      class=""
+    >
+      taglink
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color null 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag"
+    data-testid="tag"
   >
-    tag
+    <span
+      class=""
+    >
+      tag
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color primary 1`] = `
-<span
-  className="tag is-primary"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-primary"
+    data-testid="tag"
   >
-    tag
-    primary
+    <span
+      class=""
+    >
+      tagprimary
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color success 1`] = `
-<span
-  className="tag is-success"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-success"
+    data-testid="tag"
   >
-    tag
-    success
+    <span
+      class=""
+    >
+      tagsuccess
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color warning 1`] = `
-<span
-  className="tag is-warning"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-warning"
+    data-testid="tag"
   >
-    tag
-    warning
+    <span
+      class=""
+    >
+      tagwarning
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component Should use use color white 1`] = `
-<span
-  className="tag is-white"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-white"
+    data-testid="tag"
   >
-    tag
-    white
+    <span
+      class=""
+    >
+      tagwhite
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component should be Large 1`] = `
-<span
-  className="tag is-large"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-large"
+    data-testid="tag"
   >
-    Tag Large
+    <span
+      class=""
+    >
+      Tag Large
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component should be group tags 1`] = `
-<span
-  className="tags has-addons"
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className="tag"
-    onClick={[Function]}
-    style={Object {}}
+    class="tags has-addons"
   >
     <span
-      className=""
+      class="tag"
+      data-testid="tag"
     >
-      Tag 1
+      <span
+        class=""
+      >
+        Tag 1
+      </span>
     </span>
+    <span
+      class="tag is-delete"
+      data-testid="tag"
+    />
   </span>
-  <span
-    className="tag is-delete"
-    onClick={[Function]}
-    style={Object {}}
-  />
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component should concat classname in props with classname 1`] = `
-<span
-  className="tag other-class this-is-a-test"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag other-class this-is-a-test"
+    data-testid="tag"
   >
-    Tag name
+    <span
+      class=""
+    >
+      Tag name
+    </span>
   </span>
-</span>
-`;
-
-exports[`Tag component should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Group": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": null,
-      "children": null,
-      "className": "",
-      "clearfix": false,
-      "clipped": false,
-      "gapless": false,
-      "hidden": false,
-      "invisible": false,
-      "italic": false,
-      "marginless": false,
-      "overlay": false,
-      "paddingless": false,
-      "pull": null,
-      "radiusless": false,
-      "responsive": undefined,
-      "shadowless": false,
-      "style": Object {},
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
-      "unselectable": false,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "gapless": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "close": false,
-    "color": null,
-    "ellipsis": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "onClick": [Function],
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "remove": false,
-    "renderAs": "span",
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": false,
-    "size": null,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "close": [Function],
-    "color": [Function],
-    "ellipsis": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "onClick": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "remove": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
-
-exports[`Tag component should expose Tag Group 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": null,
-    "children": null,
-    "className": "",
-    "clearfix": false,
-    "clipped": false,
-    "gapless": false,
-    "hidden": false,
-    "invisible": false,
-    "italic": false,
-    "marginless": false,
-    "overlay": false,
-    "paddingless": false,
-    "pull": null,
-    "radiusless": false,
-    "responsive": undefined,
-    "shadowless": false,
-    "style": Object {},
-    "textAlignment": null,
-    "textColor": null,
-    "textSize": null,
-    "textTransform": null,
-    "textWeight": null,
-    "unselectable": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "gapless": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
+</DocumentFragment>
 `;
 
 exports[`Tag component should have close button 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag"
+    data-testid="tag"
   >
-    Tag Large
+    <span
+      class=""
+    >
+      Tag Large
+    </span>
+    <button
+      class="delete is-small"
+      data-testid="tag-delete"
+    />
   </span>
-  <button
-    className="delete is-small"
-    onClick={[Function]}
-  />
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component should have info color 1`] = `
-<span
-  className="tag is-info"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag is-info"
+    data-testid="tag"
   >
-    Tag Large
+    <span
+      class=""
+    >
+      Tag Large
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component should have remove button 1`] = `
-<span
-  className="tag is-delete"
-  onClick={[Function]}
-  style={Object {}}
-/>
+<DocumentFragment>
+  <span
+    class="tag is-delete"
+    data-testid="tag"
+  />
+</DocumentFragment>
 `;
 
 exports[`Tag component should have tag classname 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag"
+    data-testid="tag"
   >
-    Tag name
+    <span
+      class=""
+    >
+      Tag name
+    </span>
   </span>
-</span>
+</DocumentFragment>
+`;
+
+exports[`Tag component should render 1`] = `
+<DocumentFragment>
+  <span
+    class="tag"
+    data-testid="tag"
+  >
+    <span
+      class=""
+    />
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Tag component should render 2`] = `
+<DocumentFragment>
+  <span
+    class="tags"
+  />
+</DocumentFragment>
 `;
 
 exports[`Tag component should trim content 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={Object {}}
->
+<DocumentFragment>
   <span
-    className="has-ellipsis"
+    class="tag"
+    data-testid="tag"
   >
-    Very large text with some extras
+    <span
+      class="has-ellipsis"
+    >
+      Very large text with some extras
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
 
 exports[`Tag component should use inline styles 1`] = `
-<span
-  className="tag"
-  onClick={[Function]}
-  style={
-    Object {
-      "width": 250,
-    }
-  }
->
+<DocumentFragment>
   <span
-    className=""
+    class="tag"
+    data-testid="tag"
+    style="width: 250px;"
   >
-    Tag name
+    <span
+      class=""
+    >
+      Tag name
+    </span>
   </span>
-</span>
+</DocumentFragment>
 `;
