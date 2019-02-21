@@ -1,7 +1,7 @@
 import modifiers from '..';
 
 describe('Helper proptypes', () => {
-  test('Should have paddingless and clearfix classes', () => {
+  it('should have paddingless and clearfix classes', () => {
     expect(
       modifiers.getClassName({
         clearfix: true,
@@ -10,7 +10,7 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
-  test('Should have text helpers', () => {
+  it('should have text helpers', () => {
     expect(
       modifiers.getClassName({
         textColor: 'success',
@@ -22,7 +22,7 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
-  test('Should have responsive modifier flex-tablet-only and block-widescreen', () => {
+  it('should have responsive modifier flex-tablet-only and block-widescreen', () => {
     expect(
       modifiers.getClassName({
         responsive: {
@@ -42,7 +42,7 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
-  test('Should have hidden modifier tablet-only and widescreen', () => {
+  it('should have hidden modifier tablet-only and widescreen', () => {
     expect(
       modifiers.getClassName({
         responsive: {
@@ -62,7 +62,7 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
-  test('Should have alignment responsive modifiers', () => {
+  it('should have alignment responsive modifiers', () => {
     expect(
       modifiers.getClassName({
         responsive: {
@@ -82,7 +82,7 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
-  test('Should have text color success', () => {
+  it('should have text color success', () => {
     expect(
       modifiers.getClassName({
         textColor: 'success'
@@ -90,7 +90,7 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
-  test('Should have background color success', () => {
+  it('should have background color success', () => {
     expect(
       modifiers.getClassName({
         backgroundColor: 'success'
