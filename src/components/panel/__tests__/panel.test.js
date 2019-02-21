@@ -3,10 +3,13 @@ import { render } from 'react-testing-library';
 import { Panel } from '../panel';
 
 describe('Panel component', () => {
-  it.each([[Panel], [Panel.Block], [Panel.Header], [Panel.Icon], [Panel.Tabs], [Panel.Tabs.Tab]])('should render', Component => {
-    const { asFragment } = render(<Component />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  it.each([[Panel], [Panel.Block], [Panel.Header], [Panel.Icon], [Panel.Tabs], [Panel.Tabs.Tab]])(
+    'should render',
+    Component => {
+      const { asFragment } = render(<Component />);
+      expect(asFragment()).toMatchSnapshot();
+    }
+  );
   it('should render with all', () => {
     const { asFragment } = render(
       <Panel>
