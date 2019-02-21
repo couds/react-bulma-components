@@ -6,16 +6,14 @@ import { Element } from '../element';
 import CONSTANTS from './constants';
 
 export const Image = React.forwardRef(({ className, alt, size, fallback, rounded, src, ...props }, ref) => {
-  const [imageSrc, setImageSrc] = useState(src);
-  const [imageDefault, setImageDefault] = useState(src);
+  const [image, setImage] = useState({ src, default: src });
 
   useEffect(() => {
-    setImageSrc(imageDefault !== src ? src : imageSrc);
-    setImageDefault(src);
+    setImage({ src: image.default !== src ? src : image.src, default: src });
   });
 
   const handleError = () => {
-    setImageSrc(fallback);
+    setImage({ ...image, src: fallback });
   };
 
   if (typeof size === 'number') {
@@ -36,7 +34,7 @@ export const Image = React.forwardRef(({ className, alt, size, fallback, rounded
           'is-rounded': rounded
         })}
         onError={handleError}
-        src={imageSrc}
+        src={image.src}
         alt={alt}
         data-testid="image-img"
       />

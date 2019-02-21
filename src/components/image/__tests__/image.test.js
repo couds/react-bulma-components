@@ -1,6 +1,5 @@
-import { shallow } from 'enzyme';
 import React from 'react';
-import { fireEvent, render, wait } from 'react-testing-library';
+import { fireEvent, render } from 'react-testing-library';
 import { Image } from '..';
 
 describe('Image component', () => {
