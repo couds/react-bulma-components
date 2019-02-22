@@ -44,6 +44,7 @@
   "homepage": "https://github.com/couds/react-bulma-components#readme",
   "dependencies": {
     "bulma": "0.7.4",
+    "classnames": "^2.2.6",
     "react-paginate": "^6.3.0"
   },
   "peerDependencies": {
@@ -85,10 +86,7 @@
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-react-intl": "^3.0.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-runtime": "^6.26.0",
     "chai": "^4.2.0",
-    "classnames": "^2.2.6",
     "coveralls": "^3.0.2",
     "css-loader": "^1.0.1",
     "emotion": "^10.0.7",
@@ -127,7 +125,6 @@
     "storybook-addon-themes": "^0.0.4",
     "style-loader": "^0.23.1",
     "toolbox-loader": "^0.0.3",
-    "typescript": "^3.3.3",
     "webpack": "^4.29.5",
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-cli": "^3.2.3"
