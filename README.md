@@ -10,8 +10,8 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 ### V3
 
-- Currently V3 its in beta. You can try it wirh `npm install react-bulma-components@next`.
-- There may be some bugs in this version please be sure to **test** it before using it on you project
+- Currently V3 is in beta. You can try it with `npm install react-bulma-components@next`.
+- There may be some bugs in this version please be sure to **test** it before using it on your project
 
 ### V2 Documentation
 
@@ -19,8 +19,8 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 ### BREAKING CHANGES V2 -> V3:
 
-- Now the alias needed to override Bulma variables (and/or use the directly the sass files) it `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- Please check the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
+- Now the alias needed to override Bulma variables (and/or use the directly the sass files) is `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
+- Please check if the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
 
 ### To Install
 
@@ -30,7 +30,7 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 Currently there are two ways to use this library depending of your needs and configuration:
 
-- **Basic**: You import from the main module the components and include the css your self (No treeshaking by default, no bulma variables override)
+- **Basic**: You import from the main module the components and include the css yourself (No treeshaking by default, no bulma variables override)
 - **Advanced**: You import from the lib folder the components you need, this is the more versatile way but need some extra configuration (See [Advanced Setup](https://github.com/couds/react-bulma-components#advanced) section)
 
 #### Basic
@@ -49,14 +49,14 @@ export default () => (
 
 #### Advanced
 
-This configuration its recomended it you answer yes to one of the following questions:
+This configuration is recomended if you answer yes to one of the following questions:
 
 - I'm worried about the final size of my bundle?
 - I need to override the default Bulma variables?
 
 
 
-In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your mail scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
+In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your main scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
 
 ```scss
 @import "~react-bulma-components/src/index.sass"
@@ -75,13 +75,13 @@ export default () => (
 )
 ```
 
-Before you use this configuration you need to setup a `_variables.sass` file somewhere in your project (I recomment inside your `src` folder). This file will alow you to override bulma variables if need it like:
+Before you use this configuration you need to setup a `_variables.sass` file somewhere in your project (I recommend inside your `src` folder). This file will allow you to override bulma variables if need it like:
 
 ```
 $primary: #c3c3c3
 ```
 
-**Note** Use this file only for variables, do not include any css rule in this files because that will cause to that rule to be duplicated for every time you include a component from this library.
+**Note** Use this file only for variables, do not include any css rule in it because that rule will be duplicated every time you include a component from this library.
 
 Depending of your project configuration you will need to setup your framework to use this file:
 
@@ -115,7 +115,7 @@ After that update your scripts in the `package.json` to add the folder to your p
 }
 ```
 
-where `./src` its the folder where you put your `_variables.sass`
+where `./src` is the folder where you put your `_variables.sass`
 
 #### Gatsby
 
@@ -138,7 +138,7 @@ plugins: [
 
 Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-plugin-transpile-modules` so install it `npm i --save-dev next-plugin-transpile-modules`.
 
-Now on your `next.config.js` configure yout sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
+Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
 
 ```javascript
 const withSass = require('@zeit/next-sass')
