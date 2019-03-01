@@ -9,12 +9,15 @@ import Element from '../element';
 
 const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
 
+const sizes = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
 const Columns = ({
   className,
   breakpoint,
   gapless,
   multiline,
   centered,
+  variableGap,
   ...props
 }) => (
   <Element
@@ -24,6 +27,15 @@ const Columns = ({
       'is-gapless': gapless,
       'is-multiline': multiline,
       'is-centered': centered,
+      'is-variable': Object.keys(variableGap).length > 0,
+      ...(variableGap ? {
+        [`is-${variableGap.touch}-touch`]: variableGap.touch,
+        [`is-${variableGap.mobile}-mobile`]: variableGap.mobile,
+        [`is-${variableGap.tablet}-tablet`]: variableGap.tablet,
+        [`is-${variableGap.desktop}-desktop`]: variableGap.desktop,
+        [`is-${variableGap.widescreen}-widescreen`]: variableGap.widescreen,
+        [`is-${variableGap.fullhd}-fullhd`]: variableGap.fullhd,
+      } : {}),
     })}
   />
 );
@@ -37,6 +49,12 @@ Columns.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
+  variableGap: PropTypes.shape({
+    ...Object.values(CONSTANTS.BREAKPOINTS).reduce((values, breakpoint) => ({
+      ...values,
+      [breakpoint]: PropTypes.oneOf(sizes),
+    }), {}),
+  }),
   /**
      * Breakpoint where columns become stacked.
      */
@@ -64,6 +82,7 @@ Columns.defaultProps = {
   gapless: false,
   centered: false,
   multiline: true,
+  variableGap: {},
 };
 
 export default Columns;

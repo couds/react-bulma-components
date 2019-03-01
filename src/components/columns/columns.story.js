@@ -473,4 +473,20 @@ storiesOf('Columns', module)
         <p className="bd-notification is-warning"> Last Column</p>
       </Columns.Column>
     </Columns>
+  )))
+  .add('Variable Gap', (() => (
+    <Columns variableGap={{ mobile: 1, tablet: 0, desktop: 3, widescreen: 8, fullhd: 2 }}>
+      <Columns.Column size={3}>
+        <p className="bd-notification is-dark">size-1</p>
+      </Columns.Column>
+      <Columns.Column size={3}>
+        <p className="bd-notification is-light">size-1</p>
+      </Columns.Column>
+      <Columns.Column size={3}>
+        <p className="bd-notification is-white">size-1</p>
+      </Columns.Column>
+      <Columns.Column size={3}>
+        <p className="bd-notification is-danger">size-1</p>
+      </Columns.Column>
+    </Columns>
   )));
