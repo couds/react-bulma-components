@@ -91,6 +91,7 @@ storiesOf('Button', module)
       <Button.Group
         hasAddons={boolean('hasAddons', false)}
         position={select('Position', positions)}
+        size={select('Size', { small: 'small', medium: 'medium', large: 'large' })}
       >
         <Button
           renderAs="span"

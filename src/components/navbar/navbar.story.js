@@ -46,8 +46,21 @@ storiesOf('Navbar', module)
         </Navbar.Brand>
         <Navbar.Menu >
           <Navbar.Container>
+            <Navbar.Item dropdown hoverable href="#">
+              <Navbar.Link arrowless={boolean('Arrowless', false)}>
+                First
+              </Navbar.Link>
+              <Navbar.Dropdown>
+                <Navbar.Item href="#">
+                  Subitem 1
+                </Navbar.Item>
+                <Navbar.Item href="#">
+                  Subitem 2
+                </Navbar.Item>
+              </Navbar.Dropdown>
+            </Navbar.Item>
             <Navbar.Item href="#">
-                  Second
+              Second
             </Navbar.Item>
           </Navbar.Container>
           <Navbar.Container position="end">

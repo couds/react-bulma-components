@@ -17,6 +17,7 @@ const Hero = ({
   color,
   gradient,
   size,
+  hasNavbar,
   ...props
 }) => (
   <Element
@@ -25,6 +26,7 @@ const Hero = ({
       [`is-${color}`]: color,
       [`is-${size}`]: size,
       'is-bold': gradient,
+      'is-fullheight-with-navbar': hasNavbar,
     })}
   >
     {children}
@@ -46,6 +48,7 @@ Hero.propTypes = {
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight']),
+  hasNavbar: PropTypes.bool,
 };
 
 Hero.defaultProps = {
@@ -57,6 +60,7 @@ Hero.defaultProps = {
   color: undefined,
   gradient: undefined,
   size: undefined,
+  hasNavbar: undefined,
 };
 
 export default Hero;

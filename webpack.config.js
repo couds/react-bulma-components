@@ -26,12 +26,6 @@ const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: {
-            // If you are having trouble with urls not resolving add this setting.
-            // See https://github.com/webpack-contrib/css-loader#url
-            minimize: false,
-            sourceMap: true,
-          },
         },
         {
           loader: 'resolve-url-loader',

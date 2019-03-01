@@ -7,11 +7,14 @@ import Element from '../../element';
 const NavbarLink = ({
   className,
   children,
+  arrowless,
   ...props
 }) => (
   <Element
     {...props}
-    className={classnames('navbar-link', className)}
+    className={classnames('navbar-link', className, {
+      'is-arrowless': arrowless,
+    })}
   >
     {children}
   </Element>
@@ -24,6 +27,7 @@ NavbarLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  arrowless: PropTypes.bool,
 };
 
 NavbarLink.defaultProps = {
@@ -31,6 +35,7 @@ NavbarLink.defaultProps = {
   style: undefined,
   className: undefined,
   children: null,
+  arrowless: undefined,
   renderAs: 'span',
 };
 

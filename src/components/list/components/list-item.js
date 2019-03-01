@@ -4,45 +4,39 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const ButtonGroup = ({
+const ListItem = ({
   children,
   className,
-  hasAddons,
-  position,
-  size,
+  active,
   ...props
 }) => (
   <Element
     {...props}
-    className={classnames('buttons', className, {
-      'has-addons': hasAddons,
-      [`is-${[position]}`]: position,
-      [`are-${size}`]: size,
+    className={classnames('list-item', className, {
+      'is-active': active,
     })}
   >
     {children}
   </Element>
 );
 
-ButtonGroup.propTypes = {
+ListItem.propTypes = {
   ...modifiers.propTypes,
+  children: PropTypes.node,
   className: PropTypes.string,
-  hasAddons: PropTypes.bool,
-  size: PropTypes.string,
-  position: PropTypes.oneOf(['centered', 'right']),
+  style: PropTypes.shape({}),
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
   ]),
 };
 
-ButtonGroup.defaultProps = {
+ListItem.defaultProps = {
   ...modifiers.defaultProps,
+  children: null,
   className: undefined,
-  hasAddons: undefined,
-  position: undefined,
-  size: undefined,
+  style: undefined,
   renderAs: 'div',
 };
 
-export default ButtonGroup;
+export default ListItem;
