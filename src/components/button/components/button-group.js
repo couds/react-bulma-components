@@ -9,6 +9,7 @@ const ButtonGroup = ({
   className,
   hasAddons,
   position,
+  size,
   ...props
 }) => (
   <Element
@@ -16,6 +17,7 @@ const ButtonGroup = ({
     className={classnames('buttons', className, {
       'has-addons': hasAddons,
       [`is-${[position]}`]: position,
+      [`are-${size}`]: size,
     })}
   >
     {children}
@@ -26,6 +28,7 @@ ButtonGroup.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   hasAddons: PropTypes.bool,
+  size: PropTypes.string,
   position: PropTypes.oneOf(['centered', 'right']),
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
@@ -38,6 +41,7 @@ ButtonGroup.defaultProps = {
   className: undefined,
   hasAddons: undefined,
   position: undefined,
+  size: undefined,
   renderAs: 'div',
 };
 
