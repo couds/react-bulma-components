@@ -55,7 +55,7 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   style: undefined,
   size: null,
   color: null,

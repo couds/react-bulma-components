@@ -41,7 +41,7 @@ Level.propTypes = {
 Level.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   breakpoint: null,
   renderAs: 'div',

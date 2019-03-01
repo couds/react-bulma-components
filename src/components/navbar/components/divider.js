@@ -23,7 +23,7 @@ NavbarDivider.propTypes = {
 NavbarDivider.defaultProps = {
   ...modifiers.defaultProps,
   style: undefined,
-  className: '',
+  className: undefined,
 };
 
 export default NavbarDivider;

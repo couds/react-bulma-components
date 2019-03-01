@@ -36,7 +36,7 @@ Notification.propTypes = {
 Notification.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'div',
   color: null,

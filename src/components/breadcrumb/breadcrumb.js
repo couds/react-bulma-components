@@ -74,7 +74,7 @@ Breadcrumb.defaultProps = {
   hrefAttr: 'href',
   separator: null,
   renderAs: 'a',
-  className: '',
+  className: undefined,
   style: undefined,
   size: null,
   align: null,

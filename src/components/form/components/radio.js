@@ -52,7 +52,7 @@ Radio.propTypes = {
 Radio.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   value: '',
   style: undefined,
   disabled: false,

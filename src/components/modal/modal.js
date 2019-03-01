@@ -29,7 +29,7 @@ class Modal extends PureComponent {
     closeOnEsc: true,
     showClose: true,
     closeOnBlur: false,
-    className: '',
+    className: undefined,
     domRef: React.createRef(),
     // Expose mount point for testing
     document: null,

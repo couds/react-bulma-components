@@ -36,7 +36,7 @@ Media.propTypes = {
 Media.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'article',
 };

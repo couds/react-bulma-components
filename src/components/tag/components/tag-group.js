@@ -32,7 +32,7 @@ TagGroup.propTypes = {
 TagGroup.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   gapless: false,
 };

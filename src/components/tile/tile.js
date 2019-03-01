@@ -49,7 +49,7 @@ Tile.propTypes = {
 Tile.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'div',
   kind: null,

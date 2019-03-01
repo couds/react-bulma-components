@@ -25,7 +25,7 @@ PanelHeader.propTypes = {
 
 PanelHeader.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

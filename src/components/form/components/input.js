@@ -57,7 +57,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   value: '',
   style: undefined,
   type: 'text',

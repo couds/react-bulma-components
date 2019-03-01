@@ -34,7 +34,7 @@ export default class Dropdown extends PureComponent {
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    className: '',
+    className: undefined,
     renderAs: 'div',
     domRef: React.createRef(),
     style: undefined,

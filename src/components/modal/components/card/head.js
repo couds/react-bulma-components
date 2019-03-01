@@ -34,7 +34,7 @@ ModalCardHead.propTypes = {
 ModalCardHead.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   showClose: true,
   onClose: null,

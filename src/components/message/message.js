@@ -48,7 +48,7 @@ Message.propTypes = {
 Message.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'article',
   color: undefined,

@@ -28,7 +28,7 @@ MediaContent.propTypes = {
 MediaContent.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'div',
 };

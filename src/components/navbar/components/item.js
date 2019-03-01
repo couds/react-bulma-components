@@ -49,7 +49,7 @@ NavbarItem.propTypes = {
 NavbarItem.defaultProps = {
   ...modifiers.defaultProps,
   style: undefined,
-  className: '',
+  className: undefined,
   active: false,
   children: null,
   dropdown: false,

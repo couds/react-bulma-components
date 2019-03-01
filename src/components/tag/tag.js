@@ -48,7 +48,7 @@ Tag.propTypes = {
 Tag.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   color: null,
   size: null,

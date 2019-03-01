@@ -58,7 +58,7 @@ MenuListItem.propTypes = {
 
 MenuListItem.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   children: null,
   active: false,
   renderAs: 'a',

@@ -29,7 +29,7 @@ PanelTabsTab.propTypes = {
 
 PanelTabsTab.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'a',
   active: false,
 };

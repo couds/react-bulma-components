@@ -32,7 +32,7 @@ LevelSide.propTypes = {
 LevelSide.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'div',
   align: 'left',

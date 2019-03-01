@@ -19,7 +19,7 @@ export default class Image extends PureComponent {
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    className: '',
+    className: undefined,
     src: '',
     alt: '',
     rounded: false,

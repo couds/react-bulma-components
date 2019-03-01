@@ -28,7 +28,7 @@ PanelTabs.propTypes = {
 
 PanelTabs.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

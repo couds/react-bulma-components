@@ -33,7 +33,7 @@ Label.propTypes = {
 Label.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   size: null,
   htmlFor: null,

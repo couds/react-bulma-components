@@ -39,7 +39,7 @@ Progress.propTypes = {
 
 Progress.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   style: undefined,
   color: null,
   size: null,

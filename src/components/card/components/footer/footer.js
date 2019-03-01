@@ -22,7 +22,7 @@ CardFooter.propTypes = {
 
 CardFooter.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

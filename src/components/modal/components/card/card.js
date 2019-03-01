@@ -42,7 +42,7 @@ ModalCard.propTypes = {
 ModalCard.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   onClose: null,
 };

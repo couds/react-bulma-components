@@ -30,7 +30,7 @@ MessageBody.propTypes = {
 MessageBody.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

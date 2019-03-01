@@ -52,7 +52,7 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'div',
   align: null,

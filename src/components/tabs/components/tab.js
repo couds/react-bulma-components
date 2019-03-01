@@ -40,7 +40,7 @@ Tab.propTypes = {
 Tab.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'a',
   active: false,

@@ -41,7 +41,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   children: null,
   style: undefined,
   renderAs: 'div',

@@ -37,7 +37,7 @@ class Navbar extends React.PureComponent {
   static defaultProps = {
     ...modifiers.defaultProps,
     children: null,
-    className: '',
+    className: undefined,
     style: undefined,
     renderAs: 'nav',
     transparent: false,

@@ -34,7 +34,7 @@ NavbarDropdown.propTypes = {
 
 NavbarDropdown.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   children: null,
   renderAs: 'span',
   boxed: false,

@@ -32,7 +32,7 @@ NavbarContainer.propTypes = {
 NavbarContainer.defaultProps = {
   ...modifiers.defaultProps,
   style: undefined,
-  className: '',
+  className: undefined,
   children: null,
   renderAs: 'div',
   position: 'start',

@@ -70,7 +70,7 @@ Select.propTypes = {
 Select.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   value: '',
   style: undefined,
   size: null,

@@ -28,7 +28,7 @@ ModalCardBody.propTypes = {
 ModalCardBody.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'section',
 };
