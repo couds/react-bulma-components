@@ -12,6 +12,7 @@ const NavbarItem = ({
   dropdownUp,
   hoverable,
   renderAs,
+  arrowless,
   ...props
 }) => {
   let as = renderAs;
@@ -27,6 +28,7 @@ const NavbarItem = ({
         'has-dropdown': dropdown,
         'is-hoverable': hoverable,
         'has-dropdown-up': dropdownUp,
+        'is-arrowless': arrowless,
       })}
     >
       {children}
@@ -43,6 +45,7 @@ NavbarItem.propTypes = {
   dropdownUp: PropTypes.bool,
   hoverable: PropTypes.bool,
   children: PropTypes.node,
+  arrowless: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
@@ -50,11 +53,12 @@ NavbarItem.defaultProps = {
   ...modifiers.defaultProps,
   style: undefined,
   className: undefined,
-  active: false,
+  active: undefined,
   children: null,
-  dropdown: false,
-  hoverable: false,
-  dropdownUp: false,
+  dropdown: undefined,
+  hoverable: undefined,
+  dropdownUp: undefined,
+  arrowless: undefined,
   renderAs: 'a',
 };
 
