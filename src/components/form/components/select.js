@@ -72,7 +72,7 @@ Select.defaultProps = {
   children: null,
   className: '',
   value: '',
-  style: {},
+  style: undefined,
   size: null,
   color: null,
   readOnly: false,

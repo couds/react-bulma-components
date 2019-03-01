@@ -8,7 +8,6 @@ exports[`Button component Button Group component Should align to the right 1`] =
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -17,7 +16,6 @@ exports[`Button component Button Group component Should align to the right 1`] =
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -33,7 +31,6 @@ exports[`Button component Button Group component Should be a default list of but
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -42,7 +39,6 @@ exports[`Button component Button Group component Should be a default list of but
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -58,7 +54,6 @@ exports[`Button component Button Group component Should be centered 1`] = `
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -67,7 +62,6 @@ exports[`Button component Button Group component Should be centered 1`] = `
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -83,7 +77,6 @@ exports[`Button component Button Group component Should concat class names in pr
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -92,7 +85,6 @@ exports[`Button component Button Group component Should concat class names in pr
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -108,7 +100,6 @@ exports[`Button component Button Group component Should group buttons together 1
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -117,7 +108,6 @@ exports[`Button component Button Group component Should group buttons together 1
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 2
@@ -130,7 +120,6 @@ exports[`Button component Should be a Large Primary Button 1`] = `
   className="is-primary is-large button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -140,7 +129,6 @@ exports[`Button component Should be a Primary Button 1`] = `
   className="is-primary button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -150,7 +138,6 @@ exports[`Button component Should be a default Button 1`] = `
   className="button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -160,7 +147,6 @@ exports[`Button component Should be a reset form button 1`] = `
   className="button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
   type="reset"
 />
@@ -171,7 +157,6 @@ exports[`Button component Should be a submit form button 1`] = `
   className="button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
   type="submit"
 />
@@ -183,7 +168,6 @@ exports[`Button component Should be an anchor button 1`] = `
   disabled={false}
   href="https://github.com/couds/react-bulma-components"
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -205,7 +189,6 @@ exports[`Button component Should render as a html button 1`] = `
   className="is-danger button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -215,7 +198,6 @@ exports[`Button component Should render as a static Button 1`] = `
   className="is-primary is-static button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -224,7 +206,6 @@ exports[`Button component Should render be disabled 1`] = `
 <button
   className="button"
   disabled={true}
-  style={Object {}}
   tabIndex={-1}
 />
 `;

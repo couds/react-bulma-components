@@ -34,7 +34,7 @@ Label.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   size: null,
   htmlFor: null,
 };

@@ -49,7 +49,7 @@ Tag.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   color: null,
   size: null,
   rounded: false,

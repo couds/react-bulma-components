@@ -54,7 +54,7 @@ Radio.defaultProps = {
   children: null,
   className: '',
   value: '',
-  style: {},
+  style: undefined,
   disabled: false,
   checked: false,
 };

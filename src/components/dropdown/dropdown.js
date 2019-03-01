@@ -37,7 +37,7 @@ export default class Dropdown extends PureComponent {
     className: '',
     renderAs: 'div',
     domRef: React.createRef(),
-    style: {},
+    style: undefined,
     value: undefined,
     children: [],
     onChange: undefined,

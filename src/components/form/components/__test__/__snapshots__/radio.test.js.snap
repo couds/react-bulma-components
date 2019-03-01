@@ -4,7 +4,6 @@ exports[`Radio component Should be disabled, checked and with value 1`] = `
 <label
   className="radio"
   disabled={true}
-  style={Object {}}
 >
   <input
     checked={true}
@@ -23,7 +22,6 @@ exports[`Radio component Should concat classname in props with Bulma classname 1
 <label
   className="radio other-class this-is-a-test"
   disabled={false}
-  style={Object {}}
 >
   <input
     checked={false}
@@ -44,7 +42,6 @@ exports[`Radio component Should have radio classname 1`] = `
 <label
   className="radio"
   disabled={false}
-  style={Object {}}
 >
   <input
     checked={false}

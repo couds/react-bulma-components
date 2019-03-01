@@ -59,7 +59,7 @@ Input.defaultProps = {
   ...modifiers.defaultProps,
   className: '',
   value: '',
-  style: {},
+  style: undefined,
   type: 'text',
   size: null,
   color: null,

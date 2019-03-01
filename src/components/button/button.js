@@ -113,7 +113,7 @@ Button.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   renderAs: 'button',
   onClick: () => null,
   color: null,

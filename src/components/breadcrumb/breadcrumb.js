@@ -75,7 +75,7 @@ Breadcrumb.defaultProps = {
   separator: null,
   renderAs: 'a',
   className: '',
-  style: {},
+  style: undefined,
   size: null,
   align: null,
 };

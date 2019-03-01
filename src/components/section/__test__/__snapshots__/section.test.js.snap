@@ -3,7 +3,6 @@
 exports[`Section component Should be Large 1`] = `
 <section
   className="section is-large"
-  style={Object {}}
 >
   <p>
     Default
@@ -14,7 +13,6 @@ exports[`Section component Should be Large 1`] = `
 exports[`Section component Should concat classname in props with Bulma classname 1`] = `
 <section
   className="section other-class this-is-a-test"
-  style={Object {}}
 >
   <p>
     Default
@@ -27,7 +25,6 @@ exports[`Section component Should exist 1`] = `[Function]`;
 exports[`Section component Should have section classname 1`] = `
 <section
   className="section"
-  style={Object {}}
 >
   Test
    
@@ -42,7 +39,6 @@ exports[`Section component Should have section classname 1`] = `
 exports[`Section component Should render as nav element 1`] = `
 <nav
   className="section"
-  style={Object {}}
 >
   <p>
     Default

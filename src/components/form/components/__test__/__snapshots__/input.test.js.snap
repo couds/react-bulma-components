@@ -7,7 +7,6 @@ exports[`Input component Should be disabled with placeholder and value 1`] = `
   name={null}
   placeholder="hello tests"
   readOnly={false}
-  style={Object {}}
   type="text"
   value="TEST"
 />
@@ -20,7 +19,6 @@ exports[`Input component Should be large and readOnly 1`] = `
   name={null}
   placeholder=""
   readOnly={true}
-  style={Object {}}
   type="text"
   value=""
 />
@@ -33,7 +31,6 @@ exports[`Input component Should be type email and a with success colors 1`] = `
   name={null}
   placeholder=""
   readOnly={false}
-  style={Object {}}
   type="email"
   value=""
 />
@@ -46,7 +43,6 @@ exports[`Input component Should concat classname in props with Bulma classname 1
   name={null}
   placeholder=""
   readOnly={false}
-  style={Object {}}
   type="text"
   value=""
 />
@@ -61,7 +57,6 @@ exports[`Input component Should have input classname 1`] = `
   name={null}
   placeholder=""
   readOnly={false}
-  style={Object {}}
   type="text"
   value=""
 />

@@ -3,7 +3,6 @@
 exports[`Breadcrumb component Should be a Breadcrumb 1`] = `
 <nav
   className="breadcrumb"
-  style={Object {}}
 >
   <ul>
     <li
@@ -81,7 +80,6 @@ exports[`Breadcrumb component Should use inline style and custom size 1`] = `
 exports[`Breadcrumb component should use separator arrow 1`] = `
 <nav
   className="breadcrumb has-arrow-separator"
-  style={Object {}}
 >
   <ul>
     <li
@@ -118,7 +116,6 @@ exports[`Breadcrumb component should use separator arrow 1`] = `
 exports[`Breadcrumb component should use separator bullet 1`] = `
 <nav
   className="breadcrumb has-bullet-separator"
-  style={Object {}}
 >
   <ul>
     <li
@@ -155,7 +152,6 @@ exports[`Breadcrumb component should use separator bullet 1`] = `
 exports[`Breadcrumb component should use separator dot 1`] = `
 <nav
   className="breadcrumb has-dot-separator"
-  style={Object {}}
 >
   <ul>
     <li
@@ -192,7 +188,6 @@ exports[`Breadcrumb component should use separator dot 1`] = `
 exports[`Breadcrumb component should use separator null 1`] = `
 <nav
   className="breadcrumb"
-  style={Object {}}
 >
   <ul>
     <li
@@ -229,7 +224,6 @@ exports[`Breadcrumb component should use separator null 1`] = `
 exports[`Breadcrumb component should use separator succeeds 1`] = `
 <nav
   className="breadcrumb has-succeeds-separator"
-  style={Object {}}
 >
   <ul>
     <li

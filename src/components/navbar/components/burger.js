@@ -41,7 +41,7 @@ NavbarBurger.propTypes = {
 
 NavbarBurger.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
+  style: undefined,
   className: '',
   onClick: () => {},
 };

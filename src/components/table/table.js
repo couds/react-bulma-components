@@ -39,7 +39,7 @@ Table.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   size: 'fullwidth',
   striped: true,
   bordered: false,

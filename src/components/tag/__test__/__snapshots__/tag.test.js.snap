@@ -3,7 +3,6 @@
 exports[`Tag component Should be Large 1`] = `
 <span
   className="tag is-large"
-  style={Object {}}
 >
   Tag Large
 </span>
@@ -12,17 +11,14 @@ exports[`Tag component Should be Large 1`] = `
 exports[`Tag component Should be group tags 1`] = `
 <span
   className="tags has-addons"
-  style={Object {}}
 >
   <span
     className="tag"
-    style={Object {}}
   >
     Tag 1
   </span>
   <span
     className="tag"
-    style={Object {}}
   >
     Tag 2
   </span>
@@ -32,7 +28,6 @@ exports[`Tag component Should be group tags 1`] = `
 exports[`Tag component Should concat classname in props with Bulma classname 1`] = `
 <span
   className="tag other-class this-is-a-test"
-  style={Object {}}
 >
   Tag name
 </span>
@@ -45,7 +40,6 @@ exports[`Tag component Should expose Tag Group 1`] = `[Function]`;
 exports[`Tag component Should have tag classname 1`] = `
 <span
   className="tag"
-  style={Object {}}
 >
   Tag name
 </span>
@@ -67,7 +61,6 @@ exports[`Tag component Should use inline styles 1`] = `
 exports[`Tag component Should use use color black 1`] = `
 <span
   className="tag is-black"
-  style={Object {}}
 >
   tag
   black
@@ -77,7 +70,6 @@ exports[`Tag component Should use use color black 1`] = `
 exports[`Tag component Should use use color danger 1`] = `
 <span
   className="tag is-danger"
-  style={Object {}}
 >
   tag
   danger
@@ -87,7 +79,6 @@ exports[`Tag component Should use use color danger 1`] = `
 exports[`Tag component Should use use color dark 1`] = `
 <span
   className="tag is-dark"
-  style={Object {}}
 >
   tag
   dark
@@ -97,7 +88,6 @@ exports[`Tag component Should use use color dark 1`] = `
 exports[`Tag component Should use use color info 1`] = `
 <span
   className="tag is-info"
-  style={Object {}}
 >
   tag
   info
@@ -107,7 +97,6 @@ exports[`Tag component Should use use color info 1`] = `
 exports[`Tag component Should use use color light 1`] = `
 <span
   className="tag is-light"
-  style={Object {}}
 >
   tag
   light
@@ -117,7 +106,6 @@ exports[`Tag component Should use use color light 1`] = `
 exports[`Tag component Should use use color link 1`] = `
 <span
   className="tag is-link"
-  style={Object {}}
 >
   tag
   link
@@ -127,7 +115,6 @@ exports[`Tag component Should use use color link 1`] = `
 exports[`Tag component Should use use color null 1`] = `
 <span
   className="tag"
-  style={Object {}}
 >
   tag
 </span>
@@ -136,7 +123,6 @@ exports[`Tag component Should use use color null 1`] = `
 exports[`Tag component Should use use color primary 1`] = `
 <span
   className="tag is-primary"
-  style={Object {}}
 >
   tag
   primary
@@ -146,7 +132,6 @@ exports[`Tag component Should use use color primary 1`] = `
 exports[`Tag component Should use use color success 1`] = `
 <span
   className="tag is-success"
-  style={Object {}}
 >
   tag
   success
@@ -156,7 +141,6 @@ exports[`Tag component Should use use color success 1`] = `
 exports[`Tag component Should use use color warning 1`] = `
 <span
   className="tag is-warning"
-  style={Object {}}
 >
   tag
   warning
@@ -166,7 +150,6 @@ exports[`Tag component Should use use color warning 1`] = `
 exports[`Tag component Should use use color white 1`] = `
 <span
   className="tag is-white"
-  style={Object {}}
 >
   tag
   white

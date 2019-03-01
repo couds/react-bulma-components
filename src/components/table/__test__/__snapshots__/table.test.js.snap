@@ -3,7 +3,6 @@
 exports[`Table component Should concat classname in props with Bulma classname 1`] = `
 <table
   className="table other-class this-is-a-test is-fullwidth is-striped"
-  style={Object {}}
 >
   <p>
     Default
@@ -16,7 +15,6 @@ exports[`Table component Should exist 1`] = `[Function]`;
 exports[`Table component Should have table classname 1`] = `
 <table
   className="table is-fullwidth is-striped"
-  style={Object {}}
 >
   Test
    

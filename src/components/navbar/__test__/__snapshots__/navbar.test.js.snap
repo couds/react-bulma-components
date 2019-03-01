@@ -6,7 +6,6 @@ exports[`Navbar component Should be fixed on top 1`] = `
 <nav
   className="navbar is-fixed-top"
   role="navigation"
-  style={Object {}}
 />
 `;
 
@@ -14,7 +13,6 @@ exports[`Navbar component Should concat Bulma class with classes in props 1`] = 
 <nav
   className="navbar other-class test"
   role="navigation"
-  style={Object {}}
 />
 `;
 
@@ -22,11 +20,9 @@ exports[`Navbar component Should have Navbar classname 1`] = `
 <nav
   className="navbar"
   role="navigation"
-  style={Object {}}
 >
   <div
     className="navbar-brand"
-    style={Object {}}
   >
     <a
       className="navbar-item"
@@ -81,7 +77,6 @@ exports[`Navbar component Should have Navbar classname 1`] = `
           </a>
           <div
             className="navbar-divider"
-            style={Object {}}
           />
           <a
             className="navbar-item"
@@ -113,7 +108,6 @@ exports[`Navbar component Should render as an html section 1`] = `
 <section
   className="navbar"
   role="navigation"
-  style={Object {}}
 />
 `;
 

@@ -29,7 +29,7 @@ ModalContent.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   renderAs: 'div',
 };
 

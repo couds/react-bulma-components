@@ -35,7 +35,7 @@ ModalCardHead.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   showClose: true,
   onClose: null,
   renderAs: 'header',

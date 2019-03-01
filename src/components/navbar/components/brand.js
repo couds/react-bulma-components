@@ -26,7 +26,7 @@ NavbarBrand.propTypes = {
 
 NavbarBrand.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
+  style: undefined,
   className: '',
   children: null,
 };

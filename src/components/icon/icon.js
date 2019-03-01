@@ -49,7 +49,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   ...modifiers.defaultProps,
   className: '',
-  style: {},
+  style: undefined,
   size: null,
   color: null,
   children: null,
