@@ -32,7 +32,7 @@ class Modal extends PureComponent {
     className: undefined,
     domRef: React.createRef(),
     // Expose mount point for testing
-    document: null,
+    document: undefined,
   }
 
   state = {};
@@ -106,7 +106,7 @@ class Modal extends PureComponent {
           'is-active': show,
         })}
       >
-        <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : null} />
+        <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : undefined} />
         {children}
         {
           showClose && (

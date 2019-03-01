@@ -3,7 +3,6 @@
 exports[`Label component Should concat classname in props with Bulma classname 1`] = `
 <label
   className="label other-class this-is-a-test"
-  htmlFor={null}
 >
   <p>
     Default
@@ -16,7 +15,6 @@ exports[`Label component Should exist 1`] = `[Function]`;
 exports[`Label component Should have label classname 1`] = `
 <label
   className="label"
-  htmlFor={null}
 >
   Test
    
@@ -29,7 +27,6 @@ exports[`Label component Should have label classname 1`] = `
 exports[`Label component Should use inline styles 1`] = `
 <label
   className="label"
-  htmlFor={null}
   style={
     Object {
       "height": 250,

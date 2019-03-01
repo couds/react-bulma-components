@@ -24,7 +24,7 @@ export default class Image extends PureComponent {
     alt: '',
     rounded: false,
     style: undefined,
-    size: null,
+    size: undefined,
     fallback: 'http//bulma.io/images/placeholders/480x480.png',
   }
 

@@ -37,7 +37,7 @@ ModalCardHead.defaultProps = {
   className: undefined,
   style: undefined,
   showClose: true,
-  onClose: null,
+  onClose: undefined,
   renderAs: 'header',
 };
 

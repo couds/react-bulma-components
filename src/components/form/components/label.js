@@ -35,8 +35,8 @@ Label.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  size: null,
-  htmlFor: null,
+  size: undefined,
+  htmlFor: undefined,
 };
 
 export default Label;

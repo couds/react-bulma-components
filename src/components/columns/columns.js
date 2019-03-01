@@ -60,7 +60,7 @@ Columns.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  breakpoint: null,
+  breakpoint: undefined,
   gapless: false,
   centered: false,
   multiline: true,

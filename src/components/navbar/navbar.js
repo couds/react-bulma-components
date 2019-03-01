@@ -42,8 +42,8 @@ class Navbar extends React.PureComponent {
     renderAs: 'nav',
     transparent: false,
     active: false,
-    fixed: null,
-    color: null,
+    fixed: undefined,
+    color: undefined,
   }
 
   state = {}

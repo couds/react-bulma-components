@@ -41,8 +41,8 @@ Progress.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
   style: undefined,
-  color: null,
-  size: null,
+  color: undefined,
+  size: undefined,
 };
 
 export default Progress;

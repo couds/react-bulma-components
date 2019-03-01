@@ -73,13 +73,13 @@ Select.defaultProps = {
   className: undefined,
   value: '',
   style: undefined,
-  size: null,
-  color: null,
+  size: undefined,
+  color: undefined,
   readOnly: false,
   disabled: false,
   multiple: false,
   loading: false,
-  name: null,
+  name: undefined,
 };
 
 export default Select;

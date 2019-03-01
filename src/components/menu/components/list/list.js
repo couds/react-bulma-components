@@ -35,7 +35,7 @@ MenuList.propTypes = {
 MenuList.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
-  title: null,
+  title: undefined,
 };
 
 export default MenuList;

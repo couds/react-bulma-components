@@ -39,7 +39,7 @@ Container.defaultProps = {
   ...modifiers.defaultProps,
   fluid: false,
   children: null,
-  breakpoint: null,
+  breakpoint: undefined,
   className: undefined,
   style: undefined,
   renderAs: 'div',

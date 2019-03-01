@@ -43,7 +43,7 @@ Level.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  breakpoint: null,
+  breakpoint: undefined,
   renderAs: 'div',
 };
 

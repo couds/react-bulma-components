@@ -15,7 +15,7 @@ storiesOf('Tabs', module)
     <Tabs
       type={select('Tab type', {boxed: 'boxed', toggle: 'toggle', 'toggle-rounded': 'toggle-rounded' }, 'boxed')}
       fullwidth={boolean('Full width', false)}
-      align={select('Align', { Default: null, centered: 'centered', right: 'right' })}
+      align={select('Align', { Default: undefined, centered: 'centered', right: 'right' })}
     >
       <Tabs.Tab active>
         Test

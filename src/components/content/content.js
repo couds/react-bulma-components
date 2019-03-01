@@ -34,7 +34,7 @@ Content.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  size: null,
+  size: undefined,
   renderAs: 'div',
 };
 

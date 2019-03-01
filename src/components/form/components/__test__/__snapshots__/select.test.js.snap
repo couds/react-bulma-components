@@ -7,7 +7,6 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
   <select
     disabled={true}
     multiple={true}
-    name={null}
     readOnly={false}
     value=""
   >
@@ -31,7 +30,6 @@ exports[`Select component Should concat classname in props with Bulma classname 
   <select
     disabled={false}
     multiple={false}
-    name={null}
     readOnly={false}
     value=""
   >
@@ -57,7 +55,6 @@ exports[`Select component Should have select classname 1`] = `
   <select
     disabled={false}
     multiple={false}
-    name={null}
     readOnly={false}
     value=""
   >
@@ -86,7 +83,6 @@ exports[`Select component Should use inline styles 1`] = `
   <select
     disabled={false}
     multiple={false}
-    name={null}
     readOnly={false}
     value=""
   >

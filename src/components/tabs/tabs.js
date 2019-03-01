@@ -55,9 +55,9 @@ Tabs.defaultProps = {
   className: undefined,
   style: undefined,
   renderAs: 'div',
-  align: null,
-  size: null,
-  type: null,
+  align: undefined,
+  size: undefined,
+  type: undefined,
   fullwidth: false,
 };
 

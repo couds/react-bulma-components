@@ -39,7 +39,7 @@ Notification.defaultProps = {
   className: undefined,
   style: undefined,
   renderAs: 'div',
-  color: null,
+  color: undefined,
 };
 
 export default Notification;

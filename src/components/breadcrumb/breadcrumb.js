@@ -72,12 +72,12 @@ Breadcrumb.defaultProps = {
   ...modifiers.defaultProps,
   items: [],
   hrefAttr: 'href',
-  separator: null,
+  separator: undefined,
   renderAs: 'a',
   className: undefined,
   style: undefined,
-  size: null,
-  align: null,
+  size: undefined,
+  align: undefined,
 };
 
 export default Breadcrumb;

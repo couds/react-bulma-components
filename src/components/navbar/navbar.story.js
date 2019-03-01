@@ -34,7 +34,7 @@ storiesOf('Navbar', module)
     return (
       <Navbar
         color={select('Color', colors)}
-        fixed={select('Fixed', { default: null, top: 'top', bottom: 'bottom' })}
+        fixed={select('Fixed', { default: undefined, top: 'top', bottom: 'bottom' })}
         active={boolean('Active', false)}
         transparent={boolean('Transparent', false)}
       >

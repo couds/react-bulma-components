@@ -30,7 +30,7 @@ const MenuListItem = ({
         <Element className={classnames(className, { 'is-active': active })} {...props}>
           {child.props.title}
         </Element>
-        {React.cloneElement(child, { title: null })}
+        {React.cloneElement(child, { title: undefined })}
       </li>
     );
   }

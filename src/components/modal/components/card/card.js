@@ -44,7 +44,7 @@ ModalCard.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  onClose: null,
+  onClose: undefined,
 };
 
 export default ModalCard;

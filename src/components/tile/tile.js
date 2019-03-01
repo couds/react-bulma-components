@@ -52,10 +52,10 @@ Tile.defaultProps = {
   className: undefined,
   style: undefined,
   renderAs: 'div',
-  kind: null,
+  kind: undefined,
   vertical: false,
-  size: null,
-  color: null,
+  size: undefined,
+  color: undefined,
   notification: false,
 };
 

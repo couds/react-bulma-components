@@ -35,7 +35,7 @@ Section.defaultProps = {
   className: undefined,
   style: undefined,
   renderAs: 'section',
-  size: null,
+  size: undefined,
 };
 
 export default Section;

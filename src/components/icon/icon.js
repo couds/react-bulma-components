@@ -50,11 +50,11 @@ Icon.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
   style: undefined,
-  size: null,
-  color: null,
+  size: undefined,
+  color: undefined,
   children: null,
-  align: null,
-  icon: null,
+  align: undefined,
+  icon: undefined,
 };
 
 export default Icon;

@@ -61,13 +61,13 @@ Input.defaultProps = {
   value: '',
   style: undefined,
   type: 'text',
-  size: null,
-  color: null,
+  size: undefined,
+  color: undefined,
   readOnly: false,
   isStatic: false,
   disabled: false,
   placeholder: '',
-  name: null,
+  name: undefined,
 };
 
 export default Input;
