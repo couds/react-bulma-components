@@ -3,24 +3,29 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
 
-const Element = React.forwardRef(({
+const Element = ({
   className,
   renderAs,
+  domRef,
   ...allProps
-}, ref) => {
+}) => {
   const RenderAs = renderAs;
   const props = modifiers.clean(allProps);
   return (
     <RenderAs
-      ref={ref}
+      ref={domRef}
       className={classnames(className, modifiers.classnames(allProps)) || undefined}
       {...props}
     />
   );
-});
+};
 
 Element.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Reference to Dom element
+   */
+  domRef: PropTypes.object,
   className: PropTypes.string,
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
@@ -30,6 +35,7 @@ Element.propTypes = {
 
 Element.defaultProps = {
   ...modifiers.defaultProps,
+  domRef: undefined,
   className: undefined,
   style: undefined,
   renderAs: 'div',

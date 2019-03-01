@@ -278,7 +278,6 @@ exports[`Dropdown component Should have divider 1`] = `
       </div>
       <hr
         className="dropdown-divider"
-        style={Object {}}
       />
       <div
         className="dropdown-item"

@@ -1,174 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Message component Should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Body": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": undefined,
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Header": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": undefined,
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "article",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Message component Should Exist 1`] = `[Function]`;
 
 exports[`Message component Should accept a react Element as renderAs prop 1`] = `
 <p
   className="message"
-  style={Object {}}
 >
   Custom
   This should be a p element
@@ -178,7 +14,6 @@ exports[`Message component Should accept a react Element as renderAs prop 1`] = 
 exports[`Message component Should concat Bulma class with classes in props 1`] = `
 <article
   className="message other-class"
-  style={Object {}}
 >
   <div
     className="message-header"
@@ -210,7 +45,6 @@ exports[`Message component Should have custom inline styles 1`] = `
 exports[`Message component Should have message classnames 1`] = `
 <article
   className="message"
-  style={Object {}}
 >
   <div
     className="message-header"
@@ -228,7 +62,6 @@ exports[`Message component Should have message classnames 1`] = `
 exports[`Message component Should render as an html section 1`] = `
 <section
   className="message"
-  style={Object {}}
 >
   This should be a section
 </section>

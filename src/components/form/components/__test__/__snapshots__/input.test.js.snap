@@ -52,12 +52,7 @@ exports[`Input component Should concat classname in props with Bulma classname 1
 />
 `;
 
-exports[`Input component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "render": [Function],
-}
-`;
+exports[`Input component Should exist 1`] = `[Function]`;
 
 exports[`Input component Should have input classname 1`] = `
 <input

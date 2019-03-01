@@ -11,17 +11,16 @@ import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Hero = React.forwardRef(({
+const Hero = ({
   children,
   className,
   color,
   gradient,
   size,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('hero', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size,
@@ -30,7 +29,7 @@ const Hero = React.forwardRef(({
   >
     {children}
   </Element>
-));
+);
 
 Hero.Head = HeroHead;
 
@@ -52,12 +51,12 @@ Hero.propTypes = {
 Hero.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'section',
-  color: null,
-  gradient: false,
-  size: null,
+  color: undefined,
+  gradient: undefined,
+  size: undefined,
 };
 
 export default Hero;

@@ -4,20 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const ModalContent = React.forwardRef(({
+const ModalContent = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('modal-content', className)}
   >
     {children}
   </Element>
-));
-
+);
 
 ModalContent.propTypes = {
   ...modifiers.propTypes,

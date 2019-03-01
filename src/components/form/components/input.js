@@ -7,42 +7,35 @@ import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-class Input extends React.PureComponent {
-  render() {
-    const {
-      className,
-      type,
-      size,
-      color,
-      readOnly,
-      isStatic,
-      disabled,
-      placeholder,
-      value,
-      name,
-      innerRef,
-      ...props
-    } = this.props;
-    return (
-      <Element
-        {...props}
-        ref={innerRef}
-        renderAs="input"
-        name={name}
-        value={value}
-        type={type}
-        placeholder={placeholder}
-        readOnly={readOnly || isStatic}
-        disabled={disabled}
-        className={classnames('input', className, {
-          'is-static': isStatic,
-          [`is-${size}`]: size,
-          [`is-${color}`]: color,
-        })}
-      />
-    );
-  }
-}
+const Input = ({
+  className,
+  type,
+  size,
+  color,
+  readOnly,
+  isStatic,
+  disabled,
+  placeholder,
+  value,
+  name,
+  ...props
+}) => (
+  <Element
+    {...props}
+    renderAs="input"
+    name={name}
+    value={value}
+    type={type}
+    placeholder={placeholder}
+    readOnly={readOnly || isStatic}
+    disabled={disabled}
+    className={classnames('input', className, {
+      'is-static': isStatic,
+      [`is-${size}`]: size,
+      [`is-${color}`]: color,
+    })}
+  />
+);
 
 Input.propTypes = {
   ...modifiers.propTypes,
@@ -77,4 +70,4 @@ Input.defaultProps = {
   name: null,
 };
 
-export default React.forwardRef((props, ref) => <Input innerRef={ref} {...props} />);
+export default Input;

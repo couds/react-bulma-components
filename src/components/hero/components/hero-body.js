@@ -28,8 +28,8 @@ HeroBody.propTypes = {
 HeroBody.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
 };
 

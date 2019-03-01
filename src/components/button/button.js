@@ -4,10 +4,11 @@ import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import ButtonGroup from './components/button-group';
+import Element from '../element';
 
 const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Button = React.forwardRef(({
+const Button = ({
   children,
   className,
   renderAs,
@@ -27,29 +28,38 @@ const Button = React.forwardRef(({
   rounded,
   onClick,
   text,
-  ...allProps
-}, ref) => {
-  let Element = isStatic ? 'span' : renderAs;
-  const props = modifiers.clean(allProps);
-  const otherProps = {};
+  ...props
+}) => {
+  // let Element = isStatic ? 'span' : renderAs;
+  let otherProps = {};
   if (submit) {
-    Element = 'button';
-    otherProps.type = 'submit';
+    otherProps = {
+      type: 'submit',
+      renderAs: renderAs || 'button',
+    };
   }
   if (reset) {
-    Element = 'button';
-    otherProps.type = 'reset';
+    otherProps = {
+      type: 'reset',
+      renderAs: renderAs || 'button',
+    };
+  }
+
+  if (isStatic) {
+    otherProps = {
+      renderAs: 'span',
+    };
   }
 
   return (
     <Element
-      ref={ref}
       tabIndex={disabled ? -1 : 0}
+      renderAs={renderAs}
       {...props}
       {...otherProps}
       disabled={disabled}
       onClick={disabled ? undefined : onClick}
-      className={classnames(className, modifiers.classnames(allProps), {
+      className={classnames(className, {
         [`is-${color}`]: color,
         [`is-${size}`]: size,
         [`is-${state}`]: state,
@@ -68,7 +78,7 @@ const Button = React.forwardRef(({
       {children}
     </Element>
   );
-});
+};
 
 Button.Group = ButtonGroup;
 

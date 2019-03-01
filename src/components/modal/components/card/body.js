@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCardBody = React.forwardRef(({
+const ModalCardBody = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('modal-card-body', className)}
   >
     {children}
   </Element>
-));
+);
 
 ModalCardBody.propTypes = {
   ...modifiers.propTypes,
@@ -30,7 +29,7 @@ ModalCardBody.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   renderAs: 'section',
 };
 

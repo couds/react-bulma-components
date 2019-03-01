@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarLink = React.forwardRef(({
+const NavbarLink = ({
   className,
   children,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('navbar-link', className)}
   >
     {children}
   </Element>
-));
+);
 
 
 NavbarLink.propTypes = {
@@ -29,7 +28,7 @@ NavbarLink.propTypes = {
 
 NavbarLink.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
+  style: undefined,
   className: '',
   children: null,
   renderAs: 'span',

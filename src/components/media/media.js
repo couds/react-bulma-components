@@ -7,20 +7,20 @@ import MediaContent from './components/media-content';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Media = React.forwardRef(({
+const Media = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('media', className, {
     })}
   >
     {children}
   </Element>
-));
+);
+
 Media.Item = MediaItem;
 
 Media.Content = MediaContent;
@@ -37,7 +37,7 @@ Media.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   renderAs: 'article',
 };
 

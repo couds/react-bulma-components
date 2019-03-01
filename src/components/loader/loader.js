@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Loader = React.forwardRef(({
+const Loader = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('loader', className)}
   >
     {children}
   </Element>
-));
+);
 
 Loader.propTypes = {
   ...modifiers.propTypes,
@@ -30,7 +29,7 @@ Loader.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   renderAs: 'div',
 };
 

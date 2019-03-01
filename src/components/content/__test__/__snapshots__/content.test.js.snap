@@ -3,7 +3,6 @@
 exports[`Content component Should have content classname 1`] = `
 <div
   className="content"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"

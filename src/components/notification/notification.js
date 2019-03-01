@@ -8,22 +8,21 @@ import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Notification = React.forwardRef(({
+const Notification = ({
   children,
   className,
   color,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('notification', {
       [`is-${color}`]: color,
     }, className)}
   >
     {children}
   </Element>
-));
+);
 
 Notification.propTypes = {
   ...modifiers.propTypes,
@@ -38,7 +37,7 @@ Notification.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: '',
-  style: {},
+  style: undefined,
   renderAs: 'div',
   color: null,
 };

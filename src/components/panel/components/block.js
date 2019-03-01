@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const PanelBlock = React.forwardRef(({
+const PanelBlock = ({
   className,
   active,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('panel-block', className, {
       'is-active': active,
     })}
   />
-));
+);
 
 PanelBlock.propTypes = {
   ...modifiers.propTypes,

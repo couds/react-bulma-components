@@ -6,12 +6,13 @@ import List from '../list';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const MenuListItem = React.forwardRef(({
+const MenuListItem = ({
   children,
   active,
   className,
+  domRef: ref,
   ...props
-}, ref) => {
+}) => {
   if (typeof children === 'string') {
     return (
       <li ref={ref}>
@@ -39,7 +40,7 @@ const MenuListItem = React.forwardRef(({
       {children}
     </li>
   );
-});
+};
 
 MenuListItem.propTypes = {
   ...modifiers.propTypes,

@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const CardFooterItem = React.forwardRef(({
+const CardFooterItem = ({
   className,
   ...props
-}, ref) => (
-  <Element {...props} ref={ref} className={classnames('card-footer-item', className)} />
-));
+}) => (
+  <Element {...props} className={classnames('card-footer-item', className)} />
+);
 
 CardFooterItem.propTypes = {
   ...modifiers.propTypes,

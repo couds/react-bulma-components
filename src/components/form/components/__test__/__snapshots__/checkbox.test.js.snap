@@ -1,80 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox component Should Exists 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "checked": false,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "disabled": false,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "name": null,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "responsive": undefined,
-    "shadowless": undefined,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-    "value": "",
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "checked": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "disabled": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "name": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Checkbox component Should Exists 1`] = `[Function]`;
 
 exports[`Checkbox component Should have checkbox classname 1`] = `
 <label
   className="checkbox"
-  disabled={false}
-  style={Object {}}
 >
   <input
-    checked={false}
-    disabled={false}
-    name={null}
     type="checkbox"
-    value=""
   />
   Text
 </label>

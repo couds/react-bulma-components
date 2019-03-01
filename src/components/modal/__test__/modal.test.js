@@ -42,7 +42,7 @@ describe('Modal component', () => {
           </Modal.Card.Title>
         </Modal.Card.Head>
       </Modal.Card>);
-    component.find('.delete').simulate('click');
+    component.find('.delete').first().simulate('click');
     expect(onClose).toHaveBeenCalledTimes(1);
   });
   it('Should open the modal', () => {

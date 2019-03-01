@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
-const Checkbox = React.forwardRef(({
+const Checkbox = ({
   className,
   style,
   disabled,
@@ -11,28 +12,28 @@ const Checkbox = React.forwardRef(({
   children,
   checked,
   name,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <label
+  domRef,
+  ...props
+}) => (
+  <Element
+    renderAs="label"
+    domRef={domRef}
+    disabled={disabled}
+    className={classnames('checkbox', className)}
+    style={style}
+  >
+    <Element
+      {...props}
+      renderAs="input"
+      name={name}
+      type="checkbox"
+      value={value}
       disabled={disabled}
-      className={classnames('checkbox', modifiers.classnames(allProps), className)}
-      style={style}
-    >
-      <input
-        {...props}
-        ref={ref}
-        name={name}
-        type="checkbox"
-        value={value}
-        disabled={disabled}
-        checked={checked}
-      />
-      {children}
-    </label>
-  );
-});
+      checked={checked}
+    />
+    {children}
+  </Element>
+);
 
 Checkbox.propTypes = {
   ...modifiers.propTypes,
@@ -51,12 +52,12 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  value: '',
-  style: {},
-  disabled: false,
-  checked: false,
-  name: null,
+  className: undefined,
+  value: undefined,
+  style: undefined,
+  disabled: undefined,
+  checked: undefined,
+  name: undefined,
 };
 
 export default Checkbox;

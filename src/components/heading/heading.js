@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Heading = React.forwardRef(({
+const Heading = ({
   children,
   className,
   size,
@@ -13,10 +13,9 @@ const Heading = React.forwardRef(({
   spaced,
   heading,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames(className, {
       title: !subtitle && !heading,
       subtitle,
@@ -28,7 +27,7 @@ const Heading = React.forwardRef(({
   >
     {children}
   </Element>
-));
+);
 
 Heading.propTypes = {
   ...modifiers.propTypes,

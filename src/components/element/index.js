@@ -1,2 +1,3 @@
+import Element from './element';
 
-export { default } from './element';
+export default Element;

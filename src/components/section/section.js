@@ -4,14 +4,13 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Section = React.forwardRef(({
+const Section = ({
   children,
   className,
   size,
   ...props
-}, ref) => (
+}) => (
   <Element
-    ref={ref}
     {...props}
     className={classnames('section', className, {
       [`is-${size}`]: size,
@@ -19,7 +18,7 @@ const Section = React.forwardRef(({
   >
     {children}
   </Element>
-));
+);
 
 Section.propTypes = {
   ...modifiers.propTypes,

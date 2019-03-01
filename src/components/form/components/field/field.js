@@ -55,13 +55,13 @@ Field.propTypes = {
 Field.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
-  align: null,
-  kind: null,
-  multiline: false,
-  horizontal: false,
+  align: undefined,
+  kind: undefined,
+  multiline: undefined,
+  horizontal: undefined,
 };
 
 export default Field;

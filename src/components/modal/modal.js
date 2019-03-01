@@ -14,7 +14,6 @@ class Modal extends PureComponent {
   portalElement = null;
 
   static propTypes = {
-    innerRef: PropTypes.node,
     show: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     closeOnEsc: PropTypes.bool,
@@ -23,14 +22,15 @@ class Modal extends PureComponent {
     children: PropTypes.node.isRequired,
     document: PropTypes.object,
     className: PropTypes.string,
+    domRef: PropTypes.object,
   }
 
   static defaultProps = {
-    innerRef: undefined,
     closeOnEsc: true,
     showClose: true,
     closeOnBlur: false,
     className: '',
+    domRef: React.createRef(),
     // Expose mount point for testing
     document: null,
   }
@@ -79,7 +79,7 @@ class Modal extends PureComponent {
   }
 
   render() {
-    const { innerRef, closeOnBlur, show, className } = this.props;
+    const { domRef, closeOnBlur, show, className } = this.props;
     if (!this.getDocument() || !this.portalElement || !show) {
       return null;
     }
@@ -101,7 +101,7 @@ class Modal extends PureComponent {
 
     return ReactDOM.createPortal(
       <div
-        ref={innerRef}
+        ref={domRef}
         className={classnames('modal', className, {
           'is-active': show,
         })}
@@ -119,9 +119,7 @@ class Modal extends PureComponent {
   }
 }
 
-const ModalRef = React.forwardRef((props, ref) => <Modal innerRef={ref} {...props} />);
+Modal.Content = ModalContent;
+Modal.Card = ModalCard;
 
-ModalRef.Content = ModalContent;
-ModalRef.Card = ModalCard;
-
-export default ModalRef;
+export default Modal;

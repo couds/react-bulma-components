@@ -4,18 +4,17 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Table = React.forwardRef(({
+const Table = ({
   children,
   className,
   size,
   striped,
   bordered,
   ...props
-}, ref) => (
+}) => (
   <Element
     renderAs="table"
     {...props}
-    ref={ref}
     className={classnames('table', className, {
       [`is-${size}`]: size,
       'is-bordered': bordered,
@@ -24,7 +23,7 @@ const Table = React.forwardRef(({
   >
     {children}
   </Element>
-));
+);
 
 Table.propTypes = {
   ...modifiers.propTypes,

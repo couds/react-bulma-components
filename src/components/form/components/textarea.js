@@ -4,10 +4,11 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
+import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Textarea = React.forwardRef(({
+const Textarea = ({
   className,
   size,
   color,
@@ -17,26 +18,23 @@ const Textarea = React.forwardRef(({
   rows,
   value,
   name,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <textarea
-      name={name}
-      {...props}
-      ref={ref}
-      value={value}
-      rows={rows}
-      placeholder={placeholder}
-      readOnly={readOnly}
-      disabled={disabled}
-      className={classnames('textarea', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-      })}
-    />
-  );
-});
+  ...props
+}) => (
+  <Element
+    renderAs="textarea"
+    name={name}
+    {...props}
+    value={value}
+    rows={rows}
+    placeholder={placeholder}
+    readOnly={readOnly}
+    disabled={disabled}
+    className={classnames('textarea', className, {
+      [`is-${size}`]: size,
+      [`is-${color}`]: color,
+    })}
+  />
+);
 
 Textarea.propTypes = {
   ...modifiers.propTypes,
@@ -58,7 +56,7 @@ Textarea.propTypes = {
 Textarea.defaultProps = {
   ...modifiers.defaultProps,
   className: '',
-  style: {},
+  style: undefined,
   size: null,
   color: null,
   readOnly: false,

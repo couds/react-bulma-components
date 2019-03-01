@@ -4,15 +4,16 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const Tab = React.forwardRef(({
+const Tab = ({
   children,
   className,
   style,
   active,
+  domRef,
   ...props
-}, ref) => (
+}) => (
   <li
-    ref={ref}
+    ref={domRef}
     style={style}
     className={classnames(className, {
       'is-active': active,
@@ -22,7 +23,7 @@ const Tab = React.forwardRef(({
       {children}
     </Element>
   </li>
-));
+);
 
 Tab.propTypes = {
   ...modifiers.propTypes,

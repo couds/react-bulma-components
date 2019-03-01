@@ -11,72 +11,7 @@ exports[`Tile component Should concat classname in props with Bulma classname 1`
 </div>
 `;
 
-exports[`Tile component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "kind": null,
-    "marginless": undefined,
-    "notification": false,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "div",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-    "vertical": false,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "kind": [Function],
-    "marginless": [Function],
-    "notification": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "vertical": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Tile component Should exist 1`] = `[Function]`;
 
 exports[`Tile component Should have notification classname 1`] = `
 <div

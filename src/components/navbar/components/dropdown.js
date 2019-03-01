@@ -4,16 +4,15 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarDropdown = React.forwardRef(({
+const NavbarDropdown = ({
   className,
   boxed,
   right,
   children,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('navbar-dropdown', className, {
       'is-boxed': boxed,
       'is-right': right,
@@ -21,7 +20,7 @@ const NavbarDropdown = React.forwardRef(({
   >
     {children}
   </Element>
-));
+);
 
 NavbarDropdown.propTypes = {
   ...modifiers.propTypes,
@@ -35,7 +34,6 @@ NavbarDropdown.propTypes = {
 
 NavbarDropdown.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
   className: '',
   children: null,
   renderAs: 'span',

@@ -3,7 +3,6 @@
 exports[`Hero component Should concat classname in props with Bulma classname 1`] = `
 <section
   className="hero other-class this-is-a-test"
-  style={Object {}}
 >
   <p>
     Default
@@ -11,71 +10,7 @@ exports[`Hero component Should concat classname in props with Bulma classname 1`
 </section>
 `;
 
-exports[`Hero component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Body": [Function],
-  "Footer": [Function],
-  "Head": [Function],
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "gradient": false,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "section",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "gradient": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Hero component Should exist 1`] = `[Function]`;
 
 exports[`Hero component Should expose Hero head, body and footer 1`] = `[Function]`;
 
@@ -86,7 +21,6 @@ exports[`Hero component Should expose Hero head, body and footer 3`] = `[Functio
 exports[`Hero component Should have hero classname 1`] = `
 <section
   className="hero"
-  style={Object {}}
 >
   Test
    
@@ -99,11 +33,9 @@ exports[`Hero component Should have hero classname 1`] = `
 exports[`Hero component Should render Hero with hero head, body and footer 1`] = `
 <section
   className="hero is-primary is-fullheight"
-  style={Object {}}
 >
   <header
     className="hero-head"
-    style={Object {}}
   >
     <div
       className="bd-notification is-info"
@@ -113,13 +45,11 @@ exports[`Hero component Should render Hero with hero head, body and footer 1`] =
   </header>
   <div
     className="hero-body"
-    style={Object {}}
   >
     Body
   </div>
   <footer
     className="hero-foot"
-    style={Object {}}
   >
     <div
       className="bd-notification is-danger"
@@ -133,7 +63,6 @@ exports[`Hero component Should render Hero with hero head, body and footer 1`] =
 exports[`Hero component Should use gradient style 1`] = `
 <section
   className="hero is-primary is-bold"
-  style={Object {}}
 >
   <p>
     Default
@@ -159,7 +88,6 @@ exports[`Hero component Should use inline styles 1`] = `
 exports[`Hero component Should use use color black 1`] = `
 <section
   className="hero is-black"
-  style={Object {}}
 >
   <p>
     Default
@@ -170,7 +98,6 @@ exports[`Hero component Should use use color black 1`] = `
 exports[`Hero component Should use use color danger 1`] = `
 <section
   className="hero is-danger"
-  style={Object {}}
 >
   <p>
     Default
@@ -181,7 +108,6 @@ exports[`Hero component Should use use color danger 1`] = `
 exports[`Hero component Should use use color dark 1`] = `
 <section
   className="hero is-dark"
-  style={Object {}}
 >
   <p>
     Default
@@ -192,7 +118,6 @@ exports[`Hero component Should use use color dark 1`] = `
 exports[`Hero component Should use use color info 1`] = `
 <section
   className="hero is-info"
-  style={Object {}}
 >
   <p>
     Default
@@ -203,7 +128,6 @@ exports[`Hero component Should use use color info 1`] = `
 exports[`Hero component Should use use color light 1`] = `
 <section
   className="hero is-light"
-  style={Object {}}
 >
   <p>
     Default
@@ -214,7 +138,6 @@ exports[`Hero component Should use use color light 1`] = `
 exports[`Hero component Should use use color link 1`] = `
 <section
   className="hero is-link"
-  style={Object {}}
 >
   <p>
     Default
@@ -225,7 +148,6 @@ exports[`Hero component Should use use color link 1`] = `
 exports[`Hero component Should use use color null 1`] = `
 <section
   className="hero"
-  style={Object {}}
 >
   <p>
     Default
@@ -236,7 +158,6 @@ exports[`Hero component Should use use color null 1`] = `
 exports[`Hero component Should use use color primary 1`] = `
 <section
   className="hero is-primary"
-  style={Object {}}
 >
   <p>
     Default
@@ -247,7 +168,6 @@ exports[`Hero component Should use use color primary 1`] = `
 exports[`Hero component Should use use color success 1`] = `
 <section
   className="hero is-success"
-  style={Object {}}
 >
   <p>
     Default
@@ -258,7 +178,6 @@ exports[`Hero component Should use use color success 1`] = `
 exports[`Hero component Should use use color warning 1`] = `
 <section
   className="hero is-warning"
-  style={Object {}}
 >
   <p>
     Default
@@ -269,7 +188,6 @@ exports[`Hero component Should use use color warning 1`] = `
 exports[`Hero component Should use use color white 1`] = `
 <section
   className="hero is-white"
-  style={Object {}}
 >
   <p>
     Default
