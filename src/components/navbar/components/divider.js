@@ -4,17 +4,15 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarDivider = React.forwardRef(({
+const NavbarDivider = ({
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('navbar-divider', className)}
   />
-));
-
+);
 
 NavbarDivider.propTypes = {
   ...modifiers.propTypes,
@@ -24,8 +22,8 @@ NavbarDivider.propTypes = {
 
 NavbarDivider.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
+  style: undefined,
+  className: undefined,
 };
 
 export default NavbarDivider;

@@ -3,7 +3,6 @@
 exports[`Tag component Should be Large 1`] = `
 <span
   className="tag is-large"
-  style={Object {}}
 >
   Tag Large
 </span>
@@ -12,17 +11,14 @@ exports[`Tag component Should be Large 1`] = `
 exports[`Tag component Should be group tags 1`] = `
 <span
   className="tags has-addons"
-  style={Object {}}
 >
   <span
     className="tag"
-    style={Object {}}
   >
     Tag 1
   </span>
   <span
     className="tag"
-    style={Object {}}
   >
     Tag 2
   </span>
@@ -32,192 +28,18 @@ exports[`Tag component Should be group tags 1`] = `
 exports[`Tag component Should concat classname in props with Bulma classname 1`] = `
 <span
   className="tag other-class this-is-a-test"
-  style={Object {}}
 >
   Tag name
 </span>
 `;
 
-exports[`Tag component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Group": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "gapless": false,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "gapless": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "remove": false,
-    "renderAs": "span",
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "remove": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Tag component Should exist 1`] = `[Function]`;
 
-exports[`Tag component Should expose Tag Group 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "gapless": false,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "responsive": undefined,
-    "shadowless": undefined,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "gapless": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Tag component Should expose Tag Group 1`] = `[Function]`;
 
 exports[`Tag component Should have tag classname 1`] = `
 <span
   className="tag"
-  style={Object {}}
 >
   Tag name
 </span>
@@ -239,7 +61,6 @@ exports[`Tag component Should use inline styles 1`] = `
 exports[`Tag component Should use use color black 1`] = `
 <span
   className="tag is-black"
-  style={Object {}}
 >
   tag
   black
@@ -249,7 +70,6 @@ exports[`Tag component Should use use color black 1`] = `
 exports[`Tag component Should use use color danger 1`] = `
 <span
   className="tag is-danger"
-  style={Object {}}
 >
   tag
   danger
@@ -259,7 +79,6 @@ exports[`Tag component Should use use color danger 1`] = `
 exports[`Tag component Should use use color dark 1`] = `
 <span
   className="tag is-dark"
-  style={Object {}}
 >
   tag
   dark
@@ -269,7 +88,6 @@ exports[`Tag component Should use use color dark 1`] = `
 exports[`Tag component Should use use color info 1`] = `
 <span
   className="tag is-info"
-  style={Object {}}
 >
   tag
   info
@@ -279,7 +97,6 @@ exports[`Tag component Should use use color info 1`] = `
 exports[`Tag component Should use use color light 1`] = `
 <span
   className="tag is-light"
-  style={Object {}}
 >
   tag
   light
@@ -289,7 +106,6 @@ exports[`Tag component Should use use color light 1`] = `
 exports[`Tag component Should use use color link 1`] = `
 <span
   className="tag is-link"
-  style={Object {}}
 >
   tag
   link
@@ -299,7 +115,6 @@ exports[`Tag component Should use use color link 1`] = `
 exports[`Tag component Should use use color null 1`] = `
 <span
   className="tag"
-  style={Object {}}
 >
   tag
 </span>
@@ -308,7 +123,6 @@ exports[`Tag component Should use use color null 1`] = `
 exports[`Tag component Should use use color primary 1`] = `
 <span
   className="tag is-primary"
-  style={Object {}}
 >
   tag
   primary
@@ -318,7 +132,6 @@ exports[`Tag component Should use use color primary 1`] = `
 exports[`Tag component Should use use color success 1`] = `
 <span
   className="tag is-success"
-  style={Object {}}
 >
   tag
   success
@@ -328,7 +141,6 @@ exports[`Tag component Should use use color success 1`] = `
 exports[`Tag component Should use use color warning 1`] = `
 <span
   className="tag is-warning"
-  style={Object {}}
 >
   tag
   warning
@@ -338,7 +150,6 @@ exports[`Tag component Should use use color warning 1`] = `
 exports[`Tag component Should use use color white 1`] = `
 <span
   className="tag is-white"
-  style={Object {}}
 >
   tag
   white

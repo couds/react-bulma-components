@@ -1,453 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar component Should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Brand": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Burger": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "onClick": [Function],
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "onClick": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Container": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "position": "start",
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "div",
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "position": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Divider": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Dropdown": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "boxed": false,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "span",
-      "responsive": undefined,
-      "right": false,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "boxed": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "right": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Item": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "active": false,
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "dropdown": false,
-      "dropdownUp": false,
-      "hidden": undefined,
-      "hoverable": false,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "a",
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "active": [Function],
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "dropdown": [Function],
-      "dropdownUp": [Function],
-      "hidden": [Function],
-      "hoverable": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Link": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "span",
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "Menu": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Navbar component Should Exist 1`] = `[Function]`;
 
 exports[`Navbar component Should be fixed on top 1`] = `
 <nav
   className="navbar is-fixed-top"
   role="navigation"
-  style={Object {}}
 />
 `;
 
@@ -455,7 +13,6 @@ exports[`Navbar component Should concat Bulma class with classes in props 1`] = 
 <nav
   className="navbar other-class test"
   role="navigation"
-  style={Object {}}
 />
 `;
 
@@ -463,16 +20,13 @@ exports[`Navbar component Should have Navbar classname 1`] = `
 <nav
   className="navbar"
   role="navigation"
-  style={Object {}}
 >
   <div
     className="navbar-brand"
-    style={Object {}}
   >
     <a
       className="navbar-item"
       href="#"
-      style={Object {}}
     >
       <img
         alt=""
@@ -500,41 +54,33 @@ exports[`Navbar component Should have Navbar classname 1`] = `
   </div>
   <div
     className="navbar-menu"
-    style={Object {}}
   >
     <div
       className="navbar-start"
-      style={Object {}}
     >
       <span
         className="navbar-item has-dropdown is-hoverable"
-        style={Object {}}
       >
         <span
           className="navbar-link"
-          style={Object {}}
         >
           Docs
         </span>
         <span
           className="navbar-dropdown is-boxed"
-          style={Object {}}
         >
           <a
             className="navbar-item"
             href="#"
-            style={Object {}}
           >
             Home
           </a>
           <div
             className="navbar-divider"
-            style={Object {}}
           />
           <a
             className="navbar-item"
             href="#"
-            style={Object {}}
           >
             Home
           </a>
@@ -562,7 +108,6 @@ exports[`Navbar component Should render as an html section 1`] = `
 <section
   className="navbar"
   role="navigation"
-  style={Object {}}
 />
 `;
 

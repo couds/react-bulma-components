@@ -1,72 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon component Should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "align": null,
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "hidden": undefined,
-    "icon": null,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "align": [Function],
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "icon": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Icon component Should Exist 1`] = `[Function]`;
 
 exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 <span
   className="icon other-class"
-  style={Object {}}
 >
   <i
     className="rbc rbc-bars"
@@ -77,7 +15,6 @@ exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 exports[`Icon component Should have box classname 1`] = `
 <span
   className="icon"
-  style={Object {}}
 >
   <i
     className="rbc rbc-bars"

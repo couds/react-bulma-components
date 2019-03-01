@@ -4,19 +4,20 @@ import Image from '../../image';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const CardImage = React.forwardRef(({
+const CardImage = ({
   className,
+  domRef,
   ...props
-}, ref) => (
+}) => (
   <Element
+    domRef={domRef}
     className={classnames('card-image', className)}
   >
     <Image
-      ref={ref}
       {...props}
     />
   </Element>
-));
+);
 
 CardImage.propTypes = {
   ...modifiers.propTypes,

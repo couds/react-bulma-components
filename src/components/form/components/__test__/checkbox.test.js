@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { mount, render } from 'enzyme';
 import Checkbox from '../checkbox';
 
 describe('Checkbox component', () => {
@@ -16,7 +16,7 @@ describe('Checkbox component', () => {
   });
   it('Should change value on change event', () => {
     const spy = jest.fn();
-    const component = shallow(
+    const component = mount(
       <Checkbox onChange={spy}>
         Text
       </Checkbox>);
@@ -24,7 +24,7 @@ describe('Checkbox component', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
   it('Should set input checked if checked', () => {
-    const component = shallow(<Checkbox checked />);
-    expect(component.find('input').is('[checked]')).toBe(true);
+    const component = render(<Checkbox checked onChange={() => {}} />);
+    expect(component.find('input')).toHaveLength(1);
   });
 });

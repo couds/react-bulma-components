@@ -32,10 +32,10 @@ FieldLabel.propTypes = {
 FieldLabel.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
-  size: null,
+  size: undefined,
 };
 
 export default FieldLabel;

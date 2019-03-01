@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import CONSTANTS from '../../../constants';
+import Element from '../../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Select = React.forwardRef(({
+const Select = ({
   className,
   style,
   size,
@@ -18,33 +19,32 @@ const Select = React.forwardRef(({
   multiple,
   children,
   name,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <div
-      className={classnames('select', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-        'is-loading': loading,
-        'is-multiple': multiple,
-      })}
-      style={style}
+  domRef,
+  ...props
+}) => (
+  <Element
+    domRef={domRef}
+    className={classnames('select', className, {
+      [`is-${size}`]: size,
+      [`is-${color}`]: color,
+      'is-loading': loading,
+      'is-multiple': multiple,
+    })}
+    style={style}
+  >
+    <Element
+      renderAs="select"
+      {...props}
+      multiple={multiple}
+      value={value}
+      readOnly={readOnly}
+      disabled={disabled}
+      name={name}
     >
-      <select
-        {...props}
-        ref={ref}
-        multiple={multiple}
-        value={value}
-        readOnly={readOnly}
-        disabled={disabled}
-        name={name}
-      >
-        {children}
-      </select>
-    </div>
-  );
-});
+      {children}
+    </Element>
+  </Element>
+);
 
 Select.propTypes = {
   ...modifiers.propTypes,
@@ -70,16 +70,16 @@ Select.propTypes = {
 Select.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   value: '',
-  style: {},
-  size: null,
-  color: null,
+  style: undefined,
+  size: undefined,
+  color: undefined,
   readOnly: false,
   disabled: false,
   multiple: false,
   loading: false,
-  name: null,
+  name: undefined,
 };
 
 export default Select;

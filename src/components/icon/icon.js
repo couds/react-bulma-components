@@ -3,39 +3,37 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import CONSTANTS from '../../constants';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Icon = React.forwardRef(({
+const Icon = ({
   icon,
   size,
   color,
   className,
   align,
   children,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <span
-      {...props}
-      className={classnames('icon', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-        [`is-${align}`]: align,
-        [`has-text-${color}`]: color,
-      })}
-    >
-      { children || (
+  ...props
+}) => (
+  <Element
+    renderAs="span"
+    {...props}
+    className={classnames('icon', className, {
+      [`is-${size}`]: size,
+      [`is-${align}`]: align,
+      [`has-text-${color}`]: color,
+    })}
+  >
+    { children || (
       <i
-        ref={ref}
         className={classnames('rbc', {
           [`rbc-${icon}`]: icon,
         })}
       />
-      )}
-    </span>
-  );
-});
+    )}
+  </Element>
+);
 
 Icon.propTypes = {
   ...modifiers.propTypes,
@@ -50,13 +48,13 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
-  size: null,
-  color: null,
+  className: undefined,
+  style: undefined,
+  size: undefined,
+  color: undefined,
   children: null,
-  align: null,
-  icon: null,
+  align: undefined,
+  icon: undefined,
 };
 
 export default Icon;

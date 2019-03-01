@@ -2,26 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
-const Label = React.forwardRef(({
+const Label = ({
   children,
   className,
   size,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <label
-      {...props}
-      ref={ref}
-      className={classnames('label', modifiers.classnames(allProps), className, {
-        [`is-${size}`]: size,
-      })}
-    >
-      {children}
-    </label>
-  );
-});
+  ...props
+}) => (
+  <Element
+    renderAs="label"
+    {...props}
+    className={classnames('label', className, {
+      [`is-${size}`]: size,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 Label.propTypes = {
   ...modifiers.propTypes,
@@ -35,10 +33,10 @@ Label.propTypes = {
 Label.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
-  size: null,
-  htmlFor: null,
+  className: undefined,
+  style: undefined,
+  size: undefined,
+  htmlFor: undefined,
 };
 
 export default Label;

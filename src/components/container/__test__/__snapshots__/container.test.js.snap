@@ -3,7 +3,6 @@
 exports[`Container component Should have container classname 1`] = `
 <div
   className="container"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"
@@ -21,7 +20,6 @@ exports[`Container component Should have container classname 1`] = `
 exports[`Container component Should have helper classnames 1`] = `
 <div
   className="container is-paddingless is-block-widescreen-only is-flex-touch is-hidden-desktop"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"

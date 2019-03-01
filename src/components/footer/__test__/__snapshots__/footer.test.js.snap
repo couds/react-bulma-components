@@ -3,7 +3,6 @@
 exports[`Footer component Should have footer classname 1`] = `
 <div
   className="footer"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"

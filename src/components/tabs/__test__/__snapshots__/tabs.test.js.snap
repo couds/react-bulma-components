@@ -1,130 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tabs component Should Exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Tab": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "active": false,
-      "backgroundColor": undefined,
-      "children": null,
-      "className": "",
-      "clearfix": undefined,
-      "clipped": undefined,
-      "hidden": undefined,
-      "invisible": undefined,
-      "italic": undefined,
-      "marginless": undefined,
-      "overlay": undefined,
-      "paddingless": undefined,
-      "pull": undefined,
-      "radiusless": undefined,
-      "renderAs": "a",
-      "responsive": undefined,
-      "shadowless": undefined,
-      "style": Object {},
-      "textAlignment": undefined,
-      "textColor": undefined,
-      "textSize": undefined,
-      "textTransform": undefined,
-      "textWeight": undefined,
-      "unselectable": undefined,
-    },
-    "propTypes": Object {
-      "active": [Function],
-      "backgroundColor": [Function],
-      "children": [Function],
-      "className": [Function],
-      "clearfix": [Function],
-      "clipped": [Function],
-      "hidden": [Function],
-      "invisible": [Function],
-      "italic": [Function],
-      "marginless": [Function],
-      "overlay": [Function],
-      "paddingless": [Function],
-      "pull": [Function],
-      "radiusless": [Function],
-      "renderAs": [Function],
-      "responsive": [Function],
-      "shadowless": [Function],
-      "style": [Function],
-      "textAlignment": [Function],
-      "textColor": [Function],
-      "textSize": [Function],
-      "textTransform": [Function],
-      "textWeight": [Function],
-      "unselectable": [Function],
-    },
-    "render": [Function],
-  },
-  "defaultProps": Object {
-    "align": null,
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "fullwidth": false,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "div",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "type": null,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "align": [Function],
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "fullwidth": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "type": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Tabs component Should Exist 1`] = `[Function]`;
 
 exports[`Tabs component Should accept a react Element as renderAs prop 1`] = `
 <p
   className="tabs"
-  style={Object {}}
 >
   Custom
   <ul>
@@ -136,7 +16,6 @@ exports[`Tabs component Should accept a react Element as renderAs prop 1`] = `
 exports[`Tabs component Should concat Bulma class with classes in props 1`] = `
 <div
   className="tabs other-class test"
-  style={Object {}}
 >
   <ul>
     Facebook
@@ -144,69 +23,11 @@ exports[`Tabs component Should concat Bulma class with classes in props 1`] = `
 </div>
 `;
 
-exports[`Tabs component Should expose Tab 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "active": false,
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "a",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "active": [Function],
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Tabs component Should expose Tab 1`] = `[Function]`;
 
 exports[`Tabs component Should have Tabs classname 1`] = `
 <div
   className="tabs"
-  style={Object {}}
 >
   <ul>
     Facebook
@@ -233,7 +54,6 @@ exports[`Tabs component Should have custom inline styles 1`] = `
 exports[`Tabs component Should render as an html section 1`] = `
 <section
   className="tabs"
-  style={Object {}}
 >
   <ul>
     This should be a section
@@ -244,12 +64,10 @@ exports[`Tabs component Should render as an html section 1`] = `
 exports[`Tabs component Should render propertly Inside Tabs 1`] = `
 <div
   className="tabs"
-  style={Object {}}
 >
   <ul>
     <li
       className=""
-      style={Object {}}
     >
       <a>
         Tab 1
@@ -257,7 +75,6 @@ exports[`Tabs component Should render propertly Inside Tabs 1`] = `
     </li>
     <li
       className=""
-      style={Object {}}
     >
       <a>
         Tab 2
@@ -265,7 +82,6 @@ exports[`Tabs component Should render propertly Inside Tabs 1`] = `
     </li>
     <li
       className=""
-      style={Object {}}
     >
       <a>
         Tab 3

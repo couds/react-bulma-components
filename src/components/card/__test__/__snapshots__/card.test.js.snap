@@ -3,7 +3,6 @@
 exports[`Card component Should have card classname 1`] = `
 <div
   className="card"
-  style={Object {}}
 >
   Card Content
 </div>
@@ -20,7 +19,6 @@ exports[`Card component Should have card-content classname 1`] = `
 exports[`Card component Should have card-footer's classname 1`] = `
 <div
   className="card"
-  style={Object {}}
 >
   <div
     className="card-footer"
@@ -42,7 +40,6 @@ exports[`Card component Should have card-footer's classname 1`] = `
 exports[`Card component Should have card-header's classname 1`] = `
 <div
   className="card"
-  style={Object {}}
 >
   <div
     className="card-header"
@@ -69,7 +66,6 @@ exports[`Card component Should have card-image classname 1`] = `
 >
   <figure
     className="image is-4by3"
-    style={Object {}}
   >
     <img
       alt=""

@@ -1,3 +1,4 @@
+import Box from './box';
 import './box.sass';
 
-export { default } from './box';
+export default Box;

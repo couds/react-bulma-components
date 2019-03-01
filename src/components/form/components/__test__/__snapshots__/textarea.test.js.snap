@@ -8,7 +8,6 @@ exports[`Textarea component Should be disabled with placeholder and value 1`] = 
   placeholder="hello tests"
   readOnly={false}
   rows={4}
-  style={Object {}}
   value="TEST"
 />
 `;
@@ -21,7 +20,6 @@ exports[`Textarea component Should be large with 10 rows and readOnly 1`] = `
   placeholder=""
   readOnly={true}
   rows={10}
-  style={Object {}}
   value=""
 />
 `;
@@ -34,79 +32,11 @@ exports[`Textarea component Should concat classname in props with Bulma classnam
   placeholder=""
   readOnly={false}
   rows={4}
-  style={Object {}}
   value=""
 />
 `;
 
-exports[`Textarea component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "disabled": false,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "name": "",
-    "overlay": undefined,
-    "paddingless": undefined,
-    "placeholder": "",
-    "pull": undefined,
-    "radiusless": undefined,
-    "readOnly": false,
-    "responsive": undefined,
-    "rows": 4,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-    "value": "",
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "disabled": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "name": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "placeholder": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "readOnly": [Function],
-    "responsive": [Function],
-    "rows": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Textarea component Should exist 1`] = `[Function]`;
 
 exports[`Textarea component Should have textarea classname 1`] = `
 <textarea
@@ -116,7 +46,6 @@ exports[`Textarea component Should have textarea classname 1`] = `
   placeholder=""
   readOnly={false}
   rows={4}
-  style={Object {}}
   value=""
 />
 `;

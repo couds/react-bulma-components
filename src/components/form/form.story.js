@@ -50,7 +50,7 @@ const HoCCheckbox = (Component) => {
 
 class RadioGroup extends React.Component {
   state = {
-    selected: null,
+    selected: undefined,
   }
 
   onChange = (evt) => {
@@ -168,7 +168,7 @@ storiesOf('Form', module)
         password: '',
         comment: '',
         gender: '',
-        question: null,
+        question: undefined,
         termsAccepted: false,
       }
 

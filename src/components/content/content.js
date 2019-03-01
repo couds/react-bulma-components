@@ -4,22 +4,21 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Content = React.forwardRef(({
+const Content = ({
   children,
   className,
   size,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('content', className, {
       [`is-${size}`]: size,
     })}
   >
     {children}
   </Element>
-));
+);
 
 Content.propTypes = {
   ...modifiers.propTypes,
@@ -34,8 +33,8 @@ Content.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: undefined,
-  style: {},
-  size: null,
+  style: undefined,
+  size: undefined,
   renderAs: 'div',
 };
 

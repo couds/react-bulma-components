@@ -19,12 +19,12 @@ export default class Image extends PureComponent {
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    className: '',
+    className: undefined,
     src: '',
     alt: '',
     rounded: false,
-    style: {},
-    size: null,
+    style: undefined,
+    size: undefined,
     fallback: 'http//bulma.io/images/placeholders/480x480.png',
   }
 

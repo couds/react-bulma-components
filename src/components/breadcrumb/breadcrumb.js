@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
-const Breadcrumb = React.forwardRef(({
+
+const Breadcrumb = ({
   className,
   items,
   renderAs,
@@ -11,44 +13,41 @@ const Breadcrumb = React.forwardRef(({
   separator,
   size,
   align,
-  ...allProps
-}, ref) => {
-  const Element = renderAs;
-  const props = modifiers.clean(allProps);
-  return (
-    <nav
-      {...props}
-      ref={ref}
-      className={classnames('breadcrumb', className, modifiers.classnames(allProps), {
-        [`has-${separator}-separator`]: separator,
-        [`is-${size}`]: size,
-        [`is-${align}`]: align,
-      })}
-    >
-      <ul>
-        {
-            items.map((item) => {
-              const p = {
-                [renderAs === 'a' ? 'href' : hrefAttr]: item.url,
-              };
-              return (
-                <li
-                  key={item.url}
-                  className={classnames({
-                    'is-active': item.active,
-                  })}
-                >
-                  <Element {...p}>
-                    {item.name}
-                  </Element>
-                </li>
-              );
-            })
-          }
-      </ul>
-    </nav>
-  );
-});
+  ...props
+}) => (
+  <Element
+    renderAs="nav"
+    {...props}
+    className={classnames('breadcrumb', className, {
+      [`has-${separator}-separator`]: separator,
+      [`is-${size}`]: size,
+      [`is-${align}`]: align,
+    })}
+  >
+    <ul>
+      {
+        items.map((item) => {
+          const p = {
+            renderAs,
+            [hrefAttr]: item.url,
+          };
+          return (
+            <li
+              key={item.url}
+              className={classnames({
+                'is-active': item.active,
+              })}
+            >
+              <Element {...p}>
+                {item.name}
+              </Element>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Element>
+);
 
 Breadcrumb.propTypes = {
   ...modifiers.propTypes,
@@ -72,13 +71,13 @@ Breadcrumb.propTypes = {
 Breadcrumb.defaultProps = {
   ...modifiers.defaultProps,
   items: [],
-  hrefAttr: null,
-  separator: null,
+  hrefAttr: 'href',
+  separator: undefined,
   renderAs: 'a',
-  className: '',
-  style: {},
-  size: null,
-  align: null,
+  className: undefined,
+  style: undefined,
+  size: undefined,
+  align: undefined,
 };
 
 export default Breadcrumb;

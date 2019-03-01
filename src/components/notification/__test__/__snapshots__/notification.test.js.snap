@@ -3,7 +3,6 @@
 exports[`Notification component Should concat classname in props with Bulma classname 1`] = `
 <div
   className="notification other-class this-is-a-test"
-  style={Object {}}
 >
   <p>
     Default
@@ -11,69 +10,11 @@ exports[`Notification component Should concat classname in props with Bulma clas
 </div>
 `;
 
-exports[`Notification component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "div",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Notification component Should exist 1`] = `[Function]`;
 
 exports[`Notification component Should have notification classname 1`] = `
 <div
   className="notification"
-  style={Object {}}
 >
   <img
     alt="placeholder"
@@ -85,7 +26,6 @@ exports[`Notification component Should have notification classname 1`] = `
 exports[`Notification component Should render as Section 1`] = `
 <section
   className="notification"
-  style={Object {}}
 >
   <p>
     Default
@@ -111,7 +51,6 @@ exports[`Notification component Should use inline styles 1`] = `
 exports[`Notification component Should use use color black 1`] = `
 <div
   className="notification is-black"
-  style={Object {}}
 >
   <p>
     Default
@@ -122,7 +61,6 @@ exports[`Notification component Should use use color black 1`] = `
 exports[`Notification component Should use use color danger 1`] = `
 <div
   className="notification is-danger"
-  style={Object {}}
 >
   <p>
     Default
@@ -133,7 +71,6 @@ exports[`Notification component Should use use color danger 1`] = `
 exports[`Notification component Should use use color dark 1`] = `
 <div
   className="notification is-dark"
-  style={Object {}}
 >
   <p>
     Default
@@ -144,7 +81,6 @@ exports[`Notification component Should use use color dark 1`] = `
 exports[`Notification component Should use use color info 1`] = `
 <div
   className="notification is-info"
-  style={Object {}}
 >
   <p>
     Default
@@ -155,7 +91,6 @@ exports[`Notification component Should use use color info 1`] = `
 exports[`Notification component Should use use color light 1`] = `
 <div
   className="notification is-light"
-  style={Object {}}
 >
   <p>
     Default
@@ -166,7 +101,6 @@ exports[`Notification component Should use use color light 1`] = `
 exports[`Notification component Should use use color link 1`] = `
 <div
   className="notification is-link"
-  style={Object {}}
 >
   <p>
     Default
@@ -177,7 +111,6 @@ exports[`Notification component Should use use color link 1`] = `
 exports[`Notification component Should use use color null 1`] = `
 <div
   className="notification"
-  style={Object {}}
 >
   <p>
     Default
@@ -188,7 +121,6 @@ exports[`Notification component Should use use color null 1`] = `
 exports[`Notification component Should use use color primary 1`] = `
 <div
   className="notification is-primary"
-  style={Object {}}
 >
   <p>
     Default
@@ -199,7 +131,6 @@ exports[`Notification component Should use use color primary 1`] = `
 exports[`Notification component Should use use color success 1`] = `
 <div
   className="notification is-success"
-  style={Object {}}
 >
   <p>
     Default
@@ -210,7 +141,6 @@ exports[`Notification component Should use use color success 1`] = `
 exports[`Notification component Should use use color warning 1`] = `
 <div
   className="notification is-warning"
-  style={Object {}}
 >
   <p>
     Default
@@ -221,7 +151,6 @@ exports[`Notification component Should use use color warning 1`] = `
 exports[`Notification component Should use use color white 1`] = `
 <div
   className="notification is-white"
-  style={Object {}}
 >
   <p>
     Default

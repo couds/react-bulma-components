@@ -4,7 +4,6 @@ exports[`Progress component Should be Large 1`] = `
 <progress
   className="progress is-large"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -13,75 +12,16 @@ exports[`Progress component Should concat classname in props with Bulma classnam
 <progress
   className="progress other-class this-is-a-test"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
 
-exports[`Progress component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "hidden": undefined,
-    "invisible": undefined,
-    "italic": undefined,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "hidden": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "marginless": [Function],
-    "max": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-    "value": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Progress component Should exist 1`] = `[Function]`;
 
 exports[`Progress component Should have notification classname 1`] = `
 <progress
   className="progress"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -103,7 +43,6 @@ exports[`Progress component Should use use color black 1`] = `
 <progress
   className="progress is-black"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -112,7 +51,6 @@ exports[`Progress component Should use use color danger 1`] = `
 <progress
   className="progress is-danger"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -121,7 +59,6 @@ exports[`Progress component Should use use color dark 1`] = `
 <progress
   className="progress is-dark"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -130,7 +67,6 @@ exports[`Progress component Should use use color info 1`] = `
 <progress
   className="progress is-info"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -139,7 +75,6 @@ exports[`Progress component Should use use color light 1`] = `
 <progress
   className="progress is-light"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -148,7 +83,6 @@ exports[`Progress component Should use use color link 1`] = `
 <progress
   className="progress is-link"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -157,7 +91,6 @@ exports[`Progress component Should use use color null 1`] = `
 <progress
   className="progress"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -166,7 +99,6 @@ exports[`Progress component Should use use color primary 1`] = `
 <progress
   className="progress is-primary"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -175,7 +107,6 @@ exports[`Progress component Should use use color success 1`] = `
 <progress
   className="progress is-success"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -184,7 +115,6 @@ exports[`Progress component Should use use color warning 1`] = `
 <progress
   className="progress is-warning"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;
@@ -193,7 +123,6 @@ exports[`Progress component Should use use color white 1`] = `
 <progress
   className="progress is-white"
   max={100}
-  style={Object {}}
   value={30}
 />
 `;

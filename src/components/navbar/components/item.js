@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarItem = React.forwardRef(({
+const NavbarItem = ({
   className,
   active,
   children,
@@ -13,7 +13,7 @@ const NavbarItem = React.forwardRef(({
   hoverable,
   renderAs,
   ...props
-}, ref) => {
+}) => {
   let as = renderAs;
   if (dropdown && renderAs === 'a') {
     as = 'span';
@@ -21,7 +21,6 @@ const NavbarItem = React.forwardRef(({
   return (
     <Element
       {...props}
-      ref={ref}
       renderAs={as}
       className={classnames('navbar-item', className, {
         'is-active': active,
@@ -33,7 +32,7 @@ const NavbarItem = React.forwardRef(({
       {children}
     </Element>
   );
-});
+};
 
 NavbarItem.propTypes = {
   ...modifiers.propTypes,
@@ -49,8 +48,8 @@ NavbarItem.propTypes = {
 
 NavbarItem.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
+  style: undefined,
+  className: undefined,
   active: false,
   children: null,
   dropdown: false,

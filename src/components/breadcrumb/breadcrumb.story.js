@@ -43,7 +43,7 @@ storiesOf('Breadcrumb', module)
           <Breadcrumb
             renderAs={Anchor}
             hrefAttr="href"
-            separator={select('Separator', { default: null, arrow: 'arrow', dot: 'dot', bullet: 'bullet', succeeds: 'succeeds' })}
+            separator={select('Separator', { default: undefined, arrow: 'arrow', dot: 'dot', bullet: 'bullet', succeeds: 'succeeds' })}
             items={[
               {
                 name: 'Storybook',

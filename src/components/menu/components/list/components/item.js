@@ -6,12 +6,13 @@ import List from '../list';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 
-const MenuListItem = React.forwardRef(({
+const MenuListItem = ({
   children,
   active,
   className,
+  domRef: ref,
   ...props
-}, ref) => {
+}) => {
   if (typeof children === 'string') {
     return (
       <li ref={ref}>
@@ -29,7 +30,7 @@ const MenuListItem = React.forwardRef(({
         <Element className={classnames(className, { 'is-active': active })} {...props}>
           {child.props.title}
         </Element>
-        {React.cloneElement(child, { title: null })}
+        {React.cloneElement(child, { title: undefined })}
       </li>
     );
   }
@@ -39,7 +40,7 @@ const MenuListItem = React.forwardRef(({
       {children}
     </li>
   );
-});
+};
 
 MenuListItem.propTypes = {
   ...modifiers.propTypes,
@@ -57,7 +58,7 @@ MenuListItem.propTypes = {
 
 MenuListItem.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   children: null,
   active: false,
   renderAs: 'a',

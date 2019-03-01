@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const CardContent = React.forwardRef(({
+const CardContent = ({
   className,
   ...props
-}, ref) => (
-  <Element {...props} ref={ref} className={classnames('card-content', className)} />
-));
+}) => (
+  <Element {...props} className={classnames('card-content', className)} />
+);
 
 CardContent.propTypes = {
   ...modifiers.propTypes,

@@ -3,7 +3,6 @@
 exports[`Control component Should be fullwidth, loading and size = large 1`] = `
 <div
   className="control is-expanded is-loading is-large"
-  style={Object {}}
 >
   <p>
     Default
@@ -14,7 +13,6 @@ exports[`Control component Should be fullwidth, loading and size = large 1`] = `
 exports[`Control component Should concat classname in props with Bulma classname 1`] = `
 <div
   className="control other-class this-is-a-test"
-  style={Object {}}
 >
   <p>
     Default
@@ -22,77 +20,11 @@ exports[`Control component Should concat classname in props with Bulma classname
 </div>
 `;
 
-exports[`Control component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "fullwidth": false,
-    "hidden": undefined,
-    "iconLeft": false,
-    "iconRight": false,
-    "invisible": undefined,
-    "italic": undefined,
-    "loading": false,
-    "marginless": undefined,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "renderAs": "div",
-    "responsive": undefined,
-    "shadowless": undefined,
-    "size": null,
-    "style": Object {},
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "fullwidth": [Function],
-    "hidden": [Function],
-    "iconLeft": [Function],
-    "iconRight": [Function],
-    "invisible": [Function],
-    "italic": [Function],
-    "loading": [Function],
-    "marginless": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "renderAs": [Function],
-    "responsive": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "style": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Control component Should exist 1`] = `[Function]`;
 
 exports[`Control component Should have control classname 1`] = `
 <div
   className="control"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"
@@ -110,7 +42,6 @@ exports[`Control component Should have control classname 1`] = `
 exports[`Control component Should render as a html section element 1`] = `
 <section
   className="control"
-  style={Object {}}
 >
   <p>
     Default

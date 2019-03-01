@@ -4,16 +4,15 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const PanelIcon = React.forwardRef(({
+const PanelIcon = ({
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('panel-icon', className)}
   />
-));
+);
 
 PanelIcon.propTypes = {
   ...modifiers.propTypes,
@@ -26,7 +25,7 @@ PanelIcon.propTypes = {
 
 PanelIcon.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'span',
 };
 

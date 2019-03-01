@@ -4,16 +4,15 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const PanelHeader = React.forwardRef(({
+const PanelHeader = ({
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('panel-heading', className)}
   />
-));
+);
 
 PanelHeader.propTypes = {
   ...modifiers.propTypes,
@@ -26,7 +25,7 @@ PanelHeader.propTypes = {
 
 PanelHeader.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
+  className: undefined,
   renderAs: 'div',
 };
 

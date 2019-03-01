@@ -9,7 +9,6 @@ exports[`Field component Should export Label and Body as static properties 2`] =
 exports[`Field component Should have field classname 1`] = `
 <div
   className="field"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"
@@ -27,7 +26,6 @@ exports[`Field component Should have field classname 1`] = `
 exports[`Field component Should have field classname with addons classname 1`] = `
 <div
   className="field has-addons"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"
@@ -45,7 +43,6 @@ exports[`Field component Should have field classname with addons classname 1`] =
 exports[`Field component Should have field classname with grouped classname 1`] = `
 <div
   className="field is-grouped"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"
@@ -63,7 +60,6 @@ exports[`Field component Should have field classname with grouped classname 1`] 
 exports[`Field component Should have field-body classname 1`] = `
 <div
   className="field-body"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"
@@ -81,7 +77,6 @@ exports[`Field component Should have field-body classname 1`] = `
 exports[`Field component Should have field-label classname 1`] = `
 <div
   className="field-label"
-  style={Object {}}
 >
   <p
     className="bd-notification is-success"

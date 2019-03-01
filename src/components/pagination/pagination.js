@@ -4,10 +4,9 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-class Pagination extends React.PureComponent {
+export default class Pagination extends React.PureComponent {
   static propTypes = {
     ...modifiers.propTypes,
-    innerRef: PropTypes.node,
     /** Current page */
     current: PropTypes.number,
     /** Total pages in total */
@@ -29,7 +28,6 @@ class Pagination extends React.PureComponent {
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    innerRef: undefined,
     total: 1,
     current: 1,
     delta: 1,
@@ -38,7 +36,7 @@ class Pagination extends React.PureComponent {
     previous: 'Previous',
     showPrevNext: true,
     autoHide: true,
-    className: '',
+    className: undefined,
     renderAs: 'nav',
   }
 
@@ -74,7 +72,6 @@ class Pagination extends React.PureComponent {
 
   render() {
     const {
-      innerRef,
       current,
       total,
       next,
@@ -100,7 +97,6 @@ class Pagination extends React.PureComponent {
     return (
       <Element
         {...props}
-        ref={innerRef}
         className={classnames('pagination', className)}
         aria-label="pagination"
       >
@@ -162,5 +158,3 @@ class Pagination extends React.PureComponent {
     );
   }
 }
-
-export default React.forwardRef((props, ref) => <Pagination innerRef={ref} {...props} />);

@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const MediaContent = React.forwardRef(({
+const MediaContent = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames(className, 'content')}
   >
     {children}
   </Element>
-));
+);
 
 MediaContent.propTypes = {
   ...modifiers.propTypes,
@@ -29,8 +28,8 @@ MediaContent.propTypes = {
 MediaContent.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
 };
 

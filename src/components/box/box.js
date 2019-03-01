@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Box = React.forwardRef(({
+const Box = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
-    ref={ref}
     {...props}
     className={classnames('box', className)}
   >
     {children}
   </Element>
-));
+);
 
 Box.propTypes = {
   ...modifiers.propTypes,
@@ -32,8 +31,8 @@ Box.propTypes = {
 Box.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
 };
 

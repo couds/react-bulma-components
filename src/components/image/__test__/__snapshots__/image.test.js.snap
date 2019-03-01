@@ -3,7 +3,6 @@
 exports[`Image component Should be 32x32 1`] = `
 <figure
   className="image is-32x32"
-  style={Object {}}
 >
   <img
     alt=""
@@ -17,7 +16,6 @@ exports[`Image component Should be 32x32 1`] = `
 exports[`Image component Should be rounded 1`] = `
 <figure
   className="image"
-  style={Object {}}
 >
   <img
     alt=""
@@ -31,7 +29,6 @@ exports[`Image component Should be rounded 1`] = `
 exports[`Image component Should be square 1`] = `
 <figure
   className="image is-square"
-  style={Object {}}
 >
   <img
     alt=""
@@ -47,7 +44,6 @@ exports[`Image component Should exist 1`] = `[Function]`;
 exports[`Image component Should have image classname 1`] = `
 <figure
   className="image"
-  style={Object {}}
 >
   <img
     alt=""

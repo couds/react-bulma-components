@@ -8,7 +8,6 @@ exports[`Button component Button Group component Should align to the right 1`] =
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -17,7 +16,6 @@ exports[`Button component Button Group component Should align to the right 1`] =
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -33,7 +31,6 @@ exports[`Button component Button Group component Should be a default list of but
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -42,7 +39,6 @@ exports[`Button component Button Group component Should be a default list of but
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -58,7 +54,6 @@ exports[`Button component Button Group component Should be centered 1`] = `
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -67,7 +62,6 @@ exports[`Button component Button Group component Should be centered 1`] = `
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -83,7 +77,6 @@ exports[`Button component Button Group component Should concat class names in pr
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 0
@@ -92,7 +85,6 @@ exports[`Button component Button Group component Should concat class names in pr
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -108,7 +100,6 @@ exports[`Button component Button Group component Should group buttons together 1
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 1
@@ -117,7 +108,6 @@ exports[`Button component Button Group component Should group buttons together 1
     className="button"
     disabled={false}
     onClick={[Function]}
-    style={Object {}}
     tabIndex={0}
   >
     test 2
@@ -130,7 +120,6 @@ exports[`Button component Should be a Large Primary Button 1`] = `
   className="is-primary is-large button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -140,7 +129,6 @@ exports[`Button component Should be a Primary Button 1`] = `
   className="is-primary button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -150,7 +138,6 @@ exports[`Button component Should be a default Button 1`] = `
   className="button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -160,7 +147,6 @@ exports[`Button component Should be a reset form button 1`] = `
   className="button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
   type="reset"
 />
@@ -171,7 +157,6 @@ exports[`Button component Should be a submit form button 1`] = `
   className="button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
   type="submit"
 />
@@ -183,100 +168,11 @@ exports[`Button component Should be an anchor button 1`] = `
   disabled={false}
   href="https://github.com/couds/react-bulma-components"
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
 
-exports[`Button component Should exist 1`] = `
-Object {
-  "$$typeof": Symbol(react.forward_ref),
-  "Group": [Function],
-  "defaultProps": Object {
-    "backgroundColor": undefined,
-    "children": null,
-    "className": "",
-    "clearfix": undefined,
-    "clipped": undefined,
-    "color": null,
-    "disabled": false,
-    "fullwidth": false,
-    "hidden": undefined,
-    "inverted": false,
-    "invisible": undefined,
-    "isSelected": false,
-    "isStatic": false,
-    "italic": undefined,
-    "loading": false,
-    "marginless": undefined,
-    "onClick": [Function],
-    "outlined": false,
-    "overlay": undefined,
-    "paddingless": undefined,
-    "pull": undefined,
-    "radiusless": undefined,
-    "remove": false,
-    "renderAs": "button",
-    "reset": false,
-    "responsive": undefined,
-    "rounded": false,
-    "shadowless": undefined,
-    "size": null,
-    "state": null,
-    "style": Object {},
-    "submit": false,
-    "text": false,
-    "textAlignment": undefined,
-    "textColor": undefined,
-    "textSize": undefined,
-    "textTransform": undefined,
-    "textWeight": undefined,
-    "unselectable": undefined,
-  },
-  "propTypes": Object {
-    "backgroundColor": [Function],
-    "children": [Function],
-    "className": [Function],
-    "clearfix": [Function],
-    "clipped": [Function],
-    "color": [Function],
-    "disabled": [Function],
-    "fullwidth": [Function],
-    "hidden": [Function],
-    "inverted": [Function],
-    "invisible": [Function],
-    "isSelected": [Function],
-    "isStatic": [Function],
-    "italic": [Function],
-    "loading": [Function],
-    "marginless": [Function],
-    "onClick": [Function],
-    "outlined": [Function],
-    "overlay": [Function],
-    "paddingless": [Function],
-    "pull": [Function],
-    "radiusless": [Function],
-    "remove": [Function],
-    "renderAs": [Function],
-    "reset": [Function],
-    "responsive": [Function],
-    "rounded": [Function],
-    "shadowless": [Function],
-    "size": [Function],
-    "state": [Function],
-    "style": [Function],
-    "submit": [Function],
-    "text": [Function],
-    "textAlignment": [Function],
-    "textColor": [Function],
-    "textSize": [Function],
-    "textTransform": [Function],
-    "textWeight": [Function],
-    "unselectable": [Function],
-  },
-  "render": [Function],
-}
-`;
+exports[`Button component Should exist 1`] = `[Function]`;
 
 exports[`Button component Should expose Button Group 1`] = `[Function]`;
 
@@ -293,7 +189,6 @@ exports[`Button component Should render as a html button 1`] = `
   className="is-danger button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -303,7 +198,6 @@ exports[`Button component Should render as a static Button 1`] = `
   className="is-primary is-static button"
   disabled={false}
   onClick={[Function]}
-  style={Object {}}
   tabIndex={0}
 />
 `;
@@ -312,7 +206,6 @@ exports[`Button component Should render be disabled 1`] = `
 <button
   className="button"
   disabled={true}
-  style={Object {}}
   tabIndex={-1}
 />
 `;

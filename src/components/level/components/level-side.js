@@ -4,22 +4,22 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const LevelSide = React.forwardRef(({
+const LevelSide = ({
   children,
   className,
   align,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames(className, {
       [`level-${align}`]: align,
     })}
   >
     {children}
   </Element>
-));
+);
+
 LevelSide.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
@@ -32,8 +32,8 @@ LevelSide.propTypes = {
 LevelSide.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
   align: 'left',
 };

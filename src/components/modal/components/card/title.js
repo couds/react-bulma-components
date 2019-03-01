@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCardTitle = React.forwardRef(({
+const ModalCardTitle = ({
   children,
   className,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('modal-card-title', className)}
   >
     {children}
   </Element>
-));
+);
 
 ModalCardTitle.propTypes = {
   ...modifiers.propTypes,
@@ -28,7 +27,7 @@ ModalCardTitle.propTypes = {
 ModalCardTitle.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
+  className: undefined,
   style: undefined,
   renderAs: 'p',
 };

@@ -8,6 +8,7 @@ import DropdownDivider from './components/divider';
 import Button from '../button';
 import Icon from '../icon';
 import modifiers from '../../modifiers';
+import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
@@ -33,8 +34,10 @@ export default class Dropdown extends PureComponent {
 
   static defaultProps = {
     ...modifiers.defaultProps,
-    className: '',
-    style: {},
+    className: undefined,
+    renderAs: 'div',
+    domRef: React.createRef(),
+    style: undefined,
     value: undefined,
     children: [],
     onChange: undefined,
@@ -58,7 +61,7 @@ export default class Dropdown extends PureComponent {
 
   close = (evt) => {
     // IDK yet how to test using the ref in enzime
-    if (this.props.hoverable || (evt && this.htmlElement.contains(evt.target))) {
+    if (this.props.hoverable || (evt && this.props.domRef && this.props.domRef.current.contains(evt.target))) {
       return;
     }
     this.setState({ open: false });
@@ -93,10 +96,9 @@ export default class Dropdown extends PureComponent {
       hoverable,
       label,
       onChange,
-      ...allProps
+      ...props
     } = this.props;
     let current = label;
-    const props = modifiers.clean(allProps);
 
     const childrenArray = React.Children.map(children, (child, i) => {
       if (child.type === DropdownItem && ((i === 0 && !label) || child.props.value === value)) {
@@ -114,10 +116,9 @@ export default class Dropdown extends PureComponent {
     }
 
     return (
-      <div
+      <Element
         {...props}
-        ref={(node) => { this.htmlElement = node; }}
-        className={classnames('dropdown', modifiers.classnames(allProps), className, {
+        className={classnames('dropdown', className, {
           'is-active': this.state.open,
           'is-up': up,
           'is-right': right || align === 'right',
@@ -137,7 +138,7 @@ export default class Dropdown extends PureComponent {
             {childrenArray}
           </div>
         </div>
-      </div>
+      </Element>
     );
   }
 }

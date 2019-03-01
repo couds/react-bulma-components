@@ -7,7 +7,7 @@ import Element from '../element';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
-const Tile = React.forwardRef(({
+const Tile = ({
   children,
   className,
   kind,
@@ -16,10 +16,9 @@ const Tile = React.forwardRef(({
   color,
   notification,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames(
       'tile', className, {
         notification,
@@ -32,7 +31,7 @@ const Tile = React.forwardRef(({
   >
     {children}
   </Element>
-));
+);
 
 Tile.propTypes = {
   ...modifiers.propTypes,
@@ -50,13 +49,13 @@ Tile.propTypes = {
 Tile.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   renderAs: 'div',
-  kind: null,
+  kind: undefined,
   vertical: false,
-  size: null,
-  color: null,
+  size: undefined,
+  color: undefined,
   notification: false,
 };
 

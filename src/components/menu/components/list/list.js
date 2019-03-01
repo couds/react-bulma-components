@@ -6,11 +6,11 @@ import MenuListItem from './components/item';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const MenuList = React.forwardRef(({
+const MenuList = ({
   className,
   title,
   ...props
-}, ref) => (
+}) => (
   <React.Fragment>
     {
         title
@@ -20,9 +20,9 @@ const MenuList = React.forwardRef(({
         </p>
         )
       }
-    <Element ref={ref} renderAs="ul" className={classnames('menu-list', className)} {...props} />
+    <Element renderAs="ul" className={classnames('menu-list', className)} {...props} />
   </React.Fragment>
-));
+);
 
 MenuList.Item = MenuListItem;
 
@@ -34,8 +34,8 @@ MenuList.propTypes = {
 
 MenuList.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  title: null,
+  className: undefined,
+  title: undefined,
 };
 
 export default MenuList;

@@ -1,3 +1,4 @@
+import Breadcrumb from './breadcrumb';
 import './breadcrumb.sass';
 
-export { default } from './breadcrumb';
+export default Breadcrumb;

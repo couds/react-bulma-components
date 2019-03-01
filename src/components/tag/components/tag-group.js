@@ -2,26 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
+import Element from '../../element';
 
-const TagGroup = React.forwardRef(({
+const TagGroup = ({
   children,
   className,
   gapless,
-  ...allProps
-}, ref) => {
-  const props = modifiers.clean(allProps);
-  return (
-    <span
-      {...props}
-      ref={ref}
-      className={classnames('tags', modifiers.classnames(allProps), className, {
-        'has-addons': gapless,
-      })}
-    >
-      {children}
-    </span>
-  );
-});
+  ...props
+}) => (
+  <Element
+    renderAs="span"
+    {...props}
+    className={classnames('tags', className, {
+      'has-addons': gapless,
+    })}
+  >
+    {children}
+  </Element>
+);
 
 TagGroup.propTypes = {
   ...modifiers.propTypes,
@@ -34,8 +32,8 @@ TagGroup.propTypes = {
 TagGroup.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
-  className: '',
-  style: {},
+  className: undefined,
+  style: undefined,
   gapless: false,
 };
 

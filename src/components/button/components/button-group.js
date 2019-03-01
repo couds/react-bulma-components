@@ -9,12 +9,10 @@ const ButtonGroup = ({
   className,
   hasAddons,
   position,
-  renderAs,
   ...props
 }) => (
   <Element
     {...props}
-    renderAs={renderAs}
     className={classnames('buttons', className, {
       'has-addons': hasAddons,
       [`is-${[position]}`]: position,

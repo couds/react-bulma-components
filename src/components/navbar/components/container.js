@@ -4,22 +4,21 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarContainer = React.forwardRef(({
+const NavbarContainer = ({
   className,
   children,
   position,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames({
       [`navbar-${position}`]: position,
     }, className)}
   >
     {children}
   </Element>
-));
+);
 
 NavbarContainer.propTypes = {
   ...modifiers.propTypes,
@@ -32,8 +31,8 @@ NavbarContainer.propTypes = {
 
 NavbarContainer.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
+  style: undefined,
+  className: undefined,
   children: null,
   renderAs: 'div',
   position: 'start',

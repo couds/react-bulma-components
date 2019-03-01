@@ -4,19 +4,18 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarBrand = React.forwardRef(({
+const NavbarBrand = ({
   className,
   children,
   ...props
-}, ref) => (
+}) => (
   <Element
     {...props}
-    ref={ref}
     className={classnames('navbar-brand', className)}
   >
     {children}
   </Element>
-));
+);
 
 NavbarBrand.propTypes = {
   ...modifiers.propTypes,
@@ -27,8 +26,8 @@ NavbarBrand.propTypes = {
 
 NavbarBrand.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
+  style: undefined,
+  className: undefined,
   children: null,
 };
 
