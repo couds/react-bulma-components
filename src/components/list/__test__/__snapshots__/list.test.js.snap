@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component Should Exist 1`] = `[Function]`;
+
+exports[`List component Should Render a list 1`] = `
+<div
+  className="list"
+>
+  <div
+    className="list-item"
+  >
+    1
+  </div>
+  <div
+    className="list-item"
+  >
+    2
+  </div>
+  <div
+    className="list-item is-active"
+  >
+    3
+  </div>
+  <div
+    className="list-item"
+  >
+    4
+  </div>
+</div>
+`;

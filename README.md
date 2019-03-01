@@ -179,6 +179,7 @@ The following components were ported:
 |Icon|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Icon)|[Docs](http://bulma.io/documentation/elements/icon/)|
 |Image|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Image)|[Docs](http://bulma.io/documentation/elements/image/)|
 |Level|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Level)|[Docs](http://bulma.io/documentation/layout/level/)|
+|List|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=List)|[Docs](https://bulma.io/documentation/components/list/)|
 |Loader|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Loader)| -- |
 |Media|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Media)|[Docs](http://bulma.io/documentation/layout/media-object/)|
 |Message|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Message)|[Docs](http://bulma.io/documentation/components/message/)|
