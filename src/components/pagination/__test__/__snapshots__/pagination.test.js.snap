@@ -1,6 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pagination component Next button should be disabled when current page equals the total number of pages 1`] = `
+exports[`Pagination component All buttons should be disabled 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <a
+    className="pagination-previous"
+    disabled={true}
+    role="button"
+    tabIndex={0}
+    title="This is the first page"
+  >
+    Previous
+  </a>
+  <a
+    className="pagination-next"
+    disabled={true}
+    role="button"
+    tabIndex={0}
+  >
+    Next
+  </a>
+  <ul
+    className="pagination-list"
+  >
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 1"
+        className="pagination-link is-current"
+        disabled={true}
+        role="button"
+        tabIndex={0}
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 2"
+        className="pagination-link"
+        disabled={true}
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 3"
+        className="pagination-link"
+        disabled={true}
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Pagination component Next button should be disabled 1`] = `
 <nav
   aria-label="pagination"
   className="pagination"
@@ -63,8 +130,6 @@ exports[`Pagination component Next button should be disabled when current page e
   </ul>
 </nav>
 `;
-
-exports[`Pagination component Next button should be disabled when the prop nextDisabled is given 1`] = `null`;
 
 exports[`Pagination component Pagination Should Exist 1`] = `[Function]`;
 

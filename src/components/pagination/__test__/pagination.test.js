@@ -23,16 +23,13 @@ describe('Pagination component', () => {
     const component = renderer.create(<Pagination showPrevNext={false} delta={3} total={5} current={2} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  describe('Next button should be disabled', () => {
-    it('when current page equals the total number of pages', () => {
-      const component = renderer.create(<Pagination total={3} current={3} />);
-      expect(component.toJSON()).toMatchSnapshot();
-    });
-
-    it('when the prop nextDisabled is given', () => {
-      const component = renderer.create(<Pagination nextDisabled />);
-      expect(component.toJSON()).toMatchSnapshot();
-    });
+  it('Next button should be disabled', () => {
+    const component = renderer.create(<Pagination total={3} current={3} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('All buttons should be disabled', () => {
+    const component = renderer.create(<Pagination total={3} current={1} disabled />);
+    expect(component.toJSON()).toMatchSnapshot();
   });
   it('previous button should be disabled when the prop prevDisabled is given', () => {
     const component = renderer.create(<Pagination prevDisabled />);
