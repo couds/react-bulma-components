@@ -1,0 +1,29 @@
+{
+  "name": "public",
+  "version": "0.1.0",
+  "private": true,
+  "homepage" : "https:/react-bulma.dev",
+  "dependencies": {
+    "intl": "1.2.5",
+    "react": "^16.8.3",
+    "react-bulma-components": "3.0.1-4",
+    "react-dom": "^16.8.3",
+    "react-intl": "2.8.0",
+    "react-scripts": "2.1.5"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./src react-scripts start",
+    "build": "NODE_PATH=./src react-scripts build",
+    "test": "NODE_PATH=./src react-scripts test",
+    "eject": "NODE_PATH=./src react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
