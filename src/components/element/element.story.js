@@ -11,26 +11,28 @@ storiesOf('Element', module)
       paddingless={boolean('paddingless', false)}
       responsive={{
         mobile: {
-          display: 'block',
+          display: {
+            value: 'block',
+          },
+          hide: {
+            value: true
+          }
         },
         tablet: {
-          display: 'flex',
+          display: {
+            value: 'flex'
+          },
         },
         desktop: {
-          display: 'inline-flex',
-          only: true,
+          display: {
+            value: 'inline-flex',
+            only: true,
+          },
         },
         widescreen: {
-          display: 'inline-block',
-        },
-      }}
-      hide={{
-        tablet: {
-          hide: true,
-          only: true,
-        },
-        widescreen: {
-          hide: true,
+          display: {
+            value: 'inline-block'
+          },
         },
       }}
     >
