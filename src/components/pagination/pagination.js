@@ -127,7 +127,7 @@ export default class Pagination extends React.PureComponent {
               <a
                 role="button"
                 tabIndex={0}
-                onClick={disableNext? undefined : this.goToPage(current + 1)}
+                onClick={disableNext ? undefined : this.goToPage(current + 1)}
                 className="pagination-next"
                 disabled={disableNext || nextDisabled}
               >
