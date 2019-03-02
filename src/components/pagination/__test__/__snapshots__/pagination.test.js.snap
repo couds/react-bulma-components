@@ -1,13 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pagination component Next button should be disabled 1`] = `
+exports[`Pagination component Next button should be disabled when current page equals the total number of pages 1`] = `
 <nav
   aria-label="pagination"
   className="pagination"
 >
   <a
     className="pagination-previous"
-    disabled={false}
     onClick={[Function]}
     role="button"
     tabIndex={0}
@@ -65,6 +64,8 @@ exports[`Pagination component Next button should be disabled 1`] = `
 </nav>
 `;
 
+exports[`Pagination component Next button should be disabled when the prop nextDisabled is given 1`] = `null`;
+
 exports[`Pagination component Pagination Should Exist 1`] = `[Function]`;
 
 exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
@@ -83,7 +84,6 @@ exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
   </a>
   <a
     className="pagination-next"
-    disabled={false}
     onClick={[Function]}
     role="button"
     tabIndex={0}
@@ -139,7 +139,6 @@ exports[`Pagination component Should have 5 pages, page 5 active and display pag
 >
   <a
     className="pagination-previous"
-    disabled={false}
     onClick={[Function]}
     role="button"
     tabIndex={0}
@@ -275,7 +274,6 @@ exports[`Pagination component Should not display page numbers 1`] = `
 >
   <a
     className="pagination-previous"
-    disabled={false}
     onClick={[Function]}
     role="button"
     tabIndex={0}
@@ -297,3 +295,5 @@ exports[`Pagination component Should not display page numbers 1`] = `
 exports[`Pagination component Should not render if current page is greater than total pages 1`] = `null`;
 
 exports[`Pagination component Should not render if total pages equals 1 1`] = `null`;
+
+exports[`Pagination component previous button should be disabled when the prop prevDisabled is given 1`] = `null`;

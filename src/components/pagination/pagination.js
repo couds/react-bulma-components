@@ -9,6 +9,10 @@ export default class Pagination extends React.PureComponent {
     ...modifiers.propTypes,
     /** Current page */
     current: PropTypes.number,
+    /** Whether to disable "previous button" */
+    prevDisabled: PropTypes.bool,
+    /** Whether to disable "next button" */
+    nextDisabled: PropTypes.bool,
     /** Total pages in total */
     total: PropTypes.number,
     /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
@@ -73,6 +77,8 @@ export default class Pagination extends React.PureComponent {
   render() {
     const {
       current,
+      prevDisabled,
+      nextDisabled,
       total,
       next,
       previous,
@@ -93,6 +99,8 @@ export default class Pagination extends React.PureComponent {
 
     const firstPage = this.firstPage(current, total);
     const lastPage = this.lastPage(current, total);
+    const disablePrev = current === 1 || prevDisabled;
+    const disableNext = current === total || nextDisabled;
 
     return (
       <Element
@@ -107,19 +115,19 @@ export default class Pagination extends React.PureComponent {
               <a
                 role="button"
                 tabIndex={0}
-                onClick={current === 1 ? undefined : this.goToPage(current - 1)}
+                onClick={disablePrev ? undefined : this.goToPage(current - 1)}
                 className="pagination-previous"
                 title="This is the first page"
-                disabled={current === 1}
+                disabled={disablePrev}
               >
                 {previous}
               </a>
               <a
                 role="button"
                 tabIndex={0}
-                onClick={current === total ? undefined : this.goToPage(current + 1)}
+                onClick={disableNext? undefined : this.goToPage(current + 1)}
                 className="pagination-next"
-                disabled={current === total}
+                disabled={disableNext || nextDisabled}
               >
                 {next}
               </a>

@@ -16,4 +16,7 @@ storiesOf('Pagination', module)
   )))
   .add('Without prev/next button', (() => (
     <Pagination showPrevNext={false} current={3} total={5} delta={1} />
+  )))
+  .add('With prev/next button manually disabled', (() => (
+      <Pagination prevDisabled nextDisabled current={3} total={5} />
   )));
