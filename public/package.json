@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "NODE_PATH=./src react-scripts start",
-    "build": "NODE_PATH=./src react-scripts build",
+    "build": "NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
     "test": "NODE_PATH=./src react-scripts test",
     "eject": "NODE_PATH=./src react-scripts eject"
   },
