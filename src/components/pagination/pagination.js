@@ -39,6 +39,8 @@ export default class Pagination extends React.PureComponent {
     next: 'Next',
     previous: 'Previous',
     showPrevNext: true,
+    prevDisabled: undefined,
+    nextDisabled: undefined,
     autoHide: true,
     className: undefined,
     renderAs: 'nav',
