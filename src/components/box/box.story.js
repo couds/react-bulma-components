@@ -14,17 +14,25 @@ storiesOf('Box', module)
       paddingless={boolean('paddingless', false)}
       responsive={{
         mobile: {
-          display: 'block',
+          display: {
+            value: 'block'
+          },
         },
         tablet: {
-          display: 'flex',
+          display: {
+            value: 'flex'
+          },
         },
         desktop: {
-          display: 'inline-flex',
-          only: true,
+          display: {
+            value: 'inline-flex',
+            only: true,
+          },
         },
         widescreen: {
-          display: 'inline-block',
+          display: {
+            value: 'inline-block',
+          },
         },
       }}
       hide={{
