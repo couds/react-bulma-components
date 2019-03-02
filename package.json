@@ -12,7 +12,7 @@
     "storybook": "start-storybook -p 6006",
     "clean:build": "rm -rf dist && rm -rf lib && rm -rf full",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
-    "prepare": "npm run clean:build && npm run build && npm run clean:test",
+    "clean-build": "npm run clean:build && npm run build && npm run clean:test",
     "deploy-storybook": "storybook-to-ghpages",
     "build": "WEBPACK_ENV=INCLUDE_CSS webpack --progress --color --mode=production && webpack --progress --color --mode=production && npm run create:lib",
     "create:lib": "babel ./src --out-dir ./lib --copy-files --source-maps",
