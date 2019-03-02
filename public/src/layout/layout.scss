@@ -1,0 +1,17 @@
+@import '_variables.sass';
+
+.app {
+  .navbar {
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.05);
+    z-index: 40 !important;
+    .container {
+      max-width: 96%;
+    }
+  }
+
+  .hero-body {
+    align-items: flex-start !important;
+  }
+}
