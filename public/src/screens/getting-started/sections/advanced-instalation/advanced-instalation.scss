@@ -1,0 +1,31 @@
+@import '_variables.sass';
+
+.advanced-instalation {
+  .tabs {
+    margin-bottom: 0;
+    
+    ul {
+      margin-top: 2rem;
+      border-bottom: $grey-lighter 1px solid;
+    }
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  .tab-box {
+    padding-top: 1rem;
+    overflow: hidden;
+    border-bottom: $grey-lighter 1px solid;
+    border-left: $grey-lighter 1px solid;
+    border-right: $grey-lighter 1px solid;
+    border-radius: 3px;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    
+    p {
+      margin: 1rem;
+    }
+  }
+}

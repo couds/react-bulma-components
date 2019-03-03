@@ -7,20 +7,23 @@
     "@fortawesome/free-brands-svg-icons": "5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "highlight.js": "9.15.6",
     "intl": "1.2.5",
     "react": "16.8.3",
     "react-bulma-components": "3.0.1-4",
     "react-dom": "16.8.3",
+    "react-highlight": "0.12.0",
     "react-intl": "2.8.0",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "react-scroll": "1.7.11"
   },
   "scripts": {
     "start": "NODE_PATH=./src react-scripts start",
     "build": "NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
     "test": "NODE_PATH=./src react-scripts test",
     "eject": "NODE_PATH=./src react-scripts eject",
-    "intl": "rm -rf .translations && extract-messages -l=en -o .translations --flat false 'src/**/*.js' && node bin/translations.js"
+    "intl": "rm -rf .translations && extract-messages -l=en -o .translations --flat false 'src/**/*.js' && node .bin/translation.js"
   },
   "eslintConfig": {
     "extends": "react-app"
