@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import LocaleContext from 'locales/context';
 import Layout from 'layout';
 import Loader from 'components/page-loader';
-import 'helpers.scss';
 
+import 'helpers.scss';
+import 'highlight.js/styles/dracula.css';
 // import Index from './screens/index';
 // import GettingStarted from './screens/getting-started';
 
@@ -19,7 +20,7 @@ function WaitingComponent(Component) {
     </Suspense>
   );
 }
-const LocaleRouteHandler = ({ match }) => {
+const LocaleRouteHandler = ({ match, location }) => {
   const defaultMessages = {};
 
   const [messages, setMessages] = useState(defaultMessages);
@@ -37,7 +38,7 @@ const LocaleRouteHandler = ({ match }) => {
   return (
     <LocaleContext.Provider value={match.params.lang}>
       <IntlProvider locale={match.params.lang} messages={messages}>
-        <Layout >
+        <Layout currentPath={location.pathname} >
           <Switch>
             <Route path={match.url} exact component={WaitingComponent(Home)}  />
             <Route path={`${match.url}/getting-started/`} component={WaitingComponent(GettingStarted)} />
