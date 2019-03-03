@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "intl": "1.2.5",
     "react": "16.8.3",
     "react-bulma-components": "3.0.1-4",
@@ -15,7 +19,8 @@
     "start": "NODE_PATH=./src react-scripts start",
     "build": "NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
     "test": "NODE_PATH=./src react-scripts test",
-    "eject": "NODE_PATH=./src react-scripts eject"
+    "eject": "NODE_PATH=./src react-scripts eject",
+    "intl": "rm -rf .translations && extract-messages -l=en -o .translations --flat false 'src/**/*.js' && node bin/translations.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,6 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "extract-react-intl-messages": "0.14.0",
     "node-sass": "4.11.0"
   }
 }
