@@ -19,7 +19,7 @@ const messages = defineMessages({
   },
 });
 
-const Layout = ({ children, setLocale }) => {
+const Layout = ({ children, currentPath }) => {
   const [navbarActive, setNavbar] = useState(false);
   const toggleNavbar = () => {
     setNavbar(!navbarActive);
@@ -36,6 +36,9 @@ const Layout = ({ children, setLocale }) => {
       document.removeEventListener('click', hideMenu);
     };
   });
+
+  const path = currentPath.split('/').filter(x => x).slice(1).join('/');
+
   return (
     <div className="app">
       <Navbar fixed="top" active={navbarActive}>
@@ -53,10 +56,10 @@ const Layout = ({ children, setLocale }) => {
         </Navbar.Brand>
         <Navbar.Container position="end">
           <Navbar.Menu>
-            <Navbar.Item renderAs={Link} to="/getting-started">
+            <Navbar.Item renderAs={Link} to="/getting-started" activeClassName="is-active">
               <FormattedMessage {...messages.gettingStarted} />
             </Navbar.Item>
-            <Navbar.Item renderAs={Link} to="/documentation">
+            <Navbar.Item renderAs={Link} to="/documentation"  activeClassName="is-active">
             <FormattedMessage {...messages.documentation} />
             </Navbar.Item>
             <Navbar.Item renderAs="span" hoverable responsive={{ touch: { hide: { value: true }}}}>
@@ -64,8 +67,8 @@ const Layout = ({ children, setLocale }) => {
                 <Icon icon="earth" />
               </Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item renderAs={RouterLink} to="/en">EN</Navbar.Item>
-                <Navbar.Item renderAs={RouterLink} to="/es">ES</Navbar.Item>
+                <Navbar.Item renderAs={RouterLink} to={['/en'].concat(path).join('/')}>EN</Navbar.Item>
+                <Navbar.Item renderAs={RouterLink} to={['/es'].concat(path).join('/')}>ES</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
             <Navbar.Item href="https://github.com/couds/react-bulma-components" responsive={{ touch: { hide: { value: true }}}}>
@@ -75,8 +78,10 @@ const Layout = ({ children, setLocale }) => {
         </Navbar.Container>
       </Navbar>
       <Hero hasNavbar>
-        <Hero.Body paddingless style={{ flexDirection: 'column' }}>
-          {children}
+        <Hero.Body paddingless>
+          <div style={{ width: '100%' }}>
+            {children}
+          </div>
         </Hero.Body>
       </Hero>
     </div>
