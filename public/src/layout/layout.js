@@ -57,10 +57,12 @@ const Layout = ({ children, currentPath }) => {
         <Navbar.Container position="end">
           <Navbar.Menu>
             <Navbar.Item renderAs={Link} to="/getting-started" activeClassName="is-active">
+              <Icon icon="rocket" size="small" />
               <FormattedMessage {...messages.gettingStarted} />
             </Navbar.Item>
             <Navbar.Item renderAs={Link} to="/documentation"  activeClassName="is-active">
-            <FormattedMessage {...messages.documentation} />
+              <Icon icon="books" size="small" />
+              <FormattedMessage {...messages.documentation} />
             </Navbar.Item>
             <Navbar.Item renderAs="span" hoverable responsive={{ touch: { hide: { value: true }}}}>
               <Navbar.Link arrowless>
