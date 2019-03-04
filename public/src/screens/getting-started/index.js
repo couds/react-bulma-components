@@ -7,7 +7,7 @@ import { Link as ScrollLink, Element as ScrollElement } from 'react-scroll';
 import Menu from 'react-bulma-components/lib/components/menu';
 import Container from 'react-bulma-components/lib/components/container';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import Hightlight from 'react-highlight';
+import Highlight from 'components/highlight';
 import CodeExample from 'components/code-example';
 
 import AdvancedInstalation from './sections/advanced-instalation';
@@ -105,7 +105,7 @@ const GettingStarted = ({ intl: { formatMessage  }}) => (
             <H subtitle size={4}>
               <FormattedMessage {...messages.instalationDescription} />
             </H>
-            <Hightlight style={{ borderRadius: 5 }}>{`npm install react-bulma-components`}</Hightlight>
+            <Highlight style={{ borderRadius: 5 }}>{`npm install react-bulma-components`}</Highlight>
           </ScrollElement>
           <hr />
           <ScrollElement name="usage">
