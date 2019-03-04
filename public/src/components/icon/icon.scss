@@ -43,8 +43,29 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-equals:before {
+    content: "\e906";
+  }
+  .icon-bulma:before {
+    content: "\e905";
+  }
+  .icon-modular:before {
+    content: "\e904";
+  }
+  .icon-responsive:before {
+    content: "\e902";
+  }
   .icon-logo:before {
     content: "\e901";
+  }
+  .icon-react:before {
+    content: "\e900";
+  }
+  .icon-github-alt:before {
+    content: "\e903";
+  }
+  .icon-quill:before {
+    content: "\e907";
   }
   .icon-books:before {
     content: "\e920";
@@ -55,12 +76,11 @@
   .icon-earth:before {
     content: "\e9ca";
   }
-  .icon-react:before {
-    content: "\e900";
-    color: #61dafb;
+  .icon-plus:before {
+    content: "\ea0a";
   }
-  .icon-github-alt:before {
-    content: "\e903";
+  .icon-customizable:before {
+    content: "\ea58";
   }
 }
 

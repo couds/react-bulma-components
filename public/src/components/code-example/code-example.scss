@@ -1,0 +1,16 @@
+@import "_variables.sass";
+
+.code-example {
+  .code {
+    display: flex;
+    align-items: stretch;
+    pre {
+      flex: 1;
+      margin: 0 !important;
+      font-size: 14px;
+      code {
+        height: 100%;
+      }
+    }
+  }
+}
