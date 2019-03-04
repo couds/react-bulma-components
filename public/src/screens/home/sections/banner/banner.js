@@ -36,7 +36,7 @@ const Banner = () => (
           </Heading>
           <Heading subtitle>
             <FormattedMessage {...messages.title} />
-            <Level style={{ marginTop: 10 }}>
+            <Level style={{ marginTop: 10 }} breakpoint="mobile">
               <Level.Item>
                 <a target="_blank" rel="noopener noreferrer" style={{ maxHeight: 20 }} href="https://www.npmjs.com/package/react-bulma-components">
                   <img alt="downloads per month" src="https://img.shields.io/npm/dm/react-bulma-components.svg" />
