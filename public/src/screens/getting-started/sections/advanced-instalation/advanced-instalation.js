@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import H from 'react-bulma-components/lib/components/heading';
 import Tabs from 'react-bulma-components/lib/components/tabs';
 import { FormattedMessage, defineMessages } from 'react-intl';
-import Highlight from 'react-highlight';
+import Highlight from 'components/highlight';
 
 import CRA from './frameworks/cra';
 

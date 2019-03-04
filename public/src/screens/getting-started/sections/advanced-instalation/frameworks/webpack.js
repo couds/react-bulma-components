@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import Highlight from 'react-highlight';
+import Highlight from 'components/highlight';
 
 const messages = defineMessages({
   nodesass: {
