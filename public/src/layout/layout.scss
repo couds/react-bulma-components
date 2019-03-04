@@ -14,7 +14,13 @@
     }
   }
 
-  .hero-body {
+  .page-body {
     align-items: flex-start !important;
+  }
+  .page-footer {
+    a {
+      font-weight: bold;
+      color: $dark;
+    }
   }
 }

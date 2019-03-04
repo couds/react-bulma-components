@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Element from 'react-bulma-components/lib/components/element';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 import Hero from 'react-bulma-components/lib/components/hero';
+import Footer from 'react-bulma-components/lib/components/footer';
 import Icon from 'components/icon';
 import Link from 'components/link';
 import RouterLink from 'react-router-dom/Link';
 import logo from 'images/logo.png';
 import { FormattedMessage, defineMessages } from 'react-intl';
+import Container from 'react-bulma-components/lib/components/container';
+import Columns from 'react-bulma-components/lib/components/columns';
+import { Heading } from 'react-bulma-components';
+
+import './layout.scss';
 
 const messages = defineMessages({
   gettingStarted: {
@@ -17,6 +23,10 @@ const messages = defineMessages({
     id: 'documentation',
     defaultMessage: 'Documentation',
   },
+  home: {
+    id: 'home',
+    defaultMessage: 'Home',
+  }
 });
 
 const Layout = ({ children, currentPath }) => {
@@ -49,7 +59,7 @@ const Layout = ({ children, currentPath }) => {
               RBC
             </Element>
           </Link>
-          <Navbar.Item href="https://github.com/couds/react-bulma-components" responsive={{ desktop: { hide: { value: true }}}}>
+          <Navbar.Item rel="noopener noreferrer" target="_blank" href="https://github.com/couds/react-bulma-components" responsive={{ desktop: { hide: { value: true }}}}>
             <Icon icon="github-alt" />
           </Navbar.Item>
           <Navbar.Burger id="show-menu" onClick={toggleNavbar} />
@@ -73,18 +83,51 @@ const Layout = ({ children, currentPath }) => {
                 <Navbar.Item renderAs={RouterLink} to={['/es'].concat(path).join('/')}>ES</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
-            <Navbar.Item href="https://github.com/couds/react-bulma-components" responsive={{ touch: { hide: { value: true }}}}>
+            <Navbar.Item rel="noopener noreferrer" target="_blank" href="https://github.com/couds/react-bulma-components" responsive={{ touch: { hide: { value: true }}}}>
               <Icon icon="github-alt" />
             </Navbar.Item>
           </Navbar.Menu>
         </Navbar.Container>
       </Navbar>
       <Hero hasNavbar>
-        <Hero.Body paddingless>
+        <Hero.Body paddingless className="page-body">
           <div style={{ width: '100%' }}>
             {children}
           </div>
         </Hero.Body>
+        <Hero.Footer className="page-footer">
+          <Footer>
+            <Container>
+              <Columns>
+                <Columns.Column>
+                  <Heading size={5}>
+                    <Link to="/">
+                      <FormattedMessage {...messages.home} />
+                    </Link>
+                  </Heading>
+                  <Heading size={5}>
+                    <Link to="/">
+                      <FormattedMessage {...messages.gettingStarted} />
+                    </Link>
+                  </Heading>
+                </Columns.Column>
+                <Columns.Column>
+                  <Heading size={5}>
+                    <Link to="/">
+                      <FormattedMessage {...messages.documentation} />
+                    </Link>
+                  </Heading>
+                  <Heading heading>
+                    <Link to="/">
+                      <FormattedMessage {...messages.documentation} />
+                    </Link>
+                  </Heading>
+                </Columns.Column>
+                <Columns.Column></Columns.Column>
+              </Columns>
+            </Container>
+          </Footer>
+        </Hero.Footer>
       </Hero>
     </div>
   );
