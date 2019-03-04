@@ -23,22 +23,25 @@ const exampleCode = {
   reactCode: `
 const Element = () => {
   const [form, setForm] = useState({ name: '', password: '' });
+  const update = (({ target }) => setForm({ ...form, [target.name]: target.value }))
   return (
-    <Field>
-      <Control>
-        <Label>Name</Label>
-        <Input value={form.name} onChange={(evt) => setForm({ ...form, name: evt.target.value })} />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Label>Password</Label>
-        <Input type="password" value={form.password} onChange={(evt) => setForm({ ...form, password: evt.target.value })} />
-      </Control>
-    </Field>
-    <Button.Group>
-      <Button fullwidth rounded color="primary" onClick={() => console.log(form)}>Login</Button>
-    </Button.Group>
+    <>
+      <Field>
+        <Control>
+          <Label>Name</Label>
+          <Input name="name" value={form.name} onChange={update} />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Label>Password</Label>
+          <Input name="password" type="password" value={form.password} onChange={update} />
+        </Control>
+      </Field>
+      <Button.Group>
+        <Button fullwidth rounded color="primary" onClick={() => console.log(form)}>Login</Button>
+      </Button.Group>
+    </>
   );
 }`,
 bulmaCode: `
@@ -62,6 +65,7 @@ bulmaCode: `
 
 const Example = () => {
   const [form, setForm] = useState({ name: '', password: '' });
+  const update = (({ target }) => setForm({ ...form, [target.name]: target.value }))
   return (
     <Section style={{ paddingTop: 0 }}>
       <Heading>
@@ -71,18 +75,18 @@ const Example = () => {
         <FormattedMessage {...messages.easyUseDescription} />
       </Heading>
       <Box paddingless style={{ marginTop: '2rem' }}>
-        <CodeExample {...exampleCode} >
+        <CodeExample {...exampleCode} codeMaxHeight={250} >
           <div style={{ width: '100%', padding: '2rem' }}>
             <Field>
               <Control>
                 <Label>Name</Label>
-                <Input value={form.name} onChange={(evt) => setForm({ ...form, name: evt.target.value })} />
+                <Input name="name" value={form.name} onChange={update} />
               </Control>
             </Field>
             <Field>
               <Control>
                 <Label>Password</Label>
-                <Input type="password" value={form.password} onChange={(evt) => setForm({ ...form, password: evt.target.value })} />
+                <Input name="password" type="password" value={form.password} onChange={update} />
               </Control>
             </Field>
             <Button.Group>

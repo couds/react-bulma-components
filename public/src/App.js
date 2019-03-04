@@ -6,7 +6,6 @@ import Layout from 'layout';
 import Loader from 'components/page-loader';
 
 import 'helpers.scss';
-import 'highlight.js/styles/dracula.css';
 // import Index from './screens/index';
 // import GettingStarted from './screens/getting-started';
 
