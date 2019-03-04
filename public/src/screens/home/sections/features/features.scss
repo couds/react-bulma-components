@@ -1,0 +1,18 @@
+@import '_variables.sass';
+
+.home-features {
+  margin: auto;
+  max-width: 1000px;
+  .column {
+    cursor: default;
+    &:hover {
+      background-color: #fafafa;
+      .title.is-4 {
+        color: $danger;
+      }
+      .icon {
+        color: $danger;
+      }
+    }
+  }
+}
