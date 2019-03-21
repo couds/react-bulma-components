@@ -31,10 +31,6 @@ describe('Pagination component', () => {
     const component = renderer.create(<Pagination total={3} current={1} disabled />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('previous button should be disabled when the prop prevDisabled is given', () => {
-    const component = renderer.create(<Pagination prevDisabled />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
   it('Should not render if total pages equals 1', () => {
     const component = renderer.create(<Pagination total={1} current={1} />);
     expect(component.toJSON()).toMatchSnapshot();

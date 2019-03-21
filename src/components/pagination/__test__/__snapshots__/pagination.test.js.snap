@@ -360,5 +360,3 @@ exports[`Pagination component Should not display page numbers 1`] = `
 exports[`Pagination component Should not render if current page is greater than total pages 1`] = `null`;
 
 exports[`Pagination component Should not render if total pages equals 1 1`] = `null`;
-
-exports[`Pagination component previous button should be disabled when the prop prevDisabled is given 1`] = `null`;
