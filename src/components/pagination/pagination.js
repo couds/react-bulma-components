@@ -9,6 +9,8 @@ export default class Pagination extends React.PureComponent {
     ...modifiers.propTypes,
     /** Current page */
     current: PropTypes.number,
+    /** whether to disable the buttons */
+    disabled: PropTypes.bool,
     /** Total pages in total */
     total: PropTypes.number,
     /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
@@ -35,6 +37,7 @@ export default class Pagination extends React.PureComponent {
     next: 'Next',
     previous: 'Previous',
     showPrevNext: true,
+    disabled: undefined,
     autoHide: true,
     className: undefined,
     renderAs: 'nav',
@@ -73,6 +76,7 @@ export default class Pagination extends React.PureComponent {
   render() {
     const {
       current,
+      disabled,
       total,
       next,
       previous,
@@ -93,6 +97,8 @@ export default class Pagination extends React.PureComponent {
 
     const firstPage = this.firstPage(current, total);
     const lastPage = this.lastPage(current, total);
+    const prevDisabled = current === 1 || disabled;
+    const nextDisabled = current === total || disabled;
 
     return (
       <Element
@@ -107,19 +113,19 @@ export default class Pagination extends React.PureComponent {
               <a
                 role="button"
                 tabIndex={0}
-                onClick={current === 1 ? undefined : this.goToPage(current - 1)}
+                onClick={prevDisabled ? undefined : this.goToPage(current - 1)}
                 className="pagination-previous"
                 title="This is the first page"
-                disabled={current === 1}
+                disabled={prevDisabled}
               >
                 {previous}
               </a>
               <a
                 role="button"
                 tabIndex={0}
-                onClick={current === total ? undefined : this.goToPage(current + 1)}
+                onClick={nextDisabled ? undefined : this.goToPage(current + 1)}
                 className="pagination-next"
-                disabled={current === total}
+                disabled={nextDisabled}
               >
                 {next}
               </a>
@@ -144,6 +150,7 @@ export default class Pagination extends React.PureComponent {
                         onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
                         aria-label={`Page ${i + firstPage}`}
                         aria-current="page"
+                        disabled={disabled}
                       >
                         {i + firstPage}
                       </a>
