@@ -14,9 +14,13 @@
     }
   }
 
-  .page-body {
-    align-items: flex-start !important;
+  .page-content {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
   }
+
   .page-footer {
     a {
       font-weight: bold;
