@@ -91,7 +91,7 @@ const Layout = ({ children, currentPath }) => {
       </Navbar>
       <Hero hasNavbar>
         <Hero.Body paddingless className="page-body">
-          <div style={{ width: '100%' }}>
+          <div className="page-content">
             {children}
           </div>
         </Hero.Body>
