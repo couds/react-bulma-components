@@ -14,10 +14,10 @@
     "react-syntax-highlighter": "10.1.3"
   },
   "scripts": {
-    "start": "NODE_PATH=./src react-scripts start",
-    "build": "NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
-    "test": "NODE_PATH=./src react-scripts test",
-    "eject": "NODE_PATH=./src react-scripts eject",
+    "start": "cross-env NODE_PATH=./src react-scripts start",
+    "build": "cross-env NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
+    "test": "cross-env NODE_PATH=./src react-scripts test",
+    "eject": "cross-env NODE_PATH=./src react-scripts eject",
     "intl": "rm -rf .translations && extract-messages -l=en -o .translations --flat false 'src/**/*.js' && node .bin/translation.js"
   },
   "eslintConfig": {
@@ -30,6 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "cross-env": "5.2.0",
     "extract-react-intl-messages": "0.14.0",
     "node-sass": "4.11.0"
   }
