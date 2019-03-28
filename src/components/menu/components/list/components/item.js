@@ -13,7 +13,7 @@ const MenuListItem = ({
   domRef: ref,
   ...props
 }) => {
-  if (typeof children === 'string') {
+  if (typeof children === 'string' || typeof React.Children.only(children).type === 'string') {
     return (
       <li ref={ref}>
         <Element className={classnames(className, { 'is-active': active })} {...props}>

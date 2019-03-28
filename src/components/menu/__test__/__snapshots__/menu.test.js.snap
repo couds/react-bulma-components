@@ -120,13 +120,17 @@ exports[`Menu component Should render custom item child 1`] = `
     className="menu-list"
   >
     <li>
-      <p>
-        Custom children 1
-      </p>
+      <a>
+        <p>
+          Custom children 1
+        </p>
+      </a>
     </li>
     <li>
       <a>
-        Custom children 2
+        <a>
+          Custom children 2
+        </a>
       </a>
     </li>
   </ul>
