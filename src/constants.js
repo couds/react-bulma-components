@@ -14,6 +14,7 @@ export default {
     WARNING: 'warning',
     DANGER: 'danger',
     LIGHT: 'light',
+    GREY: 'grey',
     DARK: 'dark',
     WHITE: 'white',
     BLACK: 'black',
