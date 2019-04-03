@@ -34,9 +34,7 @@ storiesOf('Menu', module)
           </Menu.List>
         </Menu.List.Item>
         <Menu.List.Item>
-          <div>
-            test
-          </div>
+          Invitations
         </Menu.List.Item>
         <Menu.List.Item>
           Cloud Storage Environment Settings

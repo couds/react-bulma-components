@@ -13,17 +13,7 @@ const MenuListItem = ({
   domRef: ref,
   ...props
 }) => {
-  if (typeof children === 'string' || typeof React.Children.only(children).type === 'string') {
-    return (
-      <li ref={ref}>
-        <Element className={classnames(className, { 'is-active': active })} {...props}>
-          {children}
-        </Element>
-      </li>
-    );
-  }
-
-  if (React.Children.only(children).type === List) {
+  if (typeof children !== 'string' && React.Children.toArray(children).length === 1 && React.Children.only(children).type === List) {
     const child = React.Children.only(children);
     return (
       <li ref={ref}>
@@ -37,7 +27,9 @@ const MenuListItem = ({
 
   return (
     <li ref={ref}>
-      {children}
+      <Element className={classnames(className, { 'is-active': active })} {...props}>
+        {children}
+      </Element>
     </li>
   );
 };
