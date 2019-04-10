@@ -10,7 +10,7 @@ import Icon from '../icon';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 export default class Dropdown extends PureComponent {
   static Item = DropdownItem;
@@ -36,7 +36,7 @@ export default class Dropdown extends PureComponent {
     ...modifiers.defaultProps,
     className: undefined,
     renderAs: 'div',
-    domRef: React.createRef(),
+    domRef: undefined,
     style: undefined,
     value: undefined,
     children: [],
@@ -45,6 +45,11 @@ export default class Dropdown extends PureComponent {
     align: undefined,
     hoverable: undefined,
     label: undefined,
+  }
+
+  constructor(props) {
+    super(props);
+    this.domRef = props.domRef || React.createRef();
   }
 
   state = {
@@ -61,7 +66,7 @@ export default class Dropdown extends PureComponent {
 
   close = (evt) => {
     // IDK yet how to test using the ref in enzime
-    if (this.props.hoverable || (evt && this.props.domRef && this.props.domRef.current.contains(evt.target))) {
+    if (this.props.hoverable || (evt && this.domRef && this.domRef.current.contains(evt.target))) {
       return;
     }
     this.setState({ open: false });
@@ -118,6 +123,7 @@ export default class Dropdown extends PureComponent {
     return (
       <Element
         {...props}
+        domRef={this.domRef}
         className={classnames('dropdown', className, {
           'is-active': this.state.open,
           'is-up': up,
