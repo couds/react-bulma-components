@@ -18,9 +18,11 @@ const Input = ({
   placeholder,
   value,
   name,
+  domRef,
   ...props
 }) => (
   <Element
+    domRef={domRef}
     {...props}
     renderAs="input"
     name={name}
