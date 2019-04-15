@@ -48,34 +48,36 @@ exports[`Menu component Should concat Menu.List to display as submenus 1`] = `
       </a>
     </li>
     <li>
-      <li>
-        <a
-          className="is-active"
-        >
-          Manage Your Team
-        </a>
-        <ul
-          className="menu-list"
-        >
-          <li>
-            <a>
-              Members
-            </a>
-          </li>
-          <li>
-            <a
-              className="is-active"
-            >
-              Plugins
-            </a>
-          </li>
-          <li>
-            <a>
-              Add a member
-            </a>
-          </li>
-        </ul>
-      </li>
+      <a>
+        <li>
+          <a
+            className="is-active"
+          >
+            Manage Your Team
+          </a>
+          <ul
+            className="menu-list"
+          >
+            <li>
+              <a>
+                Members
+              </a>
+            </li>
+            <li>
+              <a
+                className="is-active"
+              >
+                Plugins
+              </a>
+            </li>
+            <li>
+              <a>
+                Add a member
+              </a>
+            </li>
+          </ul>
+        </li>
+      </a>
     </li>
   </ul>
 </aside>
@@ -120,13 +122,17 @@ exports[`Menu component Should render custom item child 1`] = `
     className="menu-list"
   >
     <li>
-      <p>
-        Custom children 1
-      </p>
+      <a>
+        <p>
+          Custom children 1
+        </p>
+      </a>
     </li>
     <li>
       <a>
-        Custom children 2
+        <a>
+          Custom children 2
+        </a>
       </a>
     </li>
   </ul>
