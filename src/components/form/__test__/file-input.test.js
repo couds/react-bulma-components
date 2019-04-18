@@ -48,4 +48,9 @@ describe('Dropdown component', () => {
     expect(component.state('filename')).toBe(undefined);
     expect(onChange).toBeCalled();
   });
+  it('should pass file attributes', () => {
+    const component = renderer.create(
+      <InputFile accept="image/*" capture="source" multiple onChange={() => {}} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
