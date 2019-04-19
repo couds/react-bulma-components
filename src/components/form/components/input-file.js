@@ -26,9 +26,11 @@ export default class InputFile extends PureComponent {
     name: PropTypes.string,
     label: PropTypes.string,
     icon: PropTypes.element,
-    accept: PropTypes.string,
-    capture: PropTypes.string,
-    multiple: PropTypes.bool,
+    inputProps: PropTypes.shape({
+      accept: PropTypes.string,
+      capture: PropTypes.string,
+      multiple: PropTypes.bool,
+    }),
   }
 
   static defaultProps = {
@@ -45,9 +47,11 @@ export default class InputFile extends PureComponent {
     name: undefined,
     icon: undefined,
     label: 'Choose a file...',
-    accept: undefined,
-    capture: undefined,
-    multiple: undefined,
+    inputProps: {
+      accept: undefined,
+      capture: undefined,
+      multiple: undefined,
+    },
   }
 
   state = {
@@ -78,9 +82,7 @@ export default class InputFile extends PureComponent {
       name,
       label,
       icon,
-      accept,
-      capture,
-      multiple,
+      inputProps,
       ...props
     } = this.props;
 
@@ -101,10 +103,8 @@ export default class InputFile extends PureComponent {
       >
         <label className="file-label">
           <input
+            {...inputProps}
             name={name}
-            accept={accept}
-            capture={capture}
-            multiple={multiple}
             value=""
             type="file"
             className="file-input"
