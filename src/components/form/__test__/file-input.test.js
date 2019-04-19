@@ -50,10 +50,10 @@ describe('Dropdown component', () => {
   });
   it('should pass file attributes', () => {
     const inputProps = {
-      accept: "image/*",
-      capture: "source",
+      accept: 'image/*',
+      capture: 'source',
       multiple: true,
-    }
+    };
     const component = renderer.create(
       <InputFile inputProps={inputProps} onChange={() => {}} />);
     expect(component.toJSON()).toMatchSnapshot();
