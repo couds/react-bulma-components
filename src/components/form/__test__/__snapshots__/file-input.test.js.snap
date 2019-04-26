@@ -27,3 +27,32 @@ exports[`Dropdown component Should render file input tree 1`] = `
   </label>
 </div>
 `;
+
+exports[`Dropdown component should pass file attributes 1`] = `
+<div
+  className="file"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      accept="image/*"
+      capture="source"
+      className="file-input"
+      multiple={true}
+      onChange={[Function]}
+      type="file"
+      value=""
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+  </label>
+</div>
+`;
