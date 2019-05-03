@@ -7,9 +7,9 @@ const messages = defineMessages({
     id: 'install node-sass in cra',
     defaultMessage: 'You need to enable SASS compilation on your CRA project, to do it just install node-sass',
   },
-  updatePackageJson: {
-    id: 'update package json in cra',
-    defaultMessage: 'Now update the scripts on your package.json file to let the builder now where to find the _variables.sass file',
+  addBasepath: {
+    id: 'add base path to jsconfig',
+    defaultMessage: 'Now create/update your jsconfig.json (or tsconfig if you are using typescript)',
   },
   srcLegend: {
     id: 'where src its your file location',
@@ -28,14 +28,13 @@ const CRA = ({ show }) => {
       </p>
       <Highlight className="language-bash">{`npm i --save node-sass`}</Highlight> 
       <p>
-        <FormattedMessage {...messages.updatePackageJson} />
+        <FormattedMessage {...messages.addBasepath} />
       </p>
       <Highlight className="language-json">{`
-"scripts": {
-  "start": "NODE_PATH=./src react-scripts start",
-  "build": "NODE_PATH=./src react-scripts build",
-  "test": "NODE_PATH=./src react-scripts test",
-  ...
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
 }
       `.trim()}</Highlight> 
       <p>

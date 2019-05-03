@@ -131,7 +131,7 @@ const GettingStarted = ({ intl: { formatMessage  }}) => (
                   reactCode={`
   import React from 'react';
   import 'react-bulma-components/basic/react-bulma-components.min.css';
-  import { Button } from 'react-bulma-components/basic';
+  import { Button } from 'react-bulma-components/dist';
 
   const App = () => (
     <div>
