@@ -12,6 +12,7 @@ import 'helpers.scss';
 const Home = React.lazy(() => import('./screens/home'));
 const GettingStarted = React.lazy(() => import('./screens/getting-started'));
 const NotFound = React.lazy(() => import('./screens/not-found'));
+const Documentation = React.lazy(() => import('./screens/documentation'));
 
 function WaitingComponent(Component) {
   return props => (
@@ -42,6 +43,7 @@ const LocaleRouteHandler = ({ match, location }) => {
           <Switch>
             <Route path={match.url} exact component={WaitingComponent(Home)}  />
             <Route path={`${match.url}/getting-started/`} component={WaitingComponent(GettingStarted)} />
+            <Route path={`${match.url}/documentation`} component={WaitingComponent(Documentation)} />
             <Route path={`${match.url}/*`} component={WaitingComponent(NotFound)} />
           </Switch>
         </Layout>
