@@ -1,17 +1,17 @@
-import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { select, withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import extraViewports from './extra-viewports.json';
 
 import 'index.sass';
 
-setOptions({
-  name: 'React Bulma Components',
-  url: 'https://github.com/couds/react-bulma-components',
-  showAddonPanel: true,
+addParameters({
+  options: {
+    name: 'React Bulma Components',
+    url: 'https://github.com/couds/react-bulma-components',
+    showAddonPanel: true,
+  },
 });
 
 addDecorator(withKnobs);

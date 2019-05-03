@@ -5,53 +5,16 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const options = process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? {
-  output: 'full/index',
-  rules: [
-    {
-      test: /\.s?[ca]ss$/,
-      loader: 'style-loader!css-loader!sass-loader',
-    },
-    {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader!sass-loader',
-    },
-  ],
-} : {
-  output: 'dist/index',
-  rules: [
-    {
-      test: /\.s?[ca]ss$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        {
-          loader: 'css-loader',
-        },
-        {
-          loader: 'resolve-url-loader',
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true,
-          },
-        },
-      ],
-    },
-  ],
-};
-
 exports.default = {
   devtool: 'source-map',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname),
-    filename: `${options.output}.js`,
-    sourceMapFilename: `${options.output}.js.map`,
+    filename: 'dist/index.js',
+    sourceMapFilename: 'dist/index.js.map',
     umdNamedDefine: true,
     libraryTarget: 'umd',
     library: 'react-bulma-components',
-    globalObject: process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? 'window' : 'this',
   },
   watchOptions: {
     poll: 250,
@@ -86,15 +49,10 @@ exports.default = {
       minimize: true,
       debug: false,
     }),
-  ].concat(
-    process.env.WEBPACK_ENV === 'INCLUDE_CSS'
-      ? []
-      : [
-        new MiniCssExtractPlugin({
-          filename: 'dist/react-bulma-components.min.css',
-        }),
-      ],
-  ),
+    new MiniCssExtractPlugin({
+      filename: 'dist/react-bulma-components.min.css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -109,7 +67,7 @@ exports.default = {
               },
             }],
             '@babel/preset-react'],
-          plugins: ['transform-class-properties'],
+          plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
       {
@@ -124,7 +82,24 @@ exports.default = {
         test: /\.(jpg|png|gif)$/,
         loader: 'file-loader?name=images/[name].[ext]',
       },
-      ...options.rules,
+      {
+        test: /\.s?[ca]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'resolve-url-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
