@@ -9,8 +9,15 @@
     .container {
       max-width: 96%;
     }
-    .navbar-item .icon {
-      margin-right: 0.5rem;
+    .navbar-item {
+      box-sizing: border-box;
+      border-bottom: 2px solid transparent;
+      &.is-active {
+        border-bottom-color: $primary;
+      }
+      .icon {
+        margin-right: 0.5rem;
+      }
     }
   }
 

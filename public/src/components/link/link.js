@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLink from 'react-router-dom/NavLink';
+import { NavLink } from 'react-router-dom';
 import LocaleContext from '../../locales/context';
 
 const LocalizedLink = ({ to, ...props}) => (

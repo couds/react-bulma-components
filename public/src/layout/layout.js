@@ -5,7 +5,7 @@ import Hero from 'react-bulma-components/lib/components/hero';
 import Footer from 'react-bulma-components/lib/components/footer';
 import Icon from 'components/icon';
 import Link from 'components/link';
-import RouterLink from 'react-router-dom/Link';
+import { Link as RouterLink } from 'react-router-dom';
 import logo from 'images/logo.png';
 import { FormattedMessage, defineMessages } from 'react-intl';
 import Container from 'react-bulma-components/lib/components/container';
