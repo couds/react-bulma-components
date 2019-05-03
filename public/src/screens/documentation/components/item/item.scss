@@ -1,0 +1,7 @@
+@import '_variables.sass';
+
+.documentation-item {
+  &:hover {
+    background-color: $grey-lighter;
+  }
+}
