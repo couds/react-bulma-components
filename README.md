@@ -6,7 +6,7 @@
 [![Release Version](https://img.shields.io/github/release/couds/react-bulma-components.svg)](https://github.com/couds/react-bulma-components)
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
-React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
+React components for [Bulma](http://bulma.io/) (v0.7.4) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
 ### V3
 
@@ -19,8 +19,9 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 ### BREAKING CHANGES V2 -> V3:
 
+- The default import its now the advance Usage instead the basic. **(See How to use section)**
 - Now the alias needed to override Bulma variables (and/or use the directly the sass files) is `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- Please check if the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
+- To get the Ref from the node we add a new prop domRef that will be forwarded to the valid dom element (Please check the commponent documentation to ensure you get the dom element you want because there are cases where multiple dom nodes are rendered for a single component)
 
 ### To Install
 
@@ -40,7 +41,7 @@ This configuration will allow you to start fast but with one drawback, by defaul
 ```javascript
 import React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Button } from 'react-bulma-components';
+import { Button } from 'react-bulma-components/dist';
 
 export default () => (
   <Button color="primary">My Bulma button</Button>
@@ -55,7 +56,6 @@ This configuration is recomended if you answer yes to one of the following quest
 - I need to override the default Bulma variables?
 
 
-
 In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your main scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
 
 ```scss
@@ -68,7 +68,7 @@ You can start using the library like this
 
 ```javascript
 import React from 'react';
-import Button from 'react-bulma-components/lib/components/button';
+import { Button } from 'react-bulma-components';
 
 export default () => (
   <Button color="primary">My Bulma button</Button>
