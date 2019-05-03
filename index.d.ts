@@ -94,24 +94,15 @@ type ModifierProps = ColorProps &
   ResponsiveProps &
   TypographyProps;
 
-/*** Element ***/
-// https://github.com/couds/react-bulma-components/blob/master/src/components/element/element.js
-interface ElementProps extends ModifierProps {
-  className?: string;
-  renderAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-  style?: {};
-  domRef: RefObject<T>
-  children?: React.ReactNode;
-  // TODO: Check for a way to include all html events/attr
-  onClick?: React.MouseEventHandler<any>;
-}
-
-declare const Element: ElementProps;
-
 /*** Box ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/box/box.js
-interface BoxProps extends ElementProps {}
-declare const Box: BoxProps;
+interface BoxProps extends ElementProps {
+  children?: React.ReactNode;
+  style?: {};
+}
+declare const Box: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<BoxProps> & React.RefAttributes<any>
+>;
 
 /*** Breadcrumb ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/breadcrumb/breadcrumb.js
@@ -122,8 +113,18 @@ interface BreadcrumbModifierProps {
   items?: Array<{ url: string; active?: boolean; name?: React.ReactNode }>;
   hrefAttr?: string;
 }
-interface BreadcrumbProps extends ElementProps, BreadcrumbModifierProps {}
-declare const Breadcrumb: BreadcrumbProps;
+interface BreadcrumbProps
+  extends ModifierProps,
+    BreadcrumbModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"a">, "unselectable">> {
+  className?: string;
+  style?: {};
+  renderAs?: "a" | React.ComponentType<any>;
+  // [key: string]: any; // Footnote [0]
+}
+declare const Breadcrumb: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<BreadcrumbProps> & React.RefAttributes<any>
+>;
 
 /*** Button ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/button/button.js
@@ -144,11 +145,26 @@ interface ButtonModifierProps {
   rounded?: boolean;
   text?: boolean;
 }
-interface ButtonProps extends ElementProps, ButtonModifierProps {
+interface ButtonProps
+  extends ModifierProps,
+    ButtonModifierProps,
+    Partial<
+      Omit<
+        React.ComponentPropsWithoutRef<"a" | "button" | "span">,
+        "color" | "unselectable"
+      >
+    > {
+  children?: React.ReactNode;
+  className?: string;
+  style?: {};
   renderAs?: "a" | "button" | "span" | React.ComponentType<any>;
+  onClick?: React.MouseEventHandler<any>;
   // [key: string]: any; // Footnote [0]
 }
-interface Button extends ButtonProps {
+interface Button
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<ButtonProps> & React.RefAttributes<any>
+  > {
   Group: typeof ButtonGroup;
 }
 declare const Button: Button;
@@ -159,7 +175,9 @@ interface ButtonGroupModifierProps {
   position?: "centered" | "right";
 }
 type ButtonGroupProps = ElementProps & ButtonGroupModifierProps;
-declare const ButtonGroup: ButtonGroupProps;
+declare const ButtonGroup: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ButtonGroupProps> & React.RefAttributes<any>
+>;
 
 /*** Card ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/card.js
@@ -167,7 +185,10 @@ interface CardProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Card extends CardProps {
+interface Card
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<CardProps> & React.RefAttributes<any>
+  > {
   Content: typeof CardContent;
   Image: typeof CardImage;
   Header: typeof CardHeader;
@@ -177,27 +198,38 @@ declare const Card: Card;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/content.js
 type CardContentProps = ElementProps;
-declare const CardContent: CardContentProps;
+declare const CardContent: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CardContentProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/image.js
 type CardImageProps = ModifierProps & ImageProps;
-declare const CardImage: CardImageProps;
+declare const CardImage: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CardImageProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/footer/footer.js
 type CardFooterProps = ElementProps;
-interface CardFooter extends CardFooterProps {
+interface CardFooter
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<CardFooterProps> & React.RefAttributes<any>
+  > {
   Item: typeof CardFooterItem;
 }
 declare const CardFooter: CardFooter;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/footer/components/footer-item.js
 type CardFooterItemProps = ElementProps;
-declare const CardFooterItem: CardFooterItemProps;
+declare const CardFooterItem: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CardFooterItemProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/header/index.js
 type CardHeaderProps = ElementProps;
 interface CardHeader
-  extends CardHeaderProps {
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<CardHeaderProps> & React.RefAttributes<any>
+  > {
   Icon: typeof CardHeaderIcon;
   Title: typeof CardHeaderTitle;
 }
@@ -205,11 +237,15 @@ declare const CardHeader: CardHeader;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/header/components/header-icon.js
 type CardHeaderIconProps = ElementProps;
-declare const CardHeaderIcon: CardHeaderIconProps;
+declare const CardHeaderIcon: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CardHeaderIconProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/card/components/header/components/header-title.js
 type CardHeaderTitleProps = ElementProps;
-declare const CardHeaderTitle: CardHeaderTitleProps;
+declare const CardHeaderTitle: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CardHeaderTitleProps> & React.RefAttributes<any>
+>;
 
 /*** Columns ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/columns/columns.js
@@ -219,12 +255,18 @@ interface ColumnsModifierProps {
   multiline?: boolean;
   centered?: boolean;
 }
-interface ColumnsProps extends ModifierProps, ColumnsModifierProps {
+interface ColumnsProps
+  extends ModifierProps,
+    ColumnsModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-interface Columns extends ColumnsProps {
+interface Columns
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<ColumnsProps> & React.RefAttributes<"div">
+  > {
   Column: typeof Column;
 }
 declare const Columns: Columns;
@@ -269,18 +311,26 @@ interface ColumnModifierProps {
   // touch?: ColumnSizing; // todo: shouldn't this be here?
 }
 
-interface ColumnProps extends ModifierProps, ColumnModifierProps, ColumnSizeModifierProps {
+interface ColumnProps
+  extends ModifierProps,
+    ColumnModifierProps,
+    ColumnSizeModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const Column: ColumnProps;
+declare const Column: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ColumnProps> & React.RefAttributes<"div">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/container/container.js
 interface ContainerProps extends ElementProps {
   children?: React.ReactNode;
 }
-declare const Container: ContainerProps;
+declare const Container: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ContainerProps> & React.RefAttributes<any>
+>;
 
 /*** Content ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/content/content.js
@@ -292,7 +342,9 @@ interface ContentProps extends ElementProps {
   className?: string;
   style?: {};
 }
-declare const Content: ContentProps;
+declare const Content: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ContentProps> & React.RefAttributes<any>
+>;
 
 /*** Dropdown ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/dropdown/dropdown.js
@@ -303,34 +355,67 @@ interface DropdownModifierProps {
   align?: "right";
   hoverable?: boolean;
 }
-interface DropdownProps extends ModifierProps, DropdownModifierProps {
+interface DropdownProps
+  extends ModifierProps,
+    DropdownModifierProps,
+    Partial<
+      Omit<
+        React.ComponentPropsWithoutRef<"div">,
+        "color" | "onChange" | "unselectable"
+      >
+    > {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-interface Dropdown extends DropdownProps {
+interface Dropdown
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<DropdownProps> & React.RefAttributes<"div">
+  > {
   Divider: typeof DropdownDivider;
   Item: typeof DropdownItem;
 }
 declare const Dropdown: Dropdown;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/dropdown/components/divider.js
-interface DropdownDividerProps extends ModifierProps{
+interface DropdownDividerProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"hr">, "unselectable">> {
   className?: string;
   style?: {};
 }
-declare const DropdownDivider: React.PropsWithoutRef<DropdownDividerProps> & React.RefAttributes<"hr">;
+declare const DropdownDivider: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<DropdownDividerProps> & React.RefAttributes<"hr">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/dropdown/components/item.js
 interface DropdownItemModifierProps {
   active?: boolean;
   value: any; // todo: should probably be React.ReactNode;
 }
-interface DropdownItemProps extends ModifierProps, DropdownItemModifierProps {
+interface DropdownItemProps
+  extends ModifierProps,
+    DropdownItemModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<any>;
 }
-declare const DropdownItem:  DropdownItemProps;
+declare const DropdownItem: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<DropdownItemProps> & React.RefAttributes<"div">
+>;
+
+/*** Element ***/
+// https://github.com/couds/react-bulma-components/blob/master/src/components/element/element.js
+interface ElementProps
+  extends ModifierProps,
+    Partial<React.ComponentPropsWithoutRef<keyof JSX.IntrinsicElements>> {
+  className?: string;
+  renderAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  // [key: string]: any; // Footnote [0]
+}
+declare const Element: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ElementProps> & React.RefAttributes<any>
+>;
 
 /*** Footer ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/footer/footer.js
@@ -338,7 +423,9 @@ interface FooterProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const Footer: FooterProps;
+declare const Footer: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<FooterProps> & React.RefAttributes<any>
+>;
 
 /*** Form ***/
 interface Form {
@@ -356,7 +443,9 @@ interface Form {
 declare const Form: Form;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/checkbox.js
-interface CheckboxProps extends ModifierProps {
+interface CheckboxProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"input">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
@@ -365,7 +454,9 @@ interface CheckboxProps extends ModifierProps {
   checked?: boolean;
   name?: string;
 }
-declare const Checkbox: React.PropsWithoutRef<CheckboxProps>;
+declare const Checkbox: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CheckboxProps> & React.RefAttributes<"input">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/control.js
 interface ControlModifierProps {
@@ -379,7 +470,9 @@ interface ControlProps extends ElementProps, ControlModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const Control: ControlProps;
+declare const Control: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ControlProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/field/field.js
 interface FieldModifierProps {
@@ -392,7 +485,10 @@ interface FieldProps extends ElementProps, FieldModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Field extends FieldProps {
+interface Field
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<FieldProps> & React.RefAttributes<any>
+  > {
   Body: typeof FieldBody;
   Label: typeof FieldLabel;
 }
@@ -403,7 +499,9 @@ interface FieldBodyProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const FieldBody: FieldBodyProps;
+declare const FieldBody: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<FieldBodyProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/label.js
 interface FieldLabelModifierProps {
@@ -413,15 +511,21 @@ interface FieldLabelProps extends ElementProps, FieldLabelModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const FieldLabel: FieldLabelProps;
+declare const FieldLabel: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<FieldLabelProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/help.js
-interface HelpProps extends ModifierProps{
+interface HelpProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"p">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   color?: Color;
 }
-declare const Help: HelpProps;
+declare const Help: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<HelpProps> & React.RefAttributes<"p">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/input-file.js
 interface InputFileModifierProps {
@@ -434,13 +538,23 @@ interface InputFileModifierProps {
   icon?: React.ReactElement<any>;
   size?: "small" | "medium" | "large";
 }
-interface InputFileProps extends ModifierProps, InputFileModifierProps {
+interface InputFileProps
+  extends ModifierProps,
+    InputFileModifierProps,
+    Partial<
+      Omit<
+        React.ComponentPropsWithoutRef<"input">,
+        "color" | "size" | "unselectable"
+      >
+    > {
   className?: string;
   style?: {};
   name?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
-declare const InputFile: InputFileProps;
+declare const InputFile: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<InputFileProps> & React.RefAttributes<"input">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/input.js
 interface InputModifierProps {
@@ -448,7 +562,15 @@ interface InputModifierProps {
   isStatic?: boolean;
   size?: "small" | "medium" | "large";
 }
-interface InputProps extends ModifierProps, InputModifierProps {
+interface InputProps
+  extends ModifierProps,
+    InputModifierProps,
+    Partial<
+      Omit<
+        React.ComponentPropsWithoutRef<"input">,
+        "color" | "size" | "unselectable"
+      >
+    > {
   className?: string;
   style?: {};
   readOnly?: boolean;
@@ -468,19 +590,26 @@ interface InputProps extends ModifierProps, InputModifierProps {
     | "time"
     | "datetime-local";
 }
-declare const Input: InputProps;
+declare const Input: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<InputProps> & React.RefAttributes<"input">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/label.js
 interface LabelModifierProps {
   htmlFor?: string;
   size?: "small" | "medium" | "large";
 }
-interface LabelProps extends ModifierProps, LabelModifierProps {
+interface LabelProps
+  extends ModifierProps,
+    LabelModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"label">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const Label: LabelProps;
+declare const Label: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<LabelProps> & React.RefAttributes<"label">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/radio.js
 interface RadioProps
@@ -494,7 +623,9 @@ interface RadioProps
   checked?: boolean;
   value?: string;
 }
-declare const Radio: RadioProps;
+declare const Radio: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<RadioProps> & React.RefAttributes<"input">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/select.js
 interface SelectModifierProps {
@@ -520,14 +651,21 @@ interface SelectProps
   value?: string | number;
   name?: string;
 }
-declare const Select: SelectProps;
+declare const Select: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<SelectProps> & React.RefAttributes<"select">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/textarea.js
 interface TextareaModifierProps {
   size?: "small" | "medium" | "large";
   color?: Color;
 }
-interface TextareaProps extends ModifierProps, TextareaModifierProps {
+interface TextareaProps
+  extends ModifierProps,
+    TextareaModifierProps,
+    Partial<
+      Omit<React.ComponentPropsWithoutRef<"textarea">, "color" | "unselectable">
+    > {
   className?: string;
   style?: {};
   readOnly?: boolean;
@@ -537,7 +675,9 @@ interface TextareaProps extends ModifierProps, TextareaModifierProps {
   value?: string;
   name?: string;
 }
-declare const Textarea: TextareaProps;
+declare const Textarea: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<TextareaProps> & React.RefAttributes<"textarea">
+>;
 
 /*** Heading ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/heading/heading.js
@@ -551,7 +691,9 @@ interface HeadingModifierProps {
 interface HeadingProps extends ElementProps, HeadingModifierProps {
   children?: React.ReactNode;
 }
-declare const Heading: HeadingProps;
+declare const Heading: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<HeadingProps> & React.RefAttributes<any>
+>;
 
 /*** Hero ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/hero/hero.js
@@ -564,7 +706,10 @@ interface HeroProps extends Omit<ElementProps, "color">, HeroModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Hero extends HeroProps {
+interface Hero
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<HeroProps> & React.RefAttributes<any>
+  > {
   Body: typeof HeroBody;
   Footer: typeof HeroFooter;
   Head: typeof HeroHead;
@@ -576,21 +721,27 @@ interface HeroBodyProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const HeroBody: HeroBodyProps;
+declare const HeroBody: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<HeroBodyProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/hero/components/hero-footer.js
 interface HeroFooterProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const HeroFooter: HeroFooterProps;
+declare const HeroFooter: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<HeroFooterProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/hero/components/hero-head.js
 interface HeroHeadProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const HeroHead: HeroHeadProps;
+declare const HeroHead: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<HeroHeadProps> & React.RefAttributes<any>
+>;
 
 /*** Icon ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/icon/icon.js
@@ -600,13 +751,20 @@ interface IconModifierProps {
   align?: "left" | "right";
   color?: Color;
 }
-interface IconProps extends ModifierProps, IconModifierProps {
+interface IconProps
+  extends ModifierProps,
+    IconModifierProps,
+    Partial<
+      Omit<React.ComponentPropsWithoutRef<"span">, "color" | "unselectable">
+    > {
   children?: React.ReactNode;
   className?: string;
   style?: {};
   // [key: string]: any; // Footnote [0]
 }
-declare const Icon: IconProps;
+declare const Icon: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<IconProps> & React.RefAttributes<"span">
+>;
 
 /*** Image ***/
 type ImageSize =
@@ -641,11 +799,16 @@ interface ImageModifierProps {
   size?: ImageSize;
   fallback?: string;
 }
-interface ImageProps extends ModifierProps, ImageModifierProps {
+interface ImageProps
+  extends ModifierProps,
+    ImageModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"figure">, "unselectable">> {
   className?: string;
   style?: {};
 }
-declare const Image: ImageProps;
+declare const Image: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ImageProps> & React.RefAttributes<"figure">
+>;
 
 /*** Level ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/level/level.js
@@ -656,7 +819,10 @@ interface LevelProps extends ElementProps, LevelModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Level extends LevelProps {
+interface Level
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<LevelProps> & React.RefAttributes<any>
+  > {
   Item: typeof LevelItem;
   Side: typeof LevelSide;
 }
@@ -667,7 +833,9 @@ interface LevelItemProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const LevelItem: LevelItemProps;
+declare const LevelItem: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<LevelItemProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/level/components/level-side.js
 interface LevelSideModifierProps {
@@ -677,7 +845,9 @@ interface LevelSideProps extends ElementProps, LevelSideModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const LevelSide: LevelSideProps;
+declare const LevelSide: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<LevelSideProps> & React.RefAttributes<any>
+>;
 
 /*** Loader ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/loader/loader.js
@@ -685,7 +855,9 @@ interface LoaderProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const Loader: LoaderProps;
+declare const Loader: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<LoaderProps> & React.RefAttributes<any>
+>;
 
 /*** Media ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/media/media.js
@@ -693,7 +865,10 @@ interface MediaProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Media extends MediaProps {
+interface Media
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<MediaProps> & React.RefAttributes<any>
+  > {
   Content: typeof MediaContent;
   Item: typeof MediaItem;
 }
@@ -704,19 +879,26 @@ interface MediaContentProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const MediaContent: MediaContentProps;
+declare const MediaContent: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<MediaContentProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/media/components/media-item.js
 interface MediaItemProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const MediaItem: MediaItemProps;
+declare const MediaItem: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<MediaItemProps> & React.RefAttributes<any>
+>;
 
 /*** Menu ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/menu/menu.js
 type MenuProps = ElementProps;
-interface Menu extends MenuProps {
+interface Menu
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<MenuProps> & React.RefAttributes<any>
+  > {
   List: typeof MenuList;
 }
 declare const Menu: Menu;
@@ -725,10 +907,16 @@ declare const Menu: Menu;
 interface MenuListModifierProps {
   title?: string;
 }
-interface MenuListProps extends ModifierProps, MenuListModifierProps {
+interface MenuListProps
+  extends ModifierProps,
+    MenuListModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"ul">, "unselectable">> {
   className?: string;
 }
-interface MenuList extends MenuListProps {
+interface MenuList
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<MenuListProps> & React.RefAttributes<"ul">
+  > {
   Item: typeof MenuListItem;
 }
 declare const MenuList: MenuList;
@@ -740,7 +928,9 @@ interface MenuListItemModifierProps {
 interface MenuListItemProps extends ElementProps, MenuListItemModifierProps {
   children?: string | React.ReactElement<any>;
 }
-declare const MenuListItem: MenuListItemProps;
+declare const MenuListItem: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<MenuListItemProps> & React.RefAttributes<any>
+>;
 
 /*** Message ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/message/message.js
@@ -748,12 +938,16 @@ interface MessageModifierProps {
   size?: "small" | "medium" | "large";
   color?: Color;
 }
-interface MessageProps extends Omit<ElementProps, "color">,
+interface MessageProps
+  extends Omit<ElementProps, "color">,
     MessageModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Message extends MessageProps {
+interface Message
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<MessageProps> & React.RefAttributes<any>
+  > {
   Body: typeof MessageBody;
   Header: typeof MessageHeader;
 }
@@ -763,13 +957,17 @@ declare const Message: Message;
 interface MessageBodyProps extends ElementProps {
   children?: React.ReactNode;
 }
-declare const MessageBody: MessageBodyProps;
+declare const MessageBody: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<MessageBodyProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/message/components/header.js
 interface MessageHeaderProps extends ElementProps {
   children?: React.ReactNode;
 }
-declare const MessageHeader: MessageHeaderProps;
+declare const MessageHeader: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<MessageHeaderProps> & React.RefAttributes<any>
+>;
 
 /*** Modal ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/modal.js
@@ -785,7 +983,10 @@ interface ModalProps extends ModifierProps, ModalModifierProps {
   className?: string;
   children: React.ReactNode;
 }
-interface Modal extends ModalProps {
+interface Modal
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<ModalProps> & React.RefAttributes<"div">
+  > {
   Card: typeof ModalCard;
   Content: typeof ModalContent;
 }
@@ -795,12 +996,18 @@ declare const Modal: Modal;
 interface ModalCardModifierProps {
   onClose?: () => void;
 }
-interface ModalCardProps extends ModifierProps, ModalCardModifierProps {
+interface ModalCardProps
+  extends ModifierProps,
+    ModalCardModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-interface ModalCard extends ModalCardProps {
+interface ModalCard
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<ModalCardProps> & React.RefAttributes<"div">
+  > {
   Body: typeof ModalCardBody;
   Foot: typeof ModalCardFoot;
   Head: typeof ModalCardHead;
@@ -814,42 +1021,59 @@ interface ModalCardBodyProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const ModalCardBody: ModalCardBodyProps;
+declare const ModalCardBody: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ModalCardBodyProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/card/foot.js
-interface ModalCardFootProps extends ModifierProps {
+interface ModalCardFootProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"footer">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const ModalCardFoot: ModalCardFootProps;
+declare const ModalCardFoot: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ModalCardFootProps> & React.RefAttributes<"footer">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/card/head.js
 interface ModalCardHeadModifierProps {
   showClose?: boolean;
   onClose?: () => void;
 }
-interface ModalCardHeadProps extends ModifierProps, ModalCardHeadModifierProps {
+interface ModalCardHeadProps
+  extends ModifierProps,
+    ModalCardHeadModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"header">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const ModalCardHead: ModalCardHeadProps;
+declare const ModalCardHead: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ModalCardHeadProps> & React.RefAttributes<"header">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/card/title.js
-interface ModalCardTitleProps extends ModifierProps {
+interface ModalCardTitleProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"p">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const ModalCardTitle: ModalCardTitleProps;
+declare const ModalCardTitle: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ModalCardTitleProps> & React.RefAttributes<"p">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/content.js
 interface ModalContentProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const ModalContent: ModalContentProps;
+declare const ModalContent: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ModalContentProps> & React.RefAttributes<any>
+>;
 
 /*** Navbar ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/navbar.js
@@ -863,7 +1087,10 @@ interface NavbarProps extends Omit<ElementProps, "color">, NavbarModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Navbar extends NavbarProps {
+interface Navbar
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<NavbarProps> & React.RefAttributes<any>
+  > {
   Brand: typeof NavbarBrand;
   Burger: typeof NavbarBurger;
   Container: typeof NavbarContainer;
@@ -876,48 +1103,68 @@ interface Navbar extends NavbarProps {
 declare const Navbar: Navbar;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/brand.js
-interface NavbarBrandProps extends ModifierProps {
+interface NavbarBrandProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const NavbarBrand: NavbarBrandProps;
+declare const NavbarBrand: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarBrandProps> & React.RefAttributes<"div">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/burger.js
-interface NavbarBurgerProps extends ModifierProps {
+interface NavbarBurgerProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   className?: string;
   style?: {};
   onClick?: React.MouseEventHandler<any>;
 }
-declare const NavbarBurger: NavbarBurgerProps;
+declare const NavbarBurger: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarBurgerProps> & React.RefAttributes<"div">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/container.js
 interface NavbarContainerModifierProps {
   position?: "start" | "end";
 }
-interface NavbarContainerProps extends ElementProps, NavbarContainerModifierProps {
+interface NavbarContainerProps
+  extends ElementProps,
+    NavbarContainerModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const NavbarContainer: NavbarContainerProps;
+declare const NavbarContainer: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarContainerProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/divider.js
-interface NavbarDividerProps extends ModifierProps {
+interface NavbarDividerProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   className?: string;
   style?: {};
 }
-declare const NavbarDivider: NavbarDividerProps;
+declare const NavbarDivider: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarDividerProps> & React.RefAttributes<"div">
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/container.js
 interface NavbarDropdownModifierProps {
   boxed?: boolean;
   right?: boolean;
 }
-interface NavbarDropdownProps extends ElementProps, NavbarDropdownModifierProps {
+interface NavbarDropdownProps
+  extends ElementProps,
+    NavbarDropdownModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const NavbarDropdown: NavbarDropdownProps;
+declare const NavbarDropdown: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarDropdownProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/item.js
 interface NavbarItemModifierProps {
@@ -930,22 +1177,30 @@ interface NavbarItemProps extends ElementProps, NavbarItemModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const NavbarItem: NavbarItemProps;
+declare const NavbarItem: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarItemProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/link.js
 interface NavbarLinkProps extends ElementProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const NavbarLink: NavbarLinkProps;
+declare const NavbarLink: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarLinkProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/menu.js
-interface NavbarMenuProps extends ModifierProps  {
+interface NavbarMenuProps
+  extends ModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"div">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const NavbarMenu: NavbarMenuProps;
+declare const NavbarMenu: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NavbarMenuProps> & React.RefAttributes<"div">
+>;
 
 /*** Notification ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/notification/notification.js
@@ -958,7 +1213,9 @@ interface NotificationProps
   children?: React.ReactNode;
   style?: {};
 }
-declare const Notification: NotificationProps;
+declare const Notification: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<NotificationProps> & React.RefAttributes<any>
+>;
 
 /*** Pagination ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/pagination/pagination.js
@@ -973,15 +1230,25 @@ interface PaginationModifierProps {
   showPrevNext?: boolean;
   autoHide?: boolean;
 }
-interface PaginationProps extends ModifierProps, PaginationModifierProps  {
+interface PaginationProps
+  extends ModifierProps,
+    PaginationModifierProps,
+    Partial<
+      Omit<React.ComponentPropsWithoutRef<"nav">, "onChange" | "unselectable">
+    > {
   className?: string;
 }
-declare const Pagination: PaginationProps;
+declare const Pagination: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<PaginationProps> & React.RefAttributes<"nav">
+>;
 
 /*** Panel ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/panel/panel.js
 type PanelProps = ElementProps;
-interface Panel extends PanelProps {
+interface Panel
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<PanelProps> & React.RefAttributes<any>
+  > {
   Block: typeof PanelBlock;
   Header: typeof PanelHeader;
   Icon: typeof PanelIcon;
@@ -994,19 +1261,28 @@ interface PanelBlockModifierProps {
   active?: boolean;
 }
 type PanelBlockProps = ElementProps & PanelBlockModifierProps;
-declare const PanelBlock: PanelBlockProps;
+declare const PanelBlock: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<PanelBlockProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/panel/components/header.js
 type PanelHeaderProps = ElementProps;
-declare const PanelHeader: PanelHeaderProps;
+declare const PanelHeader: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<PanelHeaderProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/panel/components/icon.js
 type PanelIconProps = ElementProps;
-declare const PanelIcon: PanelIconProps;
+declare const PanelIcon: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<PanelIconProps> & React.RefAttributes<any>
+>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/panel/components/tabs/tabs.js
 type PanelTabsProps = ElementProps;
-interface PanelTabs extends PanelTabsProps {
+interface PanelTabs
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<PanelTabsProps> & React.RefAttributes<any>
+  > {
   Tab: typeof PanelTabsTab;
 }
 declare const PanelTabs: PanelTabs;
@@ -1016,7 +1292,9 @@ interface PanelTabsTabModifierProps {
   active?: boolean;
 }
 type PanelTabsTabProps = ElementProps & PanelTabsTabModifierProps;
-declare const PanelTabsTab: PanelTabsTabProps;
+declare const PanelTabsTab: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<PanelTabsTabProps> & React.RefAttributes<any>
+>;
 
 /*** Progress ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/progress/progress.js
@@ -1028,15 +1306,20 @@ interface ProgressModifierProps {
   value: number;
 }
 interface ProgressProps
-  extends ModifierProps, ProgressModifierProps, Partial<
+  extends ModifierProps,
+    ProgressModifierProps,
+    Partial<
       Omit<
+        React.ComponentPropsWithoutRef<"progress">,
         "color" | "max" | "value" | "unselectable"
       >
     > {
   className?: string;
   style?: {};
 }
-declare const Progress: ProgressProps;
+declare const Progress: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<ProgressProps> & React.RefAttributes<"progress">
+>;
 
 /*** Section ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/section/section.js
@@ -1047,7 +1330,9 @@ interface SectionProps extends ElementProps, SectionModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const Section: SectionProps;
+declare const Section: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<SectionProps> & React.RefAttributes<any>
+>;
 
 /*** Table ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/table/table.js
@@ -1056,12 +1341,17 @@ interface TableModifierProps {
   striped?: boolean;
   bordered?: boolean;
 }
-interface TableProps extends ModifierProps, TableModifierProps {
+interface TableProps
+  extends ModifierProps,
+    TableModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"table">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const Table: TableProps;
+declare const Table: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<TableProps> & React.RefAttributes<"table">
+>;
 
 /*** Tabs ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/tabs/tabs.js
@@ -1075,7 +1365,10 @@ interface TabsProps extends ElementProps, TabsModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Tabs extends TabsProps {
+interface Tabs
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<TabsProps> & React.RefAttributes<any>
+  > {
   Tab: typeof TabsTab;
 }
 declare const Tabs: Tabs;
@@ -1088,7 +1381,9 @@ interface TabsTabProps extends ElementProps, TabsTabModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const TabsTab: TabsTabProps;
+declare const TabsTab: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<TabsTabProps> & React.RefAttributes<any>
+>;
 
 /*** Tag ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/tag/tag.js
@@ -1102,7 +1397,10 @@ interface TagProps extends Omit<ElementProps, "color">, TagModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-interface Tag extends TagProps {
+interface Tag
+  extends React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<TagProps> & React.RefAttributes<any>
+  > {
   Group: typeof TagGroup;
 }
 declare const Tag: Tag;
@@ -1111,12 +1409,17 @@ declare const Tag: Tag;
 interface TagGroupModifierProps {
   gapless?: boolean;
 }
-interface TagGroupProps extends ModifierProps, TagGroupModifierProps {
+interface TagGroupProps
+  extends ModifierProps,
+    TagGroupModifierProps,
+    Partial<Omit<React.ComponentPropsWithoutRef<"span">, "unselectable">> {
   children?: React.ReactNode;
   className?: string;
   style?: {};
 }
-declare const TagGroup: TagGroupProps;
+declare const TagGroup: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<TagGroupProps> & React.RefAttributes<"span">
+>;
 
 /*** Tile ***/
 // https://github.com/couds/react-bulma-components/blob/master/src/components/tile/tile.js
@@ -1131,7 +1434,9 @@ interface TileProps extends Omit<ElementProps, "color">, TileModifierProps {
   children?: React.ReactNode;
   style?: {};
 }
-declare const Tile: TileProps;
+declare const Tile: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<TileProps> & React.RefAttributes<any>
+>;
 
 export {
   Box,
