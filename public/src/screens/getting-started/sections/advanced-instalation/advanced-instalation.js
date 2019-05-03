@@ -11,8 +11,6 @@ import Gatsby from './frameworks/gatsby';
 import Next from './frameworks/next';
 import Webpack from './frameworks/webpack';
 
-console.log('cra', CRA)
-
 const messages = defineMessages({
   advanced: {
     id: 'advanced intalation',
