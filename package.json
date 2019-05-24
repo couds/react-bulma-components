@@ -121,7 +121,7 @@
     "toolbox-loader": "0.0.3",
     "typescript": "3.3.3333",
     "webpack": "4.29.6",
-    "webpack-bundle-analyzer": "3.0.4",
+    "webpack-bundle-analyzer": "3.3.2",
     "webpack-cli": "3.2.3"
   }
 }
