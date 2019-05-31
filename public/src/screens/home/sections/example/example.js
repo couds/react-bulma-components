@@ -1,23 +1,12 @@
 import React, { useState } from 'react';
 import Heading from 'react-bulma-components/lib/components/heading';
-import { FormattedMessage, defineMessages } from 'react-intl';
 import Button from 'react-bulma-components/lib/components/button';
 import Section from 'react-bulma-components/lib/components/section';
 import Box from 'react-bulma-components/lib/components/box';
 import { Input, Label, Field, Control } from 'react-bulma-components/lib/components/form';
 import CodeExample from 'components/code-example';
+import { Trans } from '@lingui/macro';
 
-
-const messages = defineMessages({
-  easyUse: {
-    id: 'easy to use',
-    defaultMessage: 'Easy to use'
-  },
-  easyUseDescription: {
-    id: 'easy to use description',
-    defaultMessage: 'Just import it and use it'
-  },
-});
 
 const exampleCode = {
   reactCode: `
@@ -69,10 +58,10 @@ const Example = () => {
   return (
     <Section style={{ paddingTop: 0 }}>
       <Heading>
-        <FormattedMessage {...messages.easyUse} />
+        <Trans id="easy to use">Easy to use</Trans>
       </Heading>
       <Heading subtitle>
-        <FormattedMessage {...messages.easyUseDescription} />
+        <Trans id="easy to use description">Just import it and use it</Trans>
       </Heading>
       <Box paddingless style={{ marginTop: '2rem' }}>
         <CodeExample {...exampleCode} codeMaxHeight={250} >

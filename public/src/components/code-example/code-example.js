@@ -3,17 +3,9 @@ import Columns from 'react-bulma-components/lib/components/columns';
 import Button from 'react-bulma-components/lib/components/button';
 
 import Highlight from 'components/highlight';
-
-import { FormattedMessage, defineMessages } from 'react-intl';
+import { Trans } from '@lingui/macro';
 
 import './code-example.scss';
-
-const messages = defineMessages({
-  toggle: {
-    id: 'toggle',
-    defaultMessage: 'Toggle',
-  },
-});
 
 const CodeExample = ({ children, reactCode, bulmaCode, style, size, codeMaxHeight }) => {
   const [current, setCurrent] = useState('react'); // react or bulma
@@ -28,7 +20,7 @@ const CodeExample = ({ children, reactCode, bulmaCode, style, size, codeMaxHeigh
           size="small"
           style={{ position: 'absolute', top: 0, right: 0}}
           onClick={() => setCurrent(current === 'react' ? 'bulma' : 'react')}>
-            <FormattedMessage {...messages.toggle} />
+            <Trans id="toggle">Toggle</Trans>
           </Button>
           <Highlight language={current === 'react' ? 'jsx' : 'html'}>
             {(current === 'react' ? reactCode : bulmaCode).trim()}

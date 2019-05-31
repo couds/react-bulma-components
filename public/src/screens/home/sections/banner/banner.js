@@ -2,27 +2,12 @@ import React from 'react';
 import Hero from 'react-bulma-components/lib/components/hero';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Element from 'react-bulma-components/lib/components/element';
-import { FormattedMessage, defineMessages } from 'react-intl';
 import Icon from 'components/icon';
 import Link from 'components/link';
 import Columns from 'react-bulma-components/lib/components/columns';
 import Button from 'react-bulma-components/lib/components/button';
 import Level from 'react-bulma-components/lib/components/level';
-
-const messages = defineMessages({
-  title: {
-    id: 'react bulma catch frase',
-    defaultMessage: 'Everything you love of Bulma Framwork as React Components',
-  },
-  gettingStarted: {
-    id: 'getting started',
-    defaultMessage: 'Getting Started',
-  },
-  docs: {
-    id: 'documentation',
-    defaultMessage: 'Documentation',
-  },
-});
+import { Trans } from '@lingui/macro';
 
 const Banner = () => (
 <Hero color="primary">
@@ -35,7 +20,9 @@ const Banner = () => (
             React Bulma Components
           </Heading>
           <Heading subtitle>
-            <FormattedMessage {...messages.title} />
+            <Trans id="react bulma catch frase">
+              Everything you love of Bulma Framwork as React Components
+            </Trans>
             <Level style={{ marginTop: 10 }} breakpoint="mobile">
               <Level.Item>
                 <a target="_blank" rel="noopener noreferrer" style={{ maxHeight: 20 }} href="https://www.npmjs.com/package/react-bulma-components">
@@ -50,12 +37,12 @@ const Banner = () => (
           <Columns breakpoint="mobile">
             <Columns.Column size={6}>
               <Button renderAs={Link} to="/getting-started">
-                <FormattedMessage {...messages.gettingStarted} />
+                <Trans id="getting started">Getting Started</Trans>
               </Button>
             </Columns.Column>
             <Columns.Column size={6}>
               <Button color="info" inverted renderAs={Link} to="/documentation">
-                <FormattedMessage {...messages.docs} />
+                <Trans id="documentation">Documentation</Trans>
               </Button>
             </Columns.Column>
           </Columns>
