@@ -29,7 +29,7 @@ export default class Dropdown extends PureComponent {
     up: PropTypes.bool,
     align: PropTypes.oneOf(['right']),
     hoverable: PropTypes.bool,
-    label: PropTypes.string,
+    label: PropTypes.node,
   }
 
   static defaultProps = {
