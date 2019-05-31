@@ -1,0 +1,41 @@
+{
+  "getting started": {
+    "defaults": "Getting Started",
+    "origin": [
+      [
+        "src/layout/layout.js",
+        56
+      ],
+      [
+        "src/layout/layout.js",
+        95
+      ]
+    ]
+  },
+  "documentation": {
+    "defaults": "Documentation",
+    "origin": [
+      [
+        "src/layout/layout.js",
+        60
+      ],
+      [
+        "src/layout/layout.js",
+        102
+      ],
+      [
+        "src/layout/layout.js",
+        107
+      ]
+    ]
+  },
+  "home": {
+    "defaults": "Home",
+    "origin": [
+      [
+        "src/layout/layout.js",
+        90
+      ]
+    ]
+  }
+}

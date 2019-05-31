@@ -1,0 +1,29 @@
+{
+  "react bulma catch frase": {
+    "defaults": "Everything you love of Bulma Framwork as React Components",
+    "origin": [
+      [
+        "src/screens/home/sections/banner/banner.js",
+        23
+      ]
+    ]
+  },
+  "getting started": {
+    "defaults": "Getting Started",
+    "origin": [
+      [
+        "src/screens/home/sections/banner/banner.js",
+        40
+      ]
+    ]
+  },
+  "documentation": {
+    "defaults": "Documentation",
+    "origin": [
+      [
+        "src/screens/home/sections/banner/banner.js",
+        45
+      ]
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 import React, { useState, Suspense, useEffect } from 'react';
-import { IntlProvider, addLocaleData } from 'react-intl';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import LocaleContext from 'locales/context';
 import Layout from 'layout';
 import Loader from 'components/page-loader';
+import { I18nProvider } from '@lingui/react';
 
 import 'helpers.scss';
 // import Index from './screens/index';
@@ -24,21 +24,22 @@ function WaitingComponent(Component) {
 const LocaleRouteHandler = ({ match, location }) => {
   const defaultMessages = {};
 
-  const [messages, setMessages] = useState(defaultMessages);
+  const [catalogs, setCatalogs] = useState(defaultMessages);
   useEffect(() => {
-    import(`react-intl/locale-data/${match.params.lang}`)
-      .then((localeData) => addLocaleData(localeData.default))
-      .then(() => import(`./locales/lang/${match.params.lang}`))
-      .then((({ default: m } )=> setMessages(m)));
+    import(`./locales/${match.params.lang}/messages`)
+    .then(catalog => setCatalogs((c) => ({
+      ...c,
+      [match.params.lang]: catalog,
+    })));
   }, [match.params.lang]);
 
-  if (defaultMessages === messages) {
+  if (catalogs === defaultMessages) {
     return (<div />);
   }
 
   return (
     <LocaleContext.Provider value={match.params.lang}>
-      <IntlProvider locale={match.params.lang} messages={messages}>
+      <I18nProvider language={match.params.lang} catalogs={catalogs}>
         <Layout currentPath={location.pathname} >
           <Switch>
             <Route path={match.url} exact component={WaitingComponent(Home)}  />
@@ -47,7 +48,7 @@ const LocaleRouteHandler = ({ match, location }) => {
             <Route path={`${match.url}/*`} component={WaitingComponent(NotFound)} />
           </Switch>
         </Layout>
-      </IntlProvider>
+      </I18nProvider>
     </LocaleContext.Provider>
   )
 }

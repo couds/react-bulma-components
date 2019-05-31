@@ -7,27 +7,12 @@ import Icon from 'components/icon';
 import Link from 'components/link';
 import { Link as RouterLink } from 'react-router-dom';
 import logo from 'images/logo.png';
-import { FormattedMessage, defineMessages } from 'react-intl';
 import Container from 'react-bulma-components/lib/components/container';
 import Columns from 'react-bulma-components/lib/components/columns';
 import { Heading } from 'react-bulma-components';
 
 import './layout.scss';
-
-const messages = defineMessages({
-  gettingStarted: {
-    id: 'getting started',
-    defaultMessage: 'Getting Started',
-  },
-  documentation: {
-    id: 'documentation',
-    defaultMessage: 'Documentation',
-  },
-  home: {
-    id: 'home',
-    defaultMessage: 'Home',
-  }
-});
+import { Trans } from '@lingui/macro';
 
 const Layout = ({ children, currentPath }) => {
   const [navbarActive, setNavbar] = useState(false);
@@ -68,11 +53,11 @@ const Layout = ({ children, currentPath }) => {
           <Navbar.Menu>
             <Navbar.Item renderAs={Link} to="/getting-started" activeClassName="is-active">
               <Icon icon="rocket" size="small" />
-              <FormattedMessage {...messages.gettingStarted} />
+              <Trans id="getting started">Getting Started</Trans>
             </Navbar.Item>
             <Navbar.Item renderAs={Link} to="/documentation"  activeClassName="is-active">
               <Icon icon="books" size="small" />
-              <FormattedMessage {...messages.documentation} />
+              <Trans id="documentation">Documentation</Trans>
             </Navbar.Item>
             <Navbar.Item renderAs="span" hoverable responsive={{ touch: { hide: { value: true }}}}>
               <Navbar.Link arrowless>
@@ -102,24 +87,24 @@ const Layout = ({ children, currentPath }) => {
                 <Columns.Column>
                   <Heading size={5}>
                     <Link to="/">
-                      <FormattedMessage {...messages.home} />
+                      <Trans id="home">Home</Trans>
                     </Link>
                   </Heading>
                   <Heading size={5}>
                     <Link to="/">
-                      <FormattedMessage {...messages.gettingStarted} />
+                      <Trans id="getting started">Getting Started</Trans>
                     </Link>
                   </Heading>
                 </Columns.Column>
                 <Columns.Column>
                   <Heading size={5}>
                     <Link to="/">
-                      <FormattedMessage {...messages.documentation} />
+                      <Trans id="documentation">Documentation</Trans>
                     </Link>
                   </Heading>
                   <Heading heading>
                     <Link to="/">
-                      <FormattedMessage {...messages.documentation} />
+                      <Trans id="documentation">Documentation</Trans>
                     </Link>
                   </Heading>
                 </Columns.Column>

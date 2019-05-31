@@ -1,0 +1,74 @@
+{
+  "free": {
+    "defaults": "Free",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        11
+      ]
+    ]
+  },
+  "free description": {
+    "defaults": "Open source on <0>Github</0>",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        13
+      ]
+    ]
+  },
+  "light weight": {
+    "defaults": "Light Weight",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        19
+      ]
+    ]
+  },
+  "light weight description": {
+    "defaults": "No external dependencies",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        20
+      ]
+    ]
+  },
+  "modular": {
+    "defaults": "Modular",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        23
+      ]
+    ]
+  },
+  "modular description": {
+    "defaults": "Include only the code you use",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        24
+      ]
+    ]
+  },
+  "responsive": {
+    "defaults": "Responsive",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        27
+      ]
+    ]
+  },
+  "responsive description": {
+    "defaults": "Made for <0>Mobile</0> first",
+    "origin": [
+      [
+        "src/screens/home/sections/features/features.js",
+        28
+      ]
+    ]
+  }
+}

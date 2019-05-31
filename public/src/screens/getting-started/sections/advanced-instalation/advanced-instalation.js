@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import H from 'react-bulma-components/lib/components/heading';
 import Tabs from 'react-bulma-components/lib/components/tabs';
-import { FormattedMessage, defineMessages } from 'react-intl';
 import Highlight from 'components/highlight';
 
 import CRA from './frameworks/cra';
@@ -10,49 +9,34 @@ import './advanced-instalation.scss';
 import Gatsby from './frameworks/gatsby';
 import Next from './frameworks/next';
 import Webpack from './frameworks/webpack';
+import { Trans } from '@lingui/macro';
 
-const messages = defineMessages({
-  advanced: {
-    id: 'advanced intalation',
-    defaultMessage: 'Advanced Instalation',
-  },
-  advancedSubtitle: {
-    id: 'advanced instalation subtitle',
-    defaultMessage: 'This configuration will allow you customize your build selecting the components you want to use (only incluying the code for the component you use) and customize Bulma using sass variables',
-  },
-  commonStep1: {
-    id: 'create a _variables sass file',
-    defaultMessage: 'To enable the advance setup first create a file named _variables.sass somewhere in your project. (we recommend on your src folder).',
-  },
-  commonStep2: {
-    id: 'import utilities sass in _variables',
-    defaultMessage: 'In the _variables.sass file import utilities/_all.sass',
-  },
-  advancedDescription: {
-    id: 'advanced instalation description',
-    defaultMessage: 'Now depending of the Framework of your choose the configuration may vary a little, here you can find instructions of how to configure it on the most used Frameworks',
-  },
-});
 
 const AdvancedInstalation = () => {
   const [framework, setFramework] = useState('cra');
   return (
     <div className="advanced-instalation">
       <H size={5} >
-        <FormattedMessage {...messages.advanced} />
+        <Trans id="advanced instalation" >Advanced Instalation</Trans>
       </H>
       <H subtitle size={5}>
-        <FormattedMessage {...messages.advancedSubtitle} />
+        <Trans id="advanced instalation subtitle">
+        This configuration will allow you customize your build selecting the components you want to use (only incluying the code for the component you use) and customize Bulma using sass variables
+        </Trans>
       </H>
       <p>
-        <FormattedMessage {...messages.commonStep1} />
+        <Trans id="create a _variables sass file">
+          To enable the advance setup first create a file named _variables.sass somewhere in your project. (we recommend on your src folder).
+        </Trans>
       </p>
       <p>
-        <FormattedMessage {...messages.commonStep2} />
+        <Trans id="import utilities sass in _variables">In the _variables.sass file import utilities/_all.sass</Trans>
       </p>
       <Highlight language="sass">{`@import '~bulma/sass/utilities/_all.sass'`}</Highlight>
       <p>
-        <FormattedMessage {...messages.advancedDescription} />
+        <Trans id="advanced instalation description">
+        Now depending of the Framework of your choose the configuration may vary a little, here you can find instructions of how to configure it on the most used Frameworks
+        </Trans>
       </p>
       <Tabs type="boxed" fullwidth>
         <Tabs.Tab active={framework === 'cra'} onClick={() => setFramework('cra')}>Create React App</Tabs.Tab>
@@ -61,10 +45,10 @@ const AdvancedInstalation = () => {
         <Tabs.Tab active={framework === 'webpack'} onClick={() => setFramework('webpack')}>Webpack</Tabs.Tab>
       </Tabs>
       <div className="tab-box">
-        <CRA show={framework === 'cra'} />
+        {/* <CRA show={framework === 'cra'} />
         <Next show={framework === 'next'} />
         <Gatsby show={framework === 'gatsby'} />
-        <Webpack show={framework === 'webpack'} />
+        <Webpack show={framework === 'webpack'} /> */}
       </div>
     </div>
   );

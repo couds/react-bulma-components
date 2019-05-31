@@ -1,0 +1,20 @@
+{
+  "easy to use": {
+    "defaults": "Easy to use",
+    "origin": [
+      [
+        "src/screens/home/sections/example/example.js",
+        61
+      ]
+    ]
+  },
+  "easy to use description": {
+    "defaults": "Just import it and use it",
+    "origin": [
+      [
+        "src/screens/home/sections/example/example.js",
+        64
+      ]
+    ]
+  }
+}

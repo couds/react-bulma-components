@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2019-05-03 15:24+0200\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:20
+msgid "advanced instalation"
+msgstr "Advanced Instalation"
+
+#: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:37
+msgid "advanced instalation description"
+msgstr "Now depending of the Framework of your choose the configuration may vary a little, here you can find instructions of how to configure it on the most used Frameworks"
+
+#: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:23
+msgid "advanced instalation subtitle"
+msgstr "This configuration will allow you customize your build selecting the components you want to use (only incluying the code for the component you use) and customize Bulma using sass variables"
+
+#: src/screens/getting-started/index.js:41
+msgid "advanced intalation"
+msgstr "Advanced Instalation"
+
+#: src/screens/getting-started/index.js:36
+#: src/screens/getting-started/index.js:77
+msgid "basic instalation"
+msgstr "Basic Instalation"
+
+#: src/screens/getting-started/index.js:85
+msgid "basic instalation description"
+msgstr "After the instalation you need to include the already transpiled bulma css, and you can start importing the component you need from the basic folder."
+
+#: src/screens/getting-started/index.js:80
+msgid "basic instalation subtitle"
+msgstr "This configuration will allow you to start fast with minimum configuration but with less customization and no treeshaking by default (will include all components)"
+
+#: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:28
+msgid "create a _variables sass file"
+msgstr "To enable the advance setup first create a file named _variables.sass somewhere in your project. (we recommend on your src folder)."
+
+#: src/layout/layout.js:60
+#: src/layout/layout.js:102
+#: src/layout/layout.js:107
+#: src/screens/home/sections/banner/banner.js:45
+msgid "documentation"
+msgstr "Documentation"
+
+#: src/screens/home/sections/example/example.js:61
+msgid "easy to use"
+msgstr "Easy to use"
+
+#: src/screens/home/sections/example/example.js:64
+msgid "easy to use description"
+msgstr "Just import it and use it"
+
+#: src/screens/home/sections/features/features.js:11
+msgid "free"
+msgstr "Free"
+
+#: src/screens/home/sections/features/features.js:13
+msgid "free description"
+msgstr "Open source on <0>Github</0>"
+
+#: src/layout/layout.js:56
+#: src/layout/layout.js:95
+#: src/screens/getting-started/index.js:22
+#: src/screens/getting-started/index.js:52
+#: src/screens/home/sections/banner/banner.js:40
+msgid "getting started"
+msgstr "Getting Started"
+
+#: src/layout/layout.js:90
+msgid "home"
+msgstr "Home"
+
+#: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:33
+msgid "import utilities sass in _variables"
+msgstr "In the _variables.sass file import utilities/_all.sass"
+
+#: src/screens/getting-started/index.js:25
+#: src/screens/getting-started/index.js:60
+msgid "instalation"
+msgstr "Instalation"
+
+#: src/screens/getting-started/index.js:63
+msgid "instalation description"
+msgstr "The easiest way to install React Bulma Components its using npm."
+
+#: src/screens/getting-started/index.js:55
+msgid "introduction description"
+msgstr "This library aims to help you use the Bulma CSS Framework in your React project"
+
+#: src/screens/home/sections/features/features.js:19
+msgid "light weight"
+msgstr "Light Weight"
+
+#: src/screens/home/sections/features/features.js:20
+msgid "light weight description"
+msgstr "No external dependencies"
+
+#: src/screens/home/sections/features/features.js:23
+msgid "modular"
+msgstr "Modular"
+
+#: src/screens/home/sections/features/features.js:24
+msgid "modular description"
+msgstr "Include only the code you use"
+
+#: src/screens/home/sections/banner/banner.js:23
+msgid "react bulma catch frase"
+msgstr "Everything you love of Bulma Framwork as React Components"
+
+#: src/screens/home/sections/features/features.js:27
+msgid "responsive"
+msgstr "Responsive"
+
+#: src/screens/home/sections/features/features.js:28
+msgid "responsive description"
+msgstr "Made for <0>Mobile</0> first"
+
+#: src/components/code-example/code-example.js:23
+msgid "toggle"
+msgstr "Toggle"
+
+#: src/screens/getting-started/index.js:31
+#: src/screens/getting-started/index.js:70
+msgid "usage"
+msgstr "Usage"
+
+#: src/screens/getting-started/index.js:73
+msgid "usage description"
+msgstr "Currently there are two ways to use this library depending of your needs and configuration"
