@@ -1,62 +1,31 @@
 import React from 'react';
 import Heading from 'react-bulma-components/lib/components/heading';
-import { FormattedMessage, defineMessages, FormattedHTMLMessage } from 'react-intl';
 import Icon from 'components/icon';
 import Columns from 'react-bulma-components/lib/components/columns';
 import Section from 'react-bulma-components/lib/components/section';
+import { Trans } from '@lingui/macro';
 
 import './features.scss';
 
-const messages = defineMessages({
-  modular: {
-    id: 'modular',
-    defaultMessage: 'Modular',
-  },
-  modularDescription: {
-    id: 'modular description',
-    defaultMessage: 'Include only the code you use',
-  },
-  free: {
-    id: 'free',
-    defaultMessage: 'Free'
-  },
-  freeDescription: {
-    id: 'free description',
-    defaultMessage: 'Open source on <a rel="noopener noreferrer" target="_blank" href="https://github.com/couds/react-bulma-components">Github</a>'
-  },
-  lightWeight: {
-    id: 'light weight',
-    defaultMessage: 'Light Weight',
-  },
-  lightWeightDescription: {
-    id: 'light weight description',
-    defaultMessage: 'No external dependencies',
-  },
-  responsive: {
-    id: 'responsive',
-    defaultMessage: 'Responsive',
-  },
-  responsiveDescription: {
-    id: 'responsive description',
-    defaultMessage: 'Made for <b>Mobile</b> first',
-  },
-});
-
 const features = [{
-  title: messages.free,
-  description: messages.freeDescription,
+  title: <Trans id="free">Free</Trans>,
+  description: (
+    <Trans id="free description">
+      Open source on <a rel="noopener noreferrer" target="_blank" href="https://github.com/couds/react-bulma-components">Github</a>
+    </Trans>
+  ),
   icon: 'github-alt',
 },{
-  title: messages.lightWeight,
-  description: messages.lightWeightDescription,
+  title: <Trans id="light weight">Light Weight</Trans>,
+  description: <Trans id="light weight description">No external dependencies</Trans>,
   icon: 'quill',
 },{
-  title: messages.modular,
-  description: messages.modularDescription,
+  title: <Trans id="modular">Modular</Trans>,
+  description: <Trans id="modular description">Include only the code you use</Trans>,
   icon: 'modular',
 },{
-  title: messages.responsive,
-  description: messages.responsiveDescription,
+  title: <Trans id="responsive">Responsive</Trans>,
+  description: <Trans id="responsive description">Made for <b>Mobile</b> first</Trans>,
   icon: 'responsive',
 }];
 
@@ -64,13 +33,13 @@ const Features = () => (
   <Section className="home-features">
     <Columns textAlignment="centered">
       {
-        features.map(feature => (
-          <Columns.Column key={feature.title.id}>
+        features.map((feature, i) => (
+          <Columns.Column key={i}>
             <Heading size={4}>
-              <FormattedMessage {...feature.title} />
+              {feature.title}
             </Heading>
             <Heading size={6} subtitle>
-              <FormattedHTMLMessage {...feature.description} />
+              {feature.description}
             </Heading>
             <Icon icon={feature.icon} size="large" />
           </Columns.Column>

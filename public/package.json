@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@lingui/react": "2.7.4",
     "intl": "1.2.5",
     "react": "16.8.6",
     "react-bulma-components": "3.0.1-4",
@@ -18,7 +19,9 @@
     "build": "cross-env NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
     "test": "cross-env NODE_PATH=./src react-scripts test",
     "eject": "cross-env NODE_PATH=./src react-scripts eject",
-    "intl": "rm -rf .translations && extract-messages -l=en -o .translations --flat false 'src/**/*.js' && node .bin/translation.js"
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "intl": "lingui compile"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,6 +33,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@lingui/cli": "2.7.4",
+    "@lingui/loader": "2.7.4",
+    "@lingui/macro": "2.7.4",
     "cross-env": "5.2.0",
     "extract-react-intl-messages": "1.0.1",
     "node-sass": "^4.12.0"

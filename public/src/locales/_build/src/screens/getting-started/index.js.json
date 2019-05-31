@@ -1,0 +1,108 @@
+{
+  "getting started": {
+    "defaults": "Getting Started",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        22
+      ],
+      [
+        "src/screens/getting-started/index.js",
+        52
+      ]
+    ]
+  },
+  "instalation": {
+    "defaults": "Instalation",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        25
+      ],
+      [
+        "src/screens/getting-started/index.js",
+        60
+      ]
+    ]
+  },
+  "usage": {
+    "defaults": "Usage",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        31
+      ],
+      [
+        "src/screens/getting-started/index.js",
+        70
+      ]
+    ]
+  },
+  "basic instalation": {
+    "defaults": "Basic Instalation",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        36
+      ],
+      [
+        "src/screens/getting-started/index.js",
+        77
+      ]
+    ]
+  },
+  "advanced intalation": {
+    "defaults": "Advanced Instalation",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        41
+      ]
+    ]
+  },
+  "introduction description": {
+    "defaults": "This library aims to help you use the Bulma CSS Framework in your React project",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        55
+      ]
+    ]
+  },
+  "instalation description": {
+    "defaults": "The easiest way to install React Bulma Components its using npm.",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        63
+      ]
+    ]
+  },
+  "usage description": {
+    "defaults": "Currently there are two ways to use this library depending of your needs and configuration",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        73
+      ]
+    ]
+  },
+  "basic instalation subtitle": {
+    "defaults": "This configuration will allow you to start fast with minimum configuration but with less customization and no treeshaking by default (will include all components)",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        80
+      ]
+    ]
+  },
+  "basic instalation description": {
+    "defaults": "After the instalation you need to include the already transpiled bulma css, and you can start importing the component you need from the basic folder.",
+    "origin": [
+      [
+        "src/screens/getting-started/index.js",
+        85
+      ]
+    ]
+  }
+}

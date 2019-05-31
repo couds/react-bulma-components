@@ -1,0 +1,11 @@
+{
+  "toggle": {
+    "defaults": "Toggle",
+    "origin": [
+      [
+        "src/components/code-example/code-example.js",
+        23
+      ]
+    ]
+  }
+}
