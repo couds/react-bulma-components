@@ -136,13 +136,13 @@ plugins: [
 
 #### Next.js
 
-Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-plugin-transpile-modules` so install it `npm i --save-dev next-plugin-transpile-modules`.
+Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-transpile-modules` so install it `npm i --save-dev next-transpile-modules`.
 
 Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
 
 ```javascript
 const withSass = require('@zeit/next-sass')
-const withTM = require('next-plugin-transpile-modules');
+const withTM = require('next-transpile-modules');
 
 module.exports = withTM(withSass({
     transpileModules: ['react-bulma-components'],
