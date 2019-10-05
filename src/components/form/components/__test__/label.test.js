@@ -14,7 +14,8 @@ describe('Label component', () => {
         <a>
 Give me
         </a>
-      </Label>);
+      </Label>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -23,7 +24,8 @@ Give me
         <p>
 Default
         </p>
-      </Label>);
+      </Label>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -32,7 +34,8 @@ Default
         <p>
 Default
         </p>
-      </Label>);
+      </Label>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

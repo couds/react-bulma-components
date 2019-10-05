@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
 const Tile = ({
   children,
@@ -26,8 +26,8 @@ const Tile = ({
         [`is-${size}`]: size,
         [`is-${color}`]: color,
         'is-vertical': vertical,
-      })
-        }
+      },
+    )}
   >
     {children}
   </Element>

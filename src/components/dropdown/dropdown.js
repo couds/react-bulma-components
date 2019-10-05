@@ -13,49 +13,12 @@ import Element from '../element';
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 export default class Dropdown extends PureComponent {
-  static Item = DropdownItem;
-
-  static Divider = DropdownDivider;
-
-  static propTypes = {
-    ...modifiers.propTypes,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    children: PropTypes.node,
-    value: PropTypes.any,
-    onChange: PropTypes.func,
-    color: PropTypes.oneOf(colors),
-    right: PropTypes.bool,
-    up: PropTypes.bool,
-    align: PropTypes.oneOf(['right']),
-    hoverable: PropTypes.bool,
-    label: PropTypes.node,
-    closeOnSelect: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    closeOnSelect: true,
-    className: undefined,
-    renderAs: 'div',
-    domRef: undefined,
-    style: undefined,
-    value: undefined,
-    children: [],
-    onChange: undefined,
-    color: undefined,
-    align: undefined,
-    hoverable: undefined,
-    label: undefined,
-  }
-
   constructor(props) {
     super(props);
     this.domRef = props.domRef || React.createRef();
-  }
-
-  state = {
-    open: false,
+    this.state = {
+      open: false,
+    };
   }
 
   componentDidMount() {
@@ -84,7 +47,7 @@ export default class Dropdown extends PureComponent {
     this.setState(({ open }) => ({ open: !open }));
   }
 
-  select = value => () => {
+  select = (value) => () => {
     if (this.props.onChange) {
       this.props.onChange(value);
     }
@@ -105,6 +68,7 @@ export default class Dropdown extends PureComponent {
       hoverable,
       label,
       onChange,
+      closeOnSelect,
       ...props
     } = this.props;
     let current = label;
@@ -152,3 +116,40 @@ export default class Dropdown extends PureComponent {
     );
   }
 }
+
+
+Dropdown.Item = DropdownItem;
+
+Dropdown.Divider = DropdownDivider;
+
+Dropdown.propTypes = {
+  ...modifiers.propTypes,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  children: PropTypes.node,
+  value: PropTypes.any,
+  onChange: PropTypes.func,
+  color: PropTypes.oneOf(colors),
+  right: PropTypes.bool,
+  up: PropTypes.bool,
+  align: PropTypes.oneOf(['right']),
+  hoverable: PropTypes.bool,
+  label: PropTypes.node,
+  closeOnSelect: PropTypes.bool,
+};
+
+Dropdown.defaultProps = {
+  ...modifiers.defaultProps,
+  closeOnSelect: true,
+  className: undefined,
+  renderAs: 'div',
+  domRef: undefined,
+  style: undefined,
+  value: undefined,
+  children: [],
+  onChange: undefined,
+  color: undefined,
+  align: undefined,
+  hoverable: undefined,
+  label: undefined,
+};

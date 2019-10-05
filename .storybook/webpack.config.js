@@ -2,7 +2,7 @@ const path = require('path');
 const { DefinePlugin } = require('webpack');
 
 
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = ({ config: defaultConfig }) => {
   const config = ({
     ...defaultConfig,
     mode: 'development',

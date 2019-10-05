@@ -9,7 +9,7 @@ import HeroFooter from './components/hero-footer';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
 const Hero = ({
   children,

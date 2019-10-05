@@ -51,9 +51,9 @@ describe('Menu component', () => {
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = props => (
+    const Custom = (props) => (
       <span {...props}>
-Custom
+        Custom
         {props.children}
       </span>
     );

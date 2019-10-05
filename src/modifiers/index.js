@@ -4,7 +4,7 @@ import responsive from './responsives';
 import colors from './colors';
 import typography from './typography';
 
-const compose = (...fns) => args => fns.reduce((arg, fn) => fn(arg), args);
+const compose = (...fns) => (args) => fns.reduce((arg, fn) => fn(arg), args);
 
 export default {
   propTypes: {
@@ -19,13 +19,13 @@ export default {
     ...colors.defaultProps,
     ...typography.defaultProps,
   },
-  classnames: props => classnames(
+  classnames: (props) => classnames(
     helpers.classnames(props),
     responsive.classnames(props),
     colors.classnames(props),
     typography.classnames(props),
   ),
-  clean: props => compose(
+  clean: (props) => compose(
     helpers.clean,
     responsive.clean,
     colors.clean,

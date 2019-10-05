@@ -14,7 +14,8 @@ describe('Section component', () => {
         <a href="/">
 Give me
         </a>
-      </Section>);
+      </Section>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -23,7 +24,8 @@ Give me
         <p>
 Default
         </p>
-      </Section>);
+      </Section>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -32,7 +34,8 @@ Default
         <p>
 Default
         </p>
-      </Section>);
+      </Section>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be Large', () => {
@@ -41,7 +44,8 @@ Default
         <p>
 Default
         </p>
-      </Section>);
+      </Section>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as nav element', () => {
@@ -50,7 +54,8 @@ Default
         <p>
 Default
         </p>
-      </Section>);
+      </Section>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -18,7 +18,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should add listener do document on mount', () => {
@@ -43,7 +44,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
@@ -52,7 +54,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have divider', () => {
@@ -65,7 +68,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be right-aligned when using "right" prop', () => {
@@ -77,7 +81,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('should also be right-aligned when using "align" prop', () => {
@@ -89,7 +94,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should appear above the dropdown button', () => {
@@ -101,7 +107,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should open the Dropdown', () => {
@@ -114,7 +121,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.state('open')).toBe(false);
     component.find('.dropdown-trigger').simulate('click');
     expect(component.state('open')).toBe(true);
@@ -130,7 +138,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="other">
           Other
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.state('open')).toBe(false);
     component.find('.dropdown-trigger').simulate('click', { preventDefault });
     expect(preventDefault).toHaveBeenCalled();
@@ -143,7 +152,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click');
     expect(onChange).toHaveBeenCalledWith('value');
@@ -155,7 +165,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click');
     expect(component.state('open')).toBe(false);
@@ -167,7 +178,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     component.find('.dropdown-trigger').simulate('click');
     component.find(Dropdown.Item).simulate('click', { path: [] });
     expect(component.state('open')).toBe(false);
@@ -178,7 +190,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component).toMatchSnapshot();
   });
   it('Should show the label of the first dropdown item when no custom label is passed', () => {
@@ -187,7 +200,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component).toMatchSnapshot();
   });
   it('Should show custom label when active valued is undefined/empty', () => {
@@ -196,7 +210,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.find('span').text()).toEqual('test label');
   });
   it('Should show the label of the dropdown item when value of it is the active value', () => {
@@ -205,7 +220,8 @@ describe('Dropdown component', () => {
         <Dropdown.Item value="value">
           Item
         </Dropdown.Item>
-      </Dropdown>);
+      </Dropdown>,
+    );
     expect(component.find('span').text()).toEqual('Item');
   });
 });

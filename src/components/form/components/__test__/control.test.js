@@ -17,7 +17,8 @@ Default
 Container
           </p>
         </p>
-      </Control>);
+      </Control>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -26,7 +27,8 @@ Container
         <p>
 Default
         </p>
-      </Control>);
+      </Control>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -35,7 +37,8 @@ Default
         <p>
 Default
         </p>
-      </Control>);
+      </Control>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as a html section element', () => {
@@ -44,7 +47,8 @@ Default
         <p>
 Default
         </p>
-      </Control>);
+      </Control>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be fullwidth, loading and size = large', () => {
@@ -53,7 +57,8 @@ Default
         <p>
 Default
         </p>
-      </Control>);
+      </Control>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

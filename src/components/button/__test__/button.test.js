@@ -53,7 +53,8 @@ describe('Button component', () => {
     const component = renderer.create(
       <Button renderAs={Link} to="http://google.com" color="danger">
         TEST
-      </Button>);
+      </Button>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render be disabled', () => {

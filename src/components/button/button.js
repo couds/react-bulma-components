@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 import ButtonGroup from './components/button-group';
 import Element from '../element';
 
-const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
 const Button = ({
   children,

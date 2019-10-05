@@ -13,7 +13,7 @@ const NavbarMenu = ({
 }) => (
   <ShowContext.Consumer>
     {
-      active => (
+      (active) => (
         <Element
           {...props}
           className={classnames('navbar-menu', className, {

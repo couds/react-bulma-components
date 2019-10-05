@@ -14,7 +14,8 @@ describe('List component', () => {
         <List.Item>2</List.Item>
         <List.Item active>3</List.Item>
         <List.Item>4</List.Item>
-      </List>);
+      </List>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

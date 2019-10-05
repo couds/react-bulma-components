@@ -7,19 +7,22 @@ describe('Card component', () => {
     const component = renderer.create(
       <Card>
 Card Content
-      </Card>);
+      </Card>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have card-image classname', () => {
     const component = renderer.create(
-      <Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />);
+      <Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have card-content classname', () => {
     const component = renderer.create(
       <Card.Content>
 Content
-      </Card.Content>);
+      </Card.Content>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have card-header\'s classname', () => {

@@ -15,7 +15,8 @@ describe('Dropdown component', () => {
   });
   it('Should render file input tree', () => {
     const component = renderer.create(
-      <InputFile onChange={() => {}} />);
+      <InputFile onChange={() => {}} />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
@@ -55,7 +56,8 @@ describe('Dropdown component', () => {
       multiple: true,
     };
     const component = renderer.create(
-      <InputFile inputProps={inputProps} onChange={() => {}} />);
+      <InputFile inputProps={inputProps} onChange={() => {}} />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

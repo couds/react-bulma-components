@@ -13,28 +13,32 @@ describe('Tabs component', () => {
     const component = renderer.create(
       <Tabs>
 Facebook
-      </Tabs>);
+      </Tabs>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat Bulma class with classes in props', () => {
     const component = renderer.create(
       <Tabs className="other-class test">
 Facebook
-      </Tabs>);
+      </Tabs>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as an html section', () => {
     const component = renderer.create(
       <Tabs renderAs="section">
 This should be a section
-      </Tabs>);
+      </Tabs>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
     const component = renderer.create(
       <Tabs renderAs="section" style={{ width: 200, zIndex: 1 }}>
 This should be a section with custom styles
-      </Tabs>);
+      </Tabs>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should accept a react Element as renderAs prop', () => {
@@ -48,7 +52,8 @@ This should be a section with custom styles
     const component = renderer.create(
       <Tabs renderAs={Custom}>
 This should be a p element
-      </Tabs>);
+      </Tabs>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render propertly Inside Tabs', () => {

@@ -11,7 +11,7 @@ const MenuList = ({
   title,
   ...props
 }) => (
-  <React.Fragment>
+  <>
     {
         title
         && (
@@ -21,7 +21,7 @@ const MenuList = ({
         )
       }
     <Element renderAs="ul" className={classnames('menu-list', className)} {...props} />
-  </React.Fragment>
+  </>
 );
 
 MenuList.Item = MenuListItem;

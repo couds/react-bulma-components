@@ -1,17 +1,31 @@
 {
   "extends": "airbnb",
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "document": true,
+    "window": true
+  },
   "env": {
-    "jest": true
+    "jest": true,
   },
   "plugins": [
-    "jest",
-    "react"
+    "jest"
   ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.3"
+    },
+  },
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "single"],
-    "no-console": 2,
+    "no-console": 0,
     "no-param-reassign": 0,
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,
@@ -19,25 +33,20 @@
     "jsx-a11y/media-has-caption": 0,
     "import/prefer-default-export": 0,
     "react/forbid-prop-types": 0,
-    "react/prefer-es6-class": ["error", "always"],
-    "react/destructuring-assignment": 0,
     "max-len": 0,
     "jsx-a11y/accessible-emoji": 0,
-    "jsx-a11y/label-has-for": 0,
     "jsx-a11y/href-no-hash": 0,
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
     "jest/valid-expect": "error",
+    "no-underscore-dangle": 0,
+    "react/jsx-one-expression-per-line": 0,
     "jsx-a11y/click-events-have-key-events": 0,
-    "function-paren-newline": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "object-curly-newline": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/forbid-foreign-prop-types": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/destructuring-assignment": 0,
     "jsx-a11y/label-has-associated-control": 0
-  },
-  "globals": {
-    "document": true,
-    "window": true
   }
 }

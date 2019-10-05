@@ -13,7 +13,7 @@ const NavbarBurger = ({
 }) => (
   <ShowContext.Consumer>
     {
-      active => (
+      (active) => (
         <Element
           role="button"
           tabIndex="0"

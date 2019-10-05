@@ -37,19 +37,21 @@ Lorem Ipsum
     const component = renderer.create(
       <Message renderAs="section">
 This should be a section
-      </Message>);
+      </Message>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
     const component = renderer.create(
       <Message renderAs="section" style={{ width: 200, zIndex: 1 }}>
 This should be a section with custom styles
-      </Message>);
+      </Message>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = props => (
+    const Custom = (props) => (
       <p {...props}>
 Custom
         {props.children}
@@ -60,7 +62,8 @@ Custom
     const component = renderer.create(
       <Message renderAs={Custom}>
 This should be a p element
-      </Message>);
+      </Message>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -7,7 +7,7 @@ import LevelItem from './components/level-item';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
+const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map((key) => CONSTANTS.BREAKPOINTS[key]));
 
 const Level = ({
   children,

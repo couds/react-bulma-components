@@ -13,29 +13,11 @@ const KEYCODES = {
 class Modal extends PureComponent {
   portalElement = null;
 
-  static propTypes = {
-    show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
-    closeOnEsc: PropTypes.bool,
-    closeOnBlur: PropTypes.bool,
-    showClose: PropTypes.bool,
-    children: PropTypes.node.isRequired,
-    document: PropTypes.object,
-    className: PropTypes.string,
-    domRef: PropTypes.object,
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  static defaultProps = {
-    closeOnEsc: true,
-    showClose: true,
-    closeOnBlur: false,
-    className: undefined,
-    domRef: React.createRef(),
-    // Expose mount point for testing
-    document: undefined,
-  }
-
-  state = {};
 
   componentDidMount() {
     const { closeOnEsc } = this.props;
@@ -79,7 +61,9 @@ class Modal extends PureComponent {
   }
 
   render() {
-    const { domRef, closeOnBlur, show, className } = this.props;
+    const {
+      domRef, closeOnBlur, show, className,
+    } = this.props;
     if (!this.getDocument() || !this.portalElement || !show) {
       return null;
     }
@@ -121,5 +105,27 @@ class Modal extends PureComponent {
 
 Modal.Content = ModalContent;
 Modal.Card = ModalCard;
+
+Modal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  closeOnEsc: PropTypes.bool,
+  closeOnBlur: PropTypes.bool,
+  showClose: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  document: PropTypes.object,
+  className: PropTypes.string,
+  domRef: PropTypes.object,
+};
+
+Modal.defaultProps = {
+  closeOnEsc: true,
+  showClose: true,
+  closeOnBlur: false,
+  className: undefined,
+  domRef: React.createRef(),
+  // Expose mount point for testing
+  document: undefined,
+};
 
 export default Modal;

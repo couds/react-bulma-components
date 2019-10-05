@@ -11,12 +11,13 @@ describe('Element component', () => {
     const component = renderer.create(
       <Element textColor="white" pull="left">
         Facebook
-      </Element>);
+      </Element>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = props => (
+    const Custom = (props) => (
       <p {...props}>
         Custom
         {props.children}
@@ -28,7 +29,8 @@ describe('Element component', () => {
     const component = renderer.create(
       <Element renderAs={Custom}>
 This should be a p element
-      </Element>);
+      </Element>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

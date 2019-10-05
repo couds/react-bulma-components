@@ -24,7 +24,8 @@ Give me
         <p>
 Default
         </p>
-      </Table>);
+      </Table>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -33,7 +34,8 @@ Default
         <p>
 Default
         </p>
-      </Table>);
+      </Table>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
