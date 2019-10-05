@@ -7,6 +7,7 @@ import MessageBody from './components/body';
 import MessageHeader from './components/header';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
@@ -37,10 +38,7 @@ Message.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   color: PropTypes.oneOf(colors),
 };

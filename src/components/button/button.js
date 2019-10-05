@@ -5,6 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import ButtonGroup from './components/button-group';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null, ''].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
@@ -87,10 +88,7 @@ Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.oneOf(['a', 'button', 'span']),
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
   onClick: PropTypes.func,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),

@@ -14,6 +14,7 @@ import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
 import Element from '../element';
 import modifiers from '../../modifiers';
+import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
@@ -81,7 +82,7 @@ Navbar.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   transparent: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
   fixed: PropTypes.oneOf(['top', 'bottom']),
   color: PropTypes.oneOf(colors),
   active: PropTypes.bool,

@@ -8,6 +8,7 @@ import HeroBody from './components/hero-body';
 import HeroFooter from './components/hero-footer';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
@@ -44,7 +45,7 @@ Hero.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight']),

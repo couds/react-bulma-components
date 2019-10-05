@@ -5,6 +5,7 @@ import CardHeaderTitle from './components/header-title';
 import CardHeaderIcon from './components/header-icon';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
+import renderAsShape from '../../../../modifiers/render-as';
 
 const CardHeader = ({
   className,
@@ -20,7 +21,7 @@ CardHeader.Icon = CardHeaderIcon;
 CardHeader.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 CardHeader.defaultProps = {

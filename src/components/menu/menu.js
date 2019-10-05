@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import MenuList from './components/list';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const Menu = ({
   className,
@@ -20,10 +21,7 @@ Menu.List = MenuList;
 Menu.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
 };
 
 Menu.defaultProps = {

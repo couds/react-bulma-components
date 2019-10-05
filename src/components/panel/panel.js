@@ -8,6 +8,7 @@ import Icon from './components/icon';
 import Tabs from './components/tabs';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const Panel = ({
   className,
@@ -30,10 +31,7 @@ Panel.Icon = Icon;
 Panel.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
 };
 
 Panel.defaultProps = {

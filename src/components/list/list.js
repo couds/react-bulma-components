@@ -5,6 +5,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 
 import ListItem from './components/list-item';
+import renderAsShape from '../../modifiers/render-as';
 
 const List = ({
   children,
@@ -27,10 +28,7 @@ List.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
 };
 
 List.defaultProps = {
