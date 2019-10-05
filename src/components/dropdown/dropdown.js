@@ -30,10 +30,12 @@ export default class Dropdown extends PureComponent {
     align: PropTypes.oneOf(['right']),
     hoverable: PropTypes.bool,
     label: PropTypes.node,
+    closeOnSelect: PropTypes.bool,
   }
 
   static defaultProps = {
     ...modifiers.defaultProps,
+    closeOnSelect: true,
     className: undefined,
     renderAs: 'div',
     domRef: undefined,
@@ -86,7 +88,9 @@ export default class Dropdown extends PureComponent {
     if (this.props.onChange) {
       this.props.onChange(value);
     }
-    this.close();
+    if (this.props.closeOnSelect) {
+      this.close();
+    }
   }
 
   render() {
