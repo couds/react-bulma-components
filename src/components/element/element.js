@@ -30,6 +30,7 @@ Element.propTypes = {
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
+    PropTypes.object,
   ]),
 };
 
