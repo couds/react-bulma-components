@@ -1,21 +1,7 @@
 import React from 'react';
-import { defineMessages, FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import Highlight from 'components/highlight';
+import { Trans } from '@lingui/macro';
 
-const messages = defineMessages({
-  nodesass: {
-    id: 'install node-sass in cra',
-    defaultMessage: 'You need to enable SASS compilation on your CRA project, to do it just install node-sass',
-  },
-  addBasepath: {
-    id: 'add base path to jsconfig',
-    defaultMessage: 'Now create/update your jsconfig.json (or tsconfig if you are using typescript)',
-  },
-  srcLegend: {
-    id: 'where src its your file location',
-    defaultMessage: 'Where <code>./src</code> its where you put the <code>_variables.sass</code> file',
-  },
-})
 
 const CRA = ({ show }) => {
   if (!show) {
@@ -24,11 +10,11 @@ const CRA = ({ show }) => {
   return (
     <>
       <p>
-        <FormattedMessage {...messages.nodesass} />
+        <Trans>You need to enable SASS compilation on your CRA project, to do it just install node-sass</Trans>
       </p>
       <Highlight className="language-bash">{`npm i --save node-sass`}</Highlight> 
       <p>
-        <FormattedMessage {...messages.addBasepath} />
+        <Trans>Now create/update your jsconfig.json (or tsconfig if you are using typescript)</Trans>
       </p>
       <Highlight className="language-json">{`
 {
@@ -38,7 +24,7 @@ const CRA = ({ show }) => {
 }
       `.trim()}</Highlight> 
       <p>
-        <FormattedHTMLMessage {...messages.srcLegend} />
+        <Trans>Where <code>./src</code> its where you put the <code>_variables.sass</code> file</Trans>
       </p>
     </>
   );
