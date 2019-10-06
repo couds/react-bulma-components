@@ -74,3 +74,4 @@ out*
 .coverage
 .vscode
 .cache
+public/src/locales/_build

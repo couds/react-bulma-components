@@ -1,3 +1,3 @@
 files:
-  - source: /src/shared/locales/en/*.po
-    translation: /src/shared/locales/%two_letters_code%/%original_file_name%
+  - source: /public/src/locales/en/*.po
+    translation: /public/src/locales/%two_letters_code%/%original_file_name%

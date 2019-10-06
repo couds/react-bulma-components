@@ -31,9 +31,16 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/cli": "7.6.2",
+    "@babel/core": "7.6.2",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "7.6.2",
+    "@babel/preset-env": "7.6.2",
+    "@babel/preset-react": "7.0.0",
     "@lingui/cli": "2.8.3",
     "@lingui/loader": "2.8.3",
     "@lingui/macro": "2.8.3",
+    "babel-core": "7.0.0-bridge.0",
     "cross-env": "6.0.3",
     "node-sass": "^4.12.0"
   }
