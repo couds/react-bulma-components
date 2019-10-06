@@ -13,6 +13,49 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:15
+msgid "Configure the sass plugin to include the path where you put the _variables.sass file, for example"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/webpack.js:13
+msgid "Configure your webpack to handle SASS files. See instructions <0>here</0>"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/webpack.js:16
+msgid "Inside the resolve directive setup your webpack to use modules from the folder where you put the _variables.sass file"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:17
+msgid "Now create/update your jsconfig.json (or tsconfig if you are using typescript)"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:19
+msgid "Now on your next.config.js configure your sass to include the directory where you put your _variables.sass file and add react-bulma-components to the transpiled modules"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:27
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:29
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:33
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/webpack.js:28
+msgid "Where <0>./src</0> its where you put the <1>_variables.sass</1> file"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:13
+msgid "You need to enable SASS compilation on your CRA project, to do it just install node-sass"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:12
+msgid "You need to enable SASS compilation on your Gatsby project, See instructions <0>here</0>"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:12
+msgid "You need to enable SASS compilation on your Next.js project, See the instructions <0>here</0>"
+msgstr ""
+
+#: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:15
+msgid "You will also need to configure the transpiled modules plugin next-plugin-transpile-modules so install it"
+msgstr ""
+
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:20
 msgid "advanced instalation"
 msgstr "Advanced Instalation"
