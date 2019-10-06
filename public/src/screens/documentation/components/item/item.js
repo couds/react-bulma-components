@@ -22,4 +22,10 @@ const Item = ({ icon, link, title, description }) => (
   </Columns>
 );
 
+Item.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
+  description: PropTypes.node.isRequired,
+}
+
 export default Item;

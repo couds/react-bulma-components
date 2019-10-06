@@ -1,21 +1,7 @@
 import React from 'react';
-import { defineMessages, FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import Highlight from 'components/highlight';
+import { Trans } from '@lingui/macro';
 
-const messages = defineMessages({
-  nodesass: {
-    id: 'install node-sass in webpack',
-    defaultMessage: 'Configure your webpack to handle SASS files. See instructions <a href="https://github.com/webpack-contrib/sass-loader">here</a>',
-  },
-  configure: {
-    id: 'configure webpack to use variables file',
-    defaultMessage: 'Inside the resolve directive setup your webpack to use modules from the folder where you put the _variables.sass file',
-  },
-  srcLegend: {
-    id: 'where src its your file location',
-    defaultMessage: 'Where <code>./src</code> its where you put the <code>_variables.sass</code> file',
-  },
-})
 
 const Webpack = ({ show }) => {
   if (!show) {
@@ -24,10 +10,10 @@ const Webpack = ({ show }) => {
   return (
     <>
       <p>
-        <FormattedHTMLMessage {...messages.nodesass} />
+        <Trans>Configure your webpack to handle SASS files. See instructions <a href="https://github.com/webpack-contrib/sass-loader">here</a></Trans>
       </p>
       <p>
-        <FormattedMessage {...messages.configure} />
+        <Trans>Inside the resolve directive setup your webpack to use modules from the folder where you put the _variables.sass file</Trans>
       </p>
       <Highlight className="language-javascript">{`
 {
@@ -39,7 +25,7 @@ const Webpack = ({ show }) => {
 }
       `.trim()}</Highlight> 
       <p>
-        <FormattedHTMLMessage {...messages.srcLegend} />
+        <Trans>Where <code>./src</code> its where you put the <code>_variables.sass</code> file</Trans>
       </p>
     </>
   );
