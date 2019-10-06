@@ -45,10 +45,10 @@ const AdvancedInstalation = () => {
         <Tabs.Tab active={framework === 'webpack'} onClick={() => setFramework('webpack')}>Webpack</Tabs.Tab>
       </Tabs>
       <div className="tab-box">
-        {/* <CRA show={framework === 'cra'} />
+        <CRA show={framework === 'cra'} />
         <Next show={framework === 'next'} />
         <Gatsby show={framework === 'gatsby'} />
-        <Webpack show={framework === 'webpack'} /> */}
+        <Webpack show={framework === 'webpack'} />
       </div>
     </div>
   );

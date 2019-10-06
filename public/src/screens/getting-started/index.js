@@ -14,7 +14,7 @@ import { Trans } from '@lingui/macro';
 
 const innerPadding = { margin: 25 };
 
-const GettingStarted = ({ intl: { formatMessage  }}) => (
+const GettingStarted = () => (
   <Container>
     <Columns>
       <Columns.Column size={2}  style={{ position: 'fixed', top: 52, bottom: 0 }} responsive={{ touch: { hide: { value: true }}}}>

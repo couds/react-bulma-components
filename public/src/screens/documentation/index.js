@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, Columns } from 'react-bulma-components';
 
 import Item from './components/item';

@@ -1,21 +1,6 @@
 import React from 'react';
-import { defineMessages, FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import Highlight from 'components/highlight';
-
-const messages = defineMessages({
-  nodesass: {
-    id: 'enable node-sass in gatsby',
-    defaultMessage: 'You need to enable SASS compilation on your Gatsby project, See instructions <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/">here</a>',
-  },
-  configurePath: {
-    id: 'configure path for gatsby',
-    defaultMessage: 'Configure the sass plugin to include the path where you put the _variables.sass file, for example'
-  },
-  srcLegend: {
-    id: 'where src its your file location',
-    defaultMessage: 'Where <code>./src</code> its where you put the <code>_variables.sass</code> file',
-  },
-});
+import { Trans } from '@lingui/macro';
 
 const Gatsby = ({ show }) => {
   if (!show) {
@@ -24,10 +9,10 @@ const Gatsby = ({ show }) => {
   return (
     <>
       <p>
-        <FormattedHTMLMessage {...messages.nodesass} />
+        <Trans>You need to enable SASS compilation on your Gatsby project, See instructions <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/">here</a></Trans>
       </p>
       <p>
-        <FormattedMessage {...messages.configurePath} />
+        <Trans>Configure the sass plugin to include the path where you put the _variables.sass file, for example</Trans>
       </p>
       <Highlight className="language-javascript">{`
 plugins: [
@@ -41,7 +26,7 @@ plugins: [
 ]
       `.trim()}</Highlight>
       <p>
-        <FormattedHTMLMessage {...messages.srcLegend} />
+        <Trans>Where <code>./src</code> its where you put the <code>_variables.sass</code> file</Trans>
       </p>
     </>
   );
