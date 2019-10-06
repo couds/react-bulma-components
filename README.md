@@ -8,14 +8,6 @@
 
 React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
-### V3
-
-- Currently V3 is in beta. You can try it with `npm install react-bulma-components@next`.
-- There may be some bugs in this version please be sure to **test** it before using it on your project
-
-### V2 Documentation
-
-- If you are using v2 please see the Readme on [Here](https://couds.github.io/react-bulma-components/)
 
 ### BREAKING CHANGES V2 -> V3:
 
