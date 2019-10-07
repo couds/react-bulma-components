@@ -97,13 +97,12 @@ Inside the resolve directive setup your webpack to use modules from the folder w
 
 Install node-sass to enable the sass compiles on your project.
 
-After that update your scripts in the `package.json` to add the folder to your path
+After that update your `jsconfig.json` to add the folder to your path
 ```
-"scripts": {
-  "start": "NODE_PATH=./src react-scripts start",
-  "build": "NODE_PATH=./src react-scripts build",
-  "test": "NODE_PATH=./src react-scripts test",
-  ...
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
 }
 ```
 
