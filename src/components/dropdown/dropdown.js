@@ -31,6 +31,7 @@ export default class Dropdown extends PureComponent {
 
   close = (evt) => {
     // IDK yet how to test using the ref in enzime
+    // istanbul ignore if
     if (
       this.props.hoverable
       || (evt
