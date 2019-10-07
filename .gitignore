@@ -75,3 +75,4 @@ out*
 .vscode
 .cache
 public/src/locales/_build
+public/src/locales/*/messages.js
