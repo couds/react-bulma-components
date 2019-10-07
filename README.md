@@ -12,7 +12,7 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 ### BREAKING CHANGES V2 -> V3:
 
 - Now the alias needed to override Bulma variables (and/or use the directly the sass files) is `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- Please check if the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
+- V3 Use the new Context api so requires `react >= 16.3`
 
 ### To Install
 
