@@ -23,6 +23,7 @@ exports.default = {
     ignored: /node_modules/,
   },
   optimization: {
+    minimize: false,
     splitChunks: {
       cacheGroups: {
         styles: {
