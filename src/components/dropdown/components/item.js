@@ -4,7 +4,9 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const DropdownItem = ({ active, children, value, ...props }) => (
+const DropdownItem = ({
+  active, children, value, ...props
+}) => (
   <Element
     title={value}
     {...props}

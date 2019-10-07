@@ -14,7 +14,8 @@ Default
 Container
           </p>
         </p>
-      </Content>);
+      </Content>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

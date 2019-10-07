@@ -8,14 +8,6 @@
 
 React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
-### V3
-
-- Currently V3 is in beta. You can try it with `npm install react-bulma-components@next`.
-- There may be some bugs in this version please be sure to **test** it before using it on your project
-
-### V2 Documentation
-
-- If you are using v2 please see the Readme on [Here](https://couds.github.io/react-bulma-components/)
 
 ### BREAKING CHANGES V2 -> V3:
 
@@ -136,20 +128,32 @@ plugins: [
 
 #### Next.js
 
-Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-plugin-transpile-modules` so install it `npm i --save-dev next-plugin-transpile-modules`.
+Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-transpile-modules` so install it `npm i --save-dev next-transpile-modules`.
 
-Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
+Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules. **note** `withTM()` should always be the *most nested* function in your config.
 
 ```javascript
 const withSass = require('@zeit/next-sass')
-const withTM = require('next-plugin-transpile-modules');
+const withTM = require('next-transpile-modules');
 
-module.exports = withTM(withSass({
+module.exports = withSass(withTM({
     transpileModules: ['react-bulma-components'],
     sassLoaderOptions: {
         includePaths: ["./src"]
     },
 }))
+```
+
+The last thing to remember is that since you're transpiling `react-bulma-components` from source, make sure your import statements reflect this in your app:
+
+
+```javascript
+import React from 'react';
+import Button from 'react-bulma-components/src/components/button'; //import from src, not lib
+
+export default () => (
+  <Button color="primary">My Bulma button</Button>
+)
 ```
 
 ### Documentation

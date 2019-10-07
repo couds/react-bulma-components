@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
+import renderAsShape from '../../../modifiers/render-as';
 
 const ButtonGroup = ({
   children,
@@ -30,10 +31,7 @@ ButtonGroup.propTypes = {
   hasAddons: PropTypes.bool,
   size: PropTypes.string,
   position: PropTypes.oneOf(['centered', 'right']),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
 };
 
 ButtonGroup.defaultProps = {

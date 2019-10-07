@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import CardFooterItem from './components/footer-item';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
+import renderAsShape from '../../../../modifiers/render-as';
 
 const CardFooter = ({
   className,
@@ -17,7 +18,7 @@ CardFooter.Item = CardFooterItem;
 CardFooter.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 CardFooter.defaultProps = {

@@ -11,7 +11,8 @@ describe('Tile component', () => {
     const component = renderer.create(
       <Tile>
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
-      </Tile>);
+      </Tile>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -20,7 +21,8 @@ describe('Tile component', () => {
         <p>
           Default
         </p>
-      </Tile>);
+      </Tile>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -29,7 +31,8 @@ describe('Tile component', () => {
         <p>
           Default
         </p>
-      </Tile>);
+      </Tile>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as Section', () => {
@@ -38,19 +41,21 @@ describe('Tile component', () => {
         <p>
           Default
         </p>
-      </Tile>);
+      </Tile>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   [null]
-    .concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]))
-    .map(color => (
+    .concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]))
+    .map((color) => (
       it(`Should use use color ${color}`, () => {
         const component = renderer.create(
           <Tile notification color={color}>
             <p>
               Default
             </p>
-          </Tile>);
+          </Tile>,
+        );
         expect(component.toJSON()).toMatchSnapshot();
       })
     ));

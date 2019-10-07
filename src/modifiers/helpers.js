@@ -28,7 +28,7 @@ export default {
     invisible: undefined,
     hidden: undefined,
   },
-  classnames: props => classnames({
+  classnames: (props) => classnames({
     'is-clearfix': props.clearfix,
     [`is-pulled-${props.pull}`]: props.pull,
     'is-marginless': props.marginless,
@@ -41,5 +41,7 @@ export default {
     'is-invisible': props.invisible,
     'is-hidden': props.hidden,
   }),
-  clean: ({ hidden, clearfix, paddingless, pull, marginless, overlay, clipped, radiusless, shadowless, unselectable, invisible, ...props }) => props,
+  clean: ({
+    hidden, clearfix, paddingless, pull, marginless, overlay, clipped, radiusless, shadowless, unselectable, invisible, ...props
+  }) => props,
 };

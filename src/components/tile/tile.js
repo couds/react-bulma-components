@@ -4,8 +4,9 @@ import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
 const Tile = ({
   children,
@@ -26,8 +27,8 @@ const Tile = ({
         [`is-${size}`]: size,
         [`is-${color}`]: color,
         'is-vertical': vertical,
-      })
-        }
+      },
+    )}
   >
     {children}
   </Element>
@@ -38,7 +39,7 @@ Tile.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
   kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
   vertical: PropTypes.bool,
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),

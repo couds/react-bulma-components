@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
+import renderAsShape from '../../../modifiers/render-as';
 
 const PanelBlock = ({
   className,
@@ -20,10 +21,7 @@ const PanelBlock = ({
 PanelBlock.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
   active: PropTypes.bool,
 };
 

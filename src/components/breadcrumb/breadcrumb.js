@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
+import renderAsShape from '../../modifiers/render-as';
 import Element from '../element';
-
 
 const Breadcrumb = ({
   className,
@@ -61,10 +61,7 @@ Breadcrumb.propTypes = {
     active: PropTypes.bool,
     name: PropTypes.node,
   })),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.oneOf(['a']),
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
   hrefAttr: PropTypes.string,
 };
 

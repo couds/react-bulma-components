@@ -6,8 +6,9 @@ import LevelSide from './components/level-side';
 import LevelItem from './components/level-item';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
+const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map((key) => CONSTANTS.BREAKPOINTS[key]));
 
 const Level = ({
   children,
@@ -35,7 +36,7 @@ Level.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 Level.defaultProps = {

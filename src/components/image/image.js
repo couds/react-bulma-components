@@ -6,29 +6,10 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 
 export default class Image extends PureComponent {
-  static propTypes = {
-    ...modifiers.propTypes,
-    className: PropTypes.string,
-    src: PropTypes.string,
-    alt: PropTypes.string,
-    rounded: PropTypes.bool,
-    style: PropTypes.shape({}),
-    size: PropTypes.oneOf(CONSTANTS.SIZES),
-    fallback: PropTypes.string,
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
-
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    className: undefined,
-    src: '',
-    alt: '',
-    rounded: false,
-    style: undefined,
-    size: undefined,
-    fallback: 'http//bulma.io/images/placeholders/480x480.png',
-  }
-
-  state = {}
 
   onError = () => {
     this.setState({
@@ -77,3 +58,25 @@ export default class Image extends PureComponent {
     );
   }
 }
+
+Image.propTypes = {
+  ...modifiers.propTypes,
+  className: PropTypes.string,
+  src: PropTypes.string,
+  alt: PropTypes.string,
+  rounded: PropTypes.bool,
+  style: PropTypes.shape({}),
+  size: PropTypes.oneOf(CONSTANTS.SIZES),
+  fallback: PropTypes.string,
+};
+
+Image.defaultProps = {
+  ...modifiers.defaultProps,
+  className: undefined,
+  src: '',
+  alt: '',
+  rounded: false,
+  style: undefined,
+  size: undefined,
+  fallback: 'http//bulma.io/images/placeholders/480x480.png',
+};

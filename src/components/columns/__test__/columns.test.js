@@ -15,7 +15,8 @@ describe('Columns component', () => {
         <Columns.Column>
 3
         </Columns.Column>
-      </Columns>);
+      </Columns>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have columns one column half width and 3 other as default', () => {
@@ -33,7 +34,8 @@ describe('Columns component', () => {
         <Columns.Column>
 4
         </Columns.Column>
-      </Columns>);
+      </Columns>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render as paragraph', () => {
@@ -51,7 +53,8 @@ describe('Columns component', () => {
         <Columns.Column renderAs="p">
 4
         </Columns.Column>
-      </Columns>);
+      </Columns>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have columns one column half width, other narrow and 2 other as default', () => {
@@ -69,7 +72,8 @@ describe('Columns component', () => {
         <Columns.Column>
 4
         </Columns.Column>
-      </Columns>);
+      </Columns>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

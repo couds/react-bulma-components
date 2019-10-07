@@ -5,45 +5,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 
 export default class Pagination extends React.PureComponent {
-  static propTypes = {
-    ...modifiers.propTypes,
-    /** Current page */
-    current: PropTypes.number,
-    /** whether to disable the buttons */
-    disabled: PropTypes.bool,
-    /** Total pages in total */
-    total: PropTypes.number,
-    /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
-    delta: PropTypes.number,
-    onChange: PropTypes.func,
-    /** Text of the Next button */
-    next: PropTypes.node,
-    /** Text of the Previous button */
-    previous: PropTypes.node,
-    showPrevNext: PropTypes.bool,
-    autoHide: PropTypes.bool,
-    /**
-     * Classname of the container of the pagination, this could be used to customize the inner views
-     */
-    className: PropTypes.string,
-  }
-
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    total: 1,
-    current: 1,
-    delta: 1,
-    onChange: () => {},
-    next: 'Next',
-    previous: 'Previous',
-    showPrevNext: true,
-    disabled: undefined,
-    autoHide: true,
-    className: undefined,
-    renderAs: 'nav',
-  }
-
-  goToPage = page => (evt) => {
+  goToPage = (page) => (evt) => {
     evt.preventDefault();
     const { onChange } = this.props;
     onChange(page);
@@ -109,7 +71,7 @@ export default class Pagination extends React.PureComponent {
         {
           showPrevNext
             && (
-            <React.Fragment>
+            <>
               <a
                 role="button"
                 tabIndex={0}
@@ -129,13 +91,13 @@ export default class Pagination extends React.PureComponent {
               >
                 {next}
               </a>
-            </React.Fragment>
+            </>
             )
         }
         {
           delta > 0
             && (
-            <React.Fragment>
+            <>
               <ul className="pagination-list">
                 {
                   Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
@@ -158,10 +120,49 @@ export default class Pagination extends React.PureComponent {
                   ))
                 }
               </ul>
-            </React.Fragment>
+            </>
             )
         }
       </Element>
     );
   }
 }
+
+
+Pagination.propTypes = {
+  ...modifiers.propTypes,
+  /** Current page */
+  current: PropTypes.number,
+  /** whether to disable the buttons */
+  disabled: PropTypes.bool,
+  /** Total pages in total */
+  total: PropTypes.number,
+  /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
+  delta: PropTypes.number,
+  onChange: PropTypes.func,
+  /** Text of the Next button */
+  next: PropTypes.node,
+  /** Text of the Previous button */
+  previous: PropTypes.node,
+  showPrevNext: PropTypes.bool,
+  autoHide: PropTypes.bool,
+  /**
+   * Classname of the container of the pagination, this could be used to customize the inner views
+   */
+  className: PropTypes.string,
+};
+
+Pagination.defaultProps = {
+  ...modifiers.defaultProps,
+  total: 1,
+  current: 1,
+  delta: 1,
+  onChange: () => {},
+  next: 'Next',
+  previous: 'Previous',
+  showPrevNext: true,
+  disabled: undefined,
+  autoHide: true,
+  className: undefined,
+  renderAs: 'nav',
+};

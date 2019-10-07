@@ -109,7 +109,7 @@ exports.default = {
               },
             }],
             '@babel/preset-react'],
-          plugins: ['transform-class-properties'],
+          plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },
       {

@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 const displays = ['block', 'flex', 'inline', 'inline-block', 'inline-flex'];
 
-const getSizeClassFromProp = sizes => Object.keys(sizes).reduce((classes, size) => {
+const getSizeClassFromProp = (sizes) => Object.keys(sizes).reduce((classes, size) => {
   const display = sizes[size].display || {};
   const hide = sizes[size].hide || {};
   const textSize = sizes[size].textSize || {};
@@ -52,7 +52,7 @@ export default {
   defaultProps: {
     responsive: undefined,
   },
-  classnames: props => classnames({
+  classnames: (props) => classnames({
     ...getSizeClassFromProp(props.responsive || {}),
   }),
   clean: ({ responsive, hide, ...props }) => props,

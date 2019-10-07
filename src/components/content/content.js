@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const Content = ({
   children,
@@ -26,7 +27,7 @@ Content.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 Content.defaultProps = {

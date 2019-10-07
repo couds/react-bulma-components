@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Tab from './components/tab';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
+import renderAsShape from '../../../../modifiers/render-as';
 
 const PanelTabs = ({
   className,
@@ -20,10 +21,7 @@ PanelTabs.Tab = Tab;
 PanelTabs.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
 };
 
 PanelTabs.defaultProps = {

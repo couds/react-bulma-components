@@ -17,7 +17,8 @@ Default
 Container
           </p>
         </p>
-      </Help>);
+      </Help>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -26,7 +27,8 @@ Container
         <p>
 Default
         </p>
-      </Help>);
+      </Help>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -35,7 +37,8 @@ Default
         <p>
 Default
         </p>
-      </Help>);
+      </Help>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be displayed as a successful message', () => {
@@ -44,7 +47,8 @@ Default
         <p>
 Default
         </p>
-      </Help>);
+      </Help>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

@@ -14,39 +14,19 @@ import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
 import Element from '../element';
 import modifiers from '../../modifiers';
+import renderAsShape from '../../modifiers/render-as';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
 let htmlClass = '';
 
 export const getHtmlClasses = () => htmlClass;
 
 class Navbar extends React.PureComponent {
-  static propTypes = {
-    ...modifiers.propTypes,
-    children: PropTypes.node,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    transparent: PropTypes.bool,
-    renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    fixed: PropTypes.oneOf(['top', 'bottom']),
-    color: PropTypes.oneOf(colors),
-    active: PropTypes.bool,
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
-
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    children: null,
-    className: undefined,
-    style: undefined,
-    renderAs: 'nav',
-    transparent: false,
-    active: false,
-    fixed: undefined,
-    color: undefined,
-  }
-
-  state = {}
 
   componentWillUnmount() {
     const { fixed } = this.props;
@@ -95,6 +75,30 @@ class Navbar extends React.PureComponent {
     );
   }
 }
+
+Navbar.propTypes = {
+  ...modifiers.propTypes,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  transparent: PropTypes.bool,
+  renderAs: renderAsShape,
+  fixed: PropTypes.oneOf(['top', 'bottom']),
+  color: PropTypes.oneOf(colors),
+  active: PropTypes.bool,
+};
+
+Navbar.defaultProps = {
+  ...modifiers.defaultProps,
+  children: null,
+  className: undefined,
+  style: undefined,
+  renderAs: 'nav',
+  transparent: false,
+  active: false,
+  fixed: undefined,
+  color: undefined,
+};
 
 Navbar.Brand = Brand;
 Navbar.Burger = Burger;

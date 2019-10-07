@@ -62,7 +62,8 @@ TEST
             </Navbar.Item>
           </Navbar.Container>
         </Navbar.Menu>
-      </Navbar>);
+      </Navbar>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat Bulma class with classes in props', () => {

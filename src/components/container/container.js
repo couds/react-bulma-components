@@ -4,8 +4,9 @@ import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
+const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map((key) => CONSTANTS.BREAKPOINTS[key]));
 
 const Container = ({
   children,
@@ -32,7 +33,7 @@ Container.propTypes = {
   className: PropTypes.string,
   style: PropTypes.shape({}),
   breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 Container.defaultProps = {

@@ -23,7 +23,7 @@ describe('Breadcrumb component', () => {
     />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  [null, 'arrow', 'dot', 'bullet', 'succeeds'].map(separator => (
+  [null, 'arrow', 'dot', 'bullet', 'succeeds'].map((separator) => (
     it(`should use separator ${separator}`, () => {
       const component = renderer.create(<Breadcrumb
         separator={separator}

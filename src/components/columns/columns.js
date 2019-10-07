@@ -7,7 +7,7 @@ import COLUMN_CONSTANTS from './constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]));
+const breakpoints = [null].concat(Object.keys(CONSTANTS.BREAKPOINTS).map((key) => CONSTANTS.BREAKPOINTS[key]));
 
 const sizes = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -17,6 +17,7 @@ const Columns = ({
   gapless,
   multiline,
   centered,
+  vCentered,
   variableGap,
   ...props
 }) => (
@@ -27,6 +28,7 @@ const Columns = ({
       'is-gapless': gapless,
       'is-multiline': multiline,
       'is-centered': centered,
+      'is-vcentered': vCentered,
       'is-variable': Object.keys(variableGap).length > 0,
       ...(variableGap ? {
         [`is-${variableGap.touch}-touch`]: variableGap.touch,
@@ -71,6 +73,10 @@ Columns.propTypes = {
      * `true` you want the columns inside to be horizontaly centered
      */
   centered: PropTypes.bool,
+  /**
+   * `true` if you want to vertically align columns
+   */
+  vCentered: PropTypes.bool,
 };
 
 Columns.defaultProps = {
@@ -81,6 +87,7 @@ Columns.defaultProps = {
   breakpoint: undefined,
   gapless: false,
   centered: false,
+  vCentered: false,
   multiline: true,
   variableGap: {},
 };

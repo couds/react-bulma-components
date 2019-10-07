@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Tab from './components/tab';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const Tabs = ({
   children,
@@ -38,10 +39,7 @@ Tabs.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
   align: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /** This is called style on Bulma documentation */

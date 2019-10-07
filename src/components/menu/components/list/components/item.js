@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import List from '../list';
 import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
+import renderAsShape from '../../../../../modifiers/render-as';
 
 const MenuListItem = ({
   children,
@@ -42,10 +43,7 @@ MenuListItem.propTypes = {
     PropTypes.element,
   ]),
   active: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  renderAs: renderAsShape,
 };
 
 MenuListItem.defaultProps = {

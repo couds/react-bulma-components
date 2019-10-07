@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
+import renderAsShape from '../../../modifiers/render-as';
 
 const NavbarItem = ({
   className,
@@ -46,7 +47,7 @@ NavbarItem.propTypes = {
   hoverable: PropTypes.bool,
   children: PropTypes.node,
   arrowless: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 NavbarItem.defaultProps = {

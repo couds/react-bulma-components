@@ -14,21 +14,24 @@ describe('Media component', () => {
     const component = renderer.create(
       <Media>
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
-      </Media>);
+      </Media>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should hbe a Media Item', () => {
     const component = renderer.create(
       <Media.Item renderAs="figure" position="left">
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
-      </Media.Item>);
+      </Media.Item>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should hbe a Media Item Centered', () => {
     const component = renderer.create(
       <Media.Item renderAs="figure" position="center">
         <img alt="placeholder" src="http://bulma.io/images/placeholders/128x128.png" />
-      </Media.Item>);
+      </Media.Item>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be a Media Content', () => {
@@ -37,7 +40,8 @@ describe('Media component', () => {
         <p>
 Lorem Ipsum
         </p>
-      </Media.Content>);
+      </Media.Content>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -46,7 +50,8 @@ Lorem Ipsum
         <p>
 Default
         </p>
-      </Media>);
+      </Media>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -55,7 +60,8 @@ Default
         <p>
 Default
         </p>
-      </Media>);
+      </Media>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

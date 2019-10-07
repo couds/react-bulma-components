@@ -14,7 +14,8 @@ describe('Radio component', () => {
         <a>
 Give me
         </a>
-      </Radio>);
+      </Radio>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
@@ -23,7 +24,8 @@ Give me
         <p>
 Default
         </p>
-      </Radio>);
+      </Radio>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -32,7 +34,8 @@ Default
         <p>
 Default
         </p>
-      </Radio>);
+      </Radio>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be disabled, checked and with value', () => {
@@ -41,7 +44,8 @@ Default
         <p>
 Default
         </p>
-      </Radio>);
+      </Radio>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

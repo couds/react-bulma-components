@@ -14,28 +14,32 @@ describe('Tag component', () => {
     const component = renderer.create(
       <Tag>
         Tag name
-      </Tag>);
+      </Tag>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Tag className="other-class this-is-a-test">
         Tag name
-      </Tag>);
+      </Tag>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Tag style={{ width: 250 }}>
         Tag name
-      </Tag>);
+      </Tag>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be Large', () => {
     const component = renderer.create(
       <Tag size="large">
         Tag Large
-      </Tag>);
+      </Tag>,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
@@ -53,14 +57,15 @@ describe('Tag component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   [null]
-    .concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]))
-    .map(color => (
+    .concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]))
+    .map((color) => (
       it(`Should use use color ${color}`, () => {
         const component = renderer.create(
           <Tag color={color}>
             tag
             {color}
-          </Tag>);
+          </Tag>,
+        );
         expect(component.toJSON()).toMatchSnapshot();
       })
     ));

@@ -6,6 +6,7 @@ import FieldLabel from './field-label';
 import FieldBody from './field-body';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
+import renderAsShape from '../../../../modifiers/render-as';
 
 const Field = ({
   className,
@@ -45,7 +46,7 @@ Field.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
   align: PropTypes.oneOf(['centered', 'right']),
   kind: PropTypes.oneOf(['addons', 'group']),
   multiline: PropTypes.bool,

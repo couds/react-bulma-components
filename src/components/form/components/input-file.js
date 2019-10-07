@@ -6,56 +6,14 @@ import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
+const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
 
 export default class InputFile extends PureComponent {
-  static propTypes = {
-    ...modifiers.propTypes,
-    className: PropTypes.string,
-    style: PropTypes.shape({}),
-    onChange: PropTypes.func,
-    color: PropTypes.oneOf(colors),
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
-    fileName: PropTypes.bool,
-    fullwidth: PropTypes.bool,
-    right: PropTypes.bool,
-    boxed: PropTypes.bool,
-    /**
-     * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-     */
-    name: PropTypes.string,
-    label: PropTypes.string,
-    icon: PropTypes.element,
-    inputProps: PropTypes.shape({
-      accept: PropTypes.string,
-      capture: PropTypes.string,
-      multiple: PropTypes.bool,
-    }),
-  }
-
-  static defaultProps = {
-    ...modifiers.defaultProps,
-    className: undefined,
-    style: undefined,
-    onChange: () => {},
-    color: undefined,
-    size: undefined,
-    fileName: true,
-    fullwidth: undefined,
-    right: undefined,
-    boxed: undefined,
-    name: undefined,
-    icon: undefined,
-    label: 'Choose a file...',
-    inputProps: {
-      accept: undefined,
-      capture: undefined,
-      multiple: undefined,
-    },
-  }
-
-  state = {
-    filename: undefined,
+  constructor(props) {
+    super(props);
+    this.state = {
+      filename: undefined,
+    };
   }
 
   select = (event) => {
@@ -127,10 +85,55 @@ export default class InputFile extends PureComponent {
             <span className="file-name">
               {filename}
             </span>
-            )
-          }
+            )}
         </label>
       </Element>
     );
   }
 }
+
+
+InputFile.propTypes = {
+  ...modifiers.propTypes,
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
+  onChange: PropTypes.func,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  fileName: PropTypes.bool,
+  fullwidth: PropTypes.bool,
+  right: PropTypes.bool,
+  boxed: PropTypes.bool,
+  /**
+   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   */
+  name: PropTypes.string,
+  label: PropTypes.string,
+  icon: PropTypes.element,
+  inputProps: PropTypes.shape({
+    accept: PropTypes.string,
+    capture: PropTypes.string,
+    multiple: PropTypes.bool,
+  }),
+};
+
+InputFile.defaultProps = {
+  ...modifiers.defaultProps,
+  className: undefined,
+  style: undefined,
+  onChange: () => {},
+  color: undefined,
+  size: undefined,
+  fileName: true,
+  fullwidth: undefined,
+  right: undefined,
+  boxed: undefined,
+  name: undefined,
+  icon: undefined,
+  label: 'Choose a file...',
+  inputProps: {
+    accept: undefined,
+    capture: undefined,
+    multiple: undefined,
+  },
+};

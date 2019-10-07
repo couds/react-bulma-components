@@ -24,8 +24,8 @@ describe('Progress component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   [null]
-    .concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]))
-    .map(color => (
+    .concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]))
+    .map((color) => (
       it(`Should use use color ${color}`, () => {
         const component = renderer.create(<Progress value={30} max={100} color={color} />);
         expect(component.toJSON()).toMatchSnapshot();

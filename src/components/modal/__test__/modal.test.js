@@ -41,7 +41,8 @@ describe('Modal component', () => {
             Modal Title
           </Modal.Card.Title>
         </Modal.Card.Head>
-      </Modal.Card>);
+      </Modal.Card>,
+    );
     component.find('.delete').first().simulate('click');
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -58,7 +59,8 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>,
+    );
     expect(window.document.querySelector('div.modal.is-active')).toBeNull();
     component.setProps({ show: true });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
@@ -76,7 +78,8 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('.delete').click();
@@ -96,7 +99,8 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 27 });
@@ -117,7 +121,8 @@ describe('Modal component', () => {
             </Modal.Card.Title>
           </Modal.Card.Head>
         </Modal.Card>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 27 });
@@ -144,7 +149,8 @@ describe('Modal component', () => {
             Footer
           </Modal.Card.Foot>
         </Modal.Card>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     const event = new window.KeyboardEvent('keydown', { keyCode: 23 });
@@ -163,7 +169,8 @@ describe('Modal component', () => {
         <div>
           CHILDREN
         </div>
-      </Modal>);
+      </Modal>,
+    );
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
   it('Should no try to reopen if other prop change', () => {
@@ -173,7 +180,8 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>);
+      </Modal>,
+    );
     component.setProps({ randomProp: 'test' });
     expect(window.document.querySelector('div.modal.is-active')).toMatchSnapshot();
   });
@@ -186,7 +194,8 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('div.modal-background').click();
@@ -202,7 +211,8 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
     modal.querySelector('div.modal-background').click();
@@ -218,7 +228,8 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>);
+      </Modal>,
+    );
     const modal = window.document.querySelector('div.modal.is-active');
     expect(modal).toMatchSnapshot();
   });
@@ -229,7 +240,8 @@ describe('Modal component', () => {
         <Modal.Content>
           Content
         </Modal.Content>
-      </Modal>);
+      </Modal>,
+    );
     expect(component).toMatchSnapshot();
   });
 });

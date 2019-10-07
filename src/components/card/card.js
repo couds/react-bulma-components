@@ -9,6 +9,7 @@ import CardFooter from './components/footer';
 import modifiers from '../../modifiers';
 
 import Element from '../element';
+import renderAsShape from '../../modifiers/render-as';
 
 const Card = ({
   className,
@@ -36,7 +37,7 @@ Card.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   style: PropTypes.shape({}),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  renderAs: renderAsShape,
 };
 
 Card.defaultProps = {
