@@ -15,9 +15,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env NODE_PATH=./src react-scripts build && cp _redirects build/_redirects",
-    "test": "cross-env NODE_PATH=./src react-scripts test",
-    "eject": "cross-env NODE_PATH=./src react-scripts eject",
+    "build": "lingui compile && react-scripts build && cp _redirects build/_redirects",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "add-locale": "lingui add-locale",
     "extract": "lingui extract"
   },
