@@ -39,7 +39,11 @@ class Modal extends PureComponent {
     if (closeOnEsc && doc) {
       doc.removeEventListener('keydown', this.handleKeydown);
     }
-    this.portalElement.remove();
+    // check if the portalElement is a thing
+    if (this.portalElement) {
+      // find its parent and tell the parent to remove the portalElement
+      this.portalElement.parentNode.removeChild(this.portalElement);
+    }
   }
 
   getDocument = () => {
