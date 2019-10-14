@@ -39,7 +39,8 @@ class Modal extends PureComponent {
     if (closeOnEsc && doc) {
       doc.removeEventListener('keydown', this.handleKeydown);
     }
-    this.portalElement.remove();
+    // IE11 fix
+    this.portalElement.parentNode.removeChild(this.portalElement);
   }
 
   getDocument = () => {
