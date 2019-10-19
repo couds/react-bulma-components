@@ -200,3 +200,13 @@ The following components were ported:
 |Table|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Table)|[Docs](http://bulma.io/documentation/elements/table/)
 |Tag|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tag)|[Docs](http://bulma.io/documentation/elements/tag/)
 |Tile|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)|[Docs](http://bulma.io/documentation/layout/tiles/)
+
+#### Adding ref to a component
+You can pass in a ref to a component via `domRef` prop:
+
+```javascript
+const TestComponent = () => {
+  const buttonRef = useRef(null);
+  return <Button domRef={buttonRef}>button</Button>
+}
+```
