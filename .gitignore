@@ -73,6 +73,7 @@ out*
 /full
 .coverage
 .vscode
+.history
 .cache
 public/src/locales/_build
 public/src/locales/*/messages.js

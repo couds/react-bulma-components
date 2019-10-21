@@ -26,7 +26,7 @@ const LocaleRouteHandler = ({ match, location }) => {
 
   const [catalogs, setCatalogs] = useState(defaultMessages);
   useEffect(() => {
-    import(`./locales/${match.params.lang}/messages`)
+    import(`./locales/${match.params.lang}/messages.po`)
     .then(catalog => setCatalogs((c) => ({
       ...c,
       [match.params.lang]: catalog,
