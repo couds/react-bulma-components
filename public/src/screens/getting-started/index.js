@@ -17,7 +17,7 @@ const innerPadding = { margin: 25 };
 const GettingStarted = () => (
   <Container>
     <Columns>
-      <Columns.Column size={2}  style={{ position: 'fixed', top: 52, bottom: 0 }} responsive={{ touch: { hide: { value: true }}}}>
+      <Columns.Column size={2} style={{ position: 'fixed', top: 52, bottom: 0 }} responsive={{ touch: { hide: { value: true }}}}>
         <Menu style={innerPadding}>
           <Menu.List title={<Trans id="getting started">Getting Started</Trans>}>
             <Menu.List.Item>
