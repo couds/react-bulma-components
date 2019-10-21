@@ -202,7 +202,7 @@ The following components were ported:
 |Tile|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)|[Docs](http://bulma.io/documentation/layout/tiles/)
 
 #### Adding ref to a component
-You can pass in a ref to a component via `domRef` prop:
+We use a custom prop to pass down the ref to the next dom object. (instead to the instance of the component).
 
 ```javascript
 const TestComponent = () => {
@@ -210,3 +210,5 @@ const TestComponent = () => {
   return <Button domRef={buttonRef}>button</Button>
 }
 ```
+
+Why we do this instead of using [React.forwardRef](https://reactjs.org/docs/forwarding-refs.html)? The forwardRef wrap the component into another one, because this is a library for wrapping the Bulma Framework cause an overhead and a lot of noise on the component tab of the React Dev Tools.
