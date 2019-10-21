@@ -97,30 +97,30 @@ export default class Pagination extends React.PureComponent {
         {
           delta > 0
             && (
-              <>
-                <ul className="pagination-list">
-                  {
-                    Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
-                      // eslint-disable-next-line react/no-array-index-key
-                      <li key={i + firstPage}>
-                        <a
-                          role="button"
-                          tabIndex={0}
-                          className={classnames('pagination-link', {
-                            'is-current': current === i + firstPage,
-                          })}
-                          onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
-                          aria-label={`Page ${i + firstPage}`}
-                          aria-current="page"
-                          disabled={disabled}
-                        >
-                          {i + firstPage}
-                        </a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </>
+            <>
+              <ul className="pagination-list">
+                {
+                  Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <li key={i + firstPage}>
+                      <a
+                        role="button"
+                        tabIndex={0}
+                        className={classnames('pagination-link', {
+                          'is-current': current === i + firstPage,
+                        })}
+                        onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
+                        aria-label={`Page ${i + firstPage}`}
+                        aria-current="page"
+                        disabled={disabled}
+                      >
+                        {i + firstPage}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </>
             )
         }
       </Element>
