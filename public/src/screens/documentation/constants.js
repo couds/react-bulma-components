@@ -1,7 +1,7 @@
-import ComponentDoc from './sections/container';
+import ComponentDoc from './sections/layout/container';
 
 const Sections = {
-	LAYOUT: [
+	Layout: [
 		{
 			name: 'Container',
 			component: ComponentDoc,

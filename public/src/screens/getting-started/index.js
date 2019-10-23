@@ -87,22 +87,25 @@ const GettingStarted = () => (
                 </Trans>
               </p>
               <Box paddingless>
-                <CodeExample style={{ margin: '1.5rem 0' }}
+                <CodeExample
+                  alignment="horizontal"
+                  style={{ margin: '1.5rem 0' }}
                   size={3}
                   reactCode={`
-  import React from 'react';
-  import 'react-bulma-components/basic/react-bulma-components.min.css';
-  import { Button } from 'react-bulma-components/dist';
+import React from 'react';
+import { Button } from 'react-bulma-components/dist';
 
-  const App = () => (
-    <div>
-      <Button color="primary">My Bulma button</Button>
-    </div>
-  );`}
-                  bulmaCode={`
+import 'react-bulma-components/basic/react-bulma-components.min.css';
+
+const App = () => (
   <div>
-    <button class="button is-primary">My Bulma button</Button>
-  </div>`}
+    <Button color="primary">My Bulma button</Button>
+  </div>
+);`}
+                  bulmaCode={`
+<div>
+  <button class="button is-primary">My Bulma button</Button>
+</div>`}
                 >
                   <Button color="primary">My Bulma button</Button>
                 </CodeExample>
