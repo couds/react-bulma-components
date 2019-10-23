@@ -32,8 +32,7 @@ exports[`Heading component Should have title classname 1`] = `
 <h1
   className="title"
 >
-  Test
-   
+  Test 
   <a>
     Give me
   </a>
