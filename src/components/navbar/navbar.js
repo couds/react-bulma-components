@@ -16,7 +16,9 @@ import Element from '../element';
 import modifiers from '../../modifiers';
 import renderAsShape from '../../modifiers/render-as';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
+const colors = [null].concat(
+  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+);
 
 let htmlClass = '';
 
@@ -42,18 +44,26 @@ const Navbar = ({
     if (fixed) {
       html.classList.add(`has-navbar-fixed-${fixed}`);
     }
-    return () => window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
+    return () =>
+      window.document
+        .querySelector('html')
+        .classList.remove(`has-navbar-fixed-${fixed}`);
   }, [fixed]);
   return (
     <ShowContext.Provider value={active}>
       <Element
         {...props}
         role="navigation"
-        className={classnames('navbar', modifiers.classnames(props), className, {
-          'is-transparent': transparent,
-          [`is-fixed-${fixed}`]: fixed,
-          [`is-${color}`]: color,
-        })}
+        className={classnames(
+          'navbar',
+          modifiers.classnames(props),
+          className,
+          {
+            'is-transparent': transparent,
+            [`is-fixed-${fixed}`]: fixed,
+            [`is-${color}`]: color,
+          },
+        )}
       >
         {children}
       </Element>

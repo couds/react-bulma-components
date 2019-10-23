@@ -3,22 +3,27 @@ import classnames from 'classnames';
 
 const displays = ['block', 'flex', 'inline', 'inline-block', 'inline-flex'];
 
-const getSizeClassFromProp = (sizes) => Object.keys(sizes).reduce((classes, size) => {
-  const display = sizes[size].display || {};
-  const hide = sizes[size].hide || {};
-  const textSize = sizes[size].textSize || {};
-  const textAlignment = sizes[size].textAlignment || {};
+const getSizeClassFromProp = sizes =>
+  Object.keys(sizes).reduce((classes, size) => {
+    const display = sizes[size].display || {};
+    const hide = sizes[size].hide || {};
+    const textSize = sizes[size].textSize || {};
+    const textAlignment = sizes[size].textAlignment || {};
 
-  const obj = ({
-    ...classes,
-    [`is-${display.value}-${size}${display.only ? '-only' : ''}`]: display.value,
-    [`is-hidden-${size}${hide.only ? '-only' : ''}`]: hide.value,
-    [`has-text-${textAlignment.value}-${size}${textAlignment.only ? '-only' : ''}`]: textAlignment.value,
-    [`is-size-${textSize.value}-${size}`]: textSize.value > 0,
-  });
+    const obj = {
+      ...classes,
+      [`is-${display.value}-${size}${
+        display.only ? '-only' : ''
+      }`]: display.value,
+      [`is-hidden-${size}${hide.only ? '-only' : ''}`]: hide.value,
+      [`has-text-${textAlignment.value}-${size}${
+        textAlignment.only ? '-only' : ''
+      }`]: textAlignment.value,
+      [`is-size-${textSize.value}-${size}`]: textSize.value > 0,
+    };
 
-  return obj;
-}, {});
+    return obj;
+  }, {});
 
 const sizeShape = PropTypes.shape({
   display: PropTypes.shape({
@@ -52,8 +57,9 @@ export default {
   defaultProps: {
     responsive: undefined,
   },
-  classnames: (props) => classnames({
-    ...getSizeClassFromProp(props.responsive || {}),
-  }),
+  classnames: props =>
+    classnames({
+      ...getSizeClassFromProp(props.responsive || {}),
+    }),
   clean: ({ responsive, hide, ...props }) => props,
 };

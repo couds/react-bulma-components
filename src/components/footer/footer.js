@@ -5,15 +5,8 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Footer = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('footer', className)}
-  >
+const Footer = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('footer', className)}>
     {children}
   </Element>
 );

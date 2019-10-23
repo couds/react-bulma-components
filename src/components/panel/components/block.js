@@ -5,11 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const PanelBlock = ({
-  className,
-  active,
-  ...props
-}) => (
+const PanelBlock = ({ className, active, ...props }) => (
   <Element
     {...props}
     className={classnames('panel-block', className, {

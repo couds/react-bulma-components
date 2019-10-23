@@ -6,24 +6,18 @@ import { ShowContext } from '../context';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarMenu = ({
-  className,
-  children,
-  ...props
-}) => (
+const NavbarMenu = ({ className, children, ...props }) => (
   <ShowContext.Consumer>
-    {
-      (active) => (
-        <Element
-          {...props}
-          className={classnames('navbar-menu', className, {
-            'is-active': active,
-          })}
-        >
-          {children}
-        </Element>
-      )
-    }
+    {active => (
+      <Element
+        {...props}
+        className={classnames('navbar-menu', className, {
+          'is-active': active,
+        })}
+      >
+        {children}
+      </Element>
+    )}
   </ShowContext.Consumer>
 );
 

@@ -10,14 +10,8 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Panel = ({
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('panel', className)}
-  />
+const Panel = ({ className, ...props }) => (
+  <Element {...props} className={classnames('panel', className)} />
 );
 
 Panel.Header = Header;

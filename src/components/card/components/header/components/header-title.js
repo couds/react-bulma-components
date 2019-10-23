@@ -5,10 +5,7 @@ import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
-const CardHeaderTitle = ({
-  className,
-  ...props
-}) => (
+const CardHeaderTitle = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-header-title', className)} />
 );
 

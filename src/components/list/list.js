@@ -7,12 +7,7 @@ import Element from '../element';
 import ListItem from './components/list-item';
 import renderAsShape from '../../modifiers/render-as';
 
-const List = ({
-  children,
-  className,
-  hoverable,
-  ...props
-}) => (
+const List = ({ children, className, hoverable, ...props }) => (
   <Element
     {...props}
     className={classnames('list', className, {

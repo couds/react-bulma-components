@@ -4,12 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const TagGroup = ({
-  children,
-  className,
-  gapless,
-  ...props
-}) => (
+const TagGroup = ({ children, className, gapless, ...props }) => (
   <Element
     renderAs="span"
     {...props}

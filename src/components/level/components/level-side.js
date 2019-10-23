@@ -5,12 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const LevelSide = ({
-  children,
-  className,
-  align,
-  ...props
-}) => (
+const LevelSide = ({ children, className, align, ...props }) => (
   <Element
     {...props}
     className={classnames(className, {

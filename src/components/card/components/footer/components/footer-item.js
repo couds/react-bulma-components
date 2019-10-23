@@ -5,10 +5,7 @@ import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
-const CardFooterItem = ({
-  className,
-  ...props
-}) => (
+const CardFooterItem = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-footer-item', className)} />
 );
 

@@ -6,14 +6,11 @@ import modifiers from '../../../modifiers';
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
+const colors = [null].concat(
+  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+);
 
-const Help = ({
-  className,
-  children,
-  color,
-  ...props
-}) => (
+const Help = ({ className, children, color, ...props }) => (
   <Element
     {...props}
     className={classnames('help', className, {

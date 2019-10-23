@@ -10,12 +10,8 @@ describe('Help component', () => {
     const component = renderer.create(
       <Help>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
       </Help>,
     );
@@ -24,9 +20,7 @@ Container
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Help className="other-class this-is-a-test">
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Help>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -34,9 +28,7 @@ Default
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Help style={{ height: 250 }}>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Help>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -44,9 +36,7 @@ Default
   it('Should be displayed as a successful message', () => {
     const component = renderer.create(
       <Help color="success">
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Help>,
     );
     expect(component.toJSON()).toMatchSnapshot();

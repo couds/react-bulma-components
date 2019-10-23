@@ -15,12 +15,12 @@ export default class Image extends PureComponent {
     this.setState({
       src: this.props.fallback,
     });
-  }
+  };
 
   static getDerivedStateFromProps = (props, state) => ({
     src: state.default !== props.src ? props.src : state.src,
     default: props.src,
-  })
+  });
 
   render() {
     const {

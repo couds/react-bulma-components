@@ -5,14 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const PanelIcon = ({
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('panel-icon', className)}
-  />
+const PanelIcon = ({ className, ...props }) => (
+  <Element {...props} className={classnames('panel-icon', className)} />
 );
 
 PanelIcon.propTypes = {

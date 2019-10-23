@@ -3,7 +3,10 @@ import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { withInfo } from '@storybook/addon-info';
 import { select, withKnobs } from '@storybook/addon-knobs';
-import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import {
+  configureViewport,
+  INITIAL_VIEWPORTS,
+} from '@storybook/addon-viewport';
 import extraViewports from './extra-viewports.json';
 
 import 'index.sass';
@@ -16,9 +19,11 @@ setOptions({
 
 addDecorator(withKnobs);
 
-addDecorator(withInfo({
-  source: false,
-}));
+addDecorator(
+  withInfo({
+    source: false,
+  }),
+);
 
 configureViewport({
   viewports: {

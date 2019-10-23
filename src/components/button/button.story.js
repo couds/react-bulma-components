@@ -25,16 +25,12 @@ const colors = {
 const positions = {
   default: '',
   centered: 'centered',
-  right: 'right'
+  right: 'right',
 };
 
 storiesOf('Button', module)
-  .addDecorator(story => (
-    <div className="button-display">
-      {story()}
-    </div>
-  ))
-  .add('Default', (() => (
+  .addDecorator(story => <div className="button-display">{story()}</div>)
+  .add('Default', () => (
     <Section>
       <Box>
         Play with the button props using the knobs addon panel at the bottom
@@ -56,13 +52,9 @@ storiesOf('Button', module)
         Button
       </Button>
     </Section>
-  )))
-  .add('As another React element', (() => {
-    const CustomComponent = ({
-      customProp,
-      children,
-      className,
-    }) => (
+  ))
+  .add('As another React element', () => {
+    const CustomComponent = ({ customProp, children, className }) => (
       <a className={className} href={customProp}>
         {children}
       </a>
@@ -85,47 +77,39 @@ storiesOf('Button', module)
         </Button>
       </Section>
     );
-  }))
-  .add('Button group', (() => (
+  })
+  .add('Button group', () => (
     <Section>
       <Button.Group
         hasAddons={boolean('hasAddons', false)}
         position={select('Position', positions)}
-        size={select('Size', { small: 'small', medium: 'medium', large: 'large' })}
+        size={select('Size', {
+          small: 'small',
+          medium: 'medium',
+          large: 'large',
+        })}
       >
-        <Button
-          renderAs="span"
-          color="success"
-        >
+        <Button renderAs="span" color="success">
           Save changes
         </Button>
-        <Button
-          renderAs="span"
-          color="info"
-        >
+        <Button renderAs="span" color="info">
           Save and continue
         </Button>
-        <Button
-          renderAs="span"
-          color="danger"
-        >
+        <Button renderAs="span" color="danger">
           Cancel
         </Button>
       </Button.Group>
     </Section>
-  )))
-  .add('Ref forwarding', (() => {
+  ))
+  .add('Ref forwarding', () => {
     const ref = React.createRef();
 
     return (
       <Section>
         <Button onClick={() => ref.current.click()}>click other button</Button>
-        <Button
-          ref={ref}
-          onClick={() => console.log('clicked')}>
+        <Button ref={ref} onClick={() => console.log('clicked')}>
           this will be clicked
         </Button>
       </Section>
-    )
-  }))
-
+    );
+  });

@@ -13,15 +13,9 @@ describe('Level component', () => {
   it('Should have level classname', () => {
     const component = renderer.create(
       <Level>
-        <Level.Item>
-Item 1
-        </Level.Item>
-        <Level.Item>
-Item 2
-        </Level.Item>
-        <Level.Item>
-Item 3
-        </Level.Item>
+        <Level.Item>Item 1</Level.Item>
+        <Level.Item>Item 2</Level.Item>
+        <Level.Item>Item 3</Level.Item>
       </Level>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -29,9 +23,7 @@ Item 3
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Level className="other-class this-is-a-test">
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Level>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -39,9 +31,7 @@ Default
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Level style={{ height: 250 }}>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Level>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -50,17 +40,11 @@ Default
     const component = renderer.create(
       <Level>
         <Level.Side>
-          <Level.Item>
-Item 1
-          </Level.Item>
-          <Level.Item>
-Item 2
-          </Level.Item>
+          <Level.Item>Item 1</Level.Item>
+          <Level.Item>Item 2</Level.Item>
         </Level.Side>
         <Level.Side align="right">
-          <Level.Item>
-Item 3
-          </Level.Item>
+          <Level.Item>Item 3</Level.Item>
         </Level.Side>
       </Level>,
     );

@@ -10,16 +10,16 @@ import Section from '../section';
 
 const alignment = {
   Default: '',
-  right: 'right'
-}
+  right: 'right',
+};
 
 class Wrapper extends React.Component {
   state = {
     selected: '',
-  }
-  onChange = (selected) => {
+  };
+  onChange = selected => {
     this.setState({ selected });
-  }
+  };
   render() {
     return (
       <Dropdown
@@ -27,99 +27,66 @@ class Wrapper extends React.Component {
         value={this.state.selected}
         onChange={this.onChange}
         color="info"
-        label={text('label', '')}>
-        <Dropdown.Item value="item" >
-          Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Item value="other">
-          Other Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Item value="active">
-          Active Dropdown item
-        </Dropdown.Item>
-        <Dropdown.Item value="other 2">
-          Other Dropdown item
-        </Dropdown.Item>
+        label={text('label', '')}
+      >
+        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item value="divider">
-          With divider
-        </Dropdown.Item>
+        <Dropdown.Item value="divider">With divider</Dropdown.Item>
       </Dropdown>
     );
   }
 }
 
 storiesOf('Dropdown', module)
-  .add('Default', (() => (
+  .add('Default', () => (
     <Dropdown onChange={action('select')} label={text('label', '')}>
-      <Dropdown.Item value="item" >
-        Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="other">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="active">
-        Active Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="other 2">
-        Other Dropdown item
-      </Dropdown.Item>
+      <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+      <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+      <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+      <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item value="divider">
-        With divider
-      </Dropdown.Item>
+      <Dropdown.Item value="divider">With divider</Dropdown.Item>
     </Dropdown>
-  )))
-  .add('Hoverable', (() => (
+  ))
+  .add('Hoverable', () => (
     <Dropdown hoverable value="item" label={text('label', '')}>
-      <Dropdown.Item value="item" >
-        Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="other">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="active">
-        Active Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item value="other 2">
-        Other Dropdown item
-      </Dropdown.Item>
+      <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+      <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+      <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+      <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item value="divider">
-        With divider
-      </Dropdown.Item>
+      <Dropdown.Item value="divider">With divider</Dropdown.Item>
     </Dropdown>
-  )))
+  ))
   .add('Alignment', () => (
     <div>
       <Container>
         <Section size="large">
           <Dropdown
-            align={select('align (deprecated; will be removed in future releases)', alignment)}
+            align={select(
+              'align (deprecated; will be removed in future releases)',
+              alignment,
+            )}
             right={boolean('right (will replace "align" prop)', false)}
             value="item"
             up={boolean('up', false)}
-            label={text('label', '')}>
-            <Dropdown.Item value="item" >
-              Dropdown item
-            </Dropdown.Item>
-            <Dropdown.Item value="other">
-              Other Dropdown item
-            </Dropdown.Item>
-            <Dropdown.Item value="active">
-              Active Dropdown item
-            </Dropdown.Item>
-            <Dropdown.Item value="other 2">
-              Other Dropdown item
-            </Dropdown.Item>
+            label={text('label', '')}
+          >
+            <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+            <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+            <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+            <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item value="divider">
-              With divider
-            </Dropdown.Item>
+            <Dropdown.Item value="divider">With divider</Dropdown.Item>
           </Dropdown>
         </Section>
       </Container>
     </div>
   ))
-  .add('Controlled component', (() => <Wrapper />))
-  .add('Controlled component Hoverable', (() => <Wrapper hoverable color="dark" />));
+  .add('Controlled component', () => <Wrapper />)
+  .add('Controlled component Hoverable', () => (
+    <Wrapper hoverable color="dark" />
+  ));

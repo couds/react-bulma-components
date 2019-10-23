@@ -13,10 +13,7 @@ const ModalCardHead = ({
   onClose,
   ...props
 }) => (
-  <Element
-    {...props}
-    className={classnames('modal-card-head', className)}
-  >
+  <Element {...props} className={classnames('modal-card-head', className)}>
     {children}
     {showClose && <Button remove onClick={onClose} />}
   </Element>

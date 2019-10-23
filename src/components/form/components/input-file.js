@@ -6,7 +6,9 @@ import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
+const colors = [null].concat(
+  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+);
 
 export default class InputFile extends PureComponent {
   constructor(props) {
@@ -16,7 +18,7 @@ export default class InputFile extends PureComponent {
     };
   }
 
-  select = (event) => {
+  select = event => {
     const { files } = event.target;
     this.setState({
       filename: files.length > 0 ? files[0].name : undefined,
@@ -24,7 +26,7 @@ export default class InputFile extends PureComponent {
     if (this.props.onChange) {
       this.props.onChange(event);
     }
-  }
+  };
 
   render() {
     const {
@@ -69,29 +71,17 @@ export default class InputFile extends PureComponent {
             onChange={this.select}
           />
           <span className="file-cta">
-            {
-              icon && (
-                <span className="file-icon">
-                  {icon}
-                </span>
-              )
-            }
-            <span className="file-label">
-              {label}
-            </span>
+            {icon && <span className="file-icon">{icon}</span>}
+            <span className="file-label">{label}</span>
           </span>
-          {fileName && filename
-            && (
-            <span className="file-name">
-              {filename}
-            </span>
-            )}
+          {fileName && filename && (
+            <span className="file-name">{filename}</span>
+          )}
         </label>
       </Element>
     );
   }
 }
-
 
 InputFile.propTypes = {
   ...modifiers.propTypes,

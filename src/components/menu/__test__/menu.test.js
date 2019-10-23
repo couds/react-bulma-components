@@ -11,12 +11,8 @@ describe('Menu component', () => {
     const component = renderer.create(
       <Menu>
         <Menu.List title="General">
-          <Menu.List.Item>
-            Dashboard
-          </Menu.List.Item>
-          <Menu.List.Item>
-            Customer
-          </Menu.List.Item>
+          <Menu.List.Item>Dashboard</Menu.List.Item>
+          <Menu.List.Item>Customer</Menu.List.Item>
         </Menu.List>
       </Menu>,
     );
@@ -26,21 +22,13 @@ describe('Menu component', () => {
     const component = renderer.create(
       <Menu>
         <Menu.List title="General">
-          <Menu.List.Item>
-            Dashboard
-          </Menu.List.Item>
+          <Menu.List.Item>Dashboard</Menu.List.Item>
           <Menu.List.Item>
             <Menu.List.Item active>
               <Menu.List title="Manage Your Team">
-                <Menu.List.Item>
-                  Members
-                </Menu.List.Item>
-                <Menu.List.Item active>
-                  Plugins
-                </Menu.List.Item>
-                <Menu.List.Item>
-                  Add a member
-                </Menu.List.Item>
+                <Menu.List.Item>Members</Menu.List.Item>
+                <Menu.List.Item active>Plugins</Menu.List.Item>
+                <Menu.List.Item>Add a member</Menu.List.Item>
               </Menu.List>
             </Menu.List.Item>
           </Menu.List.Item>
@@ -51,7 +39,7 @@ describe('Menu component', () => {
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = (props) => (
+    const Custom = props => (
       <span {...props}>
         Custom
         {props.children}
@@ -63,12 +51,8 @@ describe('Menu component', () => {
     const component = renderer.create(
       <Menu>
         <Menu.List title="General">
-          <Menu.List.Item renderAs={Custom}>
-            Dashboard
-          </Menu.List.Item>
-          <Menu.List.Item renderAs={Custom}>
-            Customer
-          </Menu.List.Item>
+          <Menu.List.Item renderAs={Custom}>Dashboard</Menu.List.Item>
+          <Menu.List.Item renderAs={Custom}>Customer</Menu.List.Item>
         </Menu.List>
       </Menu>,
     );
@@ -80,14 +64,10 @@ describe('Menu component', () => {
       <Menu>
         <Menu.List title="General">
           <Menu.List.Item>
-            <p>
-Custom children 1
-            </p>
+            <p>Custom children 1</p>
           </Menu.List.Item>
           <Menu.List.Item>
-            <a>
-Custom children 2
-            </a>
+            <a>Custom children 2</a>
           </Menu.List.Item>
         </Menu.List>
       </Menu>,
