@@ -16,8 +16,7 @@ exports[`Label component Should have label classname 1`] = `
 <label
   className="label"
 >
-  Test
-   
+  Test 
   <a>
     Give me
   </a>
