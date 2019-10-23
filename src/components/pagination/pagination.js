@@ -71,56 +71,56 @@ export default class Pagination extends React.PureComponent {
         {
           showPrevNext
             && (
-            <>
-              <a
-                role="button"
-                tabIndex={0}
-                onClick={prevDisabled ? undefined : this.goToPage(current - 1)}
-                className="pagination-previous"
-                title="This is the first page"
-                disabled={prevDisabled}
-              >
-                {previous}
-              </a>
-              <a
-                role="button"
-                tabIndex={0}
-                onClick={nextDisabled ? undefined : this.goToPage(current + 1)}
-                className="pagination-next"
-                disabled={nextDisabled}
-              >
-                {next}
-              </a>
-            </>
+              <>
+                <a
+                  role="button"
+                  tabIndex={0}
+                  onClick={prevDisabled ? undefined : this.goToPage(current - 1)}
+                  className="pagination-previous"
+                  title="This is the first page"
+                  disabled={prevDisabled}
+                >
+                  {previous}
+                </a>
+                <a
+                  role="button"
+                  tabIndex={0}
+                  onClick={nextDisabled ? undefined : this.goToPage(current + 1)}
+                  className="pagination-next"
+                  disabled={nextDisabled}
+                >
+                  {next}
+                </a>
+              </>
             )
         }
         {
           delta > 0
             && (
-            <>
-              <ul className="pagination-list">
-                {
-                  Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <li key={i + firstPage}>
-                      <a
-                        role="button"
-                        tabIndex={0}
-                        className={classnames('pagination-link', {
-                          'is-current': current === i + firstPage,
-                        })}
-                        onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
-                        aria-label={`Page ${i + firstPage}`}
-                        aria-current="page"
-                        disabled={disabled}
-                      >
-                        {i + firstPage}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </>
+              <>
+                <ul className="pagination-list">
+                  {
+                    Array((lastPage - firstPage) + 1).fill(0).map((_, i) => (
+                      // eslint-disable-next-line react/no-array-index-key
+                      <li key={i + firstPage}>
+                        <a
+                          role="button"
+                          tabIndex={0}
+                          className={classnames('pagination-link', {
+                            'is-current': current === i + firstPage,
+                          })}
+                          onClick={current === firstPage + i ? undefined : this.goToPage(firstPage + i)}
+                          aria-label={`Page ${i + firstPage}`}
+                          aria-current="page"
+                          disabled={disabled}
+                        >
+                          {i + firstPage}
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </>
             )
         }
       </Element>
