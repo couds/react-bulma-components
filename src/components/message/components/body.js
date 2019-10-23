@@ -5,15 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const MessageBody = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('message-body', className)}
-  >
+const MessageBody = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('message-body', className)}>
     {children}
   </Element>
 );

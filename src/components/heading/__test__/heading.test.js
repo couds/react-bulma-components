@@ -9,11 +9,7 @@ describe('Heading component', () => {
   it('Should have title classname', () => {
     const component = renderer.create(
       <Heading>
-        Test
-        {' '}
-        <a>
-Give me
-        </a>
+        Test <a>Give me</a>
       </Heading>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -21,9 +17,7 @@ Give me
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Heading className="other-class this-is-a-test">
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Heading>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -31,9 +25,7 @@ Default
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Heading style={{ height: 250 }}>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Heading>,
     );
     expect(component.toJSON()).toMatchSnapshot();

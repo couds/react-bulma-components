@@ -5,16 +5,8 @@ import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
-const FieldBody = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('field-body', className, {
-    })}
-  >
+const FieldBody = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('field-body', className, {})}>
     {children}
   </Element>
 );

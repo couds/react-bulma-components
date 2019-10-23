@@ -4,14 +4,8 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarDivider = ({
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('navbar-divider', className)}
-  />
+const NavbarDivider = ({ className, ...props }) => (
+  <Element {...props} className={classnames('navbar-divider', className)} />
 );
 
 NavbarDivider.propTypes = {

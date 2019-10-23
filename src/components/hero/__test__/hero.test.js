@@ -15,11 +15,7 @@ describe('Hero component', () => {
   it('Should have hero classname', () => {
     const component = renderer.create(
       <Hero>
-        Test
-        {' '}
-        <a>
-Give me
-        </a>
+        Test <a>Give me</a>
       </Hero>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -27,9 +23,7 @@ Give me
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Hero className="other-class this-is-a-test">
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Hero>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -37,9 +31,7 @@ Default
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Hero style={{ height: 250 }}>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Hero>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -47,9 +39,7 @@ Default
   it('Should use gradient style', () => {
     const component = renderer.create(
       <Hero color="primary" gradient>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Hero>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -58,34 +48,26 @@ Default
     const component = renderer.create(
       <Hero size="fullheight" color="primary">
         <Hero.Head renderAs="header">
-          <div className="bd-notification is-info">
-Header
-          </div>
+          <div className="bd-notification is-info">Header</div>
         </Hero.Head>
-        <Hero.Body>
-          Body
-        </Hero.Body>
+        <Hero.Body>Body</Hero.Body>
         <Hero.Footer renderAs="footer">
-          <div className="bd-notification is-danger">
-Footer
-          </div>
+          <div className="bd-notification is-danger">Footer</div>
         </Hero.Footer>
       </Hero>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
   [null]
-    .concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]))
-    .map((color) => (
+    .concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]))
+    .map(color =>
       it(`Should use use color ${color}`, () => {
         const component = renderer.create(
           <Hero color={color}>
-            <p>
-Default
-            </p>
+            <p>Default</p>
           </Hero>,
         );
         expect(component.toJSON()).toMatchSnapshot();
-      })
-    ));
+      }),
+    );
 });

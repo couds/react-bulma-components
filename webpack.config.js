@@ -5,7 +5,6 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-
 exports.default = {
   devtool: 'source-map',
   entry: './src/index.js',
@@ -56,10 +55,10 @@ exports.default = {
     process.env.WEBPACK_ENV === 'INCLUDE_CSS'
       ? []
       : [
-        new MiniCssExtractPlugin({
-          filename: 'dist/react-bulma-components.min.css',
-        }),
-      ],
+          new MiniCssExtractPlugin({
+            filename: 'dist/react-bulma-components.min.css',
+          }),
+        ],
   ),
   module: {
     rules: [
@@ -69,12 +68,20 @@ exports.default = {
         query: {
           cacheDirectory: true,
           presets: [
-            ['@babel/preset-env', {
-              targets: {
-                browsers: ['last 2 versions', 'not safari < 11', 'not ie < 11'],
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  browsers: [
+                    'last 2 versions',
+                    'not safari < 11',
+                    'not ie < 11',
+                  ],
+                },
               },
-            }],
-            '@babel/preset-react'],
+            ],
+            '@babel/preset-react',
+          ],
           plugins: ['@babel/plugin-proposal-class-properties'],
         },
       },

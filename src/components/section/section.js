@@ -5,12 +5,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Section = ({
-  children,
-  className,
-  size,
-  ...props
-}) => (
+const Section = ({ children, className, size, ...props }) => (
   <Element
     {...props}
     className={classnames('section', className, {

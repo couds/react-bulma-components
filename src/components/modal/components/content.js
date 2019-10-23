@@ -5,15 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const ModalContent = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('modal-content', className)}
-  >
+const ModalContent = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('modal-content', className)}>
     {children}
   </Element>
 );

@@ -5,17 +5,15 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const NavbarContainer = ({
-  className,
-  children,
-  position,
-  ...props
-}) => (
+const NavbarContainer = ({ className, children, position, ...props }) => (
   <Element
     {...props}
-    className={classnames({
-      [`navbar-${position}`]: position,
-    }, className)}
+    className={classnames(
+      {
+        [`navbar-${position}`]: position,
+      },
+      className,
+    )}
   >
     {children}
   </Element>

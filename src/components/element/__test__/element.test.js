@@ -17,7 +17,7 @@ describe('Element component', () => {
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = (props) => (
+    const Custom = props => (
       <p {...props}>
         Custom
         {props.children}
@@ -27,9 +27,7 @@ describe('Element component', () => {
     Custom.propTypes = { children: PropTypes.node.isRequired };
 
     const component = renderer.create(
-      <Element renderAs={Custom}>
-This should be a p element
-      </Element>,
+      <Element renderAs={Custom}>This should be a p element</Element>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
