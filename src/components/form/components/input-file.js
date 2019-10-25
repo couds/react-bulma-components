@@ -63,7 +63,6 @@ export default class InputFile extends PureComponent {
           <input
             {...inputProps}
             name={name}
-            value=""
             type="file"
             className="file-input"
             onChange={this.select}
