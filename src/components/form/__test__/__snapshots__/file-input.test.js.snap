@@ -13,7 +13,6 @@ exports[`Dropdown component Should render file input tree 1`] = `
       className="file-input"
       onChange={[Function]}
       type="file"
-      value=""
     />
     <span
       className="file-cta"
@@ -42,7 +41,6 @@ exports[`Dropdown component should pass file attributes 1`] = `
       multiple={true}
       onChange={[Function]}
       type="file"
-      value=""
     />
     <span
       className="file-cta"
