@@ -11,14 +11,15 @@ export default class Pagination extends React.PureComponent {
     onChange(page);
   }
 
-  firstPage = (current, total) => {
+  firstPage = (current, last) => {
     const { delta } = this.props;
 
     if (current === 1) {
       return 1;
     }
 
-    const page = current - (delta * (current === total ? 2 : 1));
+    const minPage = last - (delta * 2);
+    const page = current - delta < minPage ? current - delta : minPage;
 
     return page <= 0 ? 1 : page;
   }
@@ -30,7 +31,8 @@ export default class Pagination extends React.PureComponent {
       return total;
     }
 
-    const page = current + (delta * (current === 1 ? 2 : 1));
+    const maxPage =  delta * 2 + 1;
+    const page = current + delta > maxPage ? current + delta : maxPage;
 
     return page > total ? total : page;
   }
@@ -57,8 +59,8 @@ export default class Pagination extends React.PureComponent {
       return null;
     }
 
-    const firstPage = this.firstPage(current, total);
     const lastPage = this.lastPage(current, total);
+    const firstPage = this.firstPage(current, lastPage);
     const prevDisabled = current === 1 || disabled;
     const nextDisabled = current === total || disabled;
 
