@@ -19,7 +19,7 @@ export default class Pagination extends React.PureComponent {
     }
 
     const minPage = last - (delta * 2);
-    const page = current - delta < minPage ? current - delta : minPage;
+    const page = Math.min(current - delta, minPage);
 
     return page <= 0 ? 1 : page;
   }
@@ -32,7 +32,7 @@ export default class Pagination extends React.PureComponent {
     }
 
     const maxPage =  delta * 2 + 1;
-    const page = current + delta > maxPage ? current + delta : maxPage;
+    const page = Math.max(current + delta, maxPage);
 
     return page > total ? total : page;
   }
