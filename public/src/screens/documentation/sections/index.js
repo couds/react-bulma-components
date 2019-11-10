@@ -1,6 +1,8 @@
 import React from 'react';
+
 import LayoutDoc from './layout';
 import ContainerDoc from './layout/container';
+import LevelDoc from './layout/level';
 
 const Sections = [
 	{
@@ -12,8 +14,8 @@ const Sections = [
 				component: ContainerDoc,
 			},
 			{
-				name: 'Test',
-				component: () => <div>test</div>
+				name: 'Level',
+				component: LevelDoc,
 			}
 		],
 	},
