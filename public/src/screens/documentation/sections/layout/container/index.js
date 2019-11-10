@@ -18,7 +18,7 @@ const ContainerDoc = () => (
       <p>
         The
         <code>Container</code>
-        component can be used in any context, but mostly as a{" "}
+        component can be used in any context, but mostly as a{' '}
         <strong>direct child </strong>
         of either:
       </p>
@@ -127,7 +127,7 @@ const ContainerDoc = () => (
         reactCode={`
 <Container breakpoint="fullhd">
 	<Notification>
-		This container is <strong>fullwidth</strong> until the <code>$widescreen</code> breakpoint
+		This container is <strong>fullwidth</strong> until the <code>$fullhd</code> breakpoint
 	</Notification>
 </Container>
 					`}
