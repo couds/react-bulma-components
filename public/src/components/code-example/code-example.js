@@ -30,7 +30,9 @@ const CodeExample = ({
         : (
           <>
             {children}
-            <CodeView reactCode={reactCode} bulmaCode={bulmaCode} />
+            <div>
+              <CodeView reactCode={reactCode} bulmaCode={bulmaCode} />
+            </div>
           </>
         )
       }
