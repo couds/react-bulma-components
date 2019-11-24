@@ -9,6 +9,7 @@ import CodeExample from 'components/code-example';
 import LevelNavDemo from './demo/level-nav';
 import LevelLinksDemo from './demo/level-links';
 import SocialMediaLevelDemo from './demo/level-social-media';
+import LevelMobile from './demo/level-mobile';
 
 const LevelDoc = () => (
   <Container fluid>
@@ -72,6 +73,17 @@ const LevelDoc = () => (
           bulmaCode={LevelLinksDemo.bulmaCode}
         >
           <LevelLinksDemo />
+        </CodeExample>
+      </Box>
+      <br />
+      <Heading size={4}>Mobile Level</Heading>
+      <Box paddingless>
+        <CodeExample
+          alignment="vertical"
+          reactCode={LevelMobile.reactCode}
+          bulmaCode={LevelMobile.bulmaCode}
+        >
+          <LevelMobile />
         </CodeExample>
       </Box>
     </Content>
