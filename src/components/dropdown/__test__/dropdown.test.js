@@ -160,7 +160,7 @@ describe('Dropdown component', () => {
     expect(component.state('open')).toBe(false);
   });
   it('Should close on select', () => {
-    const component = shallow(
+    const component = mount(
       <Dropdown>
         <Dropdown.Item value="value">
           Item
@@ -173,7 +173,7 @@ describe('Dropdown component', () => {
   });
   it('Should close the dropdown', () => {
     const onChange = jest.fn();
-    const component = shallow(
+    const component = mount(
       <Dropdown value="" style={{ width: 400 }} onChange={onChange}>
         <Dropdown.Item value="value">
           Item

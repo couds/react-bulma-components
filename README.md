@@ -6,13 +6,15 @@
 [![Release Version](https://img.shields.io/github/release/couds/react-bulma-components.svg)](https://github.com/couds/react-bulma-components)
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
-React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
+React components for [Bulma](http://bulma.io/) (v0.7.5) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
+### Public page [WIP]
+- Currently I'm working on a new public page https://react-bulma.dev where to put a better documentation. is a work in progress any help is welcome. also Its localized if you don't want to code but want to help you can help with the translations in https://crowdin.com/project/react-bulma-components
 
 ### BREAKING CHANGES V2 -> V3:
 
 - Now the alias needed to override Bulma variables (and/or use the directly the sass files) is `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- Please check if the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
+- V3 Use the new Context api so requires `react >= 16.3`
 
 ### To Install
 
@@ -97,13 +99,12 @@ Inside the resolve directive setup your webpack to use modules from the folder w
 
 Install node-sass to enable the sass compiles on your project.
 
-After that update your scripts in the `package.json` to add the folder to your path
+After that update your `jsconfig.json` to add the folder to your path
 ```
-"scripts": {
-  "start": "NODE_PATH=./src react-scripts start",
-  "build": "NODE_PATH=./src react-scripts build",
-  "test": "NODE_PATH=./src react-scripts test",
-  ...
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
 }
 ```
 
@@ -128,20 +129,32 @@ plugins: [
 
 #### Next.js
 
-Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-plugin-transpile-modules` so install it `npm i --save-dev next-plugin-transpile-modules`.
+Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-transpile-modules` so install it `npm i --save-dev next-transpile-modules`.
 
-Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
+Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules. **note** `withTM()` should always be the *most nested* function in your config.
 
 ```javascript
 const withSass = require('@zeit/next-sass')
-const withTM = require('next-plugin-transpile-modules');
+const withTM = require('next-transpile-modules');
 
-module.exports = withTM(withSass({
+module.exports = withSass(withTM({
     transpileModules: ['react-bulma-components'],
     sassLoaderOptions: {
         includePaths: ["./src"]
     },
 }))
+```
+
+The last thing to remember is that since you're transpiling `react-bulma-components` from source, make sure your import statements reflect this in your app:
+
+
+```javascript
+import React from 'react';
+import Button from 'react-bulma-components/src/components/button'; //import from src, not lib
+
+export default () => (
+  <Button color="primary">My Bulma button</Button>
+)
 ```
 
 ### Documentation
@@ -187,3 +200,15 @@ The following components were ported:
 |Table|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Table)|[Docs](http://bulma.io/documentation/elements/table/)
 |Tag|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tag)|[Docs](http://bulma.io/documentation/elements/tag/)
 |Tile|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)|[Docs](http://bulma.io/documentation/layout/tiles/)
+
+#### Adding ref to a component
+We use a custom prop to pass down the ref to the next dom object. (instead to the instance of the component).
+
+```javascript
+const TestComponent = () => {
+  const buttonRef = useRef(null);
+  return <Button domRef={buttonRef}>button</Button>
+}
+```
+
+Why we do this instead of using [React.forwardRef](https://reactjs.org/docs/forwarding-refs.html)? The forwardRef wrap the component into another one, because this is a library for wrapping the Bulma Framework cause an overhead and a lot of noise on the component tab of the React Dev Tools.

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import canUseDOM from '../../services/can-use-dom';
@@ -22,59 +22,44 @@ let htmlClass = '';
 
 export const getHtmlClasses = () => htmlClass;
 
-class Navbar extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentWillUnmount() {
-    const { fixed } = this.props;
-    window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
-  }
-
-  static getDerivedStateFromProps(nextProps) {
+const Navbar = ({
+  children,
+  className,
+  fixed,
+  transparent,
+  color,
+  active,
+  ...props
+}) => {
+  htmlClass = fixed ? `has-navbar-fixed-${fixed}` : '';
+  useEffect(() => {
     if (!canUseDOM) {
-      return null;
+      return () => {};
     }
     const html = window.document.querySelector('html');
     html.classList.remove('has-navbar-fixed-top');
     html.classList.remove('has-navbar-fixed-bottom');
-    if (nextProps.fixed) {
-      htmlClass = `has-navbar-fixed-${nextProps.fixed}`;
-      html.classList.add(`has-navbar-fixed-${nextProps.fixed}`);
+    if (fixed) {
+      html.classList.add(`has-navbar-fixed-${fixed}`);
     }
-    return null;
-  }
-
-  render() {
-    const {
-      children,
-      className,
-      fixed,
-      transparent,
-      color,
-      active,
-      ...props
-    } = this.props;
-
-    return (
-      <ShowContext.Provider value={active}>
-        <Element
-          {...props}
-          role="navigation"
-          className={classnames('navbar', modifiers.classnames(props), className, {
-            'is-transparent': transparent,
-            [`is-fixed-${fixed}`]: fixed,
-            [`is-${color}`]: color,
-          })}
-        >
-          {children}
-        </Element>
-      </ShowContext.Provider>
-    );
-  }
-}
+    return () => window.document.querySelector('html').classList.remove(`has-navbar-fixed-${fixed}`);
+  }, [fixed]);
+  return (
+    <ShowContext.Provider value={active}>
+      <Element
+        {...props}
+        role="navigation"
+        className={classnames('navbar', modifiers.classnames(props), className, {
+          'is-transparent': transparent,
+          [`is-fixed-${fixed}`]: fixed,
+          [`is-${color}`]: color,
+        })}
+      >
+        {children}
+      </Element>
+    </ShowContext.Provider>
+  );
+};
 
 Navbar.propTypes = {
   ...modifiers.propTypes,

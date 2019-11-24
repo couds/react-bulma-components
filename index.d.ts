@@ -354,6 +354,7 @@ interface DropdownModifierProps {
   onChange?: React.ChangeEventHandler<"div">;
   align?: "right";
   hoverable?: boolean;
+  label?: React.ReactNode;
 }
 interface DropdownProps
   extends ModifierProps,

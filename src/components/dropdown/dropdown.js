@@ -31,10 +31,19 @@ export default class Dropdown extends PureComponent {
 
   close = (evt) => {
     // IDK yet how to test using the ref in enzime
-    if (this.props.hoverable || (evt && this.domRef && this.domRef.current.contains(evt.target))) {
+    // istanbul ignore if
+    if (
+      this.props.hoverable
+      || (evt
+        && this.domRef
+        && this.domRef.current
+        && this.domRef.current.contains(evt.target))
+    ) {
       return;
     }
-    this.setState({ open: false });
+    if (this.domRef.current) {
+      this.setState({ open: false });
+    }
   }
 
   toggle = (evt) => {

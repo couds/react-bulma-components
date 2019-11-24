@@ -489,4 +489,16 @@ storiesOf('Columns', module)
         <p className="bd-notification is-danger">size-1</p>
       </Columns.Column>
     </Columns>
+  )))
+  .add('Vertical alignment', (() => (
+    <Columns vCentered>
+      <Columns.Column size={8}>
+        <p className="bd-notification is-primary">First column</p>
+      </Columns.Column>
+      <Columns.Column>
+        <p className="bd-notification is-primary">
+          Second column with more content. This is so you can see the vertical alignment.
+        </p>
+      </Columns.Column>
+    </Columns>
   )));

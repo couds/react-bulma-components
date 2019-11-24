@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-components",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "description": "React components for Bulma framework",
   "main": "dist",
   "types": "index.d.ts",
@@ -14,7 +14,7 @@
     "build-storybook-static": "build-storybook -c .storybook -o .out",
     "clean-build": "npm run clean:build && npm run build && npm run clean:test",
     "deploy-storybook": "storybook-to-ghpages",
-    "build": "WEBPACK_ENV=INCLUDE_CSS webpack --progress --color --mode=production && webpack --progress --color --mode=production && npm run create:lib",
+    "build": "webpack --progress --color --mode=production && npm run create:lib",
     "create:lib": "babel ./src --out-dir ./lib --copy-files --source-maps",
     "clean:test": "rm -rf $(find ./lib -name \"__test__\")"
   },
