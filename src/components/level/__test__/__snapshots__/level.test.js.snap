@@ -16,6 +16,36 @@ exports[`Level component Should expose Level Side and Item 1`] = `[Function]`;
 
 exports[`Level component Should expose Level Side and Item 2`] = `[Function]`;
 
+exports[`Level component Should have is-mobile class if mobile prop is true 1`] = `
+<div
+  className="level is-mobile"
+>
+  <div
+    className="level-left"
+  >
+    <div
+      className="level-item"
+    >
+      Item 1
+    </div>
+    <div
+      className="level-item"
+    >
+      Item 2
+    </div>
+  </div>
+  <div
+    className="level-right"
+  >
+    <div
+      className="level-item"
+    >
+      Item 3
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Level component Should have level classname 1`] = `
 <div
   className="level"
