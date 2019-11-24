@@ -21,9 +21,6 @@
     "add-locale": "lingui add-locale",
     "extract": "lingui extract"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
