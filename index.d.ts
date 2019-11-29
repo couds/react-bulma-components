@@ -1304,7 +1304,7 @@ interface ProgressModifierProps {
   size?: "small" | "medium" | "large";
   // todo: https://github.com/couds/react-bulma-components/issues/112
   max: number;
-  value: number;
+  value?: number;
 }
 interface ProgressProps
   extends ModifierProps,
