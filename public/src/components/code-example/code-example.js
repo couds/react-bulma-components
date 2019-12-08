@@ -15,27 +15,31 @@ const CodeExample = ({
   size,
   codeMaxHeight,
 }) => (
-  <div className="code-example" style={{ overflow: 'hidden', position: 'relative', ...style }}>
-    {alignment === 'horizontal'
-      ? (
-        <Columns gapless>
-          <Columns.Column size={size} className="is-vertically-centered">
-            {children}
-          </Columns.Column>
-          <Columns.Column className="code" size={12 - size} style={{ maxHeight: codeMaxHeight, overflowY: 'scroll' }} >
-            <CodeView reactCode={reactCode} bulmaCode={bulmaCode} />
-          </Columns.Column>
-        </Columns>
-      )
-      : (
-        <>
+  <div
+    className="code-example"
+    style={{ overflow: 'hidden', position: 'relative', ...style }}
+  >
+    {alignment === 'horizontal' ? (
+      <Columns gapless>
+        <Columns.Column size={size} className="is-vertically-centered">
           {children}
-          <div>
-            <CodeView reactCode={reactCode} bulmaCode={bulmaCode} />
-          </div>
-        </>
-      )
-    }
+        </Columns.Column>
+        <Columns.Column
+          className="code"
+          size={12 - size}
+          style={{ maxHeight: codeMaxHeight, overflowY: 'scroll' }}
+        >
+          <CodeView reactCode={reactCode} bulmaCode={bulmaCode} />
+        </Columns.Column>
+      </Columns>
+    ) : (
+      <>
+        <div style={{ margin: '1rem' }}>{children}</div>
+        <div>
+          <CodeView reactCode={reactCode} bulmaCode={bulmaCode} />
+        </div>
+      </>
+    )}
   </div>
 );
 

@@ -6,7 +6,8 @@ import Heading from 'react-bulma-components/lib/components/heading';
 import Notification from 'react-bulma-components/lib/components/notification';
 
 import CodeExample from 'components/code-example';
-import PropsTable from './props-table';
+import ContainerProps from './props';
+import PropsTable from '../../../components/props-table';
 
 const ContainerDoc = () => (
   <Container fluid>
@@ -150,7 +151,7 @@ const ContainerDoc = () => (
     </Box>
     <hr />
     <Heading size={4}>Props</Heading>
-    <PropsTable />
+    <PropsTable props={ContainerProps} />
     <br />
   </Container>
 );

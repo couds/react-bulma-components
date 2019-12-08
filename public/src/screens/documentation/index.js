@@ -81,7 +81,7 @@ const Documentation = ({ location, match }) => {
             </Menu.List>
           </Menu>
         </Columns.Column>
-        <Columns.Column>
+        <Columns.Column size={8}>
           <Route exact path={match.url}>
             <Heading>
               Documentation
