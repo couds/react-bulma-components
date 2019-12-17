@@ -152,4 +152,44 @@ storiesOf('Level', module)
         </Box>
       </Section>
     )),
-  );
+  )
+  .add('Horizontal level on mobile', () => (
+    <Section>
+      <Box>
+        <Level mobile renderAs="nav">
+          <Level.Item style={style}>
+            <div>
+              <Heading renderAs="p" heading>
+                Tweets
+              </Heading>
+              <Heading renderAs="p">3,210</Heading>
+            </div>
+          </Level.Item>
+          <Level.Item style={style}>
+            <div>
+              <Heading renderAs="p" heading>
+                Following
+              </Heading>
+              <Heading renderAs="p">210</Heading>
+            </div>
+          </Level.Item>
+          <Level.Item style={style}>
+            <div>
+              <Heading renderAs="p" heading>
+                Followers
+              </Heading>
+              <Heading renderAs="p">321</Heading>
+            </div>
+          </Level.Item>
+          <Level.Item style={style}>
+            <div>
+              <Heading renderAs="p" heading>
+                Likes
+              </Heading>
+              <Heading renderAs="p">321K</Heading>
+            </div>
+          </Level.Item>
+        </Level>
+      </Box>
+    </Section>
+  ));

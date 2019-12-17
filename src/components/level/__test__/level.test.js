@@ -50,4 +50,18 @@ describe('Level component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should have is-mobile class if mobile prop is true', () => {
+    const component = renderer.create(
+      <Level mobile>
+        <Level.Side>
+          <Level.Item>Item 1</Level.Item>
+          <Level.Item>Item 2</Level.Item>
+        </Level.Side>
+        <Level.Side align="right">
+          <Level.Item>Item 3</Level.Item>
+        </Level.Side>
+      </Level>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
