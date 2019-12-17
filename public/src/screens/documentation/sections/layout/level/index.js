@@ -6,10 +6,12 @@ import Heading from 'react-bulma-components/lib/components/heading';
 
 import CodeExample from 'components/code-example';
 
+import { LevelProps, LevelSideProps, LevelItemProps } from './props';
 import LevelNavDemo from './demo/level-nav';
 import LevelLinksDemo from './demo/level-links';
-import SocialMediaLevelDemo from './demo/level-social-media';
 import LevelMobile from './demo/level-mobile';
+import PropsTable from '../../../components/props-table';
+import SocialMediaLevelDemo from './demo/level-social-media';
 
 const LevelDoc = () => (
   <Container fluid>
@@ -87,6 +89,16 @@ const LevelDoc = () => (
         </CodeExample>
       </Box>
     </Content>
+    <Heading size={4}>Props</Heading>
+    <Heading size={5}>Level</Heading>
+    <PropsTable componentProps={LevelProps} />
+    <br />
+    <Heading size={5}>Level.Side</Heading>
+    <PropsTable componentProps={LevelSideProps} />
+    <br />
+    <Heading size={5}>Level.Item</Heading>
+    <PropsTable componentProps={LevelItemProps} />
+    <br />
   </Container>
 );
 

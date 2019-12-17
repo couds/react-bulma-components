@@ -17,12 +17,6 @@ const ContainerProps = [
     required: 'false',
     default: 'div',
   },
-  {
-    name: 'style',
-    type: 'Object',
-    required: 'false',
-    default: 'undefined',
-  },
 ];
 
 export default ContainerProps;

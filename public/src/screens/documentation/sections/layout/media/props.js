@@ -5,12 +5,6 @@ const MediaProps = [
     required: 'false',
     default: 'div',
   },
-  {
-    name: 'style',
-    type: 'Object',
-    required: 'false',
-    default: 'undefined',
-  },
 ];
 
 const MediaItemProps = [
@@ -25,12 +19,6 @@ const MediaItemProps = [
     type: '"left" | "right" | "center"',
     required: 'false',
     default: '"center"',
-  },
-  {
-    name: 'style',
-    type: 'Object',
-    required: 'false',
-    default: 'undefined',
   },
 ];
 

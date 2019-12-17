@@ -57,10 +57,10 @@ const MediaDoc = () => (
     <hr />
     <Heading size={4}>Props</Heading>
     <Heading size={5}>Media</Heading>
-    <PropsTable props={MediaProps} />
+    <PropsTable componentProps={MediaProps} />
     <br />
     <Heading size={5}>Media.Item</Heading>
-    <PropsTable props={MediaItemProps} />
+    <PropsTable componentProps={MediaItemProps} />
     <br />
   </Container>
 );

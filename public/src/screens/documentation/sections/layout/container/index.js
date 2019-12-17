@@ -76,7 +76,7 @@ const ContainerDoc = () => (
     This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any viewport size.
   </Notification>
 </Container>
-	`}
+  `}
         bulmaCode={`
 <div class="container is-fluid">
   <div class="notification">
@@ -99,18 +99,18 @@ const ContainerDoc = () => (
         alignment="vertical"
         reactCode={`
 <Container breakpoint="widescreen">
-	<Notification>
-		This container is <strong>fullwidth</strong> until the <code>$widescreen</code> breakpoint
-	</Notification>
+  <Notification>
+    This container is <strong>fullwidth</strong> until the <code>$widescreen</code> breakpoint
+  </Notification>
 </Container>
-					`}
+          `}
         bulmaCode={`
 <div class="container is-widescreen">
   <div class="notification">
     This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
   </div>
 </div>
-					`}
+          `}
       >
         <Container breakpoint="widescreen">
           <Notification>
@@ -127,18 +127,18 @@ const ContainerDoc = () => (
         alignment="vertical"
         reactCode={`
 <Container breakpoint="fullhd">
-	<Notification>
-		This container is <strong>fullwidth</strong> until the <code>$fullhd</code> breakpoint
-	</Notification>
+  <Notification>
+    This container is <strong>fullwidth</strong> until the <code>$fullhd</code> breakpoint
+  </Notification>
 </Container>
-					`}
+          `}
         bulmaCode={`
 <div class="container is-fullhd">
   <div class="notification">
     This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
   </div>
 </div>
-					`}
+          `}
       >
         <Container breakpoint="fullhd">
           <Notification>
@@ -151,7 +151,7 @@ const ContainerDoc = () => (
     </Box>
     <hr />
     <Heading size={4}>Props</Heading>
-    <PropsTable props={ContainerProps} />
+    <PropsTable componentProps={ContainerProps} />
     <br />
   </Container>
 );
