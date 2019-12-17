@@ -5,11 +5,7 @@ import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
-const PanelTabsTab = ({
-  className,
-  active,
-  ...props
-}) => (
+const PanelTabsTab = ({ className, active, ...props }) => (
   <Element
     {...props}
     className={classnames(className, {

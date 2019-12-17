@@ -8,20 +8,12 @@ describe('Checkbox component', () => {
     expect(Checkbox).toMatchSnapshot();
   });
   it('Should have checkbox classname', () => {
-    const component = renderer.create(
-      <Checkbox>
-        Text
-      </Checkbox>,
-    );
+    const component = renderer.create(<Checkbox>Text</Checkbox>);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should change value on change event', () => {
     const spy = jest.fn();
-    const component = mount(
-      <Checkbox onChange={spy}>
-        Text
-      </Checkbox>,
-    );
+    const component = mount(<Checkbox onChange={spy}>Text</Checkbox>);
     component.find('input').simulate('change');
     expect(spy).toHaveBeenCalledTimes(1);
   });

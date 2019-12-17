@@ -5,12 +5,7 @@ import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
-const FieldLabel = ({
-  children,
-  className,
-  size,
-  ...props
-}) => (
+const FieldLabel = ({ children, className, size, ...props }) => (
   <Element
     {...props}
     className={classnames('field-label', className, {

@@ -5,15 +5,8 @@ import modifiers from '../../modifiers';
 import renderAsShape from '../../modifiers/render-as';
 import Element from '../element';
 
-const Box = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('box', className)}
-  >
+const Box = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('box', className)}>
     {children}
   </Element>
 );

@@ -25,26 +25,22 @@ const Breadcrumb = ({
     })}
   >
     <ul>
-      {
-        items.map((item) => {
-          const p = {
-            renderAs,
-            [hrefAttr]: item.url,
-          };
-          return (
-            <li
-              key={item.url}
-              className={classnames({
-                'is-active': item.active,
-              })}
-            >
-              <Element {...p}>
-                {item.name}
-              </Element>
-            </li>
-          );
-        })
-      }
+      {items.map(item => {
+        const p = {
+          renderAs,
+          [hrefAttr]: item.url,
+        };
+        return (
+          <li
+            key={item.url}
+            className={classnames({
+              'is-active': item.active,
+            })}
+          >
+            <Element {...p}>{item.name}</Element>
+          </li>
+        );
+      })}
     </ul>
   </Element>
 );
@@ -56,11 +52,13 @@ Breadcrumb.propTypes = {
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['right', 'center']),
-  items: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    active: PropTypes.bool,
-    name: PropTypes.node,
-  })),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      active: PropTypes.bool,
+      name: PropTypes.node,
+    }),
+  ),
   renderAs: renderAsShape,
   hrefAttr: PropTypes.string,
 };

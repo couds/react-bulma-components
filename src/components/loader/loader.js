@@ -5,15 +5,8 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Loader = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('loader', className)}
-  >
+const Loader = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('loader', className)}>
     {children}
   </Element>
 );

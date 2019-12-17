@@ -4,12 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const Label = ({
-  children,
-  className,
-  size,
-  ...props
-}) => (
+const Label = ({ children, className, size, ...props }) => (
   <Element
     renderAs="label"
     {...props}

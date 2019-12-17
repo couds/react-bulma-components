@@ -7,10 +7,7 @@ import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
-const CardHeader = ({
-  className,
-  ...props
-}) => (
+const CardHeader = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-header', className)} />
 );
 

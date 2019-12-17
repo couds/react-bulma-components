@@ -7,12 +7,8 @@ describe('Container component', () => {
     const component = renderer.create(
       <Container>
         <p className="bd-notification is-success">
-          <p>
-Default
-          </p>
-          <p>
-Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
       </Container>,
     );
@@ -43,12 +39,8 @@ Container
         }}
       >
         <p className="bd-notification is-success">
-          <p>
-            Default
-          </p>
-          <p>
-            Container
-          </p>
+          <p>Default</p>
+          <p>Container</p>
         </p>
       </Container>,
     );

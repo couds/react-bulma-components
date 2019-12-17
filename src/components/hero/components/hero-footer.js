@@ -5,15 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const HeroFooter = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames(className, 'hero-foot')}
-  >
+const HeroFooter = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames(className, 'hero-foot')}>
     {children}
   </Element>
 );

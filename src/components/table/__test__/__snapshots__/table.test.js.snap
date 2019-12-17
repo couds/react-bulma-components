@@ -16,8 +16,7 @@ exports[`Table component Should have table classname 1`] = `
 <table
   className="table is-fullwidth is-striped"
 >
-  Test
-   
+  Test 
   <a
     href="test"
   >

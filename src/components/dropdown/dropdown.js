@@ -29,24 +29,24 @@ export default class Dropdown extends PureComponent {
     document.removeEventListener('click', this.close);
   }
 
-  close = (evt) => {
+  close = evt => {
     // IDK yet how to test using the ref in enzime
     // istanbul ignore if
     if (
-      this.props.hoverable
-      || (evt
-        && this.domRef
-        && this.domRef.current
-        && this.domRef.current.contains(evt.target))
+      this.props.hoverable ||
+      (evt &&
+        this.domRef &&
+        this.domRef.current &&
+        this.domRef.current.contains(evt.target))
     ) {
       return;
     }
     if (this.domRef.current) {
       this.setState({ open: false });
     }
-  }
+  };
 
-  toggle = (evt) => {
+  toggle = evt => {
     if (this.props.hoverable) {
       return;
     }
@@ -54,16 +54,16 @@ export default class Dropdown extends PureComponent {
       evt.preventDefault();
     }
     this.setState(({ open }) => ({ open: !open }));
-  }
+  };
 
-  select = (value) => () => {
+  select = value => () => {
     if (this.props.onChange) {
       this.props.onChange(value);
     }
     if (this.props.closeOnSelect) {
       this.close();
     }
-  }
+  };
 
   render() {
     const {
@@ -83,18 +83,28 @@ export default class Dropdown extends PureComponent {
     let current = label;
 
     const childrenArray = React.Children.map(children, (child, i) => {
-      if (child.type === DropdownItem && ((i === 0 && !label) || child.props.value === value)) {
+      if (
+        child.type === DropdownItem &&
+        ((i === 0 && !label) || child.props.value === value)
+      ) {
         current = child.props.children;
       }
-      return React.cloneElement(child, child.type === DropdownItem ? {
-        active: child.props.value === value,
-        onClick: this.select(child.props.value),
-      } : {});
+      return React.cloneElement(
+        child,
+        child.type === DropdownItem
+          ? {
+              active: child.props.value === value,
+              onClick: this.select(child.props.value),
+            }
+          : {},
+      );
     });
 
     if (align === 'right') {
       // eslint-disable-next-line no-console
-      console.warn('react-bulma-components: "Align" prop will be replaced by "right" prop in future releases. Please update your code to avoid breaking changes.');
+      console.warn(
+        'react-bulma-components: "Align" prop will be replaced by "right" prop in future releases. Please update your code to avoid breaking changes.',
+      );
     }
 
     return (
@@ -108,24 +118,23 @@ export default class Dropdown extends PureComponent {
           'is-hoverable': hoverable,
         })}
       >
-        <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
+        <div
+          className="dropdown-trigger"
+          role="presentation"
+          onClick={this.toggle}
+        >
           <Button color={color}>
-            <span>
-              {current}
-            </span>
+            <span>{current}</span>
             <Icon icon="angle-down" size="small" />
           </Button>
         </div>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">
-          <div className="dropdown-content">
-            {childrenArray}
-          </div>
+          <div className="dropdown-content">{childrenArray}</div>
         </div>
       </Element>
     );
   }
 }
-
 
 Dropdown.Item = DropdownItem;
 

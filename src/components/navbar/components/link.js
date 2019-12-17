@@ -5,12 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const NavbarLink = ({
-  className,
-  children,
-  arrowless,
-  ...props
-}) => (
+const NavbarLink = ({ className, children, arrowless, ...props }) => (
   <Element
     {...props}
     className={classnames('navbar-link', className, {
@@ -20,7 +15,6 @@ const NavbarLink = ({
     {children}
   </Element>
 );
-
 
 NavbarLink.propTypes = {
   ...modifiers.propTypes,

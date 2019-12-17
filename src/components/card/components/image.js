@@ -4,18 +4,9 @@ import Image from '../../image';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const CardImage = ({
-  className,
-  domRef,
-  ...props
-}) => (
-  <Element
-    domRef={domRef}
-    className={classnames('card-image', className)}
-  >
-    <Image
-      {...props}
-    />
+const CardImage = ({ className, domRef, ...props }) => (
+  <Element domRef={domRef} className={classnames('card-image', className)}>
+    <Image {...props} />
   </Element>
 );
 

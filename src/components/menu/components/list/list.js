@@ -6,21 +6,14 @@ import MenuListItem from './components/item';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const MenuList = ({
-  className,
-  title,
-  ...props
-}) => (
+const MenuList = ({ className, title, ...props }) => (
   <>
-    {
-        title
-        && (
-        <p className="menu-label">
-          {title}
-        </p>
-        )
-      }
-    <Element renderAs="ul" className={classnames('menu-list', className)} {...props} />
+    {title && <p className="menu-label">{title}</p>}
+    <Element
+      renderAs="ul"
+      className={classnames('menu-list', className)}
+      {...props}
+    />
   </>
 );
 

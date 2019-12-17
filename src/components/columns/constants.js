@@ -1,4 +1,3 @@
-
 export default {
   SIZES: {
     THREEQUARTERS: 'three-quarters',

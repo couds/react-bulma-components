@@ -14,11 +14,18 @@ const MenuListItem = ({
   domRef: ref,
   ...props
 }) => {
-  if (typeof children !== 'string' && React.Children.toArray(children).length === 1 && React.Children.only(children).type === List) {
+  if (
+    typeof children !== 'string' &&
+    React.Children.toArray(children).length === 1 &&
+    React.Children.only(children).type === List
+  ) {
     const child = React.Children.only(children);
     return (
       <li ref={ref}>
-        <Element className={classnames(className, { 'is-active': active })} {...props}>
+        <Element
+          className={classnames(className, { 'is-active': active })}
+          {...props}
+        >
           {child.props.title}
         </Element>
         {React.cloneElement(child, { title: undefined })}
@@ -28,7 +35,10 @@ const MenuListItem = ({
 
   return (
     <li ref={ref}>
-      <Element className={classnames(className, { 'is-active': active })} {...props}>
+      <Element
+        className={classnames(className, { 'is-active': active })}
+        {...props}
+      >
         {children}
       </Element>
     </li>
@@ -38,10 +48,7 @@ const MenuListItem = ({
 MenuListItem.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   active: PropTypes.bool,
   renderAs: renderAsShape,
 };

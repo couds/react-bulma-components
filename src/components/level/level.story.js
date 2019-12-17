@@ -3,7 +3,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Level from 'react-bulma-components/lib/components/level';
-import { Field, Control, Input } from 'react-bulma-components/lib/components/form';
+import {
+  Field,
+  Control,
+  Input,
+} from 'react-bulma-components/lib/components/form';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Button from 'react-bulma-components/lib/components/button';
 import Hero from 'react-bulma-components/lib/components/hero';

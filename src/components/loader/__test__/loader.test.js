@@ -19,7 +19,9 @@ describe('Box component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have custom inline styles', () => {
-    const component = renderer.create(<Loader renderAs="section" style={{ width: 200, zIndex: 1 }} />);
+    const component = renderer.create(
+      <Loader renderAs="section" style={{ width: 200, zIndex: 1 }} />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

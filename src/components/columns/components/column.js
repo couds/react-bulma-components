@@ -5,8 +5,9 @@ import CONSTANTS from '../constants';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  .concat(Object.keys(CONSTANTS.SIZES).map((key) => CONSTANTS.SIZES[key]));
+const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(
+  Object.keys(CONSTANTS.SIZES).map(key => CONSTANTS.SIZES[key]),
+);
 
 const Column = ({
   children,
@@ -94,24 +95,24 @@ Column.propTypes = {
     narrow: PropTypes.bool,
   }),
   /**
-  * Size, Offset and Narrow props for Desktop devices (Between 1024px and 1215px)
-  */
+   * Size, Offset and Narrow props for Desktop devices (Between 1024px and 1215px)
+   */
   desktop: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
     offset: PropTypes.oneOf(sizes),
     narrow: PropTypes.bool,
   }),
   /**
-  * Size, Offset and Narrow props for WideScreen devices (Between 1216px and 1407px)
-  */
+   * Size, Offset and Narrow props for WideScreen devices (Between 1216px and 1407px)
+   */
   widescreen: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
     offset: PropTypes.oneOf(sizes),
     narrow: PropTypes.bool,
   }),
   /**
-  * Size, Offset and Narrow props for FullHD devices (1408px and above)
-  */
+   * Size, Offset and Narrow props for FullHD devices (1408px and above)
+   */
   fullhd: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
     offset: PropTypes.oneOf(sizes),

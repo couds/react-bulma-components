@@ -4,14 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Table = ({
-  children,
-  className,
-  size,
-  striped,
-  bordered,
-  ...props
-}) => (
+const Table = ({ children, className, size, striped, bordered, ...props }) => (
   <Element
     renderAs="table"
     {...props}

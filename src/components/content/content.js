@@ -5,12 +5,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Content = ({
-  children,
-  className,
-  size,
-  ...props
-}) => (
+const Content = ({ children, className, size, ...props }) => (
   <Element
     {...props}
     className={classnames('content', className, {

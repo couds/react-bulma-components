@@ -18,7 +18,6 @@ class Modal extends PureComponent {
     this.state = {};
   }
 
-
   componentDidMount() {
     const { closeOnEsc } = this.props;
 
@@ -53,25 +52,26 @@ class Modal extends PureComponent {
     }
 
     return null;
-  }
+  };
 
-  handleKeydown = (e) => {
+  handleKeydown = e => {
     if (e.keyCode === KEYCODES.ESCAPE && this.props.show) {
       this.props.onClose();
     }
-  }
+  };
 
   render() {
-    const {
-      domRef, closeOnBlur, show, className,
-    } = this.props;
+    const { domRef, closeOnBlur, show, className } = this.props;
     if (!this.getDocument() || !this.portalElement || !show) {
       return null;
     }
     let { children } = this.props;
     let isCard;
     try {
-      isCard = React.Children.only(children).type.toString().indexOf('ModalCard') !== -1;
+      isCard =
+        React.Children.only(children)
+          .type.toString()
+          .indexOf('ModalCard') !== -1;
     } catch (e) {
       isCard = false;
     }
@@ -91,13 +91,20 @@ class Modal extends PureComponent {
           'is-active': show,
         })}
       >
-        <div role="presentation" className="modal-background" onClick={closeOnBlur ? this.props.onClose : undefined} />
+        <div
+          role="presentation"
+          className="modal-background"
+          onClick={closeOnBlur ? this.props.onClose : undefined}
+        />
         {children}
-        {
-          showClose && (
-            <button type="button" onClick={this.props.onClose} className="modal-close is-large" aria-label="close" />
-          )
-        }
+        {showClose && (
+          <button
+            type="button"
+            onClick={this.props.onClose}
+            className="modal-close is-large"
+            aria-label="close"
+          />
+        )}
       </div>,
       this.portalElement,
     );

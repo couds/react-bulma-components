@@ -5,17 +5,11 @@ import modifiers from '../../modifiers';
 import CONSTANTS from '../../constants';
 import Element from '../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
+const colors = [null].concat(
+  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+);
 
-const Icon = ({
-  icon,
-  size,
-  color,
-  className,
-  align,
-  children,
-  ...props
-}) => (
+const Icon = ({ icon, size, color, className, align, children, ...props }) => (
   <Element
     renderAs="span"
     {...props}
@@ -25,7 +19,7 @@ const Icon = ({
       [`has-text-${color}`]: color,
     })}
   >
-    { children || (
+    {children || (
       <i
         className={classnames('rbc', {
           [`rbc-${icon}`]: icon,

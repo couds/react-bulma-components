@@ -6,14 +6,8 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Menu = ({
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('menu', className)}
-  />
+const Menu = ({ className, ...props }) => (
+  <Element {...props} className={classnames('menu', className)} />
 );
 
 Menu.List = MenuList;

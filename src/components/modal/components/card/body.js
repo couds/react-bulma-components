@@ -5,15 +5,8 @@ import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
-const ModalCardBody = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('modal-card-body', className)}
-  >
+const ModalCardBody = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('modal-card-body', className)}>
     {children}
   </Element>
 );

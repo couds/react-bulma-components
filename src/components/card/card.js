@@ -11,15 +11,8 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Card = ({
-  className,
-  children,
-  ...props
-}) => (
-  <Element
-    className={classnames('card', className)}
-    {...props}
-  >
+const Card = ({ className, children, ...props }) => (
+  <Element className={classnames('card', className)} {...props}>
     {children}
   </Element>
 );

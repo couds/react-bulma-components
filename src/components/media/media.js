@@ -8,16 +8,8 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const Media = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('media', className, {
-    })}
-  >
+const Media = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('media', className, {})}>
     {children}
   </Element>
 );
