@@ -5,15 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const MessageHeader = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('message-header', className)}
-  >
+const MessageHeader = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('message-header', className)}>
     {children}
   </Element>
 );

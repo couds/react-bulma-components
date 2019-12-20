@@ -11,7 +11,9 @@ describe('Input component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat classname in props with Bulma classname', () => {
-    const component = renderer.create(<Input className="other-class this-is-a-test" />);
+    const component = renderer.create(
+      <Input className="other-class this-is-a-test" />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should use inline styles', () => {
@@ -27,7 +29,9 @@ describe('Input component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be disabled with placeholder and value', () => {
-    const component = renderer.create(<Input value="TEST" disabled placeholder="hello tests" />);
+    const component = renderer.create(
+      <Input value="TEST" disabled placeholder="hello tests" />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

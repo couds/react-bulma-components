@@ -5,15 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const MediaContent = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames(className, 'content')}
-  >
+const MediaContent = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames(className, 'content')}>
     {children}
   </Element>
 );

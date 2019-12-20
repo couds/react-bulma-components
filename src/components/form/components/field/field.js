@@ -8,14 +8,7 @@ import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
-const Field = ({
-  className,
-  align,
-  multiline,
-  horizontal,
-  kind,
-  ...props
-}) => {
+const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
   let k = null;
 
   if (kind === 'addons') {

@@ -50,8 +50,7 @@ exports[`Radio component Should have radio classname 1`] = `
     type="radio"
     value=""
   />
-  Test
-   
+  Test 
   <a>
     Give me
   </a>

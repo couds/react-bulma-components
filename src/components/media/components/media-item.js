@@ -5,12 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const MediaItem = ({
-  children,
-  className,
-  position,
-  ...props
-}) => {
+const MediaItem = ({ children, className, position, ...props }) => {
   const p = position === 'center' ? 'content' : position;
   return (
     <Element

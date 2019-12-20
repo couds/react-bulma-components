@@ -11,7 +11,9 @@ describe('Icon component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should concat Bulma class with classes in props', () => {
-    const component = renderer.create(<Icon icon="bars" className="other-class" />);
+    const component = renderer.create(
+      <Icon icon="bars" className="other-class" />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

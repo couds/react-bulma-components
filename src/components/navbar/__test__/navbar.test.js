@@ -9,7 +9,9 @@ describe('Navbar component', () => {
   let component;
   beforeEach(() => {
     // eslint-disable-next-line
-    window = (new JSDOM('<!doctype html><html><body><div id="app-root"></div></body></html>')).window;
+    window = new JSDOM(
+      '<!doctype html><html><body><div id="app-root"></div></body></html>',
+    ).window;
 
     global.window = window;
     global.document = window.document;
@@ -41,23 +43,15 @@ describe('Navbar component', () => {
           </Navbar.Item>
           <Navbar.Burger className="trigger-menu" />
         </Navbar.Brand>
-        <div>
-TEST
-        </div>
+        <div>TEST</div>
         <Navbar.Menu>
           <Navbar.Container>
             <Navbar.Item dropdown hoverable>
-              <Navbar.Link>
-                Docs
-              </Navbar.Link>
+              <Navbar.Link>Docs</Navbar.Link>
               <Navbar.Dropdown boxed>
-                <Navbar.Item href="#">
-                  Home
-                </Navbar.Item>
+                <Navbar.Item href="#">Home</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item href="#">
-                  Home
-                </Navbar.Item>
+                <Navbar.Item href="#">Home</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Container>

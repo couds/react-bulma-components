@@ -5,10 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const CardContent = ({
-  className,
-  ...props
-}) => (
+const CardContent = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-content', className)} />
 );
 

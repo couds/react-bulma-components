@@ -5,10 +5,7 @@ import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
-const CardHeaderIcon = ({
-  className,
-  ...props
-}) => (
+const CardHeaderIcon = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-header-icon', className)} />
 );
 

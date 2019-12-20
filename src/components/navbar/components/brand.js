@@ -4,15 +4,8 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const NavbarBrand = ({
-  className,
-  children,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('navbar-brand', className)}
-  >
+const NavbarBrand = ({ className, children, ...props }) => (
+  <Element {...props} className={classnames('navbar-brand', className)}>
     {children}
   </Element>
 );

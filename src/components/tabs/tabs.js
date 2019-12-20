@@ -26,9 +26,7 @@ const Tabs = ({
       'is-fullwidth': fullwidth,
     })}
   >
-    <ul>
-      {children}
-    </ul>
+    <ul>{children}</ul>
   </Element>
 );
 

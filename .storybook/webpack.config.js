@@ -1,9 +1,8 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
 
-
 module.exports = ({ config: defaultConfig }) => {
-  const config = ({
+  const config = {
     ...defaultConfig,
     mode: 'development',
     module: {
@@ -26,9 +25,12 @@ module.exports = ({ config: defaultConfig }) => {
       modules: ['node_modules', 'src', ...defaultConfig.resolve.modules],
       alias: {
         ...defaultConfig.resolve.alias,
-        '~_variables.sass': path.resolve(__dirname, '../src/components/_variables.sass'),
+        '~_variables.sass': path.resolve(
+          __dirname,
+          '../src/components/_variables.sass',
+        ),
         'react-bulma-components/lib': path.resolve(__dirname, '../src'),
-      }
+      },
       // https://github.com/graphql/graphql-js#using-in-a-browser
     },
     plugins: [
@@ -38,6 +40,6 @@ module.exports = ({ config: defaultConfig }) => {
         process: JSON.stringify(true),
       }),
     ],
-  });
+  };
   return config;
 };

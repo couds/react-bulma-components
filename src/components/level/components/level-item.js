@@ -5,16 +5,8 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const LevelItem = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('level-item', className, {
-    })}
-  >
+const LevelItem = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames('level-item', className, {})}>
     {children}
   </Element>
 );

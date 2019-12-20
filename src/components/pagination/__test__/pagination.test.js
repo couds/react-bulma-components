@@ -16,11 +16,15 @@ describe('Pagination component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not display page numbers', () => {
-    const component = renderer.create(<Pagination delta={0} total={5} current={5} />);
+    const component = renderer.create(
+      <Pagination delta={0} total={5} current={5} />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not display Previous/Next buttons', () => {
-    const component = renderer.create(<Pagination showPrevNext={false} delta={3} total={5} current={2} />);
+    const component = renderer.create(
+      <Pagination showPrevNext={false} delta={3} total={5} current={2} />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Next button should be disabled', () => {
@@ -28,7 +32,9 @@ describe('Pagination component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('All buttons should be disabled', () => {
-    const component = renderer.create(<Pagination total={3} current={1} disabled />);
+    const component = renderer.create(
+      <Pagination total={3} current={1} disabled />,
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not render if total pages equals 1', () => {
@@ -41,7 +47,9 @@ describe('Pagination component', () => {
   });
   it('Should call to onChange event on click on navigation button', () => {
     const onChange = jest.fn();
-    const component = mount(<Pagination total={2} current={1} onChange={onChange} />);
+    const component = mount(
+      <Pagination total={2} current={1} onChange={onChange} />,
+    );
     component.find('a.pagination-next').simulate('click');
     expect(onChange).toHaveBeenCalledTimes(1);
   });

@@ -5,19 +5,11 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const HeroHead = ({
-  children,
-  className,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames(className, 'hero-head')}
-  >
+const HeroHead = ({ children, className, ...props }) => (
+  <Element {...props} className={classnames(className, 'hero-head')}>
     {children}
   </Element>
 );
-
 
 HeroHead.propTypes = {
   ...modifiers.propTypes,

@@ -26,8 +26,7 @@ exports[`Section component Should have section classname 1`] = `
 <section
   className="section"
 >
-  Test
-   
+  Test 
   <a
     href="/"
   >

@@ -5,16 +5,11 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
+const colors = [null].concat(
+  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+);
 
-const Progress = ({
-  className,
-  value,
-  max,
-  color,
-  size,
-  ...props
-}) => (
+const Progress = ({ className, value, max, color, size, ...props }) => (
   <Element
     renderAs="progress"
     {...props}

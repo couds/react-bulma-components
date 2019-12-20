@@ -9,11 +9,7 @@ describe('Radio component', () => {
   it('Should have radio classname', () => {
     const component = renderer.create(
       <Radio name="test">
-        Test
-        {' '}
-        <a>
-Give me
-        </a>
+        Test <a>Give me</a>
       </Radio>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -21,9 +17,7 @@ Give me
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Radio name="test" className="other-class this-is-a-test">
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Radio>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -31,9 +25,7 @@ Default
   it('Should use inline styles', () => {
     const component = renderer.create(
       <Radio name="test" style={{ height: 250 }}>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Radio>,
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -41,9 +33,7 @@ Default
   it('Should be disabled, checked and with value', () => {
     const component = renderer.create(
       <Radio name="test" value="TEST" checked disabled>
-        <p>
-Default
-        </p>
+        <p>Default</p>
       </Radio>,
     );
     expect(component.toJSON()).toMatchSnapshot();

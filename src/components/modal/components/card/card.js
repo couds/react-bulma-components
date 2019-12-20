@@ -9,16 +9,8 @@ import ModalCardTitle from './title';
 import modifiers from '../../../../modifiers';
 import Element from '../../../element';
 
-const ModalCard = ({
-  className,
-  onClose,
-  children,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('modal-card', className)}
-  >
+const ModalCard = ({ className, onClose, children, ...props }) => (
+  <Element {...props} className={classnames('modal-card', className)}>
     {children}
   </Element>
 );

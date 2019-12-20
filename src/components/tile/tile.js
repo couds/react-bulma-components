@@ -6,7 +6,9 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]));
+const colors = [null].concat(
+  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+);
 
 const Tile = ({
   children,
@@ -20,15 +22,13 @@ const Tile = ({
 }) => (
   <Element
     {...props}
-    className={classnames(
-      'tile', className, {
-        notification,
-        [`is-${kind}`]: kind,
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-        'is-vertical': vertical,
-      },
-    )}
+    className={classnames('tile', className, {
+      notification,
+      [`is-${kind}`]: kind,
+      [`is-${size}`]: size,
+      [`is-${color}`]: color,
+      'is-vertical': vertical,
+    })}
   >
     {children}
   </Element>

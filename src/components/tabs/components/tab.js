@@ -5,14 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const Tab = ({
-  children,
-  className,
-  style,
-  active,
-  domRef,
-  ...props
-}) => (
+const Tab = ({ children, className, style, active, domRef, ...props }) => (
   <li
     ref={domRef}
     style={style}
@@ -20,9 +13,7 @@ const Tab = ({
       'is-active': active,
     })}
   >
-    <Element {...props}>
-      {children}
-    </Element>
+    <Element {...props}>{children}</Element>
   </li>
 );
 

@@ -5,13 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
-const NavbarDropdown = ({
-  className,
-  boxed,
-  right,
-  children,
-  ...props
-}) => (
+const NavbarDropdown = ({ className, boxed, right, children, ...props }) => (
   <Element
     {...props}
     className={classnames('navbar-dropdown', className, {
