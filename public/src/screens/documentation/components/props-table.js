@@ -21,10 +21,10 @@ const PropsTable = ({ componentProps }) => {
   console.log(componentProps);
   const fields = Object.keys(CommonProps[0]);
 
-  const renderHeaders = () => fields.map((field) => <th key={field}>{field}</th>);
+  const renderHeaders = () => fields.map(field => <th key={field}>{field}</th>);
 
   const renderItems = () =>
-    [...CommonProps, ...componentProps].map((prop) => (
+    [...CommonProps, ...componentProps].map(prop => (
       <tr key={prop.name}>
         <th>
           <code>{prop.name}</code>

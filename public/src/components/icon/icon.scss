@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'react-bulma';
-  src:
-    url('fonts/react-bulma.ttf') format('truetype'),
+  src: url('fonts/react-bulma.ttf') format('truetype'),
     url('fonts/react-bulma.woff') format('woff'),
     url('fonts/react-bulma.svg') format('svg');
   font-weight: normal;
@@ -37,50 +36,49 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-  
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .icon-equals:before {
-    content: "\e906";
+    content: '\e906';
   }
   .icon-bulma:before {
-    content: "\e905";
+    content: '\e905';
   }
   .icon-modular:before {
-    content: "\e904";
+    content: '\e904';
   }
   .icon-responsive:before {
-    content: "\e902";
+    content: '\e902';
   }
   .icon-logo:before {
-    content: "\e901";
+    content: '\e901';
   }
   .icon-react:before {
-    content: "\e900";
+    content: '\e900';
   }
   .icon-github-alt:before {
-    content: "\e903";
+    content: '\e903';
   }
   .icon-quill:before {
-    content: "\e907";
+    content: '\e907';
   }
   .icon-books:before {
-    content: "\e920";
+    content: '\e920';
   }
   .icon-rocket:before {
-    content: "\e9a5";
+    content: '\e9a5';
   }
   .icon-earth:before {
-    content: "\e9ca";
+    content: '\e9ca';
   }
   .icon-plus:before {
-    content: "\ea0a";
+    content: '\ea0a';
   }
   .icon-customizable:before {
-    content: "\ea58";
+    content: '\ea58';
   }
 }
-

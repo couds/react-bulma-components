@@ -11,10 +11,8 @@ const Item = ({ icon, link, title, description }) => (
     <Columns.Column narrow className="is-vertically-centered">
       <Icon icon={icon} />
     </Columns.Column>
-    <Columns.Column >
-      <Heading size={3}>
-        {title}
-      </Heading>
+    <Columns.Column>
+      <Heading size={3}>{title}</Heading>
       <Heading subtitle size={3}>
         {description}
       </Heading>
@@ -26,6 +24,6 @@ Item.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.node.isRequired,
   description: PropTypes.node.isRequired,
-}
+};
 
 export default Item;

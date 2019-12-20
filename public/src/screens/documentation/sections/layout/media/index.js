@@ -30,7 +30,10 @@ const MediaDoc = () => (
       </CodeExample>
     </Box>
     <Content>
-      <p>You can include <em>any</em> other Bulma components like Buttons and Icons</p>
+      <p>
+        You can include <em>any</em> other Bulma components like Buttons and
+        Icons
+      </p>
     </Content>
     <Box paddingless>
       <CodeExample

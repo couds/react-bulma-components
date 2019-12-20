@@ -34,9 +34,7 @@ const MediaCommentDemo = () => (
           <Level.Item>
             <Field>
               <Control>
-                <Checkbox>
-                  Press enter to submit
-                </Checkbox>
+                <Checkbox>Press enter to submit</Checkbox>
               </Control>
             </Field>
           </Level.Item>

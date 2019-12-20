@@ -2,7 +2,6 @@ import React from 'react';
 import Highlight from 'components/highlight';
 import { Trans } from '@lingui/macro';
 
-
 const Webpack = ({ show }) => {
   if (!show) {
     return null;
@@ -10,12 +9,19 @@ const Webpack = ({ show }) => {
   return (
     <>
       <p>
-        <Trans>Configure your webpack to handle SASS files. See instructions <a href="https://github.com/webpack-contrib/sass-loader">here</a></Trans>
+        <Trans>
+          Configure your webpack to handle SASS files. See instructions{' '}
+          <a href="https://github.com/webpack-contrib/sass-loader">here</a>
+        </Trans>
       </p>
       <p>
-        <Trans>Inside the resolve directive setup your webpack to use modules from the folder where you put the _variables.sass file</Trans>
+        <Trans>
+          Inside the resolve directive setup your webpack to use modules from
+          the folder where you put the _variables.sass file
+        </Trans>
       </p>
-      <Highlight className="language-javascript">{`
+      <Highlight className="language-javascript">
+        {`
 {
   // ...
   resolve: {
@@ -23,9 +29,13 @@ const Webpack = ({ show }) => {
     // ...
   }
 }
-      `.trim()}</Highlight> 
+      `.trim()}
+      </Highlight>
       <p>
-        <Trans>Where <code>./src</code> its where you put the <code>_variables.sass</code> file</Trans>
+        <Trans>
+          Where <code>./src</code> its where you put the{' '}
+          <code>_variables.sass</code> file
+        </Trans>
       </p>
     </>
   );

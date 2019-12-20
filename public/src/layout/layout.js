@@ -20,7 +20,7 @@ const Layout = ({ children, currentPath }) => {
     setNavbar(!navbarActive);
   };
   useEffect(() => {
-    const hideMenu = (evt) => {
+    const hideMenu = evt => {
       if (evt.target.id === 'show-menu') {
         return;
       }
@@ -32,43 +32,83 @@ const Layout = ({ children, currentPath }) => {
     };
   });
 
-  const path = currentPath.split('/').filter(x => x).slice(1).join('/');
+  const path = currentPath
+    .split('/')
+    .filter(x => x)
+    .slice(1)
+    .join('/');
 
   return (
     <div className="app">
       <Navbar fixed="top" active={navbarActive}>
         <Navbar.Brand>
-          <Link style={{ marginRight: 20, flexDirection: 'row' }} to="/"  className="is-vertically-centered" >
+          <Link
+            style={{ marginRight: 20, flexDirection: 'row' }}
+            to="/"
+            className="is-vertically-centered"
+          >
             <img src={logo} alt="logo" style={{ height: 48 }} />
             <Element textColor="dark" renderAs="b">
               RBC
             </Element>
           </Link>
-          <Navbar.Item rel="noopener noreferrer" target="_blank" href="https://github.com/couds/react-bulma-components" responsive={{ desktop: { hide: { value: true }}}}>
+          <Navbar.Item
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/couds/react-bulma-components"
+            responsive={{ desktop: { hide: { value: true } } }}
+          >
             <Icon icon="github-alt" />
           </Navbar.Item>
           <Navbar.Burger id="show-menu" onClick={toggleNavbar} />
         </Navbar.Brand>
         <Navbar.Container position="end">
           <Navbar.Menu>
-            <Navbar.Item renderAs={Link} to="/getting-started" activeClassName="is-active">
+            <Navbar.Item
+              renderAs={Link}
+              to="/getting-started"
+              activeClassName="is-active"
+            >
               <Icon icon="rocket" size="small" />
               <Trans id="getting started">Getting Started</Trans>
             </Navbar.Item>
-            <Navbar.Item renderAs={Link} to="/documentation"  activeClassName="is-active">
+            <Navbar.Item
+              renderAs={Link}
+              to="/documentation"
+              activeClassName="is-active"
+            >
               <Icon icon="books" size="small" />
               <Trans id="documentation">Documentation</Trans>
             </Navbar.Item>
-            <Navbar.Item renderAs="span" hoverable responsive={{ touch: { hide: { value: true }}}}>
+            <Navbar.Item
+              renderAs="span"
+              hoverable
+              responsive={{ touch: { hide: { value: true } } }}
+            >
               <Navbar.Link arrowless>
                 <Icon icon="earth" />
               </Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item renderAs={RouterLink} to={['/en'].concat(path).join('/')}>EN</Navbar.Item>
-                <Navbar.Item renderAs={RouterLink} to={['/es'].concat(path).join('/')}>ES</Navbar.Item>
+                <Navbar.Item
+                  renderAs={RouterLink}
+                  to={['/en'].concat(path).join('/')}
+                >
+                  EN
+                </Navbar.Item>
+                <Navbar.Item
+                  renderAs={RouterLink}
+                  to={['/es'].concat(path).join('/')}
+                >
+                  ES
+                </Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
-            <Navbar.Item rel="noopener noreferrer" target="_blank" href="https://github.com/couds/react-bulma-components" responsive={{ touch: { hide: { value: true }}}}>
+            <Navbar.Item
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/couds/react-bulma-components"
+              responsive={{ touch: { hide: { value: true } } }}
+            >
               <Icon icon="github-alt" />
             </Navbar.Item>
           </Navbar.Menu>
@@ -76,9 +116,7 @@ const Layout = ({ children, currentPath }) => {
       </Navbar>
       <Hero hasNavbar>
         <Hero.Body paddingless className="page-body">
-          <div className="page-content">
-            {children}
-          </div>
+          <div className="page-content">{children}</div>
         </Hero.Body>
         <Hero.Footer className="page-footer">
           <Footer>

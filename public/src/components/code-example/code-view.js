@@ -12,7 +12,8 @@ const CodeView = ({ reactCode, bulmaCode }) => {
       <Button
         size="small"
         style={{ position: 'absolute', right: 0, margin: 10 }}
-        onClick={() => setCodeView(codeView === 'react' ? 'bulma' : 'react')}>
+        onClick={() => setCodeView(codeView === 'react' ? 'bulma' : 'react')}
+      >
         <Trans id="toggle">Toggle</Trans>
       </Button>
       <Highlight language={codeView === 'react' ? 'jsx' : 'html'}>

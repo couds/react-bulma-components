@@ -10,55 +10,61 @@ import Menu from 'react-bulma-components/lib/components/menu';
 import Sections from './sections';
 
 const Documentation = ({ location, match }) => {
-  const renderMenuItems = () => Sections.map(section => {
-    const sectionPath = `${match.url}/${section.name.toLowerCase()}`;
-    return (
-      <Menu.List.Item
-        key={section.name}
-        renderAs={Link}
-        to={sectionPath}
-        active={location.pathname.includes(sectionPath)}
-      >
-        <Menu.List key={section} title={section.name}>
-          {section.sections.map(({ name: componentName }) => {
-            const componentNameLower = componentName.toLowerCase();
-            const path = `${sectionPath}/${componentNameLower}`;
+  const renderMenuItems = () =>
+    Sections.map(section => {
+      const sectionPath = `${match.url}/${section.name.toLowerCase()}`;
+      return (
+        <Menu.List.Item
+          key={section.name}
+          renderAs={Link}
+          to={sectionPath}
+          active={location.pathname.includes(sectionPath)}
+        >
+          <Menu.List key={section} title={section.name}>
+            {section.sections.map(({ name: componentName }) => {
+              const componentNameLower = componentName.toLowerCase();
+              const path = `${sectionPath}/${componentNameLower}`;
 
-            return (
-              <Menu.List.Item
-                key={componentNameLower}
-                renderAs={Link}
-                to={path}
-                active={location.pathname === path}
-              >
-                {componentName}
-              </Menu.List.Item>
-            );
-          })}
-        </Menu.List>
-      </Menu.List.Item>
-    )
-  });
+              return (
+                <Menu.List.Item
+                  key={componentNameLower}
+                  renderAs={Link}
+                  to={path}
+                  active={location.pathname === path}
+                >
+                  {componentName}
+                </Menu.List.Item>
+              );
+            })}
+          </Menu.List>
+        </Menu.List.Item>
+      );
+    });
 
-  const renderRoutes = () => Sections.map(section => (
-    <Route exact key={section.name}>
-      <Switch key={section.name}>
-        <Route
-          exact
-          path={`${match.url}/${section.name}`}
-          component={section.component}
-        />
-        {section.sections.map(({ name: componentSectionName, component: componentDoc }) => (
+  const renderRoutes = () =>
+    Sections.map(section => (
+      <Route exact key={section.name}>
+        <Switch key={section.name}>
           <Route
             exact
-            key={componentSectionName}
-            path={`${match.url}/${section.name.toLowerCase()}/${componentSectionName}`}
-            component={componentDoc}
+            path={`${match.url}/${section.name}`}
+            component={section.component}
           />
-        ))}
-      </Switch>
-    </Route>
-  ));
+          {section.sections.map(
+            ({ name: componentSectionName, component: componentDoc }) => (
+              <Route
+                exact
+                key={componentSectionName}
+                path={`${
+                  match.url
+                }/${section.name.toLowerCase()}/${componentSectionName}`}
+                component={componentDoc}
+              />
+            ),
+          )}
+        </Switch>
+      </Route>
+    ));
 
   return (
     <Container fluid style={{ marginTop: '2rem' }}>
@@ -70,22 +76,18 @@ const Documentation = ({ location, match }) => {
             mobile: {
               hide: {
                 only: false,
-                value: true
+                value: true,
               },
             },
           }}
         >
           <Menu>
-            <Menu.List>
-              {renderMenuItems()}
-            </Menu.List>
+            <Menu.List>{renderMenuItems()}</Menu.List>
           </Menu>
         </Columns.Column>
         <Columns.Column size={8}>
           <Route exact path={match.url}>
-            <Heading>
-              Documentation
-            </Heading>
+            <Heading>Documentation</Heading>
             <Heading subtitle size={4} renderAs="p">
               All you need to build your site
             </Heading>

@@ -7,8 +7,6 @@ import Example from './sections/example';
 
 import './home.scss';
 
-
-
 const Index = () => (
   <div className="home">
     <Banner />

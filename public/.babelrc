@@ -1,9 +1,13 @@
 {
   "presets": [
-    ["@babel/env", {
-      "targets": {
-        "browsers": ["last 2 versions", "not safari < 11", "not ie < 11"]
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "not safari < 11", "not ie < 11"]
+        }
       }
-    }],
-    "@babel/react"]
+    ],
+    "@babel/react"
+  ]
 }
