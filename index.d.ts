@@ -552,6 +552,11 @@ interface InputFileProps
   style?: {};
   name?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  inputProps?: {
+    accept?: string,
+    capture?: string,
+    multiple?: boolean,
+  };
 }
 declare const InputFile: React.ForwardRefExoticComponent<
   React.PropsWithoutRef<InputFileProps> & React.RefAttributes<"input">
