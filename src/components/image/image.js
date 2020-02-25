@@ -78,5 +78,5 @@ Image.defaultProps = {
   rounded: false,
   style: undefined,
   size: undefined,
-  fallback: 'http//bulma.io/images/placeholders/480x480.png',
+  fallback: 'http://bulma.io/images/placeholders/480x480.png',
 };
