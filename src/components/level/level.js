@@ -12,7 +12,7 @@ const breakpoints = [null].concat(
   Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]),
 );
 
-const Level = ({ children, className, breakpoint, ...props }) => (
+const Level = ({ children, className, breakpoint, mobile, ...props }) => (
   <Element
     {...props}
     className={classnames('level', className, {
