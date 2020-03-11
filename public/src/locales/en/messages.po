@@ -2,16 +2,19 @@ msgid ""
 msgstr ""
 "POT-Creation-Date: 2019-05-03 15:24+0200\n"
 "Mime-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
-"Project-Id-Version: \n"
+"Project-Id-Version: react-bulma-components\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2020-03-11 03:21\n"
 "Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: react-bulma-components\n"
+"X-Crowdin-Language: en\n"
+"X-Crowdin-File: /feature.public-page/public/src/locales/en/messages.po\n"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:15
 msgid "Configure the sass plugin to include the path where you put the _variables.sass file, for example"
@@ -27,11 +30,11 @@ msgstr ""
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:17
 msgid "Now create/update your jsconfig.json (or tsconfig if you are using typescript)"
-msgstr ""
+msgstr "Now create/update your jsconfig.json (or tsconfig.json if you are using TypeScript)"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:19
 msgid "Now on your next.config.js configure your sass to include the directory where you put your _variables.sass file and add react-bulma-components to the transpiled modules"
-msgstr ""
+msgstr "Now, in your next.config.js, configure Sass to include the directory where you put your _variable.sass, then add react-bulma-components to the transpiled modules"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:27
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:29
@@ -42,23 +45,23 @@ msgstr ""
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:13
 msgid "You need to enable SASS compilation on your CRA project, to do it just install node-sass"
-msgstr ""
+msgstr "You need to enable SASS compilation in your project. Install node-sass to enable it"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:12
 msgid "You need to enable SASS compilation on your Gatsby project, See instructions <0>here</0>"
-msgstr ""
+msgstr "You need to enable SASS compilation for your Gatsby project. See the instructions <0>here</0>"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:12
 msgid "You need to enable SASS compilation on your Next.js project, See the instructions <0>here</0>"
-msgstr ""
+msgstr "You need to enable SASS compilation for your Next.js project. See the instructions <0>here</0>"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:15
 msgid "You will also need to configure the transpiled modules plugin next-plugin-transpile-modules so install it"
-msgstr ""
+msgstr "You will also need to configure next-plugin-transpile-modules, so install it"
 
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:20
 msgid "advanced instalation"
-msgstr "Advanced Instalation"
+msgstr "Advanced instalation"
 
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:37
 msgid "advanced instalation description"
@@ -70,12 +73,12 @@ msgstr "This configuration will allow you customize your build selecting the com
 
 #: src/screens/getting-started/index.js:41
 msgid "advanced intalation"
-msgstr "Advanced Instalation"
+msgstr "advanced installation"
 
 #: src/screens/getting-started/index.js:36
 #: src/screens/getting-started/index.js:77
 msgid "basic instalation"
-msgstr "Basic Instalation"
+msgstr "Basic Installation"
 
 #: src/screens/getting-started/index.js:85
 msgid "basic instalation description"
@@ -181,3 +184,4 @@ msgstr "Usage"
 #: src/screens/getting-started/index.js:73
 msgid "usage description"
 msgstr "Currently there are two ways to use this library depending of your needs and configuration"
+
