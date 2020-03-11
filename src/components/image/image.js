@@ -30,6 +30,7 @@ export default class Image extends PureComponent {
       fallback,
       rounded,
       src,
+      fullwidth,
       ...props
     } = this.props;
     let s = size;
@@ -44,6 +45,7 @@ export default class Image extends PureComponent {
         renderAs="figure"
         className={classnames('image', className, {
           [`is-${s}`]: s,
+          'is-fullwidth': fullwidth,
         })}
       >
         <img
@@ -68,6 +70,7 @@ Image.propTypes = {
   style: PropTypes.shape({}),
   size: PropTypes.oneOf(CONSTANTS.SIZES),
   fallback: PropTypes.string,
+  fullwidth: PropTypes.bool,
 };
 
 Image.defaultProps = {
@@ -79,4 +82,5 @@ Image.defaultProps = {
   style: undefined,
   size: undefined,
   fallback: 'https://bulma.io/images/placeholders/480x480.png',
+  fullwidth: false,
 };
