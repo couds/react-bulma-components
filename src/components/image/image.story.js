@@ -11,6 +11,7 @@ storiesOf('Image', module)
   .add('Default', () => (
     <div style={{ width: 320 }}>
       <Image
+        fullwidth={boolean('fullwidth', false)}
         rounded={boolean('rounded', false)}
         src="http://bulma.io/images/placeholders/640x480.png"
         size="3by2"
