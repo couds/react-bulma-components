@@ -2,115 +2,118 @@ msgid ""
 msgstr ""
 "POT-Creation-Date: 2019-05-03 15:24+0200\n"
 "Mime-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: es\n"
-"Project-Id-Version: \n"
+"Project-Id-Version: react-bulma-components\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2020-03-11 03:21\n"
 "Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Language-Team: Spanish\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: react-bulma-components\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /feature.public-page/public/src/locales/en/messages.po\n"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:15
 msgid "Configure the sass plugin to include the path where you put the _variables.sass file, for example"
-msgstr ""
+msgstr "Configure el plugin sass para incluir la ruta del archivo _variables.sass, por ejemplo"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/webpack.js:13
 msgid "Configure your webpack to handle SASS files. See instructions <0>here</0>"
-msgstr ""
+msgstr "Configure webpack para procesar archivos SASS. Vea las instrucciones <0>aqui</>"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/webpack.js:16
 msgid "Inside the resolve directive setup your webpack to use modules from the folder where you put the _variables.sass file"
-msgstr ""
+msgstr "Coloque en la directiva que resuelve los modulos en la configuracion de webpack la ruta de el archivo _variables.sass"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:17
 msgid "Now create/update your jsconfig.json (or tsconfig if you are using typescript)"
-msgstr ""
+msgstr "Ahora, cree o actualize su archivo jsconfig.json (o tsconfig si utiliza typescript)"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:19
 msgid "Now on your next.config.js configure your sass to include the directory where you put your _variables.sass file and add react-bulma-components to the transpiled modules"
-msgstr ""
+msgstr "Ahora en su next.config.js configure su sass para incluir el directorio donde ponga su archivo _variables.sass y añada react-bulma-components a los módulos transpilados"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:27
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:29
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:33
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/webpack.js:28
 msgid "Where <0>./src</0> its where you put the <1>_variables.sass</1> file"
-msgstr ""
+msgstr "Donde <0>./src</0> es el lugar donde pondrá el archivo <1>_variables.sass</1>"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/cra.js:13
 msgid "You need to enable SASS compilation on your CRA project, to do it just install node-sass"
-msgstr ""
+msgstr "Necesita activar la compilación SASS en su proyecto CRA, para hacerlo deberá instalar nodo-sass"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/gatsby.js:12
 msgid "You need to enable SASS compilation on your Gatsby project, See instructions <0>here</0>"
-msgstr ""
+msgstr "Necesitas activar la compilación SASS en tu proyecto Gatsby, Ver las instrucciones <0>aquí</0>"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:12
 msgid "You need to enable SASS compilation on your Next.js project, See the instructions <0>here</0>"
-msgstr ""
+msgstr "Necesitas activar la compilación SASS en tu proyecto Next.js, Ver las instrucciones <0>aquí</0>"
 
 #: src/screens/getting-started/sections/advanced-instalation/frameworks/next.js:15
 msgid "You will also need to configure the transpiled modules plugin next-plugin-transpile-modules so install it"
-msgstr ""
+msgstr "También necesitará configurar el plugin de módulos transpilados next-plugin-transpile-modules, por lo que debe instalarlo"
 
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:20
 msgid "advanced instalation"
-msgstr ""
+msgstr "instalación avanzada"
 
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:37
 msgid "advanced instalation description"
-msgstr ""
+msgstr "descripción avanzada de la instalación"
 
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:23
 msgid "advanced instalation subtitle"
-msgstr ""
+msgstr "subtítulo de instalación avanzada"
 
 #: src/screens/getting-started/index.js:41
 msgid "advanced intalation"
-msgstr ""
+msgstr "intalación avanzada"
 
 #: src/screens/getting-started/index.js:36
 #: src/screens/getting-started/index.js:77
 msgid "basic instalation"
-msgstr ""
+msgstr "instalación básica"
 
 #: src/screens/getting-started/index.js:85
 msgid "basic instalation description"
-msgstr ""
+msgstr "descripción básica de la instalación"
 
 #: src/screens/getting-started/index.js:80
 msgid "basic instalation subtitle"
-msgstr ""
+msgstr "subtítulos de instalación básica"
 
 #: src/screens/getting-started/sections/advanced-instalation/advanced-instalation.js:28
 msgid "create a _variables sass file"
-msgstr ""
+msgstr "crear un archivo sass _variables"
 
 #: src/layout/layout.js:60
 #: src/layout/layout.js:102
 #: src/layout/layout.js:107
 #: src/screens/home/sections/banner/banner.js:45
 msgid "documentation"
-msgstr ""
+msgstr "documentacion"
 
 #: src/screens/home/sections/example/example.js:61
 msgid "easy to use"
-msgstr ""
+msgstr "fácil de usar"
 
 #: src/screens/home/sections/example/example.js:64
 msgid "easy to use description"
-msgstr ""
+msgstr "descripción fácil de usar"
 
 #: src/screens/home/sections/features/features.js:11
 msgid "free"
-msgstr ""
+msgstr "gratis"
 
 #: src/screens/home/sections/features/features.js:13
 msgid "free description"
-msgstr ""
+msgstr "descripción libre"
 
 #: src/layout/layout.js:56
 #: src/layout/layout.js:95
@@ -143,7 +146,7 @@ msgstr ""
 
 #: src/screens/home/sections/features/features.js:19
 msgid "light weight"
-msgstr ""
+msgstr "ligero"
 
 #: src/screens/home/sections/features/features.js:20
 msgid "light weight description"
@@ -151,7 +154,7 @@ msgstr ""
 
 #: src/screens/home/sections/features/features.js:23
 msgid "modular"
-msgstr ""
+msgstr "modular"
 
 #: src/screens/home/sections/features/features.js:24
 msgid "modular description"
@@ -176,8 +179,9 @@ msgstr ""
 #: src/screens/getting-started/index.js:31
 #: src/screens/getting-started/index.js:70
 msgid "usage"
-msgstr ""
+msgstr "uso"
 
 #: src/screens/getting-started/index.js:73
 msgid "usage description"
-msgstr ""
+msgstr "descripción de uso"
+
