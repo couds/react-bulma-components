@@ -39,8 +39,10 @@ const Navbar = ({
       return () => {};
     }
     const html = window.document.querySelector('html');
-    html.classList.remove('has-navbar-fixed-top');
-    html.classList.remove('has-navbar-fixed-bottom');
+    if (!html.classList.contains(`has-navbar-fixed-${fixed}`)) {
+      html.classList.remove('has-navbar-fixed-top');
+      html.classList.remove('has-navbar-fixed-bottom');
+    }
     if (fixed) {
       html.classList.add(`has-navbar-fixed-${fixed}`);
     }
