@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/couds/react-bulma-components#readme",
   "dependencies": {
-    "bulma": "0.8.0",
+    "bulma": "0.8.2",
     "classnames": "2.2.6"
   },
   "peerDependencies": {
