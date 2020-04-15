@@ -8,7 +8,7 @@ describe('Panel component', () => {
   });
   it('Should be a primary panel', () => {
     const component = renderer.create(
-      <Panel>
+      <Panel color="primary">
         <Panel.Header>repositories</Panel.Header>
         <Panel.Block>
           <div>Control</div>

@@ -4,7 +4,7 @@ exports[`Panel component Should Exist 1`] = `[Function]`;
 
 exports[`Panel component Should be a primary panel 1`] = `
 <nav
-  className="panel"
+  className="panel is-primary"
 >
   <div
     className="panel-heading"
