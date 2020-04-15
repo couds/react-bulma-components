@@ -7,20 +7,7 @@ import { action } from '@storybook/addon-actions';
 import Button from 'react-bulma-components/lib/components/button';
 import Section from 'react-bulma-components/lib/components/section';
 import Box from 'react-bulma-components/lib/components/box';
-
-const colors = {
-  Default: '',
-  primary: 'primary',
-  info: 'info',
-  danger: 'danger',
-  warning: 'warning',
-  success: 'success',
-  white: 'white',
-  black: 'black',
-  light: 'light',
-  dark: 'dark',
-  link: 'link',
-};
+import CONSTANTS from '../../constants';
 
 const positions = {
   default: '',
@@ -36,8 +23,9 @@ storiesOf('Button', module)
         Play with the button props using the knobs addon panel at the bottom
       </Box>
       <Button
+        colorVariant={select('Color variant', CONSTANTS.COLOR_VARIANT)}
         fullwidth={boolean('Full width', false)}
-        color={select('Color', colors)}
+        color={select('Color', { ...CONSTANTS.COLORS, default: '' })}
         loading={boolean('Loading', false)}
         outlined={boolean('Outlined', false)}
         inverted={boolean('Inverted', false)}
