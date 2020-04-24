@@ -19,4 +19,8 @@ export default {
     BLACK: 'black',
     LINK: 'link',
   },
+  COLOR_VARIANT: {
+    light: 'light',
+    dark: 'dark',
+  },
 };

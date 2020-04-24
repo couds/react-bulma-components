@@ -9,9 +9,15 @@ import Tabs from './components/tabs';
 import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
+import CONSTANTS from '../../constants';
 
-const Panel = ({ className, ...props }) => (
-  <Element {...props} className={classnames('panel', className)} />
+const Panel = ({ color, className, ...props }) => (
+  <Element
+    {...props}
+    className={classnames('panel', className, {
+      [`is-${color}`]: color,
+    })}
+  />
 );
 
 Panel.Header = Header;
@@ -26,12 +32,14 @@ Panel.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
+  colors: [null, '', ...Object.values(CONSTANTS.COLORS)],
 };
 
 Panel.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
   renderAs: 'nav',
+  color: undefined,
 };
 
 export default Panel;

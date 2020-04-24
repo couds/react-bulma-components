@@ -9,11 +9,14 @@ import {
 } from 'react-bulma-components/lib/components/form';
 import Icon from 'react-bulma-components/lib/components/icon';
 import Button from 'react-bulma-components/lib/components/button';
+import { select } from '@storybook/addon-knobs';
+
+import CONSTANTS from '../../constants';
 
 storiesOf('Panel', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
   .add('Default', () => (
-    <Panel>
+    <Panel color={select('color', { ...CONSTANTS.COLORS, default: '' })}>
       <Panel.Header>repositories</Panel.Header>
       <Panel.Block>
         <Control>

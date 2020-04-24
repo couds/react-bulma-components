@@ -53,3 +53,16 @@ exports[`Image component Should have image classname 1`] = `
   />
 </figure>
 `;
+
+exports[`Image component should be fullwidth 1`] = `
+<figure
+  className="image is-fullwidth"
+>
+  <img
+    alt=""
+    className=""
+    onError={[Function]}
+    src="http://mydomain.com/image"
+  />
+</figure>
+`;

@@ -36,6 +36,13 @@ describe('Image component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  it('should be fullwidth', () => {
+    const component = renderer.create(
+      <Image fullwidth src="http://mydomain.com/image" />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   it('Should have use default image if error encounter', () => {
     const component = shallow(
       <Image

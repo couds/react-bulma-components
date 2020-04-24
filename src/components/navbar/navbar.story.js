@@ -1,24 +1,11 @@
 /* eslint-disable react/no-multi-comp, react/prop-types */
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 import Box from '../box';
-
-const colors = {
-  Default: '',
-  primary: 'primary',
-  info: 'info',
-  danger: 'danger',
-  warning: 'warning',
-  success: 'success',
-  white: 'white',
-  black: 'black',
-  light: 'light',
-  dark: 'dark',
-  link: 'link',
-};
+import CONSTANTS from '../../constants';
 
 storiesOf('Navbar', module)
   .addDecorator(story => (
@@ -32,7 +19,7 @@ storiesOf('Navbar', module)
   .add('Default', () => {
     return (
       <Navbar
-        color={select('Color', colors)}
+        color={select('Color', { ...CONSTANTS.COLORS, default: '' })}
         fixed={select('Fixed', {
           default: undefined,
           top: 'top',
