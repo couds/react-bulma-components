@@ -4,7 +4,7 @@ title: Basic Configuration
 sidebar_label: Basic Configuration
 sidebar_id: someSidebar
 ---
-import { Button } from 'react-bulma-components/lib';
+import Button from 'react-bulma-components/lib/components/button';
 
 This configuration will allow you to start fast with minimum configuration but with less customization. With this configuration you are responsable to include the bulma css.
 

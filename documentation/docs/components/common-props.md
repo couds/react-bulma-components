@@ -3,7 +3,7 @@ id: common-props
 title: Common Props
 sidebar_label: Common Props
 ---
-import { Element } from 'react-bulma-components/lib';
+import Element from 'react-bulma-components/lib/components/element';
 
 ## One Element to Rule them All
 
