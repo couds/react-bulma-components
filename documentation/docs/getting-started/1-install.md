@@ -1,11 +1,30 @@
 ---
 id: install
-title: Install
-sidebar_label: Install
-sidebar_id: someSidebar
+title: Getting Started
+sidebar_label: Getting Started
 ---
 
-This library aims to help you use the Bulma CSS Framework in your React project
+The main objective of this library it's to declare your layout as declarative as possible using react props instead of the classnames.
+
+For example to use the column on Bulma you will write something like this
+
+```jsx
+<div className="columns">
+  <div className="column is-4">Left Column</div>
+  <div className="column">Middle Column</div>
+  <div className="column is-4">Left Column</div>
+</div>
+```
+
+With this library the same code will be this
+
+```jsx
+<Columns>
+  <Columns.Column size={4}>Left Column</Columns.Column>
+  <Columns.Column>Middle Column</Columns.Column>
+  <Columns.Column size={4}>Left Column</Columns.Column>
+</Columns>
+```
 
 ## Instalation
 

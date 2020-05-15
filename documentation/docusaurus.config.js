@@ -17,6 +17,7 @@ module.exports = {
       }
     }]
   ],
+  themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
     navbar: {
       hideOnScroll: true,
@@ -33,10 +34,36 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/components/index',
-          activeBasePath: 'docs/components',
-          label: 'Docs',
+          label: 'Components',
+          to: 'docs/components/', 
           position: 'left',
+          activeBasePath: 'docs/components',
+          items: [
+            {
+              label: 'Overview',
+              to: 'docs/components/overview',
+            },
+            {
+              label: 'Columns',
+              to: 'docs/components/columns/overview',
+            },
+            {
+              label: 'Layout',
+              to: 'docs/components/layout/overview',
+            },
+            {
+              label: 'Form',
+              to: 'docs/components/form/overview',
+            },
+            {
+              label: 'Elements',
+              to: 'docs/components/elements/overview',
+            },
+            {
+              label: 'Components',
+              to: 'docs/components/components/overview',
+            },
+          ],
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {

@@ -9,6 +9,28 @@ import Element from 'react-bulma-components/lib/components/element';
 
 All components on this library render a component named `Element`, this component is the one that have all the generic classes that bulma has ([helpers, modifiers, responsive, etc](https://bulma.io/documentation/modifiers/)). These are the props of this component
 
+## Common React props
+
+The `Element` component has the common react props `style` and `classNames` that will be passed down to the html element generated
+
+## Composing
+
+If you want to render using another component you only need to pass the component in the prop `renderAs`
+
+```jsx
+
+<Element renderAs={MyCustomComponent} myCustomProp="I will be on the props of MyCustomComponent">
+  The children could be an string
+  <div>
+    or any JSX
+  </div>
+  <Element renderAs="section">
+    I can also be rendered as an ordinary html element
+  </Element>
+</Element>
+
+```
+
 ## Colors
 
 You can check the valid colors [here](variables#colors)
@@ -76,7 +98,7 @@ const tablet = { display: { value: 'inline' }, hide: { value:true }, textSize: {
 const touch = { display: { value: 'inline' }, hide: { value: false }, textSize: { value: 3 }, textAlignment: { value: 'right'} };
 const desktop = { display: { value: 'block'}, hide: { value: false }, textSize: { value: 4 }, textAlignment: { value: 'right' } };
 const widescreen = { display: { value: 'flex' }, hide: { value: false }, textSize: { value: 1 }, textAlignment: { value: 'left' } };
-const fullhd = { display: { value: 'block' }, hide: { value: false }, textSize: { value: 6 }, textAlignment: 'centered' }
+const fullhd = { display: { value: 'block' }, hide: { value: false }, textSize: { value: 6 }, textAlignment: { value: 'centered' }  }
 
 
 <Element backgroundColor="primary" responsive={{ mobile, tablet, desktop, widescreen, fullhd, touch }}>
@@ -99,13 +121,14 @@ Play with the devtool responsive to see how this component change
 
 :::
 
-<Element backgroundColor="primary"
+<Element backgroundColor="success"
+style={{ padding: '1rem' }}
 responsive={{
   mobile: { display: { value: 'block', only: true }, hide: { value: false, only: true }, textSize: { value: 2, only: true  }, textAlignment: { value: 'centered', only: true } },
   tablet: { hide: { value: true, only: true } },
   desktop: { display: { value: 'block', only: true }, hide: { value: false, only: true }, textSize: { value: 4, only: true }, textAlignment: { value: 'right', only: true } },
   widescreen: { display: { value: 'flex', only: true }, hide: { value: false }, textSize: { value: 1, only: true }, textAlignment: { value: 'left', only: true } },
-  fullhd: { display: { value: 'flex' }, hide: { value: false }, textSize: { value: 6 }, textAlignment: 'centered' },
+  fullhd: { display: { value: 'flex' }, hide: { value: false }, textSize: { value: 6 }, textAlignment: { value: 'centered' } },
   touch: { display: { value: 'block' }, hide: { value: false }, textSize: { value: 3 }, textAlignment: { value: 'right'} },
 }}>
   I'm responsive
@@ -113,7 +136,7 @@ responsive={{
 
 
 <Element 
-backgroundColor="success"
+backgroundColor="danger"
 responsive={{
   mobile: { hide: { value: true } },
   desktop: { hide: { value: true } },
@@ -121,5 +144,4 @@ responsive={{
   You can only see me on tablet size
 </Element>
 
-## Composing
 

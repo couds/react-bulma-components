@@ -12,6 +12,7 @@
     "@couds/docusaurus-resolve-plugin": "0.1.0",
     "@docusaurus/core": "^2.0.0-alpha.54",
     "@docusaurus/preset-classic": "^2.0.0-alpha.54",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.39",
     "classnames": "^2.2.6",
     "docusaurus-plugin-sass": "git+https://github.com/couds/docusaurus-plugin-sass.git#patch-1",
     "react": "^16.8.4",
