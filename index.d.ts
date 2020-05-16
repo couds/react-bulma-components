@@ -1,11 +1,27 @@
 declare module 'react-bulma-components' {
   import * as React from 'react';
 
-  type PropsWithoutRef<T extends WithDomRef> = Pick<T, 'domRef'>;
+  type Color =
+    | 'primary'
+    | 'success'
+    | 'info'
+    | 'warning'
+    | 'danger'
+    | 'light'
+    | 'dark'
+    | 'white'
+    | 'black'
+    | 'link';
 
-  interface WithDomRef {
-    domRef: React.RefObject<HTMLElement>;
-  }
+  type Size = 'small' | 'medium' | 'large';
+
+  type Breakpoint =
+    | 'desktop'
+    | 'tablet'
+    | 'mobile'
+    | 'widescreen'
+    | 'fullhd'
+    | 'touch';
 
   interface HelperProps {
     clearfix?: boolean;
@@ -64,29 +80,113 @@ declare module 'react-bulma-components' {
     italic?: boolean;
   }
 
-  interface ElementPropTypes
+  interface ElementProps
     extends HelperProps,
       ColorProps,
       ResponsiveProps,
-      TypographyProps,
-      WithDomRef {
+      TypographyProps {
     className?: string;
+    domRef?: React.RefObject<HTMLElement>;
     renderAs?: React.ReactElement;
   }
 
-  /**
-   * Below defines all components exported by this library
-   */
+  // Below defines all exported components
 
-  /**
-   * Box component
-   */
+  // Box component
 
-  interface BoxProps extends PropsWithoutRef<ElementPropTypes> {}
+  interface BoxProps extends ElementProps {}
 
-  const Box: React.FC<BoxProps>;
+  export const Box: React.FC<BoxProps>;
 
-  /**
-   * Breadcrumb component
-   */
+  // Breadcrumb component
+
+  interface BreadcrumbItem {
+    url: string;
+    active?: boolean;
+    name?: React.ReactNode;
+  }
+
+  interface BreadcrumbProps extends ElementProps {
+    separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
+    size?: Size;
+    align?: 'right' | 'center';
+    items?: BreadcrumbItem[];
+    hrefAttr?: string;
+  }
+
+  export const Breadcrumb: React.FC<BreadcrumbProps>;
+
+  // Button component
+
+  interface ButtonProps extends ElementProps {
+    onClick?: () => void;
+    color?: Color;
+    size?: Size;
+    state?: 'hover' | 'focus' | 'active' | 'loading';
+    outlined?: boolean;
+    inverted?: boolean;
+    submit?: boolean;
+    reset?: boolean;
+    loading?: boolean;
+    fullwidth?: boolean;
+    disabled?: boolean;
+    remove?: boolean;
+    isSelected?: boolean;
+    isStatic?: boolean;
+    rounded?: boolean;
+    text?: boolean;
+  }
+
+  interface ButtonGroupProps extends ElementProps {
+    size?: Size;
+    hasAddons?: boolean;
+    position?: 'centered' | 'right';
+  }
+
+  export const Button: React.FC<ButtonProps> & {
+    Group: React.FC<ButtonGroupProps>;
+  };
+
+  // Card component
+
+  interface CardProps extends ElementProps {}
+
+  export const Card: React.FC<CardProps>;
+
+  // Column component
+
+  interface ColumnGroupProps extends ElementProps {
+    variableGap?: {
+      [breakpoint in Breakpoint]: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+    };
+    breakpoint?: Breakpoint;
+    gapless?: boolean;
+    multiline?: boolean;
+    centered?: boolean;
+    vCentered?: boolean;
+  }
+
+  type ColumnSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+  interface ColumnBreakpointConfiguration {
+    size?: ColumnSize;
+    offset?: ColumnSize;
+    narrow?: boolean;
+  }
+
+  interface ColumnProps extends ElementProps {
+    size?: ColumnSize;
+    offset?: ColumnSize;
+    narrow?: boolean;
+    touch?: ColumnBreakpointConfiguration;
+    mobile?: ColumnBreakpointConfiguration;
+    tablet?: ColumnBreakpointConfiguration;
+    desktop?: ColumnBreakpointConfiguration;
+    widescreen?: ColumnBreakpointConfiguration;
+    fullhd?: ColumnBreakpointConfiguration;
+  }
+
+  export const Columns: React.FC<ColumnGroupProps> & {
+    Column: React.FC<ColumnProps>;
+  };
 }
