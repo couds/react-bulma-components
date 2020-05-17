@@ -90,8 +90,6 @@ declare module 'react-bulma-components' {
     ResponsiveProps &
     TypographyProps;
 
-  // Below defines all exported components
-
   type ElementProps = ModifierProps & {
     className?: string;
     domRef?: React.RefObject<HTMLElement>;
@@ -103,8 +101,6 @@ declare module 'react-bulma-components' {
       | ({ renderAs: 'area' } & HTMLAttributes<'area'>)
       | ({ renderAs: 'article' } & HTMLAttributes<'article'>)
       | ({ renderAs: 'aside' } & HTMLAttributes<'aside'>)
-      | ({ renderAs: 'audio' } & HTMLAttributes<'audio'>)
-      | ({ renderAs: 'b' } & HTMLAttributes<'b'>)
       | ({ renderAs: 'base' } & HTMLAttributes<'base'>)
       | ({ renderAs: 'bdi' } & HTMLAttributes<'bdi'>)
       | ({ renderAs: 'bdo' } & HTMLAttributes<'bdo'>)
@@ -119,7 +115,6 @@ declare module 'react-bulma-components' {
       | ({ renderAs: 'code' } & HTMLAttributes<'code'>)
       | ({ renderAs: 'col' } & HTMLAttributes<'col'>)
       | ({ renderAs: 'colgroup' } & HTMLAttributes<'colgroup'>)
-      | ({ renderAs: 'data' } & HTMLAttributes<'data'>)
       | ({ renderAs: 'datalist' } & HTMLAttributes<'datalist'>)
       | ({ renderAs: 'dd' } & HTMLAttributes<'dd'>)
       | ({ renderAs: 'del' } & HTMLAttributes<'del'>)
@@ -129,7 +124,6 @@ declare module 'react-bulma-components' {
       | ({ renderAs: 'dl' } & HTMLAttributes<'dl'>)
       | ({ renderAs: 'dt' } & HTMLAttributes<'dt'>)
       | ({ renderAs: 'em' } & HTMLAttributes<'em'>)
-      | ({ renderAs: 'embed' } & HTMLAttributes<'embed'>)
       | ({ renderAs: 'fieldset' } & HTMLAttributes<'fieldset'>)
       | ({ renderAs: 'figcaption' } & HTMLAttributes<'figcaption'>)
       | ({ renderAs: 'figure' } & HTMLAttributes<'figure'>)
@@ -145,50 +139,34 @@ declare module 'react-bulma-components' {
       | ({ renderAs: 'header' } & HTMLAttributes<'header'>)
       | ({ renderAs: 'hgroup' } & HTMLAttributes<'hgroup'>)
       | ({ renderAs: 'hr' } & HTMLAttributes<'hr'>)
-      | ({ renderAs: 'html' } & HTMLAttributes<'html'>)
       | ({ renderAs: 'i' } & HTMLAttributes<'i'>)
-      | ({ renderAs: 'iframe' } & HTMLAttributes<'iframe'>)
       | ({ renderAs: 'img' } & HTMLAttributes<'img'>)
       | ({ renderAs: 'input' } & HTMLAttributes<'input'>)
       | ({ renderAs: 'ins' } & HTMLAttributes<'ins'>)
       | ({ renderAs: 'kbd' } & HTMLAttributes<'kbd'>)
-      | ({ renderAs: 'keygen' } & HTMLAttributes<'keygen'>)
       | ({ renderAs: 'label' } & HTMLAttributes<'label'>)
       | ({ renderAs: 'legend' } & HTMLAttributes<'legend'>)
       | ({ renderAs: 'li' } & HTMLAttributes<'li'>)
       | ({ renderAs: 'link' } & HTMLAttributes<'link'>)
       | ({ renderAs: 'main' } & HTMLAttributes<'main'>)
-      | ({ renderAs: 'map' } & HTMLAttributes<'map'>)
       | ({ renderAs: 'mark' } & HTMLAttributes<'mark'>)
       | ({ renderAs: 'menu' } & HTMLAttributes<'menu'>)
       | ({ renderAs: 'menuitem' } & HTMLAttributes<'menuitem'>)
-      | ({ renderAs: 'meta' } & HTMLAttributes<'meta'>)
       | ({ renderAs: 'meter' } & HTMLAttributes<'meter'>)
       | ({ renderAs: 'nav' } & HTMLAttributes<'nav'>)
-      | ({ renderAs: 'noscript' } & HTMLAttributes<'noscript'>)
-      | ({ renderAs: 'object' } & HTMLAttributes<'object'>)
       | ({ renderAs: 'ol' } & HTMLAttributes<'ol'>)
-      | ({ renderAs: 'optgroup' } & HTMLAttributes<'optgroup'>)
-      | ({ renderAs: 'option' } & HTMLAttributes<'option'>)
       | ({ renderAs: 'output' } & HTMLAttributes<'output'>)
       | ({ renderAs: 'p' } & HTMLAttributes<'p'>)
-      | ({ renderAs: 'param' } & HTMLAttributes<'param'>)
       | ({ renderAs: 'pre' } & HTMLAttributes<'pre'>)
       | ({ renderAs: 'progress' } & HTMLAttributes<'progress'>)
       | ({ renderAs: 'q' } & HTMLAttributes<'q'>)
       | ({ renderAs: 'rp' } & HTMLAttributes<'rp'>)
       | ({ renderAs: 'rt' } & HTMLAttributes<'rt'>)
       | ({ renderAs: 'ruby' } & HTMLAttributes<'ruby'>)
-      | ({ renderAs: 's' } & HTMLAttributes<'s'>)
       | ({ renderAs: 'samp' } & HTMLAttributes<'samp'>)
-      | ({ renderAs: 'script' } & HTMLAttributes<'script'>)
       | ({ renderAs: 'section' } & HTMLAttributes<'section'>)
-      | ({ renderAs: 'select' } & HTMLAttributes<'select'>)
       | ({ renderAs: 'small' } & HTMLAttributes<'small'>)
-      | ({ renderAs: 'source' } & HTMLAttributes<'source'>)
       | ({ renderAs: 'span' } & HTMLAttributes<'span'>)
-      | ({ renderAs: 'strong' } & HTMLAttributes<'strong'>)
-      | ({ renderAs: 'style' } & HTMLAttributes<'style'>)
       | ({ renderAs: 'sub' } & HTMLAttributes<'sub'>)
       | ({ renderAs: 'summary' } & HTMLAttributes<'summary'>)
       | ({ renderAs: 'sup' } & HTMLAttributes<'sup'>)
@@ -202,12 +180,9 @@ declare module 'react-bulma-components' {
       | ({ renderAs: 'time' } & HTMLAttributes<'time'>)
       | ({ renderAs: 'title' } & HTMLAttributes<'title'>)
       | ({ renderAs: 'tr' } & HTMLAttributes<'tr'>)
-      | ({ renderAs: 'track' } & HTMLAttributes<'track'>)
-      | ({ renderAs: 'u' } & HTMLAttributes<'u'>)
-      | ({ renderAs: 'ul' } & HTMLAttributes<'ul'>)
-      | ({ renderAs: 'var' } & HTMLAttributes<'var'>)
-      | ({ renderAs: 'video' } & HTMLAttributes<'video'>)
-      | ({ renderAs: 'wbr' } & HTMLAttributes<'wbr'>));
+      | ({ renderAs: 'ul' } & HTMLAttributes<'ul'>));
+
+  // Below defines all exported components
 
   // Box component
 
