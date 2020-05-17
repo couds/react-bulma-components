@@ -1,5 +1,6 @@
 declare module 'react-bulma-components' {
   import * as React from 'react';
+  import { ReactElement } from 'react';
 
   type Color =
     | 'primary'
@@ -189,4 +190,38 @@ declare module 'react-bulma-components' {
   export const Columns: React.FC<ColumnGroupProps> & {
     Column: React.FC<ColumnProps>;
   };
+
+  // Container component
+
+  interface ContainerProps extends ElementProps {
+    fluid?: boolean;
+    breakpoint?: Breakpoint;
+  }
+
+  export const Container: React.FC<ContainerProps>;
+
+  // Content component
+
+  interface ContentProps extends ElementProps {
+    size?: Size;
+  }
+
+  export const Content: React.FC<ContentProps>;
+
+  // Dropdown component
+
+  interface DropdownProps<T> extends ElementProps {
+    value?: T;
+    onChange?: (newValue: T) => void;
+    color?: Color;
+    hoverable?: boolean;
+    label?: React.ReactNode;
+    closeOnSelect?: boolean;
+    right?: boolean;
+    up?: boolean;
+    align?: 'right';
+  }
+
+  export const Dropdown: <T>() => ReactElement &
+    React.ComponentClass<DropdownProps<T>>;
 }
