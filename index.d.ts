@@ -90,10 +90,10 @@ declare module 'react-bulma-components' {
   type RenderAsComponent = string | React.ComponentType<never>;
 
   type RenderAsComponentProps<
-    Component
-  > = Component extends keyof JSX.IntrinsicElements
-    ? HTMLAttributes<Component>
-    : Component extends React.ComponentType<infer Props>
+    TComponent
+  > = TComponent extends keyof JSX.IntrinsicElements
+    ? HTMLAttributes<TComponent>
+    : TComponent extends React.ComponentType<infer Props>
     ? Props & JSX.IntrinsicAttributes
     : never;
 
@@ -102,19 +102,32 @@ declare module 'react-bulma-components' {
     ResponsiveProps &
     TypographyProps;
 
-  type ElementProps<T extends RenderAsComponent> = ModifierProps & {
+  type ElementProps<
+    TComponent extends RenderAsComponent,
+    TProps
+  > = ModifierProps & {
     className?: string;
     domRef?: React.RefObject<HTMLElement>;
-    renderAs?: T;
-  } & RenderAsComponentProps<T>;
+    renderAs?: TComponent;
+    style?: React.CSSProperties;
+  } & Pick<
+      RenderAsComponentProps<TComponent>,
+      Exclude<keyof RenderAsComponentProps<TComponent>, keyof TProps>
+    >;
+
+  type BulmaComponent<TProps, TDefaultHTMLElement extends RenderAsComponent> = <
+    TComponent extends RenderAsComponent = TDefaultHTMLElement
+  >(
+    props: TProps & ElementProps<TDefaultHTMLElement, TComponent>,
+  ) => React.ReactElement;
 
   // Below defines all exported components
 
   // Box component
 
-  type BoxProps = {} ;
+  type BoxProps = {};
 
-  export const Box: React.FC<BoxProps>;
+  export const Box: BulmaComponent<BoxProps, 'div'>;
 
   // Breadcrumb component
 
@@ -124,19 +137,19 @@ declare module 'react-bulma-components' {
     name?: React.ReactNode;
   }
 
-  type BreadcrumbProps = {
+  interface BreadcrumbProps {
     separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
     size?: Size;
     align?: 'right' | 'center';
     items?: BreadcrumbItem[];
     hrefAttr?: string;
-  } ;
+  }
 
-  export const Breadcrumb: React.FC<BreadcrumbProps>;
+  export const Breadcrumb: BulmaComponent<BreadcrumbProps, 'a'>;
 
   // Button component
 
-  type ButtonProps = {
+  interface ButtonProps {
     onClick?: () => void;
     color?: Color;
     size?: Size;
@@ -153,27 +166,31 @@ declare module 'react-bulma-components' {
     isStatic?: boolean;
     rounded?: boolean;
     text?: boolean;
-  } ;
+  }
 
-  type ButtonGroupProps = {
+  interface ButtonGroupProps {
     size?: Size;
     hasAddons?: boolean;
     position?: 'centered' | 'right';
-  } ;
+  }
 
-  export const Button: React.FC<ButtonProps> & {
-    Group: React.FC<ButtonGroupProps>;
+  export const Button: BulmaComponent<ButtonProps, 'button'> & {
+    Group: BulmaComponent<ButtonGroupProps, 'div'>;
   };
 
   // Card component
 
-  type CardProps = {} ;
+  interface CardProps {}
 
-  export const Card: React.FC<CardProps>;
+  interface CardImageProps {}
+
+  export const Card: BulmaComponent<CardProps, 'div'> & {
+    Image: BulmaComponent<CardImageProps, 'figure'>;
+  };
 
   // Column component
 
-  type ColumnGroupProps = {
+  interface ColumnGroupProps {
     variableGap?: {
       [breakpoint in Breakpoint]: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
     };
@@ -182,7 +199,7 @@ declare module 'react-bulma-components' {
     multiline?: boolean;
     centered?: boolean;
     vCentered?: boolean;
-  } ;
+  }
 
   type ColumnSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -192,7 +209,7 @@ declare module 'react-bulma-components' {
     narrow?: boolean;
   }
 
-  type ColumnProps = {
+  interface ColumnProps {
     size?: ColumnSize;
     offset?: ColumnSize;
     narrow?: boolean;
@@ -202,32 +219,32 @@ declare module 'react-bulma-components' {
     desktop?: ColumnBreakpointConfiguration;
     widescreen?: ColumnBreakpointConfiguration;
     fullhd?: ColumnBreakpointConfiguration;
-  } ;
+  }
 
-  export const Columns: React.FC<ColumnGroupProps> & {
-    Column: React.FC<ColumnProps>;
+  export const Columns: BulmaComponent<ColumnGroupProps, 'div'> & {
+    Column: BulmaComponent<ColumnProps, 'div'>;
   };
 
   // Container component
 
-  type ContainerProps = {
+  interface ContainerProps {
     fluid?: boolean;
     breakpoint?: Breakpoint;
-  } ;
+  }
 
-  export const Container: React.FC<ContainerProps>;
+  export const Container: BulmaComponent<ContainerProps, 'div'>;
 
   // Content component
 
-  type ContentProps = {
+  interface ContentProps {
     size?: Size;
-  } ;
+  }
 
-  export const Content: React.FC<ContentProps>;
+  export const Content: BulmaComponent<ContentProps, 'div'>;
 
   // Dropdown component
 
-  type DropdownProps<T> = {
+  interface DropdownProps<T> {
     value?: T;
     onChange?: (newValue: T) => void;
     color?: Color;
@@ -237,9 +254,16 @@ declare module 'react-bulma-components' {
     right?: boolean;
     up?: boolean;
     align?: 'right';
-  };
+  }
 
-  export const Dropdown: new <T, C extends RenderAsComponent>(
-    props: DropdownProps<T> & ElementProps<C>,
-  ) => React.ReactElement & React.ComponentClass<DropdownProps<T>>;
+  export const Dropdown: <TValue, TComponent extends RenderAsComponent = 'div'>(
+    props: DropdownProps<TValue> &
+      Pick<
+        ElementProps<TComponent, DropdownProps<TValue>>,
+        Exclude<
+          keyof ElementProps<TComponent, DropdownProps<TValue>>,
+          keyof DropdownProps<TValue>
+        >
+      >,
+  ) => React.ReactElement;
 }
