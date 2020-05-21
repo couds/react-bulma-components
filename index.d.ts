@@ -127,6 +127,10 @@ declare module 'react-bulma-components' {
     props: TProps & Omit<ElementProps<TProps, THTMLElement>, 'renderAs'>,
   ) => React.ReactElement;
 
+  type BulmaComponentWithoutModifiers<TProps> = (
+    props: TProps,
+  ) => React.ReactElement;
+
   // Below defines all exported components
 
   // Box component
@@ -185,7 +189,7 @@ declare module 'react-bulma-components' {
   // Card component
 
   export const Card: BulmaComponent<{}, 'div'> & {
-    Image: BulmaComponent<{}, 'figure'>;
+    Image: BulmaComponent<ImageProps, 'figure'>;
     Content: BulmaComponent<{}, 'div'>;
     Header: BulmaComponent<{}, 'div'> & {
       Title: BulmaComponent<{}, 'div'>;
@@ -412,4 +416,290 @@ declare module 'react-bulma-components' {
     Help: BulmaComponent<HelpProps, 'p'>;
     InputFile: BulmaComponent<InputFileProps, 'div'>;
   };
+
+  // Heading component
+
+  interface HeadingProps {
+    size?: 1 | 2 | 3 | 4 | 5 | 6;
+    weight?: 'light' | 'normal' | 'semibold' | 'bold';
+    subtitle?: boolean;
+    heading?: boolean;
+    spaced?: boolean;
+  }
+
+  export const Heading: BulmaComponent<HeadingProps, 'h1'>;
+
+  // Hero component
+
+  interface HeroProps {
+    color?: Color;
+    gradient?: boolean;
+    size?: Size | 'fullheight';
+    hasNavbar?: boolean;
+  }
+
+  export const Hero: BulmaComponent<HeroProps, 'section'> & {
+    Head: BulmaComponent<{}, 'div'>;
+    Body: BulmaComponent<{}, 'div'>;
+    Footer: BulmaComponent<{}, 'div'>;
+  };
+
+  // Icon component
+
+  interface IconProps {
+    icon?: string;
+    size?: Size | 'auto';
+    align?: 'left' | 'right';
+    color?: Color;
+  }
+
+  export const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'>;
+
+  // Image component
+
+  interface ImageProps {
+    src?: string;
+    alt?: string;
+    rounded?: boolean;
+    size?:
+      | 16
+      | 24
+      | 32
+      | 48
+      | 64
+      | 96
+      | 128
+      | 'square'
+      | '1by1'
+      | '4by3'
+      | '3by2'
+      | '16by9'
+      | '2by1'
+      | '5by4'
+      | '5by3'
+      | '3by1'
+      | '4by5'
+      | '3by4'
+      | '2by3'
+      | '3by5'
+      | '9by16'
+      | '1by2'
+      | '1by3';
+    fallback?: string;
+    fullwidth?: boolean;
+  }
+
+  export const Image: BulmaComponentWithoutRenderAs<ImageProps, 'figure'>;
+
+  // Level component
+
+  interface LevelProps {
+    mobile?: boolean;
+    breakpoint?: Breakpoint;
+  }
+
+  interface LevelSideProps {
+    align?: 'left' | 'right';
+  }
+
+  export const Level: BulmaComponent<LevelProps, 'div'> & {
+    Side: BulmaComponent<LevelSideProps, 'div'>;
+    Item: BulmaComponent<{}, 'div'>;
+  };
+
+  // List
+
+  interface ListProps {
+    hoverable?: boolean;
+  }
+
+  interface ListItemProps {
+    active?: boolean;
+  }
+
+  export const List: BulmaComponent<ListProps, 'div'> & {
+    Item: BulmaComponent<ListItemProps, 'div'>;
+  };
+
+  // Loader component
+
+  export const Loader: BulmaComponent<{}, 'div'>;
+
+  // Media component
+
+  interface MediaItemProps {
+    position?: 'center' | 'right' | 'left';
+  }
+
+  export const Media: BulmaComponent<{}, 'article'> & {
+    Item: BulmaComponent<MediaItemProps, 'div'>;
+    Content: BulmaComponent<{}, 'div'>;
+  };
+
+  // Menu component
+
+  interface MenuListComponentProps {
+    title?: React.ReactNode;
+  }
+
+  interface MenuListItemProps {
+    active?: boolean;
+    children?: string[] | React.ReactElement[];
+  }
+
+  export const Menu: BulmaComponent<{}, 'aside'> & {
+    List: BulmaComponentWithoutRenderAs<MenuListComponentProps, 'ul'>;
+    Item: BulmaComponent<MenuListItemProps, 'a'>;
+  };
+
+  // Message component
+
+  interface MessageProps {
+    size?: Size;
+    color?: Color;
+  }
+
+  // Modal component
+
+  interface ModalProps {
+    show?: boolean;
+    onClose?: () => void;
+    closeOnEsc?: boolean;
+    closeOnBlur?: boolean;
+    showClose?: boolean;
+    domRef?: React.RefObject<HTMLDivElement>;
+  }
+
+  interface ModalCardHeadProps {
+    showClose?: boolean;
+    onClose?: () => void;
+  }
+
+  export const Modal: BulmaComponentWithoutModifiers<ModalProps> & {
+    Content: BulmaComponent<{}, 'div'>;
+    Card: BulmaComponent<{}, 'div'> & {
+      Head: BulmaComponent<ModalCardHeadProps, 'header'>;
+      Body: BulmaComponent<{}, 'section'>;
+      Footer: BulmaComponent<{}, 'footer'>;
+      Title: BulmaComponent<{}, 'p'>;
+    };
+  };
+
+  export const Message: BulmaComponent<MessageProps, 'article'> & {
+    Body: BulmaComponent<{}, 'div'>;
+    Header: BulmaComponent<{}, 'div'>;
+  };
+
+  // Navbar component
+
+  interface NavbarProps {
+    transparent?: boolean;
+    fixed?: 'top' | 'bottom';
+    color?: Color;
+    active?: boolean;
+  }
+
+  interface NavbarBurgerProps {
+    onClick?: () => void;
+  }
+
+  interface NavbarItemProps {
+    active?: boolean;
+    dropdown?: boolean;
+    dropdownUp?: boolean;
+    hoverable?: boolean;
+    arrowless?: boolean;
+  }
+
+  interface NavbarDropdownProps {
+    boxed?: boolean;
+    right?: boolean;
+  }
+
+  interface NavbarLinkProps {
+    arrowless?: boolean;
+  }
+
+  interface NavbarContainerProps {
+    position: 'start' | 'end';
+  }
+
+  export const Navbar: BulmaComponent<NavbarProps, 'nav'> & {
+    Brand: BulmaComponent<{}, 'div'>;
+    Burger: BulmaComponent<NavbarBurgerProps, 'div'>;
+    Menu: BulmaComponent<{}, 'div'>;
+    Item: BulmaComponent<NavbarItemProps, 'a'>;
+    Dropdown: BulmaComponent<NavbarDropdownProps, 'span'>;
+    Link: BulmaComponent<NavbarLinkProps, 'span'>;
+    Divider: BulmaComponent<{}, 'div'>;
+    Container: BulmaComponent<NavbarContainerProps, 'div'>;
+  };
+
+  // Notification component
+
+  interface NotificationProps {
+    color?: Color;
+  }
+
+  export const Notification: BulmaComponent<NotificationProps, 'div'>;
+
+  // Progress component
+
+  interface ProgressProps {
+    value: number;
+    max: number;
+    size?: Size;
+  }
+
+  export const Progress: BulmaComponentWithoutRenderAs<
+    ProgressProps,
+    'progress'
+  >;
+
+  // Section component
+
+  interface SectionProps {
+    size?: Exclude<Size, 'small'>;
+  }
+
+  export const Section: BulmaComponent<SectionProps, 'section'>;
+
+  // Table component
+
+  interface TableProps {
+    size?: 'fullwidth' | 'narrow';
+    striped?: boolean;
+    bordered?: boolean;
+  }
+
+  export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'>;
+
+  // Tag component
+
+  interface TagProps {
+    color?: Color;
+    size?: Exclude<Size, 'small'>;
+    rounded?: boolean;
+    remove?: boolean;
+  }
+
+  interface TagGroupProps {
+    gapless?: boolean;
+  }
+
+  export const Tag: BulmaComponent<TagProps, 'span'> & {
+    Group: BulmaComponentWithoutRenderAs<TagGroupProps, 'span'>;
+  };
+
+  // Tile component
+
+  interface TileProps {
+    kind?: 'ancestor' | 'parent' | 'child';
+    vertical?: boolean;
+    size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    color?: Color;
+    notification?: boolean;
+  }
+
+  export const Tile: BulmaComponent<TileProps, 'div'>;
 }
