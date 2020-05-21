@@ -82,9 +82,9 @@ declare module 'react-bulma-components' {
     italic?: boolean;
   }
 
-  type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = Pick<
+  type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = Omit<
     JSX.IntrinsicElements[K],
-    Exclude<keyof JSX.IntrinsicElements[K], 'unselectable'>
+    'unselectable'
   >;
 
   // Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
@@ -273,13 +273,7 @@ declare module 'react-bulma-components' {
     TComponent extends RenderAsComponent = 'div'
   >(
     props: DropdownProps<TValue> &
-      Pick<
-        ElementProps<DropdownProps<TValue>, TComponent>,
-        Exclude<
-          keyof ElementProps<DropdownProps<TValue>, TComponent>,
-          keyof DropdownProps<TValue>
-        >
-      >,
+      ElementProps<DropdownProps<TValue>, TComponent>,
   ) => React.ReactElement) & {
     Item: <TValue, TComponent extends RenderAsComponent = 'div'>(
       props: DropdownItemProps<TValue> &
