@@ -1,6 +1,8 @@
 declare module 'react-bulma-components' {
   import * as React from 'react';
 
+  type OmitKeys<T, U> = Pick<T, Exclude<keyof T, U>>;
+
   type Color =
     | 'primary'
     | 'success'
@@ -103,31 +105,33 @@ declare module 'react-bulma-components' {
     TypographyProps;
 
   type ElementProps<
-    TComponent extends RenderAsComponent,
-    TProps
+    TProps,
+    TComponent extends RenderAsComponent
   > = ModifierProps & {
     className?: string;
-    domRef?: React.RefObject<HTMLElement>;
+    domRef?: React.RefObject<TComponent>;
     renderAs?: TComponent;
     style?: React.CSSProperties;
-  } & Pick<
-      RenderAsComponentProps<TComponent>,
-      Exclude<keyof RenderAsComponentProps<TComponent>, keyof TProps>
-    >;
+  } & OmitKeys<RenderAsComponentProps<TComponent>, keyof TProps>;
 
   type BulmaComponent<TProps, TDefaultHTMLElement extends RenderAsComponent> = <
     TComponent extends RenderAsComponent = TDefaultHTMLElement
   >(
-    props: TProps & ElementProps<TDefaultHTMLElement, TComponent>,
+    props: TProps & ElementProps<TProps, TComponent>,
+  ) => React.ReactElement;
+
+  type BulmaComponentWithoutRenderAs<
+    TProps,
+    THTMLElement extends RenderAsComponent
+  > = (
+    props: TProps & Omit<ElementProps<TProps, THTMLElement>, 'renderAs'>,
   ) => React.ReactElement;
 
   // Below defines all exported components
 
   // Box component
 
-  type BoxProps = {};
-
-  export const Box: BulmaComponent<BoxProps, 'div'>;
+  export const Box: BulmaComponent<{}, 'div'>;
 
   // Breadcrumb component
 
@@ -180,12 +184,16 @@ declare module 'react-bulma-components' {
 
   // Card component
 
-  interface CardProps {}
-
-  interface CardImageProps {}
-
-  export const Card: BulmaComponent<CardProps, 'div'> & {
-    Image: BulmaComponent<CardImageProps, 'figure'>;
+  export const Card: BulmaComponent<{}, 'div'> & {
+    Image: BulmaComponent<{}, 'figure'>;
+    Content: BulmaComponent<{}, 'div'>;
+    Header: BulmaComponent<{}, 'div'> & {
+      Title: BulmaComponent<{}, 'div'>;
+      Icon: BulmaComponent<{}, 'div'>;
+    };
+    Footer: BulmaComponent<{}, 'div'> & {
+      Item: BulmaComponent<{}, 'div'>;
+    };
   };
 
   // Column component
@@ -256,14 +264,158 @@ declare module 'react-bulma-components' {
     align?: 'right';
   }
 
-  export const Dropdown: <TValue, TComponent extends RenderAsComponent = 'div'>(
+  interface DropdownItemProps<T> {
+    value: T;
+  }
+
+  export const Dropdown: (<
+    TValue,
+    TComponent extends RenderAsComponent = 'div'
+  >(
     props: DropdownProps<TValue> &
       Pick<
-        ElementProps<TComponent, DropdownProps<TValue>>,
+        ElementProps<DropdownProps<TValue>, TComponent>,
         Exclude<
-          keyof ElementProps<TComponent, DropdownProps<TValue>>,
+          keyof ElementProps<DropdownProps<TValue>, TComponent>,
           keyof DropdownProps<TValue>
         >
       >,
-  ) => React.ReactElement;
+  ) => React.ReactElement) & {
+    Item: <TValue, TComponent extends RenderAsComponent = 'div'>(
+      props: DropdownItemProps<TValue> &
+        ElementProps<DropdownItemProps<TValue>, TComponent>,
+    ) => React.ReactElement;
+    Divider: (
+      props: Omit<ElementProps<{}, 'hr'>, 'renderAs'>,
+    ) => React.ReactElement;
+  };
+
+  // Footer component
+
+  export const Footer: BulmaComponent<{}, 'div'>;
+
+  // Form components
+
+  interface FieldProps {
+    align?: 'centered' | 'right';
+    kind?: 'addons' | 'group';
+    multiline?: boolean;
+    horizontal?: boolean;
+  }
+
+  interface FieldLabelProps {
+    size?: Size | 'small';
+  }
+
+  interface ControlProps {
+    fullwidth?: boolean;
+    iconLeft?: boolean;
+    iconRight?: boolean;
+    loading?: boolean;
+    size?: Size;
+  }
+
+  interface InputProps<T> {
+    type?:
+      | 'text'
+      | 'email'
+      | 'tel'
+      | 'password'
+      | 'number'
+      | 'search'
+      | 'color'
+      | 'date'
+      | 'time'
+      | 'datetime-local';
+    size?: Size;
+    color?: Color;
+    readOnly?: boolean;
+    isStatic?: boolean;
+    value?: T;
+  }
+
+  interface LabelProps {
+    size?: Size;
+  }
+
+  interface TextareaProps {
+    size?: Size;
+    color?: Color;
+    readOnly?: boolean;
+  }
+
+  interface SelectProps<T> {
+    size?: Size;
+    color?: Color;
+    readOnly?: boolean;
+    value?: T;
+    loading?: boolean;
+    multiple?: boolean;
+  }
+
+  interface CheckboxProps {
+    value?: string;
+  }
+
+  interface RadioProps {
+    value?: string;
+  }
+
+  interface HelpProps {
+    color?: Color;
+  }
+
+  interface InputFileProps {
+    onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+    color?: Color;
+    size?: Size;
+    fileName?: string;
+    fullwidth?: boolean;
+    right?: boolean;
+    boxed?: boolean;
+    label?: string;
+    icon?: React.ReactElement;
+    inputProps?: JSX.IntrinsicElements['input'];
+  }
+
+  export const Form: {
+    Field: BulmaComponent<FieldProps, 'div'> & {
+      Label: BulmaComponent<FieldLabelProps, 'div'>;
+      Body: BulmaComponent<{}, 'div'>;
+    };
+    Control: BulmaComponent<ControlProps, 'div'>;
+    Input: <TValue>(
+      props: OmitKeys<
+        InputProps<TValue> & ElementProps<InputProps<TValue>, 'input'>,
+        'renderAs' | 'readonly'
+      >,
+    ) => React.ReactElement;
+    Label: BulmaComponentWithoutRenderAs<LabelProps, 'label'>;
+    Textarea: (
+      props: OmitKeys<
+        TextareaProps & ElementProps<TextareaProps, 'textarea'>,
+        'renderAs' | 'readonly'
+      >,
+    ) => React.ReactElement;
+    Select: <TValue>(
+      props: OmitKeys<
+        SelectProps<TValue> & ElementProps<SelectProps<TValue>, 'select'>,
+        'renderAs' | 'readonly'
+      >,
+    ) => React.ReactElement;
+    Checkbox: (
+      props: OmitKeys<
+        CheckboxProps & ElementProps<CheckboxProps, 'input'>,
+        'renderAs'
+      >,
+    ) => React.ReactElement;
+    Radio: (
+      props: OmitKeys<
+        RadioProps & ElementProps<RadioProps, 'input'>,
+        'renderAs'
+      >,
+    ) => React.ReactElement;
+    Help: BulmaComponent<HelpProps, 'p'>;
+    InputFile: BulmaComponent<InputFileProps, 'div'>;
+  };
 }
