@@ -82,9 +82,9 @@ declare module 'react-bulma-components' {
     italic?: boolean;
   }
 
-  type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = Omit<
+  type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
     JSX.IntrinsicElements[K],
-    'unselectable'
+    keyof ModifierProps
   >;
 
   // Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
@@ -373,7 +373,7 @@ declare module 'react-bulma-components' {
     boxed?: boolean;
     label?: string;
     icon?: React.ReactElement;
-    inputProps?: JSX.IntrinsicElements['input'];
+    inputProps?: HTMLAttributes<'input'>;
   }
 
   export const Form: {
