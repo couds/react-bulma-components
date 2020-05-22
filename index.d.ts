@@ -643,6 +643,45 @@ declare module 'react-bulma-components' {
 
   export const Notification: BulmaComponent<NotificationProps, 'div'>;
 
+  // Pagination component
+
+  interface PaginationProps {
+    current?: number;
+    disabled?: boolean;
+    total?: number;
+    delta?: number;
+    onChange?: (page: number) => void;
+    next?: React.ReactNode;
+    previous?: React.ReactNode;
+    showPrevNext?: boolean;
+    autoHide?: boolean;
+  }
+
+  export const Pagination: BulmaComponent<PaginationProps, 'nav'>;
+
+  // Panel component
+
+  interface PanelProps {
+    color?: Color;
+  }
+
+  interface PanelTabProps {
+    active?: boolean;
+  }
+
+  interface PanelBlockProps {
+    active?: boolean;
+  }
+
+  export const Panel: BulmaComponent<PanelProps, 'nav'> & {
+    Header: BulmaComponent<{}, 'div'>;
+    Tabs: BulmaComponent<{}, 'div'> & {
+      Tab: BulmaComponent<PanelTabProps, 'a'>;
+    };
+    Block: BulmaComponent<PanelBlockProps, 'div'>;
+    Icon: BulmaComponent<{}, 'span'>;
+  };
+
   // Progress component
 
   interface ProgressProps {
@@ -673,6 +712,23 @@ declare module 'react-bulma-components' {
   }
 
   export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'>;
+
+  // Tabs component
+
+  interface TabsProps {
+    align?: 'centered' | 'right';
+    size?: Size;
+    type?: 'toggle' | 'boxed' | 'toggle-rounded';
+    fullwidth?: boolean;
+  }
+
+  interface TabProps {
+    active?: boolean;
+  }
+
+  export const Tabs: BulmaComponent<TabsProps, 'div'> & {
+    Tab: BulmaComponent<TabProps, 'a'>;
+  };
 
   // Tag component
 
