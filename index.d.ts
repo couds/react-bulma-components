@@ -84,7 +84,7 @@ declare module 'react-bulma-components' {
 
   type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
     JSX.IntrinsicElements[K],
-    keyof ModifierProps
+    keyof ModifierProps | 'ref'
   >;
 
   // Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
@@ -548,8 +548,9 @@ declare module 'react-bulma-components' {
   }
 
   export const Menu: BulmaComponent<{}, 'aside'> & {
-    List: BulmaComponentWithoutRenderAs<MenuListComponentProps, 'ul'>;
-    Item: BulmaComponent<MenuListItemProps, 'a'>;
+    List: BulmaComponentWithoutRenderAs<MenuListComponentProps, 'ul'> & {
+      Item: BulmaComponent<MenuListItemProps, 'a'>;
+    };
   };
 
   // Message component
