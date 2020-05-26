@@ -135,16 +135,15 @@ Now on your `next.config.js` configure your sass to include the directory where 
 
 ```javascript
 const withSass = require('@zeit/next-sass')
-const withTM = require('next-plugin-transpile-modules');
+const withTM = require('next-transpile-modules')(['react-bulma-components']);
 
 module.exports = withTM(withSass({
-    transpileModules: ['react-bulma-components'], // Tell next to transpile the react-bulma-components module
     // NOTE: this also allow to use abolute import from this folder not only for the _variables.sass file
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         config.resolve.modules.push('./pages'); // Add to webpack configuration the folder where you put the _variables file
         return config
     },
-}))
+}));
 ```
 
 The last thing to remember is that since you're transpiling `react-bulma-components` from source, make sure your import statements reflect this in your app:
