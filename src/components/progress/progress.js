@@ -28,8 +28,8 @@ Progress.propTypes = {
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
+  value: PropTypes.number,
+  max: PropTypes.number,
 };
 
 Progress.defaultProps = {
