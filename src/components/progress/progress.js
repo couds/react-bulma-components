@@ -38,6 +38,8 @@ Progress.defaultProps = {
   style: undefined,
   color: undefined,
   size: undefined,
+  value: undefined,
+  max: undefined,
 };
 
 export default Progress;
