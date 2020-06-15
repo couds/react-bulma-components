@@ -41,6 +41,14 @@ export default () => (
 )
 ```
 
+Form elements are imported as part of the Form class. 
+
+```javascript
+import { Form } from 'react-bulma-components';
+
+const { Input, Field, Control, Label } = Form;
+```
+
 #### Advanced
 
 This configuration is recomended if you answer yes to one of the following questions:
