@@ -32,7 +32,7 @@ Panel.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
-  colors: PropTypes.oneOf([null, '', ...Object.values(CONSTANTS.COLORS)]),
+  color: PropTypes.oneOf([null, '', ...Object.values(CONSTANTS.COLORS)]),
 };
 
 Panel.defaultProps = {
