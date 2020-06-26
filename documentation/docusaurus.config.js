@@ -10,12 +10,15 @@ module.exports = {
   projectName: 'react-bulma-components', // Usually your repo name.
   plugins: [
     'docusaurus-plugin-sass',
-    ['@couds/docusaurus-resolve-plugin', {
-      modules: ['src'],
-      alias: {
-        '_variables.sass': path.resolve(__dirname, 'src/css/_variables.sass'),
-      }
-    }]
+    [
+      '@couds/docusaurus-resolve-plugin',
+      {
+        modules: ['src'],
+        alias: {
+          '_variables.sass': path.resolve(__dirname, 'src/css/_variables.sass'),
+        },
+      },
+    ],
   ],
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
@@ -35,7 +38,7 @@ module.exports = {
         },
         {
           label: 'Components',
-          to: 'docs/components/', 
+          to: 'docs/components/',
           position: 'left',
           activeBasePath: 'docs/components',
           items: [
@@ -65,7 +68,7 @@ module.exports = {
             },
           ],
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        { to: 'blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/couds/react-bulma-components',
           label: 'GitHub',
@@ -91,8 +94,7 @@ module.exports = {
         },
         {
           title: 'Community',
-          items: [
-          ],
+          items: [],
         },
         {
           title: 'More',
@@ -115,7 +117,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        'docs': {
+        docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
