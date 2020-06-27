@@ -3,6 +3,7 @@ import helpers from './helpers';
 import responsive from './responsives';
 import colors from './colors';
 import typography from './typography';
+import spacing from './spacing';
 
 const compose = (...fns) => args => fns.reduce((arg, fn) => fn(arg), args);
 
@@ -25,6 +26,7 @@ export default {
       responsive.classnames(props),
       colors.classnames(props),
       typography.classnames(props),
+      spacing.classnames(props),
     ),
   clean: props =>
     compose(
@@ -32,5 +34,6 @@ export default {
       responsive.clean,
       colors.clean,
       typography.clean,
+      spacing.clean,
     )(props),
 };
