@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const DropdownItem = ({ active, children, value, ...props }) => (
+const DropdownItem = ({ active, children, value, className, ...props }) => (
   <Element
     title={value}
     {...props}
     role="presentation"
-    className={classnames('dropdown-item', {
+    className={classnames(className, 'dropdown-item', {
       'is-active': active,
     })}
   >
