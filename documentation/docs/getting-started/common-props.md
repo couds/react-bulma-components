@@ -11,7 +11,7 @@ All components on this library render a component named `Element`, this componen
 
 ## Common React props
 
-The `Element` component has the common react props `style` and `classNames` that will be passed down to the html element generated
+The `Element` component has the common react props `style` and `classNames` that will be passed down to the html element generated.
 
 ## Composing
 

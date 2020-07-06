@@ -5,7 +5,7 @@ sidebar_label: Advanced Configuration
 sidebar_id: someSidebar
 ---
 
-This configuration will allow you customize your build selecting the components you want to use (only including the styles for the components you use) and also customize Bulma using [sass variables](https://bulma.io/documentation/customize/concepts/) 
+This configuration will allow you customize your build by selecting the components you want to use (only including the styles for the components you use), and also customize Bulma using [sass variables](https://bulma.io/documentation/customize/concepts/) 
 
 :::caution
 
@@ -18,20 +18,24 @@ First you need to create a **_variables.sass** file in any **FOLDER** inside you
 
 @import '~bulma/sass/utilities/_all.sass'
 ```
+---
 
 ## Frameworks
 
-Now depending of the Framework of your choose the configuration vary a little. Here you can find instructions of how to configure it on the most used Frameworks.
+Here you can find instructions of how to configure React-Bulma on most Frameworks. The configuration may vary a little depending on your framework of choice. 
 
 ### Create React App
 
-You need to enable SASS compilation on your CRA project, to do it just install node-sass
+You need to enable SASS compilation on your Create React App (CRA) project. To enable SASS compilation
+
+1. install node-sass.
 
 ```bash
 npm i --save node-sass
 ```
 
-Now create/update your **jsconfig.json** (or tsconfig if you are using typescript) 
+2. Create/Update your **jsconfig.json** (or tsconfig if you are using typescript). 
+
 
 ```json
 {
@@ -44,15 +48,15 @@ Now create/update your **jsconfig.json** (or tsconfig if you are using typescrip
 
 ### Next.js < 9
 
-You need to enable SASS compilation on your Next.js project, See the instructions [here](https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
+You need to enable SASS compilation on your Next.js project, See the instructions [here](https://github.com/zeit/next-plugins/tree/master/packages/next-sass).
 
-You will also need to configure the transpiled modules plugin next-plugin-transpile-modules so install it
+You will also need to configure the transpiled modules plugin next-plugin-transpile-modules so install it.
 
 ```bash
 npm i --save-dev next-plugin-transpile-modules
 ```
 
-Now on your **next.config.js** configure your sass to include the directory where you put your _variables.sass file and add react-bulma-components to the transpiled modules
+Now on your **next.config.js** configure your sass to include the directory where you put your _variables.sass file and add react-bulma-components to the transpiled modules.
 
 ```js
 const withSass = require('@zeit/next-sass')
@@ -69,7 +73,7 @@ module.exports = withTM(withSass({
 
 ### Next.js >= 9
 
-Next.js comes with sass transpiler enabled by default, but we need to change some configuration, to do it we need to install two modules `@zeit/next-sass` and `next-plugin-transpile-modules`
+Next.js comes with sass transpiler enabled by default, but we need to edit some configurations. To do that, we need to install two modules `@zeit/next-sass` and `next-plugin-transpile-modules`.
 
 
 ```js
@@ -89,7 +93,7 @@ module.exports = withTM(withSass({
 
 ### Gatsby
 
-Follow the [instructions](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) to enable Sass compiling in project, and configure the sass plugin to include the path where you put the **_variables.sass** file, for example
+Follow the [instructions](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) to enable Sass compiling in project, and configure the sass plugin to include the path where you put the **_variables.sass** file. for example,
 
 ```json
 {
