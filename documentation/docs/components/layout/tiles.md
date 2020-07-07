@@ -46,7 +46,7 @@ Wrap your contents with the `<Tile />` tag to create 2d tiles.
                 <Tile renderAs="article" kind="child" notification color="info">
                   <Heading>Middle Tile...</Heading>
                   <Heading subtitle>With image Tile...</Heading>
-                  <Image size="4by3" src="http://bulma.io/images/placeholders/640x480.png" />
+                  <Image size="4by3" src="https://bulma.io/images/placeholders/640x480.png" />
                 </Tile>
               </Tile>
             </Tile>
@@ -94,7 +94,7 @@ Wrap your contents with the `<Tile />` tag to create 2d tiles.
                 <Tile renderAs="article" kind="child" notification color="info">
                   <Heading>Middle Tile...</Heading>
                   <Heading subtitle>With image Tile...</Heading>
-                  <Image size="4by3" src="http://bulma.io/images/placeholders/640x480.png" />
+                  <Image size="4by3" src="https://bulma.io/images/placeholders/640x480.png" />
                 </Tile>
               </Tile>
             </Tile>
