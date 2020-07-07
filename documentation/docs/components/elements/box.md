@@ -67,7 +67,7 @@ import Box from 'react-bulma-components/lib/components/box';
       }}>
       <Media>
         <Media.Item renderAs="figure" position="left">
-          <Image size={64} alt="64x64" src='react-bulma-components/docs/image/128x128.png' />
+          <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
         </Media.Item>
         <Media.Item>
           <Content>
@@ -87,7 +87,7 @@ import Box from 'react-bulma-components/lib/components/box';
 <Box>
       <Media>
         <Media.Item renderAs="figure" position="left">
-          <Image size={64} alt="64x64" src='react-bulma-components/docs/image/128x128.png' />
+          <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
         </Media.Item>
         <Media.Item>
           <Content>
