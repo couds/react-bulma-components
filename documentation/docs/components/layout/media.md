@@ -42,7 +42,7 @@ To create a media object
 <Box>
         <Media>
           <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
           </Media.Item>
           <Media.Item>
             <Content>
@@ -67,7 +67,7 @@ To create a media object
 ```jsx
         <Media>
           <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
           </Media.Item>
           <Media.Item>
             <Content>
@@ -99,7 +99,7 @@ Modify your contents position in the media container by using the `position` mod
             <p>Lorem Ipsum</p>
           </Media.Item>
           <Media.Item renderAs="figure" position="right">
-            <img style={style} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+            <img style={style} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
           </Media.Item>
         </Media>
 </Box>
@@ -113,7 +113,7 @@ Modify your contents position in the media container by using the `position` mod
             <p>Lorem Ipsum</p>
           </Media.Item>
           <Media.Item renderAs="figure" position="right">
-            <img style={style} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+            <img style={style} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
           </Media.Item>
         </Media>
 ```
@@ -127,7 +127,7 @@ Nest your `<media />` container for up to 3 levels.
       <Box>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
+            <Image src="https://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Content>
@@ -141,7 +141,7 @@ Nest your `<media />` container for up to 3 levels.
             </Content>
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/128x128.png" size={48} />
+                <Image src="https://bulma.io/images/placeholders/128x128.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -163,7 +163,7 @@ Nest your `<media />` container for up to 3 levels.
             </Media>
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/96x96.png" size={48} />
+                <Image src="https://bulma.io/images/placeholders/96x96.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -181,7 +181,7 @@ Nest your `<media />` container for up to 3 levels.
         </Media>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
+            <Image src="https://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Field>
@@ -204,7 +204,7 @@ Nest your `<media />` container for up to 3 levels.
       <Box>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
+            <Image src="https://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Content>
@@ -218,7 +218,7 @@ Nest your `<media />` container for up to 3 levels.
             </Content>
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/128x128.png" size={48} />
+                <Image src="https://bulma.io/images/placeholders/128x128.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -240,7 +240,7 @@ Nest your `<media />` container for up to 3 levels.
             </Media>
             <Media>
               <Media.Item position="left">
-                <Image src="http://bulma.io/images/placeholders/96x96.png" size={48} />
+                <Image src="https://bulma.io/images/placeholders/96x96.png" size={48} />
               </Media.Item>
               <Media.Item position="center">
                 <Content>
@@ -258,7 +258,7 @@ Nest your `<media />` container for up to 3 levels.
         </Media>
         <Media renderAs="article">
           <Media.Item position="left">
-            <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
+            <Image src="https://bulma.io/images/placeholders/128x128.png" size={64} />
           </Media.Item>
           <Media.Item position="center">
             <Field>
