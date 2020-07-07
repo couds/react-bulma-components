@@ -108,8 +108,8 @@ import Content from 'react-bulma-components/lib/components/content';
       <h5>Fifth level</h5>
       <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
       <figure>
-        <img alt="256" src="http://bulma.io/images/placeholders/256x256.png" />
-        <img alt="other" src="http://bulma.io/images/placeholders/256x256.png" />
+        <img alt="256" src="https://bulma.io/images/placeholders/256x256.png" />
+        <img alt="other" src="https://bulma.io/images/placeholders/256x256.png" />
         <figcaption>
           Figure 1: Some beautiful placeholders
         </figcaption>
@@ -203,8 +203,8 @@ import Content from 'react-bulma-components/lib/components/content';
       <h5>Fifth level</h5>
       <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
       <figure>
-        <img alt="256" src="http://bulma.io/images/placeholders/256x256.png" />
-        <img alt="other" src="http://bulma.io/images/placeholders/256x256.png" />
+        <img alt="256" src="https://bulma.io/images/placeholders/256x256.png" />
+        <img alt="other" src="https://bulma.io/images/placeholders/256x256.png" />
         <figcaption>
           Figure 1: Some beautiful placeholders
         </figcaption>
