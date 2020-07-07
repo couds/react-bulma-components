@@ -143,7 +143,7 @@ The card container comprises of different elements.
       <Card.Content>
         <Media>
           <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="httsp://bulma.io/images/placeholders/128x128.png" />
+            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
           </Media.Item>
           <Media.Item>
             <Heading size={4}>John Smith</Heading>
