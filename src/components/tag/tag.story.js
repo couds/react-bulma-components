@@ -13,7 +13,7 @@ storiesOf('Tag', module)
       <Tag color="primary">Tag Text</Tag>
       <Tag color="success">Tag Text</Tag>
       <Tag color="danger">Tag Text</Tag>
-      <Tag color="warrning">Tag Text</Tag>
+      <Tag color="warning">Tag Text</Tag>
       <Tag color="info">Tag Text</Tag>
     </Tag.Group>
   ))
