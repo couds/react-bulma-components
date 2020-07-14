@@ -6,18 +6,15 @@ sidebar_label: Notification
 
 import Notification from 'react-bulma-components/lib/components/notification';
 import Button from 'react-bulma-components/lib/components/button';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Box from 'react-bulma-components/lib/components/box';
 import Section from 'react-bulma-components/lib/components/section';
 
 
 
 ---
-### **Import**
+## **Import**
 
 
-```shell
+```js
 import Notification from 'react-bulma-components/lib/components/notification';
 ```
 
@@ -31,20 +28,16 @@ import Notification from 'react-bulma-components/lib/components/notification';
 
 <Section>
 <Notification>
-   Lorem ipsum dolor sit amet, consectetur
-   adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,
-   consectetur adipiscing elit
- <Button remove />x
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,consectetur adipiscing elit
+   <Button remove />x
 </Notification>
 </Section>
 
 
 ```jsx
 <Notification>
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,
-          consectetur adipiscing elit
-    <Button remove />x
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit
+   <Button remove />x
 </Notification>
 ```
 
@@ -54,10 +47,8 @@ import Notification from 'react-bulma-components/lib/components/notification';
   
 <Section>
 <Notification color="success">
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,
-          consectetur adipiscing elit
-        <Button remove />
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
+   <Button remove />
 </Notification>
 </Section>
 
@@ -65,11 +56,9 @@ import Notification from 'react-bulma-components/lib/components/notification';
 
 ```jsx
 <Notification color="success">
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,
-          consectetur adipiscing elit
-    <Button remove />
-</Notification
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
+   <Button remove />
+</Notification>
 ```
 
 
@@ -77,20 +66,16 @@ import Notification from 'react-bulma-components/lib/components/notification';
   
 <Section>
 <Notification color="danger">
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,
-          consectetur adipiscing elit
-        <Button remove />
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
+   <Button remove />
 </Notification>
 </Section>
- 
+
 
 ```jsx   
 <Notification color="danger">
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,
-          consectetur adipiscing elit
-        <Button remove />
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
+   <Button remove />
 </Notification>
 ```
 

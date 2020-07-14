@@ -3,7 +3,7 @@ id: modal
 title: Modal
 sidebar_label: Modal
 ---
-import PropTypes from 'prop-types';
+
 import Modal from 'react-bulma-components/lib/components/modal';
 import Image from 'react-bulma-components/lib/components/image';
 import Media from 'react-bulma-components/lib/components/media';

@@ -16,9 +16,9 @@ The icon container is used to display icon fonts
 
 ---
 
-### **Import**
+## **Import**
 
-```shell
+```js
 import Icon from 'react-bulma-components/lib/components/icon';
 ```
 
@@ -29,34 +29,34 @@ import Icon from 'react-bulma-components/lib/components/icon';
 ## **Examples**
 
 <Section>
-<div>
-        <Icon icon="bars" color="info" />
-        <Icon icon="angle-down" />
-</div>
+ <div>
+    <Icon icon="bars" color="info" />
+    <Icon icon="angle-down" />
+ </div>
 </Section>
 
 
 ```jsx
 <div>
-        <Icon icon="bars" color="info" />
-        <Icon icon="angle-down" />
+  <Icon icon="bars" color="info" />
+  <Icon icon="angle-down" />
 </div>
 ```
 
 <Section>
-<div>
-        <Icon>
-          <span className="rbc rbc-bars" />
-        </Icon>
-</div>  
+ <div>
+   <Icon>
+     <span className="rbc rbc-bars" />
+   </Icon>
+ </div>  
 </Section>
 
 
 ```jsx
 <div>
-        <Icon>
-          <span className="rbc rbc-bars" />
-        </Icon>
+  <Icon>
+    <span className="rbc rbc-bars" />
+  </Icon>
 </div> 
 ```
 
@@ -65,3 +65,4 @@ import Icon from 'react-bulma-components/lib/components/icon';
 ## Official documentation
 
 https://bulma.io/documentation/elements/icon
+

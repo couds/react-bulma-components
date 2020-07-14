@@ -6,32 +6,47 @@ description: Create a react-bulma box
 hide_table_of_contents: false
 ---
 
-
-import Tag from 'react-bulma-components/lib/components/tag';
-import Box from 'react-bulma-components/lib/components/box';
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
-import Section from 'react-bulma-components/lib/components/section';
+import Tag from 'react-bulma-components/lib/components/tag'; 
+import Box from 'react-bulma-components/lib/components/box'; 
+import Media from 'react-bulma-components/lib/components/media'; 
+import Image from 'react-bulma-components/lib/components/image'; 
+import Content from 'react-bulma-components/lib/components/content'; 
+import Section from 'react-bulma-components/lib/components/section'; 
  
 
-The Box element is a white container that can be used to display other elements and media files.
+The Box element is a white container that can be used to display other elements and media files. 
 
 ---
-### **Import**
 
+## **Import**
 
-```shell
+``` js
 import Box from 'react-bulma-components/lib/components/box';
 ```
 
 ---
 
-
 ---
 
 ## **Example**
 
+<<<<<<< HEAD
+<Box>
+  <Media>
+    <Media.Item renderAs="figure" position="left">
+      <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/1280x960.png" />
+    </Media.Item>
+    <Media.Item>
+       <Content>
+         <p>
+           <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+           <br />
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+         </p>
+       </Content>
+    </Media.Item>
+  </Media>
+=======
 <Box      
       responsive={{
         mobile: {
@@ -79,12 +94,27 @@ import Box from 'react-bulma-components/lib/components/box';
           </Content>
         </Media.Item>
       </Media>
+>>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
 </Box>
-
-
 
 ``` jsx
 <Box>
+<<<<<<< HEAD
+  <Media>
+    <Media.Item renderAs="figure" position="left">
+      <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/1280x960.png" />
+    </Media.Item>
+    <Media.Item>
+       <Content>
+         <p>
+           <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+           <br />
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+         </p>
+       </Content>
+    </Media.Item>
+  </Media>
+=======
       <Media>
         <Media.Item renderAs="figure" position="left">
           <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
@@ -99,11 +129,11 @@ import Box from 'react-bulma-components/lib/components/box';
           </Content>
         </Media.Item>
       </Media>
+>>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
 </Box>
 ```
 
 ---
-
 
 ## Official documentation
 
