@@ -37,10 +37,12 @@ import Icon from 'react-bulma-components/lib/components/icon';
 
 
 ```jsx
-<div>
-  <Icon icon="bars" color="info" />
-  <Icon icon="angle-down" />
-</div>
+<Section>
+ <div>
+    <Icon icon="bars" color="info" />
+    <Icon icon="angle-down" />
+ </div>
+</Section>
 ```
 
 <Section>
@@ -53,11 +55,13 @@ import Icon from 'react-bulma-components/lib/components/icon';
 
 
 ```jsx
-<div>
-  <Icon>
-    <span className="rbc rbc-bars" />
-  </Icon>
-</div> 
+<Section>
+ <div>
+   <Icon>
+     <span className="rbc rbc-bars" />
+   </Icon>
+ </div>  
+</Section>
 ```
 
 ---
