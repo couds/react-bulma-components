@@ -23,204 +23,204 @@ import Columns from 'react-bulma-components/lib/components/columns'
 ## **Examples**
 
 <Section>
-<div>
-  <Box>
-    <Heading size={5} renderAs="p">
-      Mobile
-    </Heading>
-    <Columns breakpoint="mobile">
-      <Columns.Column>
-        <Hero color="success">First column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="info">Second column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Third column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Fourth column</Hero>
-      </Columns.Column>
-    </Columns>
-  </Box>
-  <Box>
-    <Heading size={5} renderAs="p">
-      Tablet
-    </Heading>
-    <Columns breakpoint="tablet">
-      <Columns.Column>
-        <Hero color="success">First column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="info">Second column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Third column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Fourth column</Hero>
-      </Columns.Column>
-    </Columns>
-  </Box>
-  <Box>
-    <Heading size={5} renderAs="p">
-      Desktop
-    </Heading>
-    <Columns breakpoint="desktop">
-      <Columns.Column>
-        <Hero color="success">First column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="info">Second column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Third column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Fourth column</Hero>
-      </Columns.Column>
-    </Columns>
-  </Box>
-</div>
+  <div>
+    <Box>
+      <Heading size={5} renderAs="p">
+        Mobile
+      </Heading>
+      <Columns breakpoint="mobile">
+        <Columns.Column>
+          <Hero color="success">First column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="info">Second column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Third column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Fourth column</Hero>
+        </Columns.Column>
+      </Columns>
+    </Box>
+    <Box>
+      <Heading size={5} renderAs="p">
+        Tablet
+      </Heading>
+      <Columns breakpoint="tablet">
+        <Columns.Column>
+          <Hero color="success">First column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="info">Second column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Third column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Fourth column</Hero>
+        </Columns.Column>
+      </Columns>
+    </Box>
+    <Box>
+      <Heading size={5} renderAs="p">
+        Desktop
+      </Heading>
+      <Columns breakpoint="desktop">
+        <Columns.Column>
+          <Hero color="success">First column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="info">Second column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Third column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Fourth column</Hero>
+        </Columns.Column>
+      </Columns>
+    </Box>
+  </div>
 </Section>
 
 ```jsx
-<div>
-  <Box>
-    <Heading size={5} renderAs="p">
-      Mobile
-    </Heading>
-    <Columns breakpoint="mobile">
-      <Columns.Column>
-        <Hero color="success">First column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="info">Second column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Third column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Fourth column</Hero>
-      </Columns.Column>
-    </Columns>
-  </Box>
-  <Box>
-    <Heading size={5} renderAs="p">
-      Tablet
-    </Heading>
-    <Columns breakpoint="tablet">
-      <Columns.Column>
-        <Hero color="success">First column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="info">Second column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Third column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Fourth column</Hero>
-      </Columns.Column>
-    </Columns>
-  </Box>
-  <Box>
-    <Heading size={5} renderAs="p">
-      Desktop
-    </Heading>
-    <Columns breakpoint="desktop">
-      <Columns.Column>
-        <Hero color="success">First column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="info">Second column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Third column</Hero>
-      </Columns.Column>
-      <Columns.Column>
-        <Hero color="warning">Fourth column</Hero>
-      </Columns.Column>
-    </Columns>
-  </Box>
-</div>
+<Section>
+  <div>
+    <Box>
+      <Heading size={5} renderAs="p">
+        Mobile
+      </Heading>
+      <Columns breakpoint="mobile">
+        <Columns.Column>
+          <Hero color="success">First column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="info">Second column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Third column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Fourth column</Hero>
+        </Columns.Column>
+      </Columns>
+    </Box>
+    <Box>
+      <Heading size={5} renderAs="p">
+        Tablet
+      </Heading>
+      <Columns breakpoint="tablet">
+        <Columns.Column>
+          <Hero color="success">First column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="info">Second column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Third column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Fourth column</Hero>
+        </Columns.Column>
+      </Columns>
+    </Box>
+    <Box>
+      <Heading size={5} renderAs="p">
+        Desktop
+      </Heading>
+      <Columns breakpoint="desktop">
+        <Columns.Column>
+          <Hero color="success">First column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="info">Second column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Third column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Fourth column</Hero>
+        </Columns.Column>
+      </Columns>
+    </Box>
+  </div>
+</Section>
 ```
 
 <Section>
-<Columns breakpoint="mobile">
-      <Columns.Column
-        mobile={{
-          size: 'three-quarters',
+  <Columns breakpoint="mobile">
+    <Columns.Column
+      mobile={{
+        size: 'three-quarters',
         }}
-        tablet={{
-          size: 'two-thirds',
+      tablet={{
+        size: 'two-thirds',
         }}
-        desktop={{
-          size: 'half',
+      desktop={{
+        size: 'half',
         }}
-        widescreen={{
-          size: 'one-third',
+      widescreen={{
+        size: 'one-third',
         }}
-        fullhd={{
-          size: 'one-quarter',
-        }}
-      >
-        <Hero color="info">
-          <p>
-          is-three-quarters-mobile
-          <br />
-          is-two-thirds-tablet
-          <br />
-          is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
-          </p>
-        </Hero>
-      </Columns.Column>
-      <Columns.Column className="column">
-        <Hero color="info">1</Hero>
-      </Columns.Column>
-      <Columns.Column className="column">
-        <Hero color="warning">1</Hero>
-      </Columns.Column>
-</Columns>
+      fullhd={{
+        size: 'one-quarter',
+        }}>
+      <Hero color="info">
+        <p>
+         is-three-quarters-mobile
+         <br />
+         is-two-thirds-tablet
+         <br />
+         is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
+        </p>
+      </Hero>
+    </Columns.Column>
+    <Columns.Column className="column">
+      <Hero color="info">1</Hero>
+    </Columns.Column>
+    <Columns.Column className="column">
+      <Hero color="warning">1</Hero>
+    </Columns.Column>
+  </Columns>
 </Section>
 
 ```jsx
 <Section>
-<Columns breakpoint="mobile">
-      <Columns.Column
-        mobile={{
-          size: 'three-quarters',
+  <Columns breakpoint="mobile">
+    <Columns.Column
+      mobile={{
+        size: 'three-quarters',
         }}
-        tablet={{
-          size: 'two-thirds',
+      tablet={{
+        size: 'two-thirds',
         }}
-        desktop={{
-          size: 'half',
+      desktop={{
+        size: 'half',
         }}
-        widescreen={{
-          size: 'one-third',
+      widescreen={{
+        size: 'one-third',
         }}
-        fullhd={{
-          size: 'one-quarter',
-        }}
-      >
-        <Hero color="info">
-          <p>
-          is-three-quarters-mobile
-          <br />
-          is-two-thirds-tablet
-          <br />
-          is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
-          </p>
-        </Hero>
-      </Columns.Column>
-      <Columns.Column className="column">
-        <Hero color="info">1</Hero>
-      </Columns.Column>
-      <Columns.Column className="column">
-        <Hero color="warning">1</Hero>
-      </Columns.Column>
-</Columns>
+      fullhd={{
+        size: 'one-quarter',
+        }}>
+      <Hero color="info">
+        <p>
+         is-three-quarters-mobile
+         <br />
+         is-two-thirds-tablet
+         <br />
+         is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
+        </p>
+      </Hero>
+    </Columns.Column>
+    <Columns.Column className="column">
+      <Hero color="info">1</Hero>
+    </Columns.Column>
+    <Columns.Column className="column">
+      <Hero color="warning">1</Hero>
+    </Columns.Column>
+  </Columns>
 </Section>
 ```
 
