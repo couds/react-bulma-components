@@ -60,6 +60,7 @@ import Navbar from 'react-bulma-components/lib/components/navbar';
 
 
 ```jsx
+<Section>
   <Navbar>
     <Navbar.Brand>
       <Navbar.Item renderAs="a" href="#">
@@ -93,6 +94,7 @@ import Navbar from 'react-bulma-components/lib/components/navbar';
       </Navbar.Container>
     </Navbar.Menu>
   </Navbar>
+</Section>
 ```
 
 
