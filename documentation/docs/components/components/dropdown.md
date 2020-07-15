@@ -26,13 +26,6 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 
   * `<Dropdown.Divider />` : Divides your dropdown item with a line
 
-
-### Dropdown Modifiers
-
-* `hoverable`
-
-* `color`
-
 ---
 
 
@@ -62,6 +55,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 
 
 ```jsx
+<Section>
   <Dropdown>
     <Dropdown.Item value="item" >
       Dropdown item
@@ -80,6 +74,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
       With divider
     </Dropdown.Item>
   </Dropdown>
+</Section>
 ```
 
 
@@ -108,6 +103,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 
 
 ```jsx
+<Section>
   <Dropdown hoverable value="item">
     <Dropdown.Item value="item" >
       Dropdown item
@@ -126,6 +122,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
       With divider
     </Dropdown.Item>
   </Dropdown>
+</Section>
 ```
 
 ### **Alignment**
@@ -161,6 +158,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 
 
 ```jsx
+<Section>
   <div>
     <Container>
       <Section size="large">
@@ -186,6 +184,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
       </Section>
     </Container>
   </div>
+</Section>
 ```
 
 
@@ -262,6 +261,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 
 
 ```jsx
+<Section>
   <Dropdown hoverable value="item" color="info">
     <Dropdown.Item value="item" >
       Dropdown item
@@ -280,6 +280,7 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
       With divider
     </Dropdown.Item>
   </Dropdown>
+</Section>
 ```
 
 ---
