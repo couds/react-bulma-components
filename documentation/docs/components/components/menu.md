@@ -75,6 +75,7 @@ import Menu from 'react-bulma-components/lib/components/menu';
 
 
 ```jsx
+<Section>
   <Menu>
     <Menu.List title="General">
       <Menu.List.Item>
@@ -123,6 +124,7 @@ import Menu from 'react-bulma-components/lib/components/menu';
       </Menu.List.Item>
     </Menu.List>
   </Menu>
+</Section>
 ```
 
 ---
