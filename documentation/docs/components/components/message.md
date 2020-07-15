@@ -35,6 +35,7 @@ import Message from 'react-bulma-components/lib/components/message';
 
 
 ```jsx
+<Section>
   <Message>
     <Message.Header>
       Title
@@ -44,6 +45,7 @@ import Message from 'react-bulma-components/lib/components/message';
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
     </Message.Body>
   </Message>
+</Section>
 ```
 
 ### **With Colors "Info"**
@@ -62,6 +64,7 @@ import Message from 'react-bulma-components/lib/components/message';
 
 
 ```jsx
+<Section>
   <Message color="info">
     <Message.Header>
       Title
@@ -71,6 +74,7 @@ import Message from 'react-bulma-components/lib/components/message';
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
     </Message.Body>
   </Message>
+</Section>
 ```
 
 
@@ -91,6 +95,7 @@ import Message from 'react-bulma-components/lib/components/message';
 
 
 ```jsx
+<Section>
   <Message color="danger">
     <Message.Header>
        Title
@@ -100,6 +105,7 @@ import Message from 'react-bulma-components/lib/components/message';
        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
     </Message.Body>
   </Message>
+</Section>
 ```
 
 ---
