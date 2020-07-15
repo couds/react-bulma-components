@@ -38,34 +38,34 @@ Variable name    |    Type                                    | Default  values
 <div>
   <Section>
     <Notification color="info">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
   <Section>
     <Notification color="primary">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
   <Section>
     <Notification color="danger">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
   <Section>
     <Notification color="warning">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
 </div>
@@ -74,34 +74,34 @@ Variable name    |    Type                                    | Default  values
 <div>
   <Section>
     <Notification color="info">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
   <Section>
     <Notification color="primary">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
   <Section>
     <Notification color="danger">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
   <Section>
     <Notification color="warning">
-    <Heading>Section</Heading>
-    <Heading subtitle>
-    A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-    </Heading>
+      <Heading>Section</Heading>
+      <Heading subtitle>
+        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+      </Heading>
     </Notification>
   </Section>
 </div>
@@ -118,30 +118,30 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
   <Section size="medium">
     <Container>
       <Notification color="info">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-       A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="medium">
     <Container>
       <Notification color="primary">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="medium">
     <Container>
       <Notification color="danger">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
@@ -154,35 +154,34 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
   <Section size="medium">
     <Container>
       <Notification color="info">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-       A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="medium">
     <Container>
       <Notification color="primary">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="medium">
     <Container>
       <Notification color="danger">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
 </div>
-
 ```
 
 **Large Sections**
@@ -191,30 +190,30 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
   <Section size="large">
     <Container>
       <Notification color="info">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-       A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="large">
     <Container>
       <Notification color="primary">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="large">
     <Container>
       <Notification color="danger">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
@@ -223,40 +222,38 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
 
 
 ```jsx
-
 <div>
   <Section size="large">
     <Container>
       <Notification color="info">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-       A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="large">
     <Container>
       <Notification color="primary">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
   <Section size="large">
     <Container>
       <Notification color="danger">
-      <Heading>Section</Heading>
-      <Heading subtitle>
-      A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
-      </Heading>
+        <Heading>Section</Heading>
+        <Heading subtitle>
+          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        </Heading>
       </Notification>
     </Container>
   </Section>
-</div>   
-   
+</div>  
 ```
 
 --- 

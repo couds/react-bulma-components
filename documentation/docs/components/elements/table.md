@@ -327,6 +327,7 @@ import Table from 'react-bulma-components/lib/components/table';
 
 
 ```jsx
+<Section>
   <Table>
     <thead>
       <tr>
@@ -625,6 +626,7 @@ import Table from 'react-bulma-components/lib/components/table';
       </tr>
     </tbody>
   </Table>
+</Section>
 ```
 
 ---

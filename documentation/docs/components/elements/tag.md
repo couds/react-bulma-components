@@ -22,16 +22,16 @@ import Tag from 'react-bulma-components/lib/components/tag';
 ## **Example**
 
 <Section>
- <Tag>
+  <Tag>
     Tag Text
- </Tag> 
+  </Tag> 
 </Section>
 
 ``` jsx
 <Section>
- <Tag>
+  <Tag>
     Tag Text
- </Tag> 
+  </Tag> 
 </Section>
 ```
 
@@ -91,8 +91,8 @@ import Tag from 'react-bulma-components/lib/components/tag';
     <Tag color="primary">
        Tag Text
     </Tag>
-    </Tag.Group>
-    <Tag.Group gapless>
+  </Tag.Group>
+  <Tag.Group gapless>
       <Tag color="danger">
         Delete
       </Tag>
@@ -110,8 +110,8 @@ import Tag from 'react-bulma-components/lib/components/tag';
     <Tag color="primary">
        Tag Text
     </Tag>
-    </Tag.Group>
-    <Tag.Group gapless>
+  </Tag.Group>
+  <Tag.Group gapless>
       <Tag color="danger">
         Delete
       </Tag>
@@ -125,28 +125,28 @@ import Tag from 'react-bulma-components/lib/components/tag';
   
 <Section>
   <Tag.Group gapless>
-      <Tag color="dark">
-        npm
-      </Tag>
-      <Tag color="info">
-        V 5.3
-      </Tag>
-      </Tag.Group>
-      <Tag.Group gapless>
-      <Tag color="dark">
-        Build
-      </Tag>
-      <Tag color="success">
-        Pass
-      </Tag>
-    </Tag.Group>
-    <Tag.Group gapless>
-      <Tag color="dark">
-        Chat
-      </Tag>
-      <Tag color="primary">
-        Slack
-      </Tag>
+    <Tag color="dark">
+      npm
+    </Tag>
+    <Tag color="info">
+      V 5.3
+    </Tag>
+  </Tag.Group>
+  <Tag.Group gapless>
+    <Tag color="dark">
+      Build
+    </Tag>
+    <Tag color="success">
+      Pass
+    </Tag>
+  </Tag.Group>
+  <Tag.Group gapless>
+    <Tag color="dark">
+      Chat
+    </Tag>
+    <Tag color="primary">
+      Slack
+    </Tag>
   </Tag.Group>
 </Section>
 
@@ -154,30 +154,31 @@ import Tag from 'react-bulma-components/lib/components/tag';
 ```jsx
 <Section>
   <Tag.Group gapless>
-      <Tag color="dark">
-        npm
-      </Tag>
-      <Tag color="info">
-        V 5.3
-      </Tag>
-      </Tag.Group>
-      <Tag.Group gapless>
-      <Tag color="dark">
-        Build
-      </Tag>
-      <Tag color="success">
-        Pass
-      </Tag>
-    </Tag.Group>
-    <Tag.Group gapless>
-      <Tag color="dark">
-        Chat
-      </Tag>
-      <Tag color="primary">
-        Slack
-      </Tag>
+    <Tag color="dark">
+      npm
+    </Tag>
+    <Tag color="info">
+      V 5.3
+    </Tag>
+  </Tag.Group>
+  <Tag.Group gapless>
+    <Tag color="dark">
+      Build
+    </Tag>
+    <Tag color="success">
+      Pass
+    </Tag>
+  </Tag.Group>
+  <Tag.Group gapless>
+    <Tag color="dark">
+      Chat
+    </Tag>
+    <Tag color="primary">
+      Slack
+    </Tag>
   </Tag.Group>
 </Section>
+
 ```
 
 

@@ -49,18 +49,9 @@ Wrap your contents with the `<Tile />` tag to create 2d tiles.
                 <Heading>Vertical...</Heading>
                 <Heading subtitle>Top tile</Heading>
               </Tile>
-<<<<<<< HEAD
               <Tile renderAs="article" kind="child" notification color="warning">
                 <Heading>Tiles...</Heading>
                 <Heading subtitle>Bottom Tile...</Heading>
-=======
-              <Tile kind="parent">
-                <Tile renderAs="article" kind="child" notification color="info">
-                  <Heading>Middle Tile...</Heading>
-                  <Heading subtitle>With image Tile...</Heading>
-                  <Image size="4by3" src="https://bulma.io/images/placeholders/640x480.png" />
-                </Tile>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
               </Tile>
             </Tile>
             <Tile kind="parent">
@@ -107,18 +98,9 @@ Wrap your contents with the `<Tile />` tag to create 2d tiles.
                 <Heading>Vertical...</Heading>
                 <Heading subtitle>Top tile</Heading>
               </Tile>
-<<<<<<< HEAD
               <Tile renderAs="article" kind="child" notification color="warning">
                 <Heading>Tiles...</Heading>
                 <Heading subtitle>Bottom Tile...</Heading>
-=======
-              <Tile kind="parent">
-                <Tile renderAs="article" kind="child" notification color="info">
-                  <Heading>Middle Tile...</Heading>
-                  <Heading subtitle>With image Tile...</Heading>
-                  <Image size="4by3" src="https://bulma.io/images/placeholders/640x480.png" />
-                </Tile>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
               </Tile>
             </Tile>
             <Tile kind="parent">
