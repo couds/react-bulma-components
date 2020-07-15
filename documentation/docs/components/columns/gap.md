@@ -20,86 +20,88 @@ import Columns from 'react-bulma-components/lib/components/columns'
 
 
 ## **Examples**
+
 <Section>
-<Columns
-      variableGap={{
-        mobile: 1,
-        tablet: 0,
-        desktop: 3,
-        widescreen: 8,
-        fullhd: 2,
-      }}
-    >
-  <Columns.Column size={3}>
-    <Hero color="dark">Size 1</Hero>
-  </Columns.Column>
-  <Columns.Column size={3}>
-    <Hero color="light">Size 1</Hero>
-  </Columns.Column>
-  <Columns.Column size={3}>
-    <Hero color="white">Size 1</Hero>
-  </Columns.Column>
-  <Columns.Column size={3}>
-    <Hero color="danger">Size 1</Hero>
-  </Columns.Column>
-</Columns>
+  <Columns
+    variableGap={{
+      mobile: 1,
+      tablet: 0,
+      desktop: 3,
+      widescreen: 8,
+      fullhd: 2,
+    }}>
+    <Columns.Column size={3}>
+      <Hero color="dark">Size 1</Hero>
+    </Columns.Column>
+    <Columns.Column size={3}>
+      <Hero color="light">Size 1</Hero>
+    </Columns.Column>
+    <Columns.Column size={3}>
+      <Hero color="white">Size 1</Hero>
+    </Columns.Column>
+    <Columns.Column size={3}>
+      <Hero color="danger">Size 1</Hero>
+    </Columns.Column>
+  </Columns>
 </Section>
 
 ```jsx
-<Columns
-      variableGap={{
-        mobile: 1,
-        tablet: 0,
-        desktop: 3,
-        widescreen: 8,
-        fullhd: 2,
-      }}
-    >
-  <Columns.Column size={3}>
-    <Hero color="dark">Size 1</Hero>
-  </Columns.Column>
-  <Columns.Column size={3}>
-    <Hero color="light">Size 1</Hero>
-  </Columns.Column>
-  <Columns.Column size={3}>
-    <Hero color="white">Size 1</Hero>
-  </Columns.Column>
-  <Columns.Column size={3}>
-    <Hero color="danger">Size 1</Hero>
-  </Columns.Column>
-</Columns>
-
+<Section>
+  <Columns
+    variableGap={{
+      mobile: 1,
+      tablet: 0,
+      desktop: 3,
+      widescreen: 8,
+      fullhd: 2,
+    }}>
+    <Columns.Column size={3}>
+      <Hero color="dark">Size 1</Hero>
+    </Columns.Column>
+    <Columns.Column size={3}>
+      <Hero color="light">Size 1</Hero>
+    </Columns.Column>
+    <Columns.Column size={3}>
+      <Hero color="white">Size 1</Hero>
+    </Columns.Column>
+    <Columns.Column size={3}>
+      <Hero color="danger">Size 1</Hero>
+    </Columns.Column>
+  </Columns>
+</Section>
 ```
 
 
 ### **Gapless**
 
 <Section>
-<Columns gapless>
-  <Columns.Column>
-     <Hero color="success">First Column</Hero>
-  </Columns.Column>
-  <Columns.Column>
-     <Hero color="info">Middle Column</Hero>
-  </Columns.Column>
-  <Columns.Column>
-     <Hero color="warning">Last Column</Hero>
-  </Columns.Column>
-</Columns>
+  <Columns gapless>
+    <Columns.Column>
+      <Hero color="success">First Column</Hero>
+    </Columns.Column>
+    <Columns.Column>
+      <Hero color="info">Middle Column</Hero>
+    </Columns.Column>
+    <Columns.Column>
+      <Hero color="warning">Last Column</Hero>
+    </Columns.Column>
+  </Columns>
 </Section>
 
 ```jsx
-<Columns gapless>
-  <Columns.Column>
-     <Hero color="success">First Column</Hero>
-  </Columns.Column>
-  <Columns.Column>
-     <Hero color="info">Middle Column</Hero>
-  </Columns.Column>
-  <Columns.Column>
-     <Hero color="warning">Last Column</Hero>
-  </Columns.Column>
-</Columns>
+<Section>
+  <Columns gapless>
+    <Columns.Column>
+      <Hero color="success">First Column</Hero>
+    </Columns.Column>
+    <Columns.Column>
+      <Hero color="info">Middle Column</Hero>
+    </Columns.Column>
+    <Columns.Column>
+      <Hero color="warning">Last Column</Hero>
+    </Columns.Column>
+  </Columns>
+</Section>
 ```
 
 ---
