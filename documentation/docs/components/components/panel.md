@@ -80,6 +80,7 @@ import Panel from 'react-bulma-components/lib/components/panel';
 
 
 ```jsx
+<Section>
   <Panel>
     <Panel.Header>
       repositories
@@ -130,6 +131,7 @@ import Panel from 'react-bulma-components/lib/components/panel';
       </Button>
     </Panel.Block>
   </Panel>
+</Section>
 ```
 ---
 
