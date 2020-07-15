@@ -70,12 +70,14 @@ Add margins to both Container sides by using the ```fluid``` modifier.
 </Box>
 
 ```jsx
-  <Container fluid>
+<Box>
+  <Container fluid="true">
     <Notification color="danger">
       <Heading size={5} >Fluid</Heading>
       <Heading subtitle >Container</Heading>
     </Notification>
   </Container>
+</Box>
 ```
 
 ### Container with Breakpoints
