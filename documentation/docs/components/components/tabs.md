@@ -38,6 +38,7 @@ import Tabs from 'react-bulma-components/lib/components/tabs';
 
 
 ```jsx
+<Section>
   <Tabs>
     <Tabs.Tab active>
       Test
@@ -52,6 +53,7 @@ import Tabs from 'react-bulma-components/lib/components/tabs';
       Test
     </Tabs.Tab>
   </Tabs>
+</Section>
 ```
 
 
