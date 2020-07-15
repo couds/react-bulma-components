@@ -19,39 +19,39 @@ import Columns from 'react-bulma-components/lib/components/columns'
 ## **Example**
 
 <Section>
-<Columns vCentered>
-  <Columns.Column size={8}>
-    <Hero color="primary">
-      <p>First column</p>
-    </Hero>
-  </Columns.Column>
-  <Columns.Column>
-    <Hero color="primary">
-      <p>
-      Second column with more content. This is so you can see the vertical
-      alignment.
-      </p>
-    </Hero>
-  </Columns.Column>
-</Columns>
+  <Columns vCentered>
+    <Columns.Column size={8}>
+      <Hero color="primary">
+        <p>First column</p>
+      </Hero>
+    </Columns.Column>
+    <Columns.Column>
+      <Hero color="primary">
+        <p>
+        Second column with more content. This is so you can see the vertical alignment.
+        </p>
+      </Hero>
+    </Columns.Column>
+  </Columns>
 </Section>
 
 ```jsx
-<Columns vCentered>
-  <Columns.Column size={8}>
-    <Hero color="primary">
-      <p>First column</p>
-    </Hero>
-  </Columns.Column>
-  <Columns.Column>
-    <Hero color="primary">
-      <p>
-      Second column with more content. This is so you can see the vertical
-      alignment.
-      </p>
-    </Hero>
-  </Columns.Column>
-</Columns>
+<Section>
+  <Columns vCentered>
+    <Columns.Column size={8}>
+      <Hero color="primary">
+        <p>First column</p>
+      </Hero>
+    </Columns.Column>
+    <Columns.Column>
+      <Hero color="primary">
+        <p>
+        Second column with more content. This is so you can see the vertical alignment.
+        </p>
+      </Hero>
+    </Columns.Column>
+  </Columns>
+</Section>
 ```
 ---
 
