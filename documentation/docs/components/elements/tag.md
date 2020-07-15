@@ -28,9 +28,11 @@ import Tag from 'react-bulma-components/lib/components/tag';
 </Section>
 
 ``` jsx
+<Section>
  <Tag>
     Tag Text
  </Tag> 
+</Section>
 ```
 
 ### **Grouptags**
@@ -58,6 +60,7 @@ import Tag from 'react-bulma-components/lib/components/tag';
 
 
 ```jsx
+<Section>
   <Tag.Group>
     <Tag color="primary">
       Tag Text
@@ -75,6 +78,7 @@ import Tag from 'react-bulma-components/lib/components/tag';
       Tag Text
     </Tag>
   </Tag.Group>
+</Section>
 ```
 
 ### **Grouptags without Gaps**
@@ -98,6 +102,7 @@ import Tag from 'react-bulma-components/lib/components/tag';
 
 
 ```jsx
+<Section>
   <Tag.Group gapless>
     <Tag>
       Tag Text
@@ -112,6 +117,7 @@ import Tag from 'react-bulma-components/lib/components/tag';
       </Tag>
       <Tag remove renderAs="a" />
   </Tag.Group>
+</Section>
 ```
 
   
@@ -146,6 +152,7 @@ import Tag from 'react-bulma-components/lib/components/tag';
 
 
 ```jsx
+<Section>
   <Tag.Group gapless>
       <Tag color="dark">
         npm
@@ -170,6 +177,7 @@ import Tag from 'react-bulma-components/lib/components/tag';
         Slack
       </Tag>
   </Tag.Group>
+</Section>
 ```
 
 
@@ -188,12 +196,14 @@ import Tag from 'react-bulma-components/lib/components/tag';
 
 
 ```jsx
+<Section>
   <Tag.Group>
     <Tag rounded>
       Rounded
     </Tag>
     <Tag remove />
-  </Tag.Group>
+  </Tag.Group> 
+</Section>
 ```
 
 ---
