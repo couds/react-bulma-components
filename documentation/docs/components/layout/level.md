@@ -127,35 +127,36 @@ How to create a ```<Level />``` component.
 
 
 ```jsx
- <Level renderAs="nav">
-  <Level.Side align="left">
-    <Level.Item>
+<Box>
+  <Level renderAs="nav">
+    <Level.Side align="left">
+      <Level.Item>
         <Heading size={5} subtitle>
-        <strong>123</strong> posts
+          <strong>123</strong> posts
         </Heading>
-    </Level.Item>
-    <Level.Item>
-      <Field kind="addons">
-        <Control>
-          <Input placeholder="Find a post" />
-        </Control>
-        <Control>
-        <Button renderAs="button">
-          Search
-        </Button>
-        </Control>
-      </Field>
-    </Level.Item>
-  </Level.Side>
-  <Level.Side align="right">
-    <Level.Item><strong>All</strong></Level.Item>
-    <Level.Item><a>Published</a></Level.Item>
-    <Level.Item><a>Drafts</a></Level.Item>
-    <Level.Item><a>Deleted</a></Level.Item>
-    <Level.Item><Button renderAs="a" color="success">New</Button></Level.Item>
-  </Level.Side>
- </Level>
-
+      </Level.Item>
+      <Level.Item>
+        <Field kind="addons">
+          <Control>
+            <Input placeholder="Find a post" />
+          </Control>
+          <Control>
+          <Button renderAs="button">
+            Search
+          </Button>
+          </Control>
+        </Field>
+      </Level.Item>
+    </Level.Side>
+    <Level.Side align="right">
+      <Level.Item><strong>All</strong></Level.Item>
+      <Level.Item><a>Published</a></Level.Item>
+      <Level.Item><a>Drafts</a></Level.Item>
+      <Level.Item><a>Deleted</a></Level.Item>
+      <Level.Item><Button renderAs="a" color="success">New</Button></Level.Item>
+    </Level.Side>
+  </Level>
+</Box>
 ```             
 
 ###  **Centered Level**
@@ -210,14 +211,15 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
 
 
 ```jsx
+<Box>
   <Level renderAs="nav">
     <Level.Item>
-      div>
+      <div>
         <Heading renderAs="p" heading>
-        Tweets
+          Tweets
         </Heading>
         <Heading renderAs="p">
-        3,210
+          3,210
         </Heading>
       </div>
     </Level.Item>
@@ -252,6 +254,7 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
       </div>
     </Level.Item>
  </Level>
+</Box>
 ```
 
 ### **With Breakpoint**
@@ -305,7 +308,8 @@ Add Breakpoints to your level component by using the `breakpoint` modifier.
 
 
 ``` jsx
-  <Level renderAs="nav">
+<Box>
+  <Level renderAs="nav" breakpoint='mobile'>
     <Level.Item>
       <div>
         <Heading renderAs="p" heading>
@@ -347,6 +351,7 @@ Add Breakpoints to your level component by using the `breakpoint` modifier.
       </div>
     </Level.Item>
   </Level>
+</Box>
 ```
 
 ---
