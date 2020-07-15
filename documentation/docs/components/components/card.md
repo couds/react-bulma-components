@@ -48,7 +48,6 @@ The card container comprises of different elements.
 ## **Examples**
 
 <Section>
-<<<<<<< HEAD
   <Card>
     <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
     <Card.Content>
@@ -70,35 +69,33 @@ The card container comprises of different elements.
       </Content>
     </Card.Content>
   </Card>
-=======
-<Card>
-      <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
-      <Card.Content>
-        <Media>
-          <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
-          </Media.Item>
-          <Media.Item>
-            <Heading size={4}>John Smith</Heading>
-            <Heading subtitle size={6}>@johnsmith</Heading>
-          </Media.Item>
-        </Media>
-        <Content>
+  <Card>
+    <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
+    <Card.Content>
+      <Media>
+        <Media.Item renderAs="figure" position="left">
+          <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Media.Item>
+        <Media.Item>
+          <Heading size={4}>John Smith</Heading>
+          <Heading subtitle size={6}>@johnsmith</Heading>
+        </Media.Item>
+      </Media>
+      <Content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
           <a href="#1">#css</a> <a href="#2">#responsive</a>
           <br />
           <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-        </Content>
-      </Card.Content>
-</Card>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
+      </Content>
+    </Card.Content>
+  </Card>
 </Section>
 
 
 
 ```jsx
-<<<<<<< HEAD
+<Section>
   <Card>
     <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
     <Card.Content>
@@ -120,37 +117,34 @@ The card container comprises of different elements.
       </Content>
     </Card.Content>
   </Card>
-=======
-<Card>
-      <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
-      <Card.Content>
-        <Media>
-          <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
-          </Media.Item>
-          <Media.Item>
-            <Heading size={4}>John Smith</Heading>
-            <Heading subtitle size={6}>@johnsmith</Heading>
-          </Media.Item>
-        </Media>
-        <Content>
+  <Card>
+    <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
+    <Card.Content>
+      <Media>
+        <Media.Item renderAs="figure" position="left">
+          <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Media.Item>
+        <Media.Item>
+          <Heading size={4}>John Smith</Heading>
+          <Heading subtitle size={6}>@johnsmith</Heading>
+        </Media.Item>
+      </Media>
+      <Content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
           <a href="#1">#css</a> <a href="#2">#responsive</a>
           <br />
           <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-        </Content>
-      </Card.Content>
-</Card>
-
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
+      </Content>
+    </Card.Content>
+  </Card>
+</Section>
 ```
 
 
 ### **Card with footer actions**
 
 <Section>
-<<<<<<< HEAD
   <Card>
     <Card.Header>
       <Card.Header.Title>Title</Card.Header.Title>
@@ -179,41 +173,38 @@ The card container comprises of different elements.
       <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
     </Card.Footer>
   </Card>
-=======
-<Card>
-      <Card.Header>
-        <Card.Header.Title>Title</Card.Header.Title>
-      </Card.Header>
-      <Card.Content>
-        <Media>
-          <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
-          </Media.Item>
-          <Media.Item>
+  <Card>
+    <Card.Header>
+      <Card.Header.Title>Title</Card.Header.Title>
+    </Card.Header>
+    <Card.Content>
+      <Media>
+        <Media.Item renderAs="figure" position="left">
+          <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Media.Item>
+        <Media.Item>
             <Heading size={4}>John Smith</Heading>
             <Heading subtitle size={6}>@johnsmith</Heading>
-          </Media.Item>
-        </Media>
-        <Content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-          <a href="#1">#css</a> <a href="#2">#responsive</a>
-          <br />
-          <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-        </Content>
-      </Card.Content>
-      <Card.Footer>
-        <Card.Footer.Item renderAs="a" href="#Yes">Yes</Card.Footer.Item>
-        <Card.Footer.Item renderAs="a" href="#No">No</Card.Footer.Item>
-        <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
-      </Card.Footer>
-</Card>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
+        </Media.Item>
+      </Media>
+      <Content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+        <a href="#1">#css</a> <a href="#2">#responsive</a>
+        <br />
+        <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </Content>
+    </Card.Content>
+    <Card.Footer>
+      <Card.Footer.Item renderAs="a" href="#Yes">Yes</Card.Footer.Item>
+      <Card.Footer.Item renderAs="a" href="#No">No</Card.Footer.Item>
+      <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
+    </Card.Footer>
+  </Card>
 </Section>
 
 
 ```jsx
-<<<<<<< HEAD
+<Section>
   <Card>
     <Card.Header>
       <Card.Header.Title>Title</Card.Header.Title>
@@ -242,36 +233,34 @@ The card container comprises of different elements.
       <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
     </Card.Footer>
   </Card>
-=======
-<Card>
-      <Card.Header>
-        <Card.Header.Title>Title</Card.Header.Title>
-      </Card.Header>
-      <Card.Content>
-        <Media>
-          <Media.Item renderAs="figure" position="left">
-            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
-          </Media.Item>
-          <Media.Item>
+  <Card>
+    <Card.Header>
+      <Card.Header.Title>Title</Card.Header.Title>
+    </Card.Header>
+    <Card.Content>
+      <Media>
+        <Media.Item renderAs="figure" position="left">
+          <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Media.Item>
+        <Media.Item>
             <Heading size={4}>John Smith</Heading>
             <Heading subtitle size={6}>@johnsmith</Heading>
-          </Media.Item>
-        </Media>
-        <Content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-          <a href="#1">#css</a> <a href="#2">#responsive</a>
-          <br />
-          <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-        </Content>
-      </Card.Content>
-      <Card.Footer>
-        <Card.Footer.Item renderAs="a" href="#Yes">Yes</Card.Footer.Item>
-        <Card.Footer.Item renderAs="a" href="#No">No</Card.Footer.Item>
-        <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
-      </Card.Footer>
-</Card>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
+        </Media.Item>
+      </Media>
+      <Content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+        <a href="#1">#css</a> <a href="#2">#responsive</a>
+        <br />
+        <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </Content>
+    </Card.Content>
+    <Card.Footer>
+      <Card.Footer.Item renderAs="a" href="#Yes">Yes</Card.Footer.Item>
+      <Card.Footer.Item renderAs="a" href="#No">No</Card.Footer.Item>
+      <Card.Footer.Item renderAs="a" href="#Maybe">Maybe</Card.Footer.Item>
+    </Card.Footer>
+  </Card>
+</Section>
 ```
 
 ---
