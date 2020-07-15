@@ -30,7 +30,6 @@ import Box from 'react-bulma-components/lib/components/box';
 
 ## **Example**
 
-<<<<<<< HEAD
 <Box>
   <Media>
     <Media.Item renderAs="figure" position="left">
@@ -46,60 +45,57 @@ import Box from 'react-bulma-components/lib/components/box';
        </Content>
     </Media.Item>
   </Media>
-=======
 <Box      
-      responsive={{
-        mobile: {
-          display: {
-            value: 'block'
-          },
+  responsive={{
+    mobile: {
+      display: {
+        value: 'block'
         },
-        tablet: {
-          display: {
-            value: 'flex'
-          },
+      },
+    tablet: {
+      display: {
+        value: 'flex'
         },
-        desktop: {
-          display: {
-            value: 'inline-flex',
-            only: true,
-          },
+      },
+    desktop: {
+      display: {
+        value: 'inline-flex',
+        only: true,
         },
-        widescreen: {
-          display: {
-            value: 'inline-block',
-          },
+      },
+    widescreen: {
+      display: {
+        value: 'inline-block',
         },
-      }}
-      hide={{
-        tablet: {
-          hide: true,
-          only: true,
-        },
-        widescreen: {
-          hide: true,
-        },
-      }}>
-      <Media>
-        <Media.Item renderAs="figure" position="left">
-          <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
-        </Media.Item>
-        <Media.Item>
-          <Content>
-            <p>
-              <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-              <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-            </p>
-          </Content>
-        </Media.Item>
-      </Media>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
+      },
+    }}
+  hide={{
+    tablet: {
+      hide: true,
+      only: true,
+      },
+    widescreen: {
+      hide: true,
+      },
+    }}>
+  <Media>
+    <Media.Item renderAs="figure" position="left">
+      <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
+    </Media.Item>
+    <Media.Item>
+      <Content>
+        <p>
+          <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+        </p>
+      </Content>
+    </Media.Item>
+  </Media>
 </Box>
 
 ``` jsx
 <Box>
-<<<<<<< HEAD
   <Media>
     <Media.Item renderAs="figure" position="left">
       <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/1280x960.png" />
@@ -114,22 +110,20 @@ import Box from 'react-bulma-components/lib/components/box';
        </Content>
     </Media.Item>
   </Media>
-=======
-      <Media>
-        <Media.Item renderAs="figure" position="left">
-          <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
-        </Media.Item>
-        <Media.Item>
-          <Content>
-            <p>
-              <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-              <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-            </p>
-          </Content>
-        </Media.Item>
-      </Media>
->>>>>>> 334610c6b32e76faf67525d23be6a5b1d27abe51
+  <Media>
+    <Media.Item renderAs="figure" position="left">
+      <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
+    </Media.Item>
+    <Media.Item>
+      <Content>
+        <p>
+          <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+        </p>
+      </Content>
+    </Media.Item>
+  </Media>
 </Box>
 ```
 
