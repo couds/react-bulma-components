@@ -29,7 +29,9 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
 </Section>
 
 ```jsx
+<Section>
   <Pagination current={3} total={5} delta={1} />
+</Section>
 ```
 
 
@@ -40,7 +42,9 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
 </Section>
 
 ```jsx
+<Section>
   <Pagination current={3} total={5} delta={0} />
+</Section>
 ```
 
 ### **without prev/next button**
@@ -50,7 +54,9 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
 </Section>
 
 ```jsx
+<Section>
   <Pagination showPrevNext={false} current={3} total={5} delta={1} />
+</Section>
 ```
 
 ### ** with all buttons manually disabled**
@@ -60,7 +66,9 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
 </Section>
 
 ```jsx
+<Section>
   <Pagination disabled current={3} total={5} />
+</Section>
 ```
 ---
 
