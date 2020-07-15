@@ -30,7 +30,9 @@ import Button from 'react-bulma-components/lib/components/button';
 </Section>
 
 ```jsx
-<Button>Button</Button>
+<Section>
+  <Button>Button</Button>
+</Section>
 ```
 
 ### **As another react element**
@@ -42,9 +44,11 @@ import Button from 'react-bulma-components/lib/components/button';
 </Section>
 
 ```jsx
+<Section>
   <Button color="info">
     Button rendered using another React Component with props
   </Button>
+</Section>
 ```
 
 ### **Button group**
@@ -64,6 +68,7 @@ import Button from 'react-bulma-components/lib/components/button';
 </Section>
 
 ```jsx
+<Section>
   <Button.Group>
      <Button renderAs="span" color="success">
       Save changes
@@ -75,30 +80,7 @@ import Button from 'react-bulma-components/lib/components/button';
       Cancel
      </Button>
   </Button.Group>
-```
-
-### **Ref forwarding**
-
-<Section>
-   <Button onClick={() => ref.current.click()}>click other button</Button>
-   <Button>
-     this will be clicked
-   </Button>
 </Section>
-
-
-
-```jsx
-const ref = React.createRef();
-
-return (
-<Button onClick={() => ref.current.click()}>click other button</Button>
-<Button
-  ref={ref}
-  onClick={() => console.log('clicked')}>
-  this will be clicked
-</Button>
-);
 ```
 
 
