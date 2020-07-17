@@ -29,38 +29,38 @@ import Icon from 'react-bulma-components/lib/components/icon';
 ## **Examples**
 
 <Section>
- <div>
+  <div>
     <Icon icon="bars" color="info" />
     <Icon icon="angle-down" />
- </div>
+  </div>
 </Section>
 
 
 ```jsx
 <Section>
- <div>
+  <div>
     <Icon icon="bars" color="info" />
     <Icon icon="angle-down" />
- </div>
+  </div>
 </Section>
 ```
 
 <Section>
- <div>
-   <Icon>
-     <span className="rbc rbc-bars" />
-   </Icon>
- </div>  
+  <div>
+    <Icon>
+      <span className="rbc rbc-bars" />
+     </Icon>
+  </div>  
 </Section>
 
 
 ```jsx
 <Section>
- <div>
-   <Icon>
-     <span className="rbc rbc-bars" />
-   </Icon>
- </div>  
+  <div>
+    <Icon>
+      <span className="rbc rbc-bars" />
+     </Icon>
+  </div>  
 </Section>
 ```
 

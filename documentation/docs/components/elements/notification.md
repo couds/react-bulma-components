@@ -29,7 +29,7 @@ import Notification from 'react-bulma-components/lib/components/notification';
 <Section>
   <Notification>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,consectetur adipiscing elit
-    <Button remove />x
+    <Button remove>x</Button>
   </Notification>
 </Section>
 
@@ -38,10 +38,9 @@ import Notification from 'react-bulma-components/lib/components/notification';
 <Section>
   <Notification>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,consectetur adipiscing elit
-    <Button remove />x
+    <Button remove>x</Button>
   </Notification>
 </Section>
-
 ```
 
 
@@ -51,7 +50,7 @@ import Notification from 'react-bulma-components/lib/components/notification';
 <Section>
   <Notification color="success">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
-    <Button remove />
+    <Button remove>x</Button>
   </Notification>
 </Section>
 
@@ -61,7 +60,7 @@ import Notification from 'react-bulma-components/lib/components/notification';
 <Section>
   <Notification color="success">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
-    <Button remove />
+    <Button remove>x</Button>
   </Notification>
 </Section>
 ```
@@ -72,7 +71,7 @@ import Notification from 'react-bulma-components/lib/components/notification';
 <Section>
   <Notification color="danger">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
-    <Button remove />
+    <Button remove>x</Button>
   </Notification>
 </Section>
 
@@ -81,7 +80,7 @@ import Notification from 'react-bulma-components/lib/components/notification';
 <Section>
   <Notification color="danger">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
-    <Button remove />
+    <Button remove>x</Button>
   </Notification>
 </Section>
 ```

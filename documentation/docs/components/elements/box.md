@@ -72,34 +72,35 @@ import Box from 'react-bulma-components/lib/components/box';
     mobile: {
       display: {
         value: 'block'
-        },
       },
+    },
     tablet: {
       display: {
         value: 'flex'
-        },
       },
+    },
     desktop: {
       display: {
         value: 'inline-flex',
         only: true,
-        },
       },
+    },
     widescreen: {
       display: {
         value: 'inline-block',
-        },
       },
-    }}
+    },
+  }}
   hide={{
     tablet: {
       hide: true,
       only: true,
-      },
+    },
     widescreen: {
       hide: true,
-      },
-    }}>
+    },
+  }}
+>
   <Media>
     <Media.Item renderAs="figure" position="left">
       <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
@@ -122,34 +123,35 @@ import Box from 'react-bulma-components/lib/components/box';
     mobile: {
       display: {
         value: 'block'
-        },
       },
+    },
     tablet: {
       display: {
         value: 'flex'
-        },
       },
+    },
     desktop: {
       display: {
         value: 'inline-flex',
         only: true,
-        },
       },
+    },
     widescreen: {
       display: {
         value: 'inline-block',
-        },
       },
-    }}
+    },
+  }}
   hide={{
     tablet: {
       hide: true,
       only: true,
-      },
+    },
     widescreen: {
       hide: true,
-      },
-    }}>
+    },
+  }}
+>
   <Media>
     <Media.Item renderAs="figure" position="left">
       <Image size={64} alt="64x64" src='https://bulma.io/images/placeholders/640x480.png' />
