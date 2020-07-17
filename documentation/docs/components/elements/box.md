@@ -71,12 +71,12 @@ import Box from 'react-bulma-components/lib/components/box';
   responsive={{
     mobile: {
       display: {
-        value: 'block'
+        value: 'block',
       },
     },
     tablet: {
       display: {
-        value: 'flex'
+        value: 'flex',
       },
     },
     desktop: {
@@ -122,12 +122,12 @@ import Box from 'react-bulma-components/lib/components/box';
   responsive={{
     mobile: {
       display: {
-        value: 'block'
+        value: 'block',
       },
     },
     tablet: {
       display: {
-        value: 'flex'
+        value: 'flex',
       },
     },
     desktop: {
