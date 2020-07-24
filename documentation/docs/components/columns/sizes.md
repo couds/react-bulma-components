@@ -139,7 +139,7 @@ If nothing is passed to `size`, then the column will occupy the remaining space.
 
 ## 12-column system
 
-You can also divide the grid into 12 columns. Just specify how many divisions each column should specify
+You can also divide the grid into 12 columns. Just specify how many divisions each column should occupy
 with the `size` prop, from 1 to 12.
 
 Again, if `size` prop is not given, the column will use up all the remaining space.
