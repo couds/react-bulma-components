@@ -11,13 +11,15 @@ import Heading from 'react-bulma-components/lib/components/heading';
 import Section from 'react-bulma-components/lib/components/section';
 
 ---
+
 ## **Import**
+
 ```js
-import Columns from 'react-bulma-components/lib/components/columns'
+import Columns from 'react-bulma-components/lib/components/columns';
 ```
 
----
----
+<br />
+
 ## **Examples**
 
 <Section>
@@ -44,13 +46,13 @@ import Columns from 'react-bulma-components/lib/components/columns'
       <Hero color="danger">First column</Hero>
     </Columns.Column>
     <Columns.Column size={2}>
-      <Hero color="primary">Second column</Hero> 
+      <Hero color="primary">Second column</Hero>
     </Columns.Column>
     <Columns.Column size={3}>
-      <Hero color="danger">Thirld column</Hero> 
+      <Hero color="danger">Thirld column</Hero>
     </Columns.Column>
     <Columns.Column size={4}>
-      <Hero color="primary">Fourth column</Hero> 
+      <Hero color="primary">Fourth column</Hero>
     </Columns.Column>
   </Columns>
 </Section>
@@ -325,7 +327,7 @@ import Columns from 'react-bulma-components/lib/components/columns'
 <Section>
   <div>
     <Columns>
-     <Columns.Column size={1}>
+      <Columns.Column size={1}>
         <Hero color="success">Size 1</Hero>
       </Columns.Column>
       <Columns.Column size={1}>
@@ -585,6 +587,7 @@ import Columns from 'react-bulma-components/lib/components/columns'
   </div>
 </Section>
 ```
+
 ### **Offset**
 
 <Section>

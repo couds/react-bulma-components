@@ -11,23 +11,24 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 The Dropdown component is a container that is used for creating dropdown menus.
 
 ---
+
 ## **Import**
 
 ```js
 import Dropdown from 'react-bulma-components/lib/components/dropdown';
 ```
 
----
+<br />
+
 ### Dropdown elements
 
-* `<Dropdown />` : main dropdown container.
+- `<Dropdown />` : main dropdown container.
 
-  * `<Dropdown.Item />` : Container for adding contents into the dropdown menus 
+  - `<Dropdown.Item />` : Container for adding contents into the dropdown menus
 
-  * `<Dropdown.Divider />` : Divides your dropdown item with a line
+  - `<Dropdown.Divider />` : Divides your dropdown item with a line
 
 ---
-
 
 ## **Examples**
 
@@ -52,31 +53,18 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
   </Dropdown>
 </Section>
 
-
-
 ```jsx
 <Section>
   <Dropdown>
-    <Dropdown.Item value="item" >
-      Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other">
-      Other Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="active">
-      Active Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other 2">
-      Other Dropdown item
-    </Dropdown.Item>
+    <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
     <Dropdown.Divider />
-    <Dropdown.Item value="divider">
-      With divider
-    </Dropdown.Item>
+    <Dropdown.Item value="divider">With divider</Dropdown.Item>
   </Dropdown>
 </Section>
 ```
-
 
 ### **Hoverable Dropdown**
 
@@ -101,26 +89,15 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
   </Dropdown>
 </Section>
 
-
 ```jsx
 <Section>
   <Dropdown hoverable value="item">
-    <Dropdown.Item value="item" >
-      Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other">
-      Other Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="active">
-      Active Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other 2">
-      Other Dropdown item
-    </Dropdown.Item>
+    <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
     <Dropdown.Divider />
-    <Dropdown.Item value="divider">
-      With divider
-    </Dropdown.Item>
+    <Dropdown.Item value="divider">With divider</Dropdown.Item>
   </Dropdown>
 </Section>
 ```
@@ -155,38 +132,24 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
   </div>
 </Section>
 
-
-
 ```jsx
 <Section>
   <div>
     <Container>
       <Section size="large">
-        <Dropdown
-          value="item">
-          <Dropdown.Item value="item" >
-            Dropdown item
-          </Dropdown.Item>
-          <Dropdown.Item value="other">
-            Other Dropdown item
-          </Dropdown.Item>
-          <Dropdown.Item value="active">
-            Active Dropdown item
-          </Dropdown.Item>
-          <Dropdown.Item value="other 2">
-            Other Dropdown item
-          </Dropdown.Item>
+        <Dropdown value="item">
+          <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+          <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+          <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+          <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item value="divider">
-            With divider
-          </Dropdown.Item>
+          <Dropdown.Item value="divider">With divider</Dropdown.Item>
         </Dropdown>
       </Section>
     </Container>
   </div>
 </Section>
 ```
-
 
 ### **With color "info"**
 
@@ -214,26 +177,15 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 ```jsx
 <Section>
   <Dropdown color="info">
-    <Dropdown.Item value="item" >
-      Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other">
-      Other Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="active">
-      Active Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other 2">
-      Other Dropdown item
-    </Dropdown.Item>
+    <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
     <Dropdown.Divider />
-    <Dropdown.Item value="divider">
-      With divider
-    </Dropdown.Item>
+    <Dropdown.Item value="divider">With divider</Dropdown.Item>
   </Dropdown>
 </Section>
 ```
-
 
 ### **Hoverable with color 'info'**
 
@@ -258,27 +210,15 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
   </Dropdown>
 </Section>
 
-
-
 ```jsx
 <Section>
   <Dropdown hoverable value="item" color="info">
-    <Dropdown.Item value="item" >
-      Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other">
-      Other Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="active">
-      Active Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item value="other 2">
-      Other Dropdown item
-    </Dropdown.Item>
+    <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+    <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
     <Dropdown.Divider />
-    <Dropdown.Item value="divider">
-      With divider
-    </Dropdown.Item>
+    <Dropdown.Item value="divider">With divider</Dropdown.Item>
   </Dropdown>
 </Section>
 ```
@@ -287,6 +227,4 @@ import Dropdown from 'react-bulma-components/lib/components/dropdown';
 
 ## Official documentation
 
-
 https://bulma.io/documentation/components/dropdown
-

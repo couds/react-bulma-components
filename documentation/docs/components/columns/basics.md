@@ -3,17 +3,18 @@ id: basics
 title: Basics
 sidebar_label: Basics
 ---
+
 import Columns from 'react-bulma-components/lib/components/columns'
 import Hero from 'react-bulma-components/lib/components/hero'
 
----
 ## **Import**
+
 ```js
-import Columns from 'react-bulma-components/lib/components/columns'
+import Columns from 'react-bulma-components/lib/components/columns';
 ```
 
----
----
+<br />
+
 You can build columns very easily:
 
 1. Add a `<Columns />` component
@@ -54,6 +55,7 @@ All `<Column />`s will be equally sized.
   </Columns.Column>
 </Columns>
 ```
+
 ---
 
 ## Official documentation

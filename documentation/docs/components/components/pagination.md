@@ -4,23 +4,18 @@ title: Pagination
 sidebar_label: Pagination
 ---
 
-
 import Pagination from 'react-bulma-components/lib/components/pagination';
 import Section from 'react-bulma-components/lib/components/section';
 
-
-
 ---
+
 ## **Import**
 
 ```js
 import Pagination from 'react-bulma-components/lib/components/pagination';
-
 ```
----
 
-
----
+<br />
 
 ## **Examples**
 
@@ -33,7 +28,6 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
   <Pagination current={3} total={5} delta={1} />
 </Section>
 ```
-
 
 ### **Without page number**
 
@@ -70,6 +64,7 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
   <Pagination disabled current={3} total={5} />
 </Section>
 ```
+
 ---
 
 ## Official documentation

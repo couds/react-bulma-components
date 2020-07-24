@@ -3,24 +3,22 @@ id: panel
 title: Panel
 sidebar_label: Panel
 ---
+
 import Panel from 'react-bulma-components/lib/components/panel';
 import { Control, Input, Checkbox } from 'react-bulma-components/lib/components/form';
 import Icon from 'react-bulma-components/lib/components/icon';
 import Button from 'react-bulma-components/lib/components/button';
 import Section from 'react-bulma-components/lib/components/section';
 
-
-
 ---
-## **Import**
 
+## **Import**
 
 ```js
 import Panel from 'react-bulma-components/lib/components/panel';
 ```
----
 
----
+<br />
 
 ## **Example**
 
@@ -77,14 +75,10 @@ import Panel from 'react-bulma-components/lib/components/panel';
   </Panel>
 </Section>
 
-
-
 ```jsx
 <Section>
   <Panel>
-    <Panel.Header>
-      repositories
-    </Panel.Header>
+    <Panel.Header>repositories</Panel.Header>
     <Panel.Block>
       <Control>
         <Input size="small" type="text" placeholder="search" />
@@ -126,16 +120,16 @@ import Panel from 'react-bulma-components/lib/components/panel';
       remember me
     </Panel.Block>
     <Panel.Block>
-      <Button fullwidth color="link" outlined >
+      <Button fullwidth color="link" outlined>
         reset all filters
       </Button>
     </Panel.Block>
   </Panel>
 </Section>
 ```
+
 ---
 
 ## Official documentation
 
 https://bulma.io/documentation/components/panel
-

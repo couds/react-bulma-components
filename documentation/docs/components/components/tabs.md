@@ -3,19 +3,20 @@ id: tabs
 title: Tabs
 sidebar_label: Tabs
 ---
+
 import Tabs from 'react-bulma-components/lib/components/tabs';
 import Section from 'react-bulma-components/lib/components/section';
 
 ---
 
-##  **Import**
+## **Import**
 
 ```js
 import Tabs from 'react-bulma-components/lib/components/tabs';
 ```
----
 
----
+<br />
+
 ## **Example**
 
 <Section>
@@ -35,28 +36,16 @@ import Tabs from 'react-bulma-components/lib/components/tabs';
   </Tabs>
 </Section>
 
-
-
 ```jsx
 <Section>
   <Tabs>
-    <Tabs.Tab active>
-      Test
-    </Tabs.Tab>
-    <Tabs.Tab>
-      Test
-    </Tabs.Tab>
-    <Tabs.Tab>
-      Test
-    </Tabs.Tab>
-    <Tabs.Tab>
-      Test
-    </Tabs.Tab>
+    <Tabs.Tab active>Test</Tabs.Tab>
+    <Tabs.Tab>Test</Tabs.Tab>
+    <Tabs.Tab>Test</Tabs.Tab>
+    <Tabs.Tab>Test</Tabs.Tab>
   </Tabs>
 </Section>
 ```
-
-
 
 ---
 

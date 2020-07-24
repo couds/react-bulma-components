@@ -9,15 +9,14 @@ import Hero from 'react-bulma-components/lib/components/hero'
 import Section from 'react-bulma-components/lib/components/section';
 
 ---
+
 ## **Import**
 
 ```js
-import Columns from 'react-bulma-components/lib/components/columns'
+import Columns from 'react-bulma-components/lib/components/columns';
 ```
 
----
----
-
+<br />
 
 ## **Examples**
 
@@ -54,7 +53,8 @@ import Columns from 'react-bulma-components/lib/components/columns'
       desktop: 3,
       widescreen: 8,
       fullhd: 2,
-    }}>
+    }}
+  >
     <Columns.Column size={3}>
       <Hero color="dark">Size 1</Hero>
     </Columns.Column>
@@ -70,7 +70,6 @@ import Columns from 'react-bulma-components/lib/components/columns'
   </Columns>
 </Section>
 ```
-
 
 ### **Gapless**
 

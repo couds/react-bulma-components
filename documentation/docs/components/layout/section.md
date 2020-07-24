@@ -3,6 +3,7 @@ id: section
 title: Section
 sidebar_label: Section
 ---
+
 import Section from 'react-bulma-components/lib/components/section';
 import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
@@ -19,22 +20,23 @@ The `Section` component is used divide your layout into different sections. This
 import Section from 'react-bulma-components/lib/components/section';
 ```
 
----
+<br />
+
 ## **Modifiers**
 
-Variable name    |    Type                                    | Default  values    
------------------|--------------------------------------------|------------------
-`classNames`     | `is-${size}`: Section size                 | `undefined`     
-`style`          | shape                                      | `undefined`         
-`renderAs`       | renderAsShape                              | `section` 
-`size`           | one of `medium` or`large`                  | `undefined`
+| Variable name | Type                       | Default values |
+| ------------- | -------------------------- | -------------- |
+| `classNames`  | `is-${size}`: Section size | `undefined`    |
+| `style`       | shape                      | `undefined`    |
+| `renderAs`    | renderAsShape              | `section`      |
+| `size`        | one of `medium` or`large`  | `undefined`    |
 
 ---
 
 ## **Examples**
 
- Wrap your elements with the ```<Section />``` tag to format them into different sections.
- 
+Wrap your elements with the `<Section />` tag to format them into different sections.
+
 <div>
   <Section>
     <Notification color="info">
@@ -76,7 +78,8 @@ Variable name    |    Type                                    | Default  values
     <Notification color="info">
       <Heading>Section</Heading>
       <Heading subtitle>
-        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        A simple container to divide your page into <strong>sections</strong>,
+        like the one you are currently reading
       </Heading>
     </Notification>
   </Section>
@@ -84,7 +87,8 @@ Variable name    |    Type                                    | Default  values
     <Notification color="primary">
       <Heading>Section</Heading>
       <Heading subtitle>
-        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        A simple container to divide your page into <strong>sections</strong>,
+        like the one you are currently reading
       </Heading>
     </Notification>
   </Section>
@@ -92,7 +96,8 @@ Variable name    |    Type                                    | Default  values
     <Notification color="danger">
       <Heading>Section</Heading>
       <Heading subtitle>
-        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        A simple container to divide your page into <strong>sections</strong>,
+        like the one you are currently reading
       </Heading>
     </Notification>
   </Section>
@@ -100,15 +105,17 @@ Variable name    |    Type                                    | Default  values
     <Notification color="warning">
       <Heading>Section</Heading>
       <Heading subtitle>
-        A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+        A simple container to divide your page into <strong>sections</strong>,
+        like the one you are currently reading
       </Heading>
     </Notification>
   </Section>
 </div>
 ```
+
 ---
- 
-Configure the sizes of each secton using the ```size``` modifier. Set it to either `medium` or `large` size.
+
+Configure the sizes of each secton using the `size` modifier. Set it to either `medium` or `large` size.
 
 ---
 
@@ -147,8 +154,6 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
   </Section>
 </div>
 
-
-
 ```jsx
 <div>
   <Section size="medium">
@@ -156,7 +161,8 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       <Notification color="info">
         <Heading>Section</Heading>
         <Heading subtitle>
-          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+          A simple container to divide your page into <strong>sections</strong>,
+          like the one you are currently reading
         </Heading>
       </Notification>
     </Container>
@@ -166,7 +172,8 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       <Notification color="primary">
         <Heading>Section</Heading>
         <Heading subtitle>
-          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+          A simple container to divide your page into <strong>sections</strong>,
+          like the one you are currently reading
         </Heading>
       </Notification>
     </Container>
@@ -176,7 +183,8 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       <Notification color="danger">
         <Heading>Section</Heading>
         <Heading subtitle>
-          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+          A simple container to divide your page into <strong>sections</strong>,
+          like the one you are currently reading
         </Heading>
       </Notification>
     </Container>
@@ -217,9 +225,7 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       </Notification>
     </Container>
   </Section>
-</div>    
-
-
+</div>
 
 ```jsx
 <div>
@@ -228,7 +234,8 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       <Notification color="info">
         <Heading>Section</Heading>
         <Heading subtitle>
-          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+          A simple container to divide your page into <strong>sections</strong>,
+          like the one you are currently reading
         </Heading>
       </Notification>
     </Container>
@@ -238,7 +245,8 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       <Notification color="primary">
         <Heading>Section</Heading>
         <Heading subtitle>
-          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+          A simple container to divide your page into <strong>sections</strong>,
+          like the one you are currently reading
         </Heading>
       </Notification>
     </Container>
@@ -248,18 +256,17 @@ Configure the sizes of each secton using the ```size``` modifier. Set it to eith
       <Notification color="danger">
         <Heading>Section</Heading>
         <Heading subtitle>
-          A simple container to divide your page into <strong>sections</strong>, like the one you are currently reading
+          A simple container to divide your page into <strong>sections</strong>,
+          like the one you are currently reading
         </Heading>
       </Notification>
     </Container>
   </Section>
-</div>  
+</div>
 ```
 
---- 
+---
 
 ## Official documentation
 
 https://bulma.io/documentation/layout/section
-
-  

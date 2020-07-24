@@ -12,7 +12,4 @@ import Content from 'react-bulma-components/lib/components/content';
 import Section from 'react-bulma-components/lib/components/section';
 import Level from 'react-bulma-components/lib/components/level';
 
-
 https://bulma.io/documentation/components/modal
-
-

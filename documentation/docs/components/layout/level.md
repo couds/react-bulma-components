@@ -4,7 +4,6 @@ title: Level
 sidebar_label: Level
 ---
 
-
 import Level from 'react-bulma-components/lib/components/level';
 import { Field, Control, Input } from 'react-bulma-components/lib/components/form';
 import Heading from 'react-bulma-components/lib/components/heading';
@@ -12,15 +11,9 @@ import Button from 'react-bulma-components/lib/components/button';
 import Hero from 'react-bulma-components/lib/components/hero';
 import Container from 'react-bulma-components/lib/components/container';
 import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box'; 
-
-
+import Box from 'react-bulma-components/lib/components/box';
 
 The Level component is a simple horizontal container that can be used to structure all other elements.
-
-
-
----
 
 ## **Import**
 
@@ -28,71 +21,65 @@ The Level component is a simple horizontal container that can be used to structu
 import Level from 'react-bulma-components/lib/components/level';
 ```
 
----
+<br />
 
 ## **Structural Components**
 
 The `Level` element consists of 3 components.
 
-### `<Level />` 
+### `<Level />`
 
- Main level container.
+Main level container.
 
- #### **Modifiers**
+#### **Modifiers**
 
-Variable name          |    Type                                | Default  values  
------------------------|----------------------------------------|------------------
-`className`           | `is-${breakpoint}`: Add breakpoint. <br /> `is-mobile`: mobile level. | `undefined`     
-`style`                | shape                                  | `undefined`     
-`breakpoint`           | breakpoints                            | `undefined`    
-`renderAs`             | renderAsShape                          | `div`         
+| Variable name | Type                                                                  | Default values |
+| ------------- | --------------------------------------------------------------------- | -------------- |
+| `className`   | `is-${breakpoint}`: Add breakpoint. <br /> `is-mobile`: mobile level. | `undefined`    |
+| `style`       | shape                                                                 | `undefined`    |
+| `breakpoint`  | breakpoints                                                           | `undefined`    |
+| `renderAs`    | renderAsShape                                                         | `div`          |
 
-
-### `<Level.Side />` 
+### `<Level.Side />`
 
 Component to align contents to either left or right side.
 
 #### **Modifiers**
 
+| Variable name | Type                     | Default values |
+| ------------- | ------------------------ | -------------- |
+| `align`       | one of `left` or `right` | `left`         |
+| `className`   | `level-${align}`: align. | `undefined`    |
+| `style`       | shape                    | `undefined`    |
+| `renderAs`    | renderAsShape            | `div`          |
 
-Variable name           |    Type                                | Default  values  
-------------------------|----------------------------------------|------------------
-`align`                 | one of `left` or `right`               |  `left`         
-`className`             | `level-${align}`: align.               | `undefined`     
-`style`                 | shape                                  | `undefined`         
-`renderAs`              | renderAsShape                          | `div`         
+### `<Level.Item />`
 
+Component for other elements.
 
+#### **Modifiers**
 
-### `<Level.Item />` 
-
- Component for other elements.
-
- #### **Modifiers**
-
-
-Variable name           |    Type                                   | Default  values   
-------------------------|-------------------------------------------|------------------
-`className`             | string                                    | `undefined`     
-`style`                 | shape                                     | `undefined`        
-`renderAs`              | renderAsShape                             | `div`         
+| Variable name | Type          | Default values |
+| ------------- | ------------- | -------------- |
+| `className`   | string        | `undefined`    |
+| `style`       | shape         | `undefined`    |
+| `renderAs`    | renderAsShape | `div`          |
 
 ---
 
 ## **Examples**
 
-How to create a ```<Level />``` component.
+How to create a `<Level />` component.
 
-1. Create your main container with the ```<Level />``` tag.
+1. Create your main container with the `<Level />` tag.
 
-2. Align your contents to either side with the ```<Level.Side />``` tag.
+2. Align your contents to either side with the `<Level.Side />` tag.
 
-    *   ```<Level.Side align="left" />``` to align contents to the left side.
+   - `<Level.Side align="left" />` to align contents to the left side.
 
-    *   ```<Level.Side align="right" />``` to align contents to the right side.
+   - `<Level.Side align="right" />` to align contents to the right side.
 
-3. Add contents to your level container with the ```<Level.Item />``` tag.
-
+3. Add contents to your level container with the `<Level.Item />` tag.
 
 <Box>
   <Level renderAs="nav">
@@ -124,7 +111,6 @@ How to create a ```<Level />``` component.
     </Level.Side>
   </Level>
 </Box>
-
 
 ```jsx
 <Box>
@@ -141,28 +127,37 @@ How to create a ```<Level />``` component.
             <Input placeholder="Find a post" />
           </Control>
           <Control>
-          <Button renderAs="button">
-            Search
-          </Button>
+            <Button renderAs="button">Search</Button>
           </Control>
         </Field>
       </Level.Item>
     </Level.Side>
     <Level.Side align="right">
-      <Level.Item><strong>All</strong></Level.Item>
-      <Level.Item><a>Published</a></Level.Item>
-      <Level.Item><a>Drafts</a></Level.Item>
-      <Level.Item><a>Deleted</a></Level.Item>
-      <Level.Item><Button renderAs="a" color="success">New</Button></Level.Item>
+      <Level.Item>
+        <strong>All</strong>
+      </Level.Item>
+      <Level.Item>
+        <a>Published</a>
+      </Level.Item>
+      <Level.Item>
+        <a>Drafts</a>
+      </Level.Item>
+      <Level.Item>
+        <a>Deleted</a>
+      </Level.Item>
+      <Level.Item>
+        <Button renderAs="a" color="success">
+          New
+        </Button>
+      </Level.Item>
     </Level.Side>
   </Level>
 </Box>
-```             
+```
 
-###  **Centered Level**
+### **Centered Level**
 
-Nest all `<level.Item />` tags  directly under your `<level />` tag to create a Centered level.
-
+Nest all `<level.Item />` tags directly under your `<level />` tag to create a Centered level.
 
 <Box>
   <Level renderAs="nav">
@@ -209,7 +204,6 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
  </Level>
 </Box>
 
-
 ```jsx
 <Box>
   <Level renderAs="nav">
@@ -218,9 +212,7 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
         <Heading renderAs="p" heading>
           Tweets
         </Heading>
-        <Heading renderAs="p">
-          3,210
-        </Heading>
+        <Heading renderAs="p">3,210</Heading>
       </div>
     </Level.Item>
     <Level.Item>
@@ -228,9 +220,7 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
         <Heading renderAs="p" heading>
           Following
         </Heading>
-        <Heading renderAs="p">
-          210
-        </Heading>
+        <Heading renderAs="p">210</Heading>
       </div>
     </Level.Item>
     <Level.Item>
@@ -238,9 +228,7 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
         <Heading renderAs="p" heading>
           Followers
         </Heading>
-        <Heading renderAs="p">
-          321
-        </Heading>
+        <Heading renderAs="p">321</Heading>
       </div>
     </Level.Item>
     <Level.Item>
@@ -248,12 +236,10 @@ Nest all `<level.Item />` tags  directly under your `<level />` tag to create a 
         <Heading renderAs="p" heading>
           Likes
         </Heading>
-        <Heading renderAs="p">
-          321K
-        </Heading>
+        <Heading renderAs="p">321K</Heading>
       </div>
     </Level.Item>
- </Level>
+  </Level>
 </Box>
 ```
 
@@ -306,48 +292,39 @@ Add Breakpoints to your level component by using the `breakpoint` modifier.
   </Level>
 </Box>
 
-
-``` jsx
+```jsx
 <Box>
-  <Level renderAs="nav" breakpoint='mobile'>
+  <Level renderAs="nav" breakpoint="mobile">
     <Level.Item>
       <div>
         <Heading renderAs="p" heading>
-        Tweets
+          Tweets
         </Heading>
-        <Heading renderAs="p">
-        3,210
-        </Heading>
-      </div>
-    </Level.Item>
-    <Level.Item>
-    <div>
-        <Heading renderAs="p" heading>
-        Following
-        </Heading>
-        <Heading renderAs="p">
-        210
-        </Heading>
+        <Heading renderAs="p">3,210</Heading>
       </div>
     </Level.Item>
     <Level.Item>
       <div>
         <Heading renderAs="p" heading>
-        Followers
+          Following
         </Heading>
-        <Heading renderAs="p">
-        321
-        </Heading>
+        <Heading renderAs="p">210</Heading>
       </div>
     </Level.Item>
     <Level.Item>
       <div>
         <Heading renderAs="p" heading>
-        Likes
+          Followers
         </Heading>
-        <Heading renderAs="p">
-        321K
+        <Heading renderAs="p">321</Heading>
+      </div>
+    </Level.Item>
+    <Level.Item>
+      <div>
+        <Heading renderAs="p" heading>
+          Likes
         </Heading>
+        <Heading renderAs="p">321K</Heading>
       </div>
     </Level.Item>
   </Level>
@@ -355,7 +332,6 @@ Add Breakpoints to your level component by using the `breakpoint` modifier.
 ```
 
 ---
-
 
 ## Official documentation
 

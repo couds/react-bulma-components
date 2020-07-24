@@ -9,13 +9,14 @@ import Hero from 'react-bulma-components/lib/components/hero'
 import Section from 'react-bulma-components/lib/components/section';
 
 ---
+
 ## **Import**
+
 ```js
-import Columns from 'react-bulma-components/lib/components/columns'
+import Columns from 'react-bulma-components/lib/components/columns';
 ```
 
----
----
+<br />
 
 ## **Example**
 
@@ -49,34 +50,33 @@ import Columns from 'react-bulma-components/lib/components/columns'
   </Columns>
 </Section>
 
-
 ```jsx
 <Section>
   <Columns>
     <Columns.Column size="half">
       <Hero color="success">First column</Hero>
-        <Columns>
-          <Columns.Column size="one-third">
-            <Hero color="info">First Nested Column</Hero>
-          </Columns.Column>
-          <Columns.Column>
-            <Hero color="warning">Second Nested Column</Hero>
-          </Columns.Column>
-        </Columns>
+      <Columns>
+        <Columns.Column size="one-third">
+          <Hero color="info">First Nested Column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Second Nested Column</Hero>
+        </Columns.Column>
+      </Columns>
     </Columns.Column>
     <Columns.Column size="half">
       <Hero color="success">Second column</Hero>
-        <Columns>
-          <Columns.Column size="half">
-            <Hero color="info">First Nested Column</Hero>
-          </Columns.Column>
-          <Columns.Column size="one-quarter">
-            <Hero color="warning">Second Nested Column</Hero>
-          </Columns.Column>
-          <Columns.Column>
-            <Hero color="warning">Thirld Nested Column</Hero>
-          </Columns.Column>
-        </Columns>
+      <Columns>
+        <Columns.Column size="half">
+          <Hero color="info">First Nested Column</Hero>
+        </Columns.Column>
+        <Columns.Column size="one-quarter">
+          <Hero color="warning">Second Nested Column</Hero>
+        </Columns.Column>
+        <Columns.Column>
+          <Hero color="warning">Thirld Nested Column</Hero>
+        </Columns.Column>
+      </Columns>
     </Columns.Column>
   </Columns>
 </Section>

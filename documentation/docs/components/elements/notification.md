@@ -8,23 +8,15 @@ import Notification from 'react-bulma-components/lib/components/notification';
 import Button from 'react-bulma-components/lib/components/button';
 import Section from 'react-bulma-components/lib/components/section';
 
-
-
----
 ## **Import**
-
 
 ```js
 import Notification from 'react-bulma-components/lib/components/notification';
 ```
 
----
-
----
-
+<br />
 
 ## **Examples**
-  
 
 <Section>
   <Notification>
@@ -33,41 +25,43 @@ import Notification from 'react-bulma-components/lib/components/notification';
   </Notification>
 </Section>
 
-
 ```jsx
 <Section>
   <Notification>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet,consectetur adipiscing elit
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.{' '}
+    <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec
+    nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+    diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit
+    amet,consectetur adipiscing elit
     <Button remove>x</Button>
   </Notification>
 </Section>
 ```
 
+## **With Color "success"**
 
- ## **With Color "success"**
-
-  
 <Section>
   <Notification color="success">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
     <Button remove>x</Button>
   </Notification>
 </Section>
-
-
 
 ```jsx
 <Section>
   <Notification color="success">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.{' '}
+    <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec
+    nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+    diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet
+    consectetur adipiscing elit
     <Button remove>x</Button>
   </Notification>
 </Section>
 ```
 
+### **With Color "danger"**
 
-### **With Color "danger"** 
-  
 <Section>
   <Notification color="danger">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
@@ -75,11 +69,14 @@ import Notification from 'react-bulma-components/lib/components/notification';
   </Notification>
 </Section>
 
-
-```jsx   
+```jsx
 <Section>
   <Notification color="danger">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet consectetur adipiscing elit
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.{' '}
+    <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec
+    nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
+    diam, et dictum <a href="/">felis venenatis</a> efficitur. Sit amet
+    consectetur adipiscing elit
     <Button remove>x</Button>
   </Notification>
 </Section>

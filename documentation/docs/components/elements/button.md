@@ -3,25 +3,22 @@ id: button
 title: Button
 sidebar_label: Button
 ---
+
 import Button from 'react-bulma-components/lib/components/button';
 import Box from 'react-bulma-components/lib/components/box';
 import Section from 'react-bulma-components/lib/components/section';
 
-
- The Button element is used to take user actions.  
+The Button element is used to take user actions.
 
 ---
+
 ## **Import**
 
 ```js
-
 import Button from 'react-bulma-components/lib/components/button';
-
 ```
 
----
-
----
+<br />
 
 ## **Examples**
 
@@ -70,25 +67,21 @@ import Button from 'react-bulma-components/lib/components/button';
 ```jsx
 <Section>
   <Button.Group>
-     <Button renderAs="span" color="success">
+    <Button renderAs="span" color="success">
       Save changes
-     </Button>
-     <Button renderAs="span" color="info">
+    </Button>
+    <Button renderAs="span" color="info">
       Save and continue
-     </Button>
-     <Button renderAs="span" color="danger">
+    </Button>
+    <Button renderAs="span" color="danger">
       Cancel
-     </Button>
+    </Button>
   </Button.Group>
 </Section>
 ```
-
 
 ---
 
 ## Official documentation
 
 https://bulma.io/documentation/elements/button
-
-
-

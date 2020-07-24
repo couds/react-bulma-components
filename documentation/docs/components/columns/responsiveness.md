@@ -10,15 +10,15 @@ import Box from 'react-bulma-components/lib/components/box';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Section from 'react-bulma-components/lib/components/section';
 
-
 ---
+
 ## **Import**
+
 ```js
-import Columns from 'react-bulma-components/lib/components/columns'
+import Columns from 'react-bulma-components/lib/components/columns';
 ```
 
----
----
+<br />
 
 ## **Examples**
 
@@ -153,26 +153,27 @@ import Columns from 'react-bulma-components/lib/components/columns'
     <Columns.Column
       mobile={{
         size: 'three-quarters',
-        }}
+      }}
       tablet={{
         size: 'two-thirds',
-        }}
+      }}
       desktop={{
         size: 'half',
-        }}
+      }}
       widescreen={{
         size: 'one-third',
-        }}
+      }}
       fullhd={{
         size: 'one-quarter',
-        }}>
+      }}
+    >
       <Hero color="info">
         <p>
-         is-three-quarters-mobile
-         <br />
-         is-two-thirds-tablet
-         <br />
-         is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
+          is-three-quarters-mobile
+          <br />
+          is-two-thirds-tablet
+          <br />
+          is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
         </p>
       </Hero>
     </Columns.Column>
@@ -191,26 +192,27 @@ import Columns from 'react-bulma-components/lib/components/columns'
     <Columns.Column
       mobile={{
         size: 'three-quarters',
-        }}
+      }}
       tablet={{
         size: 'two-thirds',
-        }}
+      }}
       desktop={{
         size: 'half',
-        }}
+      }}
       widescreen={{
         size: 'one-third',
-        }}
+      }}
       fullhd={{
         size: 'one-quarter',
-        }}>
+      }}
+    >
       <Hero color="info">
         <p>
-         is-three-quarters-mobile
-         <br />
-         is-two-thirds-tablet
-         <br />
-         is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
+          is-three-quarters-mobile
+          <br />
+          is-two-thirds-tablet
+          <br />
+          is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
         </p>
       </Hero>
     </Columns.Column>
@@ -225,8 +227,6 @@ import Columns from 'react-bulma-components/lib/components/columns'
 ```
 
 ---
-
-
 
 ## Official documentation
 

@@ -9,13 +9,15 @@ import Hero from 'react-bulma-components/lib/components/hero'
 import Section from 'react-bulma-components/lib/components/section';
 
 ---
+
 ## **Import**
+
 ```js
-import Columns from 'react-bulma-components/lib/components/columns'
+import Columns from 'react-bulma-components/lib/components/columns';
 ```
 
----
----
+<br />
+
 ## **Example**
 
 <Section>
@@ -46,15 +48,16 @@ import Columns from 'react-bulma-components/lib/components/columns'
     <Columns.Column>
       <Hero color="primary">
         <p>
-        Second column with more content. This is so you can see the vertical alignment.
+          Second column with more content. This is so you can see the vertical
+          alignment.
         </p>
       </Hero>
     </Columns.Column>
   </Columns>
 </Section>
 ```
----
 
+---
 
 ## Official documentation
 

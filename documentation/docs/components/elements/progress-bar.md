@@ -7,15 +7,13 @@ sidebar_label: Progress Bar
 import Progress from 'react-bulma-components/lib/components/progress';
 import Section from 'react-bulma-components/lib/components/section';
 
----
 ## **Import**
 
 ```js
 import Progress from 'react-bulma-components/lib/components/progress';
 ```
----
 
----
+<br />
 
 ## **Example**
 
@@ -27,8 +25,6 @@ import Progress from 'react-bulma-components/lib/components/progress';
   <Progress max={100} value={15} color="error" size="large" />
 </Section>
 
-
-
 ```jsx
 <Section>
   <Progress />
@@ -38,8 +34,6 @@ import Progress from 'react-bulma-components/lib/components/progress';
   <Progress max={100} value={15} color="error" size="large" />
 </Section>
 ```
-
-
 
 ## Official documentation
 

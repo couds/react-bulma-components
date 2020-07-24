@@ -8,13 +8,7 @@ import Icon from 'react-bulma-components/lib/components/icon';
 import Box from 'react-bulma-components/lib/components/box';
 import Section from 'react-bulma-components/lib/components/section';
 
-
 The icon container is used to display icon fonts
-
-
-
-
----
 
 ## **Import**
 
@@ -22,9 +16,7 @@ The icon container is used to display icon fonts
 import Icon from 'react-bulma-components/lib/components/icon';
 ```
 
----
-
----
+<br />
 
 ## **Examples**
 
@@ -35,7 +27,6 @@ import Icon from 'react-bulma-components/lib/components/icon';
   </div>
 </Section>
 
-
 ```jsx
 <Section>
   <div>
@@ -53,14 +44,13 @@ import Icon from 'react-bulma-components/lib/components/icon';
   </div>  
 </Section>
 
-
 ```jsx
 <Section>
   <div>
     <Icon>
       <span className="rbc rbc-bars" />
-     </Icon>
-  </div>  
+    </Icon>
+  </div>
 </Section>
 ```
 
@@ -69,4 +59,3 @@ import Icon from 'react-bulma-components/lib/components/icon';
 ## Official documentation
 
 https://bulma.io/documentation/elements/icon
-
