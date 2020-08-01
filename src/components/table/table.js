@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
+import Container from './components/container';
 
 const Table = ({ children, className, size, striped, bordered, ...props }) => (
   <Element
@@ -37,5 +38,7 @@ Table.defaultProps = {
   striped: true,
   bordered: false,
 };
+
+Table.Container = Container;
 
 export default Table;
