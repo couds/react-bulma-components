@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const Table = ({ children, className, size, striped, bordered, ...props }) => (
+const Table = ({ children, className, size, striped, bordered, hoverable, ...props }) => (
   <Element
     renderAs="table"
     {...props}
@@ -12,6 +12,7 @@ const Table = ({ children, className, size, striped, bordered, ...props }) => (
       [`is-${size}`]: size,
       'is-bordered': bordered,
       'is-striped': striped,
+      'is-hoverable': hoverable,
     })}
   >
     {children}
@@ -26,6 +27,7 @@ Table.propTypes = {
   size: PropTypes.oneOf(['fullwidth', 'narrow']),
   striped: PropTypes.bool,
   bordered: PropTypes.bool,
+  hoverable: PropTypes.bool,
 };
 
 Table.defaultProps = {
@@ -36,6 +38,7 @@ Table.defaultProps = {
   size: 'fullwidth',
   striped: true,
   bordered: false,
+  hoverable: false,
 };
 
 export default Table;
