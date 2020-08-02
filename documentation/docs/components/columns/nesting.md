@@ -6,6 +6,7 @@ sidebar_label: Nesting
 
 import Columns from 'react-bulma-components/lib/components/columns'
 import Notification from 'react-bulma-components/lib/components/notification'
+import Section from 'react-bulma-components/lib/components/section';
 
 You can nest `Columns` inside any `Columns.Column` and there's no limit to
 the level of nesting.
