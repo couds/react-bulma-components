@@ -5,7 +5,7 @@ sidebar_label: Basics
 ---
 
 import Columns from 'react-bulma-components/lib/components/columns'
-import Hero from 'react-bulma-components/lib/components/hero'
+import Notification from 'react-bulma-components/lib/components/notification'
 
 ## **Import**
 
@@ -25,33 +25,33 @@ You can build columns very easily:
 All `<Column />`s will be equally sized.
 
 <Columns>
-    <Columns.Column>
-        <Hero color="primary">First column</Hero>
-    </Columns.Column>
-    <Columns.Column>
-        <Hero color="primary">Second column</Hero>
-    </Columns.Column>
-    <Columns.Column>
-        <Hero color="primary">Third column</Hero>
-    </Columns.Column>
-    <Columns.Column>
-        <Hero color="primary">Fourth column</Hero>
-    </Columns.Column>
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="primary">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="primary">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="primary">Fourth column</Notification>
+  </Columns.Column>
 </Columns>
 
 ```jsx
 <Columns>
   <Columns.Column>
-    <Hero color="primary">First column</Hero>
+    <Notification color="primary">First column</Notification>
   </Columns.Column>
   <Columns.Column>
-    <Hero color="primary">Second column</Hero>
+    <Notification color="primary">Second column</Notification>
   </Columns.Column>
   <Columns.Column>
-    <Hero color="primary">Third column</Hero>
+    <Notification color="primary">Third column</Notification>
   </Columns.Column>
   <Columns.Column>
-    <Hero color="primary">Fourth column</Hero>
+    <Notification color="primary">Fourth column</Notification>
   </Columns.Column>
 </Columns>
 ```
