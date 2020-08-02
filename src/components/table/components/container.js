@@ -25,6 +25,7 @@ TableContainer.defaultProps = {
   style: undefined,
   className: undefined,
   children: null,
+  renderAs: 'div',
 };
 
 export default TableContainer;
