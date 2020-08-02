@@ -4,148 +4,139 @@ title: Responsiveness
 sidebar_label: Responsiveness
 ---
 
-import Columns from 'react-bulma-components/lib/components/columns'
-import Hero from 'react-bulma-components/lib/components/hero'
+import Columns from 'react-bulma-components/lib/components/columns';
+import Hero from 'react-bulma-components/lib/components/hero';
+import Notification from 'react-bulma-components/lib/components/notification';
 import Box from 'react-bulma-components/lib/components/box';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Section from 'react-bulma-components/lib/components/section';
 
----
+You can specify at what viewport size should `Columns` be "activated",
+meaning it will display `Columns.Column` in a row. Any viewport smaller
+than the specified viewport size will cause `Columns` to display children
+in a column.
 
-## **Import**
+By default, the value is `'tablet'`.
 
-```js
-import Columns from 'react-bulma-components/lib/components/columns';
-```
+:::tip
+Try resizing the window or use your browser's developer tools to resize the viewport
+and see what happens!
+:::
 
-<br />
+## Different viewport sizes
 
-## **Examples**
+### `mobile`
 
-<Section>
-  <div>
-    <Box>
-      <Heading size={5} renderAs="p">
-        Mobile
-      </Heading>
-      <Columns breakpoint="mobile">
-        <Columns.Column>
-          <Hero color="success">First column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="info">Second column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Third column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Fourth column</Hero>
-        </Columns.Column>
-      </Columns>
-    </Box>
-    <Box>
-      <Heading size={5} renderAs="p">
-        Tablet
-      </Heading>
-      <Columns breakpoint="tablet">
-        <Columns.Column>
-          <Hero color="success">First column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="info">Second column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Third column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Fourth column</Hero>
-        </Columns.Column>
-      </Columns>
-    </Box>
-    <Box>
-      <Heading size={5} renderAs="p">
-        Desktop
-      </Heading>
-      <Columns breakpoint="desktop">
-        <Columns.Column>
-          <Hero color="success">First column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="info">Second column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Third column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Fourth column</Hero>
-        </Columns.Column>
-      </Columns>
-    </Box>
-  </div>
-</Section>
+<Columns breakpoint="mobile">
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="info">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="warning">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="danger">Fourth column</Notification>
+  </Columns.Column>
+</Columns>
+
 
 ```jsx
-<Section>
-  <div>
-    <Box>
-      <Heading size={5} renderAs="p">
-        Mobile
-      </Heading>
-      <Columns breakpoint="mobile">
-        <Columns.Column>
-          <Hero color="success">First column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="info">Second column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Third column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Fourth column</Hero>
-        </Columns.Column>
-      </Columns>
-    </Box>
-    <Box>
-      <Heading size={5} renderAs="p">
-        Tablet
-      </Heading>
-      <Columns breakpoint="tablet">
-        <Columns.Column>
-          <Hero color="success">First column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="info">Second column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Third column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Fourth column</Hero>
-        </Columns.Column>
-      </Columns>
-    </Box>
-    <Box>
-      <Heading size={5} renderAs="p">
-        Desktop
-      </Heading>
-      <Columns breakpoint="desktop">
-        <Columns.Column>
-          <Hero color="success">First column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="info">Second column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Third column</Hero>
-        </Columns.Column>
-        <Columns.Column>
-          <Hero color="warning">Fourth column</Hero>
-        </Columns.Column>
-      </Columns>
-    </Box>
-  </div>
-</Section>
+<Columns breakpoint="mobile">
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="info">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="warning">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="danger">Fourth column</Notification>
+  </Columns.Column>
+</Columns>
+```
+
+### `tablet`
+
+<Columns breakpoint="tablet">
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="info">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="warning">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="danger">Fourth column</Notification>
+  </Columns.Column>
+</Columns>
+
+```jsx
+<Columns breakpoint="tablet">
+  <Columns.Column>
+    <Hero color="success">First column</Hero>
+  </Columns.Column>
+  <Columns.Column>
+    <Hero color="info">Second column</Hero>
+  </Columns.Column>
+  <Columns.Column>
+    <Hero color="warning">Third column</Hero>
+  </Columns.Column>
+  <Columns.Column>
+    <Hero color="warning">Fourth column</Hero>
+  </Columns.Column>
+</Columns>
+```
+
+### `desktop`
+
+<Columns breakpoint="desktop">
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="info">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="warning">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="danger">Fourth column</Notification>
+  </Columns.Column>
+</Columns>
+
+### Other viewport sizes
+
+- `'widescreen'`
+- `'fullhd'`
+
+---
+
+## Customize sizes for different viewports
+
+You can customize how big a `Columns.Column` should be for different viewport sizes
+
+```jsx
+<Columns breakpoint="desktop">
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="info">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="warning">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="danger">Fourth column</Notification>
+  </Columns.Column>
+</Columns>
 ```
 
 <Section>
@@ -158,30 +149,34 @@ import Columns from 'react-bulma-components/lib/components/columns';
         size: 'two-thirds',
       }}
       desktop={{
-        size: 'half',
-      }}
-      widescreen={{
         size: 'one-third',
       }}
+      widescreen={{
+        size: 'half',
+      }}
       fullhd={{
-        size: 'one-quarter',
+        size: 'two-thirds',
       }}
     >
-      <Hero color="info">
+      <Notification color="primary">
         <p>
           is-three-quarters-mobile
           <br />
           is-two-thirds-tablet
           <br />
-          is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
+          is-one-third-desktop
+          <br />
+          is-half-widescreen
+          <br />
+          is-two-third-fullhd
         </p>
-      </Hero>
+      </Notification>
     </Columns.Column>
-    <Columns.Column className="column">
-      <Hero color="info">1</Hero>
+    <Columns.Column>
+      <Notification>1</Notification>
     </Columns.Column>
-    <Columns.Column className="column">
-      <Hero color="warning">1</Hero>
+    <Columns.Column>
+      <Notification>1</Notification>
     </Columns.Column>
   </Columns>
 </Section>
@@ -203,10 +198,10 @@ import Columns from 'react-bulma-components/lib/components/columns';
         size: 'one-third',
       }}
       fullhd={{
-        size: 'one-quarter',
+        size: 'two-third',
       }}
     >
-      <Hero color="info">
+      <Notification color="primary">
         <p>
           is-three-quarters-mobile
           <br />
@@ -214,13 +209,13 @@ import Columns from 'react-bulma-components/lib/components/columns';
           <br />
           is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
         </p>
-      </Hero>
+      </Notification>
     </Columns.Column>
-    <Columns.Column className="column">
-      <Hero color="info">1</Hero>
+    <Columns.Column>
+      <Notification>1</Notification>
     </Columns.Column>
-    <Columns.Column className="column">
-      <Hero color="warning">1</Hero>
+    <Columns.Column>
+      <Notification>1</Notification>
     </Columns.Column>
   </Columns>
 </Section>
