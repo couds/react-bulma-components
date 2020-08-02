@@ -5,10 +5,7 @@ sidebar_label: Responsiveness
 ---
 
 import Columns from 'react-bulma-components/lib/components/columns';
-import Hero from 'react-bulma-components/lib/components/hero';
 import Notification from 'react-bulma-components/lib/components/notification';
-import Box from 'react-bulma-components/lib/components/box';
-import Heading from 'react-bulma-components/lib/components/heading';
 import Section from 'react-bulma-components/lib/components/section';
 
 You can specify at what viewport size should `Columns` be "activated",
@@ -110,6 +107,23 @@ and see what happens!
     <Notification color="danger">Fourth column</Notification>
   </Columns.Column>
 </Columns>
+
+```jsx
+<Columns breakpoint="desktop">
+  <Columns.Column>
+    <Notification color="primary">First column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="info">Second column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="warning">Third column</Notification>
+  </Columns.Column>
+  <Columns.Column>
+    <Notification color="danger">Fourth column</Notification>
+  </Columns.Column>
+</Columns>
+```
 
 ### Other viewport sizes
 
