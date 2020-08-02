@@ -5,47 +5,47 @@ sidebar_label: Nesting
 ---
 
 import Columns from 'react-bulma-components/lib/components/columns'
-import Hero from 'react-bulma-components/lib/components/hero'
-import Section from 'react-bulma-components/lib/components/section';
+import Notification from 'react-bulma-components/lib/components/notification'
 
----
+You can nest `Columns` inside any `Columns.Column` and there's no limit to
+the level of nesting.
 
-## **Import**
-
-```js
-import Columns from 'react-bulma-components/lib/components/columns';
-```
-
-<br />
-
-## **Example**
+In this example, the numbers represent the nesting level the `Columns.Column` is in.
 
 <Section>
   <Columns>
-    <Columns.Column size="half">
-      <Hero color="success">First column</Hero>
-        <Columns>
-          <Columns.Column size="one-third">
-            <Hero color="info">First Nested Column</Hero>
-          </Columns.Column>
-          <Columns.Column>
-            <Hero color="warning">Second Nested Column</Hero>
-          </Columns.Column>
-        </Columns>
+    <Columns.Column>
+      <Notification color="primary">0</Notification>
+      <Columns>
+        <Columns.Column>
+          <Notification color="info">1</Notification>
+          <Columns>
+            <Columns.Column size="half">
+              <Notification color="danger">2</Notification>
+            </Columns.Column>
+            <Columns.Column size="half">
+              <Notification color="danger">2</Notification>
+            </Columns.Column>
+          </Columns>
+        </Columns.Column>
+        <Columns.Column>
+          <Notification color="info">1</Notification>
+        </Columns.Column>
+      </Columns>
     </Columns.Column>
-    <Columns.Column size="half">
-      <Hero color="success">Second column</Hero>
-        <Columns>
-          <Columns.Column size="half">
-            <Hero color="info">First Nested Column</Hero>
-          </Columns.Column>
-          <Columns.Column size="one-quarter">
-            <Hero color="warning">Second Nested Column</Hero>
-          </Columns.Column>
-          <Columns.Column>
-            <Hero color="warning">Thirld Nested Column</Hero>
-          </Columns.Column>
-        </Columns>
+    <Columns.Column>
+      <Notification color="primary">0</Notification>
+      <Columns>
+        <Columns.Column size="two-thirds">
+          <Notification color="info">1</Notification>
+        </Columns.Column>
+        <Columns.Column size="one-third">
+          <Notification color="info">1</Notification>
+        </Columns.Column>
+        <Columns.Column>
+          <Notification color="info">1</Notification>
+        </Columns.Column>
+      </Columns>
     </Columns.Column>
   </Columns>
 </Section>
@@ -53,28 +53,28 @@ import Columns from 'react-bulma-components/lib/components/columns';
 ```jsx
 <Section>
   <Columns>
-    <Columns.Column size="half">
-      <Hero color="success">First column</Hero>
+    <Columns.Column>
+      <Notification color="success">First column</Notification>
       <Columns>
-        <Columns.Column size="one-third">
-          <Hero color="info">First Nested Column</Hero>
+        <Columns.Column>
+          <Notification color="info">First Nested Column</Notification>
         </Columns.Column>
         <Columns.Column>
-          <Hero color="warning">Second Nested Column</Hero>
+          <Notification color="warning">Second Nested Column</Notification>
         </Columns.Column>
       </Columns>
     </Columns.Column>
-    <Columns.Column size="half">
-      <Hero color="success">Second column</Hero>
+    <Columns.Column>
+      <Notification color="success">Second column</Notification>
       <Columns>
         <Columns.Column size="half">
-          <Hero color="info">First Nested Column</Hero>
-        </Columns.Column>
-        <Columns.Column size="one-quarter">
-          <Hero color="warning">Second Nested Column</Hero>
+          <Notification color="info">First Nested Column</Notification>
         </Columns.Column>
         <Columns.Column>
-          <Hero color="warning">Thirld Nested Column</Hero>
+          <Notification color="warning">Second Nested Column</Notification>
+        </Columns.Column>
+        <Columns.Column>
+          <Notification color="warning">Thirld Nested Column</Notification>
         </Columns.Column>
       </Columns>
     </Columns.Column>
