@@ -42,13 +42,14 @@
   },
   "homepage": "https://github.com/couds/react-bulma-components#readme",
   "dependencies": {
-    "bulma": "0.8.2",
+    "bulma": "^0.9.0",
     "classnames": "2.2.6"
   },
   "peerDependencies": {
     "prop-types": ">=15.6.0",
     "react": ">=16.3.0",
-    "react-dom": ">=16.3.0"
+    "react-dom": ">=16.3.0",
+    "bulma": "0.9.0"
   },
   "devDependencies": {
     "@babel/cli": "7.6.2",
