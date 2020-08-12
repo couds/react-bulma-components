@@ -712,7 +712,9 @@ declare module 'react-bulma-components' {
     bordered?: boolean;
   }
 
-  export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'>;
+  export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'> & {
+    Container: BulmaComponent<{}, 'div'>
+  };
 
   // Tabs component
 
