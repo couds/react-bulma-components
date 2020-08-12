@@ -10,122 +10,84 @@ import Notification from 'react-bulma-components/lib/components/notification';
 import Section from 'react-bulma-components/lib/components/section';
 import Box from 'react-bulma-components/lib/components/box';
 
+## Overview
+
 The container component is a basic layout element that centers your contents horizontally.
 
-## **Import**
+### Import
 
 ```js
 import Container from 'react-bulma-components/lib/components/container';
 ```
 
-<br />
+### Props
 
-## **Modifiers**
-
-| Variable name | Type                                                                             | Default values |
-| ------------- | -------------------------------------------------------------------------------- | -------------- |
-| `fluid`       | Boolean                                                                          | `false`        |
-| `className`   | `is-fluid`: Create fluid containers. <br /> `is {breakpoint}` = Add breakpoints. | `undefined`    |
-| `breakpoint`  | Breakpoints                                                                      | `undefined`    |
-| `style`       | Shape                                                                            | `undefined`    |
-| `renderAs`    | renderAsShape                                                                    | `div`          |
+| Prop name    | Type       | Default values |
+| ------------ | ---------- | -------------- |
+| `fluid`      | Boolean    | `false`        |
+| `breakpoint` | Breakpoint | `undefined`    |
 
 ---
 
-## **Examples**
+## Basic
 
-Wrap your elements with a `<Container>` tag to center them horizontally.
-
-<Box>
+<Section>
   <Container>
-    <Notification color="info">
-    <Heading size={5}>Default</Heading>
-    <Heading subtitle>Container</Heading>
-    </Notification>
-  </Container>
-</Box>
-
-```jsx
-<Box>
-  <Container>
-    <Notification color="info">
-      <Heading size={5}>Default</Heading>
-      <Heading subtitle>Container</Heading>
-    </Notification>
-  </Container>
-</Box>
-```
-
-### **Fluid Containers**
-
-Add margins to both Container sides by using the `fluid` modifier.
-
-<Box>
-  <Container fluid="true">
-    <Notification color="danger">
-      <Heading size={5} >Fluid</Heading>
-      <Heading subtitle >Container</Heading>
-    </Notification>
-  </Container>
-</Box>
-
-```jsx
-<Box>
-  <Container fluid="true">
-    <Notification color="danger">
-      <Heading size={5}>Fluid</Heading>
-      <Heading subtitle>Container</Heading>
-    </Notification>
-  </Container>
-</Box>
-```
-
-### Container with Breakpoints
-
-Establish your container width by using the `breakpoint` modifier.
-
-#### ** Widescreen breakpoint**
-
-<Box>
-  <Container breakpoint="widescreen">
-   <Notification color="info">
-     <Heading size={5} >Breakpoint Widescreen</Heading>
-     <Heading subtitle >Container</Heading>
-   </Notification>
-  </Container>
-</Box>
-
-```jsx
-<Box>
-  <Container breakpoint="widescreen">
-    <Notification color="info">
-      <Heading size={5}>Breakpoint Widescreen</Heading>
-      <Heading subtitle>Container</Heading>
-    </Notification>
-  </Container>
-</Box>
-```
-
-#### **Fullwidth Breakpoint**
-
-<Box>
-  <Container breakpoint="fullhd">
-   <Notification color="primary">
-     <Heading size={5} >Breakpoint Fullhd</Heading>
-     <Heading subtitle >Container</Heading>
-   </Notification>
-  </Container>
-</Box>
-
-```jsx
-<Box>
-  <Container breakpoint="fullhd">
     <Notification color="primary">
-      <Heading size={5}>Breakpoint Fullhd</Heading>
-      <Heading subtitle>Container</Heading>
+      This container is <strong>centered</strong> on desktop
     </Notification>
   </Container>
-</Box>
+</Section>
+
+```jsx
+<Container>
+  <Notification>
+    This container is <strong>centered</strong> on desktop
+  </Notification>
+</Container>
+```
+
+## Fluid container
+
+The container will span the entire width of available space and leave 32px margin on the left and right sides.
+
+<Section>
+  <Container fluid>
+    <Notification color="primary">
+      This container is <strong>fluid</strong>
+    </Notification>
+  </Container>
+</Section>
+
+```jsx
+<Container fluid>
+  <Notification>
+    This container is <strong>centered</strong> on desktop
+  </Notification>
+</Container>
+```
+
+---
+
+## Breakpoints
+
+You can have a **fullwidth** container until the specified breakpoint.
+
+<Section>
+  <Container breakpoint="widescreen">
+    <Notification color="primary">
+      This container is <strong>fullwidth</strong> until <strong>widescreen</strong>
+    </Notification>
+  </Container>
+</Section>
+
+```jsx
+<Container breakpoint="widescreen">
+  <Notification color="primary">
+    This container is <strong>fullwidth</strong> until{' '}
+    <strong>widescreen</strong>
+  </Notification>
+</Container>
 ```
 
 ---
