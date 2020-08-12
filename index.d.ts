@@ -710,6 +710,7 @@ declare module 'react-bulma-components' {
     size?: 'fullwidth' | 'narrow';
     striped?: boolean;
     bordered?: boolean;
+    hoverable?: boolean;
   }
 
   export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'> & {
