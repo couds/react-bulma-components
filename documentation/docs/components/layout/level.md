@@ -13,73 +13,51 @@ import Container from 'react-bulma-components/lib/components/container';
 import Section from 'react-bulma-components/lib/components/section';
 import Box from 'react-bulma-components/lib/components/box';
 
-The Level component is a simple horizontal container that can be used to structure all other elements.
+## Overview
 
-## **Import**
+The Level component is a simple horizontal container that can be used to structure other elements.
+
+### Import
 
 ```js
 import Level from 'react-bulma-components/lib/components/level';
 ```
 
-<br />
-
-## **Structural Components**
+### Components & Props
 
 The `Level` element consists of 3 components.
 
-### `<Level />`
+#### `<Level />`
 
-Main level container.
+The main component
 
-#### **Modifiers**
+<br />
 
-| Variable name | Type                                                                  | Default values |
-| ------------- | --------------------------------------------------------------------- | -------------- |
-| `className`   | `is-${breakpoint}`: Add breakpoint. <br /> `is-mobile`: mobile level. | `undefined`    |
-| `style`       | shape                                                                 | `undefined`    |
-| `breakpoint`  | breakpoints                                                           | `undefined`    |
-| `renderAs`    | renderAsShape                                                         | `div`          |
-
-### `<Level.Side />`
+#### `<Level.Side />`
 
 Component to align contents to either left or right side.
 
-#### **Modifiers**
+| Prop name | Type                  | Default values |
+| --------- | --------------------- | -------------- |
+| `align`   | `'left'` or `'right'` | `'left'`       |
 
-| Variable name | Type                     | Default values |
-| ------------- | ------------------------ | -------------- |
-| `align`       | one of `left` or `right` | `left`         |
-| `className`   | `level-${align}`: align. | `undefined`    |
-| `style`       | shape                    | `undefined`    |
-| `renderAs`    | renderAsShape            | `div`          |
+<br />
 
-### `<Level.Item />`
+#### `<Level.Item />`
 
-Component for other elements.
-
-#### **Modifiers**
-
-| Variable name | Type          | Default values |
-| ------------- | ------------- | -------------- |
-| `className`   | string        | `undefined`    |
-| `style`       | shape         | `undefined`    |
-| `renderAs`    | renderAsShape | `div`          |
+An item in `<Level />` or `<Level.Side />`
 
 ---
 
-## **Examples**
+## Basic
 
-How to create a `<Level />` component.
+1. Create your main container with the `<Level />` component.
 
-1. Create your main container with the `<Level />` tag.
+2. Align your contents to either side with the `<Level.Side />` component.
 
-2. Align your contents to either side with the `<Level.Side />` tag.
+3. Add contents to your level container with the `<Level.Item />` component.
 
-   - `<Level.Side align="left" />` to align contents to the left side.
-
-   - `<Level.Side align="right" />` to align contents to the right side.
-
-3. Add contents to your level container with the `<Level.Item />` tag.
+<br />
 
 <Box>
   <Level renderAs="nav">
@@ -104,10 +82,12 @@ How to create a `<Level />` component.
     </Level.Side>
     <Level.Side align="right">
       <Level.Item><strong>All</strong></Level.Item>
-      <Level.Item><a>Published</a></Level.Item>
-      <Level.Item><a>Drafts</a></Level.Item>
-      <Level.Item><a>Deleted</a></Level.Item>
-      <Level.Item><Button renderAs="a" color="success">New</Button></Level.Item>
+      <Level.Item renderAs="a">Published</Level.Item>
+      <Level.Item renderAs="a">Drafts</Level.Item>
+      <Level.Item renderAs="a">Deleted</Level.Item>
+      <Level.Item>
+        <Button color="info">New</Button>
+      </Level.Item>
     </Level.Side>
   </Level>
 </Box>
@@ -127,7 +107,7 @@ How to create a `<Level />` component.
             <Input placeholder="Find a post" />
           </Control>
           <Control>
-            <Button renderAs="button">Search</Button>
+            <Button>Search</Button>
           </Control>
         </Field>
       </Level.Item>
@@ -136,28 +116,22 @@ How to create a `<Level />` component.
       <Level.Item>
         <strong>All</strong>
       </Level.Item>
+      <Level.Item renderAs="a">Published</Level.Item>
+      <Level.Item renderAs="a">Drafts</Level.Item>
+      <Level.Item renderAs="a">Deleted</Level.Item>
       <Level.Item>
-        <a>Published</a>
-      </Level.Item>
-      <Level.Item>
-        <a>Drafts</a>
-      </Level.Item>
-      <Level.Item>
-        <a>Deleted</a>
-      </Level.Item>
-      <Level.Item>
-        <Button renderAs="a" color="success">
-          New
-        </Button>
+        <Button color="info">New</Button>
       </Level.Item>
     </Level.Side>
   </Level>
 </Box>
 ```
 
-### **Centered Level**
+---
 
-Nest all `<level.Item />` tags directly under your `<level />` tag to create a Centered level.
+## Centered Level
+
+Put all `<Level.Item />` directly under `<Level />` to center them.
 
 <Box>
   <Level renderAs="nav">
@@ -243,9 +217,15 @@ Nest all `<level.Item />` tags directly under your `<level />` tag to create a C
 </Box>
 ```
 
-### **With Breakpoint**
+---
 
-Add Breakpoints to your level component by using the `breakpoint` modifier.
+## Mobile level
+
+By default, levels are vertical on mobile. Use `breakpoint="mobile"` to make it horizontal.
+
+:::tip
+Try resizing the window to see what happens!
+:::
 
 <Box>
   <Level renderAs="nav" breakpoint='mobile'>
