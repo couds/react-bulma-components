@@ -507,20 +507,6 @@ declare module 'react-bulma-components' {
     Item: BulmaComponent<{}, 'div'>;
   };
 
-  // List
-
-  interface ListProps {
-    hoverable?: boolean;
-  }
-
-  interface ListItemProps {
-    active?: boolean;
-  }
-
-  export const List: BulmaComponent<ListProps, 'div'> & {
-    Item: BulmaComponent<ListItemProps, 'div'>;
-  };
-
   // Loader component
 
   export const Loader: BulmaComponent<{}, 'div'>;
