@@ -5,10 +5,7 @@ import modifiers from '../../../modifiers';
 import Element from '../../element';
 
 const TableContainer = ({ className, children, position, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('table-container', className)}
-  >
+  <Element {...props} className={classnames('table-container', className)}>
     {children}
   </Element>
 );
