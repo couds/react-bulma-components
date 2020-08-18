@@ -8,7 +8,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 
 const breakpoints = [null].concat(
-  Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]),
+  Object.keys(CONSTANTS.BREAKPOINTS).map((key) => CONSTANTS.BREAKPOINTS[key]),
 );
 
 const sizes = [0, 1, 2, 3, 4, 5, 6, 7, 8];

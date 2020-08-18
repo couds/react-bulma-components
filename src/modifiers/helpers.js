@@ -28,7 +28,7 @@ export default {
     invisible: undefined,
     hidden: undefined,
   },
-  classnames: props =>
+  classnames: (props) =>
     classnames({
       'is-clearfix': props.clearfix,
       [`is-pulled-${props.pull}`]: props.pull,

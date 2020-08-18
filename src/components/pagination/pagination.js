@@ -5,7 +5,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 
 export default class Pagination extends React.PureComponent {
-  goToPage = page => evt => {
+  goToPage = (page) => (evt) => {
     evt.preventDefault();
     const { onChange } = this.props;
     onChange(page);

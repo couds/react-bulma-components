@@ -16,7 +16,7 @@ export default {
     italic: undefined,
     textWeight: undefined,
   },
-  classnames: props =>
+  classnames: (props) =>
     classnames({
       [`has-text-${props.textAlignment}`]: props.textAlignment,
       [`has-text-weight-${props.textWeight}`]: props.textWeight,

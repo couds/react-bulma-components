@@ -28,7 +28,7 @@ export default class Dropdown extends PureComponent {
     document.removeEventListener('click', this.close);
   }
 
-  close = evt => {
+  close = (evt) => {
     // IDK yet how to test using the ref in enzime
     // istanbul ignore if
     if (
@@ -45,7 +45,7 @@ export default class Dropdown extends PureComponent {
     }
   };
 
-  toggle = evt => {
+  toggle = (evt) => {
     if (this.props.hoverable) {
       return;
     }
@@ -55,7 +55,7 @@ export default class Dropdown extends PureComponent {
     this.setState(({ open }) => ({ open: !open }));
   };
 
-  select = value => () => {
+  select = (value) => () => {
     if (this.props.onChange) {
       this.props.onChange(value);
     }

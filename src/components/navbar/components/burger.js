@@ -8,7 +8,7 @@ import Element from '../../element';
 
 const NavbarBurger = ({ style, className, ...props }) => (
   <ShowContext.Consumer>
-    {active => (
+    {(active) => (
       <Element
         role="button"
         tabIndex="0"

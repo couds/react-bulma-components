@@ -7,7 +7,7 @@ import modifiers from '../../../modifiers';
 import CONSTANTS from '../../../constants';
 
 const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+  Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]),
 );
 
 const InputFile = ({
@@ -27,7 +27,7 @@ const InputFile = ({
   ...props
 }) => {
   const [filename, setFilename] = useState('');
-  const onSelect = event => {
+  const onSelect = (event) => {
     const { files } = event.target;
     setFilename(files.length > 0 ? files[0].name : undefined);
     if (onChange) {

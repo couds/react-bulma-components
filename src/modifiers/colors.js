@@ -12,7 +12,7 @@ export default {
     backgroundColor: undefined,
     colorVariant: undefined,
   },
-  classnames: props =>
+  classnames: (props) =>
     classnames({
       [`has-text-${props.textColor}`]: props.textColor,
       [`has-background-${props.backgroundColor}`]: props.backgroundColor,

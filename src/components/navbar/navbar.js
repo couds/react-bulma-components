@@ -17,7 +17,7 @@ import modifiers from '../../modifiers';
 import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
+  Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]),
 );
 
 let htmlClass = '';
