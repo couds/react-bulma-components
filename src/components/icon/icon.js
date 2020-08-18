@@ -9,7 +9,7 @@ const colors = [null].concat(
   Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
 );
 
-const Icon = ({ icon, size, color, className, align, children, ...props }) => (
+const Icon = ({ size, color, className, align, children, ...props }) => (
   <Element
     renderAs="span"
     {...props}
@@ -19,19 +19,12 @@ const Icon = ({ icon, size, color, className, align, children, ...props }) => (
       [`has-text-${color}`]: color,
     })}
   >
-    {children || (
-      <i
-        className={classnames('rbc', {
-          [`rbc-${icon}`]: icon,
-        })}
-      />
-    )}
+    {children}
   </Element>
 );
 
 Icon.propTypes = {
   ...modifiers.propTypes,
-  icon: PropTypes.string,
   children: PropTypes.element,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -48,7 +41,6 @@ Icon.defaultProps = {
   color: undefined,
   children: null,
   align: undefined,
-  icon: undefined,
 };
 
 export default Icon;

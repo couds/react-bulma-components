@@ -13,10 +13,6 @@ module.exports = ({ config: defaultConfig }) => {
           loaders: [require.resolve('@storybook/addon-storysource/loader')],
           enforce: 'pre',
         },
-        {
-          test: /\.s[ca]ss$/,
-          loader: 'style-loader!css-loader!resolve-url-loader!sass-loader',
-        },
         ...defaultConfig.module.rules,
       ],
     },
@@ -25,10 +21,6 @@ module.exports = ({ config: defaultConfig }) => {
       modules: ['node_modules', 'src', ...defaultConfig.resolve.modules],
       alias: {
         ...defaultConfig.resolve.alias,
-        '~_variables.sass': path.resolve(
-          __dirname,
-          '../src/components/_variables.sass',
-        ),
         'react-bulma-components/lib': path.resolve(__dirname, '../src'),
       },
       // https://github.com/graphql/graphql-js#using-in-a-browser

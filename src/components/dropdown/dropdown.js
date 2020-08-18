@@ -6,7 +6,6 @@ import CONSTANTS from '../../constants';
 import DropdownItem from './components/item';
 import DropdownDivider from './components/divider';
 import Button from '../button';
-import Icon from '../icon';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
@@ -78,6 +77,7 @@ export default class Dropdown extends PureComponent {
       label,
       onChange,
       closeOnSelect,
+      icon,
       ...props
     } = this.props;
     let current = label;
@@ -100,13 +100,6 @@ export default class Dropdown extends PureComponent {
       );
     });
 
-    if (align === 'right') {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'react-bulma-components: "Align" prop will be replaced by "right" prop in future releases. Please update your code to avoid breaking changes.',
-      );
-    }
-
     return (
       <Element
         {...props}
@@ -125,7 +118,7 @@ export default class Dropdown extends PureComponent {
         >
           <Button color={color}>
             <span>{current}</span>
-            <Icon icon="angle-down" size="small" />
+            {icon}
           </Button>
         </div>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">
@@ -154,6 +147,7 @@ Dropdown.propTypes = {
   hoverable: PropTypes.bool,
   label: PropTypes.node,
   closeOnSelect: PropTypes.bool,
+  icon: PropTypes.node,
 };
 
 Dropdown.defaultProps = {
@@ -170,4 +164,5 @@ Dropdown.defaultProps = {
   align: undefined,
   hoverable: undefined,
   label: undefined,
+  icon: undefined,
 };

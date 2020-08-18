@@ -2,7 +2,6 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import './loader.story.sass';
 import Loader from 'react-bulma-components/lib/components/loader';
 
 storiesOf('Loader', module)

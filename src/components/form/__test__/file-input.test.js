@@ -28,7 +28,7 @@ describe('Dropdown component', () => {
         onChange={onChange}
       />,
     );
-    component.find('.input-file .file-input').simulate('change', {
+    component.find('.file-input').simulate('change', {
       target: {
         files: [
           {
@@ -37,7 +37,8 @@ describe('Dropdown component', () => {
         ],
       },
     });
-    expect(component.state('filename')).toBe('dummyValue.something');
+    // console.log(component.find('.file-input').simulate);
+    expect(component.find('.file-name').text()).toBe('dummyValue.something');
     expect(onChange).toBeCalled();
   });
 
@@ -51,12 +52,12 @@ describe('Dropdown component', () => {
         onChange={onChange}
       />,
     );
-    component.find('.input-file .file-input').simulate('change', {
+    component.find('.file-input').simulate('change', {
       target: {
         files: [],
       },
     });
-    expect(component.state('filename')).toBe(undefined);
+    expect(component.find('.file-name').length).toBe(0);
     expect(onChange).toBeCalled();
   });
   it('should pass file attributes', () => {

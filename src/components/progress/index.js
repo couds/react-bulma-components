@@ -1,3 +1,3 @@
-import './progress.sass';
+import Progress from './progress';
 
-export { default } from './progress';
+export default Progress;

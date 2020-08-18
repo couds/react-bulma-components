@@ -1,3 +1,3 @@
-import './level.sass';
+import Level from './level';
 
-export { default } from './level';
+export default Level;

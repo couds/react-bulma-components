@@ -1,4 +1,3 @@
-import './index.sass';
 import * as Form from './components/form';
 
 export { default as Box } from './components/box';

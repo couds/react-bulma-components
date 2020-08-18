@@ -1,3 +1,3 @@
-import './tile.sass';
+import Tile from './tile';
 
-export { default } from './tile';
+export default Tile;

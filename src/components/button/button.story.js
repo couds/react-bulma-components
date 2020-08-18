@@ -95,7 +95,7 @@ storiesOf('Button', module)
     return (
       <Section>
         <Button onClick={() => ref.current.click()}>click other button</Button>
-        <Button ref={ref} onClick={() => console.log('clicked')}>
+        <Button domRef={ref} onClick={() => console.log('clicked')}>
           this will be clicked
         </Button>
       </Section>
