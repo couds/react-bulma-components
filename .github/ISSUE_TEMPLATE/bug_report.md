@@ -26,6 +26,8 @@ If applicable, add screenshots to help explain your problem.
 **Versions**
 - `react-bulma-components:`:
 - `bulma`:
+- `react`:
+- Browser: (e.g. Firefox version 67)
 
 **Additional context**
 Add any other context about the problem here.
