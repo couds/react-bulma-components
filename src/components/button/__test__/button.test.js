@@ -91,7 +91,7 @@ describe('Button component', () => {
   });
   it('Should forward ref', () => {
     const testRef = React.createRef();
-    mount(<Button ref={testRef} />);
+    mount(<Button domRef={testRef} />);
     expect(testRef.current).not.toBeNull();
   });
   describe('Button Group component', () => {
