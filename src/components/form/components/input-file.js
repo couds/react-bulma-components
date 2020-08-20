@@ -6,9 +6,7 @@ import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
-const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map((key) => CONSTANTS.COLORS[key]),
-);
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const InputFile = ({
   className,
