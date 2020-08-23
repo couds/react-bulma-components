@@ -25,7 +25,7 @@ const Breadcrumb = ({
     })}
   >
     <ul>
-      {items.map(item => {
+      {items.map((item) => {
         const p = {
           renderAs,
           [hrefAttr]: item.url,

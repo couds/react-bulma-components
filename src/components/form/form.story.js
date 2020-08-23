@@ -91,7 +91,7 @@ class RadioGroup extends React.Component {
           value="Yes"
           name="question"
         >
-          Yes
+          {' '}Yes
         </Radio>
         <Radio
           onChange={this.onChange}
@@ -99,7 +99,7 @@ class RadioGroup extends React.Component {
           value="No"
           name="question"
         >
-          No
+          {' '}No
         </Radio>
       </Control>
     );
@@ -185,7 +185,7 @@ storiesOf('Form', module)
       <Field>
         <Control>
           <CheckboxControlled>
-            I agree to the <a href="#agree">terms and conditions</a>
+            {' '}I agree to the <a href="#agree">terms and conditions</a>
           </CheckboxControlled>
         </Control>
       </Field>

@@ -1,3 +1,3 @@
-import './container.sass';
+import Container from './container';
 
-export { default } from './container';
+export default Container;

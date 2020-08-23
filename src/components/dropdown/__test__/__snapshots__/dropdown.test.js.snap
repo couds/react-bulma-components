@@ -20,13 +20,6 @@ exports[`Dropdown component Should appear above the dropdown button 1`] = `
       <span>
         Item
       </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
-      </span>
     </button>
   </div>
   <div
@@ -75,13 +68,6 @@ exports[`Dropdown component Should be right-aligned when using "right" prop 1`] 
     >
       <span>
         Item
-      </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
       </span>
     </button>
   </div>
@@ -132,13 +118,6 @@ exports[`Dropdown component Should concat Bulma class with classes in props 1`] 
       <span>
         Item
       </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
-      </span>
     </button>
   </div>
   <div
@@ -185,13 +164,6 @@ exports[`Dropdown component Should have custom inline styles 1`] = `
       <span>
         Item
       </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
-      </span>
     </button>
   </div>
   <div
@@ -237,13 +209,6 @@ exports[`Dropdown component Should have divider 1`] = `
     >
       <span>
         Item
-      </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
       </span>
     </button>
   </div>
@@ -297,13 +262,6 @@ exports[`Dropdown component Should have dropdown classname 1`] = `
       <span>
         Item
       </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
-      </span>
     </button>
   </div>
   <div
@@ -344,13 +302,6 @@ exports[`Dropdown component Should show custom label passed to the label prop 1`
     >
       <span>
         test label
-      </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
       </span>
     </button>
   </div>
@@ -393,13 +344,6 @@ exports[`Dropdown component Should show the label of the first dropdown item whe
       <span>
         Item
       </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
-      </span>
     </button>
   </div>
   <div
@@ -440,13 +384,6 @@ exports[`Dropdown component should also be right-aligned when using "align" prop
     >
       <span>
         Item
-      </span>
-      <span
-        className="icon is-small"
-      >
-        <i
-          className="rbc rbc-angle-down"
-        />
       </span>
     </button>
   </div>

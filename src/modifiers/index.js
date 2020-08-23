@@ -5,7 +5,7 @@ import colors from './colors';
 import typography from './typography';
 import spacing from './spacing';
 
-const compose = (...fns) => args => fns.reduce((arg, fn) => fn(arg), args);
+const compose = (...fns) => (args) => fns.reduce((arg, fn) => fn(arg), args);
 
 export default {
   propTypes: {
@@ -20,7 +20,7 @@ export default {
     ...colors.defaultProps,
     ...typography.defaultProps,
   },
-  classnames: props =>
+  classnames: (props) =>
     classnames(
       helpers.classnames(props),
       responsive.classnames(props),
@@ -28,7 +28,7 @@ export default {
       typography.classnames(props),
       spacing.classnames(props),
     ),
-  clean: props =>
+  clean: (props) =>
     compose(
       helpers.clean,
       responsive.clean,

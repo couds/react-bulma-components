@@ -26,7 +26,7 @@ export default {
     },
     { propTypes: {}, defaultProps: {} },
   ),
-  classnames: props =>
+  classnames: (props) =>
     classnames(
       Object.keys(props).reduce((classes, propName) => {
         if (modifierNames.includes(propName)) {
@@ -35,7 +35,7 @@ export default {
         return classes;
       }, {}),
     ),
-  clean: props =>
+  clean: (props) =>
     Object.keys(props).reduce((cleaned, propName) => {
       if (!modifierNames.includes(propName)) {
         cleaned[propName] = props[propName];

@@ -5,7 +5,15 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import Container from './components/container';
 
-const Table = ({ children, className, size, striped, bordered, hoverable, ...props }) => (
+const Table = ({
+  children,
+  className,
+  size,
+  striped,
+  bordered,
+  hoverable,
+  ...props
+}) => (
   <Element
     renderAs="table"
     {...props}

@@ -1,3 +1,3 @@
-import './panel.sass';
+import Panel from './panel';
 
-export { default } from './panel';
+export default Panel;

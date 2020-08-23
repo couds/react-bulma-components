@@ -6,9 +6,7 @@ import modifiers from '../../modifiers';
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
-const breakpoints = [null].concat(
-  Object.keys(CONSTANTS.BREAKPOINTS).map(key => CONSTANTS.BREAKPOINTS[key]),
-);
+const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
 
 const Container = ({ children, fluid, breakpoint, className, ...props }) => (
   <Element

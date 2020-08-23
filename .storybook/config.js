@@ -9,7 +9,7 @@ import {
 } from '@storybook/addon-viewport';
 import extraViewports from './extra-viewports.json';
 
-import 'index.sass';
+import 'bulma/css/bulma.min.css';
 
 setOptions({
   name: 'React Bulma Components',

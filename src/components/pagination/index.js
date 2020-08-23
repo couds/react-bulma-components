@@ -1,3 +1,3 @@
-import './pagination.sass';
+import Pagination from './pagination';
 
-export { default } from './pagination';
+export default Pagination;
