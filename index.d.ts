@@ -1,293 +1,147 @@
+import * as React from 'react';
+
+type OmitKeys<T, U> = Pick<T, Exclude<keyof T, U>>;
+
+export type Color =
+  | 'primary'
+  | 'success'
+  | 'info'
+  | 'warning'
+  | 'danger'
+  | 'light'
+  | 'dark'
+  | 'white'
+  | 'black'
+  | 'link';
+
+export type Size = 'small' | 'medium' | 'large';
+
+export type Breakpoint =
+  | 'desktop'
+  | 'tablet'
+  | 'mobile'
+  | 'widescreen'
+  | 'fullhd'
+  | 'touch';
+
+interface HelperProps {
+  clearfix?: boolean;
+  pull?: 'left' | 'right';
+  marginless?: boolean;
+  paddingless?: boolean;
+  overlay?: boolean;
+  clipped?: boolean;
+  radiusless?: boolean;
+  shadowless?: boolean;
+  unselectable?: boolean;
+  invisible?: boolean;
+  hidden?: boolean;
+}
+
+interface SizeShape {
+  display?: {
+    value?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
+    only?: boolean;
+  };
+  hide?: {
+    value?: boolean;
+    only?: boolean;
+  };
+  textSize?: {
+    value: 1 | 2 | 3 | 4 | 5 | 6;
+  };
+  textAlignment?: {
+    value?: 'centered' | 'justified' | 'left' | 'right';
+    only?: boolean;
+  };
+}
+
+interface ResponsiveProps {
+  responsive?: {
+    mobile?: SizeShape;
+    tablet?: SizeShape;
+    desktop?: SizeShape;
+    widescreen?: SizeShape;
+    fullhd?: SizeShape;
+    touch?: SizeShape;
+  };
+}
+
+interface ColorProps {
+  textColor?: string;
+  backgroundColor?: string;
+  colorVariant?: 'light' | 'dark';
+}
+
+interface TypographyProps {
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  textAlignment?: 'centered' | 'justified' | 'left' | 'right';
+  textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
+  textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
+  italic?: boolean;
+}
+
+type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
+  JSX.IntrinsicElements[K],
+  keyof ModifierProps | 'ref'
+>;
+
+// Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
+
+export type RenderAsComponent = string | React.ComponentType<never>;
+
+type RenderAsComponentProps<
+  TComponent
+> = TComponent extends keyof JSX.IntrinsicElements
+  ? HTMLAttributes<TComponent>
+  : TComponent extends React.ComponentType<infer Props>
+  ? Props & JSX.IntrinsicAttributes
+  : never;
+
+type ModifierProps = HelperProps &
+  ColorProps &
+  ResponsiveProps &
+  TypographyProps;
+
+export type ElementProps<
+  TProps,
+  TComponent extends RenderAsComponent
+> = ModifierProps & {
+  className?: string;
+  domRef?: React.RefObject<TComponent>;
+  renderAs?: TComponent;
+  style?: React.CSSProperties;
+} & OmitKeys<RenderAsComponentProps<TComponent>, keyof TProps>;
+
+export type BulmaComponent<
+  TProps,
+  TDefaultHTMLElement extends RenderAsComponent
+> = <TComponent extends RenderAsComponent = TDefaultHTMLElement>(
+  props: TProps & ElementProps<TProps, TComponent>,
+) => React.ReactElement;
+
+export type BulmaComponentWithoutRenderAs<
+  TProps,
+  THTMLElement extends RenderAsComponent
+> = (
+  props: TProps & Omit<ElementProps<TProps, THTMLElement>, 'renderAs'>,
+) => React.ReactElement;
+
+export type BulmaComponentWithoutModifiers<TProps> = (
+  props: TProps,
+) => React.ReactElement;
+
+export { Box } from './src/components/box';
+export { Breadcrumb } from './src/components/breadcrumb';
+export { Button } from './src/components/button';
+export { Card } from './src/components/card';
+export { Container } from './src/components/container';
+export { Columns } from './src/components/columns';
+export { Content } from './src/components/content';
+export { Dropdown } from './src/components/dropdown';
+export { Image } from './src/components/image';
+
 declare module 'react-bulma-components' {
-  import * as React from 'react';
-
-  type OmitKeys<T, U> = Pick<T, Exclude<keyof T, U>>;
-
-  type Color =
-    | 'primary'
-    | 'success'
-    | 'info'
-    | 'warning'
-    | 'danger'
-    | 'light'
-    | 'dark'
-    | 'white'
-    | 'black'
-    | 'link';
-
-  type Size = 'small' | 'medium' | 'large';
-
-  type Breakpoint =
-    | 'desktop'
-    | 'tablet'
-    | 'mobile'
-    | 'widescreen'
-    | 'fullhd'
-    | 'touch';
-
-  interface HelperProps {
-    clearfix?: boolean;
-    pull?: 'left' | 'right';
-    marginless?: boolean;
-    paddingless?: boolean;
-    overlay?: boolean;
-    clipped?: boolean;
-    radiusless?: boolean;
-    shadowless?: boolean;
-    unselectable?: boolean;
-    invisible?: boolean;
-    hidden?: boolean;
-  }
-
-  interface SizeShape {
-    display?: {
-      value?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
-      only?: boolean;
-    };
-    hide?: {
-      value?: boolean;
-      only?: boolean;
-    };
-    textSize?: {
-      value: 1 | 2 | 3 | 4 | 5 | 6;
-    };
-    textAlignment?: {
-      value?: 'centered' | 'justified' | 'left' | 'right';
-      only?: boolean;
-    };
-  }
-
-  interface ResponsiveProps {
-    responsive?: {
-      mobile?: SizeShape;
-      tablet?: SizeShape;
-      desktop?: SizeShape;
-      widescreen?: SizeShape;
-      fullhd?: SizeShape;
-      touch?: SizeShape;
-    };
-  }
-
-  interface ColorProps {
-    textColor?: string;
-    backgroundColor?: string;
-    colorVariant?: 'light' | 'dark';
-  }
-
-  interface TypographyProps {
-    textSize?: 1 | 2 | 3 | 4 | 5 | 6;
-    textAlignment?: 'centered' | 'justified' | 'left' | 'right';
-    textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
-    textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
-    italic?: boolean;
-  }
-
-  type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
-    JSX.IntrinsicElements[K],
-    keyof ModifierProps | 'ref'
-  >;
-
-  // Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
-
-  type RenderAsComponent = string | React.ComponentType<never>;
-
-  type RenderAsComponentProps<
-    TComponent
-  > = TComponent extends keyof JSX.IntrinsicElements
-    ? HTMLAttributes<TComponent>
-    : TComponent extends React.ComponentType<infer Props>
-    ? Props & JSX.IntrinsicAttributes
-    : never;
-
-  type ModifierProps = HelperProps &
-    ColorProps &
-    ResponsiveProps &
-    TypographyProps;
-
-  type ElementProps<
-    TProps,
-    TComponent extends RenderAsComponent
-  > = ModifierProps & {
-    className?: string;
-    domRef?: React.RefObject<TComponent>;
-    renderAs?: TComponent;
-    style?: React.CSSProperties;
-  } & OmitKeys<RenderAsComponentProps<TComponent>, keyof TProps>;
-
-  type BulmaComponent<TProps, TDefaultHTMLElement extends RenderAsComponent> = <
-    TComponent extends RenderAsComponent = TDefaultHTMLElement
-  >(
-    props: TProps & ElementProps<TProps, TComponent>,
-  ) => React.ReactElement;
-
-  type BulmaComponentWithoutRenderAs<
-    TProps,
-    THTMLElement extends RenderAsComponent
-  > = (
-    props: TProps & Omit<ElementProps<TProps, THTMLElement>, 'renderAs'>,
-  ) => React.ReactElement;
-
-  type BulmaComponentWithoutModifiers<TProps> = (
-    props: TProps,
-  ) => React.ReactElement;
-
-  // Below defines all exported components
-
-  // Box component
-
-  export const Box: BulmaComponent<{}, 'div'>;
-
-  // Breadcrumb component
-
-  interface BreadcrumbItem {
-    url: string;
-    active?: boolean;
-    name?: React.ReactNode;
-  }
-
-  interface BreadcrumbProps {
-    separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
-    size?: Size;
-    align?: 'right' | 'center';
-    items?: BreadcrumbItem[];
-    hrefAttr?: string;
-  }
-
-  export const Breadcrumb: BulmaComponent<BreadcrumbProps, 'a'>;
-
-  // Button component
-
-  interface ButtonProps {
-    onClick?: () => void;
-    color?: Color;
-    size?: Size;
-    state?: 'hover' | 'focus' | 'active' | 'loading';
-    outlined?: boolean;
-    inverted?: boolean;
-    submit?: boolean;
-    reset?: boolean;
-    loading?: boolean;
-    fullwidth?: boolean;
-    disabled?: boolean;
-    remove?: boolean;
-    isSelected?: boolean;
-    isStatic?: boolean;
-    rounded?: boolean;
-    text?: boolean;
-  }
-
-  interface ButtonGroupProps {
-    size?: Size;
-    hasAddons?: boolean;
-    position?: 'centered' | 'right';
-  }
-
-  export const Button: BulmaComponent<ButtonProps, 'button'> & {
-    Group: BulmaComponent<ButtonGroupProps, 'div'>;
-  };
-
-  // Card component
-
-  export const Card: BulmaComponent<{}, 'div'> & {
-    Image: BulmaComponent<ImageProps, 'figure'>;
-    Content: BulmaComponent<{}, 'div'>;
-    Header: BulmaComponent<{}, 'div'> & {
-      Title: BulmaComponent<{}, 'div'>;
-      Icon: BulmaComponent<{}, 'div'>;
-    };
-    Footer: BulmaComponent<{}, 'div'> & {
-      Item: BulmaComponent<{}, 'div'>;
-    };
-  };
-
-  // Column component
-
-  interface ColumnGroupProps {
-    variableGap?: {
-      [breakpoint in Breakpoint]: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-    };
-    breakpoint?: Breakpoint;
-    gapless?: boolean;
-    multiline?: boolean;
-    centered?: boolean;
-    vCentered?: boolean;
-  }
-
-  type ColumnSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-
-  interface ColumnBreakpointConfiguration {
-    size?: ColumnSize;
-    offset?: ColumnSize;
-    narrow?: boolean;
-  }
-
-  interface ColumnProps {
-    size?: ColumnSize;
-    offset?: ColumnSize;
-    narrow?: boolean;
-    touch?: ColumnBreakpointConfiguration;
-    mobile?: ColumnBreakpointConfiguration;
-    tablet?: ColumnBreakpointConfiguration;
-    desktop?: ColumnBreakpointConfiguration;
-    widescreen?: ColumnBreakpointConfiguration;
-    fullhd?: ColumnBreakpointConfiguration;
-  }
-
-  export const Columns: BulmaComponent<ColumnGroupProps, 'div'> & {
-    Column: BulmaComponent<ColumnProps, 'div'>;
-  };
-
-  // Container component
-
-  interface ContainerProps {
-    fluid?: boolean;
-    breakpoint?: Breakpoint;
-  }
-
-  export const Container: BulmaComponent<ContainerProps, 'div'>;
-
-  // Content component
-
-  interface ContentProps {
-    size?: Size;
-  }
-
-  export const Content: BulmaComponent<ContentProps, 'div'>;
-
-  // Dropdown component
-
-  interface DropdownProps<T> {
-    value?: T;
-    onChange?: (newValue: T) => void;
-    color?: Color;
-    hoverable?: boolean;
-    label?: React.ReactNode;
-    closeOnSelect?: boolean;
-    right?: boolean;
-    up?: boolean;
-    align?: 'right';
-  }
-
-  interface DropdownItemProps<T> {
-    value: T;
-  }
-
-  export const Dropdown: (<
-    TValue,
-    TComponent extends RenderAsComponent = 'div'
-  >(
-    props: DropdownProps<TValue> &
-      ElementProps<DropdownProps<TValue>, TComponent>,
-  ) => React.ReactElement) & {
-    Item: <TValue, TComponent extends RenderAsComponent = 'div'>(
-      props: DropdownItemProps<TValue> &
-        ElementProps<DropdownItemProps<TValue>, TComponent>,
-    ) => React.ReactElement;
-    Divider: (
-      props: Omit<ElementProps<{}, 'hr'>, 'renderAs'>,
-    ) => React.ReactElement;
-  };
-
   // Footer component
 
   export const Footer: BulmaComponent<{}, 'div'>;
@@ -454,42 +308,6 @@ declare module 'react-bulma-components' {
   }
 
   export const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'>;
-
-  // Image component
-
-  interface ImageProps {
-    src?: string;
-    alt?: string;
-    rounded?: boolean;
-    size?:
-      | 16
-      | 24
-      | 32
-      | 48
-      | 64
-      | 96
-      | 128
-      | 'square'
-      | '1by1'
-      | '4by3'
-      | '3by2'
-      | '16by9'
-      | '2by1'
-      | '5by4'
-      | '5by3'
-      | '3by1'
-      | '4by5'
-      | '3by4'
-      | '2by3'
-      | '3by5'
-      | '9by16'
-      | '1by2'
-      | '1by3';
-    fallback?: string;
-    fullwidth?: boolean;
-  }
-
-  export const Image: BulmaComponentWithoutRenderAs<ImageProps, 'figure'>;
 
   // Level component
 
@@ -700,7 +518,7 @@ declare module 'react-bulma-components' {
   }
 
   export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'> & {
-    Container: BulmaComponent<{}, 'div'>
+    Container: BulmaComponent<{}, 'div'>;
   };
 
   // Tabs component
