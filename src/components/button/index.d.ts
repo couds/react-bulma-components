@@ -1,4 +1,4 @@
-import { BulmaComponent, Color, Size } from '../../../index';
+import { BulmaComponent, Color, Size } from '../../index';
 
 interface ButtonProps {
   onClick?: () => void;

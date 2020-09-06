@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BulmaComponent, Size } from '../../../index';
+import { BulmaComponent, Size } from '../../index';
 
 interface BreadcrumbItem {
   url: string;

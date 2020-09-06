@@ -1,4 +1,4 @@
-import { Breakpoint, BulmaComponent } from '../../../index';
+import { Breakpoint, BulmaComponent } from '../../index';
 
 interface ContainerProps {
   fluid?: boolean;

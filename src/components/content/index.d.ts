@@ -1,4 +1,4 @@
-import { BulmaComponent, Size } from '../../../index';
+import { BulmaComponent, Size } from '../../index';
 
 interface ContentProps {
   size?: Size;

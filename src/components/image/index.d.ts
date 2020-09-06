@@ -1,4 +1,4 @@
-import { BulmaComponentWithoutRenderAs } from '../../../index';
+import { BulmaComponentWithoutRenderAs } from '../../index';
 
 interface ImageProps {
   src?: string;

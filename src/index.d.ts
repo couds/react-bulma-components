@@ -131,20 +131,18 @@ export type BulmaComponentWithoutModifiers<TProps> = (
   props: TProps,
 ) => React.ReactElement;
 
-export { Box } from './src/components/box';
-export { Breadcrumb } from './src/components/breadcrumb';
-export { Button } from './src/components/button';
-export { Card } from './src/components/card';
-export { Container } from './src/components/container';
-export { Columns } from './src/components/columns';
-export { Content } from './src/components/content';
-export { Dropdown } from './src/components/dropdown';
-export { Image } from './src/components/image';
+export { Box } from './components/box';
+export { Breadcrumb } from './components/breadcrumb';
+export { Button } from './components/button';
+export { Card } from './components/card';
+export { Container } from './components/container';
+export { Columns } from './components/columns';
+export { Content } from './components/content';
+export { Dropdown } from './components/dropdown';
+export { Image } from './components/image';
+export { Footer } from './components/footer';
 
 declare module 'react-bulma-components' {
-  // Footer component
-
-  export const Footer: BulmaComponent<{}, 'div'>;
 
   // Form components
 

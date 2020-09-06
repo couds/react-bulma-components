@@ -1,5 +1,5 @@
-/// <reference path="../../../index.d.ts" />
+/// <reference path="../../index.d.ts" />
 
-import { BulmaComponent } from '../../../index';
+import { BulmaComponent } from '../../index';
 
 export const Box: BulmaComponent<{}, 'div'>;
