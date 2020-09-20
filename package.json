@@ -4,6 +4,7 @@
   "description": "React components for Bulma framework",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "test": "jest",
     "test:cov": "eslint . && jest --coverage",
