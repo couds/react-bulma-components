@@ -6,9 +6,9 @@ sidebar_id: someSidebar
 ---
 import Button from 'react-bulma-components/lib/components/button';
 
-This configuration will allow you to start fast with minimum configuration but with less customization. With this configuration you are responsable to include the bulma css.
+This configuration will allow you to start fast with minimum configuration but with less customization. With this configuration you are responsible for adding the bulma css.
 
-After the instalation you need to include the already transpiled bulma css, and you can start importing the component you need from the basic folder.
+After the installation, you need to include the already transpiled bulma css. You can start importing the component you need from the basic folder.
 
 ```jsx
 import React from 'react';
@@ -22,6 +22,6 @@ const App = () => (
 );
 ```
 
-This code will generate this
+This code will generate this:
 
 <Button rounded color="primary">My Bulma button</Button>
