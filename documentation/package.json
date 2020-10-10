@@ -16,7 +16,7 @@
     "classnames": "^2.2.6",
     "docusaurus-plugin-sass": "git+https://github.com/couds/docusaurus-plugin-sass.git#patch-1",
     "react": "^16.8.4",
-    "react-bulma-components": "3.2.0",
+    "react-bulma-components": "3.4.0",
     "react-dom": "^16.8.4"
   },
   "browserslist": {
