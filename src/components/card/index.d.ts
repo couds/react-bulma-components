@@ -1,4 +1,4 @@
-import { BulmaComponent } from '../../index';
+import { BulmaComponent } from 'src/components';
 import { ImageProps } from '../image';
 
 export const Card: BulmaComponent<{}, 'div'> & {

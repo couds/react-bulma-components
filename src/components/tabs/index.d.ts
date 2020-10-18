@@ -1,4 +1,5 @@
-import { BulmaComponent, Size } from '../../index';
+import { BulmaComponent } from 'src/components';
+import { Size } from 'src/modifiers';
 
 interface TabsProps {
   align?: 'centered' | 'right';

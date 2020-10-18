@@ -1,4 +1,5 @@
-import { Breakpoint, BulmaComponent } from '../../index';
+import { BulmaComponent } from 'src/components';
+import { Breakpoint } from 'src/modifiers';
 
 interface LevelProps {
   mobile?: boolean;

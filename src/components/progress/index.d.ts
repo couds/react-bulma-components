@@ -1,4 +1,5 @@
-import { BulmaComponentWithoutRenderAs, Size } from '../../index';
+import { BulmaComponentWithoutRenderAs } from 'src/components';
+import { Size } from 'src/modifiers'
 
 interface ProgressProps {
   value: number;

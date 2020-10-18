@@ -1,4 +1,4 @@
-import { BulmaComponent, BulmaComponentWithoutRenderAs } from '../../index';
+import { BulmaComponent, BulmaComponentWithoutRenderAs } from 'src/components';
 
 interface TableProps {
   size?: 'fullwidth' | 'narrow';

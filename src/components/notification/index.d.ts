@@ -1,4 +1,5 @@
-import { BulmaComponent, Color } from '../../index';
+import { BulmaComponent } from 'src/components';
+import { Color } from 'src/modifiers';
 
 interface NotificationProps {
   color?: Color;

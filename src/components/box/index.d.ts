@@ -1,5 +1,3 @@
-/// <reference path="../../index.d.ts" />
-
-import { BulmaComponent } from '../../index';
+import { BulmaComponent } from 'src/components';
 
 export const Box: BulmaComponent<{}, 'div'>;

@@ -1,4 +1,4 @@
-import { BulmaComponent } from '../../index';
+import { BulmaComponent } from 'src/components';
 
 interface MediaItemProps {
   position?: 'center' | 'right' | 'left';

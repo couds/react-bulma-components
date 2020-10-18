@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BulmaComponent } from '../../index';
+import { BulmaComponent } from 'src/components';
 
 interface PaginationProps {
   current?: number;

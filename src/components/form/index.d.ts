@@ -1,13 +1,11 @@
 import * as React from 'react';
 import {
-  BulmaComponent,
-  BulmaComponentWithoutRenderAs,
-  Color,
   ElementProps,
   OmitKeys,
-  Size,
-} from '../../index';
-import { HTMLAttributes } from 'react';
+  BulmaComponent,
+  BulmaComponentWithoutRenderAs,
+} from 'src/components';
+import { Color, Size } from 'src/modifiers';
 
 interface FieldProps {
   align?: 'centered' | 'right';
@@ -88,7 +86,7 @@ interface InputFileProps {
   boxed?: boolean;
   label?: string;
   icon?: React.ReactElement;
-  inputProps?: HTMLAttributes<'input'>;
+  inputProps?: React.HTMLAttributes<'input'>;
 }
 
 export const Form: {

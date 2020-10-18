@@ -1,4 +1,4 @@
-import { BulmaComponent } from '../../index';
+import { BulmaComponent } from 'src/components';
 
 interface HeadingProps {
   size?: 1 | 2 | 3 | 4 | 5 | 6;
