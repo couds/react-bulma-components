@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import helpers from './helpers';
 import responsive from './responsives';
 import colors from './colors';
@@ -21,7 +21,7 @@ export default {
     ...typography.defaultProps,
   },
   classnames: (props) =>
-    classnames(
+    classNames(
       helpers.classnames(props),
       responsive.classnames(props),
       colors.classnames(props),
