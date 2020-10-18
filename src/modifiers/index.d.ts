@@ -14,6 +14,57 @@ interface HelperProps {
   hidden?: boolean;
 }
 
+type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+interface SpacingProps {
+  mt?: SpacingSize;
+  mr?: SpacingSize;
+  mb?: SpacingSize;
+  ml?: SpacingSize;
+  mx?: SpacingSize;
+  my?: SpacingSize;
+  pt?: SpacingSize;
+  pr?: SpacingSize;
+  pb?: SpacingSize;
+  pl?: SpacingSize;
+  px?: SpacingSize;
+  py?: SpacingSize;
+}
+
+interface FlexboxProps {
+  flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+  flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+  justifyContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly'
+    | 'start'
+    | 'end'
+    | 'left'
+    | 'right';
+  alignContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly'
+    | 'stretch'
+    | 'start'
+    | 'end'
+    | 'baseline';
+  alignItems?:
+    | 'auto'
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'baseline'
+    | 'stretch';
+}
+
 interface ResponsiveModifiers {
   display?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
   hide?: boolean;
@@ -57,7 +108,9 @@ type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
 
 // Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
 
-type ModifierProps = HelperProps &
+type ModifierProps = SpacingProps &
+  FlexboxProps &
+  HelperProps &
   ColorProps &
   ResponsiveProps &
   TypographyProps;

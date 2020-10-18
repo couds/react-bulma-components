@@ -62,10 +62,14 @@ const classNamesFromProps = (props) =>
     // each viewport has two props:
     // mobile, mobileOnly; desktop, desktopOnly, etc.
     // this checks if propName is a responsive modifier prop
-    if (VIEWPORTS.includes(maybeViewportName)) {
+    if (VIEWPORTS.includes(maybeViewportName) && props[propName]) {
       const currentViewport = maybeViewportName;
-      const { display = '', hide = false, textSize = 0, textAlignment = '' } =
-        props[propName] || {};
+      const {
+        display = '',
+        hide = false,
+        textSize = 0,
+        textAlignment = '',
+      } = props[propName];
 
       if (propName.includes('Only')) {
         // current modifiers are viewport specific
@@ -91,11 +95,11 @@ const classNamesFromProps = (props) =>
 export default {
   ...responsiveModifierPropTypes,
   classnames: (props) => classNames(classNamesFromProps(props)),
-  clean: (props) => {
-    VIEWPORTS.forEach((viewport) => {
-      delete props[viewport];
-      delete props[`${viewport}Only`];
-    });
-    return props;
-  },
+  clean: (props) =>
+    Object.keys(props).reduce((cleanedProps, propName) => {
+      if (!VIEWPORTS.includes(propName.replace('Only', ''))) {
+        cleanedProps[propName] = props[propName];
+      }
+      return cleanedProps;
+    }, {}),
 };

@@ -4,6 +4,7 @@ import responsive from './responsives';
 import colors from './colors';
 import typography from './typography';
 import spacing from './spacing';
+import flexbox from './flexbox';
 
 const compose = (...fns) => (args) => fns.reduce((arg, fn) => fn(arg), args);
 
@@ -13,12 +14,14 @@ export default {
     ...responsive.propTypes,
     ...colors.propTypes,
     ...typography.propTypes,
+    ...flexbox.propTypes,
   },
   defaultProps: {
     ...helpers.defaultProps,
     ...responsive.defaultProps,
     ...colors.defaultProps,
     ...typography.defaultProps,
+    ...flexbox.defaultProps,
   },
   classnames: (props) =>
     classNames(
@@ -27,6 +30,7 @@ export default {
       colors.classnames(props),
       typography.classnames(props),
       spacing.classnames(props),
+      flexbox.classnames(props),
     ),
   clean: (props) =>
     compose(
@@ -35,5 +39,6 @@ export default {
       colors.clean,
       typography.clean,
       spacing.clean,
+      flexbox.clean,
     )(props),
 };

@@ -32,6 +32,16 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
+  test('Should have flexbox helpers', () => {
+    expect(
+      modifiers.classnames({
+        flexWrap: 'nowrap',
+        alignContent: 'flex-start',
+        flexDirection: 'row-reverse',
+      }),
+    ).toMatchSnapshot();
+  });
+
   test('Should have responsive modifier flex-tablet-only and block-widescreen', () => {
     expect(
       modifiers.classnames({
