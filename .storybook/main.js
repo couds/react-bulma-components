@@ -16,7 +16,7 @@ module.exports = {
     const newConfig = { ...config };
 
     newConfig.resolve.modules.push('node_modules', 'src');
-    newConfig.resolve.alias['react-bulma-components/lib'] = path.resolve(
+    newConfig.resolve.alias['react-bulma-components'] = path.resolve(
       __dirname,
       '../src',
     );
