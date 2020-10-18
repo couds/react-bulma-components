@@ -1,14 +1,13 @@
-/* eslint-disable react/no-multi-comp, react/prop-types */
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
-import Navbar from 'react-bulma-components/lib/components/navbar';
-import Box from '../box';
+
+import { Box, Navbar } from 'react-bulma-components';
+
 import CONSTANTS from '../../constants';
 
 storiesOf('Navbar', module)
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <div>
       {story()}
       <Box style={{ margin: '15px auto', maxWidth: '75vw' }}>

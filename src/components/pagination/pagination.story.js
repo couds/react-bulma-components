@@ -2,10 +2,10 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Pagination from 'react-bulma-components/lib/components/pagination';
+import { Pagination } from 'react-bulma-components';
 
 storiesOf('Pagination', module)
-  .addDecorator(story => <div style={{ margin: 50 }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ margin: 50 }}>{story()}</div>)
   .add('Default', () => <Pagination current={3} total={5} delta={1} />)
   .add('Without page number', () => (
     <Pagination current={3} total={5} delta={0} />

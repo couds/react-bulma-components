@@ -2,11 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Tile from 'react-bulma-components/lib/components/tile';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Image from 'react-bulma-components/lib/components/image';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
+import { Tile, Heading, Image, Section, Box } from 'react-bulma-components';
 
 storiesOf('Tile', module).add('Default', () => (
   <Section>

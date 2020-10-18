@@ -2,10 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Hero from 'react-bulma-components/lib/components/hero';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Section from 'react-bulma-components/lib/components/section';
-import Container from 'react-bulma-components/lib/components/container';
+import { Hero, Heading, Section, Container } from 'react-bulma-components';
 
 storiesOf('Hero', module)
   .add('Default with color', () => (

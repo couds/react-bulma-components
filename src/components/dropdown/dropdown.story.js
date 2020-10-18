@@ -1,44 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import Dropdown from '.';
-import Container from '../container';
-import Section from '../section';
+import { Dropdown, Container, Section } from 'react-bulma-components';
 
 const alignment = {
   Default: '',
   right: 'right',
 };
-
-class Wrapper extends React.Component {
-  state = {
-    selected: '',
-  };
-  onChange = selected => {
-    this.setState({ selected });
-  };
-  render() {
-    return (
-      <Dropdown
-        {...this.props}
-        value={this.state.selected}
-        onChange={this.onChange}
-        color="info"
-        label={text('label', '')}
-      >
-        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item value="divider">With divider</Dropdown.Item>
-      </Dropdown>
-    );
-  }
-}
 
 storiesOf('Dropdown', module)
   .add('Default', () => (
@@ -86,7 +57,40 @@ storiesOf('Dropdown', module)
       </Container>
     </div>
   ))
-  .add('Controlled component', () => <Wrapper />)
-  .add('Controlled component Hoverable', () => (
-    <Wrapper hoverable color="dark" />
-  ));
+  .add('Controlled component', () => {
+    const [selected, setSelected] = useState(false);
+    return (
+      <Dropdown
+        value={selected}
+        onChange={setSelected}
+        color="info"
+        label={text('label', '')}
+      >
+        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item value="divider">With divider</Dropdown.Item>
+      </Dropdown>
+    );
+  })
+  .add('Controlled component Hoverable', () => {
+    const [selected, setSelected] = useState(false);
+    return (
+      <Dropdown
+        hoverable
+        value={selected}
+        onChange={setSelected}
+        color="info"
+        label={text('label', '')}
+      >
+        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
+        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item value="divider">With divider</Dropdown.Item>
+      </Dropdown>
+    );
+  });

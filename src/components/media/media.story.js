@@ -2,18 +2,16 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
-import Button from 'react-bulma-components/lib/components/button';
-import Level from 'react-bulma-components/lib/components/level';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
 import {
-  Textarea,
-  Field,
-  Control,
-} from 'react-bulma-components/lib/components/form';
+  Media,
+  Image,
+  Content,
+  Button,
+  Level,
+  Section,
+  Box,
+  Form,
+} from 'react-bulma-components';
 
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 
@@ -167,16 +165,16 @@ storiesOf('Media', module)
             />
           </Media.Item>
           <Media.Item position="center">
-            <Field>
-              <Control renderAs="p">
-                <Textarea placeholder="Add a comment..." />
-              </Control>
-            </Field>
-            <Field>
-              <Control renderAs="p">
+            <Form.Field>
+              <Form.Control renderAs="p">
+                <Form.Textarea placeholder="Add a comment..." />
+              </Form.Control>
+            </Form.Field>
+            <Form.Field>
+              <Form.Control renderAs="p">
                 <Button>Post comment</Button>
-              </Control>
-            </Field>
+              </Form.Control>
+            </Form.Field>
           </Media.Item>
         </Media>
       </Box>

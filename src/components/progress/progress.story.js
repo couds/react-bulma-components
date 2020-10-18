@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Progress from 'react-bulma-components/lib/components/progress';
+import { Progress } from 'react-bulma-components';
 
 storiesOf('Progress', module).add('Default', () => (
   <div>

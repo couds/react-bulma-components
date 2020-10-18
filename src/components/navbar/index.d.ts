@@ -29,7 +29,7 @@ interface NavbarLinkProps {
 }
 
 interface NavbarContainerProps {
-  position: 'start' | 'end';
+  position?: 'start' | 'end';
 }
 
 export const Navbar: BulmaComponent<NavbarProps, 'nav'> & {

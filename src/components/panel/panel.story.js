@@ -1,15 +1,8 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
-import Panel from 'react-bulma-components/lib/components/panel';
-import {
-  Control,
-  Input,
-  Checkbox,
-} from 'react-bulma-components/lib/components/form';
-import Icon from 'react-bulma-components/lib/components/icon';
-import Button from 'react-bulma-components/lib/components/button';
 import { select } from '@storybook/addon-knobs';
+
+import { Panel, Form, Icon, Button } from 'react-bulma-components';
 
 import CONSTANTS from '../../constants';
 
@@ -19,9 +12,9 @@ storiesOf('Panel', module)
     <Panel color={select('color', { ...CONSTANTS.COLORS, default: '' })}>
       <Panel.Header>repositories</Panel.Header>
       <Panel.Block>
-        <Control>
-          <Input size="small" type="text" placeholder="search" />
-        </Control>
+        <Form.Control>
+          <Form.Input size="small" type="text" placeholder="search" />
+        </Form.Control>
       </Panel.Block>
       <Panel.Tabs className="panel-tabs">
         <Panel.Tabs.Tab active>all</Panel.Tabs.Tab>
@@ -55,7 +48,7 @@ storiesOf('Panel', module)
         mojs
       </Panel.Block>
       <Panel.Block renderAs="label" className="panel-block">
-        <Checkbox />
+        <Form.Checkbox />
         remember me
       </Panel.Block>
       <Panel.Block>

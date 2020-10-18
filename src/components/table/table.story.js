@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Table from 'react-bulma-components/lib/components/table';
-storiesOf('Table', module).add('Default', () =>
-  (
+
+import { Table } from 'react-bulma-components';
+
+storiesOf('Table', module)
+  .add('Default', () => (
     <Table>
       <thead>
         <tr>
@@ -557,7 +559,8 @@ storiesOf('Table', module).add('Default', () =>
         </tr>
       </tbody>
     </Table>
-  )).add('with Table.Container', () => (
+  ))
+  .add('with Table.Container', () => (
     <Table.Container>
       <Table>
         <tbody>
