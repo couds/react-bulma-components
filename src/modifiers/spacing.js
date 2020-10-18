@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const modifierNames = [
+const MODIFIER_NAMES = [
   'mt',
   'mr',
   'mb',
@@ -15,12 +15,12 @@ const modifierNames = [
   'px',
   'py',
 ];
-const sizes = [0, 1, 2, 3, 4, 5, 6];
+const SIZES = [0, 1, 2, 3, 4, 5, 6];
 
 export default {
-  ...modifierNames.reduce(
+  ...MODIFIER_NAMES.reduce(
     (props, name) => {
-      props.propTypes[name] = PropTypes.oneOf(sizes);
+      props.propTypes[name] = PropTypes.oneOf(SIZES);
       props.defaultProps[name] = undefined;
       return props;
     },
@@ -29,7 +29,7 @@ export default {
   classnames: (props) =>
     classnames(
       Object.keys(props).reduce((classes, propName) => {
-        if (modifierNames.includes(propName)) {
+        if (MODIFIER_NAMES.includes(propName)) {
           classes[`${propName}-${props[propName]}`] = props[propName];
         }
         return classes;
@@ -37,7 +37,7 @@ export default {
     ),
   clean: (props) =>
     Object.keys(props).reduce((cleaned, propName) => {
-      if (!modifierNames.includes(propName)) {
+      if (!MODIFIER_NAMES.includes(propName)) {
         cleaned[propName] = props[propName];
       }
       return cleaned;

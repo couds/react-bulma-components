@@ -22,6 +22,16 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
+  test('Should have spacing helpers', () => {
+    expect(
+      modifiers.classnames({
+        mx: 0,
+        mt: 2,
+        px: 1,
+      }),
+    ).toMatchSnapshot();
+  });
+
   test('Should have responsive modifier flex-tablet-only and block-widescreen', () => {
     expect(
       modifiers.classnames({

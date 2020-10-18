@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Table from '..';
+import TableContainer from '../components/container';
 
 describe('Table component', () => {
   it('Should exist', () => {
@@ -27,6 +28,16 @@ describe('Table component', () => {
       <Table style={{ height: 250 }}>
         <p>Default</p>
       </Table>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should create a scrollable table', () => {
+    const component = renderer.create(
+      <TableContainer>
+        <Table>
+          <tr />
+        </Table>
+      </TableContainer>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
