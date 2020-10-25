@@ -15,4 +15,13 @@ storiesOf('Pagination', module)
   ))
   .add('With all buttons manually disabled', () => (
     <Pagination disabled current={3} total={5} />
+  ))
+  .add('With first/last pages numbers', () => (
+    <>
+      <Pagination showFirstLast current={3} total={5} delta={1} />
+      <Pagination showFirstLast current={1} total={5} delta={1} />
+      <Pagination showFirstLast current={5} total={5} delta={1} />
+      <Pagination showFirstLast current={2} total={2} delta={1} />
+      <Pagination showFirstLast current={1} total={2} delta={1} />
+    </>
   ));
