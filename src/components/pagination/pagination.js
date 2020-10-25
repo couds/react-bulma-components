@@ -44,6 +44,7 @@ export default class Pagination extends React.PureComponent {
       next,
       previous,
       showPrevNext,
+      showFirstLast,
       delta,
       autoHide,
       className,
@@ -95,6 +96,25 @@ export default class Pagination extends React.PureComponent {
         {delta > 0 && (
           <>
             <ul className="pagination-list">
+              {showFirstLast && current !== 1 && firstPage !== 1 && (
+                <>
+                  <li key={1}>
+                    <a
+                      role="button"
+                      tabIndex={0}
+                      className="pagination-link"
+                      onClick={current === 1 ? undefined : this.goToPage(1)}
+                      aria-label="Page 1"
+                      aria-current="page"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li>
+                    <span className="pagination-ellipsis">&hellip;</span>
+                  </li>
+                </>
+              )}
               {Array(lastPage - firstPage + 1)
                 .fill(0)
                 .map((_, i) => (
@@ -119,6 +139,27 @@ export default class Pagination extends React.PureComponent {
                     </a>
                   </li>
                 ))}
+              {showFirstLast && current !== lastPage && total !== lastPage && (
+                <>
+                  <li key={total}>
+                    <span className="pagination-ellipsis">&hellip;</span>
+                  </li>
+                  <li>
+                    <a
+                      role="button"
+                      tabIndex={0}
+                      className="pagination-link"
+                      onClick={
+                        current === total ? undefined : this.goToPage(total)
+                      }
+                      aria-label={`Page ${total}`}
+                      aria-current="page"
+                    >
+                      {total}
+                    </a>
+                  </li>
+                </>
+              )}
             </ul>
           </>
         )}
@@ -143,6 +184,7 @@ Pagination.propTypes = {
   /** Text of the Previous button */
   previous: PropTypes.node,
   showPrevNext: PropTypes.bool,
+  showFirstLast: PropTypes.bool,
   autoHide: PropTypes.bool,
   /**
    * Classname of the container of the pagination, this could be used to customize the inner views
@@ -159,6 +201,7 @@ Pagination.defaultProps = {
   next: 'Next',
   previous: 'Previous',
   showPrevNext: true,
+  showFirstLast: false,
   disabled: undefined,
   autoHide: true,
   className: undefined,
