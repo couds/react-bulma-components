@@ -48,6 +48,9 @@ export default class Pagination extends React.PureComponent {
       delta,
       autoHide,
       className,
+      size,
+      position,
+      rounded,
       onChange,
       ...props
     } = this.props;
@@ -67,7 +70,11 @@ export default class Pagination extends React.PureComponent {
     return (
       <Element
         {...props}
-        className={classnames('pagination', className)}
+        className={classnames('pagination', className, {
+          [`is-${size}`]: size,
+          [`is-${position}`]: position,
+          'is-rounded': rounded,
+        })}
         aria-label="pagination"
       >
         {showPrevNext && (
@@ -190,6 +197,9 @@ Pagination.propTypes = {
    * Classname of the container of the pagination, this could be used to customize the inner views
    */
   className: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  position: PropTypes.oneOf(['centered', 'right']),
+  rounded: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
@@ -205,5 +215,8 @@ Pagination.defaultProps = {
   disabled: undefined,
   autoHide: true,
   className: undefined,
+  size: undefined,
+  position: undefined,
+  rounded: false,
   renderAs: 'nav',
 };
