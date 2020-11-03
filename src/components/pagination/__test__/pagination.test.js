@@ -21,6 +21,12 @@ describe('Pagination component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should display first and last page number', () => {
+    const component = renderer.create(
+      <Pagination showFirstLast current={1} total={5} />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should not display Previous/Next buttons', () => {
     const component = renderer.create(
       <Pagination showPrevNext={false} delta={3} total={5} current={2} />,
