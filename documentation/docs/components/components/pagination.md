@@ -68,48 +68,48 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
 ### **with first and last page**
 
 <Section>
-  <Pagination showFirstLast={ true } />
+  <Pagination showFirstLast={true} />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination showFirstLast={ true } />
+  <Pagination showFirstLast={true} />
 </Section>
 ```
 
 ### **with rounded button**
 
 <Section>
-  <Pagination rounded={ true } />
+  <Pagination rounded={true} />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination rounded={ true } />
+  <Pagination rounded={true} />
 </Section>
 ```
 
 ### **Configure pager size**
 
 <Section>
-  <Pagination size={ 'small' } />
+  <Pagination size="small" />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination size={ 'small' } />
+  <Pagination size="small" />
 </Section>
 ```
 
 ### **Configure pager position**
 
 <Section>
-  <Pagination position={ 'right' } />
+  <Pagination position="right" />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination position={ 'right' } />
+  <Pagination position="right" />
 </Section>
 ```
 
