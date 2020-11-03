@@ -110,7 +110,7 @@ export default class Pagination extends React.PureComponent {
                       role="button"
                       tabIndex={0}
                       className="pagination-link"
-                      onClick={current === 1 ? undefined : this.goToPage(1)}
+                      onClick={this.goToPage(1)}
                       aria-label="Page 1"
                       aria-current="page"
                     >
@@ -156,9 +156,7 @@ export default class Pagination extends React.PureComponent {
                       role="button"
                       tabIndex={0}
                       className="pagination-link"
-                      onClick={
-                        current === total ? undefined : this.goToPage(total)
-                      }
+                      onClick={this.goToPage(total)}
                       aria-label={`Page ${total}`}
                       aria-current="page"
                     >
