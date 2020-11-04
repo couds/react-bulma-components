@@ -23,6 +23,7 @@ exports[`Dropdown component Should render file input tree 1`] = `
         Choose a file...
       </span>
     </span>
+    
   </label>
 </div>
 `;
@@ -51,6 +52,7 @@ exports[`Dropdown component should pass file attributes 1`] = `
         Choose a file...
       </span>
     </span>
+    
   </label>
 </div>
 `;

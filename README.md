@@ -6,34 +6,25 @@
 [![Release Version](https://img.shields.io/github/release/couds/react-bulma-components.svg)](https://github.com/couds/react-bulma-components)
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
-React components for [Bulma](http://bulma.io/) (v0.8.2) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
+React components for [Bulma](http://bulma.io/) (v0.9.0) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
-### Public page [WIP]
-- Currently I'm working on a new public page https://react-bulma.dev where to put a better documentation. is a work in progress any help is welcome. also Its localized if you don't want to code but want to help you can help with the translations in https://crowdin.com/project/react-bulma-components
+## BREAKING CHANGES V3 -> V4:
 
-### BREAKING CHANGES V2 -> V3:
+- We Remove all the styles from this library, now you need to install and use the [bulma.io](https://bulma.io) package directly
+- Removed included icons
+- Dropdown component now accept an `icon` prop that will accept the the component to render the icon
+- Removed the `icon` prop from the `Icon` component.
 
-- Now the alias needed to override Bulma variables (and/or use the directly the sass files) is `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- V3 Use the new Context api so requires `react >= 16.3`
 
-### To Install
+## To Install
 
 ```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
 
-### To Use
-
-Currently there are two ways to use this library depending of your needs and configuration:
-
-- **Basic**: You import from the main module the components and include the css yourself (No treeshaking by default, no bulma variables override)
-- **Advanced**: You import from the lib folder the components you need, this is the more versatile way but need some extra configuration (See [Advanced Setup](https://github.com/couds/react-bulma-components#advanced) section)
-
-#### Basic
-
-This configuration will allow you to start fast but with one drawback, by default will include all components (no treeshaking) and will use the default variables of Bulma.
+## To Use
 
 ```javascript
 import React from 'react';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
+import 'bulma/css/bulma.min.css';
 import { Button } from 'react-bulma-components';
 
 export default () => (
@@ -41,125 +32,49 @@ export default () => (
 )
 ```
 
-#### Advanced
+Form elements are imported as part of the Form class. 
 
-This configuration is recomended if you answer yes to one of the following questions:
+```javascript
+import { Form } from 'react-bulma-components';
 
-- I'm worried about the final size of my bundle?
-- I need to override the default Bulma variables?
-
-
-
-In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your main scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
-
-```scss
-@import "~react-bulma-components/src/index.sass"
-
-// Other styles
+const { Input, Field, Control, Label } = Form;
 ```
 
-You can start using the library like this
+## FAQ
+
+### Use Button to render a Link from React-Router
+We allow custom render component on all our components, to do it you can use the `renderAs` props like this
 
 ```javascript
 import React from 'react';
-import Button from 'react-bulma-components/lib/components/button';
+import { Button } from 'react-bulma-components';
+import { Link } from 'react-router';
 
-export default () => (
-  <Button color="primary">My Bulma button</Button>
-)
+const CustomLink = ({ to }) => {
+  return (
+    <Button to={to} renderAs={Link}>
+      My react router link
+    </Button>
+  )
+}
+
 ```
 
-Before you use this configuration you need to setup a `_variables.sass` file somewhere in your project (I recommend inside your `src` folder). This file will allow you to override bulma variables if need it like:
 
-```
-$primary: #c3c3c3
-```
-
-**Note** Use this file only for variables, do not include any css rule in it because that rule will be duplicated every time you include a component from this library.
-
-Depending of your project configuration you will need to setup your framework to use this file:
-
-#### Raw Webpack
-
-Configure your webpack to handle sass files.
-
-Inside the resolve directive setup your webpack to use modules from the folder where you put the `_variables.sass` file
+### Adding ref to a component
+We use a custom prop to pass down the ref to the next dom object. (instead to the instance of the component).
 
 ```javascript
-{
-  // ...
-  resolve: {
-    modules: ['node_modules', 'src'],
-    // ...
-  }
+const TestComponent = () => {
+  const buttonRef = useRef(null);
+  return <Button domRef={buttonRef}>button</Button>
 }
 ```
 
-#### CRA
-
-Install node-sass to enable the sass compiles on your project.
-
-After that update your `jsconfig.json` to add the folder to your path
-```
-{
-  "compilerOptions": {
-    "baseUrl": "./src"
-  }
-}
-```
-
-where `./src` is the folder where you put your `_variables.sass`
-
-#### Gatsby
-
-Follow the [instructions](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) to enable Sass compiling in project, and configure the sass plugin to include the path where you put the `_variables.sass` file, for example:
-
-```javascript
-plugins: [
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        includePaths: ["./src"],
-      },
-    }
-    ...
-]
-
-```
-
-#### Next.js
-
-Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-transpile-modules` so install it `npm i --save-dev next-transpile-modules`.
-
-Now on your `next.config.js` configure your sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules. **note** `withTM()` should always be the *most nested* function in your config.
-
-```javascript
-const withSass = require('@zeit/next-sass')
-const withTM = require('next-plugin-transpile-modules');
-
-module.exports = withTM(withSass({
-    transpileModules: ['react-bulma-components'], // Tell next to transpile the react-bulma-components module
-    // NOTE: this also allow to use abolute import from this folder not only for the _variables.sass file
-    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-        config.resolve.modules.push('./pages'); // Add to webpack configuration the folder where you put the _variables file
-        return config
-    },
-}))
-```
-
-The last thing to remember is that since you're transpiling `react-bulma-components` from source, make sure your import statements reflect this in your app:
+**Why we do this instead of using** [React.forwardRef](https://reactjs.org/docs/forwarding-refs.html)? The forwardRef wrap the component into another one, because this is a library for wrapping the Bulma Framework cause an overhead and a lot of noise on the component tab of the React Dev Tools.
 
 
-```javascript
-import React from 'react';
-import Button from 'react-bulma-components/src/components/button'; //import from src, not lib
-
-export default () => (
-  <Button color="primary">My Bulma button</Button>
-)
-```
-
-### Documentation
+## Documentation
 
 You can find the documentation in https://couds.github.io/react-bulma-components
 
@@ -202,15 +117,3 @@ The following components were ported:
 |Table|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Table)|[Docs](http://bulma.io/documentation/elements/table/)
 |Tag|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tag)|[Docs](http://bulma.io/documentation/elements/tag/)
 |Tile|[Storybook](https://couds.github.io/react-bulma-components/?selectedKind=Tile)|[Docs](http://bulma.io/documentation/layout/tiles/)
-
-#### Adding ref to a component
-We use a custom prop to pass down the ref to the next dom object. (instead to the instance of the component).
-
-```javascript
-const TestComponent = () => {
-  const buttonRef = useRef(null);
-  return <Button domRef={buttonRef}>button</Button>
-}
-```
-
-Why we do this instead of using [React.forwardRef](https://reactjs.org/docs/forwarding-refs.html)? The forwardRef wrap the component into another one, because this is a library for wrapping the Bulma Framework cause an overhead and a lot of noise on the component tab of the React Dev Tools.

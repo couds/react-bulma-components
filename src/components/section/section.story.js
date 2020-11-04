@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 
-import Section from 'react-bulma-components/lib/components/section';
-import Container from 'react-bulma-components/lib/components/container';
-import Heading from 'react-bulma-components/lib/components/heading';
+import { Section, Container, Heading } from 'react-bulma-components';
 
 storiesOf('Section', module)
   .add('Default', () => (

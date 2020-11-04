@@ -8,7 +8,7 @@ import Element from '../../element';
 
 const NavbarMenu = ({ className, children, ...props }) => (
   <ShowContext.Consumer>
-    {active => (
+    {(active) => (
       <Element
         {...props}
         className={classnames('navbar-menu', className, {

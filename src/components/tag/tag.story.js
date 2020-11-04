@@ -2,18 +2,17 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Tag from 'react-bulma-components/lib/components/tag';
-import { Field, Control } from 'react-bulma-components/lib/components/form';
+import { Tag, Form } from 'react-bulma-components';
 
 storiesOf('Tag', module)
-  .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ margin: 10 }}>{story()}</div>)
   .add('Default', () => <Tag>Tag Text</Tag>)
   .add('Group Tags', () => (
     <Tag.Group>
       <Tag color="primary">Tag Text</Tag>
       <Tag color="success">Tag Text</Tag>
       <Tag color="danger">Tag Text</Tag>
-      <Tag color="warrning">Tag Text</Tag>
+      <Tag color="warning">Tag Text</Tag>
       <Tag color="info">Tag Text</Tag>
     </Tag.Group>
   ))
@@ -31,26 +30,26 @@ storiesOf('Tag', module)
   ))
   .add('Group Tags without gap multiline', () => (
     <div>
-      <Field multiline kind="group">
-        <Control>
+      <Form.Field multiline kind="group">
+        <Form.Control>
           <Tag.Group gapless>
             <Tag color="dark">npm</Tag>
             <Tag color="info">V 5.3</Tag>
           </Tag.Group>
-        </Control>
-        <Control>
+        </Form.Control>
+        <Form.Control>
           <Tag.Group gapless>
             <Tag color="dark">Build</Tag>
             <Tag color="success">Pass</Tag>
           </Tag.Group>
-        </Control>
-        <Control>
+        </Form.Control>
+        <Form.Control>
           <Tag.Group gapless>
             <Tag color="dark">Chat</Tag>
             <Tag color="primary">Slack</Tag>
           </Tag.Group>
-        </Control>
-      </Field>
+        </Form.Control>
+      </Form.Field>
     </div>
   ))
   .add('Others', () => (

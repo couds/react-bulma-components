@@ -54,7 +54,7 @@ class Modal extends PureComponent {
     return null;
   };
 
-  handleKeydown = e => {
+  handleKeydown = (e) => {
     if (e.keyCode === KEYCODES.ESCAPE && this.props.show) {
       this.props.onClose();
     }
@@ -69,9 +69,8 @@ class Modal extends PureComponent {
     let isCard;
     try {
       isCard =
-        React.Children.only(children)
-          .type.toString()
-          .indexOf('ModalCard') !== -1;
+        React.Children.only(children).type.toString().indexOf('ModalCard') !==
+        -1;
     } catch (e) {
       isCard = false;
     }

@@ -2,23 +2,21 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Level from 'react-bulma-components/lib/components/level';
 import {
-  Field,
-  Control,
-  Input,
-} from 'react-bulma-components/lib/components/form';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Button from 'react-bulma-components/lib/components/button';
-import Hero from 'react-bulma-components/lib/components/hero';
-import Container from 'react-bulma-components/lib/components/container';
-import Box from 'react-bulma-components/lib/components/box';
-import Section from 'react-bulma-components/lib/components/section';
+  Level,
+  Form,
+  Heading,
+  Button,
+  Hero,
+  Container,
+  Box,
+  Section,
+} from 'react-bulma-components';
 
 const style = { textAlign: 'center' };
 
 storiesOf('Level', module)
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <Hero size="fullheight">
       <Hero.Head renderAs="header">
         <Container>{story()}</Container>
@@ -36,14 +34,14 @@ storiesOf('Level', module)
               </Heading>
             </Level.Item>
             <Level.Item>
-              <Field kind="addons">
-                <Control>
-                  <Input placeholder="Find a post" />
-                </Control>
-                <Control>
+              <Form.Field kind="addons">
+                <Form.Control>
+                  <Form.Input placeholder="Find a post" />
+                </Form.Control>
+                <Form.Control>
                   <Button renderAs="button">Search</Button>
-                </Control>
-              </Field>
+                </Form.Control>
+              </Form.Field>
             </Level.Item>
           </Level.Side>
 
@@ -111,7 +109,7 @@ storiesOf('Level', module)
     </Section>
   ))
   .add('With breakpoint', () =>
-    ['mobile', null].map(breakpoint => (
+    ['mobile', null].map((breakpoint) => (
       <Section>
         <Heading>{breakpoint || 'Without breakpoint'}</Heading>
         <Box>

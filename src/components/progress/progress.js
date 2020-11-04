@@ -5,9 +5,7 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
-);
+const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Progress = ({ className, value, max, color, size, ...props }) => (
   <Element
@@ -28,8 +26,8 @@ Progress.propTypes = {
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  value: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
+  value: PropTypes.number,
+  max: PropTypes.number,
 };
 
 Progress.defaultProps = {
@@ -38,6 +36,8 @@ Progress.defaultProps = {
   style: undefined,
   color: undefined,
   size: undefined,
+  value: undefined,
+  max: undefined,
 };
 
 export default Progress;

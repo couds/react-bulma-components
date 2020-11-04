@@ -14,6 +14,7 @@ export default {
     unselectable: PropTypes.bool,
     invisible: PropTypes.bool,
     hidden: PropTypes.bool,
+    clickable: PropTypes.bool,
   },
   defaultProps: {
     clearfix: undefined,
@@ -27,8 +28,9 @@ export default {
     unselectable: undefined,
     invisible: undefined,
     hidden: undefined,
+    clickable: undefined,
   },
-  classnames: props =>
+  classnames: (props) =>
     classnames({
       'is-clearfix': props.clearfix,
       [`is-pulled-${props.pull}`]: props.pull,
@@ -41,6 +43,7 @@ export default {
       'is-unselectable': props.unselectable,
       'is-invisible': props.invisible,
       'is-hidden': props.hidden,
+      'is-clickable': props.clickable,
     }),
   clean: ({
     hidden,
@@ -54,6 +57,7 @@ export default {
     shadowless,
     unselectable,
     invisible,
+    clickable,
     ...props
   }) => props,
 };

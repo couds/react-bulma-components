@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Menu from 'react-bulma-components/lib/components/menu';
+import { Menu } from 'react-bulma-components';
 
 storiesOf('Menu', module).add('Default', () => (
   <Menu>

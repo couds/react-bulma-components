@@ -1,11 +1,10 @@
 import React from 'react';
-
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-import Image from 'react-bulma-components/lib/components/image';
+import { Image, Table } from 'react-bulma-components';
+
 import CONSTANTS from './constants';
-import Table from 'react-bulma-components/lib/components/table';
 
 storiesOf('Image', module)
   .add('Default', () => (
@@ -29,19 +28,21 @@ storiesOf('Image', module)
         </tr>
       </thead>
       <tbody>
-        {CONSTANTS.SIZES.filter(size => typeof size === 'number').map(size => (
-          <tr key={size}>
-            <td />
-            <td style={{ width: 100 }}>{size}</td>
-            <td style={{ width: 128 }}>
-              <Image
-                src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
-                size={size}
-              />
-            </td>
-            <td />
-          </tr>
-        ))}
+        {CONSTANTS.SIZES.filter((size) => typeof size === 'number').map(
+          (size) => (
+            <tr key={size}>
+              <td />
+              <td style={{ width: 100 }}>{size}</td>
+              <td style={{ width: 128 }}>
+                <Image
+                  src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
+                  size={size}
+                />
+              </td>
+              <td />
+            </tr>
+          ),
+        )}
       </tbody>
     </Table>
   ))
@@ -56,19 +57,21 @@ storiesOf('Image', module)
         </tr>
       </thead>
       <tbody>
-        {CONSTANTS.SIZES.filter(size => typeof size === 'string').map(size => (
-          <tr key={size}>
-            <td />
-            <td style={{ width: 100 }}>{size}</td>
-            <td style={{ width: 128 }}>
-              <Image
-                src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
-                size={size}
-              />
-            </td>
-            <td />
-          </tr>
-        ))}
+        {CONSTANTS.SIZES.filter((size) => typeof size === 'string').map(
+          (size) => (
+            <tr key={size}>
+              <td />
+              <td style={{ width: 100 }}>{size}</td>
+              <td style={{ width: 128 }}>
+                <Image
+                  src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
+                  size={size}
+                />
+              </td>
+              <td />
+            </tr>
+          ),
+        )}
       </tbody>
     </Table>
   ));

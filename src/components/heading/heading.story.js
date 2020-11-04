@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 
-import Heading from 'react-bulma-components/lib/components/heading';
-import Box from 'react-bulma-components/lib/components/box';
+import { Heading, Box } from 'react-bulma-components';
 
 storiesOf('Heading', module).add('Default', () => (
   <div>

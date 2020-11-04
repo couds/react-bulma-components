@@ -2,9 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Columns from 'react-bulma-components/lib/components/columns';
-import Box from 'react-bulma-components/lib/components/box';
-import Heading from 'react-bulma-components/lib/components/heading';
+import { Columns, Box, Heading } from 'react-bulma-components';
+
 import CONSTANTS from './constants';
 
 storiesOf('Columns', module)
@@ -26,7 +25,7 @@ storiesOf('Columns', module)
   ))
   .add('Sizes by name', () => (
     <div>
-      {Object.keys(CONSTANTS.SIZES).map(size => (
+      {Object.keys(CONSTANTS.SIZES).map((size) => (
         <Columns key={size}>
           <Columns.Column size={CONSTANTS.SIZES[size]}>
             <p className="bd-notification is-success">

@@ -1,4 +1,3 @@
-import './index.sass';
 import * as Form from './components/form';
 
 export { default as Box } from './components/box';
@@ -14,7 +13,6 @@ export { default as Heading } from './components/heading';
 export { default as Hero } from './components/hero';
 export { default as Image } from './components/image';
 export { default as Level } from './components/level';
-export { default as List } from './components/list';
 export { default as Media } from './components/media';
 export { default as Notification } from './components/notification';
 export { default as Progress } from './components/progress';

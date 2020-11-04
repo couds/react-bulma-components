@@ -1,49 +1,11 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
-
-import Box from 'react-bulma-components/lib/components/box';
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
 import { boolean } from '@storybook/addon-knobs';
 
+import { Box, Media, Image, Content } from 'react-bulma-components';
+
 storiesOf('Box', module).add('Default', () => (
-  <Box
-    paddingless={boolean('paddingless', false)}
-    responsive={{
-      mobile: {
-        display: {
-          value: 'block',
-        },
-      },
-      tablet: {
-        display: {
-          value: 'flex',
-        },
-      },
-      desktop: {
-        display: {
-          value: 'inline-flex',
-          only: true,
-        },
-      },
-      widescreen: {
-        display: {
-          value: 'inline-block',
-        },
-      },
-    }}
-    hide={{
-      tablet: {
-        hide: true,
-        only: true,
-      },
-      widescreen: {
-        hide: true,
-      },
-    }}
-  >
+  <Box paddingless={boolean('paddingless', false)}>
     <Media>
       <Media.Item renderAs="figure" position="left">
         <Image

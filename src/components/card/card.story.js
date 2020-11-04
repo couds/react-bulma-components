@@ -2,14 +2,10 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Card from 'react-bulma-components/lib/components/card';
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
-import Heading from 'react-bulma-components/lib/components/heading';
+import { Card, Media, Image, Content, Heading } from 'react-bulma-components';
 
 storiesOf('Card', module)
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <div style={{ margin: '0px auto', width: 450 }}>{story()}</div>
   ))
   .add('Default', () => (

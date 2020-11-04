@@ -4,9 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Button from 'react-bulma-components/lib/components/button';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
+import { Button, Section, Box } from 'react-bulma-components';
+
 import CONSTANTS from '../../constants';
 
 const positions = {
@@ -16,7 +15,7 @@ const positions = {
 };
 
 storiesOf('Button', module)
-  .addDecorator(story => <div className="button-display">{story()}</div>)
+  .addDecorator((story) => <div className="button-display">{story()}</div>)
   .add('Default', () => (
     <Section>
       <Box>
@@ -95,7 +94,7 @@ storiesOf('Button', module)
     return (
       <Section>
         <Button onClick={() => ref.current.click()}>click other button</Button>
-        <Button ref={ref} onClick={() => console.log('clicked')}>
+        <Button domRef={ref} onClick={() => console.log('clicked')}>
           this will be clicked
         </Button>
       </Section>
