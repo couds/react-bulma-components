@@ -4,13 +4,12 @@ title: Table
 sidebar_label: Table
 ---
 
-import Table from 'react-bulma-components/lib/components/table';
-import Section from 'react-bulma-components/lib/components/section';
+import { Table, Section } from 'react-bulma-components';
 
 ## **Import**
 
 ```js
-import Table from 'react-bulma-components/lib/components/table';
+import { Table } from 'react-bulma-components';
 ```
 
 <br />

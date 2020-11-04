@@ -4,9 +4,7 @@ title: Dropdown
 sidebar_label: Dropdown
 ---
 
-import Section from 'react-bulma-components/lib/components/section';
-import Container from 'react-bulma-components/lib/components/container';
-import Dropdown from 'react-bulma-components/lib/components/dropdown';
+import { Section, Container, Dropdown } from 'react-bulma-components';
 
 The Dropdown component is a container that is used for creating dropdown menus.
 
@@ -15,7 +13,7 @@ The Dropdown component is a container that is used for creating dropdown menus.
 ## **Import**
 
 ```js
-import Dropdown from 'react-bulma-components/lib/components/dropdown';
+import { Dropdown } from 'react-bulma-components';
 ```
 
 <br />

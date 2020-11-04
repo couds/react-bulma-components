@@ -4,14 +4,7 @@ title: Level
 sidebar_label: Level
 ---
 
-import Level from 'react-bulma-components/lib/components/level';
-import { Field, Control, Input } from 'react-bulma-components/lib/components/form';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Button from 'react-bulma-components/lib/components/button';
-import Hero from 'react-bulma-components/lib/components/hero';
-import Container from 'react-bulma-components/lib/components/container';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
+import { Level, Form, Heading, Button, Hero, Container, Section, Box } from 'react-bulma-components';
 
 ## Overview
 
@@ -20,7 +13,7 @@ The Level component is a simple horizontal container that can be used to structu
 ### Import
 
 ```js
-import Level from 'react-bulma-components/lib/components/level';
+import { Level } from 'react-bulma-components';
 ```
 
 ### Components & Props
@@ -68,16 +61,16 @@ An item in `<Level />` or `<Level.Side />`
         </Heading>
       </Level.Item>
       <Level.Item>
-        <Field kind="addons">
-          <Control>
-            <Input placeholder="Find a post" />
-          </Control>
-          <Control>
+        <Form.Field kind="addons">
+          <Form.Control>
+            <Form.Input placeholder="Find a post" />
+          </Form.Control>
+          <Form.Control>
           <Button renderAs="button">
             Search
           </Button>
-          </Control>
-        </Field>
+          </Form.Control>
+        </Form.Field>
       </Level.Item>
     </Level.Side>
     <Level.Side align="right">
@@ -102,14 +95,14 @@ An item in `<Level />` or `<Level.Side />`
         </Heading>
       </Level.Item>
       <Level.Item>
-        <Field kind="addons">
-          <Control>
-            <Input placeholder="Find a post" />
-          </Control>
-          <Control>
+        <Form.Field kind="addons">
+          <Form.Control>
+            <Form.Input placeholder="Find a post" />
+          </Form.Control>
+          <Form.Control>
             <Button>Search</Button>
-          </Control>
-        </Field>
+          </Form.Control>
+        </Form.Field>
       </Level.Item>
     </Level.Side>
     <Level.Side align="right">

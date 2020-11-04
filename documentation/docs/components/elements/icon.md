@@ -4,16 +4,14 @@ title: Icon
 sidebar_label: Icon
 ---
 
-import Icon from 'react-bulma-components/lib/components/icon';
-import Box from 'react-bulma-components/lib/components/box';
-import Section from 'react-bulma-components/lib/components/section';
+import { Icon, Box, Section } from 'react-bulma-components';
 
 The icon container is used to display icon fonts
 
 ## **Import**
 
 ```js
-import Icon from 'react-bulma-components/lib/components/icon';
+import { Icon } from 'react-bulma-components';
 ```
 
 <br />

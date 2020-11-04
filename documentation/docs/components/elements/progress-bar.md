@@ -4,13 +4,12 @@ title: Progress Bar
 sidebar_label: Progress Bar
 ---
 
-import Progress from 'react-bulma-components/lib/components/progress';
-import Section from 'react-bulma-components/lib/components/section';
+import { Progress, Section } from 'react-bulma-components';
 
 ## **Import**
 
 ```js
-import Progress from 'react-bulma-components/lib/components/progress';
+import { Progress } from 'react-bulma-components';
 ```
 
 <br />

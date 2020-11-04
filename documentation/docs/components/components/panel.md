@@ -4,18 +4,14 @@ title: Panel
 sidebar_label: Panel
 ---
 
-import Panel from 'react-bulma-components/lib/components/panel';
-import { Control, Input, Checkbox } from 'react-bulma-components/lib/components/form';
-import Icon from 'react-bulma-components/lib/components/icon';
-import Button from 'react-bulma-components/lib/components/button';
-import Section from 'react-bulma-components/lib/components/section';
+import { Panel, Form, Icon, Button, Section } from 'react-bulma-components';
 
 ---
 
 ## **Import**
 
 ```js
-import Panel from 'react-bulma-components/lib/components/panel';
+import { Panel } from 'react-bulma-components';
 ```
 
 <br />
@@ -28,9 +24,9 @@ import Panel from 'react-bulma-components/lib/components/panel';
       repositories
     </Panel.Header>
     <Panel.Block>
-      <Control>
-        <Input size="small" type="text" placeholder="search" />
-      </Control>
+      <Form.Control>
+        <Form.Input size="small" type="text" placeholder="search" />
+      </Form.Control>
     </Panel.Block>
     <Panel.Tabs className="panel-tabs">
       <Panel.Tabs.Tab active>all</Panel.Tabs.Tab>
@@ -64,7 +60,7 @@ import Panel from 'react-bulma-components/lib/components/panel';
       mojs
     </Panel.Block>
     <Panel.Block renderAs="label" className="panel-block">
-      <Checkbox />
+      <Form.Checkbox />
       remember me
     </Panel.Block>
     <Panel.Block>
@@ -80,9 +76,9 @@ import Panel from 'react-bulma-components/lib/components/panel';
   <Panel>
     <Panel.Header>repositories</Panel.Header>
     <Panel.Block>
-      <Control>
-        <Input size="small" type="text" placeholder="search" />
-      </Control>
+      <Form.Control>
+        <Form.Input size="small" type="text" placeholder="search" />
+      </Form.Control>
     </Panel.Block>
     <Panel.Tabs className="panel-tabs">
       <Panel.Tabs.Tab active>all</Panel.Tabs.Tab>

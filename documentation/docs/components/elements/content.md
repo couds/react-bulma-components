@@ -4,17 +4,16 @@ title: Content
 sidebar_label: Content
 ---
 
-import Content from 'react-bulma-components/lib/components/content';
+import { Content, Section } from 'react-bulma-components';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Section from 'react-bulma-components/lib/components/section';
 
 The content element is used to handle written contents with HTML tags.
 
 ### Import
 
 ```js
-import Content from 'react-bulma-components/lib/components/content';
+import { Content } from 'react-bulma-components';
 ```
 
 <br />

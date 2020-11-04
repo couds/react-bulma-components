@@ -4,17 +4,14 @@ title: Footer
 sidebar_label: Footer
 ---
 
-import Footer from 'react-bulma-components/lib/components/footer';
-import Container from 'react-bulma-components/lib/components/container';
-import Content from 'react-bulma-components/lib/components/content';
-import Hero from 'react-bulma-components/lib/components/hero';
+import { Footer, Container, Content, Hero } from 'react-bulma-components';
 
 The footer component can be used to structure the bottom part of your page layout. The footer element is a simple container with lots of padding and can coontain other elements.
 
 ### **Import**
 
 ```js
-import Footer from 'react-bulma-components/lib/components/footer';
+import { Footer } from 'react-bulma-components';
 ```
 
 <br />

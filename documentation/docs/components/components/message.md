@@ -4,16 +4,14 @@ title: Message
 sidebar_label: Message
 ---
 
-import Message from 'react-bulma-components/lib/components/message';
-import Button from 'react-bulma-components/lib/components/button';
-import Section from 'react-bulma-components/lib/components/section';
+import { Message, Button, Section } from 'react-bulma-components';
 
 ---
 
 ## **Import**
 
 ```js
-import Message from 'react-bulma-components/lib/components/message';
+import { Message } from 'react-bulma-components';
 ```
 
 <br />

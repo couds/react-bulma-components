@@ -4,17 +4,14 @@ title: Hero
 sidebar_label: Hero
 ---
 
-import Hero from 'react-bulma-components/lib/components/hero';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Section from 'react-bulma-components/lib/components/section';
-import Container from 'react-bulma-components/lib/components/container';
+import { Hero, Heading, Section, Container } from 'react-bulma-components';
 
 ## Create large banners with the hero component. Banners created with the hero component are fullwidth and can also extend through the entire page height.
 
 ## **Import**
 
 ```js
-import Hero from 'react-bulma-components/lib/components/hero';
+import { Hero } from 'react-bulma-components';
 ```
 
 <br />

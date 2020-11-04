@@ -4,12 +4,7 @@ title: Sizes
 sidebar_label: Sizes
 ---
 
-import Columns from 'react-bulma-components/lib/components/columns'
-import Hero from 'react-bulma-components/lib/components/hero'
-import Box from 'react-bulma-components/lib/components/box';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Section from 'react-bulma-components/lib/components/section';
-import Notification from 'react-bulma-components/lib/components/notification';
+import { Columns, Hero, Box, Heading, Section, Notification } from 'react-bulma-components';
 
 ## Proportions
 

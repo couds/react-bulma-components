@@ -4,10 +4,7 @@ title: Gap
 sidebar_label: Gap
 ---
 
-import Columns from 'react-bulma-components/lib/components/columns'
-import Hero from 'react-bulma-components/lib/components/hero'
-import Notification from 'react-bulma-components/lib/components/notification'
-import Section from 'react-bulma-components/lib/components/section';
+import { Columns, Hero, Notification, Section } from 'react-bulma-components';
 
 You can customize the gaps between columns
 

@@ -4,14 +4,8 @@ title: Media
 sidebar_label: Media
 ---
 
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
-import Button from 'react-bulma-components/lib/components/button';
-import Level from 'react-bulma-components/lib/components/level';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
-import { Textarea, Field, Control } from 'react-bulma-components/lib/components/form';
+import { Media, Image, Content, Button, Level, Section, Box, Form } from 'react-bulma-components';
+
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 
 The media component is layout element that allows you to create repititive contents.
@@ -21,7 +15,7 @@ The media component is layout element that allows you to create repititive conte
 ## **Import**
 
 ```js
-import Box from 'react-bulma-components/lib/components/box';
+import { Box } from 'react-bulma-components';
 ```
 
 <br />
@@ -230,16 +224,16 @@ Nest your `<media />` container for up to 3 levels.
       <Image src="https://bulma.io/images/placeholders/128x128.png" size={64} />
     </Media.Item>
     <Media.Item position="center">
-      <Field>
-        <Control renderAs="p">
-          <Textarea placeholder="Add a comment..." />
-        </Control>
-      </Field>
-      <Field>
-        <Control renderAs="p">
+      <Form.Field>
+        <Form.Control renderAs="p">
+          <Form.Textarea placeholder="Add a comment..." />
+        </Form.Control>
+      </Form.Field>
+      <Form.Field>
+        <Form.Control renderAs="p">
           <Button>Post comment</Button>
-        </Control>
-      </Field>
+        </Form.Control>
+      </Form.Field>
     </Media.Item>
   </Media>
 </Box>
@@ -329,16 +323,16 @@ Nest your `<media />` container for up to 3 levels.
       <Image src="https://bulma.io/images/placeholders/128x128.png" size={64} />
     </Media.Item>
     <Media.Item position="center">
-      <Field>
-        <Control renderAs="p">
-          <Textarea placeholder="Add a comment..." />
-        </Control>
-      </Field>
-      <Field>
-        <Control renderAs="p">
+      <Form.Field>
+        <Form.Control renderAs="p">
+          <Form.Textarea placeholder="Add a comment..." />
+        </Form.Control>
+      </Form.Field>
+      <Form.Field>
+        <Form.Control renderAs="p">
           <Button>Post comment</Button>
-        </Control>
-      </Field>
+        </Form.Control>
+      </Form.Field>
     </Media.Item>
   </Media>
 </Box>

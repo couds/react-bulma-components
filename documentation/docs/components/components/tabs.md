@@ -4,15 +4,14 @@ title: Tabs
 sidebar_label: Tabs
 ---
 
-import Tabs from 'react-bulma-components/lib/components/tabs';
-import Section from 'react-bulma-components/lib/components/section';
+import { Tabs, Section } from 'react-bulma-components';
 
 ---
 
 ## **Import**
 
 ```js
-import Tabs from 'react-bulma-components/lib/components/tabs';
+import { Tabs } from 'react-bulma-components';
 ```
 
 <br />

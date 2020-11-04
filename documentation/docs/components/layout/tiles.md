@@ -4,11 +4,7 @@ title: Tiles
 sidebar_label: Tiles
 ---
 
-import Tile from 'react-bulma-components/lib/components/tile';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Image from 'react-bulma-components/lib/components/image';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
+import { Tile, Heading, Image, Section, Box } from 'react-bulma-components';
 
 The `Tile` component is used to build 2-dimensional grids.
 
@@ -17,7 +13,7 @@ The `Tile` component is used to build 2-dimensional grids.
 ## **Import**
 
 ```js
-import Tile from 'react-bulma-components/lib/components/tile';
+import { Tile } from 'react-bulma-components';
 ```
 
 <br />

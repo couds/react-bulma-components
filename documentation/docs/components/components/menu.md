@@ -4,15 +4,14 @@ title: Menu
 sidebar_label: Menu
 ---
 
-import Menu from 'react-bulma-components/lib/components/menu';
-import Section from 'react-bulma-components/lib/components/section';
+import { Menu, Section } from 'react-bulma-components';
 
 ---
 
 ## **Import**
 
 ```js
-import Menu from 'react-bulma-components/lib/components/menu';
+import { Menu } from 'react-bulma-components';
 ```
 
 <br />

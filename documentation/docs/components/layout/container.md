@@ -4,11 +4,7 @@ title: Container
 sidebar_label: Container
 ---
 
-import Container from 'react-bulma-components/lib/components/container';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Notification from 'react-bulma-components/lib/components/notification';
-import Section from 'react-bulma-components/lib/components/section';
-import Box from 'react-bulma-components/lib/components/box';
+import { Container, Heading, Notification, Section, Box } from 'react-bulma-components';
 
 ## Overview
 
@@ -17,7 +13,7 @@ The container component is a basic layout element that centers your contents hor
 ### Import
 
 ```js
-import Container from 'react-bulma-components/lib/components/container';
+import { Container } from 'react-bulma-components';
 ```
 
 ### Props

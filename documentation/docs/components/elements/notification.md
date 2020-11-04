@@ -4,14 +4,12 @@ title: Notification
 sidebar_label: Notification
 ---
 
-import Notification from 'react-bulma-components/lib/components/notification';
-import Button from 'react-bulma-components/lib/components/button';
-import Section from 'react-bulma-components/lib/components/section';
+import { Notification, Button, Section } from 'react-bulma-components';
 
 ## **Import**
 
 ```js
-import Notification from 'react-bulma-components/lib/components/notification';
+import { Notification } from 'react-bulma-components';
 ```
 
 <br />

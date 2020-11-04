@@ -4,15 +4,14 @@ title: Navbar
 sidebar_label: Navbar
 ---
 
-import Navbar from 'react-bulma-components/lib/components/navbar';
-import Section from 'react-bulma-components/lib/components/section';
+import { Navbar, Section } from 'react-bulma-components';
 
 ---
 
 ## **Import**
 
 ```js
-import Navbar from 'react-bulma-components/lib/components/navbar';
+import { Navbar } from 'react-bulma-components';
 ```
 
 <br />

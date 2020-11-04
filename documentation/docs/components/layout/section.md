@@ -4,11 +4,7 @@ title: Section
 sidebar_label: Section
 ---
 
-import Section from 'react-bulma-components/lib/components/section';
-import Container from 'react-bulma-components/lib/components/container';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Box from 'react-bulma-components/lib/components/box';
-import Notification from 'react-bulma-components/lib/components/notification';
+import { Section, Container, Heading, Box, Notification } from 'react-bulma-components';
 
 The `Section` component is used divide your layout into different sections. This allows for better formatting of your pages.
 
@@ -17,7 +13,7 @@ The `Section` component is used divide your layout into different sections. This
 ## **Import**
 
 ```js
-import Section from 'react-bulma-components/lib/components/section';
+import { Section } from 'react-bulma-components';
 ```
 
 <br />

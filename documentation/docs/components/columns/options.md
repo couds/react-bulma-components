@@ -4,8 +4,7 @@ title: Options
 sidebar_label: Options
 ---
 
-import Columns from 'react-bulma-components/lib/components/columns'
-import Notification from 'react-bulma-components/lib/components/notification';
+import { Columns, Notification } from 'react-bulma-components';
 
 There are couple other options that you can use to customize column behaviors further.
 

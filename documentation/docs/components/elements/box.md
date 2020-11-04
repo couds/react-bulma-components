@@ -6,12 +6,7 @@ description: Create a react-bulma box
 hide_table_of_contents: false
 ---
 
-import Tag from 'react-bulma-components/lib/components/tag';
-import Box from 'react-bulma-components/lib/components/box';
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
-import Section from 'react-bulma-components/lib/components/section';
+import { Tag, Box, Media, Image, Content, Section } from 'react-bulma-components';
 
 The Box element is a white container that can be used to display other elements and media files.
 
@@ -20,7 +15,7 @@ The Box element is a white container that can be used to display other elements 
 ## **Import**
 
 ```js
-import Box from 'react-bulma-components/lib/components/box';
+import { Box } from 'react-bulma-components';
 ```
 
 <br />

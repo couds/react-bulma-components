@@ -4,9 +4,7 @@ title: Button
 sidebar_label: Button
 ---
 
-import Button from 'react-bulma-components/lib/components/button';
-import Box from 'react-bulma-components/lib/components/box';
-import Section from 'react-bulma-components/lib/components/section';
+import { Button, Box, Section } from 'react-bulma-components';
 
 The Button element is used to take user actions.
 
@@ -15,7 +13,7 @@ The Button element is used to take user actions.
 ## **Import**
 
 ```js
-import Button from 'react-bulma-components/lib/components/button';
+import Button from 'react-bulma-components';
 ```
 
 <br />

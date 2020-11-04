@@ -4,13 +4,12 @@ title: Basics
 sidebar_label: Basics
 ---
 
-import Columns from 'react-bulma-components/lib/components/columns'
-import Notification from 'react-bulma-components/lib/components/notification'
+import { Columns, Notification } from 'react-bulma-components'
 
 ## **Import**
 
 ```js
-import Columns from 'react-bulma-components/lib/components/columns';
+import { Columns } from 'react-bulma-components';
 ```
 
 <br />

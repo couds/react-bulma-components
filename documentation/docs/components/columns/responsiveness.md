@@ -4,9 +4,7 @@ title: Responsiveness
 sidebar_label: Responsiveness
 ---
 
-import Columns from 'react-bulma-components/lib/components/columns';
-import Notification from 'react-bulma-components/lib/components/notification';
-import Section from 'react-bulma-components/lib/components/section';
+import { Columns, Notification, Section } from 'react-bulma-components';
 
 You can specify at what viewport size should `Columns` be "activated",
 meaning it will display `Columns.Column` in a row. Any viewport smaller

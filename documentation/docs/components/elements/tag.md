@@ -4,13 +4,12 @@ title: Tag
 sidebar_label: Tag
 ---
 
-import Tag from 'react-bulma-components/lib/components/tag';
-import Section from 'react-bulma-components/lib/components/section';
+import { Tag, Section } from 'react-bulma-components';
 
 ## **Import**
 
 ```js
-import Tag from 'react-bulma-components/lib/components/tag';
+import { Tag } from 'react-bulma-components';
 ```
 
 <br />

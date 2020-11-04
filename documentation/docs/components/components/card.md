@@ -4,12 +4,7 @@ title: Card
 sidebar_label: Card
 ---
 
-import Card from 'react-bulma-components/lib/components/card';
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Content from 'react-bulma-components/lib/components/content';
-import Heading from 'react-bulma-components/lib/components/heading';
-import Section from 'react-bulma-components/lib/components/section';
+import { Card, Media, Image, Content, Heading, Section } from 'react-bulma-components';
 
 The card component is a normal responsive card. It can be used with other elements to display information.
 
@@ -18,7 +13,7 @@ The card component is a normal responsive card. It can be used with other elemen
 ## **Import**
 
 ```js
-import Card from 'react-bulma-components/lib/components/card';
+import { Card } from 'react-bulma-components';
 ```
 
 <br />
