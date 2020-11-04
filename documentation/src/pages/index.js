@@ -1,19 +1,12 @@
 import React from 'react';
-import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import Button from 'react-bulma-components/lib/components/button';
-import Hero from 'react-bulma-components/lib/components/hero';
-import Container from 'react-bulma-components/lib/components/container';
-import H from 'react-bulma-components/lib/components/heading';
-import Section from 'react-bulma-components/lib/components/section';
-import Columns from 'react-bulma-components/lib/components/columns';
+import { Button, Hero, Container, Heading as H, Columns } from 'react-bulma-components'
 
-
-import styles from './styles.module.css'; 
+import styles from './styles.module.css';
 
 const features = [
   {
@@ -45,7 +38,7 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <Columns.Column textAlignment="centered" size={4}>
@@ -62,9 +55,9 @@ function Feature({imageUrl, title, description}) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   return (
-    <Layout 
+    <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}>
       <Hero color="primary">

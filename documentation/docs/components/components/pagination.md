@@ -4,15 +4,14 @@ title: Pagination
 sidebar_label: Pagination
 ---
 
-import Pagination from 'react-bulma-components/lib/components/pagination';
-import Section from 'react-bulma-components/lib/components/section';
+import { Pagination, Section } from 'react-bulma-components';
 
 ---
 
 ## **Import**
 
 ```js
-import Pagination from 'react-bulma-components/lib/components/pagination';
+import { Pagination } from 'react-bulma-components';
 ```
 
 <br />
@@ -68,48 +67,48 @@ import Pagination from 'react-bulma-components/lib/components/pagination';
 ### **with first and last page**
 
 <Section>
-  <Pagination showFirstLast={true} />
+  <Pagination showFirstLast total={5} current={3} />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination showFirstLast={true} />
+  <Pagination showFirstLast total={5} current={3} />
 </Section>
 ```
 
 ### **with rounded button**
 
 <Section>
-  <Pagination rounded={true} />
+  <Pagination rounded total={5} current={3} />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination rounded={true} />
+  <Pagination rounded total={5} current={3} />
 </Section>
 ```
 
 ### **Configure pager size**
 
 <Section>
-  <Pagination size="small" />
+  <Pagination size="small" total={5} current={3} />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination size="small" />
+  <Pagination size="small" total={5} current={3} />
 </Section>
 ```
 
 ### **Configure pager position**
 
 <Section>
-  <Pagination position="right" />
+  <Pagination position="right" total={5} current={3} />
 </Section>
 
 ```jsx
 <Section>
-  <Pagination position="right" />
+  <Pagination position="right" total={5} current={3} />
 </Section>
 ```
 

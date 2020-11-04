@@ -130,7 +130,7 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/base.scss'),
+          customCss: require.resolve('bulma/css/bulma.min.css'),
         },
       },
     ],
