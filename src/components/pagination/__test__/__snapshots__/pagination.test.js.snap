@@ -133,6 +133,89 @@ exports[`Pagination component Next button should be disabled 1`] = `
 
 exports[`Pagination component Pagination Should Exist 1`] = `[Function]`;
 
+exports[`Pagination component Should display first and last page number 1`] = `
+<nav
+  aria-label="pagination"
+  className="pagination"
+>
+  <a
+    className="pagination-previous"
+    disabled={true}
+    role="button"
+    tabIndex={0}
+    title="This is the first page"
+  >
+    Previous
+  </a>
+  <a
+    className="pagination-next"
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Next
+  </a>
+  <ul
+    className="pagination-list"
+  >
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 1"
+        className="pagination-link is-current"
+        role="button"
+        tabIndex={0}
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 2"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 3"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <span
+        className="pagination-ellipsis"
+      >
+        …
+      </span>
+    </li>
+    <li>
+      <a
+        aria-current="page"
+        aria-label="Page 5"
+        className="pagination-link"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        5
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
 exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
 <nav
   aria-label="pagination"

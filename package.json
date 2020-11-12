@@ -11,6 +11,7 @@
     "eslint": "eslint .",
     "coveralls": "cat ./.coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
+    "docs": "cd documentation && npm start",
     "clean:build": "rm -rf lib",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
     "prepare": "npm run clean:build && npm run build && npm run clean:test",
