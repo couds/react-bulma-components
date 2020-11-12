@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BulmaComponent, BulmaComponentWithoutModifiers } from 'src/components';
+import { BulmaComponent, BulmaComponentWithoutModifiers } from '..';
 
 interface ModalProps {
   show?: boolean;

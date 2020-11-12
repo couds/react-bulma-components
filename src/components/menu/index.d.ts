@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BulmaComponent, BulmaComponentWithoutRenderAs } from 'src/components';
+import { BulmaComponent, BulmaComponentWithoutRenderAs } from '..';
 
 interface MenuListComponentProps {
   title?: React.ReactNode;

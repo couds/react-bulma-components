@@ -1,5 +1,5 @@
-import { BulmaComponent, BulmaComponentWithoutRenderAs } from 'src/components';
-import { Color, Size } from 'src/modifiers';
+import { BulmaComponent, BulmaComponentWithoutRenderAs } from '..';
+import { Color, Size } from '../../modifiers';
 
 interface TagProps {
   color?: Color;

@@ -1,5 +1,5 @@
-import { BulmaComponent } from 'src/components';
-import { Color, Size } from 'src/modifiers';
+import { BulmaComponent } from '..';
+import { Color, Size } from '../../modifiers';
 
 interface ButtonProps {
   onClick?: () => void;

@@ -4,8 +4,8 @@ import {
   OmitKeys,
   BulmaComponent,
   BulmaComponentWithoutRenderAs,
-} from 'src/components';
-import { Color, Size } from 'src/modifiers';
+} from '..';
+import { Color, Size } from '../../modifiers';
 
 interface FieldProps {
   align?: 'centered' | 'right';
