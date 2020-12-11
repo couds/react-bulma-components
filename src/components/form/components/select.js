@@ -36,7 +36,7 @@ const Select = ({
       renderAs="select"
       {...props}
       multiple={multiple}
-      value={value}
+      value={value !== undefined ? value : multiple ? [] : ''}
       readOnly={readOnly}
       disabled={disabled}
       name={name}
@@ -57,7 +57,21 @@ Select.propTypes = {
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
   loading: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: function(props, propName, componentName) {
+    if (props['multiple']) {
+      PropTypes.checkPropTypes(
+        { [propName]: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])) },
+        props,
+        propName,
+        componentName);
+    } else {
+      PropTypes.checkPropTypes(
+        { [propName]: PropTypes.oneOfType([PropTypes.string, PropTypes.number]) },
+        props,
+        propName,
+        componentName);
+    }
+  },
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
@@ -68,7 +82,7 @@ Select.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: undefined,
-  value: '',
+  value: undefined,
   style: undefined,
   size: undefined,
   color: undefined,
