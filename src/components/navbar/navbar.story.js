@@ -11,7 +11,7 @@ storiesOf('Navbar', module)
     <div>
       {story()}
       <Box style={{ margin: '15px auto', maxWidth: '75vw' }}>
-        Check the Know tab to see the behavior of this component
+        Check the Knobs tab to see the behavior of this component
       </Box>
     </div>
   ))
