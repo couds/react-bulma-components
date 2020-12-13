@@ -1,10 +1,29 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { ArgsTable, Description } from '@storybook/components';
 import * as stories from './breadcrumb.story';
+import { Breadcrumb } from './breadcrumb';
 
 <Meta title="Components/Breadcrumb" />
 
 # Breadcrumb
 
+<Description of={Breadcrumb} />
+
 <Story story={stories.Default} />
 
 A simple navigation component with a customizable separator. Suitable for hierarchical navigations.
+
+## Alignment
+
+By default, Breadcrumb is aligned to the left. You can change this by using the `align` prop.
+Possible values are: `'right'`, `'center'`
+
+Below shows a right-aligned breadcrumb via `align="right"`
+
+<Story name="Alignment" args={{ align: 'right' }}>
+  {stories.Default.bind({})}
+</Story>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/breadcrumb)

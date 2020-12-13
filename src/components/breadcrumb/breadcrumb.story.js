@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Breadcrumb } from 'react-bulma-components';
+import { Box, Breadcrumb } from '../..';
 
 export const Default = (args) => (
   <div>
@@ -79,3 +79,4 @@ export const CustomElement = () => {
 };
 
 CustomElement.storyName = 'Use custom render element';
+

@@ -5,6 +5,9 @@ import modifiers from '../../modifiers';
 import renderAsShape from '../../modifiers/render-as';
 import Element from '../element';
 
+/**
+ * Test
+ */
 const Breadcrumb = ({
   className,
   items,
@@ -76,3 +79,4 @@ Breadcrumb.defaultProps = {
 };
 
 export default Breadcrumb;
+export { Breadcrumb }

@@ -111,6 +111,7 @@
     "react-dom": "16.13.1",
     "react-test-renderer": "16.13.1",
     "source-map-support": "0.5.19",
+    "storybook-addon-react-docgen": "^1.2.42",
     "storybook-addon-themes": "5.4.1",
     "typescript": "3.9.7"
   }

@@ -19,6 +19,7 @@ module.exports = {
     '@storybook/addon-events',
     '@storybook/addon-a11y',
     '@storybook/addon-viewport',
+    'storybook-addon-react-docgen',
   ],
   webpackFinal: (config) => {
     config.resolve.modules.push('node_modules', 'src');
