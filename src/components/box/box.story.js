@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { boolean } from '@storybook/addon-knobs';
 
 import { Box, Media, Image, Content } from 'react-bulma-components';
 
-storiesOf('Box', module).add('Default', () => (
-  <Box paddingless={boolean('paddingless', false)}>
+export const Default = (args) => (
+  <Box {...args}>
     <Media>
       <Media.Item renderAs="figure" position="left">
         <Image
@@ -28,4 +26,4 @@ storiesOf('Box', module).add('Default', () => (
       </Media.Item>
     </Media>
   </Box>
-));
+);
