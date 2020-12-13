@@ -45,7 +45,7 @@ Default.argTypes = {
 export const CustomElement = () => {
   /* eslint-disable react/prop-types */
   const Anchor = ({ children, ...props }) => (
-    <a className='Others' {...props}>
+    <a className="Others" {...props}>
       {children}
     </a>
   );
@@ -56,7 +56,7 @@ export const CustomElement = () => {
       <Box>
         <Breadcrumb
           renderAs={Anchor}
-          hrefAttr='href'
+          hrefAttr="href"
           items={[
             {
               name: 'Storybook',
@@ -79,4 +79,3 @@ export const CustomElement = () => {
 };
 
 CustomElement.storyName = 'Use custom render element';
-
