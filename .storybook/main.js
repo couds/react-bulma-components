@@ -4,6 +4,7 @@ const { DefinePlugin } = require('webpack');
 module.exports = {
   stories: ['../src/**/*.story.@(js|mdx)'],
   addons: [
+    '@storybook/addon-essentials',
     {
       name: '@storybook/addon-storysource',
       options: {
