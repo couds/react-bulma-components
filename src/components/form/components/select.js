@@ -21,30 +21,36 @@ const Select = ({
   name,
   domRef,
   ...props
-}) => (
-  <Element
-    domRef={domRef}
-    className={classnames('select', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-      'is-loading': loading,
-      'is-multiple': multiple,
-    })}
-    style={style}
-  >
+}) => {
+  function defaultValue(isMultiple) {
+    return isMultiple ? [] : '';
+  }
+
+  return (
     <Element
-      renderAs="select"
-      {...props}
-      multiple={multiple}
-      value={value !== undefined ? value : multiple ? [] : ''}
-      readOnly={readOnly}
-      disabled={disabled}
-      name={name}
+      domRef={domRef}
+      className={classnames('select', className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-loading': loading,
+        'is-multiple': multiple,
+      })}
+      style={style}
     >
-      {children}
+      <Element
+        renderAs="select"
+        {...props}
+        multiple={multiple}
+        value={value !== undefined ? value : defaultValue(multiple)}
+        readOnly={readOnly}
+        disabled={disabled}
+        name={name}
+      >
+        {children}
+      </Element>
     </Element>
-  </Element>
-);
+  );
+};
 
 Select.propTypes = {
   ...modifiers.propTypes,
@@ -57,19 +63,27 @@ Select.propTypes = {
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
   loading: PropTypes.bool,
-  value: function(props, propName, componentName) {
+  value: function (props, propName, componentName) {
     if (props['multiple']) {
       PropTypes.checkPropTypes(
-        { [propName]: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])) },
+        {
+          [propName]: PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          ),
+        },
         props,
         propName,
-        componentName);
+        componentName,
+      );
     } else {
       PropTypes.checkPropTypes(
-        { [propName]: PropTypes.oneOfType([PropTypes.string, PropTypes.number]) },
+        {
+          [propName]: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        },
         props,
         propName,
-        componentName);
+        componentName,
+      );
     }
   },
   /**
