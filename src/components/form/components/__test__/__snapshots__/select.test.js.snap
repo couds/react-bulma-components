@@ -23,44 +23,6 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
 </div>
 `;
 
-exports[`Select component Should be multioption and should accept number array value 1`] = `
-<div
-  className="select is-multiple"
->
-  <select
-    disabled={false}
-    multiple={true}
-    readOnly={false}
-    value={
-      Array [
-        1,
-        2,
-        3,
-      ]
-    }
-  />
-</div>
-`;
-
-exports[`Select component Should be multioption and should accept string array value 1`] = `
-<div
-  className="select is-multiple"
->
-  <select
-    disabled={false}
-    multiple={true}
-    readOnly={false}
-    value={
-      Array [
-        "1",
-        "2",
-        "3",
-      ]
-    }
-  />
-</div>
-`;
-
 exports[`Select component Should be multioption and should not accept non array value 1`] = `
 <div
   className="select is-multiple"
@@ -119,32 +81,6 @@ exports[`Select component Should have select classname 1`] = `
       3
     </option>
   </select>
-</div>
-`;
-
-exports[`Select component Should not be multioption and should accept number value 1`] = `
-<div
-  className="select"
->
-  <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
-    value={1}
-  />
-</div>
-`;
-
-exports[`Select component Should not be multioption and should accept string value 1`] = `
-<div
-  className="select"
->
-  <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
-    value="1"
-  />
 </div>
 `;
 
