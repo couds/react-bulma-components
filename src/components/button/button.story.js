@@ -1,102 +1,153 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
-import { boolean, select } from '@storybook/addon-knobs';
+import { addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { Button, Section, Box } from 'react-bulma-components';
+import { Button, Section } from '../..';
 
 import CONSTANTS from '../../constants';
 
-const positions = {
-  default: '',
-  centered: 'centered',
-  right: 'right',
+addDecorator((story) => <div className="button-display">{story()}</div>);
+
+export const Default = (args) => (
+  <Button
+    {...args}
+    onClick={action('Button Click')}
+    onMouseEnter={action('Hover')}
+  >
+    Button
+  </Button>
+);
+
+Default.argTypes = {
+  colorVariant: {
+    description: 'Variant of the color scheme',
+    control: {
+      type: 'select',
+      options: Object.values(CONSTANTS.COLOR_VARIANT),
+    },
+  },
+  fullwidth: {
+    description: 'Whether the button should take up the entire parent width',
+    control: {
+      type: 'boolean',
+    },
+  },
+  color: {
+    description: 'Color of the button',
+    defaultValue: '',
+    control: {
+      type: 'select',
+      options: Object.values(CONSTANTS.COLORS),
+    },
+  },
+  outlined: {
+    description: 'Whether the button should have an outlined style',
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  inverted: {
+    description:
+      'Whether the button should have an inverted color scheme. Useful when button is used on colored background',
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  disabled: {
+    description: 'Whether the button should be disabled',
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  text: {
+    description: 'Whether the button should have a text button style',
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  isStatic: {
+    description: 'Whether the button should be non-interactive',
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  rounded: {
+    description: 'Whether the button should have fully-rounded corners',
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
 };
 
-storiesOf('Button', module)
-  .addDecorator((story) => <div className="button-display">{story()}</div>)
-  .add('Default', () => (
+export const CustomComponent = () => {
+  const Custom = ({ customProp, children, className }) => (
+    <a className={className} href={customProp}>
+      {children}
+    </a>
+  );
+
+  Custom.propTypes = {
+    customProp: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+  };
+
+  return (
     <Section>
-      <Box>
-        Play with the button props using the knobs addon panel at the bottom
-      </Box>
       <Button
-        colorVariant={select('Color variant', CONSTANTS.COLOR_VARIANT)}
-        fullwidth={boolean('Full width', false)}
-        color={select('Color', { ...CONSTANTS.COLORS, default: '' })}
-        loading={boolean('Loading', false)}
-        outlined={boolean('Outlined', false)}
-        inverted={boolean('Inverted', false)}
-        disabled={boolean('Disabled', false)}
-        text={boolean('Text', false)}
-        remove={boolean('Remove', false)}
-        isStatic={boolean('Static', false)}
-        rounded={boolean('Rounded', false)}
-        onClick={action('Button Click')}
-        onMouseEnter={action('Hover')}
+        color="info"
+        renderAs={Custom}
+        customProp="https://github.com/couds/react-bulma-components"
       >
-        Button
+        Button rendered using another React Component with props
       </Button>
     </Section>
-  ))
-  .add('As another React element', () => {
-    const CustomComponent = ({ customProp, children, className }) => (
-      <a className={className} href={customProp}>
-        {children}
-      </a>
-    );
+  );
+};
 
-    CustomComponent.propTypes = {
-      customProp: PropTypes.string.isRequired,
-      className: PropTypes.string.isRequired,
-      children: PropTypes.node.isRequired,
-    };
+// eslint-disable-next-line react/prop-types
+export const ButtonGroup = ({ position, size, ...args }) => (
+  <Button.Group
+    position={position === 'default' ? '' : position}
+    size={size === 'default' ? '' : size}
+    {...args}
+  >
+    <Button renderAs="span" color="success">
+      Save changes
+    </Button>
+    <Button renderAs="span" color="info">
+      Save and continue
+    </Button>
+    <Button renderAs="span" color="danger">
+      Cancel
+    </Button>
+  </Button.Group>
+);
 
-    return (
-      <Section>
-        <Button
-          color="info"
-          renderAs={CustomComponent}
-          customProp="https://github.com/couds/react-bulma-components"
-        >
-          Button rendered using another React Component with props
-        </Button>
-      </Section>
-    );
-  })
-  .add('Button group', () => (
-    <Section>
-      <Button.Group
-        hasAddons={boolean('hasAddons', false)}
-        position={select('Position', positions)}
-        size={select('Size', {
-          small: 'small',
-          medium: 'medium',
-          large: 'large',
-        })}
-      >
-        <Button renderAs="span" color="success">
-          Save changes
-        </Button>
-        <Button renderAs="span" color="info">
-          Save and continue
-        </Button>
-        <Button renderAs="span" color="danger">
-          Cancel
-        </Button>
-      </Button.Group>
-    </Section>
-  ))
-  .add('Ref forwarding', () => {
-    const ref = React.createRef();
-
-    return (
-      <Section>
-        <Button onClick={() => ref.current.click()}>click other button</Button>
-        <Button domRef={ref} onClick={() => console.log('clicked')}>
-          this will be clicked
-        </Button>
-      </Section>
-    );
-  });
+ButtonGroup.argTypes = {
+  hasAddons: {
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  position: {
+    control: {
+      type: 'select',
+      options: ['default', 'centered', 'right'],
+    },
+  },
+  size: {
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
+};
