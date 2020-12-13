@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Box, Media, Image, Content } from 'react-bulma-components';
 
-export const Default = (args) => (
-  <Box {...args}>
+export const Default = () => (
+  <Box>
     <Media>
       <Media.Item renderAs="figure" position="left">
         <Image
