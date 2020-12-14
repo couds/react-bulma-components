@@ -61,6 +61,22 @@ describe('Button component', () => {
     const component = renderer.create(<Button disabled />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should render loading state', () => {
+    const component = renderer.create(<Button loading />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render focused state', () => {
+    const component = renderer.create(<Button focused />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render hovered state', () => {
+    const component = renderer.create(<Button hovered />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render active state', () => {
+    const component = renderer.create(<Button active />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should be a submit form button', () => {
     const component = renderer.create(<Button submit />);
     expect(component.toJSON()).toMatchSnapshot();

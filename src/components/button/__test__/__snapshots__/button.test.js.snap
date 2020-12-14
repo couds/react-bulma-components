@@ -176,6 +176,15 @@ exports[`Button component Should exist 1`] = `[Function]`;
 
 exports[`Button component Should expose Button Group 1`] = `[Function]`;
 
+exports[`Button component Should render active state 1`] = `
+<button
+  className="is-active button"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+/>
+`;
+
 exports[`Button component Should render as a React element link with to prop 1`] = `
 <a
   href="http://google.com"
@@ -207,5 +216,32 @@ exports[`Button component Should render be disabled 1`] = `
   className="button"
   disabled={true}
   tabIndex={-1}
+/>
+`;
+
+exports[`Button component Should render focused state 1`] = `
+<button
+  className="is-focused button"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+/>
+`;
+
+exports[`Button component Should render hovered state 1`] = `
+<button
+  className="is-hovered button"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+/>
+`;
+
+exports[`Button component Should render loading state 1`] = `
+<button
+  className="is-loading button"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
 />
 `;
