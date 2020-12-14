@@ -1,0 +1,42 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Card from '.';
+import * as stories from './card.story';
+
+<Meta title="Components/Card" />
+
+# Card
+
+A composable component for displaying rich content.
+
+## Props
+
+<ArgsTable of={Card} />
+
+## Components
+
+The following components are available to compose card content.
+
+- `<Card.Image />` : Displays an image in card. Since it uses the `<Image />` component under the hood,
+they share the same props.
+- `<Card.Content />`: Displays the main content of the card. Can contain other components.
+- `<Card.Header />`: Displays a horizontal header bar at the top, with drop shadow.
+  - `<Card.Header.Title />` : Displays a left-aligned header text in the header.
+  - `<Card.Header.Icon />`: Displays an icon at the end of header.
+- `<Card.Footer />`: Displays a horizontal list of controls at the bottom.
+  - `<Card.Footer.Item />`: An item in the footer.
+
+## Examples
+
+Some example combinations of card components
+
+### Media card
+
+<Canvas>
+  <Story story={stories.Default} />
+</Canvas>
+
+### Footer actions
+
+<Canvas>
+  <Story story={stories.FooterActions} />
+</Canvas>

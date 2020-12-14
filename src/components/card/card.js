@@ -27,9 +27,21 @@ Card.Footer = CardFooter;
 
 Card.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Additional CSS classes to pass to Card.
+   */
   className: PropTypes.string,
+  /**
+   * Children of Card.
+   */
   children: PropTypes.node,
+  /**
+   * React style object for Card.
+   */
   style: PropTypes.shape({}),
+  /**
+   * The custom component that Card should be rendered as.
+   */
   renderAs: renderAsShape,
 };
 
