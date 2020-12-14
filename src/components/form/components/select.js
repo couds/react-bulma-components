@@ -22,8 +22,11 @@ const Select = ({
   domRef,
   ...props
 }) => {
-  function defaultValue(isMultiple) {
-    return isMultiple ? [] : '';
+  /**
+   * Return default value for value prop
+   */
+  function defaultValue() {
+    return multiple ? [] : '';
   }
 
   return (
@@ -41,7 +44,7 @@ const Select = ({
         renderAs="select"
         {...props}
         multiple={multiple}
-        value={value !== undefined ? value : defaultValue(multiple)}
+        value={value !== undefined ? value : defaultValue()}
         readOnly={readOnly}
         disabled={disabled}
         name={name}
