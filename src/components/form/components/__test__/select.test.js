@@ -46,6 +46,9 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+});
+
+describe('Select value PropTypes', () => {
   it('Should be multioption and should not accept non array value', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
     const component = renderer.create(<Select multiple value={1}></Select>);
