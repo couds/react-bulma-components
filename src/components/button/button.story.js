@@ -7,8 +7,6 @@ import { Button, Section } from '../..';
 
 import CONSTANTS from '../../constants';
 
-addDecorator((story) => <div className="button-display">{story()}</div>);
-
 export const Default = (args) => (
   <Button
     {...args}

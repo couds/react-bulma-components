@@ -1,10 +1,5 @@
 import React from 'react';
-import { addDecorator } from '@storybook/react';
 import { Card, Media, Image, Content, Heading } from '../..';
-
-addDecorator((story) => (
-  <div style={{ margin: '0px auto', width: 450 }}>{story()}</div>
-));
 
 export const Default = () => (
   <Card>

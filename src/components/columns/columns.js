@@ -50,9 +50,9 @@ Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
   ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
+  /**
+   * Specifies gap values between columns on different breakpoints
+   */
   variableGap: PropTypes.shape({
     ...Object.values(CONSTANTS.BREAKPOINTS).reduce(
       (values, breakpoint) => ({
@@ -63,25 +63,34 @@ Columns.propTypes = {
     ),
   }),
   /**
-   * Breakpoint where columns become stacked.
+   * Defines at what breakpoint upwards the column layout should be activated. Any viewport smaller
+   * than the specified breakpoint will cause `<Columns.Column>` to stack on top of each other.
    */
   breakpoint: PropTypes.oneOf(breakpoints),
   /**
-   * `true` to remove space between columns
+   * Whether there should be **no gap** between columns
    */
   gapless: PropTypes.bool,
   /**
-   * `true` if you want to use more than one line if you add more column elements that would fit in a single row.
+   * Whether you want to add more column elements than would fit in a single row.
+   * [Official documentation](https://bulma.io/documentation/columns/options/#multiline).
    */
   multiline: PropTypes.bool,
   /**
-   * `true` you want the columns inside to be horizontaly centered
+   * Whether columns should be **horizontally centered** inside `<Columns />`
    */
   centered: PropTypes.bool,
   /**
-   * `true` if you want to vertically align columns
+   * Whether columns should be **vertically centered** inside `<Columns />`
    */
   vCentered: PropTypes.bool,
+  children: PropTypes.node,
+  /**
+   * Additional CSS classes to be passed to `<Columns />`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
 };
 
 Columns.defaultProps = {
