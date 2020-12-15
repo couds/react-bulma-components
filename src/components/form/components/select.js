@@ -21,30 +21,39 @@ const Select = ({
   name,
   domRef,
   ...props
-}) => (
-  <Element
-    domRef={domRef}
-    className={classnames('select', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-      'is-loading': loading,
-      'is-multiple': multiple,
-    })}
-    style={style}
-  >
+}) => {
+  /**
+   * Return default value for value prop
+   */
+  function defaultValue() {
+    return multiple ? [] : '';
+  }
+
+  return (
     <Element
-      renderAs="select"
-      {...props}
-      multiple={multiple}
-      value={value}
-      readOnly={readOnly}
-      disabled={disabled}
-      name={name}
+      domRef={domRef}
+      className={classnames('select', className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-loading': loading,
+        'is-multiple': multiple,
+      })}
+      style={style}
     >
-      {children}
+      <Element
+        renderAs="select"
+        {...props}
+        multiple={multiple}
+        value={value !== undefined ? value : defaultValue()}
+        readOnly={readOnly}
+        disabled={disabled}
+        name={name}
+      >
+        {children}
+      </Element>
     </Element>
-  </Element>
-);
+  );
+};
 
 Select.propTypes = {
   ...modifiers.propTypes,
@@ -57,13 +66,29 @@ Select.propTypes = {
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
   loading: PropTypes.bool,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    ),
-  ]),
+  value: function (props, propName, componentName) {
+    if (props.multiple) {
+      PropTypes.checkPropTypes(
+        {
+          [propName]: PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          ),
+        },
+        props,
+        propName,
+        componentName,
+      );
+    } else {
+      PropTypes.checkPropTypes(
+        {
+          [propName]: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        },
+        props,
+        propName,
+        componentName,
+      );
+    }
+  },
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
@@ -74,7 +99,7 @@ Select.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: undefined,
-  value: '',
+  value: undefined,
   style: undefined,
   size: undefined,
   color: undefined,

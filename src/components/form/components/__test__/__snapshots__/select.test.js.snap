@@ -8,7 +8,7 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
     disabled={true}
     multiple={true}
     readOnly={false}
-    value=""
+    value={Array []}
   >
     <option>
       1
@@ -96,5 +96,37 @@ exports[`Select component Should use inline styles 1`] = `
       3
     </option>
   </select>
+</div>
+`;
+
+exports[`Select component value PropTypes Should be multioption and should not accept non array value 1`] = `
+<div
+  className="select is-multiple"
+>
+  <select
+    disabled={false}
+    multiple={true}
+    readOnly={false}
+    value={1}
+  />
+</div>
+`;
+
+exports[`Select component value PropTypes Should not be multioption and should not accept array value 1`] = `
+<div
+  className="select"
+>
+  <select
+    disabled={false}
+    multiple={false}
+    readOnly={false}
+    value={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+  />
 </div>
 `;
