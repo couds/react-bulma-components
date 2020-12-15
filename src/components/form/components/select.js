@@ -67,7 +67,7 @@ Select.propTypes = {
   multiple: PropTypes.bool,
   loading: PropTypes.bool,
   value: function (props, propName, componentName) {
-    if (props['multiple']) {
+    if (props.multiple) {
       PropTypes.checkPropTypes(
         {
           [propName]: PropTypes.arrayOf(
