@@ -46,21 +46,20 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-});
-
-describe('Select value PropTypes', () => {
-  it('Should be multioption and should not accept non array value', () => {
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-    const component = renderer.create(<Select multiple value={1}></Select>);
-    expect(component.toJSON()).toMatchSnapshot();
-    expect(spy).toBeCalled();
-    spy.mockRestore();
-  });
-  it('Should not be multioption and should not accept array value', () => {
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-    const component = renderer.create(<Select value={[1, 2, 3]}></Select>);
-    expect(component.toJSON()).toMatchSnapshot();
-    expect(spy).toBeCalled();
-    spy.mockRestore();
+  describe('value PropTypes', () => {
+    it('Should be multioption and should not accept non array value', () => {
+      const spy = jest.spyOn(console, 'error').mockImplementation();
+      const component = renderer.create(<Select multiple value={1}></Select>);
+      expect(component.toJSON()).toMatchSnapshot();
+      expect(spy).toBeCalled();
+      spy.mockRestore();
+    });
+    it('Should not be multioption and should not accept array value', () => {
+      const spy = jest.spyOn(console, 'error').mockImplementation();
+      const component = renderer.create(<Select value={[1, 2, 3]}></Select>);
+      expect(component.toJSON()).toMatchSnapshot();
+      expect(spy).toBeCalled();
+      spy.mockRestore();
+    });
   });
 });

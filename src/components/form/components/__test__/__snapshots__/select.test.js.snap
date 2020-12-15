@@ -99,7 +99,7 @@ exports[`Select component Should use inline styles 1`] = `
 </div>
 `;
 
-exports[`Select value PropTypes Should be multioption and should not accept non array value 1`] = `
+exports[`Select component value PropTypes Should be multioption and should not accept non array value 1`] = `
 <div
   className="select is-multiple"
 >
@@ -112,7 +112,7 @@ exports[`Select value PropTypes Should be multioption and should not accept non 
 </div>
 `;
 
-exports[`Select value PropTypes Should not be multioption and should not accept array value 1`] = `
+exports[`Select component value PropTypes Should not be multioption and should not accept array value 1`] = `
 <div
   className="select"
 >
