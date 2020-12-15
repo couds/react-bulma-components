@@ -22,11 +22,25 @@ const Container = ({ children, fluid, breakpoint, className, ...props }) => (
 
 Container.propTypes = {
   ...modifiers.propTypes,
-  children: PropTypes.node,
+  /**
+   * Whether this container is fluid. If true, the container
+   * will be fullwidth, but will also leave 32px on left and right side.
+   */
   fluid: PropTypes.bool,
+  /**
+   * Specifies the breakpoint at which the container will stop being fullwidth.
+   */
+  breakpoint: PropTypes.oneOf(breakpoints),
+  children: PropTypes.node,
+  /**
+   * Additional CSS classes to pass to `<Container />`.
+   * They will sit alongside pre-applied bulma classes.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  breakpoint: PropTypes.oneOf(breakpoints),
+  /**
+   * Specifies what component `<Container />` should be rendered as.
+   */
   renderAs: renderAsShape,
 };
 

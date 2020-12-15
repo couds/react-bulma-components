@@ -1,57 +1,37 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { Container, Heading, Section } from 'react-bulma-components';
+import { Container, Notification } from '../..';
 
-storiesOf('Container', module).add('Default', () => (
+export const Basic = () => (
+  <Container>
+    <Notification color="primary">
+      This container is <strong>centered</strong> on desktop
+    </Notification>
+  </Container>
+);
+
+export const Fluid = () => (
+  <Container fluid>
+    <Notification color="primary">
+      This container is <strong>fluid</strong>
+    </Notification>
+  </Container>
+);
+
+export const Breakpoint = () => (
   <div>
-    <Section>
-      <Container>
-        <p className="bd-notification is-success">
-          <Heading size={5} renderAs="p">
-            Default
-          </Heading>
-          <Heading subtitle renderAs="p">
-            Container
-          </Heading>
-        </p>
-      </Container>
-    </Section>
-    <Section>
-      <Container fluid>
-        <p className="bd-notification is-info">
-          <Heading size={5} renderAs="p">
-            Fluid
-          </Heading>
-          <Heading subtitle renderAs="p">
-            Container
-          </Heading>
-        </p>
-      </Container>
-    </Section>
-    <Section>
-      <Container breakpoint="widescreen">
-        <p className="bd-notification is-warning">
-          <Heading size={5} renderAs="p">
-            Breakpoint Widescreen
-          </Heading>
-          <Heading subtitle renderAs="p">
-            Container
-          </Heading>
-        </p>
-      </Container>
-    </Section>
-    <Section>
-      <Container breakpoint="fullhd">
-        <p className="bd-notification is-danger">
-          <Heading size={5} renderAs="p">
-            Breakpoint Fullhd
-          </Heading>
-          <Heading subtitle renderAs="p">
-            Container
-          </Heading>
-        </p>
-      </Container>
-    </Section>
+    <Container breakpoint="widescreen">
+      <Notification color="primary">
+        This container is <strong>fullwidth</strong> until{' '}
+        <strong>widescreen</strong>
+      </Notification>
+    </Container>
+    <br />
+    <Container breakpoint="mobile">
+      <Notification color="primary">
+        This container is <strong>fullwidth</strong> until{' '}
+        <strong>mobile</strong>
+      </Notification>
+    </Container>
   </div>
-));
+);

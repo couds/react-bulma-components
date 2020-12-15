@@ -6,5 +6,5 @@ import 'bulma/css/bulma.min.css';
 addDecorator(withPropsTable);
 
 export const parameters = {
-  layout: 'centered',
+  layout: 'padded',
 };
