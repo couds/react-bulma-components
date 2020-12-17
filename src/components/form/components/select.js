@@ -66,7 +66,7 @@ Select.propTypes = {
   disabled: PropTypes.bool,
   multiple: PropTypes.bool,
   loading: PropTypes.bool,
-  value: function (props, propName, componentName) {
+  value: (props, propName, componentName) => {
     if (props.multiple) {
       PropTypes.checkPropTypes(
         {

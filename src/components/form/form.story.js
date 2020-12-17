@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-
+import React, { PureComponent, useState } from 'react';
+import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -111,99 +111,108 @@ const CheckboxControlled = HoCCheckbox(Checkbox);
 
 storiesOf('Form', module)
   .addDecorator(story => <div style={{ margin: 50 }}>{story()}</div>)
-  .add('Default', () => (
-    <div>
-      <Field>
-        <Label>Name</Label>
-        <Control>
-          <Input placeholder="Text input" />
-        </Control>
-      </Field>
+  .add('Default', () => {
+    const [files, setFiles] = useState();
+    return (
+      <div>
+        <Field>
+          <Label>Name</Label>
+          <Control>
+            <Input placeholder="Text input" />
+          </Control>
+        </Field>
+  
+        <Field>
+          <Label>Username</Label>
+          <Control>
+            <Input
+              color="success"
+              type="text"
+              placeholder="Text input"
+              value="bulma"
+            />
+          </Control>
+          <Help color="success">This username is available</Help>
+        </Field>
 
-      <Field>
-        <Label>Username</Label>
-        <Control>
-          <Input
-            color="success"
-            type="text"
-            placeholder="Text input"
-            value="bulma"
-          />
-        </Control>
-        <Help color="success">This username is available</Help>
-      </Field>
-
-      <Field>
-        <Label>Email</Label>
-        <Control>
-          <Input
-            color="danger"
-            type="email"
-            placeholder="Email input"
-            value="hello@"
-          />
-        </Control>
-        <Help color="danger">This email is invalid</Help>
-      </Field>
-      <Field>
-        <Label>With Icons</Label>
-        <Control iconLeft iconRight>
-          <Input color="success" type="email" placeholder="I have icons" />
-          <Icon align="left" icon="bars" />
-          <Icon align="right" icon="bars" />
-        </Control>
-        <Help color="danger">This email is invalid</Help>
-      </Field>
-      <Field>
-        <Label>Subject</Label>
-        <Control>
-          <SelectControlled>
-            <option>Select dropdown</option>
-            <option>With options</option>
-          </SelectControlled>
-        </Control>
-      </Field>
-
-      <Field>
-        <Label>Message</Label>
-        <Control>
-          <Textarea placeholder="Textarea" />
-        </Control>
-      </Field>
-
-      <Field>
-        <Label>File</Label>
-        <Control>
-          <InputFile
-            icon={<Icon icon="upload" />}
-            boxed
-            placeholder="Textarea"
-          />
-        </Control>
-      </Field>
-
-      <Field>
-        <Control>
-          <CheckboxControlled>
-            {' '}I agree to the <a href="#agree">terms and conditions</a>
-          </CheckboxControlled>
-        </Control>
-      </Field>
-
-      <Field>
-        <RadioGroup />
-      </Field>
-
-      <Field kind="group">
-        <Control>
-          <Button type="primary">Submit</Button>
-        </Control>
-        <Control>
-          <Button color="link">Cancel</Button>
-        </Control>
-      </Field>
-    </div>
-  ))
+        <Field>
+          <Label>Email</Label>
+          <Control>
+            <Input
+              color="danger"
+              type="email"
+              placeholder="Email input"
+              value="hello@"
+            />
+          </Control>
+          <Help color="danger">This email is invalid</Help>
+        </Field>
+        <Field>
+          <Label>With Icons</Label>
+          <Control iconLeft iconRight>
+            <Input color="success" type="email" placeholder="I have icons" />
+            <Icon align="left" icon="bars" />
+            <Icon align="right" icon="bars" />
+          </Control>
+          <Help color="danger">This email is invalid</Help>
+        </Field>
+        <Field>
+          <Label>Subject</Label>
+          <Control>
+            <SelectControlled>
+              <option>Select dropdown</option>
+              <option>With options</option>
+            </SelectControlled>
+          </Control>
+        </Field>
+  
+        <Field>
+          <Label>Message</Label>
+          <Control>
+            <Textarea placeholder="Textarea" />
+          </Control>
+        </Field>
+  
+        <Field>
+          <Label>File</Label>
+          <Control>
+            <InputFile
+              icon={<Icon icon="upload" />}
+              boxed
+              value={files}
+              filename={files && files[0] && files[0].name}
+              onChange={(evt) => {
+                setFiles(evt.target.files)
+                action('Files')(evt.target.files)
+              }}
+              placeholder="Textarea"
+            />
+          </Control>
+        </Field>
+  
+        <Field>
+          <Control>
+            <CheckboxControlled>
+              {' '}I agree to the <a href="#agree">terms and conditions</a>
+            </CheckboxControlled>
+          </Control>
+        </Field>
+  
+        <Field>
+          <RadioGroup />
+        </Field>
+  
+        <Field kind="group">
+          <Control>
+            <Button type="primary">Submit</Button>
+          </Control>
+          <Control>
+            <Button color="link">Cancel</Button>
+          </Control>
+        </Field>
+      </div>
+    );
+  })
   .add('Handle Multiple inputs', () => {
     /* eslint-disable react/no-multi-comp */
     class MultiInputHandler extends PureComponent {

@@ -7,3 +7,4 @@ reports
 *.story.js
 *.test.js
 **/*.d.ts
+documentation/**
