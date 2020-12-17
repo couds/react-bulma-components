@@ -80,7 +80,8 @@ interface InputFileProps {
   onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
   color?: Color;
   size?: Size;
-  fileName?: string;
+  filename?: string;
+  value?: any;
   fullwidth?: boolean;
   right?: boolean;
   boxed?: boolean;
