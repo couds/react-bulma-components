@@ -10,7 +10,7 @@ React components for [Bulma](http://bulma.io/) (v0.8.2) UI compatible with most 
 
 ### V4 Pool
 
-Please Check https://github.com/couds/react-bulma-components/issues/258, we are thinking to change the bulma dependency to a peedr dependency and remove the style importes from this library. you can vote here https://doodle.com/poll/mqqpxwkzm6nnrs3s
+Please Check https://github.com/couds/react-bulma-components/issues/258, we are thinking to change the bulma dependency to a peer dependency and remove the style importes from this library. you can vote here https://doodle.com/poll/mqqpxwkzm6nnrs3s
 
 ### BREAKING CHANGES V2 -> V3:
 
