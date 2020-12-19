@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import Element from '../element';
+import BreadcrumbItem from './components/item';
 import modifiers from '../../modifiers';
 import renderAsShape from '../../modifiers/render-as';
-import Element from '../element';
 
 const Breadcrumb = ({
   className,
@@ -13,6 +15,7 @@ const Breadcrumb = ({
   separator,
   size,
   align,
+  children,
   ...props
 }) => (
   <Element
@@ -24,26 +27,11 @@ const Breadcrumb = ({
       [`is-${align}`]: align,
     })}
   >
-    <ul>
-      {items.map((item) => {
-        const p = {
-          renderAs,
-          [hrefAttr]: item.url,
-        };
-        return (
-          <li
-            key={item.url}
-            className={classnames({
-              'is-active': item.active,
-            })}
-          >
-            <Element {...p}>{item.name}</Element>
-          </li>
-        );
-      })}
-    </ul>
+    <ul>{children}</ul>
   </Element>
 );
+
+Breadcrumb.Item = BreadcrumbItem;
 
 Breadcrumb.propTypes = {
   ...modifiers.propTypes,
@@ -61,6 +49,7 @@ Breadcrumb.propTypes = {
   ),
   renderAs: renderAsShape,
   hrefAttr: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Breadcrumb.defaultProps = {
@@ -73,6 +62,7 @@ Breadcrumb.defaultProps = {
   style: undefined,
   size: undefined,
   align: undefined,
+  children: undefined,
 };
 
 export default Breadcrumb;

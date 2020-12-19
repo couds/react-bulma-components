@@ -15,22 +15,17 @@ storiesOf('Breadcrumb', module)
             bullet: 'bullet',
             succeeds: 'succeeds',
           })}
-          items={[
-            {
-              name: 'Storybook',
-              url: '#1',
-            },
-            {
-              name: 'Breadcrumb',
-              url: '#2',
-            },
-            {
-              name: 'Breadcrumb Types',
-              url: '#3',
-              active: true,
-            },
-          ]}
-        />
+        >
+          <Breadcrumb.Item>
+            <a href="test">asdad</a>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <a href="test">asdad</a>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <a href="test">asdad</a>
+          </Breadcrumb.Item>
+        </Breadcrumb>
       </Box>
     </div>
   ))
