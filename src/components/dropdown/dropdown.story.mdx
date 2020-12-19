@@ -1,5 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
-import { Container } from '../..';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Dropdown } from '../..';
 import * as stories from './dropdown.story';
 
 <Meta title="Components/Dropdown" />
@@ -9,10 +9,61 @@ import * as stories from './dropdown.story';
 A component for implementing dropdown menu patterns that incorporates the button and the menu elements.
 
 <Canvas>
-  <Story story={stories.Default} height="300px" />
+  <Story story={stories.Overview} height="300px" />
 </Canvas>
+
+## Props
+
+<br />
+
+### `Dropdown`
+
+<ArgsTable of={Dropdown} />
+
+### `Dropdown.Item`
+
+<ArgsTable of={Dropdown.Item} />
+
+### `Dropdown.Divider`
+
+<ArgsTable of={Dropdown.Divider} />
 
 ## Components
 
 The `Dropdown` component contains the following components:
 
+- `<Dropdown.Item />`: Defines an item in the dropdown menu.
+- `<Dropdown.Divider />`: Draws a divider in the dropdown menu.
+
+## Custom content
+
+By default, `<Dropdown.Item />` is rendered as a `<div>`,
+so you can put any content you like inside it.
+
+<Canvas>
+  <Story story={stories.CustomContent} height="300px" />
+</Canvas>
+
+## Right alignment
+
+You set the `right` prop to true to align the dropdown to the right.
+
+<Canvas>
+  <Story story={stories.RightAlignment} height="300px" />
+</Canvas>
+
+## Menu above button
+
+You can have the menu appear above the button instead of below by setting the `up` prop to true.
+
+<Canvas>
+  <Story story={stories.MenuAbove} />
+</Canvas>
+
+## Controlled
+
+To control the value of dropdown in React, simply pass the `value` prop.
+
+<Canvas>
+  <Story story={stories.Controlled} height="300px" />
+</Canvas>

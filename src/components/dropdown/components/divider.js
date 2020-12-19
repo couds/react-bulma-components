@@ -15,6 +15,10 @@ const DropdownDivider = ({ className, ...props }) => (
 DropdownDivider.propTypes = {
   ...modifiers.propTypes,
   style: PropTypes.shape({}),
+  /**
+   * Additional CSS classes to pass to `<Dropdown.Divider />`.
+   * They will sit alongside pre-applied bulma classes.
+   */
   className: PropTypes.string,
 };
 
