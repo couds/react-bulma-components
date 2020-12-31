@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { Button, Section } from '../..';

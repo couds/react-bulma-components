@@ -1,340 +1,497 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
+import { Button, Form, Icon } from '../../index';
 
-import { storiesOf } from '@storybook/react';
+export const BasicExample = () => {
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('bulma');
+  const [email, setEmail] = useState('hello@');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [tocAgreed, setTocAgreed] = useState(false);
+  const [questionValue, setQuestionValue] = useState('');
 
-import {
-  Field,
-  Control,
-  Label,
-  Input,
-  Textarea,
-  Select,
-  Checkbox,
-  Radio,
-  Help,
-  InputFile,
-} from 'react-bulma-components/lib/components/form';
-import Button from 'react-bulma-components/lib/components/button';
-import Icon from 'react-bulma-components/lib/components/icon';
-
-/* eslint-disable react/no-multi-comp */
-const HoC = Component => {
-  class Controlled extends React.Component {
-    static displayName = 'Select';
-
-    state = {
-      value: '',
-    };
-
-    onChange = evt => {
-      this.setState({
-        value: evt.target.value,
-      });
-    };
-
-    render() {
-      return (
-        <Component
-          onChange={this.onChange}
-          value={this.state.value}
-          {...this.props}
-        />
-      );
-    }
-  }
-  return Controlled;
-};
-
-const HoCCheckbox = Component => {
-  class Controlled extends React.Component {
-    static displayName = 'Checkbox';
-    state = {
-      checked: false,
-    };
-
-    onChange = evt => {
-      this.setState({
-        checked: evt.target.checked,
-      });
-    };
-
-    render() {
-      return (
-        <Component
-          onChange={this.onChange}
-          checked={this.state.checked}
-          {...this.props}
-        />
-      );
-    }
-  }
-  return Controlled;
-};
-
-class RadioGroup extends React.Component {
-  state = {
-    selected: undefined,
-  };
-
-  onChange = evt => {
-    this.setState({
-      selected: evt.target.value,
-    });
-  };
-
-  render() {
-    return (
-      <Control>
-        <Radio
-          onChange={this.onChange}
-          checked={this.state.selected === 'Yes'}
-          value="Yes"
-          name="question"
-        >
-          {' '}Yes
-        </Radio>
-        <Radio
-          onChange={this.onChange}
-          checked={this.state.selected === 'No'}
-          value="No"
-          name="question"
-        >
-          {' '}No
-        </Radio>
-      </Control>
-    );
-  }
-}
-/* eslint-enable react/no-multi-comp */
-const SelectControlled = HoC(Select);
-const CheckboxControlled = HoCCheckbox(Checkbox);
-
-storiesOf('Form', module)
-  .addDecorator(story => <div style={{ margin: 50 }}>{story()}</div>)
-  .add('Default', () => (
-    <div>
-      <Field>
-        <Label>Name</Label>
-        <Control>
-          <Input placeholder="Text input" />
-        </Control>
-      </Field>
-
-      <Field>
-        <Label>Username</Label>
-        <Control>
-          <Input
-            color="success"
+  return (
+    <form>
+      <Form.Field>
+        <Form.Label>Name</Form.Label>
+        <Form.Control>
+          <Form.Input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Text input"
-            value="bulma"
           />
-        </Control>
-        <Help color="success">This username is available</Help>
-      </Field>
+        </Form.Control>
+      </Form.Field>
 
-      <Field>
-        <Label>Email</Label>
-        <Control>
-          <Input
+      <Form.Field>
+        <Form.Label>Username</Form.Label>
+        <Form.Control iconLeft iconRight>
+          <Form.Input
+            color="success"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Icon align="left" size="small">
+            <i className="fas fa-user" />
+          </Icon>
+          <Icon align="right" size="small">
+            <i className="fas fa-check" />
+          </Icon>
+        </Form.Control>
+        <Form.Help color="success">This username is available</Form.Help>
+      </Form.Field>
+
+      <Form.Field>
+        <Form.Label>Email</Form.Label>
+        <Form.Control iconLeft iconRight>
+          <Form.Input
             color="danger"
-            type="email"
-            placeholder="Email input"
-            value="hello@"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-        </Control>
-        <Help color="danger">This email is invalid</Help>
-      </Field>
-      <Field>
-        <Label>With Icons</Label>
-        <Control iconLeft iconRight>
-          <Input color="success" type="email" placeholder="I have icons" />
-          <Icon align="left" icon="bars" />
-          <Icon align="right" icon="bars" />
-        </Control>
-        <Help color="danger">This email is invalid</Help>
-      </Field>
-      <Field>
-        <Label>Subject</Label>
-        <Control>
-          <SelectControlled>
-            <option>Select dropdown</option>
-            <option>With options</option>
-          </SelectControlled>
-        </Control>
-      </Field>
+          <Icon align="left" size="small">
+            <i className="fas fa-envelope" />
+          </Icon>
+          <Icon align="right" size="small">
+            <i className="fas fa-exclamation-triangle" />
+          </Icon>
+        </Form.Control>
+        <Form.Help color="danger">This email is invalid</Form.Help>
+      </Form.Field>
 
-      <Field>
-        <Label>Message</Label>
-        <Control>
-          <Textarea placeholder="Textarea" />
-        </Control>
-      </Field>
+      <Form.Field>
+        <Form.Label>Subject</Form.Label>
+        <Form.Control>
+          <Form.Select
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+          >
+            <option value="select-dropdown">Select dropdown</option>
+            <option value="with-options">With options</option>
+          </Form.Select>
+        </Form.Control>
+      </Form.Field>
 
-      <Field>
-        <Label>File</Label>
-        <Control>
-          <InputFile
-            icon={<Icon icon="upload" />}
-            boxed
-            placeholder="Textarea"
-          />
-        </Control>
-      </Field>
+      <Form.Field>
+        <Form.Label>Message</Form.Label>
+        <Form.Textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </Form.Field>
 
-      <Field>
-        <Control>
-          <CheckboxControlled>
-            {' '}I agree to the <a href="#agree">terms and conditions</a>
-          </CheckboxControlled>
-        </Control>
-      </Field>
+      <Form.Field>
+        <Form.Control>
+          <Form.Checkbox
+            checked={tocAgreed}
+            onChange={(e) => setTocAgreed(e.target.checked)}
+          >
+            {'  '}I agree to the <a href="#">terms and conditions</a>
+          </Form.Checkbox>
+        </Form.Control>
+      </Form.Field>
 
-      <Field>
-        <RadioGroup />
-      </Field>
+      <Form.Field>
+        <Form.Control>
+          <Form.Radio
+            value="yes"
+            name="question"
+            checked={questionValue === 'yes'}
+            onChange={(e) => setQuestionValue(e.target.value)}
+          >
+            {'  '}Yes
+          </Form.Radio>
+          <Form.Radio
+            value="no"
+            name="question"
+            checked={questionValue === 'no'}
+            onChange={(e) => setQuestionValue(e.target.value)}
+          >
+            {'  '}No
+          </Form.Radio>
+        </Form.Control>
+      </Form.Field>
 
-      <Field kind="group">
-        <Control>
-          <Button type="primary">Submit</Button>
-        </Control>
-        <Control>
-          <Button color="link">Cancel</Button>
-        </Control>
-      </Field>
-    </div>
-  ))
-  .add('Handle Multiple inputs', () => {
-    /* eslint-disable react/no-multi-comp */
-    class MultiInputHandler extends PureComponent {
-      state = {
-        email: '',
-        name: '',
-        password: '',
-        comment: '',
-        gender: '',
-        question: undefined,
-        termsAccepted: false,
-      };
+      <Form.Field kind="group">
+        <Form.Control>
+          <Button color="link">Submit</Button>
+        </Form.Control>
+        <Form.Control>
+          <Button color="link" colorVariant="light">
+            Cancel
+          </Button>
+        </Form.Control>
+      </Form.Field>
+    </form>
+  );
+};
 
-      onChange = evt => {
-        const value =
-          evt.target.type === 'checkbox'
-            ? evt.target.checked
-            : evt.target.value;
-        this.setState({
-          [evt.target.name]: value,
-        });
-      };
+export const FieldExample = () => (
+  <Form.Field>
+    <Form.Label>Field label</Form.Label>
+    <Form.Control>
+      <Form.Input type="text" placeholder="Field control - text input" />
+    </Form.Control>
+    <Form.Help>Help text for this field</Form.Help>
+  </Form.Field>
+);
 
-      render() {
-        const {
-          email,
-          name,
-          password,
-          comment,
-          gender,
-          question,
-          termsAccepted,
-        } = this.state;
-        return (
-          <div>
-            <Field>
-              <Label>Email</Label>
-              <Control>
-                <Input
-                  onChange={this.onChange}
-                  name="email"
-                  type="email"
-                  placeholder="Email input"
-                  value={email}
-                />
-              </Control>
-            </Field>
-            <Field>
-              <Label>Name</Label>
-              <Control>
-                <Input
-                  onChange={this.onChange}
-                  name="name"
-                  type="text"
-                  placeholder="Name input"
-                  value={name}
-                />
-              </Control>
-            </Field>
-            <Field>
-              <Label>Password</Label>
-              <Control>
-                <Input
-                  onChange={this.onChange}
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                />
-              </Control>
-            </Field>
-            <Field>
-              <Label>Gender</Label>
-              <Control>
-                <Select onChange={this.onChange} name="gender" value={gender}>
-                  <option value="">Select</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other?</option>
-                </Select>
-              </Control>
-            </Field>
-            <Field>
-              <Label>Message</Label>
-              <Control>
-                <Textarea
-                  name="comment"
-                  value={comment}
-                  onChange={this.onChange}
-                  placeholder="Textarea"
-                />
-              </Control>
-            </Field>
-            <Field>
-              <Label>Do you undertood how to use me?</Label>
-              <Control>
-                <Radio
-                  onChange={this.onChange}
-                  checked={question === 'Yes'}
-                  value="Yes"
-                  name="question"
-                >
-                  Yes
-                </Radio>
-                <Radio
-                  onChange={this.onChange}
-                  checked={question === 'No'}
-                  value="No"
-                  name="question"
-                >
-                  No
-                </Radio>
-              </Control>
-            </Field>
-            <Field>
-              <Control>
-                <Checkbox
-                  name="termsAccepted"
-                  onChange={this.onChange}
-                  checked={termsAccepted}
-                >
-                  I agree to the <a href="#agree">terms and conditions</a>
-                </Checkbox>
-              </Control>
-            </Field>
-            <pre>
-              <code>{JSON.stringify(this.state, null, 2)}</code>
-            </pre>
-          </div>
-        );
-      }
-    }
-    return <MultiInputHandler />;
-  });
+FieldExample.storyName = 'Form field';
+
+export const MultipleFields = () => (
+  <>
+    <Form.Field>
+      <Form.Label>Username</Form.Label>
+      <Form.Control>
+        <Form.Input type="text" placeholder="e.g. John Doe" />
+      </Form.Control>
+    </Form.Field>
+    <Form.Field>
+      <Form.Label>Password</Form.Label>
+      <Form.Control>
+        <Form.Input type="password" placeholder="password" />
+      </Form.Control>
+    </Form.Field>
+  </>
+);
+
+export const FormControlIcons = (args) => (
+  <Form.Field>
+    <Form.Label>Username</Form.Label>
+    <Form.Control {...args}>
+      <Form.Input type="text" placeholder="e.g. John Doe" />
+      <Icon align="left">
+        <i className="fas fa-user" />
+      </Icon>
+      <Icon align="right">
+        <i className="fas fa-check" />
+      </Icon>
+    </Form.Control>
+  </Form.Field>
+);
+
+FormControlIcons.argTypes = {
+  iconLeft: {
+    description: 'Whether to display an icon on the left side of this Control',
+    defaultValue: true,
+    control: {
+      type: 'boolean',
+    },
+  },
+  iconRight: {
+    description: 'Whether to display an icon on the right side of this Control',
+    defaultValue: true,
+    control: {
+      type: 'boolean',
+    },
+  },
+};
+
+export const GroupedControls = () => (
+  <Form.Field kind="group">
+    <Form.Control>
+      <Form.Label>Password</Form.Label>
+      <Form.Input type="password" />
+    </Form.Control>
+    <Form.Control>
+      <Form.Label>Retype your password</Form.Label>
+      <Form.Input type="password" />
+    </Form.Control>
+  </Form.Field>
+);
+
+export const GroupedButtons = () => (
+  <Form.Field kind="group">
+    <Form.Control>
+      <Button color="primary">Submit</Button>
+    </Form.Control>
+    <Form.Control>
+      <Button color="light">Cancel</Button>
+    </Form.Control>
+  </Form.Field>
+);
+
+export const ControlGroupAlignment = (args) => (
+  <Form.Field kind="group" align={args.align === 'default' ? null : args.align}>
+    <Form.Control>
+      <Button color="primary">Submit</Button>
+    </Form.Control>
+    <Form.Control>
+      <Button color="light">Cancel</Button>
+    </Form.Control>
+  </Form.Field>
+);
+
+ControlGroupAlignment.argTypes = {
+  align: {
+    description: 'Alter the alignment of controls in this Field.',
+    defaultValue: 'centered',
+    control: {
+      type: 'select',
+      options: ['default', 'centered', 'right'],
+    },
+  },
+};
+
+export const ExpandedControl = () => (
+  <Form.Field kind="group">
+    <Form.Control fullwidth>
+      <Form.Input type="text" placeholder="Search..." />
+    </Form.Control>
+    <Form.Control>
+      <Button color="primary">Search</Button>
+    </Form.Control>
+  </Form.Field>
+);
+
+export const MultilineControls = () => (
+  <Form.Field kind="group" multiline>
+    {[
+      'zero',
+      'one',
+      'two',
+      'three',
+      'four',
+      'five',
+      'six',
+      'seven',
+      'eight',
+      'nine',
+    ].map((label) => (
+      <Form.Control>
+        <Button>{label}</Button>
+      </Form.Control>
+    ))}
+  </Form.Field>
+);
+
+export const DisablingFields = (args) => (
+  <fieldset {...args}>
+    <Form.Field>
+      <Form.Label>Username</Form.Label>
+      <Form.Control>
+        <Form.Input type="text" placeholder="e.g. John Doe" />
+      </Form.Control>
+    </Form.Field>
+    <Form.Field>
+      <Form.Label>Password</Form.Label>
+      <Form.Control>
+        <Form.Input type="password" placeholder="password" />
+      </Form.Control>
+    </Form.Field>
+  </fieldset>
+);
+
+DisablingFields.argTypes = {
+  disabled: {
+    control: {
+      type: 'boolean',
+    },
+  },
+};
+
+export const HorizontalForm = () => (
+  <form>
+    <Form.Field horizontal>
+      <Form.Field.Label size="normal">
+        <Form.Label>From</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control iconLeft fullwidth>
+            <Form.Input type="text" placeholder="Name" />
+            <Icon align="left">
+              <i className="fas fa-user" />
+            </Icon>
+          </Form.Control>
+        </Form.Field>
+        <Form.Field>
+          <Form.Control iconLeft iconRight fullwidth>
+            <Form.Input
+              color="success"
+              type="email"
+              placeholder="Email"
+              value="alex@smith.com"
+            />
+            <Icon align="left">
+              <i className="fas fa-envelope" />
+            </Icon>
+            <Icon align="right">
+              <i className="fas fa-check" />
+            </Icon>
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      {/* Empty field-label for spacing purpose */}
+      <Form.Field.Label />
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Field kind="addons">
+            <Form.Control>
+              <Button isStatic>+44</Button>
+            </Form.Control>
+            <Form.Control fullwidth>
+              <Form.Input type="tel" placeholder="Phone number" />
+            </Form.Control>
+          </Form.Field>
+          <Form.Help>Do not enter the first zero</Form.Help>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="normal">
+        <Form.Label>Department</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control fullwidth>
+            <Form.Select>
+              <option>Business development</option>
+              <option>Marketing</option>
+              <option>Sales</option>
+            </Form.Select>
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label>
+        <Form.Label>Already a member?</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Radio name="member"> Yes</Form.Radio>
+            <Form.Radio name="member"> No</Form.Radio>
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="normal">
+        <Form.Label>Subject</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Input type="text" placeholder="Subject" color="danger" />
+          </Form.Control>
+          <Form.Help color="danger">This field is required</Form.Help>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="normal">
+        <Form.Label>Question</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Textarea placeholder="Subject" />
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      {/* Empty field-label for spacing purpose */}
+      <Form.Field.Label />
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Button color="primary">Submit</Button>
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+  </form>
+);
+
+export const DifferentLabelSizes = () => (
+  <>
+    <Form.Field horizontal>
+      <Form.Field.Label>
+        <Form.Label>No padding</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Checkbox> Checkbox</Form.Checkbox>
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="small">
+        <Form.Label>Small padding</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Input
+              size="small"
+              type="text"
+              placeholder="Small sized input"
+            />
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="normal">
+        <Form.Label>Normal label</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Input type="text" placeholder="Normal sized input" />
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="medium">
+        <Form.Label>Medium label</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Input
+              type="text"
+              size="medium"
+              placeholder="Medium sized input"
+            />
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+
+    <Form.Field horizontal>
+      <Form.Field.Label size="large">
+        <Form.Label>Large label</Form.Label>
+      </Form.Field.Label>
+      <Form.Field.Body>
+        <Form.Field>
+          <Form.Control>
+            <Form.Input
+              type="text"
+              size="large"
+              placeholder="Large sized input"
+            />
+          </Form.Control>
+        </Form.Field>
+      </Form.Field.Body>
+    </Form.Field>
+  </>
+);
