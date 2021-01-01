@@ -1,0 +1,19 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Input } from '.';
+import * as stories from './input.story';
+
+<Meta title="Form/Input" />
+
+# Input
+
+<Canvas>
+  <Story story={stories.BasicUsage} />
+</Canvas>
+
+The `Form.Input` component is an HTML `<input>` under the hood, with several Bulma-specific props.
+
+## Props
+
+On top of the attributes of the `<input>` element, this component also accepts the following props.
+
+<ArgsTable of={Input} />
