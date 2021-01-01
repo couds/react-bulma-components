@@ -27,21 +27,13 @@ interface ControlProps {
 }
 
 interface InputProps<T> {
-  type?:
-    | 'text'
-    | 'email'
-    | 'tel'
-    | 'password'
-    | 'number'
-    | 'search'
-    | 'color'
-    | 'date'
-    | 'time'
-    | 'datetime-local';
   size?: Size;
   color?: Color;
   readOnly?: boolean;
   isStatic?: boolean;
+  loading?: boolean;
+  focused?: boolean;
+  hovered?: boolean;
   value?: T;
 }
 
