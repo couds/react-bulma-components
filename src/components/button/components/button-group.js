@@ -27,10 +27,25 @@ const ButtonGroup = ({
 
 ButtonGroup.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Additional CSS classes to pass to Button.Group
+   */
   className: PropTypes.string,
+  /**
+   * Whether the buttons should be displayed as "addons". If true, the buttons will stick together.
+   */
   hasAddons: PropTypes.bool,
+  /**
+   * The size of *all* the buttons in the group.
+   */
   size: PropTypes.string,
+  /**
+   * Position of the group. By default, it is left-aligned.
+   */
   position: PropTypes.oneOf(['centered', 'right']),
+  /**
+   * The custom component that Button.Group should be rendered as.
+   */
   renderAs: renderAsShape,
 };
 

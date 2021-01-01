@@ -59,6 +59,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.11.0",
     "@babel/preset-env": "7.11.0",
     "@babel/preset-react": "7.10.4",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "@storybook/addon-a11y": "6.0.12",
     "@storybook/addon-actions": "6.0.12",
     "@storybook/addon-centered": "5.3.19",
@@ -79,6 +80,7 @@
     "@storybook/node-logger": "6.0.12",
     "@storybook/react": "6.0.12",
     "@storybook/storybook-deployer": "2.8.6",
+    "@storybook/theming": "^6.1.11",
     "@types/react": "16.9.46",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
@@ -111,6 +113,7 @@
     "react-dom": "16.13.1",
     "react-test-renderer": "16.13.1",
     "source-map-support": "0.5.19",
+    "storybook-addon-react-docgen": "^1.2.42",
     "storybook-addon-themes": "5.4.1",
     "typescript": "3.9.7"
   }

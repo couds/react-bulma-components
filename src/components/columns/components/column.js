@@ -55,15 +55,15 @@ const Column = ({
 
 Column.propTypes = {
   ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   /**
-   * The size of the column. the maximum size of a row is 12
+   * The size the column should take. Possible values depends on the sizing method used.
+   * See [below](#sizes) for more details.
    */
   size: PropTypes.oneOf(sizes),
   /**
-   * Create horizontal space around Column elements
+   * The amount of offset from the left side of `<Columns />`.
+   * Possible values depends on the sizing method used.
+   * See [below](#offset) for more details.
    */
   offset: PropTypes.oneOf(sizes),
   /**
@@ -118,6 +118,13 @@ Column.propTypes = {
     offset: PropTypes.oneOf(sizes),
     narrow: PropTypes.bool,
   }),
+  children: PropTypes.node,
+  /**
+   * Additional CSS classes to be passed to `<Columns.Column />`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
+  className: PropTypes.string,
+  style: PropTypes.shape({}),
 };
 
 Column.defaultProps = {

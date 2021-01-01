@@ -2,8 +2,9 @@ const path = require('path');
 const { DefinePlugin } = require('webpack');
 
 module.exports = {
-  stories: ['../src/**/*.story.@(js|mdx)'],
+  stories: ['../src/**/*.story.mdx'],
   addons: [
+    '@storybook/addon-essentials',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -18,20 +19,19 @@ module.exports = {
     '@storybook/addon-events',
     '@storybook/addon-a11y',
     '@storybook/addon-viewport',
+    'storybook-addon-react-docgen',
   ],
   webpackFinal: (config) => {
-    const newConfig = { ...config };
-
-    newConfig.resolve.modules.push('node_modules', 'src');
-    newConfig.resolve.alias['react-bulma-components/lib'] = path.resolve(
+    config.resolve.modules.push('node_modules', 'src');
+    config.resolve.alias['react-bulma-components/lib'] = path.resolve(
       __dirname,
       '../src',
     );
-    newConfig.resolve.alias['react-bulma-components'] = path.resolve(
+    config.resolve.alias['react-bulma-components'] = path.resolve(
       __dirname,
       '../src',
     );
-    newConfig.plugins.push(
+    config.plugins.push(
       new DefinePlugin({
         process: JSON.stringify(true),
       }),

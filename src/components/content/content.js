@@ -18,10 +18,20 @@ const Content = ({ children, className, size, ...props }) => (
 
 Content.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Adjust the size of the content.
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   children: PropTypes.node,
+  /**
+   * Additional CSS classes to pass to `<Content />`.
+   * They will sit alongside pre-applied bulma classes.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Specify component/HTML element that `<Content />` should be rendered as.
+   */
   renderAs: renderAsShape,
 };
 
