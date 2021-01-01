@@ -14,6 +14,7 @@ const Input = ({
   readOnly,
   isStatic,
   hovered,
+  rounded,
   focused,
   name,
   ...props
@@ -27,6 +28,7 @@ const Input = ({
       'is-static': isStatic,
       'is-hovered': hovered,
       'is-focused': focused,
+      'is-rounded': rounded,
       [`is-${size}`]: size,
       [`is-${color}`]: color,
     })}
@@ -43,6 +45,7 @@ Input.propTypes = {
   isStatic: PropTypes.bool,
   focused: PropTypes.bool,
   hovered: PropTypes.bool,
+  rounded: PropTypes.bool,
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
@@ -60,6 +63,7 @@ Input.defaultProps = {
   isStatic: false,
   focused: false,
   hovered: false,
+  rounded: false,
   name: undefined,
 };
 

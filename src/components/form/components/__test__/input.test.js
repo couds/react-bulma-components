@@ -38,4 +38,8 @@ describe('Input component', () => {
     const component = renderer.create(<Input hovered focused />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be rounded', () => {
+    const component = renderer.create(<Input rounded />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

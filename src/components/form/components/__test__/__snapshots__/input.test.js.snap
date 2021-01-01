@@ -19,6 +19,14 @@ exports[`Input component Should be large and readOnly 1`] = `
 />
 `;
 
+exports[`Input component Should be rounded 1`] = `
+<input
+  className="input is-rounded"
+  readOnly={false}
+  type="text"
+/>
+`;
+
 exports[`Input component Should be type email and a with success colors 1`] = `
 <input
   className="input is-success"
