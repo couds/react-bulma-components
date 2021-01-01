@@ -106,4 +106,14 @@ describe('Helper proptypes', () => {
       }),
     ).toMatchSnapshot();
   });
+
+  test('Should have visibility helpers', () => {
+    expect(
+      modifiers.classnames({
+        hidden: true,
+        invisible: true,
+        srOnly: true,
+      }),
+    ).toMatchSnapshot();
+  });
 });

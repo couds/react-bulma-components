@@ -12,6 +12,7 @@ interface HelperProps {
   unselectable?: boolean;
   invisible?: boolean;
   hidden?: boolean;
+  srOnly?: boolean;
 }
 
 type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6;

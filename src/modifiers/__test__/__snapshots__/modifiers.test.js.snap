@@ -18,4 +18,6 @@ exports[`Helper proptypes Should have text color success 1`] = `"has-text-succes
 
 exports[`Helper proptypes Should have text helpers 1`] = `"has-text-success has-text-centered has-text-weight-bold is-uppercase is-family-monospace is-italic"`;
 
+exports[`Helper proptypes Should have visibility helpers 1`] = `"is-invisible is-hidden is-sr-only"`;
+
 exports[`Helper proptypes Should support display modifiers 1`] = `"is-inline-flex"`;
