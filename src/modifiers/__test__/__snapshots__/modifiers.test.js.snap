@@ -16,6 +16,6 @@ exports[`Helper proptypes Should have spacing helpers 1`] = `"mt-2 px-1"`;
 
 exports[`Helper proptypes Should have text color success 1`] = `"has-text-success"`;
 
-exports[`Helper proptypes Should have text helpers 1`] = `"has-text-success has-text-centered has-text-weight-bold is-uppercase is-italic"`;
+exports[`Helper proptypes Should have text helpers 1`] = `"has-text-success has-text-centered has-text-weight-bold is-uppercase is-family-monospace is-italic"`;
 
 exports[`Helper proptypes Should support display modifiers 1`] = `"is-inline-flex"`;

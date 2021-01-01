@@ -106,6 +106,7 @@ interface TypographyProps {
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
+  textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code';
   italic?: boolean;
 }
 

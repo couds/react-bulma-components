@@ -7,14 +7,22 @@ export default {
     textAlignment: PropTypes.oneOf(['centered', 'justified', 'left', 'right']),
     textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
     textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
+    textFamily: PropTypes.oneOf([
+      'sans-serif',
+      'monospace',
+      'primary',
+      'secondary',
+      'code',
+    ]),
     italic: PropTypes.bool,
   },
   defaultProps: {
     textSize: undefined,
     textAlignment: undefined,
     textTransform: undefined,
-    italic: undefined,
     textWeight: undefined,
+    textFamily: undefined,
+    italic: undefined,
   },
   classnames: (props) =>
     classnames({
@@ -22,6 +30,7 @@ export default {
       [`has-text-weight-${props.textWeight}`]: props.textWeight,
       [`is-size-${props.textSize}`]: props.textSize,
       [`is-${props.textTransform}`]: props.textTransform,
+      [`is-family-${props.textFamily}`]: props.textFamily,
       'is-italic': props.italic,
     }),
   clean: ({
@@ -30,6 +39,7 @@ export default {
     italic,
     textSize,
     textAlignment,
+    textFamily,
     ...props
   }) => props,
 };

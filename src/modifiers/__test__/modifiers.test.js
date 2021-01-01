@@ -17,6 +17,7 @@ describe('Helper proptypes', () => {
         textAlignment: 'centered',
         italic: true,
         textTransform: 'uppercase',
+        textFamily: 'monospace',
         textWeight: 'bold',
       }),
     ).toMatchSnapshot();
