@@ -16,13 +16,11 @@ const Input = ({
   hovered,
   rounded,
   focused,
-  name,
   ...props
 }) => (
   <Element
-    {...props}
     renderAs="input"
-    name={name}
+    {...props}
     readOnly={readOnly || isStatic}
     className={classnames('input', className, {
       'is-static': isStatic,
@@ -74,23 +72,15 @@ Input.propTypes = {
    */
   rounded: PropTypes.bool,
   /**
-   * The name of the input field.
-   * Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
-  name: PropTypes.string,
-  /**
    * Additional CSS classes to be passed to `<Form.Input />`.
    * They will sit alongside pre-applied Bulma classes.
    */
   className: PropTypes.string,
-  style: PropTypes.shape({}),
 };
 
 Input.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
-  style: undefined,
-  type: 'text',
   size: undefined,
   color: undefined,
   readOnly: false,
@@ -98,7 +88,6 @@ Input.defaultProps = {
   focused: false,
   hovered: false,
   rounded: false,
-  name: undefined,
 };
 
 export default Input;

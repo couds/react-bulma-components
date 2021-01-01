@@ -6,7 +6,6 @@ exports[`Input component Should be disabled with placeholder and value 1`] = `
   disabled={true}
   placeholder="hello tests"
   readOnly={false}
-  type="text"
   value="TEST"
 />
 `;
@@ -15,7 +14,6 @@ exports[`Input component Should be large and readOnly 1`] = `
 <input
   className="input is-large"
   readOnly={true}
-  type="text"
 />
 `;
 
@@ -23,7 +21,6 @@ exports[`Input component Should be rounded 1`] = `
 <input
   className="input is-rounded"
   readOnly={false}
-  type="text"
 />
 `;
 
@@ -39,7 +36,6 @@ exports[`Input component Should concat classname in props with Bulma classname 1
 <input
   className="input other-class this-is-a-test"
   readOnly={false}
-  type="text"
 />
 `;
 
@@ -49,7 +45,6 @@ exports[`Input component Should have input classname 1`] = `
 <input
   className="input"
   readOnly={false}
-  type="text"
 />
 `;
 
@@ -57,7 +52,6 @@ exports[`Input component Should support various states 1`] = `
 <input
   className="input is-hovered is-focused"
   readOnly={false}
-  type="text"
 />
 `;
 
@@ -70,6 +64,5 @@ exports[`Input component Should use inline styles 1`] = `
       "height": 250,
     }
   }
-  type="text"
 />
 `;
