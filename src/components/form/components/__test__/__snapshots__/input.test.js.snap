@@ -47,7 +47,7 @@ exports[`Input component Should have input classname 1`] = `
 
 exports[`Input component Should support various states 1`] = `
 <input
-  className="input is-loading is-hovered is-focused"
+  className="input is-hovered is-focused"
   readOnly={false}
   type="text"
 />

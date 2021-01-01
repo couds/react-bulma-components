@@ -13,7 +13,6 @@ const Input = ({
   color,
   readOnly,
   isStatic,
-  loading,
   hovered,
   focused,
   name,
@@ -26,7 +25,6 @@ const Input = ({
     readOnly={readOnly || isStatic}
     className={classnames('input', className, {
       'is-static': isStatic,
-      'is-loading': loading,
       'is-hovered': hovered,
       'is-focused': focused,
       [`is-${size}`]: size,
@@ -43,7 +41,6 @@ Input.propTypes = {
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
   isStatic: PropTypes.bool,
-  loading: PropTypes.bool,
   focused: PropTypes.bool,
   hovered: PropTypes.bool,
   /**
@@ -61,7 +58,6 @@ Input.defaultProps = {
   color: undefined,
   readOnly: false,
   isStatic: false,
-  loading: false,
   focused: false,
   hovered: false,
   name: undefined,
