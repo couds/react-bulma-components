@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Element from '../../element';
@@ -14,7 +14,6 @@ const InputFile = ({
   onChange,
   color,
   size,
-  fileName,
   fullwidth,
   right,
   boxed,
@@ -22,16 +21,18 @@ const InputFile = ({
   label,
   icon,
   inputProps,
+  filename,
+  value,
   ...props
 }) => {
-  const [filename, setFilename] = useState('');
-  const onSelect = (event) => {
-    const { files } = event.target;
-    setFilename(files.length > 0 ? files[0].name : undefined);
-    if (onChange) {
-      onChange(event);
+  const ref = useRef();
+  useEffect(() => {
+    if (value) {
+      ref.current.files = value;
+    } else {
+      ref.current.value = '';
     }
-  };
+  }, [value]);
   return (
     <Element
       style={style}
@@ -39,7 +40,7 @@ const InputFile = ({
       className={classnames('file', className, {
         [`is-${size}`]: size,
         [`is-${color}`]: color,
-        'has-name': !fileName,
+        'has-name': !!filename,
         'is-right': right,
         'is-boxed': boxed,
         'is-fullwidth': fullwidth,
@@ -51,13 +52,14 @@ const InputFile = ({
           name={name}
           type="file"
           className="file-input"
-          onChange={onSelect}
+          onChange={onChange}
+          ref={ref}
         />
         <span className="file-cta">
           {icon && <span className="file-icon">{icon}</span>}
           <span className="file-label">{label}</span>
         </span>
-        {fileName && filename && <span className="file-name">{filename}</span>}
+        {filename && <span className="file-name">{filename}</span>}
       </label>
     </Element>
   );
@@ -70,7 +72,8 @@ InputFile.propTypes = {
   onChange: PropTypes.func,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  fileName: PropTypes.bool,
+  filename: PropTypes.string,
+  value: PropTypes.any,
   fullwidth: PropTypes.bool,
   right: PropTypes.bool,
   boxed: PropTypes.bool,
@@ -94,7 +97,8 @@ InputFile.defaultProps = {
   onChange: () => {},
   color: undefined,
   size: undefined,
-  fileName: true,
+  filename: undefined,
+  value: undefined,
   fullwidth: undefined,
   right: undefined,
   boxed: undefined,

@@ -34,4 +34,8 @@ describe('Input component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should support various states', () => {
+    const component = renderer.create(<Input hovered loading focused />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

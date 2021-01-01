@@ -23,7 +23,6 @@ exports[`Dropdown component Should render file input tree 1`] = `
         Choose a file...
       </span>
     </span>
-    
   </label>
 </div>
 `;
@@ -52,7 +51,66 @@ exports[`Dropdown component should pass file attributes 1`] = `
         Choose a file...
       </span>
     </span>
-    
+  </label>
+</div>
+`;
+
+exports[`Dropdown component should set filename text 1`] = `
+<div
+  className="file has-name"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+    <span
+      className="file-name"
+    >
+      my-file.js
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Dropdown component should set value of input file 1`] = `
+<div
+  className="file"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+      value={
+        Object {
+          "custom": "value",
+        }
+      }
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
   </label>
 </div>
 `;

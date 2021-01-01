@@ -9,14 +9,13 @@ const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Input = ({
   className,
-  type,
   size,
   color,
   readOnly,
   isStatic,
-  disabled,
-  placeholder,
-  value,
+  loading,
+  hovered,
+  focused,
   name,
   ...props
 }) => (
@@ -24,13 +23,12 @@ const Input = ({
     {...props}
     renderAs="input"
     name={name}
-    value={value}
-    type={type}
-    placeholder={placeholder}
     readOnly={readOnly || isStatic}
-    disabled={disabled}
     className={classnames('input', className, {
       'is-static': isStatic,
+      'is-loading': loading,
+      'is-hovered': hovered,
+      'is-focused': focused,
       [`is-${size}`]: size,
       [`is-${color}`]: color,
     })}
@@ -39,18 +37,6 @@ const Input = ({
 
 Input.propTypes = {
   ...modifiers.propTypes,
-  type: PropTypes.oneOf([
-    'text',
-    'email',
-    'tel',
-    'password',
-    'number',
-    'search',
-    'color',
-    'date',
-    'time',
-    'datetime-local',
-  ]),
   /**
    * Adjusts the size of this input.
    */
@@ -70,9 +56,9 @@ Input.propTypes = {
    * are removed.
    */
   isStatic: PropTypes.bool,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  loading: PropTypes.bool,
+  focused: PropTypes.bool,
+  hovered: PropTypes.bool,
   /**
    * The name of the input field.
    * Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
@@ -89,15 +75,15 @@ Input.propTypes = {
 Input.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
-  value: '',
   style: undefined,
   type: 'text',
   size: undefined,
   color: undefined,
   readOnly: false,
   isStatic: false,
-  disabled: false,
-  placeholder: '',
+  loading: false,
+  focused: false,
+  hovered: false,
   name: undefined,
 };
 

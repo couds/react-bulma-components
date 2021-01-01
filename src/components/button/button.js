@@ -17,10 +17,12 @@ const Button = ({
   size,
   outlined,
   inverted,
-  state,
   submit,
   reset,
   fullwidth,
+  focused,
+  hovered,
+  active,
   loading,
   disabled,
   remove,
@@ -31,7 +33,6 @@ const Button = ({
   text,
   ...props
 }) => {
-  // let Element = isStatic ? 'span' : renderAs;
   let otherProps = {};
   if (submit) {
     otherProps = {
@@ -63,14 +64,16 @@ const Button = ({
       className={classnames(className, {
         [`is-${color}`]: color,
         [`is-${size}`]: size,
-        [`is-${state}`]: state,
         'is-selected': isSelected,
         'is-static': isStatic,
         'is-rounded': rounded,
         'is-outlined': outlined,
         'is-inverted': inverted,
         'is-fullwidth': fullwidth,
-        // 'is-loading': loading,
+        'is-hovered': hovered,
+        'is-focused': focused,
+        'is-active': active,
+        'is-loading': loading,
         'is-text': text,
         delete: remove,
         button: !remove,
@@ -114,10 +117,6 @@ Button.propTypes = {
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * State of Button.
-   */
-  state: PropTypes.oneOf(['hover', 'focus', 'active', 'loading']),
-  /**
    * Whether Button should have an outline.
    */
   outlined: PropTypes.bool,
@@ -127,6 +126,9 @@ Button.propTypes = {
   inverted: PropTypes.bool,
   submit: PropTypes.bool,
   reset: PropTypes.bool,
+  hovered: PropTypes.bool,
+  focused: PropTypes.bool,
+  active: PropTypes.bool,
   loading: PropTypes.bool,
   /**
    * Whether Button should occupy the full width of parent
@@ -161,12 +163,14 @@ Button.defaultProps = {
   onClick: () => null,
   color: undefined,
   size: undefined,
-  state: undefined,
   outlined: false,
   inverted: false,
   submit: false,
   reset: false,
   fullwidth: false,
+  hovered: false,
+  focused: false,
+  active: false,
   loading: false,
   disabled: false,
   remove: false,
