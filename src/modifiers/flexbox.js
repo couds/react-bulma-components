@@ -50,13 +50,22 @@ const flexboxHelperPropTypes = {
 const flexboxHelperNames = Object.keys(flexboxHelperPropTypes);
 
 export default {
-  propTypes: flexboxHelperPropTypes,
-  defaultProps: flexboxHelperNames.reduce((defaults, flexboxHelperName) => {
-    defaults[flexboxHelperName] = undefined;
-    return defaults;
-  }, {}),
+  propTypes: {
+    flex: PropTypes.bool,
+    ...flexboxHelperPropTypes,
+  },
+  defaultProps: {
+    flex: false,
+    ...flexboxHelperNames.reduce((defaults, flexboxHelperName) => {
+      defaults[flexboxHelperName] = undefined;
+      return defaults;
+    }, {}),
+  },
   classnames: (props) =>
     classNames(
+      {
+        'is-flex': props.flex,
+      },
       flexboxHelperNames.reduce((classes, flexboxHelper) => {
         const propValue = props[flexboxHelper];
         classes[`is-${camelToSnake(flexboxHelper)}-${propValue}`] = propValue;

@@ -35,6 +35,7 @@ describe('Helper proptypes', () => {
   test('Should have flexbox helpers', () => {
     expect(
       modifiers.classnames({
+        flex: true,
         flexWrap: 'nowrap',
         alignContent: 'flex-start',
         flexDirection: 'row-reverse',

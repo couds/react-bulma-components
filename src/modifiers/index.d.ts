@@ -32,6 +32,7 @@ interface SpacingProps {
 }
 
 interface FlexboxProps {
+  flex?: boolean;
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   justifyContent?:
