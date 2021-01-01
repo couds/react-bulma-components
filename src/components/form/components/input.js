@@ -19,7 +19,6 @@ const Input = ({
   ...props
 }) => (
   <Element
-    renderAs="input"
     {...props}
     readOnly={readOnly || isStatic}
     className={classnames('input', className, {
@@ -88,6 +87,7 @@ Input.defaultProps = {
   focused: false,
   hovered: false,
   rounded: false,
+  renderAs: 'input',
 };
 
 export default Input;
