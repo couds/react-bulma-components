@@ -116,8 +116,6 @@ type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
   keyof ModifierProps | 'ref'
 >;
 
-// Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
-
 type ModifierProps = SpacingProps &
   FlexboxProps &
   HelperProps &
