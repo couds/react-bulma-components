@@ -136,6 +136,16 @@ export const Sizes = () => (
   </>
 );
 
+export const Rounded = () => (
+  <>
+    <Form.Field>
+      <Form.Control>
+        <Form.Input rounded placeholder="I am rounded" />
+      </Form.Control>
+    </Form.Field>
+  </>
+);
+
 export const Icons = () => (
   <>
     <Form.Field>

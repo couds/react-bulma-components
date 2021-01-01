@@ -68,6 +68,10 @@ Input.propTypes = {
    * Whether this input is in a hovered state.
    */
   hovered: PropTypes.bool,
+  /**
+   * Whether this input is rounded. The input will have a 50% border-radius,
+   * making the left and right side fully rounded.
+   */
   rounded: PropTypes.bool,
   /**
    * The name of the input field.
