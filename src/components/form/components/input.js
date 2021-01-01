@@ -47,7 +47,7 @@ Input.propTypes = {
   color: PropTypes.oneOf(colors),
   /**
    * Whether this input should be read-only.
-   * Equivalent to the readonly attribute of the <input> element.
+   * Equivalent to the readonly attribute of the `<input>` element.
    */
   readOnly: PropTypes.bool,
   /**
@@ -56,8 +56,17 @@ Input.propTypes = {
    * are removed.
    */
   isStatic: PropTypes.bool,
+  /**
+   * Whether this input is in a loading state.
+   */
   loading: PropTypes.bool,
+  /**
+   * Whether this input is in a focused state.
+   */
   focused: PropTypes.bool,
+  /**
+   * Whether this input is in a hovered state.
+   */
   hovered: PropTypes.bool,
   /**
    * The name of the input field.
