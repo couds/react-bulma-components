@@ -32,10 +32,18 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
+  test('Should support display modifiers', () => {
+    expect(
+      modifiers.classnames({
+        display: 'inline-flex',
+      }),
+    ).toMatchSnapshot();
+  });
+
   test('Should have flexbox helpers', () => {
     expect(
       modifiers.classnames({
-        flex: true,
+        display: 'flex',
         flexWrap: 'nowrap',
         alignContent: 'flex-start',
         flexDirection: 'row-reverse',
