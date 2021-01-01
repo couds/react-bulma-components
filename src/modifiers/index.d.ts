@@ -32,7 +32,6 @@ interface SpacingProps {
 }
 
 interface FlexboxProps {
-  flex?: boolean;
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   justifyContent?:
@@ -66,14 +65,22 @@ interface FlexboxProps {
     | 'stretch';
 }
 
+type DisplayModifier =
+  | 'block'
+  | 'flex'
+  | 'inline'
+  | 'inline-block'
+  | 'inline-flex';
+
 interface ResponsiveModifiers {
-  display?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
+  display?: DisplayModifier;
   hide?: boolean;
   textSize?: 1 | 2 | 3 | 4 | 5 | 6;
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
 }
 
 interface ResponsiveProps {
+  display?: DisplayModifier;
   mobile?: ResponsiveModifiers;
   tablet?: ResponsiveModifiers;
   desktop?: ResponsiveModifiers;

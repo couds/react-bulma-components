@@ -46,8 +46,12 @@ const responsiveModifierPropTypes = VIEWPORTS.reduce(
     return allViewports;
   },
   {
-    propTypes: {},
-    defaultProps: {},
+    propTypes: {
+      display: PropTypes.oneOf(DISPLAYS),
+    },
+    defaultProps: {
+      display: undefined,
+    },
   },
 );
 
