@@ -8,4 +8,9 @@ addDecorator(withPropsTable);
 
 export const parameters = {
   layout: 'padded',
+  options: {
+    storySort: {
+      order: ['Introduction', 'Elements', 'Layout', 'Components', 'Form'],
+    },
+  },
 };

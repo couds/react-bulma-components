@@ -75,7 +75,7 @@ type DisplayModifier =
 interface ResponsiveModifiers {
   display?: DisplayModifier;
   hide?: boolean;
-  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
 }
 

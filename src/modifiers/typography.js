@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 export default {
   propTypes: {
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
     textAlignment: PropTypes.oneOf(['centered', 'justified', 'left', 'right']),
     textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
     textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
