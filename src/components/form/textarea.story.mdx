@@ -1,12 +1,29 @@
-import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Form } from '../..';
+import * as stories from './textarea.story';
 
 <Meta title="Form/Textarea" />
 
 # Textarea
+
+<Canvas>
+  <Story story={stories.BasicUsage} />
+</Canvas>
 
 The `Form.Textarea` component renders an HTML `<textarea>` under the hood by default.
 
 ## Props
 
 <ArgsTable of={Form.Textarea} />
+
+## States and colors
+
+You can change the states and colors of `Form.Textarea` just as you would like `Form.Input`.
+
+<Story story={stories.ColorsAndStates} />
+
+## Fixed size
+
+You can disable the ability to adjust textarea size by using the `fixedSize` prop.
+
+<Story story={stories.FixedSize} />
