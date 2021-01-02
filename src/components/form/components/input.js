@@ -87,6 +87,7 @@ Input.defaultProps = {
   focused: false,
   hovered: false,
   rounded: false,
+  loading: false,
   renderAs: 'input',
 };
 

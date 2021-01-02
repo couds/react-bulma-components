@@ -1,68 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Textarea component Should be disabled with placeholder and value 1`] = `
-<textarea
-  className="textarea"
-  disabled={true}
-  name=""
-  placeholder="hello tests"
-  readOnly={false}
-  rows={4}
-  value="TEST"
-/>
-`;
-
-exports[`Textarea component Should be large with 10 rows and readOnly 1`] = `
-<textarea
-  className="textarea is-large"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={true}
-  rows={10}
-  value=""
-/>
-`;
-
 exports[`Textarea component Should concat classname in props with Bulma classname 1`] = `
 <textarea
   className="textarea other-class this-is-a-test"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  rows={4}
-  value=""
 />
 `;
 
 exports[`Textarea component Should exist 1`] = `[Function]`;
 
+exports[`Textarea component Should have a fixed size 1`] = `
+<textarea
+  className="textarea has-fixed-size"
+/>
+`;
+
 exports[`Textarea component Should have textarea classname 1`] = `
 <textarea
   className="textarea"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  rows={4}
-  value=""
+/>
+`;
+
+exports[`Textarea component Should support various states 1`] = `
+<textarea
+  className="textarea is-loading is-focused is-hovered"
 />
 `;
 
 exports[`Textarea component Should use inline styles 1`] = `
 <textarea
   className="textarea"
-  disabled={false}
-  name=""
-  placeholder=""
-  readOnly={false}
-  rows={4}
   style={
     Object {
       "height": 250,
     }
   }
-  value=""
 />
 `;

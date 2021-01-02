@@ -44,14 +44,17 @@ interface LabelProps {
 interface TextareaProps {
   size?: Size;
   color?: Color;
-  readOnly?: boolean;
+  focused?: boolean;
+  hovered?: boolean;
+  loading?: boolean;
+  fixedSize?: boolean;
 }
 
 interface SelectProps<T> {
   size?: Size;
   color?: Color;
-  readOnly?: boolean;
   value?: T;
+  readOnly?: boolean;
   loading?: boolean;
   multiple?: boolean;
 }

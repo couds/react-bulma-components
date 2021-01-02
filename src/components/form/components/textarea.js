@@ -8,11 +8,23 @@ import renderAsShape from '../../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Textarea = ({ className, size, color, rows, ...props }) => (
+const Textarea = ({
+  className,
+  size,
+  color,
+  loading,
+  focused,
+  hovered,
+  fixedSize,
+  ...props
+}) => (
   <Element
     {...props}
-    rows={rows}
     className={classnames('textarea', className, {
+      'is-loading': loading,
+      'is-focused': focused,
+      'is-hovered': hovered,
+      'has-fixed-size': fixedSize,
       [`is-${size}`]: size,
       [`is-${color}`]: color,
     })}
@@ -36,6 +48,22 @@ Textarea.propTypes = {
    */
   color: PropTypes.oneOf(colors),
   /**
+   * Whether this textarea is in a loading state.
+   */
+  loading: PropTypes.bool,
+  /**
+   * Whether this textarea is in a focused state.
+   */
+  focused: PropTypes.bool,
+  /**
+   * Whether this textarea is in a hovered state.
+   */
+  hovered: PropTypes.bool,
+  /**
+   * Whether the size of this textarea should be fixed regardless of its content.
+   */
+  fixedSize: PropTypes.bool,
+  /**
    * Specifies what component `<Form.Textarea />` should be rendered as.
    */
   renderAs: renderAsShape,
@@ -47,6 +75,10 @@ Textarea.defaultProps = {
   className: undefined,
   style: undefined,
   size: undefined,
+  focused: false,
+  hovered: false,
+  loading: false,
+  fixedSize: false,
   color: undefined,
 };
 
