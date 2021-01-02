@@ -31,7 +31,6 @@ interface InputProps<T> {
   color?: Color;
   readOnly?: boolean;
   isStatic?: boolean;
-  loading?: boolean;
   focused?: boolean;
   hovered?: boolean;
   value?: T;
@@ -46,7 +45,6 @@ interface TextareaProps {
   color?: Color;
   focused?: boolean;
   hovered?: boolean;
-  loading?: boolean;
   fixedSize?: boolean;
 }
 

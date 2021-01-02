@@ -54,10 +54,6 @@ Input.propTypes = {
    */
   isStatic: PropTypes.bool,
   /**
-   * Whether this input is in a loading state.
-   */
-  loading: PropTypes.bool,
-  /**
    * Whether this input is in a focused state.
    */
   focused: PropTypes.bool,
@@ -87,7 +83,6 @@ Input.defaultProps = {
   focused: false,
   hovered: false,
   rounded: false,
-  loading: false,
   renderAs: 'input',
 };
 

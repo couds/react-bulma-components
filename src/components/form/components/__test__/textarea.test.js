@@ -21,7 +21,7 @@ describe('Textarea component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should support various states', () => {
-    const component = renderer.create(<Textarea loading focused hovered />);
+    const component = renderer.create(<Textarea focused hovered />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have a fixed size', () => {

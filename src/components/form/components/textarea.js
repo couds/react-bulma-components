@@ -12,7 +12,6 @@ const Textarea = ({
   className,
   size,
   color,
-  loading,
   focused,
   hovered,
   fixedSize,
@@ -21,7 +20,6 @@ const Textarea = ({
   <Element
     {...props}
     className={classnames('textarea', className, {
-      'is-loading': loading,
       'is-focused': focused,
       'is-hovered': hovered,
       'has-fixed-size': fixedSize,
@@ -48,10 +46,6 @@ Textarea.propTypes = {
    */
   color: PropTypes.oneOf(colors),
   /**
-   * Whether this textarea is in a loading state.
-   */
-  loading: PropTypes.bool,
-  /**
    * Whether this textarea is in a focused state.
    */
   focused: PropTypes.bool,
@@ -77,7 +71,6 @@ Textarea.defaultProps = {
   size: undefined,
   focused: false,
   hovered: false,
-  loading: false,
   fixedSize: false,
   color: undefined,
 };
