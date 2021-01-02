@@ -2,33 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
-
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
+import renderAsShape from '../../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Textarea = ({
-  className,
-  size,
-  color,
-  readOnly,
-  disabled,
-  placeholder,
-  rows,
-  value,
-  name,
-  ...props
-}) => (
+const Textarea = ({ className, size, color, rows, ...props }) => (
   <Element
-    renderAs="textarea"
-    name={name}
     {...props}
-    value={value}
     rows={rows}
-    placeholder={placeholder}
-    readOnly={readOnly}
-    disabled={disabled}
     className={classnames('textarea', className, {
       [`is-${size}`]: size,
       [`is-${color}`]: color,
@@ -38,33 +21,33 @@ const Textarea = ({
 
 Textarea.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Additional CSS classes to be passed to `<Form.Textarea />`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(colors),
-  readOnly: PropTypes.bool,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.string,
-  rows: PropTypes.number,
-  value: PropTypes.string,
   /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   * Adjusts the size of the textarea input
    */
-  name: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * The color of this input.
+   */
+  color: PropTypes.oneOf(colors),
+  /**
+   * Specifies what component `<Form.Textarea />` should be rendered as.
+   */
+  renderAs: renderAsShape,
 };
 
 Textarea.defaultProps = {
   ...modifiers.defaultProps,
+  renderAs: 'textarea',
   className: undefined,
   style: undefined,
   size: undefined,
   color: undefined,
-  readOnly: false,
-  disabled: false,
-  placeholder: '',
-  rows: 4,
-  value: '',
-  name: '',
 };
 
 export default Textarea;
