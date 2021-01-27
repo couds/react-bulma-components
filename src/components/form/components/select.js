@@ -9,6 +9,7 @@ const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Select = ({
   className,
+  rounded,
   style,
   size,
   color,
@@ -37,6 +38,7 @@ const Select = ({
         [`is-${color}`]: color,
         'is-loading': loading,
         'is-multiple': multiple,
+        'is-rounded': rounded,
       })}
       style={style}
     >
@@ -57,15 +59,44 @@ const Select = ({
 
 Select.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Children of this component. Usually they are `<option>` elements.
+   */
   children: PropTypes.node,
+  /**
+   * Additional CSS classes to be passed to this component.
+   * They will be applied to the wrapper element around the
+   * actual `<select>` element.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
+  /**
+   * Adjusts the size of this component.
+   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Adjusts the color of this component.
+   */
   color: PropTypes.oneOf(colors),
+  /**
+   * Whether the dropdown button should have fully rounded corners.
+   */
+  rounded: PropTypes.bool,
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
+  /**
+   * Whether the `<select>` element should accept multiple values.
+   * If true, then the `value` prop can only accept an array.
+   */
   multiple: PropTypes.bool,
   loading: PropTypes.bool,
+  /**
+   * The value that is held by the `<select>` element.
+   * Must be an array if `multiple` prop is true.
+   *
+   * If this prop is undefined, an empty string will be the default value
+   * of `<select>`, or an empty array if `multiple` is true.
+   */
   value: (props, propName, componentName) => {
     if (props.multiple) {
       PropTypes.checkPropTypes(
@@ -90,7 +121,8 @@ Select.propTypes = {
     }
   },
   /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   * The name of the input field.
+   * Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
   name: PropTypes.string,
 };

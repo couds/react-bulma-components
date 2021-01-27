@@ -46,6 +46,16 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be rounded', () => {
+    const component = renderer.create(
+      <Select rounded>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   describe('value PropTypes', () => {
     it('Should be multioption and should not accept non array value', () => {
       const spy = jest.spyOn(console, 'error').mockImplementation();

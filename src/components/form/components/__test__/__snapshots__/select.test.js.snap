@@ -23,6 +23,29 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
 </div>
 `;
 
+exports[`Select component Should be rounded 1`] = `
+<div
+  className="select is-rounded"
+>
+  <select
+    disabled={false}
+    multiple={false}
+    readOnly={false}
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
 exports[`Select component Should concat classname in props with Bulma classname 1`] = `
 <div
   className="select other-class this-is-a-test"
