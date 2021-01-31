@@ -89,6 +89,9 @@ Select.propTypes = {
    * If true, then the `value` prop can only accept an array.
    */
   multiple: PropTypes.bool,
+  /**
+   * Whether a loading spinner should be shown in place of the dropdown arrow
+   */
   loading: PropTypes.bool,
   /**
    * The value that is held by the `<select>` element.
