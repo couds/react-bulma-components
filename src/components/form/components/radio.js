@@ -38,14 +38,32 @@ const Radio = ({
 Radio.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
+  /**
+   * Additional CSS classes to be passed to `Form.Radio`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
   className: PropTypes.string,
   /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   * The name of the input field.
+   * Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  /**
+   * React style object for `Form.Radio`
+   */
   style: PropTypes.shape({}),
+  /**
+   * Whether this radio button is disabled.
+   */
   disabled: PropTypes.bool,
+  /**
+   * Whether this radio button is checked,
+   */
   checked: PropTypes.bool,
+  /**
+   * The associated value of this radio button.
+   * You can retrieve this value in the onChange handler of this component.
+   */
   value: PropTypes.string,
 };
 
@@ -53,6 +71,7 @@ Radio.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: undefined,
+  name: undefined,
   value: '',
   style: undefined,
   disabled: false,
