@@ -72,17 +72,17 @@ interface HelpProps {
 }
 
 interface InputFileProps {
-  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   color?: Color;
   size?: Size;
   filename?: string;
-  value?: any;
+  files?: FileList;
   fullwidth?: boolean;
   right?: boolean;
   boxed?: boolean;
   label?: string;
   icon?: React.ReactElement;
-  inputProps?: React.HTMLAttributes<'input'>;
+  inputProps?: OmitKeys<'onChange', React.HTMLAttributes<'input'>>;
 }
 
 export const Form: {

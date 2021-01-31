@@ -72,7 +72,7 @@ describe('Dropdown component', () => {
     const component = shallow(
       <InputFile
         className="input-file"
-        value=""
+        files=""
         style={{ width: 400 }}
         onChange={onChange}
       />,
@@ -94,7 +94,7 @@ describe('Dropdown component', () => {
     const component = shallow(
       <InputFile
         className="input-file"
-        value=""
+        files=""
         style={{ width: 400 }}
         onChange={onChange}
       />,
