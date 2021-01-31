@@ -26,6 +26,7 @@ const InputFile = ({
   ...props
 }) => {
   const ref = useRef();
+
   useEffect(() => {
     if (value) {
       ref.current.files = value;
@@ -33,6 +34,7 @@ const InputFile = ({
       ref.current.value = '';
     }
   }, [value]);
+
   return (
     <Element
       style={style}
