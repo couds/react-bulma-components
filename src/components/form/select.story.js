@@ -1,6 +1,6 @@
 import React from 'react';
 import CONSTANTS from '../../constants';
-import { Form } from '../../index';
+import { Form, Icon } from '../../index';
 
 export const BasicUsage = (args) => {
   const [selectedOption, setSelectedOption] = React.useState('option1');
@@ -92,16 +92,34 @@ export const Rounded = () => (
   </Form.Select>
 );
 
-export const ColorsAndStates = () => (
+export const DifferentAppearances = () => (
   <>
-    <Form.Select size="small" color="success" value="0">
-      <option value="0">Small and successful</option>
-    </Form.Select>
-    <Form.Select size="medium" color="warning" value="0">
-      <option value="0">Medium but warning</option>
-    </Form.Select>
-    <Form.Select loading size="large" value="0">
-      <option value="0">Big and loading</option>
-    </Form.Select>
+    <Form.Field>
+      <Form.Select size="small" color="success" value="0">
+        <option value="0">Small and successful</option>
+      </Form.Select>
+    </Form.Field>
+    <Form.Field>
+      <Form.Select size="medium" color="warning" value="0">
+        <option value="0">Medium but warning</option>
+      </Form.Select>
+    </Form.Field>
+    <Form.Field>
+      <Form.Select loading size="large" value="0">
+        <option value="0">Big and loading</option>
+      </Form.Select>
+    </Form.Field>
   </>
+);
+
+export const EmbedIcon = () => (
+  <Form.Control iconLeft>
+    <Form.Select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </Form.Select>
+    <Icon align="left">
+      <i className="fas fa-user" />
+    </Icon>
+  </Form.Control>
 );

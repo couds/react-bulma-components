@@ -39,8 +39,27 @@ You can make the sides of the dropdown button fully rounded using the `rounded` 
 
 <Story story={stories.Rounded} />
 
-## States and colors
+## Different appearances
 
-You can change the states and colors of `Form.Select`.
+You can change the appearances of `Form.Select` with the following props:
 
-<Story story={stories.ColorsAndStates} />
+- `size` adjusts the size of the dropdown.
+- `color` adjusts the color of the dropdown.
+- `loading`, `hover` and `focus` adjusts the state of the dropdown.
+
+<Story story={stories.DifferentAppearances} />
+
+## Icons
+
+You can embed an icon in the dropdown button easily. The size of the icon will scale with the size of the dropdown.
+
+```
+<Form.Control iconLeft>
+  <Form.Select>{...}</Form.Select>
+  <Icon align="left>
+    <i className="fas fa-user" />
+  </Icon>
+</Form.Control>
+```
+
+<Story story={stories.EmbedIcon} />
