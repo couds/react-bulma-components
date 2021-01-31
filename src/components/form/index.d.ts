@@ -54,6 +54,8 @@ interface SelectProps<T> {
   value?: T;
   readOnly?: boolean;
   loading?: boolean;
+  hovered?: boolean;
+  focused?: boolean;
   multiple?: boolean;
 }
 

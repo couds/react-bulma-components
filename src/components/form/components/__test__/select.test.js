@@ -46,6 +46,16 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be loading, hovered and focused', () => {
+    const component = renderer.create(
+      <Select loading hovered focused>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should be rounded', () => {
     const component = renderer.create(
       <Select rounded>

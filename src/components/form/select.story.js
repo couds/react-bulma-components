@@ -63,6 +63,18 @@ BasicUsage.argTypes = {
       type: 'boolean',
     },
   },
+  hovered: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  focused: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
 };
 
 export const MultiSelect = () => {

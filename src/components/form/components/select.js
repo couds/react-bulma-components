@@ -14,6 +14,8 @@ const Select = ({
   size,
   color,
   loading,
+  hovered,
+  focused,
   readOnly,
   disabled,
   value,
@@ -45,6 +47,10 @@ const Select = ({
       <Element
         renderAs="select"
         {...props}
+        className={classnames({
+          'is-focused': focused,
+          'is-hovered': hovered,
+        })}
         multiple={multiple}
         value={value !== undefined ? value : defaultValue()}
         readOnly={readOnly}
@@ -94,6 +100,14 @@ Select.propTypes = {
    */
   loading: PropTypes.bool,
   /**
+   * Whether this component is hovered.
+   */
+  hovered: PropTypes.bool,
+  /**
+   * Whether this component is focused.
+   */
+  focused: PropTypes.bool,
+  /**
    * The value that is held by the `<select>` element.
    * Must be an array if `multiple` prop is true.
    *
@@ -142,6 +156,8 @@ Select.defaultProps = {
   disabled: false,
   multiple: false,
   loading: false,
+  hovered: false,
+  focused: false,
   name: undefined,
 };
 
