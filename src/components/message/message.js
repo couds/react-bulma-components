@@ -30,10 +30,20 @@ Message.Header = MessageHeader;
 Message.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
+  /**
+   * Additional CSS classes to be passed to `Message`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
   renderAs: renderAsShape,
+  /**
+   * Adjusts the size of the message block.
+   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Adjusts the color of the message block. Can be any Bulma color values.
+   */
   color: PropTypes.oneOf(colors),
 };
 

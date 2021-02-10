@@ -1,0 +1,44 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Message } from '../../index';
+import * as stories from './message.story';
+
+<Meta title="Components/Message" />
+
+# Message
+
+<Canvas>
+  <Story story={stories.BasicUsage} />
+</Canvas>
+
+A colored message block that can be used to emphasize content or used as a notification banner. Use `Message.Header`
+to create a header of the block, and `Message.Body` for the body of the block.
+
+<Message color="primary">
+  <Message.Header>Meta!</Message.Header>
+  <Message.Body>
+    <code>Message</code> is used extensively in this doc. In fact, I am a{' '}
+    <code>Message</code> myself!
+  </Message.Body>
+</Message>
+
+## Props
+
+<ArgsTable of={Message} />
+
+## Colors
+
+You can change the color of the message block easily with the `color` prop:
+
+<Story story={stories.DifferentColors} />
+
+## Sizes
+
+You can also adjust the size of the message block with the `size` prop:
+
+<Story story={stories.DifferentSizes} />
+
+## Body-only message blocks
+
+You can create a `Message` without a header (`Message.Header`). You can use this to, for example, display quotes.
+
+<Story story={stories.BodyOnly} />
