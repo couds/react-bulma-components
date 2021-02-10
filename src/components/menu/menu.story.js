@@ -1,10 +1,7 @@
 import React from 'react';
+import Menu from './menu';
 
-import { storiesOf } from '@storybook/react';
-
-import { Menu } from 'react-bulma-components';
-
-storiesOf('Menu', module).add('Default', () => (
+export const BasicUsage = () => (
   <Menu>
     <Menu.List title="General">
       <Menu.List.Item>Dashboard</Menu.List.Item>
@@ -30,4 +27,4 @@ storiesOf('Menu', module).add('Default', () => (
       <Menu.List.Item>Balance</Menu.List.Item>
     </Menu.List>
   </Menu>
-));
+);

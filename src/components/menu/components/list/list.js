@@ -21,7 +21,14 @@ MenuList.Item = MenuListItem;
 
 MenuList.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Additional CSS classes to be passed to `Menu.List`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
   className: PropTypes.string,
+  /**
+   * The title of this list in the menu.
+   */
   title: PropTypes.node,
 };
 
