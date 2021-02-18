@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BulmaComponent } from '..';
+import { BulmaComponent, BulmaComponentWithoutModifiers } from '..';
 
 interface ModalProps {
   show?: boolean;
@@ -8,9 +8,6 @@ interface ModalProps {
   closeOnBlur?: boolean;
   showClose?: boolean;
   domRef?: React.RefObject<HTMLDivElement>;
-  document?: Document;
-  children: React.ReactNode;
-  className?: string;
 }
 
 interface ModalCardHeadProps {
@@ -18,9 +15,7 @@ interface ModalCardHeadProps {
   onClose?: () => void;
 }
 
-export const Modal: (
-  props: ModalProps,
-) => React.ReactElement & {
+export const Modal: BulmaComponentWithoutModifiers<ModalProps> & {
   Content: BulmaComponent<{}, 'div'>;
   Card: BulmaComponent<{}, 'div'> & {
     Head: BulmaComponent<ModalCardHeadProps, 'header'>;
