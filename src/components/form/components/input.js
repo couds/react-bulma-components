@@ -9,28 +9,23 @@ const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Input = ({
   className,
-  type,
   size,
   color,
   readOnly,
   isStatic,
-  disabled,
-  placeholder,
-  value,
-  name,
+  hovered,
+  rounded,
+  focused,
   ...props
 }) => (
   <Element
     {...props}
-    renderAs="input"
-    name={name}
-    value={value}
-    type={type}
-    placeholder={placeholder}
     readOnly={readOnly || isStatic}
-    disabled={disabled}
     className={classnames('input', className, {
       'is-static': isStatic,
+      'is-hovered': hovered,
+      'is-focused': focused,
+      'is-rounded': rounded,
       [`is-${size}`]: size,
       [`is-${color}`]: color,
     })}
@@ -39,46 +34,56 @@ const Input = ({
 
 Input.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  type: PropTypes.oneOf([
-    'text',
-    'email',
-    'tel',
-    'password',
-    'number',
-    'search',
-    'color',
-    'date',
-    'time',
-    'datetime-local',
-  ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(colors),
-  readOnly: PropTypes.bool,
-  isStatic: PropTypes.bool,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   * Adjusts the size of this input.
    */
-  name: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * The color of this input.
+   */
+  color: PropTypes.oneOf(colors),
+  /**
+   * Whether this input should be read-only.
+   * Equivalent to the readonly attribute of the `<input>` element.
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * Whether this input should be static.
+   * If true, this input will be readonly, and all the input decorations
+   * are removed.
+   */
+  isStatic: PropTypes.bool,
+  /**
+   * Whether this input is in a focused state.
+   */
+  focused: PropTypes.bool,
+  /**
+   * Whether this input is in a hovered state.
+   */
+  hovered: PropTypes.bool,
+  /**
+   * Whether this input is rounded. The input will have a 50% border-radius,
+   * making the left and right side fully rounded.
+   */
+  rounded: PropTypes.bool,
+  /**
+   * Additional CSS classes to be passed to `<Form.Input />`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
+  className: PropTypes.string,
 };
 
 Input.defaultProps = {
   ...modifiers.defaultProps,
   className: undefined,
-  value: '',
-  style: undefined,
-  type: 'text',
   size: undefined,
   color: undefined,
   readOnly: false,
   isStatic: false,
-  disabled: false,
-  placeholder: '',
-  name: undefined,
+  focused: false,
+  hovered: false,
+  rounded: false,
+  renderAs: 'input',
 };
 
 export default Input;

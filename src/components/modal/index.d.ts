@@ -8,6 +8,9 @@ interface ModalProps {
   closeOnBlur?: boolean;
   showClose?: boolean;
   domRef?: React.RefObject<HTMLDivElement>;
+  document?: Document;
+  children: React.ReactNode;
+  className?: string;
 }
 
 interface ModalCardHeadProps {

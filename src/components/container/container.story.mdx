@@ -1,0 +1,42 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Message } from '../..';
+import Container from '.';
+import * as stories from './container.story';
+
+<Meta title="Layout/Container" />
+
+# Container
+
+<Canvas>
+  <Story story={stories.Basic} />
+</Canvas>
+
+The container component is a basic layout element that centers your contents horizontally.
+
+## Props
+
+<ArgsTable of={Container} />
+
+## Fluid container
+
+If the `fluid` prop is set to true, the container will span the entire width of available space,
+and leave 32px margin on the left and right sides.
+
+<Canvas>
+  <Story story={stories.Fluid} />
+</Canvas>
+
+## Breakpoints
+
+You can have a **fullwidth** container until the specified breakpoint using the `breakpoint` prop.
+
+<Message>
+  <Message.Header>Tip</Message.Header>
+  <Message.Body>Resize the window to see what happens!</Message.Body>
+</Message>
+
+<Story story={stories.Breakpoint} />
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/layout/container)

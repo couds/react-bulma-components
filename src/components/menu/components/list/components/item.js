@@ -47,8 +47,22 @@ const MenuListItem = ({
 
 MenuListItem.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Additional CSS classes to be passed to `Menu.List.Item`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
   className: PropTypes.string,
+  /**
+   * Child element of this item. Can be a nested `Menu.List` which
+   * will display a nested list, or just regular react node (string or other
+   * react components), which will be rendered as a normal list item.
+   *
+   * Note that you can nest at most one `Menu.List` per item.
+   */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  /**
+   * Whether this item is selected. If true, it will be highlighted.
+   */
   active: PropTypes.bool,
   renderAs: renderAsShape,
 };

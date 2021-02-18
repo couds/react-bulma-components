@@ -12,6 +12,7 @@ interface HelperProps {
   unselectable?: boolean;
   invisible?: boolean;
   hidden?: boolean;
+  srOnly?: boolean;
 }
 
 type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -65,14 +66,22 @@ interface FlexboxProps {
     | 'stretch';
 }
 
+type DisplayModifier =
+  | 'block'
+  | 'flex'
+  | 'inline'
+  | 'inline-block'
+  | 'inline-flex';
+
 interface ResponsiveModifiers {
-  display?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
+  display?: DisplayModifier;
   hide?: boolean;
-  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
 }
 
 interface ResponsiveProps {
+  display?: DisplayModifier;
   mobile?: ResponsiveModifiers;
   tablet?: ResponsiveModifiers;
   desktop?: ResponsiveModifiers;
@@ -98,6 +107,7 @@ interface TypographyProps {
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
+  textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code';
   italic?: boolean;
 }
 
@@ -105,8 +115,6 @@ type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<
   JSX.IntrinsicElements[K],
   keyof ModifierProps | 'ref'
 >;
-
-// Credit to https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript
 
 type ModifierProps = SpacingProps &
   FlexboxProps &

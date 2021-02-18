@@ -14,6 +14,7 @@ export default {
     unselectable: PropTypes.bool,
     invisible: PropTypes.bool,
     hidden: PropTypes.bool,
+    srOnly: PropTypes.bool,
     clickable: PropTypes.bool,
   },
   defaultProps: {
@@ -28,6 +29,7 @@ export default {
     unselectable: undefined,
     invisible: undefined,
     hidden: undefined,
+    srOnly: undefined,
     clickable: undefined,
   },
   classnames: (props) =>
@@ -43,6 +45,7 @@ export default {
       'is-unselectable': props.unselectable,
       'is-invisible': props.invisible,
       'is-hidden': props.hidden,
+      'is-sr-only': props.srOnly,
       'is-clickable': props.clickable,
     }),
   clean: ({
@@ -58,6 +61,7 @@ export default {
     unselectable,
     invisible,
     clickable,
+    srOnly,
     ...props
   }) => props,
 };

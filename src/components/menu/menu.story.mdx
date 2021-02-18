@@ -1,0 +1,46 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Menu from './menu';
+import * as stories from './menu.story';
+import { Message } from '../../index';
+
+<Meta title="Components/Menu" />
+
+# Menu
+
+<Canvas>
+  <Story story={stories.BasicUsage} />
+</Canvas>
+
+The `Menu` component allows you to create vertical navigation menus. It has two sub-components:
+
+- `Menu.List` defines a section in the menu with a title.
+- `Menu.List.Item` defines an item in a section. Can be shown as selected using the `active` prop.
+  To create nested lists, simply put `Menu.List` as a direct child of `Menu.List.Item`.
+
+<Message color="primary">
+  <Message.Header>Example</Message.Header>
+  <Message.Body>
+    How to nest lists
+    <code>
+      {`<Menu.List.Item>
+  <Menu.List>{...}</Menu.List>
+</Menu.List.Item>`}
+    </code>
+  </Message.Body>
+</Message>
+
+## Props
+
+<br />
+
+### `Menu`
+
+<ArgsTable of={Menu} />
+
+### `Menu.List`
+
+<ArgsTable of={Menu.List} />
+
+### `Menu.List.Item`
+
+<ArgsTable of={Menu.List.Item} />

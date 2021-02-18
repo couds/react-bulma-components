@@ -135,19 +135,57 @@ Dropdown.Divider = DropdownDivider;
 
 Dropdown.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * The value of the currently selected dropdown item.
+   */
+  value: PropTypes.any,
+  /**
+   * Called when a dropdown item is selected.
+   */
+  onChange: PropTypes.func,
+  /**
+   * The color of the dropdown button.
+   */
+  color: PropTypes.oneOf(colors),
+  /**
+   * Whether the dropdown should align to the right side.
+   */
+  right: PropTypes.bool,
+  /**
+   * Whether the dropdown menu should appear above the dropdown button
+   * instead of below.
+   */
+  up: PropTypes.bool,
+  /**
+   * @deprecated
+   */
+  align: PropTypes.oneOf(['right']),
+  /**
+   * Whether the dropdown menu can be activated when the cursor
+   * hovers above the button without clicking.
+   */
+  hoverable: PropTypes.bool,
+  /**
+   * A string, or a react component that displays the label of the dropdown
+   * button.
+   */
+  label: PropTypes.node,
+  /**
+   * Whether the dropdown menu should be closed when a dropdown item is selected.
+   */
+  closeOnSelect: PropTypes.bool,
+  /**
+   * A react component that draws the icon of the dropdown button.
+   * Usually it is an arrow (or a chevron) pointing downwards (or upwards).
+   */
+  icon: PropTypes.node,
+  /**
+   * Additional CSS classes to pass to `<Dropdown />`.
+   * They will sit alongside pre-applied bulma classes.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
   children: PropTypes.node,
-  value: PropTypes.any,
-  onChange: PropTypes.func,
-  color: PropTypes.oneOf(colors),
-  right: PropTypes.bool,
-  up: PropTypes.bool,
-  align: PropTypes.oneOf(['right']),
-  hoverable: PropTypes.bool,
-  label: PropTypes.node,
-  closeOnSelect: PropTypes.bool,
-  icon: PropTypes.node,
 };
 
 Dropdown.defaultProps = {

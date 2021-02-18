@@ -20,16 +20,12 @@ describe('Textarea component', () => {
     const component = renderer.create(<Textarea style={{ height: 250 }} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should be large with 10 rows and readOnly', () => {
-    const component = renderer.create(
-      <Textarea rows={10} readOnly size="large" />,
-    );
+  it('Should support various states', () => {
+    const component = renderer.create(<Textarea focused hovered />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should be disabled with placeholder and value', () => {
-    const component = renderer.create(
-      <Textarea value="TEST" disabled placeholder="hello tests" />,
-    );
+  it('Should have a fixed size', () => {
+    const component = renderer.create(<Textarea fixedSize />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

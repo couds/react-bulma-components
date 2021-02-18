@@ -46,8 +46,12 @@ const responsiveModifierPropTypes = VIEWPORTS.reduce(
     return allViewports;
   },
   {
-    propTypes: {},
-    defaultProps: {},
+    propTypes: {
+      display: PropTypes.oneOf(DISPLAYS),
+    },
+    defaultProps: {
+      display: undefined,
+    },
   },
 );
 
@@ -56,41 +60,46 @@ const responsiveModifierPropTypes = VIEWPORTS.reduce(
  * @param props
  */
 const classNamesFromProps = (props) =>
-  Object.keys(props).reduce((classNamesObject, propName) => {
-    const maybeViewportName = propName.replace('Only', '');
+  Object.keys(props).reduce(
+    (classNamesObject, propName) => {
+      const maybeViewportName = propName.replace('Only', '');
 
-    // each viewport has two props:
-    // mobile, mobileOnly; desktop, desktopOnly, etc.
-    // this checks if propName is a responsive modifier prop
-    if (VIEWPORTS.includes(maybeViewportName) && props[propName]) {
-      const currentViewport = maybeViewportName;
-      const {
-        display = '',
-        hide = false,
-        textSize = 0,
-        textAlignment = '',
-      } = props[propName];
+      // each viewport has two props:
+      // mobile, mobileOnly; desktop, desktopOnly, etc.
+      // this checks if propName is a responsive modifier prop
+      if (VIEWPORTS.includes(maybeViewportName) && props[propName]) {
+        const currentViewport = maybeViewportName;
+        const {
+          display = '',
+          hide = false,
+          textSize = 0,
+          textAlignment = '',
+        } = props[propName];
 
-      if (propName.includes('Only')) {
-        // current modifiers are viewport specific
-        classNamesObject[`is-${display}-${currentViewport}-only`] = display;
-        classNamesObject[`is-hidden-${currentViewport}-only`] = hide;
-        classNamesObject[
-          `has-text-${textAlignment}-${currentViewport}-only`
-        ] = textAlignment;
-        classNamesObject[`is-size-${textSize}-only`] = textSize;
-      } else {
-        classNamesObject[`is-${display}-${currentViewport}`] = display;
-        classNamesObject[`is-hidden-${currentViewport}`] = hide;
-        classNamesObject[
-          `has-text-${textAlignment}-${currentViewport}`
-        ] = textAlignment;
-        classNamesObject[`is-size-${textSize}`] = textSize;
+        if (propName.includes('Only')) {
+          // current modifiers are viewport specific
+          classNamesObject[`is-${display}-${currentViewport}-only`] = display;
+          classNamesObject[`is-hidden-${currentViewport}-only`] = hide;
+          classNamesObject[
+            `has-text-${textAlignment}-${currentViewport}-only`
+          ] = textAlignment;
+          classNamesObject[`is-size-${textSize}-only`] = textSize;
+        } else {
+          classNamesObject[`is-${display}-${currentViewport}`] = display;
+          classNamesObject[`is-hidden-${currentViewport}`] = hide;
+          classNamesObject[
+            `has-text-${textAlignment}-${currentViewport}`
+          ] = textAlignment;
+          classNamesObject[`is-size-${textSize}`] = textSize;
+        }
       }
-    }
 
-    return classNamesObject;
-  }, {});
+      return classNamesObject;
+    },
+    {
+      [`is-${props.display}`]: props.display,
+    },
+  );
 
 export default {
   ...responsiveModifierPropTypes,

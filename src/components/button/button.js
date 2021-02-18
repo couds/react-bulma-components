@@ -88,14 +88,41 @@ Button.Group = ButtonGroup;
 
 Button.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Children of Button.
+   */
   children: PropTypes.node,
+  /**
+   * Additional CSS classes to pass to Button.
+   */
   className: PropTypes.string,
+  /**
+   * React style object for Button.
+   */
   style: PropTypes.shape({}),
+  /**
+   * A custom component that Button should be rendered as.
+   */
   renderAs: renderAsShape,
+  /**
+   * Callback function when Button is clicked.
+   */
   onClick: PropTypes.func,
+  /**
+   * Color of Button
+   */
   color: PropTypes.oneOf(colors),
+  /**
+   * Size of Button
+   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Whether Button should have an outline.
+   */
   outlined: PropTypes.bool,
+  /**
+   * Whether Button should have an inverted color scheme. Useful when button is used on colored background
+   */
   inverted: PropTypes.bool,
   submit: PropTypes.bool,
   reset: PropTypes.bool,
@@ -103,12 +130,27 @@ Button.propTypes = {
   focused: PropTypes.bool,
   active: PropTypes.bool,
   loading: PropTypes.bool,
+  /**
+   * Whether Button should occupy the full width of parent
+   */
   fullwidth: PropTypes.bool,
   disabled: PropTypes.bool,
   remove: PropTypes.bool,
+  /**
+   * Whether Button is selected. Useful in a Button.Group.
+   */
   isSelected: PropTypes.bool,
+  /**
+   * Whether Button is non-interactive/static.
+   */
   isStatic: PropTypes.bool,
+  /**
+   * Whether Button should have fully-rounded corners
+   */
   rounded: PropTypes.bool,
+  /**
+   * Whether Button is a text button.
+   */
   text: PropTypes.bool,
 };
 

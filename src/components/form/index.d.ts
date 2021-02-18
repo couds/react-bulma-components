@@ -27,21 +27,12 @@ interface ControlProps {
 }
 
 interface InputProps<T> {
-  type?:
-    | 'text'
-    | 'email'
-    | 'tel'
-    | 'password'
-    | 'number'
-    | 'search'
-    | 'color'
-    | 'date'
-    | 'time'
-    | 'datetime-local';
   size?: Size;
   color?: Color;
   readOnly?: boolean;
   isStatic?: boolean;
+  focused?: boolean;
+  hovered?: boolean;
   value?: T;
 }
 
@@ -52,15 +43,19 @@ interface LabelProps {
 interface TextareaProps {
   size?: Size;
   color?: Color;
-  readOnly?: boolean;
+  focused?: boolean;
+  hovered?: boolean;
+  fixedSize?: boolean;
 }
 
 interface SelectProps<T> {
   size?: Size;
   color?: Color;
-  readOnly?: boolean;
   value?: T;
+  readOnly?: boolean;
   loading?: boolean;
+  hovered?: boolean;
+  focused?: boolean;
   multiple?: boolean;
 }
 
@@ -77,17 +72,17 @@ interface HelpProps {
 }
 
 interface InputFileProps {
-  onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   color?: Color;
   size?: Size;
   filename?: string;
-  value?: any;
+  files?: FileList;
   fullwidth?: boolean;
   right?: boolean;
   boxed?: boolean;
   label?: string;
   icon?: React.ReactElement;
-  inputProps?: React.HTMLAttributes<'input'>;
+  inputProps?: OmitKeys<'onChange', React.HTMLAttributes<'input'>>;
 }
 
 export const Form: {

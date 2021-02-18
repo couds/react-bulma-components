@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
+import renderAsShape from '../../../modifiers/render-as';
 
 const Checkbox = ({
   className,
   style,
   disabled,
-  value,
   children,
   checked,
-  name,
   domRef,
   ...props
 }) => (
@@ -22,42 +21,41 @@ const Checkbox = ({
     className={classnames('checkbox', className)}
     style={style}
   >
-    <Element
-      {...props}
-      renderAs="input"
-      name={name}
-      type="checkbox"
-      value={value}
-      disabled={disabled}
-      checked={checked}
-    />
+    <Element type="checkbox" disabled={disabled} {...props} />
     {children}
   </Element>
 );
 
 Checkbox.propTypes = {
   ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  disabled: PropTypes.bool,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
   /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   * A React node that displays the label of this checkbox.
    */
-  name: PropTypes.string,
+  children: PropTypes.node,
+  /**
+   * Additional CSS classes to be passed to `<Checkbox />`.
+   * They will sit alongside pre-applied Bulma classes.
+   */
+  className: PropTypes.string,
+  /**
+   * Whether this checkbox is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * A custom component that the checkbox input should be rendered as.
+   * Does not affect the label.
+   */
+  renderAs: renderAsShape,
+  style: PropTypes.shape({}),
 };
 
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: undefined,
-  value: undefined,
   style: undefined,
   disabled: undefined,
-  checked: undefined,
-  name: undefined,
+  renderAs: 'input',
 };
 
 export default Checkbox;

@@ -54,3 +54,4 @@ Breadcrumb.defaultProps = {
 };
 
 export default Breadcrumb;
+export { Breadcrumb }

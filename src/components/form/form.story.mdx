@@ -1,0 +1,129 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './form.story';
+
+<Meta title="Form/General" />
+
+# Form
+
+The `Form` namespace contains all components available to build forms.
+
+## Components
+
+`react-bulma-components` supports the following components:
+
+| Components       | Descriptions                                |
+| ---------------- | ------------------------------------------- |
+| `Form.Checkbox`  | Displays a checkbox                         |
+| `Form.Field`     | Defines a field in `Form`                   |
+| `Form.Help`      | Displays a help message under form controls |
+| `Form.InputFile` | Displays a file input for file uploads      |
+| `Form.Label`     | Displays a label for a `Form.Field`         |
+| `Form.Radio`     | Displays a radio button                     |
+| `Form.Select`    | Displays a dropdown option menu             |
+| `Form.Textarea`  | Displays a multiline text box               |
+
+## Basic example
+
+A basic form example demonstrating different form components.
+
+<Canvas>
+  <Story story={stories.BasicExample} />
+</Canvas>
+
+## Field
+
+The `Field` component defines a field in a form. It can contain:
+
+- A `Label` component to describe the `Field`
+- A `Control` component to embed an input control
+- A `Help` component to show instructions under the control.
+
+<br />
+
+<Story story={stories.FieldExample} />
+
+<br />
+
+Use the `Field` component to ensure consistent spacing between fields in a form.
+
+<Story story={stories.MultipleFields} />
+
+<br />
+
+### Disabling fields
+
+You can disable one or multiple `Field`s by wrapping the ones you want to disable in a `<fieldset>` html element with
+the `disabled` attribute.
+
+<Canvas>
+  <Story story={stories.DisablingFields} />
+</Canvas>
+
+## Control
+
+The `Control` component allows you to do the following:
+
+- combine multiple `Control`s into groups
+- add icons to the wrapped form controls at the start and at the end.
+
+You can only wrap the following components with `Control`:
+
+- `Input`
+- `Select`
+- `Button`
+- `Icon`
+
+### Adding icons
+
+To add icons to a form control, use the `iconLeft` and the `iconRight` prop of the `Control` component
+to indicate which side you want the icons to appear. Then, put an `Icon` component _in_ the `Control` component
+with the `align` prop to indicate whether you want to icon to appear on the `'left'` or on the `'right'`.
+
+<Canvas>
+  <Story story={stories.FormControlIcons} />
+</Canvas>
+
+### Grouping controls
+
+To group multiple controls together, use `kind="group"` prop on the `Field` component, and then simply put
+multiple controls inside the `Field`.
+
+<Canvas>
+  <Story story={stories.GroupedControls} />
+  <Story story={stories.GroupedButtons} />
+</Canvas>
+
+You can change the alignment of a control group using the `align` prop of the `Field` component. Possible values are
+`centered` and `right`. By default, controls in a control group are aligned to the left.
+
+<Canvas>
+  <Story story={stories.ControlGroupAlignment} />
+</Canvas>
+
+You can also tell a control in a control group to take up as much width as possible in the group by using the
+`fullwidth` prop of the `Control` component.
+
+<Story story={stories.ExpandedControl} />
+
+<br />
+
+Controls in a control group can also take up multiple lines. Simply specify `multiline` on the `Field` component.
+
+<Story story={stories.MultilineControls} />
+
+## Horizontal forms
+
+You can make field labels sit next to field controls by making use of the `horizontal` prop of the `Field` component,
+and using the `Form.Field.Label` and the `Form.Field.Body` component.
+
+<Canvas>
+  <Story story={stories.HorizontalForm} />
+</Canvas>
+
+### Label sizes
+
+You can adjust the sizes of horizontal labels: `"small"`, `"normal"`, `"medium"`, `"large"`.
+
+<Canvas>
+  <Story story={stories.DifferentLabelSizes} />
+</Canvas>

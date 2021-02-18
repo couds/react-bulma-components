@@ -1,0 +1,65 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Message from '../message';
+import { Form } from '../../index';
+import * as stories from './select.story';
+
+<Meta title="Form/Select" />
+
+# Select
+
+<Canvas>
+  <Story story={stories.BasicUsage} />
+</Canvas>
+
+The `<Form.Select>` component is a simple wrapper around the `<select>` HTML element.
+The dropdown menu is deliberately not styled to preserve cross browser compatibility.
+
+<Message color="primary">
+  <Message.Header>This is a controlled component</Message.Header>
+  <Message.Body>
+    <code>Form.Select</code> is a <strong>controlled component</strong>, which
+    means you need to pass in a value and an <code>onChange</code> handler in
+    order to see changes.
+  </Message.Body>
+</Message>
+
+## Props
+
+<ArgsTable of={Form.Select} />
+
+## Multiple select
+
+To make a dropdown that can select multiple values, simply set the `multiple` prop to `true`.
+
+<Story story={stories.MultiSelect} />
+
+## Rounded select
+
+You can make the sides of the dropdown button fully rounded using the `rounded` prop.
+
+<Story story={stories.Rounded} />
+
+## Different appearances
+
+You can change the appearances of `Form.Select` with the following props:
+
+- `size` adjusts the size of the dropdown.
+- `color` adjusts the color of the dropdown.
+- `loading`, `hover` and `focus` adjusts the state of the dropdown.
+
+<Story story={stories.DifferentAppearances} />
+
+## Icons
+
+You can embed an icon in the dropdown button easily. The size of the icon will scale with the size of the dropdown.
+
+```
+<Form.Control iconLeft>
+  <Form.Select>{...}</Form.Select>
+  <Icon align="left>
+    <i className="fas fa-user" />
+  </Icon>
+</Form.Control>
+```
+
+<Story story={stories.EmbedIcon} />

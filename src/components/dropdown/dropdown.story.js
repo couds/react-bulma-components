@@ -1,19 +1,93 @@
 import React, { useState } from 'react';
-
-import { boolean, select, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { Dropdown, Container, Section } from 'react-bulma-components';
+import CONSTANTS from '../../constants';
+import { Container } from '../..';
+import Dropdown from '.';
 
-const alignment = {
-  Default: '',
-  right: 'right',
+export const Overview = (args) => (
+  <Dropdown
+    {...args}
+    color={args.color === 'default' ? '' : args.color}
+    onChange={action('selected item')}
+  >
+    <Dropdown.Item renderAs="a" value="item">
+      Dropdown item
+    </Dropdown.Item>
+    <Dropdown.Item renderAs="a" value="other">
+      Other Dropdown item
+    </Dropdown.Item>
+    <Dropdown.Item renderAs="a" value="active">
+      Active Dropdown item
+    </Dropdown.Item>
+    <Dropdown.Item renderAs="a" value="other 2">
+      Other Dropdown item
+    </Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item renderAs="a" value="divider">
+      With divider
+    </Dropdown.Item>
+  </Dropdown>
+);
+
+Overview.argTypes = {
+  label: {
+    defaultValue: 'label',
+    control: {
+      type: 'text',
+    },
+  },
+  color: {
+    defaultValue: '',
+    control: {
+      type: 'select',
+      options: ['default', ...Object.values(CONSTANTS.COLORS)],
+    },
+  },
+  hoverable: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  closeOnSelect: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
 };
 
-storiesOf('Dropdown', module)
-  .add('Default', () => (
-    <Dropdown onChange={action('select')} label={text('label', '')}>
+export const CustomContent = (args) => (
+  <Dropdown {...args} onChange={action('selected item')}>
+    <Dropdown.Item value="custom content 1">
+      <p>
+        Insert <strong>any content</strong> you like here
+      </p>
+    </Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item value="custom content 2">
+      <p>And it will look nice.</p>
+    </Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item renderAs="a" value="link">
+      A normal link
+    </Dropdown.Item>
+  </Dropdown>
+);
+
+CustomContent.argTypes = {
+  label: {
+    defaultValue: 'label',
+    control: {
+      type: 'text',
+    },
+  },
+};
+
+export const RightAlignment = () => (
+  <Container fluid>
+    <Dropdown right label="I am right-aligned" value="item">
       <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
       <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
       <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
@@ -21,9 +95,12 @@ storiesOf('Dropdown', module)
       <Dropdown.Divider />
       <Dropdown.Item value="divider">With divider</Dropdown.Item>
     </Dropdown>
-  ))
-  .add('Hoverable', () => (
-    <Dropdown hoverable value="item" label={text('label', '')}>
+  </Container>
+);
+
+export const MenuAbove = () => (
+  <div style={{ paddingTop: 200 }}>
+    <Dropdown up label="I am right-aligned" value="item">
       <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
       <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
       <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
@@ -31,66 +108,38 @@ storiesOf('Dropdown', module)
       <Dropdown.Divider />
       <Dropdown.Item value="divider">With divider</Dropdown.Item>
     </Dropdown>
-  ))
-  .add('Alignment', () => (
-    <div>
-      <Container>
-        <Section size="large">
-          <Dropdown
-            align={select(
-              'align (deprecated; will be removed in future releases)',
-              alignment,
-            )}
-            right={boolean('right (will replace "align" prop)', false)}
-            value="item"
-            up={boolean('up', false)}
-            label={text('label', '')}
-          >
-            <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-            <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-            <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-            <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item value="divider">With divider</Dropdown.Item>
-          </Dropdown>
-        </Section>
-      </Container>
-    </div>
-  ))
-  .add('Controlled component', () => {
-    const [selected, setSelected] = useState(false);
-    return (
-      <Dropdown
-        value={selected}
-        onChange={setSelected}
-        color="info"
-        label={text('label', '')}
-      >
-        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item value="divider">With divider</Dropdown.Item>
-      </Dropdown>
-    );
-  })
-  .add('Controlled component Hoverable', () => {
-    const [selected, setSelected] = useState(false);
-    return (
-      <Dropdown
-        hoverable
-        value={selected}
-        onChange={setSelected}
-        color="info"
-        label={text('label', '')}
-      >
-        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item value="divider">With divider</Dropdown.Item>
-      </Dropdown>
-    );
-  });
+  </div>
+);
+
+export const Controlled = (args) => {
+  const [selected, setSelected] = useState('');
+  return (
+    <Dropdown {...args} value={selected} onChange={setSelected} color="info">
+      <Dropdown.Item renderAs="a" value="item">
+        Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="other">
+        Other Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="active">
+        Active Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="other 2">
+        Other Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item renderAs="a" value="divider">
+        With divider
+      </Dropdown.Item>
+    </Dropdown>
+  );
+};
+
+Controlled.argTypes = {
+  hoverable: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+};

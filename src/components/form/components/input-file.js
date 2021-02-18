@@ -22,17 +22,19 @@ const InputFile = ({
   icon,
   inputProps,
   filename,
-  value,
+  files,
   ...props
 }) => {
   const ref = useRef();
+
   useEffect(() => {
-    if (value) {
-      ref.current.files = value;
+    if (files) {
+      ref.current.files = files;
     } else {
       ref.current.value = '';
     }
-  }, [value]);
+  }, [files]);
+
   return (
     <Element
       style={style}
@@ -83,11 +85,7 @@ InputFile.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   icon: PropTypes.element,
-  inputProps: PropTypes.shape({
-    accept: PropTypes.string,
-    capture: PropTypes.string,
-    multiple: PropTypes.bool,
-  }),
+  inputProps: PropTypes.shape({}),
 };
 
 InputFile.defaultProps = {
@@ -98,18 +96,14 @@ InputFile.defaultProps = {
   color: undefined,
   size: undefined,
   filename: undefined,
-  value: undefined,
+  files: undefined,
   fullwidth: undefined,
   right: undefined,
   boxed: undefined,
   name: undefined,
   icon: undefined,
   label: 'Choose a file...',
-  inputProps: {
-    accept: undefined,
-    capture: undefined,
-    multiple: undefined,
-  },
+  inputProps: {},
 };
 
 export default InputFile;

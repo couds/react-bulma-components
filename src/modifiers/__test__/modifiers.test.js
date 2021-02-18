@@ -17,6 +17,7 @@ describe('Helper proptypes', () => {
         textAlignment: 'centered',
         italic: true,
         textTransform: 'uppercase',
+        textFamily: 'monospace',
         textWeight: 'bold',
       }),
     ).toMatchSnapshot();
@@ -32,9 +33,18 @@ describe('Helper proptypes', () => {
     ).toMatchSnapshot();
   });
 
+  test('Should support display modifiers', () => {
+    expect(
+      modifiers.classnames({
+        display: 'inline-flex',
+      }),
+    ).toMatchSnapshot();
+  });
+
   test('Should have flexbox helpers', () => {
     expect(
       modifiers.classnames({
+        display: 'flex',
         flexWrap: 'nowrap',
         alignContent: 'flex-start',
         flexDirection: 'row-reverse',
@@ -93,6 +103,16 @@ describe('Helper proptypes', () => {
     expect(
       modifiers.classnames({
         backgroundColor: 'success',
+      }),
+    ).toMatchSnapshot();
+  });
+
+  test('Should have visibility helpers', () => {
+    expect(
+      modifiers.classnames({
+        hidden: true,
+        invisible: true,
+        srOnly: true,
       }),
     ).toMatchSnapshot();
   });

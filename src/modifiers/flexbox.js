@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const camelToSnake = (camel) =>
+const camelToKebab = (camel) =>
   camel.replace(/[A-Z]/g, (cap) => `-${cap.toLowerCase()}`);
 
 const flexboxHelperPropTypes = {
@@ -59,7 +59,7 @@ export default {
     classNames(
       flexboxHelperNames.reduce((classes, flexboxHelper) => {
         const propValue = props[flexboxHelper];
-        classes[`is-${camelToSnake(flexboxHelper)}-${propValue}`] = propValue;
+        classes[`is-${camelToKebab(flexboxHelper)}-${propValue}`] = propValue;
         return classes;
       }, {}),
     ),
