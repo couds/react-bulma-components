@@ -1,31 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Breadcrumb component Breadcrumb.Item component should have is-active class 1`] = `
+<li
+  className="is-active"
+>
+  active item
+</li>
+`;
+
+exports[`Breadcrumb component Breadcrumb.Item component should render <li> 1`] = `
+<li>
+  item
+</li>
+`;
+
 exports[`Breadcrumb component Should be a Breadcrumb 1`] = `
 <nav
   className="breadcrumb"
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="/"
       >
         Home
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="/section"
       >
         Section
       </a>
     </li>
-    <li
-      className="is-active"
-    >
+    <li>
       <a
         href="/detail"
       >
@@ -46,18 +54,14 @@ exports[`Breadcrumb component Should use inline style and custom size 1`] = `
   }
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="/"
       >
         Home
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="/section"
       >
@@ -82,27 +86,21 @@ exports[`Breadcrumb component should use separator arrow 1`] = `
   className="breadcrumb has-arrow-separator"
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#1"
       >
         Storybook
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#2"
       >
         Breadcrumb
       </a>
     </li>
-    <li
-      className="is-active"
-    >
+    <li>
       <a
         href="#3"
       >
@@ -118,27 +116,21 @@ exports[`Breadcrumb component should use separator bullet 1`] = `
   className="breadcrumb has-bullet-separator"
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#1"
       >
         Storybook
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#2"
       >
         Breadcrumb
       </a>
     </li>
-    <li
-      className="is-active"
-    >
+    <li>
       <a
         href="#3"
       >
@@ -154,27 +146,21 @@ exports[`Breadcrumb component should use separator dot 1`] = `
   className="breadcrumb has-dot-separator"
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#1"
       >
         Storybook
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#2"
       >
         Breadcrumb
       </a>
     </li>
-    <li
-      className="is-active"
-    >
+    <li>
       <a
         href="#3"
       >
@@ -190,27 +176,21 @@ exports[`Breadcrumb component should use separator null 1`] = `
   className="breadcrumb"
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#1"
       >
         Storybook
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#2"
       >
         Breadcrumb
       </a>
     </li>
-    <li
-      className="is-active"
-    >
+    <li>
       <a
         href="#3"
       >
@@ -226,27 +206,21 @@ exports[`Breadcrumb component should use separator succeeds 1`] = `
   className="breadcrumb has-succeeds-separator"
 >
   <ul>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#1"
       >
         Storybook
       </a>
     </li>
-    <li
-      className=""
-    >
+    <li>
       <a
         href="#2"
       >
         Breadcrumb
       </a>
     </li>
-    <li
-      className="is-active"
-    >
+    <li>
       <a
         href="#3"
       >
