@@ -59,6 +59,13 @@ BasicUsage.argTypes = {
       type: 'boolean',
     },
   },
+  label: {
+    description: 'The label of the upload button',
+    defaultValue: 'Choose a file...',
+    control: {
+      type: 'text',
+    },
+  },
 };
 
 export const RightButton = () => (
