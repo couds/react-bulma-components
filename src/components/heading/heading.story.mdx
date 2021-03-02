@@ -1,0 +1,29 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './heading.story';
+
+<Meta title="Elements/Heading" />
+
+# Heading
+
+<Canvas>
+  <Story story={stories.BasicUsage} />
+</Canvas>
+
+The `Heading` component combines title and subtitle styles into one component.
+
+## Sizes
+
+There are 6 sizes available for both title and subtitle.
+By default, title has a size of 3, and subtitle has a size of 5.
+
+<Story story={stories.HeadingSizes} />
+
+<br />
+
+<Story story={stories.SubheadingSizes} />
+
+## Spacing
+
+When you put title and subtitle together the spacing between them will be reduced.
+The official documentation recommends that the size difference between title and subtitle should be 2.
+For example, if your title has a size of 5, your subtitle should have a size of 3.

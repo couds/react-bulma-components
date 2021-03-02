@@ -1,39 +1,31 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import Heading from './heading';
 
-import { Heading, Box } from 'react-bulma-components';
+const HEADING_SIZES = [1, 2, 3, 4, 5, 6];
 
-storiesOf('Heading', module).add('Default', () => (
-  <div>
-    <Box>
-      <Heading>Title</Heading>
-      <Heading subtitle size={6}>
-        Subtitle
+export const BasicUsage = () => (
+  <>
+    <Heading>Title</Heading>
+    <Heading subtitle>Subtitle</Heading>
+  </>
+);
+
+export const HeadingSizes = () => (
+  <>
+    {HEADING_SIZES.map((size) => (
+      <Heading key={size} size={size}>
+        Heading {size}
       </Heading>
-    </Box>
-    <Box>
-      <Heading size={1}>Title</Heading>
-      <Heading subtitle size={3}>
-        Subtitle
+    ))}
+  </>
+);
+
+export const SubheadingSizes = () => (
+  <>
+    {HEADING_SIZES.map((size) => (
+      <Heading subtitle key={size} size={size}>
+        Subtitle {size}
       </Heading>
-    </Box>
-    <Box>
-      <Heading size={2}>Title</Heading>
-      <Heading subtitle size={4} renderAs="h2">
-        Subtitle
-      </Heading>
-    </Box>
-    <Box>
-      <Heading size={3}>Title</Heading>
-      <Heading subtitle size={5} renderAs="h2">
-        Subtitle
-      </Heading>
-    </Box>
-    <Box>
-      <Heading size={4}>Title</Heading>
-      <Heading subtitle size={6} renderAs="h2">
-        Subtitle
-      </Heading>
-    </Box>
-  </div>
-));
+    ))}
+  </>
+);
