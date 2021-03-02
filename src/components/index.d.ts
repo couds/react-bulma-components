@@ -36,3 +36,7 @@ export type BulmaComponentWithoutRenderAs<
 > = (
   props: TProps & Omit<ElementProps<TProps, THTMLElement>, 'renderAs'>,
 ) => React.ReactElement;
+
+export type BulmaComponentWithoutModifiers<TProps> = (
+  props: TProps,
+) => React.ReactElement;
