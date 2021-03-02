@@ -30,10 +30,6 @@ describe('Heading component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should render h4 when size is 4', () => {
-    const component = renderer.create(<Heading size={4}>Title</Heading>);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
   it('Should be a subtitle with size rendered as P', () => {
     const component = renderer.create(
       <Heading size={3} subtitle renderAs="p">
