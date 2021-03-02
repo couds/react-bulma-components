@@ -71,23 +71,69 @@ const InputFile = ({
 
 InputFile.propTypes = {
   ...modifiers.propTypes,
+  /**
+   * Additional CSS classes to pass to `InputFile`.
+   * They will sit alongside pre-applied bulma classes.
+   */
   className: PropTypes.string,
   style: PropTypes.shape({}),
+  /**
+   * Callback for when the value of the input changes.
+   * Same signature as the onChange prop for `<input type="file">`.
+   */
   onChange: PropTypes.func,
+  /**
+   * The color of `InputFile`
+   */
   color: PropTypes.oneOf(colors),
+  /**
+   * The size of `InputFile`
+   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * The name of the selected file. It will be shown as the file label
+   * of this component, next/under the upload button.
+   */
   filename: PropTypes.string,
+  /**
+   * The selected file object.
+   */
   value: PropTypes.any,
+  /**
+   * Whether `InputFile` should take up all available width.
+   */
   fullwidth: PropTypes.bool,
+  /**
+   * Whether `InputFile` should be aligned to the right.
+   */
   right: PropTypes.bool,
+  /**
+   * Whether `InputFile` should be centered.
+   */
   centered: PropTypes.bool,
+  /**
+   * Whether `InputFile` should be rendered in a box shape.
+   */
   boxed: PropTypes.bool,
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
   name: PropTypes.string,
+  /**
+   * Label for the upload button.
+   */
   label: PropTypes.string,
+  /**
+   * An optional icon to be drawn in the button next to/on top of the button label.
+   *
+   * `icon={<i className="fas ..." />}`
+   */
   icon: PropTypes.element,
+  /**
+   * Additional props to be passed to the underlying `<input>` element.
+   * Other props passed to `InputFile` itself will be passed to the element
+   * that wraps around the `<input>` element.
+   */
   inputProps: PropTypes.shape({}),
 };
 
