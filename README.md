@@ -8,6 +8,16 @@
 
 React components for [Bulma](http://bulma.io/) (v0.8.2) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
+## V4 Beta Now Available! 
+
+Try it out now: `npm i react-bulma-components@4.0.0-1`
+
+v4 removes dependency on `bulma`, so you'll have to install it yourself. v4 supports Bulma up to v0.9.1.
+Also included in the versions are TypeScript support, bug fixes and new props/missing features. Check out [this issue](https://github.com/couds/react-bulma-components/issues/262)
+for the full changelog and what is being worked on.
+
+We are also working on a brand-new documentation site that will be released soon. Stay tuned!
+
 ### V4 Pool
 
 Please Check https://github.com/couds/react-bulma-components/issues/258, we are thinking to change the bulma dependency to a peer dependency and remove the style importes from this library. you can vote here https://doodle.com/poll/mqqpxwkzm6nnrs3s
