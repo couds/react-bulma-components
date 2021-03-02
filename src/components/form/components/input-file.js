@@ -23,6 +23,7 @@ const InputFile = ({
   inputProps,
   filename,
   files,
+  centered,
   ...props
 }) => {
   const ref = useRef();
@@ -46,6 +47,7 @@ const InputFile = ({
         'is-right': right,
         'is-boxed': boxed,
         'is-fullwidth': fullwidth,
+        'is-centered': centered,
       })}
     >
       <label className="file-label">
@@ -78,6 +80,7 @@ InputFile.propTypes = {
   value: PropTypes.any,
   fullwidth: PropTypes.bool,
   right: PropTypes.bool,
+  centered: PropTypes.bool,
   boxed: PropTypes.bool,
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
@@ -99,6 +102,7 @@ InputFile.defaultProps = {
   files: undefined,
   fullwidth: undefined,
   right: undefined,
+  centered: undefined,
   boxed: undefined,
   name: undefined,
   icon: undefined,

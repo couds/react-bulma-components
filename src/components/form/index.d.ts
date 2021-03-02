@@ -79,6 +79,7 @@ interface InputFileProps {
   files?: FileList;
   fullwidth?: boolean;
   right?: boolean;
+  centered?: boolean;
   boxed?: boolean;
   label?: string;
   icon?: React.ReactElement;

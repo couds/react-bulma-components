@@ -30,6 +30,13 @@ describe('Dropdown component', () => {
     expect(InputFile).toMatchSnapshot();
   });
 
+  it('Should be centered', () => {
+    const component = renderer.create(
+      <InputFile filename="test.js" centered />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   it('should set filename text', () => {
     const component = renderer.create(
       <InputFile filename="my-file.js" onChange={() => {}} />,
