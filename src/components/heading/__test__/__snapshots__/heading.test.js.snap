@@ -10,46 +10,54 @@ exports[`Heading component Should be a subtitle with size rendered as P 1`] = `
 
 exports[`Heading component Should be spaced 1`] = `
 <p
-  className="title is-spaced"
+  className="title is-3 is-spaced"
 >
   Subtitle
 </p>
 `;
 
 exports[`Heading component Should concat classname in props with Bulma classname 1`] = `
-<h1
-  className="other-class this-is-a-test title"
+<h3
+  className="other-class this-is-a-test title is-3"
 >
   <p>
     Default
   </p>
-</h1>
+</h3>
 `;
 
 exports[`Heading component Should exist 1`] = `[Function]`;
 
 exports[`Heading component Should have title classname 1`] = `
-<h1
-  className="title"
+<h3
+  className="title is-3"
 >
   Test 
   <a>
     Give me
   </a>
-</h1>
+</h3>
 `;
 
 exports[`Heading component Should not be spaced because is subtitle 1`] = `
 <p
-  className="subtitle"
+  className="subtitle is-3"
 >
   Subtitle
 </p>
 `;
 
+exports[`Heading component Should render h4 when size is 4 1`] = `
+<h4
+  className="title is-4"
+>
+  Title
+</h4>
+`;
+
 exports[`Heading component Should use inline styles 1`] = `
-<h1
-  className="title"
+<h3
+  className="title is-3"
   style={
     Object {
       "height": 250,
@@ -59,5 +67,5 @@ exports[`Heading component Should use inline styles 1`] = `
   <p>
     Default
   </p>
-</h1>
+</h3>
 `;

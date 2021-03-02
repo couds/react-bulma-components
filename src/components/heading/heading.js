@@ -13,9 +13,11 @@ const Heading = ({
   weight,
   spaced,
   heading,
+  renderAs,
   ...props
 }) => (
   <Element
+    renderAs={renderAs || `h${size}`}
     {...props}
     className={classnames(className, {
       title: !subtitle && !heading,
@@ -46,8 +48,8 @@ Heading.defaultProps = {
   ...modifiers.defaultProps,
   children: null,
   className: undefined,
-  renderAs: 'h1',
-  size: undefined,
+  renderAs: undefined,
+  size: 3,
   weight: undefined,
   subtitle: false,
   heading: false,
