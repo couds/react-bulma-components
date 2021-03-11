@@ -18,12 +18,14 @@ interface HelperProps {
 type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 interface SpacingProps {
+  m?: SpacingSize;
   mt?: SpacingSize;
   mr?: SpacingSize;
   mb?: SpacingSize;
   ml?: SpacingSize;
   mx?: SpacingSize;
   my?: SpacingSize;
+  p?: SpacingSize;
   pt?: SpacingSize;
   pr?: SpacingSize;
   pb?: SpacingSize;
