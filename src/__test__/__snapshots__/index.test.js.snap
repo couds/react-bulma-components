@@ -2,6 +2,7 @@
 
 exports[`ReactBulmaComponents component Should Exports all components 1`] = `
 Object {
+  "Block": [Function],
   "Box": [Function],
   "Breadcrumb": [Function],
   "Button": [Function],

@@ -29,6 +29,9 @@ const InputFile = ({
   const ref = useRef();
 
   useEffect(() => {
+    if (!ref.current) {
+      return;
+    }
     if (files) {
       ref.current.files = files;
     } else {
