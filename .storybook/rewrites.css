@@ -1,0 +1,13 @@
+.tag.token {
+  background-color: unset;
+  border-radius: unset;
+  display: unset;
+  font-size: 1em;
+  height: unset;
+  padding-left: unset;
+  padding-right: unset;
+  white-space: unset;
+}
+.number.token {
+  margin-right: unset;
+}

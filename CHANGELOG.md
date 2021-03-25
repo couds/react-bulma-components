@@ -2,7 +2,7 @@
 
 ## 4.0.0
 
-- Bump Bulma version to `0.9.0`
+- Bump Bulma version to `0.9.1`
 
   - `<List />` component is completely removed.
   
@@ -10,11 +10,8 @@
     Refer to the [official documentation](https://bulma.io/documentation/helpers/spacing-helpers/) for more information.
 
     - Usage: `pt-0` in Bulma is equivalent to `pt={0}` in props. Applies to all spacing modifiers.
-  
-  - `src/index.sass` now imports both `~/bulma/sass/helpers/_all` and `~/bulma/bulma`,
-    because `~/bulma/base/_all` is deprecated.
-  
-  - For changelog of Bulma `0.9.0`, see [here](https://github.com/jgthms/bulma/releases/tag/0.9.0)
+
+  - For changelog of Bulma `0.9.1`, see [here](https://github.com/jgthms/bulma/releases/tag/0.9.1)
 
 
 ## 3.3.0
