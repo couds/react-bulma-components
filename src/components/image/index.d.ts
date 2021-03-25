@@ -32,4 +32,6 @@ interface ImageProps {
   fullwidth?: boolean;
 }
 
-export const Image: BulmaComponentWithoutRenderAs<ImageProps, 'figure'>;
+declare const Image: BulmaComponentWithoutRenderAs<ImageProps, 'figure'>;
+
+export default Image;

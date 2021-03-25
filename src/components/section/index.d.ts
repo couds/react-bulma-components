@@ -5,4 +5,6 @@ interface SectionProps {
   size?: Exclude<Size, 'small'>;
 }
 
-export const Section: BulmaComponent<SectionProps, 'section'>;
+declare const Section: BulmaComponent<SectionProps, 'section'>;
+
+export default Section;

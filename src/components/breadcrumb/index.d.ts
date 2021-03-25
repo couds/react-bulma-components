@@ -11,6 +11,8 @@ interface BreadcrumbItemProps {
   active?: boolean;
 }
 
-export const Breadcrumb: BulmaComponent<BreadcrumbProps, 'nav'> & {
+declare const Breadcrumb: BulmaComponent<BreadcrumbProps, 'nav'> & {
   Item: BulmaComponent<BreadcrumbItemProps, 'li'>;
 };
+
+export default Breadcrumb;

@@ -18,4 +18,6 @@ interface PaginationProps {
   autoHide?: boolean;
 }
 
-export const Pagination: BulmaComponent<PaginationProps, 'nav'>;
+declare const Pagination: BulmaComponent<PaginationProps, 'nav'>;
+
+export default Pagination;

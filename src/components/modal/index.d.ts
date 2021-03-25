@@ -18,7 +18,7 @@ interface ModalCardHeadProps {
   onClose?: () => void;
 }
 
-export const Modal: BulmaComponentWithoutModifiers<ModalProps> & {
+declare const Modal: BulmaComponentWithoutModifiers<ModalProps> & {
   Content: BulmaComponent<{}, 'div'>;
   Card: BulmaComponent<{}, 'div'> & {
     Head: BulmaComponent<ModalCardHeadProps, 'header'>;
@@ -27,3 +27,5 @@ export const Modal: BulmaComponentWithoutModifiers<ModalProps> & {
     Title: BulmaComponent<{}, 'p'>;
   };
 };
+
+export default Modal;

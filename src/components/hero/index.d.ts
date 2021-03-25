@@ -8,8 +8,10 @@ interface HeroProps {
   hasNavbar?: boolean;
 }
 
-export const Hero: BulmaComponent<HeroProps, 'section'> & {
+declare const Hero: BulmaComponent<HeroProps, 'section'> & {
   Head: BulmaComponent<{}, 'div'>;
   Body: BulmaComponent<{}, 'div'>;
   Footer: BulmaComponent<{}, 'div'>;
 };
+
+export default Hero;

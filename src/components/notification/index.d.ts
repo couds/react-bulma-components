@@ -5,4 +5,6 @@ interface NotificationProps {
   color?: Color;
 }
 
-export const Notification: BulmaComponent<NotificationProps, 'div'>;
+declare const Notification: BulmaComponent<NotificationProps, 'div'>;
+
+export default Notification;

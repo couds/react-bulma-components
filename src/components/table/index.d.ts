@@ -7,6 +7,8 @@ interface TableProps {
   hoverable?: boolean;
 }
 
-export const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'> & {
+declare const Table: BulmaComponentWithoutRenderAs<TableProps, 'table'> & {
   Container: BulmaComponent<{}, 'div'>;
 };
+
+export default Table;

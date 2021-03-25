@@ -7,4 +7,6 @@ interface ProgressProps {
   size?: Size;
 }
 
-export const Progress: BulmaComponentWithoutRenderAs<ProgressProps, 'progress'>;
+declare const Progress: BulmaComponentWithoutRenderAs<ProgressProps, 'progress'>;
+
+export default Progress;

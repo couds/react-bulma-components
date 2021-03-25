@@ -13,7 +13,7 @@ interface PanelBlockProps {
   active?: boolean;
 }
 
-export const Panel: BulmaComponent<PanelProps, 'nav'> & {
+declare const Panel: BulmaComponent<PanelProps, 'nav'> & {
   Header: BulmaComponent<{}, 'div'>;
   Tabs: BulmaComponent<{}, 'div'> & {
     Tab: BulmaComponent<PanelTabProps, 'a'>;
@@ -21,3 +21,5 @@ export const Panel: BulmaComponent<PanelProps, 'nav'> & {
   Block: BulmaComponent<PanelBlockProps, 'div'>;
   Icon: BulmaComponent<{}, 'span'>;
 };
+
+export default Panel;

@@ -1,8 +1,8 @@
 import { BulmaComponent } from '..';
-import { ImageProps } from '../image';
+import ImageProps from '../image';
 
-export const Card: BulmaComponent<{}, 'div'> & {
-  Image: BulmaComponent<ImageProps, 'figure'>;
+declare const Card: BulmaComponent<{}, 'div'> & {
+  Image: BulmaComponent<typeof ImageProps, 'figure'>;
   Content: BulmaComponent<{}, 'div'>;
   Header: BulmaComponent<{}, 'div'> & {
     Title: BulmaComponent<{}, 'div'>;
@@ -12,3 +12,5 @@ export const Card: BulmaComponent<{}, 'div'> & {
     Item: BulmaComponent<{}, 'div'>;
   };
 };
+
+export default Card

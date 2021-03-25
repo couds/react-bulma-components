@@ -1,4 +1,6 @@
-import { BulmaComponent, Color } from '../../index';
+import { Color } from 'src/modifiers';
+import { BulmaComponent } from '../index';
+
 
 interface TileProps {
   kind?: 'ancestor' | 'parent' | 'child';
@@ -8,4 +10,6 @@ interface TileProps {
   notification?: boolean;
 }
 
-export const Tile: BulmaComponent<TileProps, 'div'>;
+declare const Tile: BulmaComponent<TileProps, 'div'>;
+
+export default Tile;

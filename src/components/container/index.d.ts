@@ -6,4 +6,6 @@ interface ContainerProps {
   breakpoint?: Breakpoint;
 }
 
-export const Container: BulmaComponent<ContainerProps, 'div'>;
+declare const Container: BulmaComponent<ContainerProps, 'div'>;
+
+export default Container;

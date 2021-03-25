@@ -10,8 +10,10 @@ interface MenuListItemProps {
   children?: string[] | React.ReactElement[];
 }
 
-export const Menu: BulmaComponent<{}, 'aside'> & {
+declare const Menu: BulmaComponent<{}, 'aside'> & {
   List: BulmaComponentWithoutRenderAs<MenuListComponentProps, 'ul'> & {
     Item: BulmaComponent<MenuListItemProps, 'a'>;
   };
 };
+
+export default Menu;

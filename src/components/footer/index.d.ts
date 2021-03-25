@@ -1,3 +1,5 @@
 import { BulmaComponent } from '..';
 
-export const Footer: BulmaComponent<{}, 'div'>;
+declare const Footer: BulmaComponent<{}, 'div'>;
+
+export default Footer;
