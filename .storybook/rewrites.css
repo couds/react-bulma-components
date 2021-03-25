@@ -11,3 +11,7 @@
 .number.token {
   margin-right: unset;
 }
+
+pre code {
+  color: white;
+}

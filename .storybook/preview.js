@@ -9,12 +9,13 @@ addDecorator(withPropsTable);
 
 export const parameters = {
   layout: 'padded',
+  viewMode: 'docs',
   options: {
     storySort: {
-      order: ['Basics', 'Columns', 'Elements', 'Components', 'Form', 'Layout'],
+      order: ['Welcome', 'Basics', 'Columns', 'Elements', 'Components', 'Form', 'Layout'],
     },
   },
   previewTabs: {
-    'storybook/docs/panel': { index: 0 },
+    'storybook/docs/panel': { index: 0, default: true },
   }
 };

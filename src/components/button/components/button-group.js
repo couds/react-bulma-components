@@ -38,7 +38,7 @@ ButtonGroup.propTypes = {
   /**
    * The size of *all* the buttons in the group.
    */
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * Position of the group. By default, it is left-aligned.
    */

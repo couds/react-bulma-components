@@ -1,29 +1,28 @@
 import React from 'react';
 
-import { Box, Media, Image, Content } from 'react-bulma-components';
+import { Box, Form, Button } from '../..';
 
 export const Default = () => (
-  <Box>
-    <Media>
-      <Media.Item renderAs="figure" position="left">
-        <Image
-          size={64}
-          alt="64x64"
-          src="http://bulma.io/images/placeholders/128x128.png"
-        />
-      </Media.Item>
-      <Media.Item>
-        <Content>
-          <p>
-            <strong>John Smith</strong> <small>@johnsmith</small>{' '}
-            <small>31m</small>
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas
-            non massa sem. Etiam finibus odio quis feugiat facilisis.
-          </p>
-        </Content>
-      </Media.Item>
-    </Media>
+  <Box style={{ width: 400, margin: 'auto' }}>
+    <form>
+      <Form.Field>
+        <Form.Label>Email</Form.Label>
+        <Form.Control>
+          <Form.Input
+            type="email"
+            placeholder="my.amazing.email@react-bulma.dev"
+          />
+        </Form.Control>
+      </Form.Field>
+      <Form.Field>
+        <Form.Label>Password</Form.Label>
+        <Form.Control>
+          <Form.Input type="password" placeholder="*************" />
+        </Form.Control>
+      </Form.Field>
+      <Button.Group position="right">
+        <Button color="primary">Sign in</Button>
+      </Button.Group>
+    </form>
   </Box>
 );

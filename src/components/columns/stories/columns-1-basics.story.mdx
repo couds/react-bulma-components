@@ -2,7 +2,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Columns, Message, Notification } from '../../..';
 import * as stories from './columns.story';
 
-<Meta title="Columns/Basic" />
+<Meta title="Columns/Basics" />
 
 # Columns using Flexbox
 
@@ -16,7 +16,7 @@ Each column will have an equal width, no matter the number of columns.
 ## Basic
 
 <Canvas>
-  <Story story={stories.Basic} />
+  <Story story={stories.Basic} name="Basics" />
 </Canvas>
 
 ## Props
@@ -32,3 +32,6 @@ Each column will have an equal width, no matter the number of columns.
 <ArgsTable of={Columns.Column} />
 
 
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/basics/)
