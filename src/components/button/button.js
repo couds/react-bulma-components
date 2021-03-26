@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
-import modifiers from '../../modifiers';
 import ButtonGroup from './components/button-group';
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null, ''].concat(Object.values(CONSTANTS.COLORS));
 
@@ -87,7 +85,7 @@ const Button = ({
 Button.Group = ButtonGroup;
 
 Button.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Children of Button.
    */
@@ -100,10 +98,6 @@ Button.propTypes = {
    * React style object for Button.
    */
   style: PropTypes.shape({}),
-  /**
-   * A custom component that Button should be rendered as.
-   */
-  renderAs: renderAsShape,
   /**
    * Callback function when Button is clicked.
    */
@@ -155,7 +149,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

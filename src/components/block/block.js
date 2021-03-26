@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const Content = ({ children, className, ...props }) => (
   <Element {...props} className={classnames('block', className)}>
@@ -12,7 +10,7 @@ const Content = ({ children, className, ...props }) => (
 );
 
 Content.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   /**
    * Additional CSS classes to pass to `<Content />`.
@@ -20,14 +18,10 @@ Content.propTypes = {
    */
   className: PropTypes.string,
   style: PropTypes.shape({}),
-  /**
-   * Specify component/HTML element that `<Content />` should be rendered as.
-   */
-  renderAs: renderAsShape,
 };
 
 Content.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

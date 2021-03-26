@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import Element from '../element';
 import BreadcrumbItem from './components/item';
-import modifiers from '../../modifiers';
-import renderAsShape from '../../modifiers/render-as';
 
 const Breadcrumb = ({
   className,
@@ -32,18 +29,17 @@ const Breadcrumb = ({
 Breadcrumb.Item = BreadcrumbItem;
 
 Breadcrumb.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['right', 'center']),
-  renderAs: renderAsShape,
   children: PropTypes.node,
 };
 
 Breadcrumb.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   separator: undefined,
   renderAs: 'nav',
   className: undefined,
@@ -54,4 +50,4 @@ Breadcrumb.defaultProps = {
 };
 
 export default Breadcrumb;
-export { Breadcrumb }
+export { Breadcrumb };

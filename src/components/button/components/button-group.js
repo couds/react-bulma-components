@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
 import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
 const ButtonGroup = ({
   children,
@@ -26,7 +24,7 @@ const ButtonGroup = ({
 );
 
 ButtonGroup.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Additional CSS classes to pass to Button.Group
    */
@@ -43,14 +41,10 @@ ButtonGroup.propTypes = {
    * Position of the group. By default, it is left-aligned.
    */
   position: PropTypes.oneOf(['centered', 'right']),
-  /**
-   * The custom component that Button.Group should be rendered as.
-   */
-  renderAs: renderAsShape,
 };
 
 ButtonGroup.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   hasAddons: undefined,
   position: undefined,

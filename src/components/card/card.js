@@ -6,10 +6,8 @@ import CardImage from './components/image';
 import CardContent from './components/content';
 import CardHeader from './components/header';
 import CardFooter from './components/footer';
-import modifiers from '../../modifiers';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const Card = ({ className, children, ...props }) => (
   <Element className={classnames('card', className)} {...props}>
@@ -26,7 +24,7 @@ Card.Header = CardHeader;
 Card.Footer = CardFooter;
 
 Card.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Additional CSS classes to pass to Card.
    */
@@ -39,14 +37,10 @@ Card.propTypes = {
    * React style object for Card.
    */
   style: PropTypes.shape({}),
-  /**
-   * The custom component that Card should be rendered as.
-   */
-  renderAs: renderAsShape,
 };
 
 Card.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   children: null,
   style: undefined,
