@@ -1,3 +1,5 @@
 import { BulmaComponent } from '..';
 
-export const Loader: BulmaComponent<{}, 'div'>;
+declare const Loader: BulmaComponent<{}, 'div'>;
+
+export default Loader;

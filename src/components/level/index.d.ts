@@ -10,7 +10,8 @@ interface LevelSideProps {
   align?: 'left' | 'right';
 }
 
-export const Level: BulmaComponent<LevelProps, 'div'> & {
+declare const Level: BulmaComponent<LevelProps, 'div'> & {
   Side: BulmaComponent<LevelSideProps, 'div'>;
   Item: BulmaComponent<{}, 'div'>;
 };
+export default Level;

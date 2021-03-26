@@ -8,4 +8,6 @@ interface HeadingProps {
   spaced?: boolean;
 }
 
-export const Heading: BulmaComponent<HeadingProps, 'h1'>;
+declare const Heading: BulmaComponent<HeadingProps, 'h1'>;
+
+export default Heading;

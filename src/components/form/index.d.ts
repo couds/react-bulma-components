@@ -86,7 +86,7 @@ interface InputFileProps {
   inputProps?: OmitKeys<'onChange', React.HTMLAttributes<'input'>>;
 }
 
-export const Form: {
+declare const Form: {
   Field: BulmaComponent<FieldProps, 'div'> & {
     Label: BulmaComponent<FieldLabelProps, 'div'>;
     Body: BulmaComponent<{}, 'div'>;
@@ -123,3 +123,5 @@ export const Form: {
   Help: BulmaComponent<HelpProps, 'p'>;
   InputFile: BulmaComponent<InputFileProps, 'div'>;
 };
+
+export default Form;

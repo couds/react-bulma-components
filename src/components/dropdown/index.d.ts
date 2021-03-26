@@ -18,7 +18,7 @@ interface DropdownItemProps<T> {
   value: T;
 }
 
-export const Dropdown: (<TValue, TComponent extends RenderAsComponent = 'div'>(
+declare const Dropdown: (<TValue, TComponent extends RenderAsComponent = 'div'>(
   props: DropdownProps<TValue> &
     ElementProps<DropdownProps<TValue>, TComponent>,
 ) => React.ReactElement) & {
@@ -30,3 +30,5 @@ export const Dropdown: (<TValue, TComponent extends RenderAsComponent = 'div'>(
     props: Omit<ElementProps<{}, 'hr'>, 'renderAs'>,
   ) => React.ReactElement;
 };
+
+export default Dropdown;

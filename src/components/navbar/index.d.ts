@@ -33,7 +33,7 @@ interface NavbarContainerProps {
   position?: 'start' | 'end';
 }
 
-export const Navbar: BulmaComponent<NavbarProps, 'nav'> & {
+declare const Navbar: BulmaComponent<NavbarProps, 'nav'> & {
   Brand: BulmaComponent<{}, 'div'>;
   Burger: BulmaComponent<NavbarBurgerProps, 'div'>;
   Menu: BulmaComponent<{}, 'div'>;
@@ -43,3 +43,5 @@ export const Navbar: BulmaComponent<NavbarProps, 'nav'> & {
   Divider: BulmaComponent<{}, 'div'>;
   Container: BulmaComponent<NavbarContainerProps, 'div'>;
 };
+
+export default Navbar;

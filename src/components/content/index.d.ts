@@ -5,4 +5,6 @@ interface ContentProps {
   size?: Size;
 }
 
-export const Content: BulmaComponent<ContentProps, 'div'>;
+declare const Content: BulmaComponent<ContentProps, 'div'>;
+
+export default Content;

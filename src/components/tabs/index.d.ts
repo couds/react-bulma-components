@@ -12,6 +12,8 @@ interface TabProps {
   active?: boolean;
 }
 
-export const Tabs: BulmaComponent<TabsProps, 'div'> & {
+declare const Tabs: BulmaComponent<TabsProps, 'div'> & {
   Tab: BulmaComponent<TabProps, 'a'>;
 };
+
+export default Tabs;

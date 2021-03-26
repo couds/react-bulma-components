@@ -54,6 +54,8 @@ interface ColumnProps {
   fullhd?: ColumnBreakpointConfiguration;
 }
 
-export const Columns: BulmaComponent<ColumnGroupProps, 'div'> & {
+declare const Columns: BulmaComponent<ColumnGroupProps, 'div'> & {
   Column: BulmaComponent<ColumnProps, 'div'>;
 };
+
+export default Columns;

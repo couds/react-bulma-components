@@ -6,7 +6,9 @@ interface MessageProps {
   color?: Color;
 }
 
-export const Message: BulmaComponent<MessageProps, 'article'> & {
+declare const Message: BulmaComponent<MessageProps, 'article'> & {
   Body: BulmaComponent<{}, 'div'>;
   Header: BulmaComponent<{}, 'div'>;
 };
+
+export default Message;

@@ -8,4 +8,6 @@ interface IconProps {
   color?: Color;
 }
 
-export const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'>;
+declare const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'>;
+
+export default Icon;

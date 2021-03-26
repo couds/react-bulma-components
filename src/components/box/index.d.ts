@@ -1,3 +1,5 @@
 import { BulmaComponent } from '..';
 
-export const Box: BulmaComponent<{}, 'div'>;
+declare const Box: BulmaComponent<{}, 'div'>;
+
+export default Box;

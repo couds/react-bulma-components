@@ -26,6 +26,8 @@ interface ButtonGroupProps {
   position?: 'centered' | 'right';
 }
 
-export const Button: BulmaComponent<ButtonProps, 'button'> & {
+declare const Button: BulmaComponent<ButtonProps, 'button'> & {
   Group: BulmaComponent<ButtonGroupProps, 'div'>;
 };
+
+export default Button

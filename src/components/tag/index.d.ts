@@ -12,6 +12,8 @@ interface TagGroupProps {
   gapless?: boolean;
 }
 
-export const Tag: BulmaComponent<TagProps, 'span'> & {
+declare const Tag: BulmaComponent<TagProps, 'span'> & {
   Group: BulmaComponentWithoutRenderAs<TagGroupProps, 'span'>;
 };
+
+export default Tag;
