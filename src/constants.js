@@ -1,4 +1,4 @@
-export default {
+const CONSTANTS = {
   BREAKPOINTS: {
     DESKTOP: 'desktop',
     TABLET: 'tablet',
@@ -24,3 +24,5 @@ export default {
     dark: 'dark',
   },
 };
+
+export default CONSTANTS;

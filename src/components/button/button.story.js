@@ -65,6 +65,14 @@ Default.argTypes = {
       options: ['default', 'small', 'medium', 'large'],
     },
   },
+  remove: {
+    table: {
+      category: 'Button',
+    },
+    control: {
+      type: 'boolean',
+    },
+  },
   size: {
     table: {
       category: 'Button',

@@ -1,65 +1,49 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from './constants';
 import modifiers from '../../modifiers';
 import Element from '../element';
 
-export default class Image extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const Image = ({
+  className,
+  alt,
+  size,
+  fallback,
+  rounded,
+  src,
+  fullwidth,
+  ...props
+}) => {
+  const [state, setState] = useState({ src });
+  useEffect(() => {
+    setState({ src });
+  }, [src]);
+  let s = size;
+
+  if (typeof size === 'number') {
+    s = `${s}x${s}`;
   }
-
-  onError = () => {
-    this.setState({
-      src: this.props.fallback,
-    });
-  };
-
-  static getDerivedStateFromProps = (props, state) => ({
-    src: state.default !== props.src ? props.src : state.src,
-    default: props.src,
-  });
-
-  render() {
-    const {
-      className,
-      alt,
-      size,
-      fallback,
-      rounded,
-      src,
-      fullwidth,
-      ...props
-    } = this.props;
-    let s = size;
-
-    if (typeof size === 'number') {
-      s = `${s}x${s}`;
-    }
-
-    return (
-      <Element
-        {...props}
-        renderAs="figure"
-        className={classnames('image', className, {
-          [`is-${s}`]: s,
-          'is-fullwidth': fullwidth,
+  return (
+    <Element
+      {...props}
+      renderAs="figure"
+      className={classnames('image', className, {
+        [`is-${s}`]: s,
+        'is-fullwidth': fullwidth,
+      })}
+    >
+      <img
+        className={classnames({
+          'is-rounded': rounded,
         })}
-      >
-        <img
-          className={classnames({
-            'is-rounded': rounded,
-          })}
-          onError={this.onError}
-          src={this.state.src}
-          alt={alt}
-        />
-      </Element>
-    );
-  }
-}
+        onError={() => setState({ src: fallback })}
+        src={state.src}
+        alt={alt}
+      />
+    </Element>
+  );
+};
 
 Image.propTypes = {
   ...modifiers.propTypes,
@@ -84,3 +68,5 @@ Image.defaultProps = {
   fallback: 'https://bulma.io/images/placeholders/480x480.png',
   fullwidth: false,
 };
+
+export default Image;

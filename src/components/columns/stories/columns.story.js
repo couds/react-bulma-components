@@ -16,10 +16,10 @@ const message = (
 );
 
 const options = {
-  sizes: [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(
+  sizes: ['default', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(
     Object.values(CONSTANTS.SIZES),
   ),
-  breakpoints: [null].concat(Object.values(GLOBAL_CONSTANTS.BREAKPOINTS)),
+  breakpoints: ['default'].concat(Object.values(GLOBAL_CONSTANTS.BREAKPOINTS)),
 };
 
 export const Basic = () => (

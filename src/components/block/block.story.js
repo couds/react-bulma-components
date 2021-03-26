@@ -1,8 +1,7 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import { Box, Block, Notification } from 'react-bulma-components';
+import { Box, Block, Notification } from '../..';
 
 export const Blocks = ({ withoutBlock }) => (
   <Box>
