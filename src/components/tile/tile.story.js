@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
-
 import { Tile, Heading, Image, Section, Box } from '../..';
 
-storiesOf('Tile', module).add('Default', () => (
+export const Default = () => (
   <Section>
     <Box>
       <Tile kind="ancestor">
@@ -61,4 +59,4 @@ storiesOf('Tile', module).add('Default', () => (
       </Tile>
     </Box>
   </Section>
-));
+);

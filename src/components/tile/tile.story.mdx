@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as stories from './tile.story.js'
 import { Box, Tile } from '../..';
 
-<Meta title="Component/Tile" />
+<Meta title="Components/Tile" />
 
 # Tile
 
@@ -15,7 +15,5 @@ A simple notification block to alert your users when something happen
 ## Example
 
 <Canvas>
-  <Story name="Tile">
-  <div>story={stories.Default} </div>
-  </Story>
+  <Story story={stories.Default} name="Tile" />
 </Canvas>
