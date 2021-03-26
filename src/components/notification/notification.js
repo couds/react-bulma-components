@@ -9,13 +9,14 @@ import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Notification = ({ children, className, color, ...props }) => (
+const Notification = ({ children, className, color, light, ...props }) => (
   <Element
     {...props}
     className={classnames(
       'notification',
       {
         [`is-${color}`]: color,
+        'is-light': light,
       },
       className,
     )}
@@ -31,6 +32,7 @@ Notification.propTypes = {
   style: PropTypes.shape({}),
   renderAs: renderAsShape,
   color: PropTypes.oneOf(colors),
+  light: PropTypes.bool,
 };
 
 Notification.defaultProps = {
@@ -40,6 +42,7 @@ Notification.defaultProps = {
   style: undefined,
   renderAs: 'div',
   color: undefined,
+  light: undefined,
 };
 
 export default Notification;

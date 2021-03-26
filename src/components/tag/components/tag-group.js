@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import modifiers from '../../../modifiers';
 import Element from '../../element';
 
-const TagGroup = ({ children, className, gapless, ...props }) => (
+const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => (
   <Element
     renderAs="span"
     {...props}
     className={classnames('tags', className, {
-      'has-addons': gapless,
+      'has-addons': gapless || hasAddons,
     })}
   >
     {children}
@@ -21,6 +21,10 @@ TagGroup.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
+  hasAddons: PropTypes.bool,
+  /**
+   * deprecated: use hasAddons
+   */
   gapless: PropTypes.bool,
 };
 
@@ -29,7 +33,8 @@ TagGroup.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  gapless: false,
+  hasAddons: undefined,
+  gapless: undefined,
 };
 
 export default TagGroup;

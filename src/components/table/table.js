@@ -44,7 +44,7 @@ Table.defaultProps = {
   children: null,
   className: undefined,
   style: undefined,
-  size: 'fullwidth',
+  size: undefined,
   striped: true,
   bordered: false,
   hoverable: false,

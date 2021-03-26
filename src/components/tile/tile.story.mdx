@@ -1,0 +1,21 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './tile.story.js'
+import { Box, Tile } from '../..';
+
+<Meta title="Component/Tile" />
+
+# Tile
+
+A simple notification block to alert your users when something happen
+
+## Props
+
+<ArgsTable of={Tile} />
+
+## Example
+
+<Canvas>
+  <Story name="Tile">
+  <div>story={stories.Default} </div>
+  </Story>
+</Canvas>

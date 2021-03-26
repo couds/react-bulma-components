@@ -5,7 +5,7 @@ import modifiers from '../../modifiers';
 import CONSTANTS from '../../constants';
 import Element from '../element';
 
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
+const colors = [undefined].concat(Object.values(CONSTANTS.COLORS));
 
 const Icon = ({ size, color, className, align, children, ...props }) => (
   <Element
