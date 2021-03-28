@@ -1,5 +1,4 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
-import { ArgsTable, Description } from '@storybook/components';
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as stories from './breadcrumb.story';
 import Breadcrumb from './breadcrumb';
 
@@ -11,7 +10,16 @@ A simple navigation component with a customizable separator. Suitable for hierar
 
 You can inform the current page using the active props in `Breadcrumb.Item` component. It will disable the navigation of inner links.
 
-<Story story={stories.Default} name="Breadcrumb" />
+
+## Props
+
+<ArgsTable of={Breadcrumb} />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Breadcrumb" />
+</Canvas>
 
 ## Related
 

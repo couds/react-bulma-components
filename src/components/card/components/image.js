@@ -11,12 +11,10 @@ const CardImage = ({ className, domRef, ...props }) => (
 );
 
 CardImage.propTypes = {
-  ...Element.propTypes,
   ...Image.propTypes,
 };
 
 CardImage.defaultProps = {
-  ...Element.defaultProps,
   ...Image.defaultProps,
 };
 
