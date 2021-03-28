@@ -6,7 +6,6 @@ import Element from '../../element';
 
 const BreadcrumbItem = ({ className, active, children, ...props }) => (
   <Element
-    renderAs="li"
     {...props}
     className={classNames(className, {
       'is-active': active,
@@ -35,6 +34,7 @@ BreadcrumbItem.defaultProps = {
   className: undefined,
   active: false,
   children: undefined,
+  renderAs: 'li',
 };
 
 export default BreadcrumbItem;

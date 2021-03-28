@@ -50,7 +50,7 @@ Element.propTypes = {
 };
 
 Element.defaultProps = {
-  ...Element.defaultProps,
+  ...modifiers.defaultProps,
   domRef: undefined,
   className: undefined,
   style: undefined,

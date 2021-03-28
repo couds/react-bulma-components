@@ -1,78 +1,17 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { ArgsTable, Description } from '@storybook/components';
 import * as stories from './breadcrumb.story';
-import { Breadcrumb } from './breadcrumb';
+import Breadcrumb from './breadcrumb';
 
 <Meta title="Components/Breadcrumb" />
 
 # Breadcrumb
 
-<Story story={stories.Default} />
-
 A simple navigation component with a customizable separator. Suitable for hierarchical navigations.
 
-## Specifying items
+You can inform the current page using the active props in `Breadcrumb.Item` component. It will disable the navigation of inner links.
 
-Use the `items` prop to specify the items your breadcrumb component should have. It accepts an array of objects with the following fields:
-
-| Field    | Type       | Description                                                         |
-| -------- | ---------- | ------------------------------------------------------------------- |
-| `url`    | String     | The URL the item should redirect to                                 |
-| `active` | Boolean    | Whether this item is the current active component in the breadcrumb |
-| `name`   | React node | The content of the item. Can be a string or a React component       |
-
-For example, the demo Breadcrumb component has the following items:
-
-```js
-<Breadcrumb
-  items={[
-    {
-      url: '...',
-      name: 'Storybook',
-      active: false,
-    },
-    {
-      url: '...',
-      name: 'Breadcrumb',
-      active: false,
-    },
-    {
-      url: '...',
-      name: 'Breadcrumb Types',
-      active: true,
-    },
-  ]}
-  ...
-```
-
-## Alignment
-
-By default, Breadcrumb is aligned to the left. You can change this by using the `align` prop.
-Possible values are: `'right'`, `'center'`
-
-Below shows a right-aligned breadcrumb via `align="right"`
-
-<Story name="Alignment" args={{ align: 'right' }}>
-  {stories.Default.bind({})}
-</Story>
-
-## Custom elements for items
-
-You can specify what component the items in the breadcrumb should be rendered as, via the `renderAs` prop. The specified component
-will be the parent component of the component (or string) specified in the `name` field of your `items` objects.  
-
-<Story story={stories.CustomElement} />
-
-This can come in handy when you want to integrate Breadcrumb with third party components. For example, you can render the breadcrumb items as `Links` from `react-router`.  
-
-Remember to use the `hrefAttr` prop to specify the name of the props of your custom component that will receive the url. For `<a />`, that will just be `href`. For `Link` from `react-router`, for example, you should specfiy `hrefAttr` to be `to`:
-
-```js
-<Breadcrumb
-  renderAs={Link}
-  hrefAttr="to"
-  ...
-```
+<Story story={stories.Default} name="Breadcrumb" />
 
 ## Related
 
