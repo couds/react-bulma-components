@@ -8,7 +8,7 @@ import { Message } from '../../index';
 # Menu
 
 <Canvas>
-  <Story story={stories.BasicUsage} />
+  <Story story={stories.BasicUsage} name="Menu" />
 </Canvas>
 
 The `Menu` component allows you to create vertical navigation menus. It has two sub-components:
@@ -17,15 +17,9 @@ The `Menu` component allows you to create vertical navigation menus. It has two 
 - `Menu.List.Item` defines an item in a section. Can be shown as selected using the `active` prop.
   To create nested lists, simply put `Menu.List` as a direct child of `Menu.List.Item`.
 
-<Message color="primary">
-  <Message.Header>Example</Message.Header>
+<Message color="info">
   <Message.Body>
-    How to nest lists
-    <code>
-      {`<Menu.List.Item>
-  <Menu.List>{...}</Menu.List>
-</Menu.List.Item>`}
-    </code>
+    You can create nested menu using Menu.List as a only children of a Menu.Item
   </Message.Body>
 </Message>
 
@@ -44,3 +38,8 @@ The `Menu` component allows you to create vertical navigation menus. It has two 
 ### `Menu.List.Item`
 
 <ArgsTable of={Menu.List.Item} />
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/menu/)

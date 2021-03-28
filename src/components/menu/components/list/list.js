@@ -9,11 +9,7 @@ import Element from '../../../element';
 const MenuList = ({ className, title, ...props }) => (
   <>
     {title && <p className="menu-label">{title}</p>}
-    <Element
-      renderAs="ul"
-      className={classnames('menu-list', className)}
-      {...props}
-    />
+    <Element className={classnames('menu-list', className)} {...props} />
   </>
 );
 
@@ -36,6 +32,7 @@ MenuList.defaultProps = {
   ...Element.defaultProps,
   className: undefined,
   title: undefined,
+  renderAs: 'ul',
 };
 
 export default MenuList;
