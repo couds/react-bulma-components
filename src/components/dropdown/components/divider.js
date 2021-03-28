@@ -5,11 +5,7 @@ import classnames from 'classnames';
 import Element from '../../element';
 
 const DropdownDivider = ({ className, ...props }) => (
-  <Element
-    renderAs="hr"
-    {...props}
-    className={classnames('dropdown-divider', className)}
-  />
+  <Element {...props} className={classnames('dropdown-divider', className)} />
 );
 
 DropdownDivider.propTypes = {
@@ -26,6 +22,7 @@ DropdownDivider.defaultProps = {
   ...Element.defaultProps,
   style: undefined,
   className: undefined,
+  renderAs: 'hr',
 };
 
 export default DropdownDivider;
