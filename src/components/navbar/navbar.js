@@ -13,7 +13,7 @@ import Container from './components/container';
 import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
 import Element from '../element';
-import modifiers from '../../modifiers';
+
 import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
@@ -54,16 +54,11 @@ const Navbar = ({
       <Element
         {...props}
         role="navigation"
-        className={classnames(
-          'navbar',
-          modifiers.classnames(props),
-          className,
-          {
-            'is-transparent': transparent,
-            [`is-fixed-${fixed}`]: fixed,
-            [`is-${color}`]: color,
-          },
-        )}
+        className={classnames('navbar', className, {
+          'is-transparent': transparent,
+          [`is-fixed-${fixed}`]: fixed,
+          [`is-${color}`]: color,
+        })}
       >
         {children}
       </Element>
@@ -72,7 +67,7 @@ const Navbar = ({
 };
 
 Navbar.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -84,7 +79,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

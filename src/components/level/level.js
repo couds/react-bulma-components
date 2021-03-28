@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 import LevelSide from './components/level-side';
 import LevelItem from './components/level-item';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -27,7 +27,7 @@ Level.Side = LevelSide;
 Level.Item = LevelItem;
 
 Level.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   mobile: PropTypes.bool,
@@ -37,7 +37,7 @@ Level.propTypes = {
 };
 
 Level.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   mobile: false,

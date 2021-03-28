@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
 
@@ -33,7 +33,7 @@ const Input = ({
 );
 
 Input.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Adjusts the size of this input.
    */
@@ -74,7 +74,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   size: undefined,
   color: undefined,

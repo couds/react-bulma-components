@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from './constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
 const Image = ({
@@ -46,7 +46,7 @@ const Image = ({
 };
 
 Image.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   src: PropTypes.string,
   alt: PropTypes.string,
@@ -58,7 +58,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   src: '',
   alt: '',

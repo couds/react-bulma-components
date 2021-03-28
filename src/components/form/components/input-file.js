@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Element from '../../element';
-import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
 
@@ -73,7 +72,7 @@ const InputFile = ({
 };
 
 InputFile.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Additional CSS classes to pass to `InputFile`.
    * They will sit alongside pre-applied bulma classes.
@@ -141,7 +140,7 @@ InputFile.propTypes = {
 };
 
 InputFile.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   style: undefined,
   onChange: () => {},

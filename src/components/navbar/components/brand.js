@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const NavbarBrand = ({ className, children, ...props }) => (
@@ -11,14 +11,14 @@ const NavbarBrand = ({ className, children, ...props }) => (
 );
 
 NavbarBrand.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
   children: PropTypes.node,
 };
 
 NavbarBrand.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   style: undefined,
   className: undefined,
   children: null,

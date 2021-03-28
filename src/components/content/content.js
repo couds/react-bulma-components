@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -17,7 +17,7 @@ const Content = ({ children, className, size, ...props }) => (
 );
 
 Content.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Adjust the size of the content.
    */
@@ -36,7 +36,7 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

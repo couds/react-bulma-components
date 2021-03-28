@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const Label = ({ children, className, size, ...props }) => (
@@ -17,7 +17,7 @@ const Label = ({ children, className, size, ...props }) => (
 );
 
 Label.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -26,7 +26,7 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

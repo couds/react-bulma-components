@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
@@ -30,7 +30,7 @@ const Textarea = ({
 );
 
 Textarea.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Additional CSS classes to be passed to `<Form.Textarea />`.
    * They will sit alongside pre-applied Bulma classes.
@@ -64,7 +64,7 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   renderAs: 'textarea',
   className: undefined,
   style: undefined,

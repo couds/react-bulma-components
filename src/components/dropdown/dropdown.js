@@ -6,7 +6,7 @@ import CONSTANTS from '../../constants';
 import DropdownItem from './components/item';
 import DropdownDivider from './components/divider';
 import Button from '../button';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
@@ -134,7 +134,7 @@ Dropdown.Item = DropdownItem;
 Dropdown.Divider = DropdownDivider;
 
 Dropdown.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * The value of the currently selected dropdown item.
    */
@@ -189,7 +189,7 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   closeOnSelect: true,
   className: undefined,
   renderAs: 'div',

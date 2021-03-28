@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
 export default class Pagination extends React.PureComponent {
@@ -174,7 +174,7 @@ export default class Pagination extends React.PureComponent {
 }
 
 Pagination.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /** Current page */
   current: PropTypes.number,
   /** whether to disable the buttons */
@@ -201,7 +201,7 @@ Pagination.propTypes = {
 };
 
 Pagination.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   total: 1,
   current: 1,
   delta: 1,

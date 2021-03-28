@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../../../modifiers';
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
@@ -10,13 +9,13 @@ const CardFooterItem = ({ className, ...props }) => (
 );
 
 CardFooterItem.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
 };
 
 CardFooterItem.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   renderAs: 'div',
 };

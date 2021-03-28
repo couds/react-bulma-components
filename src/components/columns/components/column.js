@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CONSTANTS from '../constants';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(
@@ -54,7 +54,7 @@ const Column = ({
 );
 
 Column.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * The size the column should take. Possible values depends on the sizing method used.
    * See [below](#sizes) for more details.
@@ -128,7 +128,7 @@ Column.propTypes = {
 };
 
 Column.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: undefined,
   className: undefined,
   style: undefined,

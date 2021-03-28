@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../../../modifiers';
+
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
@@ -15,14 +15,14 @@ const PanelTabsTab = ({ className, active, ...props }) => (
 );
 
 PanelTabsTab.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
   active: PropTypes.bool,
 };
 
 PanelTabsTab.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   renderAs: 'a',
   active: false,

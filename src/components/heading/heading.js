@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -31,7 +31,7 @@ const Heading = ({
 );
 
 Heading.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   renderAs: renderAsShape,
@@ -43,7 +43,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   renderAs: 'h1',

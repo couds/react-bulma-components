@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 
 import MessageBody from './components/body';
 import MessageHeader from './components/header';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -28,7 +28,7 @@ Message.Body = MessageBody;
 Message.Header = MessageHeader;
 
 Message.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   /**
    * Additional CSS classes to be passed to `Message`.
@@ -48,7 +48,7 @@ Message.propTypes = {
 };
 
 Message.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

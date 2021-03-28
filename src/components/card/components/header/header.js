@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CardHeaderTitle from './components/header-title';
 import CardHeaderIcon from './components/header-icon';
-import modifiers from '../../../../modifiers';
+
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
@@ -16,13 +16,13 @@ CardHeader.Title = CardHeaderTitle;
 CardHeader.Icon = CardHeaderIcon;
 
 CardHeader.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
 };
 
 CardHeader.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   renderAs: 'div',
 };

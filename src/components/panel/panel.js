@@ -6,7 +6,7 @@ import Block from './components/block';
 import Header from './components/header';
 import Icon from './components/icon';
 import Tabs from './components/tabs';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 import CONSTANTS from '../../constants';
@@ -29,14 +29,14 @@ Panel.Block = Block;
 Panel.Icon = Icon;
 
 Panel.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
   color: PropTypes.oneOf([null, '', ...Object.values(CONSTANTS.COLORS)]),
 };
 
 Panel.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   renderAs: 'nav',
   color: undefined,

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
 
-import { Box, Navbar } from 'react-bulma-components';
+import { Box, Navbar } from '../..';
 
 import CONSTANTS from '../../constants';
 

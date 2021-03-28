@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean } from '@storybook/addon-knobs';
 
-import Tabs from 'react-bulma-components';
+import Tabs from '../..';
 
 storiesOf('Tabs', module)
   .addDecorator((story) => <div style={{ margin: 10 }}>{story()}</div>)

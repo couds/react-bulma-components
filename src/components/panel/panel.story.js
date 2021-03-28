@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
-import { Panel, Form, Icon, Button } from 'react-bulma-components';
+import { Panel, Form, Icon, Button } from '../..';
 
 import CONSTANTS from '../../constants';
 
 storiesOf('Panel', module)
-  .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
+  .addDecorator((story) => <div style={{ margin: 10 }}>{story()}</div>)
   .add('Default', () => (
     <Panel color={select('color', { ...CONSTANTS.COLORS, default: '' })}>
       <Panel.Header>repositories</Panel.Header>

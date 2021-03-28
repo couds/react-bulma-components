@@ -11,7 +11,7 @@ import {
   Section,
   Box,
   Form,
-} from 'react-bulma-components';
+} from '../..';
 
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 

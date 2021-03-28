@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -21,7 +21,7 @@ const Container = ({ children, fluid, breakpoint, className, ...props }) => (
 );
 
 Container.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Whether this container is fluid. If true, the container
    * will be fullwidth, but will also leave 32px on left and right side.
@@ -45,7 +45,7 @@ Container.propTypes = {
 };
 
 Container.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   fluid: false,
   children: null,
   breakpoint: undefined,

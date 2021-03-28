@@ -6,7 +6,7 @@ import CONSTANTS from '../../constants';
 import HeroHead from './components/hero-head';
 import HeroBody from './components/hero-body';
 import HeroFooter from './components/hero-footer';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -41,7 +41,7 @@ Hero.Body = HeroBody;
 Hero.Footer = HeroFooter;
 
 Hero.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -53,7 +53,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

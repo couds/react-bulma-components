@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const DropdownDivider = ({ className, ...props }) => (
@@ -13,7 +13,7 @@ const DropdownDivider = ({ className, ...props }) => (
 );
 
 DropdownDivider.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   style: PropTypes.shape({}),
   /**
    * Additional CSS classes to pass to `<Dropdown.Divider />`.
@@ -23,7 +23,7 @@ DropdownDivider.propTypes = {
 };
 
 DropdownDivider.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   style: undefined,
   className: undefined,
 };

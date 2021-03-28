@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Loader } from 'react-bulma-components';
+import { Loader } from '../..';
 
 storiesOf('Loader', module)
   .add('Default', () => <Loader />)

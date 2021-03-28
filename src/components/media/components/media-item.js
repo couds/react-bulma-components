@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
@@ -20,7 +20,7 @@ const MediaItem = ({ children, className, position, ...props }) => {
 };
 
 MediaItem.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -29,7 +29,7 @@ MediaItem.propTypes = {
 };
 
 MediaItem.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

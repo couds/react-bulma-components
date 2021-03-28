@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
@@ -21,7 +21,7 @@ const Progress = ({ className, value, max, color, size, ...props }) => (
 );
 
 Progress.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   style: PropTypes.shape({}),
   color: PropTypes.oneOf(colors),
@@ -31,7 +31,7 @@ Progress.propTypes = {
 };
 
 Progress.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   style: undefined,
   color: undefined,

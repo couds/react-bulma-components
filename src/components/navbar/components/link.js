@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
@@ -17,7 +17,7 @@ const NavbarLink = ({ className, children, arrowless, ...props }) => (
 );
 
 NavbarLink.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
   children: PropTypes.node,
@@ -26,7 +26,7 @@ NavbarLink.propTypes = {
 };
 
 NavbarLink.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   style: undefined,
   className: undefined,
   children: null,

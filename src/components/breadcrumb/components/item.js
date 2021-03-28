@@ -17,6 +17,7 @@ const BreadcrumbItem = ({ className, active, children, ...props }) => (
 );
 
 BreadcrumbItem.propTypes = {
+  ...Element.propTypes,
   /**
    * Additional CSS classes to pass to `<Breadcrumb.Item />`.
    * They will sit alongside pre-applied bulma classes.
@@ -30,6 +31,7 @@ BreadcrumbItem.propTypes = {
 };
 
 BreadcrumbItem.defaultProps = {
+  ...Element.defaultProps,
   className: undefined,
   active: false,
   children: undefined,

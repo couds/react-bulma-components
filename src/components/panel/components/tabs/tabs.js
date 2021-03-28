@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tab from './components/tab';
-import modifiers from '../../../../modifiers';
+
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
@@ -13,13 +13,13 @@ const PanelTabs = ({ className, ...props }) => (
 PanelTabs.Tab = Tab;
 
 PanelTabs.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
 };
 
 PanelTabs.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   renderAs: 'div',
 };

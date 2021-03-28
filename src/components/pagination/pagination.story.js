@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Pagination } from 'react-bulma-components';
+import { Pagination } from '../..';
 
 storiesOf('Pagination', module)
   .addDecorator((story) => <div style={{ margin: 50 }}>{story()}</div>)

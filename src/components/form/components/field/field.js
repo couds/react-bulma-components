@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import FieldLabel from './field-label';
 import FieldBody from './field-body';
-import modifiers from '../../../../modifiers';
+
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
@@ -35,7 +35,7 @@ Field.Label = FieldLabel;
 Field.Body = FieldBody;
 
 Field.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -47,7 +47,7 @@ Field.propTypes = {
 };
 
 Field.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

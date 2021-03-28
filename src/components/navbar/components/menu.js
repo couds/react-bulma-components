@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { ShowContext } from '../context';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const NavbarMenu = ({ className, children, ...props }) => (
@@ -22,14 +22,14 @@ const NavbarMenu = ({ className, children, ...props }) => (
 );
 
 NavbarMenu.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
   children: PropTypes.node,
 };
 
 NavbarMenu.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   style: undefined,
   className: undefined,
   children: null,

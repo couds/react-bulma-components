@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import CONSTANTS from '../../constants';
 import Column from './components/column';
 import COLUMN_CONSTANTS from './constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
 const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
@@ -49,7 +49,7 @@ Columns.Column = Column;
 Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Specifies gap values between columns on different breakpoints
    */
@@ -94,7 +94,7 @@ Columns.propTypes = {
 };
 
 Columns.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

@@ -6,7 +6,7 @@ import ModalCardHead from './head';
 import ModalCardBody from './body';
 import ModalCardFoot from './foot';
 import ModalCardTitle from './title';
-import modifiers from '../../../../modifiers';
+
 import Element from '../../../element';
 
 const ModalCard = ({ className, onClose, children, ...props }) => (
@@ -24,7 +24,7 @@ ModalCard.Foot = ModalCardFoot;
 ModalCard.Title = ModalCardTitle;
 
 ModalCard.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -32,7 +32,7 @@ ModalCard.propTypes = {
 };
 
 ModalCard.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

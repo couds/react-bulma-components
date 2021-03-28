@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => (
@@ -17,7 +17,7 @@ const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => (
 );
 
 TagGroup.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -29,7 +29,7 @@ TagGroup.propTypes = {
 };
 
 TagGroup.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

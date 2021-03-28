@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import MediaItem from './components/media-item';
 import MediaContent from './components/media-content';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -19,7 +19,7 @@ Media.Item = MediaItem;
 Media.Content = MediaContent;
 
 Media.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -27,7 +27,7 @@ Media.propTypes = {
 };
 
 Media.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

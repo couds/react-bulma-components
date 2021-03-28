@@ -11,7 +11,7 @@ import {
   Container,
   Box,
   Section,
-} from 'react-bulma-components';
+} from '../..';
 
 const style = { textAlign: 'center' };
 

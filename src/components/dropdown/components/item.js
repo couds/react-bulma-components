@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
@@ -19,7 +19,7 @@ const DropdownItem = ({ active, children, value, className, ...props }) => (
 );
 
 DropdownItem.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Whether this dropdown item is currently selected.
    * Shows a highlighted effect if true.
@@ -48,7 +48,7 @@ DropdownItem.propTypes = {
 };
 
 DropdownItem.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   active: false,
   onClick: undefined,
   children: null,

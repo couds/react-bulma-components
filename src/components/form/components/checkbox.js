@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 import renderAsShape from '../../../modifiers/render-as';
 
@@ -27,7 +27,7 @@ const Checkbox = ({
 );
 
 Checkbox.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * A React node that displays the label of this checkbox.
    */
@@ -50,7 +50,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

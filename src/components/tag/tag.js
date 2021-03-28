@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import TagGroup from './components/tag-group';
 import CONSTANTS from '../../constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 import renderAsShape from '../../modifiers/render-as';
 
@@ -35,7 +35,7 @@ const Tag = ({
 Tag.Group = TagGroup;
 
 Tag.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -47,7 +47,7 @@ Tag.propTypes = {
 };
 
 Tag.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   style: undefined,

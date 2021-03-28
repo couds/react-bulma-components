@@ -84,11 +84,11 @@ export const MultiSelect = () => {
     <Form.Select
       multiple
       value={selectedOptions}
-      onChange={(e) =>
-        setSelectedOptions(
+      onChange={(e) => {
+        return setSelectedOptions(
           Array.from(e.target.selectedOptions, (option) => option.value),
-        )
-      }
+        );
+      }}
     >
       {[...Array(10).keys()].map((val) => (
         <option value={`option${val}`}>Option {val}</option>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
 
@@ -64,7 +64,7 @@ const Select = ({
 };
 
 Select.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Children of this component. Usually they are `<option>` elements.
    */
@@ -145,7 +145,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   value: undefined,

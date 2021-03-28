@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const NavbarDivider = ({ className, ...props }) => (
@@ -9,13 +9,13 @@ const NavbarDivider = ({ className, ...props }) => (
 );
 
 NavbarDivider.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   style: PropTypes.shape({}),
   className: PropTypes.string,
 };
 
 NavbarDivider.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   style: undefined,
   className: undefined,
 };

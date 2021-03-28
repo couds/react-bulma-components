@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
+
 import CONSTANTS from '../../constants';
 import Element from '../element';
 
@@ -22,7 +22,7 @@ const Icon = ({ size, color, className, align, children, ...props }) => (
 );
 
 Icon.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.element,
   className: PropTypes.string,
   style: PropTypes.shape({}),
@@ -32,7 +32,7 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   style: undefined,
   size: undefined,

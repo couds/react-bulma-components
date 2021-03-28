@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const Radio = ({
@@ -36,7 +36,7 @@ const Radio = ({
 );
 
 Radio.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   children: PropTypes.node,
   /**
    * Additional CSS classes to be passed to `Form.Radio`.
@@ -68,7 +68,7 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   children: null,
   className: undefined,
   name: undefined,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 /* eslint-disable-next-line import/no-cycle */
 import List from '../list';
-import modifiers from '../../../../../modifiers';
+
 import Element from '../../../../element';
 import renderAsShape from '../../../../../modifiers/render-as';
 
@@ -46,7 +46,7 @@ const MenuListItem = ({
 };
 
 MenuListItem.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
    * Additional CSS classes to be passed to `Menu.List.Item`.
    * They will sit alongside pre-applied Bulma classes.
@@ -68,7 +68,7 @@ MenuListItem.propTypes = {
 };
 
 MenuListItem.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   children: null,
   active: false,

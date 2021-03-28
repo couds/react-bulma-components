@@ -2,31 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Modal,
-  Image,
-  Media,
-  Button,
-  Content,
-  Section,
-  Level,
-} from 'react-bulma-components';
+import { Modal, Image, Media, Button, Content, Section, Level } from '../..';
 
 class OpenModal extends React.Component {
-  static propTypes = {
-    modal: PropTypes.object,
-    children: PropTypes.node.isRequired,
-  };
-
-  static defaultProps = {
-    modal: {},
-  };
-
-  state = {
-    show: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+    };
+  }
 
   open = () => this.setState({ show: true });
+
   close = () => this.setState({ show: false });
 
   render() {
@@ -45,13 +32,22 @@ class OpenModal extends React.Component {
   }
 }
 
+OpenModal.propTypes = {
+  modal: PropTypes.object,
+  children: PropTypes.node.isRequired,
+};
+
+OpenModal.defaultProps = {
+  modal: {},
+};
+
 storiesOf('Modal', module)
   .add('Default', () => (
     <OpenModal modal={{ closeOnEsc: false }}>
       <Modal.Content>
         <Section style={{ backgroundColor: 'white' }}>
-          Click on the {'"X"'} button on the top-right button to close the Modal
-          (pass closeOnEsc=false to the modal to avoid closing it with the
+          Click on the <b>X</b> button on the top-right button to close the
+          Modal (pass closeOnEsc=false to the modal to avoid closing it with the
           keyboard)
         </Section>
       </Modal.Content>

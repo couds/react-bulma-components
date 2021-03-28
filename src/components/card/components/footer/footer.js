@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CardFooterItem from './components/footer-item';
-import modifiers from '../../../../modifiers';
+
 import Element from '../../../element';
 import renderAsShape from '../../../../modifiers/render-as';
 
@@ -13,13 +13,13 @@ const CardFooter = ({ className, ...props }) => (
 CardFooter.Item = CardFooterItem;
 
 CardFooter.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   className: PropTypes.string,
   renderAs: renderAsShape,
 };
 
 CardFooter.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   className: undefined,
   renderAs: 'div',
 };

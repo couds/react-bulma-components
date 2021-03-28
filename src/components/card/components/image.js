@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import Image from '../../image';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const CardImage = ({ className, domRef, ...props }) => (
@@ -11,12 +11,12 @@ const CardImage = ({ className, domRef, ...props }) => (
 );
 
 CardImage.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   ...Image.propTypes,
 };
 
 CardImage.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   ...Image.defaultProps,
 };
 
