@@ -107,107 +107,6 @@ const Dropdown = ({
   );
 };
 
-// class Dropdown2 extends PureComponent {
-//   constructor(props) {
-//     super(props);
-//     this.domRef = props.domRef || React.createRef();
-//     this.state = {
-//       open: false,
-//     };
-//   }
-
-//   componentDidMount() {
-//     document.addEventListener('click', this.close);
-//   }
-
-//   componentWillUnmount() {
-//     document.removeEventListener('click', this.close);
-//   }
-
-//   toggle = (evt) => {
-//     if (this.props.hoverable) {
-//       return;
-//     }
-//     if (evt) {
-//       evt.preventDefault();
-//     }
-//     this.setState(({ open }) => ({ open: !open }));
-//   };
-
-//   select = (value) => () => {
-//     if (this.props.onChange) {
-//       this.props.onChange(value);
-//     }
-//     if (this.props.closeOnSelect) {
-//       this.close();
-//     }
-//   };
-
-//   render() {
-//     const {
-//       className,
-//       children,
-//       value,
-//       color,
-//       align,
-//       right,
-//       up,
-//       hoverable,
-//       label,
-//       onChange,
-//       closeOnSelect,
-//       icon,
-//       ...props
-//     } = this.props;
-//     let current = label;
-
-//     const childrenArray = React.Children.map(children, (child, i) => {
-//       if (
-//         child.type === DropdownItem &&
-//         ((i === 0 && !label) || child.props.value === value)
-//       ) {
-//         current = child.props.children;
-//       }
-//       return React.cloneElement(
-//         child,
-//         child.type === DropdownItem
-//           ? {
-//               active: child.props.value === value,
-//               onClick: this.select(child.props.value),
-//             }
-//           : {},
-//       );
-//     });
-
-//     return (
-//       <Element
-//         {...props}
-//         domRef={this.domRef}
-//         className={classnames('dropdown', className, {
-//           'is-active': this.state.open,
-//           'is-up': up,
-//           'is-right': right || align === 'right',
-//           'is-hoverable': hoverable,
-//         })}
-//       >
-//         <div
-//           className="dropdown-trigger"
-//           role="presentation"
-//           onClick={this.toggle}
-//         >
-//           <Button color={color}>
-//             <span>{current}</span>
-//             {icon}
-//           </Button>
-//         </div>
-//         <div className="dropdown-menu" id="dropdown-menu" role="menu">
-//           <div className="dropdown-content">{childrenArray}</div>
-//         </div>
-//       </Element>
-//     );
-//   }
-// }
-
 Dropdown.Item = DropdownItem;
 
 Dropdown.Divider = DropdownDivider;
@@ -215,7 +114,8 @@ Dropdown.Divider = DropdownDivider;
 Dropdown.propTypes = {
   ...Element.propTypes,
   /**
-   * The value of the currently selected dropdown item.
+   * The value of the currently selected dropdown item. If this value match
+   * with the value passed to a Dropdown.item it will be used as label if the label prop its empty
    */
   value: PropTypes.any,
   /**
@@ -246,7 +146,8 @@ Dropdown.propTypes = {
   hoverable: PropTypes.bool,
   /**
    * A string, or a react component that displays the label of the dropdown
-   * button.
+   * button. if not set it will be use the selected Dropdown.Item or the first one
+   * if there is no selected
    */
   label: PropTypes.node,
   /**

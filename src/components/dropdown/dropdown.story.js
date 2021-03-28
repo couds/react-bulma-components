@@ -1,38 +1,57 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import CONSTANTS from '../../constants';
-import { Container } from '../..';
-import Dropdown from '.';
+import { Box, Dropdown } from '../..';
+import Icon from '../icon';
 
-export const Overview = (args) => (
-  <Dropdown
-    {...args}
-    color={args.color === 'default' ? '' : args.color}
-    onChange={action('selected item')}
-  >
-    <Dropdown.Item renderAs="a" value="item">
-      Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item renderAs="a" value="other">
-      Other Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item renderAs="a" value="active">
-      Active Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Item renderAs="a" value="other 2">
-      Other Dropdown item
-    </Dropdown.Item>
-    <Dropdown.Divider />
-    <Dropdown.Item renderAs="a" value="divider">
-      With divider
-    </Dropdown.Item>
-  </Dropdown>
+const icon = (
+  <Icon>
+    <i className="fas fa-angle-down" aria-hidden="true" />
+  </Icon>
 );
+
+export const Overview = (args) => {
+  return (
+    <Box
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 600,
+      }}
+    >
+      <Dropdown
+        {...args}
+        color={args.color === 'default' ? '' : args.color}
+        onChange={action('selected item')}
+        icon={icon}
+      >
+        <Dropdown.Item renderAs="a" value="item">
+          Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="other">
+          Other Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="active">
+          Active Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="other 2">
+          Other Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item renderAs="a" value="divider">
+          After divider
+        </Dropdown.Item>
+      </Dropdown>
+    </Box>
+  );
+};
 
 Overview.argTypes = {
   label: {
-    defaultValue: 'label',
+    defaultValue: 'Dropdown label',
     control: {
       type: 'text',
     },
@@ -56,60 +75,19 @@ Overview.argTypes = {
       type: 'boolean',
     },
   },
-};
-
-export const CustomContent = (args) => (
-  <Dropdown {...args} onChange={action('selected item')}>
-    <Dropdown.Item value="custom content 1">
-      <p>
-        Insert <strong>any content</strong> you like here
-      </p>
-    </Dropdown.Item>
-    <Dropdown.Divider />
-    <Dropdown.Item value="custom content 2">
-      <p>And it will look nice.</p>
-    </Dropdown.Item>
-    <Dropdown.Divider />
-    <Dropdown.Item renderAs="a" value="link">
-      A normal link
-    </Dropdown.Item>
-  </Dropdown>
-);
-
-CustomContent.argTypes = {
-  label: {
-    defaultValue: 'label',
+  right: {
+    defaultValue: false,
     control: {
-      type: 'text',
+      type: 'boolean',
+    },
+  },
+  up: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
     },
   },
 };
-
-export const RightAlignment = () => (
-  <Container fluid>
-    <Dropdown right label="I am right-aligned" value="item">
-      <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item value="divider">With divider</Dropdown.Item>
-    </Dropdown>
-  </Container>
-);
-
-export const MenuAbove = () => (
-  <div style={{ paddingTop: 200 }}>
-    <Dropdown up label="I am right-aligned" value="item">
-      <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item value="divider">With divider</Dropdown.Item>
-    </Dropdown>
-  </div>
-);
 
 export const Controlled = (args) => {
   const [selected, setSelected] = useState('');
