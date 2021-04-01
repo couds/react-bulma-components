@@ -58,15 +58,6 @@ exports[`Tag component Should use inline styles 1`] = `
 </span>
 `;
 
-exports[`Tag component Should use use color black 1`] = `
-<span
-  className="tag is-black"
->
-  tag
-  black
-</span>
-`;
-
 exports[`Tag component Should use use color danger 1`] = `
 <span
   className="tag is-danger"
@@ -91,15 +82,6 @@ exports[`Tag component Should use use color info 1`] = `
 >
   tag
   info
-</span>
-`;
-
-exports[`Tag component Should use use color light 1`] = `
-<span
-  className="tag is-light"
->
-  tag
-  light
 </span>
 `;
 
@@ -138,20 +120,20 @@ exports[`Tag component Should use use color success 1`] = `
 </span>
 `;
 
+exports[`Tag component Should use use color text 1`] = `
+<span
+  className="tag is-text"
+>
+  tag
+  text
+</span>
+`;
+
 exports[`Tag component Should use use color warning 1`] = `
 <span
   className="tag is-warning"
 >
   tag
   warning
-</span>
-`;
-
-exports[`Tag component Should use use color white 1`] = `
-<span
-  className="tag is-white"
->
-  tag
-  white
 </span>
 `;

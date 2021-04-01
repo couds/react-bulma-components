@@ -6,7 +6,6 @@ import BreadcrumbItem from './components/item';
 
 const Breadcrumb = ({
   className,
-  renderAs,
   separator,
   size,
   align,

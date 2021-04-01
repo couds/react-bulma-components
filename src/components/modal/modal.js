@@ -38,7 +38,6 @@ const Modal = ({
     setPortalContainer(container);
 
     const handleKeydown = (evt) => {
-      console.log('handle key down', evt.keyCode);
       if (evt.keyCode === KEYCODES.ESCAPE && show) {
         onClose();
       }
