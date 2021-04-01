@@ -47,10 +47,3 @@ BasicUsage.argTypes = {
     },
   },
 };
-
-export const DifferentSizes = () => (
-  <Message size="large">
-    <Message.Header>HUUUUGE</Message.Header>
-    <Message.Body>I am a huuuuuge message.</Message.Body>
-  </Message>
-);
