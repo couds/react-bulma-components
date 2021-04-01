@@ -27,6 +27,11 @@ exports[`Modal component Should close the modal 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -76,6 +81,11 @@ exports[`Modal component Should close the modal on ESC key press 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -179,6 +189,11 @@ exports[`Modal component Should not close the modal on ESC key press 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -217,6 +232,11 @@ exports[`Modal component Should not close the modal on other than ESC key press 
       Footer
     </footer>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 
@@ -261,6 +281,11 @@ exports[`Modal component Should open the modal 1`] = `
       />
     </header>
   </div>
+  <button
+    aria-label="close"
+    class="modal-close is-large"
+    type="button"
+  />
 </div>
 `;
 

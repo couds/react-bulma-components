@@ -13,7 +13,7 @@ interface ModalProps {
   className?: string;
 }
 
-interface ModalCardHeadProps {
+interface ModalCardHeaderProps {
   showClose?: boolean;
   onClose?: () => void;
 }
@@ -21,7 +21,7 @@ interface ModalCardHeadProps {
 declare const Modal: BulmaComponentWithoutModifiers<ModalProps> & {
   Content: BulmaComponent<{}, 'div'>;
   Card: BulmaComponent<{}, 'div'> & {
-    Head: BulmaComponent<ModalCardHeadProps, 'header'>;
+    Header: BulmaComponent<ModalCardHeaderProps, 'header'>;
     Body: BulmaComponent<{}, 'section'>;
     Footer: BulmaComponent<{}, 'footer'>;
     Title: BulmaComponent<{}, 'p'>;

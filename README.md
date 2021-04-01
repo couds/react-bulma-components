@@ -14,8 +14,13 @@ React components for [Bulma](http://bulma.io/) (v0.9.1) UI compatible with most 
 - Removed included icons
 - Dropdown component now accept an `icon` prop that will accept the the component to render the icon
 - Removed the `icon` prop from the `Icon` component.
+- Removed `List` component
 
+### Modal
 
+- Renamed `Modal.Card.Head` to `Modal.Card.Header`
+- Renamed `Modal.Card.Foot` to `Modal.Card.Footer`
+- Close button on the top-right corner will be displayed always if the showClose prop is passed, (Before if the children was a card was not displayed)
 ## To Install
 
 ```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
