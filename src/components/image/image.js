@@ -27,7 +27,6 @@ const Image = ({
   return (
     <Element
       {...props}
-      renderAs="figure"
       className={classnames('image', className, {
         [`is-${s}`]: s,
         'is-fullwidth': fullwidth,
@@ -67,6 +66,7 @@ Image.defaultProps = {
   size: undefined,
   fallback: 'https://bulma.io/images/placeholders/480x480.png',
   fullwidth: false,
+  renderAs: 'figure',
 };
 
 export default Image;

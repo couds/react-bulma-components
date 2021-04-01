@@ -2,7 +2,7 @@
 
 exports[`Table component Should concat classname in props with Bulma classname 1`] = `
 <table
-  className="table other-class this-is-a-test is-fullwidth is-striped"
+  className="table other-class this-is-a-test is-striped"
 >
   <p>
     Default
@@ -15,7 +15,7 @@ exports[`Table component Should create a scrollable table 1`] = `
   className="table-container"
 >
   <table
-    className="table is-fullwidth is-striped"
+    className="table is-striped"
   >
     <tr />
   </table>
@@ -26,7 +26,7 @@ exports[`Table component Should exist 1`] = `[Function]`;
 
 exports[`Table component Should have table classname 1`] = `
 <table
-  className="table is-fullwidth is-striped"
+  className="table is-striped"
 >
   Test 
   <a
@@ -39,7 +39,7 @@ exports[`Table component Should have table classname 1`] = `
 
 exports[`Table component Should use inline styles 1`] = `
 <table
-  className="table is-fullwidth is-striped"
+  className="table is-striped"
   style={
     Object {
       "height": 250,

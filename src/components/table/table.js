@@ -15,8 +15,8 @@ const Table = ({
   ...props
 }) => (
   <Element
-    renderAs="table"
     {...props}
+    renderAs="table"
     className={classnames('table', className, {
       [`is-${size}`]: size,
       'is-bordered': bordered,

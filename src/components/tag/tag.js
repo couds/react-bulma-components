@@ -6,7 +6,6 @@ import TagGroup from './components/tag-group';
 import CONSTANTS from '../../constants';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -43,7 +42,6 @@ Tag.propTypes = {
   size: PropTypes.oneOf(['medium', 'large']),
   rounded: PropTypes.bool,
   remove: PropTypes.bool,
-  renderAs: renderAsShape,
 };
 
 Tag.defaultProps = {

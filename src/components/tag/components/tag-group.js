@@ -6,7 +6,6 @@ import Element from '../../element';
 
 const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => (
   <Element
-    renderAs="span"
     {...props}
     className={classnames('tags', className, {
       'has-addons': gapless || hasAddons,
@@ -35,6 +34,7 @@ TagGroup.defaultProps = {
   style: undefined,
   hasAddons: undefined,
   gapless: undefined,
+  renderAs: 'span',
 };
 
 export default TagGroup;

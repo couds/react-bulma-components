@@ -9,7 +9,6 @@ const colors = [undefined].concat(Object.values(CONSTANTS.COLORS));
 
 const Icon = ({ size, color, className, align, children, ...props }) => (
   <Element
-    renderAs="span"
     {...props}
     className={classnames('icon', className, {
       [`is-${size}`]: size,
@@ -39,6 +38,7 @@ Icon.defaultProps = {
   color: undefined,
   children: null,
   align: undefined,
+  renderAs: 'span',
 };
 
 export default Icon;

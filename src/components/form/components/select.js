@@ -45,7 +45,6 @@ const Select = ({
       style={style}
     >
       <Element
-        renderAs="select"
         {...props}
         className={classnames({
           'is-focused': focused,
@@ -146,6 +145,7 @@ Select.propTypes = {
 
 Select.defaultProps = {
   ...Element.defaultProps,
+  renderAs: 'select',
   children: null,
   className: undefined,
   value: undefined,

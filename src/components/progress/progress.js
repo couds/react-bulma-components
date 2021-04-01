@@ -9,7 +9,6 @@ const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Progress = ({ className, value, max, color, size, ...props }) => (
   <Element
-    renderAs="progress"
     {...props}
     value={value}
     max={max}
@@ -38,6 +37,7 @@ Progress.defaultProps = {
   size: undefined,
   value: undefined,
   max: undefined,
+  renderAs: 'progress',
 };
 
 export default Progress;

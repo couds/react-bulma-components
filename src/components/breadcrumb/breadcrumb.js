@@ -14,7 +14,6 @@ const Breadcrumb = ({
   ...props
 }) => (
   <Element
-    renderAs="nav"
     {...props}
     className={classnames('breadcrumb', className, {
       [`has-${separator}-separator`]: separator,

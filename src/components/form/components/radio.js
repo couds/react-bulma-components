@@ -23,7 +23,6 @@ const Radio = ({
     style={style}
   >
     <Element
-      renderAs="input"
       {...props}
       name={name}
       checked={checked}
@@ -76,6 +75,7 @@ Radio.defaultProps = {
   style: undefined,
   disabled: false,
   checked: false,
+  renderAs: 'input',
 };
 
 export default Radio;

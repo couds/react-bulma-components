@@ -6,7 +6,6 @@ import Element from '../../element';
 
 const Label = ({ children, className, size, ...props }) => (
   <Element
-    renderAs="label"
     {...props}
     className={classnames('label', className, {
       [`is-${size}`]: size,
@@ -32,6 +31,7 @@ Label.defaultProps = {
   style: undefined,
   size: undefined,
   htmlFor: undefined,
+  renderAs: 'label',
 };
 
 export default Label;
