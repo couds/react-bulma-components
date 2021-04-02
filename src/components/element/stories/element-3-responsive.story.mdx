@@ -34,7 +34,7 @@ import { Block, Card, Columns, Container, Message, Notification, Table, Element 
       </th>
     </tr>
   </thead>
-  <Element renderAs="tbody" textAlignment="center" textTransform="capitalized">
+  <Element renderAs="tbody" textAlign="center" textTransform="capitalized">
     <tr>
       <td>
         <Notification color="info">mobile</Notification>
@@ -154,7 +154,7 @@ The object has the following fields:
 | --------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
 | `display`       | Refer to the `display` modifier prop       | Acts the same as `display` modifier except the effect is viewport specific |
 | `textSize`      | Refer to the `textSize` modifier prop      | Changes text size depending on the viewport                                |
-| `textAlignment` | Refer to the `textAlignment` modifier prop | Changes text alignment depending on the viewport                           |
+| `textAlign` | Refer to the `textAlign` modifier prop | Changes text alignment depending on the viewport                           |
 | `invisible`     | Boolean                                    | if true will render the element with `is-invisible` bulma class            |
 | `only`          | Boolean                                    | If tru will apply the values of the other fields only on the breakpoint instead of following the table above            |
 
@@ -166,7 +166,7 @@ As an example, consider the following:
   desktop={{
     only: true,
     display: 'flex',
-    textAlignment: 'center',
+    textAlign: 'center',
   }}
   widescreen={{ display: 'inline' }}
 />

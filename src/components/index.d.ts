@@ -80,7 +80,7 @@ export interface ResponsiveModifiers {
   display?: DisplayModifier;
   textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   invisible?: Boolean;
-  textAlignment?: 'center' | 'justify' | 'left' | 'right';
+  textAlign?: 'center' | 'justify' | 'left' | 'right';
 }
 
 interface ResponsiveProps {
@@ -103,7 +103,7 @@ interface ColorProps {
 
 interface TypographyProps {
   textSize?: 1 | 2 | 3 | 4 | 5 | 6;
-  textAlignment?: 'center' | 'justify' | 'left' | 'right';
+  textAlign?: 'center' | 'justify' | 'left' | 'right';
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
   textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code';

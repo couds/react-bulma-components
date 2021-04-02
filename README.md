@@ -15,6 +15,8 @@ React components for [Bulma](http://bulma.io/) (v0.9.1) UI compatible with most 
 - Dropdown component now accept an `icon` prop that will accept the the component to render the icon
 - Removed the `icon` prop from the `Icon` component.
 - Removed `List` component
+- Renamed `TextAligment` to `TextAlign` on common props
+- Deprecated `gapless` to `hasAddons` in `Button.Group`
 
 ### Modal
 

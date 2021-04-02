@@ -128,7 +128,7 @@ Responsiveness.args = {
     size: 8,
     offset: 2,
     narrow: false,
-    textAlignment: 'center',
+    textAlign: 'center',
     textSize: 3,
   },
   tablet: {

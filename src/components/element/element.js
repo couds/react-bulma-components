@@ -5,15 +5,15 @@ import { normalizeAlign } from '../../services/normalizer';
 
 const buildResponsiveness = (
   currentViewport,
-  { display, textAlignment, textSize, only, invisible } = {},
+  { display, textAlign, textSize, only, invisible } = {},
 ) => {
   const suffix = only ? '-only' : '';
 
   return classnames({
     [`is-${display}-${currentViewport}${suffix}`]: display,
     [`has-text-${normalizeAlign(
-      textAlignment,
-    )}-${currentViewport}${suffix}`]: textAlignment,
+      textAlign,
+    )}-${currentViewport}${suffix}`]: textAlign,
     [`is-size-${textSize}-${currentViewport}${suffix}`]: textSize,
     [`is-invisible-${currentViewport}${suffix}`]: invisible,
   });
@@ -62,7 +62,7 @@ export const useElementClassNames = ({
   textTransform,
   italic,
   textSize,
-  textAlignment,
+  textAlign,
   textFamily,
   // responsive
   mobile,
@@ -117,7 +117,7 @@ export const useElementClassNames = ({
         [`pl-${pl}`]: pl,
         [`px-${px}`]: px,
         [`py-${py}`]: py,
-        [`has-text-${normalizeAlign(textAlignment)}`]: textAlignment,
+        [`has-text-${normalizeAlign(textAlign)}`]: textAlign,
         [`has-text-weight-${textWeight}`]: textWeight,
         [`is-size-${textSize}`]: textSize,
         [`is-${textTransform}`]: textTransform,
@@ -230,7 +230,7 @@ Element.propTypes = {
   flexGrow: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
   // Typography
   textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-  textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+  textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
   textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
   textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
   textFamily: PropTypes.string,
@@ -288,7 +288,7 @@ Element.propTypes = {
   py: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
   mobile: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -300,7 +300,7 @@ Element.propTypes = {
   }),
   tablet: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -313,7 +313,7 @@ Element.propTypes = {
   }),
   desktop: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -326,7 +326,7 @@ Element.propTypes = {
   }),
   widescreen: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -339,7 +339,7 @@ Element.propTypes = {
   }),
   fullhd: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -351,7 +351,7 @@ Element.propTypes = {
   }),
   touch: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -363,7 +363,7 @@ Element.propTypes = {
   }),
   untilWidrscreen: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
@@ -375,7 +375,7 @@ Element.propTypes = {
   }),
   untilFullhd: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-    textAlignment: PropTypes.oneOf(['centered', 'justify', 'left', 'right']),
+    textAlign: PropTypes.oneOf(['centered', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
       'flex',
