@@ -97,14 +97,6 @@ describe('Button component', () => {
     component.simulate('click');
     expect(onClick).toHaveBeenCalledTimes(0);
   });
-  it('Should have a call default onClick is no listener is set', () => {
-    const spy = jest.spyOn(Button.defaultProps, 'onClick');
-    const component = shallow(<Button />);
-    component.simulate('click');
-    component.simulate('click');
-    expect(spy).toHaveBeenCalledTimes(2);
-    Button.defaultProps.onClick.mockRestore();
-  });
   it('Should forward ref', () => {
     const testRef = React.createRef();
     mount(<Button domRef={testRef} />);

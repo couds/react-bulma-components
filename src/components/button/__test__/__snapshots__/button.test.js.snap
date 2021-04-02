@@ -6,16 +6,12 @@ exports[`Button component Button Group component Should align to the right 1`] =
 >
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 0
   </button>
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 1
@@ -29,16 +25,12 @@ exports[`Button component Button Group component Should be a default list of but
 >
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 0
   </button>
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 1
@@ -52,16 +44,12 @@ exports[`Button component Button Group component Should be centered 1`] = `
 >
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 0
   </button>
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 1
@@ -75,16 +63,12 @@ exports[`Button component Button Group component Should concat class names in pr
 >
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 0
   </button>
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 1
@@ -98,16 +82,12 @@ exports[`Button component Button Group component Should group buttons together 1
 >
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 1
   </button>
   <button
     className="button"
-    disabled={false}
-    onClick={[Function]}
     tabIndex={0}
   >
     test 2
@@ -118,8 +98,6 @@ exports[`Button component Button Group component Should group buttons together 1
 exports[`Button component Should be a Large Primary Button 1`] = `
 <button
   className="is-primary is-large button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -127,8 +105,6 @@ exports[`Button component Should be a Large Primary Button 1`] = `
 exports[`Button component Should be a Primary Button 1`] = `
 <button
   className="is-primary button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -136,8 +112,6 @@ exports[`Button component Should be a Primary Button 1`] = `
 exports[`Button component Should be a default Button 1`] = `
 <button
   className="button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -145,8 +119,6 @@ exports[`Button component Should be a default Button 1`] = `
 exports[`Button component Should be a reset form button 1`] = `
 <button
   className="button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
   type="reset"
 />
@@ -155,8 +127,6 @@ exports[`Button component Should be a reset form button 1`] = `
 exports[`Button component Should be a submit form button 1`] = `
 <button
   className="button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
   type="submit"
 />
@@ -165,9 +135,7 @@ exports[`Button component Should be a submit form button 1`] = `
 exports[`Button component Should be an anchor button 1`] = `
 <a
   className="button"
-  disabled={false}
   href="https://github.com/couds/react-bulma-components"
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -179,8 +147,6 @@ exports[`Button component Should expose Button Group 1`] = `[Function]`;
 exports[`Button component Should render active state 1`] = `
 <button
   className="is-active button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -196,8 +162,6 @@ exports[`Button component Should render as a React element link with to prop 1`]
 exports[`Button component Should render as a html button 1`] = `
 <button
   className="is-danger button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -205,8 +169,6 @@ exports[`Button component Should render as a html button 1`] = `
 exports[`Button component Should render as a static Button 1`] = `
 <span
   className="is-primary is-static button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -222,8 +184,6 @@ exports[`Button component Should render be disabled 1`] = `
 exports[`Button component Should render focused state 1`] = `
 <button
   className="is-focused button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -231,8 +191,6 @@ exports[`Button component Should render focused state 1`] = `
 exports[`Button component Should render hovered state 1`] = `
 <button
   className="is-hovered button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;
@@ -240,8 +198,6 @@ exports[`Button component Should render hovered state 1`] = `
 exports[`Button component Should render loading state 1`] = `
 <button
   className="is-loading button"
-  disabled={false}
-  onClick={[Function]}
   tabIndex={0}
 />
 `;

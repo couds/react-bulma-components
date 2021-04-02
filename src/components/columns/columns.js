@@ -49,7 +49,6 @@ Columns.Column = Column;
 Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
-  ...Element.propTypes,
   /**
    * Specifies gap values between columns on different breakpoints
    */
@@ -84,20 +83,10 @@ Columns.propTypes = {
    * Whether columns should be **vertically centered** inside `<Columns />`
    */
   vCentered: PropTypes.bool,
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to be passed to `<Columns />`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
 };
 
 Columns.defaultProps = {
   ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   breakpoint: undefined,
   gapless: false,
   centered: false,

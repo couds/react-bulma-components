@@ -218,4 +218,6 @@ Pagination.defaultProps = {
   next: 'Next',
   previous: 'Previous',
   renderAs: 'nav',
+  showPrevNext: true,
+  autoHide: true,
 };
