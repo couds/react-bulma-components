@@ -1,0 +1,67 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Block, Card, Columns, Container, Message, Notification, Table, Element } from '../../..';
+
+<Meta title="Core Component/Basics" />
+
+# The Element component
+### One component to rule them all
+
+Under the hood, every Bulma component renders an `<Element />` component that serves as a layer of abstraction
+over plain HTML element.
+
+This layer is required in order to support Bulma helpers for every component.
+It also gives components flexibility to be rendered as different components. The layer provides every component
+a set of common props that you can use to utilize Bulma helpers and customize how components are rendered.
+
+## Bulma helpers
+
+`react-bulma-components` provide support for Bulma helpers in the form of common props among all components.
+
+Unless otherwise specified, **all props described below are available to all components**.
+
+## Some common props values
+
+### Color
+
+Some props like `backgroundColor` or `textColor` allow you to pass the name of the color variable, we implemente the basic colors of Bulma
+
+<Block>
+<Container>
+  <Columns>
+    {[
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'grey',
+    ].map((color) => (
+      <Columns.Column size={3}>
+        <Columns>
+          <Columns.Column style={{ textTransform: 'capitalize' }}>{color}</Columns.Column>
+        </Columns>
+        <Card>
+          <Notification color={color}>{color}</Notification>
+        </Card>
+      </Columns.Column>
+    ))}
+  </Columns>
+</Container>
+</Block>
+
+
+### Light/Dark versions (Bulma >= 0.9.0)
+
+To use the light/dark variants of the colors, you can append `-light` or `-dark` at the end of their color name or use the `colorVariant` prop.
+For example, `primary-light` corresponds to the light version of the `primary` color.
+
+<Block>
+<Message color="info">
+  <Message.Body>
+    Light/dark variants of colors are available only on Bulma since 0.9.0
+  </Message.Body>
+</Message>
+</Block>
+

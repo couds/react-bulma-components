@@ -14,7 +14,7 @@ const normalizeAlign = (align) => {
 
 const buildResponsiveness = (
   currentViewport,
-  { display, textAlignment, textSize, only } = {},
+  { display, textAlignment, textSize, only, invisible } = {},
 ) => {
   const suffix = only ? '-only' : '';
 
@@ -22,6 +22,7 @@ const buildResponsiveness = (
     [`is-${display}-${currentViewport}${suffix}`]: display,
     [`has-text-${textAlignment}-${currentViewport}${suffix}`]: textAlignment,
     [`is-size-${textSize}-${currentViewport}${suffix}`]: textSize,
+    [`is-invisible-${currentViewport}${suffix}`]: invisible,
   });
 };
 
@@ -168,8 +169,32 @@ const Element = ({
 };
 
 Element.propTypes = {
-  textColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  textColor: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  backgroundColor: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
   colorVariant: PropTypes.oneOf(['light', 'dark']),
   // Flex
   flexDirection: PropTypes.oneOf([

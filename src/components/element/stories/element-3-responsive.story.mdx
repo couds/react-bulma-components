@@ -1,81 +1,13 @@
 import { Meta, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Block, Card, Columns, Container, Message, Notification, Table, Element } from '../..';
+import { Block, Card, Columns, Container, Message, Notification, Table, Element } from '../../..';
 
-<Meta title="Core Component/Basics" />
+<Meta title="Core Component/Responsive" />
 
 # The Element component
-### One component to rule them all
-
-Under the hood, every Bulma component renders an `<Element />` component that serves as a layer of abstraction
-over plain HTML element.
-
-This layer is required in order to support Bulma helpers for every component.
-It also gives components flexibility to be rendered as different components. The layer provides every component
-a set of common props that you can use to utilize Bulma helpers and customize how components are rendered.
-
-<ArgsTable of={Element} />
-
-## Bulma helpers
-
-`react-bulma-components` provide support for Bulma helpers in the form of common props among all components.
-
-Unless otherwise specified, **all props described below are available to all components**.
-
-### Color
-
-Bulma color helpers offer the following color variants:
-
-<br />
-
-<Container>
-  <Columns>
-    {[
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'grey',
-    ].map((color) => (
-      <Columns.Column size={3}>
-        <Columns>
-          <Columns.Column style={{ textTransform: 'capitalize' }}>{color}</Columns.Column>
-        </Columns>
-        <Card>
-          <Notification color={color}>{color}</Notification>
-        </Card>
-      </Columns.Column>
-    ))}
-  </Columns>
-</Container>
-
-<br />
-
-#### Light/Dark versions (Bulma >= 0.9.0)
-
-To use the light/dark variants of the colors, you can append `-light` or `-dark` at the end of their color name.
-For example, `primary-light` corresponds to the light version of the `primary` color.
-
-<Message color="info">
-  <Message.Body>
-    Light/dark variants of colors are available only on Bulma since 0.9.0
-  </Message.Body>
-</Message>
-
-You can customize colors of components using the following helper props.
-
-| Prop name         | Values               | Description                                 |
-| ----------------- | -------------------- | ------------------------------------------- |
-| `textColor`       | All supported colors | Changes the text color of a component       |
-| `backgroundColor` | All supported colors | Changes the background color of a component |
-                            |
-
 ### Visibility/Responsive helpers
 
 <Block>
-You can control de visibility of each component per breakpoint, See the following table for details
+  You can control de visibility of each component per breakpoint, See the following table for details
 </Block>
 <Table bordered size="fullwidth">
   <thead>
@@ -206,19 +138,13 @@ You can control de visibility of each component per breakpoint, See the followin
 
 First, the simple props:
 
-| Prop name   | Values                                                   | Description                                                    |
-| ----------- | -------------------------------------------------------- | -------------------------------------------------------------- |
-| `display`   | 'block', 'flex', 'inline', 'inline-block', 'inline-flex' | Corresponds to display classes in Bulma                        |
-| `invisible` | boolean                                                  | Corresponds to CSS: `visibility: hidden`                       |
-| `hidden`    | boolean                                                  | Hides the component                                            |
-| `srOnly`    | boolean                                                  | Hides component but screen readers can still see the component |
+| Prop name   | Values                                                             | Description                                                    |
+| ----------- | ------------------------------------------------------------------ | -------------------------------------------------------------- |
+| `display`   | 'block', 'flex', 'inline', 'inline-block', 'inline-flex', 'hidden' | Corresponds to display classes in Bulma                        |
+| `invisible` | boolean                                                            | Corresponds to CSS: `visibility: hidden`                       |
+| `srOnly`    | boolean                                                            | Hides component but screen readers can still see the component |
 
 Now, on to the responsive helpers.
-
-Bulma responsive modifiers are available via props for each viewport. Each viewport prop has a special "Only" version
-that corresponds to `-only` modifier - the specified modifiers will only take effect at that specific viewport.
-
-For example, mobile viewport modifiers have two props: `mobile` and `mobileOnly`.
 
 Each viewport prop accepts an object of available modifiers that can vary depending on the current viewport.
 Each modifier in the object acts the same as their non viewport specific counterpart except their effect depends on the viewport.
@@ -227,19 +153,22 @@ The object has the following fields:
 | Field name      | Values                                     | Description                                                                |
 | --------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
 | `display`       | Refer to the `display` modifier prop       | Acts the same as `display` modifier except the effect is viewport specific |
-| `hide`          | boolean                                    | Hides the component depending on the viewport                              |
 | `textSize`      | Refer to the `textSize` modifier prop      | Changes text size depending on the viewport                                |
 | `textAlignment` | Refer to the `textAlignment` modifier prop | Changes text alignment depending on the viewport                           |
+| `invisible`     | Boolean                                    | if true will render the element with `is-invisible` bulma class            |
+| `only`          | Boolean                                    | If tru will apply the values of the other fields only on the breakpoint instead of following the table above            |
 
 As an example, consider the following:
 
 ```js
 <Container
-  mobile={{ hide: true }}
-  desktopOnly={{
+  mobile={{ display: 'hidden' }}
+  desktop={{
+    only: true,
     display: 'flex',
-    textAlignment: 'centered',
+    textAlignment: 'center',
   }}
+  widescreen={{ display: 'inline' }}
 />
 ```
 
@@ -248,6 +177,12 @@ The modifier props translate to the following Bulma classes:
 - `'is-hidden-mobile'`
 - `'is-flex-desktop-only'`
 - `'has-text-centered-desktop-only'`
+- `'is-inline-widescreen'`
 
 The `Container` will be hidden on `mobile` only;
-it will display children in flex and center text on `desktop` viewport **only**.
+it will display children in flex and center text on `desktop` viewport **only** and will be display inline on widescreen and up.
+
+## Notes
+
+- The breakpoints `until-widescreen` and `until-fullhd` do not have the bulma class for responsiveness **yet**,
+please follow this [PR](https://github.com/jgthms/bulma/pull/3299) for details
