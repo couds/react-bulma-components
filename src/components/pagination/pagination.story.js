@@ -1,27 +1,73 @@
 import React from 'react';
-
-import { storiesOf } from '@storybook/react';
-
 import { Pagination } from '../..';
 
-storiesOf('Pagination', module)
-  .addDecorator((story) => <div style={{ margin: 50 }}>{story()}</div>)
-  .add('Default', () => <Pagination current={3} total={5} delta={1} />)
-  .add('Without page number', () => (
-    <Pagination current={3} total={5} delta={0} />
-  ))
-  .add('Without prev/next button', () => (
-    <Pagination showPrevNext={false} current={3} total={5} delta={1} />
-  ))
-  .add('With all buttons manually disabled', () => (
-    <Pagination disabled current={3} total={5} />
-  ))
-  .add('With first/last pages numbers', () => (
-    <>
-      <Pagination showFirstLast current={3} total={5} delta={1} />
-      <Pagination showFirstLast current={1} total={5} delta={1} />
-      <Pagination showFirstLast current={5} total={5} delta={1} />
-      <Pagination showFirstLast current={2} total={2} delta={1} />
-      <Pagination showFirstLast current={1} total={2} delta={1} />
-    </>
-  ));
+export const Default = (args) => {
+  return <Pagination {...args} />;
+};
+
+Default.argTypes = {
+  showFirstLast: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: true,
+  },
+  showPrevNext: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: true,
+  },
+  current: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 3,
+  },
+  total: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 5,
+  },
+  delta: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 1,
+  },
+  disabled: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  rounded: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  size: {
+    control: {
+      type: 'select',
+      options: ['small', 'medium', 'large'],
+    },
+  },
+  position: {
+    control: {
+      type: 'select',
+      options: ['center', 'right'],
+    },
+  },
+  previous: {
+    control: {
+      type: 'text',
+    },
+    defaultValue: 'Previous',
+  },
+  next: {
+    control: {
+      type: 'text',
+    },
+    defaultValue: 'Next',
+  },
+};

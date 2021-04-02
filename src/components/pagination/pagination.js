@@ -98,6 +98,7 @@ const Pagination = ({
                     onClick={() => onChange(1)}
                     aria-label="Page 1"
                     aria-current="page"
+                    disabled={disabled}
                   >
                     1
                   </a>
@@ -144,6 +145,7 @@ const Pagination = ({
                     onClick={() => onChange(total)}
                     aria-label={`Page ${total}`}
                     aria-current="page"
+                    disabled={disabled}
                   >
                     {total}
                   </a>
@@ -158,6 +160,11 @@ const Pagination = ({
 };
 
 Pagination.propTypes = {
+  /**
+   * This function its called when the user click on ano button that trigger a page change
+   * the parameter of the function is the new page number
+   */
+  onChange: PropTypes.func.isRequired,
   /** Current page */
   current: PropTypes.number,
   /** whether to disable the buttons */
@@ -166,17 +173,24 @@ Pagination.propTypes = {
   total: PropTypes.number,
   /** Amount og pages to display at the left and right of the current (if delta 2 and current page is 3, the paginator will display pages from 1 to 5) */
   delta: PropTypes.number,
-  onChange: PropTypes.func,
   /** Text of the Next button */
   next: PropTypes.node,
   /** Text of the Previous button */
   previous: PropTypes.node,
   showPrevNext: PropTypes.bool,
   showFirstLast: PropTypes.bool,
+  /**
+   * If true will hide the pagination if `total == 1`
+   */
   autoHide: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   position: PropTypes.oneOf(['center', 'right']),
   rounded: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Pagination.defaultProps = {
