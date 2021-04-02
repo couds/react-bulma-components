@@ -13,7 +13,7 @@ interface PaginationProps {
   showPrevNext?: boolean;
   showFirstLast?: boolean;
   size?: Size;
-  position?: 'centered' | 'right';
+  position?: 'center' | 'right';
   rounded?: boolean;
   autoHide?: boolean;
 }

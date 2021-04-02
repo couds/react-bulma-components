@@ -4,6 +4,16 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
+const normalizeAlign = (align) => {
+  if (align === 'center') {
+    return 'centered';
+  }
+  if (align === 'justify') {
+    return 'justifyed';
+  }
+  return align;
+};
+
 export default class Pagination extends React.PureComponent {
   goToPage = (page) => (evt) => {
     evt.preventDefault();
@@ -72,7 +82,7 @@ export default class Pagination extends React.PureComponent {
         {...props}
         className={classnames('pagination', className, {
           [`is-${size}`]: size,
-          [`is-${position}`]: position,
+          [`is-${normalizeAlign(position)}`]: position,
           'is-rounded': rounded,
         })}
         aria-label="pagination"
@@ -196,7 +206,7 @@ Pagination.propTypes = {
    */
   className: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  position: PropTypes.oneOf(['centered', 'right']),
+  position: PropTypes.oneOf(['center', 'right']),
   rounded: PropTypes.bool,
 };
 
@@ -205,16 +215,7 @@ Pagination.defaultProps = {
   total: 1,
   current: 1,
   delta: 1,
-  onChange: () => {},
   next: 'Next',
   previous: 'Previous',
-  showPrevNext: true,
-  showFirstLast: false,
-  disabled: undefined,
-  autoHide: true,
-  className: undefined,
-  size: undefined,
-  position: undefined,
-  rounded: false,
   renderAs: 'nav',
 };
