@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
 const NavbarContainer = ({ className, children, position, ...props }) => (
   <Element
@@ -21,19 +20,10 @@ const NavbarContainer = ({ className, children, position, ...props }) => (
 
 NavbarContainer.propTypes = {
   ...Element.propTypes,
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
-  children: PropTypes.node,
-  renderAs: renderAsShape,
   position: PropTypes.oneOf(['start', 'end']),
 };
 
 NavbarContainer.defaultProps = {
-  ...Element.defaultProps,
-  style: undefined,
-  className: undefined,
-  children: null,
-  renderAs: 'div',
   position: 'start',
 };
 

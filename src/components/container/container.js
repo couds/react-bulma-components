@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
 
@@ -31,27 +30,10 @@ Container.propTypes = {
    * Specifies the breakpoint at which the container will stop being fullwidth.
    */
   breakpoint: PropTypes.oneOf(breakpoints),
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to pass to `<Container />`.
-   * They will sit alongside pre-applied bulma classes.
-   */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  /**
-   * Specifies what component `<Container />` should be rendered as.
-   */
-  renderAs: renderAsShape,
 };
 
 Container.defaultProps = {
   ...Element.defaultProps,
-  fluid: false,
-  children: null,
-  breakpoint: undefined,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
 };
 
 export default Container;

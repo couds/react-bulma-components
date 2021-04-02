@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -27,22 +26,8 @@ const Notification = ({ children, className, color, light, ...props }) => (
 
 Notification.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   color: PropTypes.oneOf(colors),
   light: PropTypes.bool,
-};
-
-Notification.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
-  color: undefined,
-  light: undefined,
 };
 
 export default Notification;

@@ -8,7 +8,6 @@ import Icon from './components/icon';
 import Tabs from './components/tabs';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 import CONSTANTS from '../../constants';
 
 const Panel = ({ color, className, ...props }) => (
@@ -30,16 +29,11 @@ Panel.Icon = Icon;
 
 Panel.propTypes = {
   ...Element.propTypes,
-  className: PropTypes.string,
-  renderAs: renderAsShape,
   color: PropTypes.oneOf([null, '', ...Object.values(CONSTANTS.COLORS)]),
 };
 
 Panel.defaultProps = {
-  ...Element.defaultProps,
-  className: undefined,
   renderAs: 'nav',
-  color: undefined,
 };
 
 export default Panel;

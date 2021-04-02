@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
 const Control = ({
   children,
@@ -31,10 +30,6 @@ const Control = ({
 
 Control.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   fullwidth: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
@@ -44,10 +39,6 @@ Control.propTypes = {
 
 Control.defaultProps = {
   ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
   fullwidth: undefined,
   iconLeft: undefined,
   iconRight: undefined,

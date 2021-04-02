@@ -14,8 +14,6 @@ import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
 import Element from '../element';
 
-import renderAsShape from '../../modifiers/render-as';
-
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 let htmlClass = '';
@@ -68,26 +66,14 @@ const Navbar = ({
 
 Navbar.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   transparent: PropTypes.bool,
-  renderAs: renderAsShape,
   fixed: PropTypes.oneOf(['top', 'bottom']),
   color: PropTypes.oneOf(colors),
   active: PropTypes.bool,
 };
 
 Navbar.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'nav',
-  transparent: false,
-  active: false,
-  fixed: undefined,
-  color: undefined,
 };
 
 Navbar.Brand = Brand;

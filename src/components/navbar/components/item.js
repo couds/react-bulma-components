@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
 const NavbarItem = ({
   className,
@@ -39,27 +38,14 @@ const NavbarItem = ({
 
 NavbarItem.propTypes = {
   ...Element.propTypes,
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
   active: PropTypes.bool,
   dropdown: PropTypes.bool,
   dropdownUp: PropTypes.bool,
   hoverable: PropTypes.bool,
-  children: PropTypes.node,
   arrowless: PropTypes.bool,
-  renderAs: renderAsShape,
 };
 
 NavbarItem.defaultProps = {
-  ...Element.defaultProps,
-  style: undefined,
-  className: undefined,
-  active: undefined,
-  children: null,
-  dropdown: undefined,
-  hoverable: undefined,
-  dropdownUp: undefined,
-  arrowless: undefined,
   renderAs: 'a',
 };
 

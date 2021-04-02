@@ -12,7 +12,7 @@ export const parameters = {
   viewMode: 'docs',
   options: {
     storySort: {
-      order: ['Welcome', 'Basics', 'Columns', 'Elements', 'Components', 'Form', 'Layout'],
+      order: ['Welcome', 'Core Component', 'Columns', 'Elements', 'Components', 'Form', 'Layout'],
     },
   },
   previewTabs: {

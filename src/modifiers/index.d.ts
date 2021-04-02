@@ -73,11 +73,11 @@ type DisplayModifier =
   | 'flex'
   | 'inline'
   | 'inline-block'
-  | 'inline-flex';
+  | 'inline-flex'
+  | 'hidden';
 
-interface ResponsiveModifiers {
+export interface ResponsiveModifiers {
   display?: DisplayModifier;
-  hide?: boolean;
   textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
 }
@@ -85,17 +85,13 @@ interface ResponsiveModifiers {
 interface ResponsiveProps {
   display?: DisplayModifier;
   mobile?: ResponsiveModifiers;
-  tablet?: ResponsiveModifiers;
-  desktop?: ResponsiveModifiers;
-  widescreen?: ResponsiveModifiers;
+  tablet?: ResponsiveModifiers & { only?: Boolean; };
+  desktop?: ResponsiveModifiers & { only?: Boolean; };
+  widescreen?: ResponsiveModifiers & { only?: Boolean; };
   fullhd?: ResponsiveModifiers;
   touch?: ResponsiveModifiers;
-  mobileOnly?: ResponsiveModifiers;
-  tabletOnly?: ResponsiveModifiers;
-  desktopOnly?: ResponsiveModifiers;
-  widescreenOnly?: ResponsiveModifiers;
-  fullhdOnly?: ResponsiveModifiers;
-  touchOnly?: ResponsiveModifiers;
+  untilWidescreen?: ResponsiveModifiers;
+  untilFullhd?: ResponsiveModifiers;
 }
 
 interface ColorProps {

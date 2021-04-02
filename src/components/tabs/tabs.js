@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import Tab from './components/tab';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const Tabs = ({
   children,
@@ -34,27 +33,11 @@ Tabs.Tab = Tab;
 
 Tabs.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   align: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /** This is called style on Bulma documentation */
   type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
   fullwidth: PropTypes.bool,
-};
-
-Tabs.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
-  align: undefined,
-  size: undefined,
-  type: undefined,
-  fullwidth: false,
 };
 
 export default Tabs;

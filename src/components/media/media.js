@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import MediaItem from './components/media-item';
 import MediaContent from './components/media-content';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const Media = ({ children, className, ...props }) => (
   <Element {...props} className={classnames('media', className, {})}>
@@ -20,17 +18,9 @@ Media.Content = MediaContent;
 
 Media.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
 };
 
 Media.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'article',
 };
 

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
 const DropdownItem = ({ active, children, value, className, ...props }) => (
   <Element
@@ -33,25 +32,10 @@ DropdownItem.propTypes = {
    * The value is used to determine if this item is active or not.
    */
   value: PropTypes.any.isRequired,
-  children: PropTypes.node,
-  /**
-   * Called whenever this item is clicked.
-   */
-  onClick: PropTypes.func,
-  /**
-   * Defines what this dropdown item should be rendered as.
-   * Can be a React component or an HTML element.
-   * Usually this is `'a'`, but if you want to put custom content inside
-   * this item, you need to set this to `'div'`.
-   */
-  renderAs: renderAsShape,
 };
 
 DropdownItem.defaultProps = {
   ...Element.defaultProps,
-  active: false,
-  onClick: undefined,
-  children: null,
 };
 
 export default DropdownItem;

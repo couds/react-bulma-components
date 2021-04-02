@@ -52,7 +52,7 @@ describe('Level component', () => {
   });
   it('Should have is-mobile class if mobile prop is true', () => {
     const component = renderer.create(
-      <Level mobile>
+      <Level breakpoint="mobile">
         <Level.Side>
           <Level.Item>Item 1</Level.Item>
           <Level.Item>Item 2</Level.Item>

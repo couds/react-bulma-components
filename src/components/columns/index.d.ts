@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Breakpoint } from '../../modifiers';
+import { Breakpoint, ResponsiveModifiers } from '../../modifiers';
 
 interface ColumnGroupProps {
   variableGap?: {
@@ -46,12 +46,12 @@ interface ColumnProps {
   size?: ColumnSize;
   offset?: ColumnSize;
   narrow?: boolean;
-  touch?: ColumnBreakpointConfiguration;
-  mobile?: ColumnBreakpointConfiguration;
-  tablet?: ColumnBreakpointConfiguration;
-  desktop?: ColumnBreakpointConfiguration;
-  widescreen?: ColumnBreakpointConfiguration;
-  fullhd?: ColumnBreakpointConfiguration;
+  touch?: ColumnBreakpointConfiguration & ResponsiveModifiers;
+  mobile?: ColumnBreakpointConfiguration & ResponsiveModifiers;
+  tablet?: ColumnBreakpointConfiguration & ResponsiveModifiers;
+  desktop?: ColumnBreakpointConfiguration & ResponsiveModifiers;
+  widescreen?: ColumnBreakpointConfiguration & ResponsiveModifiers;
+  fullhd?: ColumnBreakpointConfiguration & ResponsiveModifiers;
 }
 
 declare const Columns: BulmaComponent<ColumnGroupProps, 'div'> & {

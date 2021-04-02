@@ -7,7 +7,6 @@ import MessageBody from './components/body';
 import MessageHeader from './components/header';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -29,14 +28,6 @@ Message.Header = MessageHeader;
 
 Message.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to be passed to `Message`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   /**
    * Adjusts the size of the message block.
    */
@@ -48,13 +39,7 @@ Message.propTypes = {
 };
 
 Message.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'article',
-  color: undefined,
-  size: undefined,
 };
 
 export default Message;

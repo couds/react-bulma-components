@@ -6,7 +6,6 @@ import FieldLabel from './field-label';
 import FieldBody from './field-body';
 
 import Element from '../../../element';
-import renderAsShape from '../../../../modifiers/render-as';
 
 const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
   let k = null;
@@ -36,10 +35,6 @@ Field.Body = FieldBody;
 
 Field.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   align: PropTypes.oneOf(['centered', 'right']),
   kind: PropTypes.oneOf(['addons', 'group']),
   multiline: PropTypes.bool,
@@ -48,14 +43,6 @@ Field.propTypes = {
 
 Field.defaultProps = {
   ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
-  align: undefined,
-  kind: undefined,
-  multiline: undefined,
-  horizontal: undefined,
 };
 
 export default Field;

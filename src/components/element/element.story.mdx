@@ -1,7 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import { Card, Columns, Container, Message, Notification } from '../..';
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Block, Card, Columns, Container, Message, Notification, Table, Element } from '../..';
 
-<Meta title="Basics/Core Component" />
+<Meta title="Core Component/Basics" />
 
 # The Element component
 ### One component to rule them all
@@ -12,6 +12,8 @@ over plain HTML element.
 This layer is required in order to support Bulma helpers/modifiers for every component.
 It also gives components flexibility to be rendered as different components. The layer provides every component
 a set of common props that you can use to utilize Bulma helpers and customize how components are rendered.
+
+<ArgsTable of={Element} />
 
 ## Bulma helpers
 
@@ -34,26 +36,15 @@ Bulma color helpers offer the following color variants:
       'success',
       'warning',
       'danger',
-      'light',
-      'white',
       'dark',
-      'white-bis',
-      'white-ter',
-      'grey-lighter',
-      'grey-light',
       'grey',
-      'grey-dark',
-      'grey-darker',
-      'black-ter',
-      'black-bis',
-      'black',
     ].map((color) => (
       <Columns.Column size={3}>
         <Columns>
-          <Columns.Column>{color}</Columns.Column>
+          <Columns.Column style={{ textTransform: 'capitalize' }}>{color}</Columns.Column>
         </Columns>
         <Card>
-          <Notification backgroundColor={color} />
+          <Notification color={color}>{color}</Notification>
         </Card>
       </Columns.Column>
     ))}
@@ -62,11 +53,12 @@ Bulma color helpers offer the following color variants:
 
 <br />
 
-To use the light/dark variants of the colors, simply append `-light` or `-dark` at the end of their color name.
+#### Light/Dark versions (Bulma >= 0.9.0)
+
+To use the light/dark variants of the colors, you can append `-light` or `-dark` at the end of their color name.
 For example, `primary-light` corresponds to the light version of the `primary` color.
 
-<Message>
-  <Message.Header>Note</Message.Header>
+<Message color="info">
   <Message.Body>
     Light/dark variants of colors are available only on Bulma since 0.9.0
   </Message.Body>
@@ -78,46 +70,139 @@ You can customize colors of components using the following helper props.
 | ----------------- | -------------------- | ------------------------------------------- |
 | `textColor`       | All supported colors | Changes the text color of a component       |
 | `backgroundColor` | All supported colors | Changes the background color of a component |
-
-### Spacing
-
-Spacing helpers are supported via the spacing props. The prop names mimics the naming scheme of the spacing helpers:
-
-- `m*` for **margin** spacing modifiers
-- `p*` for **padding** spacing modifiers
-- `*t` for **top** spacing (e.g. `mt` modifies top margin)
-- `*r` for **right** spacing
-- `*b` for **bottom** spacing
-- `*l` for **left** spacing
-- `*x` for **left and right** spacing
-- `*y` for **top and bottom** spacing
-
-Spacing props accepts values from 0 to 6.
-
-| Value | Spacing |
-| ----- | ------- |
-| 0     | 0       |
-| 1     | 0.25rem |
-| 2     | 0.5rem  |
-| 3     | 0.75rem |
-| 4     | 1rem    |
-| 5     | 1.5rem  |
-| 6     | 3rem    |
-
-### Typography
-
-This table describes all typography helpers
-
-| Prop name       | Values                                                    | Description                                                          |
-| --------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
-| `textSize`      | from 1 to 7                                               | Changes text size of component. Can vary depending on viewport.      |
-| `textAlignment` | 'centered', 'justified', 'left', 'right'                  | Changes text alignment of component. Can vary depending on viewport. |
-| `textTransform` | 'capitalized', 'lowercase', 'uppercase'                   | Transforms case of text of component                                 |
-| `textWeight`    | 'light', 'normal', 'semibold', 'bold'                     | Changes font weight of text of component                             |
-| `textFamily`    | 'sans-serif', 'monospace', 'primary', 'secondary', 'code' | Changes font family of text of component                             |
-| `italic`        | boolean                                                   | Whether to italicize text of component                               |
+                            |
 
 ### Visibility/Responsive helpers
+
+<Block>
+You can control de visibility of each component per breakpoint, See the following table for details
+</Block>
+<Table bordered size="fullwidth">
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>
+        Mobile<br />
+        Up to <code>768px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        Tablet<br />
+        Between <code>769px</code> and <code>1023px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        Desktop<br />
+        Between <code>1024px</code> and <code>1215px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        Widescreen<br />
+        Between <code>1216px</code> and <code>1407px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        FullHD<br />
+        <code>1408px</code> and above
+      </th>
+    </tr>
+  </thead>
+  <Element renderAs="tbody" textAlignment="center" textTransform="capitalized">
+    <tr>
+      <td>
+        <Notification color="info">mobile</Notification>
+      </td>
+      <td colspan="4">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Notification>-</Notification>
+      </td>
+      <td colspan="4">
+        <Notification color="info">tablet</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+      <td colspan="3">
+        <Notification color="info">desktop</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+      <td colspan="2">
+        <Notification color="info">widescreen</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">fullhd</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">tablet-only</Notification>
+      </td>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">desktop-only</Notification>
+      </td>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">widescreen-only</Notification>
+      </td>
+      <td>
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <Notification color="info">touch</Notification>
+      </td>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <Notification color="info">until-widescreen</Notification>
+      </td>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <Notification color="info">until-fullhd</Notification>
+      </td>
+      <td colspan="1">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+  </Element>
+</Table>
+
 
 First, the simple props:
 

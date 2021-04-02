@@ -19,7 +19,7 @@ exports[`Container component Should have container classname 1`] = `
 
 exports[`Container component Should have helper classnames 1`] = `
 <div
-  className="container is-paddingless is-block-widescreen-only is-flex-touch is-hidden-desktop"
+  className="container is-paddingless is-hidden-desktop is-block-widescreen-only is-flex-touch"
 >
   <p
     className="bd-notification is-success"

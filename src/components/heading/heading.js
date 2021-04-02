@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const Heading = ({
   children,
@@ -32,9 +31,6 @@ const Heading = ({
 
 Heading.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  renderAs: renderAsShape,
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
   subtitle: PropTypes.bool,
@@ -44,14 +40,7 @@ Heading.propTypes = {
 
 Heading.defaultProps = {
   ...Element.defaultProps,
-  children: null,
-  className: undefined,
   renderAs: 'h1',
-  size: undefined,
-  weight: undefined,
-  subtitle: false,
-  heading: false,
-  spaced: false,
 };
 
 export default Heading;

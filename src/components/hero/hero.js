@@ -8,7 +8,6 @@ import HeroBody from './components/hero-body';
 import HeroFooter from './components/hero-footer';
 
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -42,10 +41,6 @@ Hero.Footer = HeroFooter;
 
 Hero.propTypes = {
   ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight']),
@@ -54,14 +49,7 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
   ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'section',
-  color: undefined,
-  gradient: undefined,
-  size: undefined,
-  hasNavbar: undefined,
 };
 
 export default Hero;

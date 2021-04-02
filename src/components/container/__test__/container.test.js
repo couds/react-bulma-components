@@ -19,14 +19,15 @@ describe('Container component', () => {
     const component = renderer.create(
       <Container
         paddingless
-        widescreenOnly={{
+        widescreen={{
           display: 'block',
+          only: true,
         }}
         touch={{
           display: 'flex',
         }}
         desktop={{
-          hide: true,
+          display: 'hidden',
         }}
       >
         <p className="bd-notification is-success">
