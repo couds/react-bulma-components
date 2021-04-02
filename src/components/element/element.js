@@ -11,7 +11,9 @@ const buildResponsiveness = (
 
   return classnames({
     [`is-${display}-${currentViewport}${suffix}`]: display,
-    [`has-text-${textAlignment}-${currentViewport}${suffix}`]: textAlignment,
+    [`has-text-${normalizeAlign(
+      textAlignment,
+    )}-${currentViewport}${suffix}`]: textAlignment,
     [`is-size-${textSize}-${currentViewport}${suffix}`]: textSize,
     [`is-invisible-${currentViewport}${suffix}`]: invisible,
   });
