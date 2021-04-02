@@ -103,7 +103,7 @@ interface ColorProps {
 
 interface TypographyProps {
   textSize?: 1 | 2 | 3 | 4 | 5 | 6;
-  textAlignment?: 'centered' | 'justified' | 'left' | 'right';
+  textAlignment?: 'center' | 'justify' | 'left' | 'right';
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
   textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code';

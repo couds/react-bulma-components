@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as stories from './breadcrumb.story';
 import Breadcrumb from './breadcrumb';
+import CommonProps from '../../../.storybook/common-props';
 
 <Meta title="Components/Breadcrumb" />
 
@@ -10,10 +11,11 @@ A simple navigation component with a customizable separator. Suitable for hierar
 
 You can inform the current page using the active props in `Breadcrumb.Item` component. It will disable the navigation of inner links.
 
-
 ## Props
 
 <ArgsTable of={Breadcrumb} />
+
+<CommonProps />
 
 ## Example
 

@@ -27,24 +27,21 @@ const Breadcrumb = ({
 Breadcrumb.Item = BreadcrumbItem;
 
 Breadcrumb.propTypes = {
-  ...Element.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['right', 'center']),
-  children: PropTypes.node,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Breadcrumb.defaultProps = {
-  ...Element.defaultProps,
   separator: undefined,
   renderAs: 'nav',
-  className: undefined,
-  style: undefined,
   size: undefined,
   align: undefined,
-  children: undefined,
 };
 
 export default Breadcrumb;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import MenuList from './components/list';
 
@@ -11,7 +12,11 @@ const Menu = ({ className, ...props }) => (
 Menu.List = MenuList;
 
 Menu.propTypes = {
-  ...Element.propTypes,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Menu.defaultProps = {
