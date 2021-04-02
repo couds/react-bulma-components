@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import ModalCardHeader from './header';
@@ -23,19 +22,8 @@ ModalCard.Footer = ModalCardFooter;
 
 ModalCard.Title = ModalCardTitle;
 
-ModalCard.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-};
+ModalCard.propTypes = {};
 
-ModalCard.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  onClose: undefined,
-};
+ModalCard.defaultProps = {};
 
 export default ModalCard;

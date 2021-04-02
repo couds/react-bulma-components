@@ -14,8 +14,6 @@ interface NavbarBurgerProps {
 
 interface NavbarItemProps {
   active?: boolean;
-  dropdown?: boolean;
-  dropdownUp?: boolean;
   hoverable?: boolean;
   arrowless?: boolean;
 }
@@ -23,6 +21,7 @@ interface NavbarItemProps {
 interface NavbarDropdownProps {
   boxed?: boolean;
   right?: boolean;
+  up?: boolean;
 }
 
 interface NavbarLinkProps {

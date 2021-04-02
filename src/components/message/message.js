@@ -27,7 +27,6 @@ Message.Body = MessageBody;
 Message.Header = MessageHeader;
 
 Message.propTypes = {
-  ...Element.propTypes,
   /**
    * Adjusts the size of the message block.
    */
@@ -36,6 +35,11 @@ Message.propTypes = {
    * Adjusts the color of the message block. Can be any Bulma color values.
    */
   color: PropTypes.oneOf(colors),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Message.defaultProps = {

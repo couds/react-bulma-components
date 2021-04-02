@@ -8,7 +8,7 @@ import Element from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Notification = ({ children, className, color, light, ...props }) => (
+const Notification = ({ className, color, light, ...props }) => (
   <Element
     {...props}
     className={classnames(
@@ -19,13 +19,10 @@ const Notification = ({ children, className, color, light, ...props }) => (
       },
       className,
     )}
-  >
-    {children}
-  </Element>
+  />
 );
 
 Notification.propTypes = {
-  ...Element.propTypes,
   color: PropTypes.oneOf(colors),
   light: PropTypes.bool,
 };

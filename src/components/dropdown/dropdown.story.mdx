@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Dropdown } from '../..';
 import * as stories from './dropdown.story';
+import CommonProps from '../../../.storybook/common-props';
 
 <Meta title="Components/Dropdown" />
 
@@ -31,6 +32,9 @@ The `Dropdown` component contains the following components:
 
 <ArgsTable of={Dropdown.Divider} />
 
+<CommonProps />
+
+## Example
 
 <Canvas>
   <Story story={stories.Overview} name="Dropdown" />

@@ -9,8 +9,6 @@ const MessageHeader = ({ children, className, ...props }) => (
   </Element>
 );
 
-MessageHeader.propTypes = {
-  ...Element.propTypes,
-};
+MessageHeader.propTypes = {};
 
 export default MessageHeader;

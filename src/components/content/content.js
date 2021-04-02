@@ -16,15 +16,9 @@ const Content = ({ children, className, size, ...props }) => (
 );
 
 Content.propTypes = {
-  ...Element.propTypes,
-  /**
-   * Adjust the size of the content.
-   */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-Content.defaultProps = {
-  ...Element.defaultProps,
-};
+Content.defaultProps = {};
 
 export default Content;

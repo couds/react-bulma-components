@@ -9,8 +9,6 @@ const ModalContent = ({ children, className, ...props }) => (
   </Element>
 );
 
-ModalContent.propTypes = {
-  ...Element.propTypes,
-};
+ModalContent.propTypes = {};
 
 export default ModalContent;

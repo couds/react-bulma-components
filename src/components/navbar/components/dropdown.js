@@ -17,9 +17,20 @@ const NavbarDropdown = ({ className, boxed, right, children, ...props }) => (
 );
 
 NavbarDropdown.propTypes = {
-  ...Element.propTypes,
   boxed: PropTypes.bool,
+  /**
+   * If your parent `Navbar.Container` is on the right side, you can position the dropdown to start from the right setting this to true.
+   */
   right: PropTypes.bool,
+  /**
+   * Open the dropdown upward instead of downward (default behaviour)
+   */
+  up: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 NavbarDropdown.defaultProps = {

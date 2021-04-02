@@ -30,16 +30,19 @@ const Heading = ({
 );
 
 Heading.propTypes = {
-  ...Element.propTypes,
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
   subtitle: PropTypes.bool,
   heading: PropTypes.bool,
   spaced: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Heading.defaultProps = {
-  ...Element.defaultProps,
   renderAs: 'h1',
 };
 

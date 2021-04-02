@@ -1,10 +1,11 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import Modal from '.';
 import * as stories from './modal.story';
+import CommonProps from '../../../.storybook/common-props';
 
 <Meta title="Components/Modal" />
 
-# Menu
+# Modal
 
 A basic modal with overlay where you can add any content you want
 
@@ -22,10 +23,37 @@ The modal structure is very simple:
 
 <br />
 
-### `Menu`
-
 <ArgsTable of={Modal} />
 
+## Components
+
+### `Modal.Content`
+Custom content for the modal, here you can add any kind of component
+
+<ArgsTable of={Modal.Content} />
+
+### Modal.Card
+classic modal with head, body and footer
+
+<ArgsTable of={Modal.Card} />
+
+#### Modal.Card.Header
+
+<ArgsTable of={Modal.Card.Header} />
+
+#### Modal.Card.Title
+
+<ArgsTable of={Modal.Card.Title} />
+
+#### Modal.Card.Body
+
+<ArgsTable of={Modal.Card.Body} />
+
+#### Modal.Card.Footer
+
+<ArgsTable of={Modal.Card.Footer} />
+
+<CommonProps />
 
 ## Example
 

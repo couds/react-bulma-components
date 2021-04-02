@@ -7,7 +7,7 @@ export const BasicUsage = ({ withoutHeader, ...args }) => (
   <Message {...args}>
     {!withoutHeader && (
       <Message.Header>
-        Title
+        <span>Title</span>
         <Button remove />
       </Message.Header>
     )}

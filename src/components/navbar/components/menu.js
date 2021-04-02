@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { ShowContext } from '../context';
@@ -23,16 +22,10 @@ const NavbarMenu = ({ className, children, ...props }) => (
 
 NavbarMenu.propTypes = {
   ...Element.propTypes,
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
-  children: PropTypes.node,
 };
 
 NavbarMenu.defaultProps = {
   ...Element.defaultProps,
-  style: undefined,
-  className: undefined,
-  children: null,
 };
 
 export default NavbarMenu;

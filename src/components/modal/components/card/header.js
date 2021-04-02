@@ -18,18 +18,18 @@ const ModalCardHead = ({ children, className, showClose, ...props }) => {
 };
 
 ModalCardHead.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
+  /**
+   * True if the card should display the close button on the header of the modal card
+   */
   showClose: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 ModalCardHead.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   showClose: true,
   renderAs: 'header',
 };

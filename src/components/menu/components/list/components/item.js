@@ -45,8 +45,12 @@ const MenuListItem = ({
 };
 
 MenuListItem.propTypes = {
-  ...Element.propTypes,
   active: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 MenuListItem.defaultProps = {

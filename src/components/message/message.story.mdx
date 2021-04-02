@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Message } from '../../index';
 import * as stories from './message.story';
+import CommonProps from '../../../.storybook/common-props';
 
 <Meta title="Components/Message" />
 
@@ -15,6 +16,18 @@ The style of the message change depending if the Header is included or not, Play
 ## Props
 
 <ArgsTable of={Message} />
+
+## Components
+
+### `Message.Title`
+
+<ArgsTable of={Message.Title} />
+
+### `Message.Body`
+
+<ArgsTable of={Message.Body} />
+
+<CommonProps />
 
 ## Example
 

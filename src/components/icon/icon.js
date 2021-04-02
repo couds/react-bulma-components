@@ -7,7 +7,7 @@ import Element from '../element';
 
 const colors = [undefined].concat(Object.values(CONSTANTS.COLORS));
 
-const Icon = ({ size, color, className, align, children, ...props }) => (
+const Icon = ({ size, color, className, align, ...props }) => (
   <Element
     {...props}
     className={classnames('icon', className, {
@@ -15,29 +15,21 @@ const Icon = ({ size, color, className, align, children, ...props }) => (
       [`is-${align}`]: align,
       [`has-text-${color}`]: color,
     })}
-  >
-    {children}
-  </Element>
+  />
 );
 
 Icon.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.element,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large', 'auto']),
   align: PropTypes.oneOf(['left', 'right']),
   color: PropTypes.oneOf(colors),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Icon.defaultProps = {
-  ...Element.defaultProps,
-  className: undefined,
-  style: undefined,
-  size: undefined,
-  color: undefined,
-  children: null,
-  align: undefined,
   renderAs: 'span',
 };
 

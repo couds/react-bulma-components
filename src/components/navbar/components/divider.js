@@ -9,15 +9,15 @@ const NavbarDivider = ({ className, ...props }) => (
 );
 
 NavbarDivider.propTypes = {
-  ...Element.propTypes,
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 NavbarDivider.defaultProps = {
-  ...Element.defaultProps,
-  style: undefined,
-  className: undefined,
+  renderAs: 'hr',
 };
 
 export default NavbarDivider;

@@ -16,8 +16,12 @@ const NavbarLink = ({ className, children, arrowless, ...props }) => (
 );
 
 NavbarLink.propTypes = {
-  ...Element.propTypes,
   arrowless: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 NavbarLink.defaultProps = {

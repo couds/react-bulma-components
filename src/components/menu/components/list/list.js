@@ -16,22 +16,19 @@ const MenuList = ({ className, title, ...props }) => (
 MenuList.Item = MenuListItem;
 
 MenuList.propTypes = {
-  ...Element.propTypes,
-  /**
-   * Additional CSS classes to be passed to `Menu.List`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
   /**
    * The title of this list in the menu.
    */
   title: PropTypes.node,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 MenuList.defaultProps = {
   ...Element.defaultProps,
-  className: undefined,
-  title: undefined,
   renderAs: 'ul',
 };
 

@@ -136,10 +136,6 @@ Dropdown.propTypes = {
    */
   up: PropTypes.bool,
   /**
-   * @deprecated
-   */
-  align: PropTypes.oneOf(['right']),
-  /**
    * Whether the dropdown menu can be activated when the cursor
    * hovers above the button without clicking.
    */
@@ -163,26 +159,10 @@ Dropdown.propTypes = {
    * Additional CSS classes to pass to `<Dropdown />`.
    * They will sit alongside pre-applied bulma classes.
    */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  children: PropTypes.node,
 };
 
 Dropdown.defaultProps = {
-  ...Element.defaultProps,
   closeOnSelect: true,
-  className: undefined,
-  renderAs: 'div',
-  domRef: undefined,
-  style: undefined,
-  value: undefined,
-  children: [],
-  onChange: undefined,
-  color: undefined,
-  align: undefined,
-  hoverable: undefined,
-  label: undefined,
-  icon: undefined,
 };
 
 export default Dropdown;

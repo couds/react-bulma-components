@@ -9,8 +9,6 @@ const MessageBody = ({ children, className, ...props }) => (
   </Element>
 );
 
-MessageBody.propTypes = {
-  ...Element.propTypes,
-};
+MessageBody.propTypes = {};
 
 export default MessageBody;

@@ -61,11 +61,15 @@ const Navbar = ({
 };
 
 Navbar.propTypes = {
-  ...Element.propTypes,
   transparent: PropTypes.bool,
   fixed: PropTypes.oneOf(['top', 'bottom']),
   color: PropTypes.oneOf(colors),
   active: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Navbar.defaultProps = {

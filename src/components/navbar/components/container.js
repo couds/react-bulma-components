@@ -19,7 +19,6 @@ const NavbarContainer = ({ className, children, position, ...props }) => (
 );
 
 NavbarContainer.propTypes = {
-  ...Element.propTypes,
   position: PropTypes.oneOf(['start', 'end']),
 };
 
