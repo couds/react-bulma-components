@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { action } from '@storybook/addon-actions';
 
 import CONSTANTS from '../../constants';
 import { Box, Dropdown } from '../..';
@@ -25,7 +24,6 @@ export const Overview = (args) => {
       <Dropdown
         {...args}
         color={args.color === 'default' ? '' : args.color}
-        onChange={action('selected item')}
         icon={icon}
       >
         <Dropdown.Item renderAs="a" value="item">

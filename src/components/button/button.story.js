@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import { Button, Box } from '../..';
 
@@ -9,13 +8,7 @@ import CONSTANTS from '../../constants';
 export const Default = ({ hasAddons, groupSize, position, ...args }) => (
   <>
     <Box>
-      <Button
-        {...args}
-        onClick={action('Button Click')}
-        onMouseEnter={action('Hover')}
-      >
-        Button
-      </Button>
+      <Button {...args}>Button</Button>
     </Box>
     <Box>
       <Button.Group
