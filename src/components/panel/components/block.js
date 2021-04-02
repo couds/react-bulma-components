@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
@@ -13,7 +14,7 @@ const PanelBlock = ({ className, active, ...props }) => (
 );
 
 PanelBlock.propTypes = {
-  ...Element.propTypes,
+  active: PropTypes.bool,
 };
 
 export default PanelBlock;

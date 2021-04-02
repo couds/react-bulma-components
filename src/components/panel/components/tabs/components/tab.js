@@ -14,8 +14,12 @@ const PanelTabsTab = ({ className, active, ...props }) => (
 );
 
 PanelTabsTab.propTypes = {
-  ...Element.propTypes,
   active: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 PanelTabsTab.defaultProps = {

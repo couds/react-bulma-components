@@ -7,8 +7,6 @@ const PanelHeader = ({ className, ...props }) => (
   <Element {...props} className={classnames('panel-heading', className)} />
 );
 
-PanelHeader.propTypes = {
-  ...Element.propTypes,
-};
+PanelHeader.propTypes = {};
 
 export default PanelHeader;

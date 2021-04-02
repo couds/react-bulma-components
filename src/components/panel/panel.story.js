@@ -1,16 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { select } from '@storybook/addon-knobs';
 
-import { Panel, Form, Icon, Button } from '../..';
-
+import { Panel, Form, Button } from '../..';
 import CONSTANTS from '../../constants';
 
-storiesOf('Panel', module)
-  .addDecorator((story) => <div style={{ margin: 10 }}>{story()}</div>)
-  .add('Default', () => (
-    <Panel color={select('color', { ...CONSTANTS.COLORS, default: '' })}>
-      <Panel.Header>repositories</Panel.Header>
+export const Default = (args) => {
+  return (
+    <Panel {...args}>
+      <Panel.Header>Repositories</Panel.Header>
       <Panel.Block>
         <Form.Control>
           <Form.Input size="small" type="text" placeholder="search" />
@@ -24,37 +20,47 @@ storiesOf('Panel', module)
         <Panel.Tabs.Tab>forks</Panel.Tabs.Tab>
       </Panel.Tabs>
       <Panel.Block renderAs="a" active>
-        <Panel.Icon renderAs={Icon} icon="angle-down" />
+        <Panel.Icon>
+          <i className="fas fa-angle-down" />
+        </Panel.Icon>
         bulma
       </Panel.Block>
       <Panel.Block>
-        <Panel.Icon renderAs={Icon} icon="angle-down" />
+        <Panel.Icon>
+          <i className="fas fa-angle-down" />
+        </Panel.Icon>
         react-bulma-components
       </Panel.Block>
       <Panel.Block>
-        <Panel.Icon renderAs={Icon} icon="angle-down" />
+        <Panel.Icon>
+          <i className="fas fa-angle-down" />
+        </Panel.Icon>
         minireset.css
       </Panel.Block>
       <Panel.Block>
-        <Panel.Icon renderAs={Icon} icon="angle-down" />
+        <Panel.Icon>
+          <i className="fas fa-angle-down" />
+        </Panel.Icon>
         jgthms.github.io
       </Panel.Block>
-      <Panel.Block>
-        <Panel.Icon renderAs={Icon} icon="angle-down" />
-        couds.gidhub.io
-      </Panel.Block>
-      <Panel.Block>
-        <Panel.Icon renderAs={Icon} icon="angle-down" />
-        mojs
-      </Panel.Block>
-      <Panel.Block renderAs="label" className="panel-block">
+      <Panel.Block renderAs="label">
         <Form.Checkbox />
         remember me
       </Panel.Block>
       <Panel.Block>
-        <Button fullwidth color="link" outlined>
+        <Button fullwidth color={args.color} outlined>
           reset all filters
         </Button>
       </Panel.Block>
     </Panel>
-  ));
+  );
+};
+
+Default.argTypes = {
+  color: {
+    control: {
+      type: 'select',
+      options: ['default'].concat(Object.values(CONSTANTS.COLORS)),
+    },
+  },
+};

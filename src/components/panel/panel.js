@@ -8,7 +8,6 @@ import Icon from './components/icon';
 import Tabs from './components/tabs';
 
 import Element from '../element';
-import CONSTANTS from '../../constants';
 
 const Panel = ({ color, className, ...props }) => (
   <Element
@@ -28,8 +27,21 @@ Panel.Block = Block;
 Panel.Icon = Icon;
 
 Panel.propTypes = {
-  ...Element.propTypes,
-  color: PropTypes.oneOf([null, '', ...Object.values(CONSTANTS.COLORS)]),
+  color: PropTypes.oneOf([
+    'primary',
+    'link',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'dark',
+    'text',
+  ]),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Panel.defaultProps = {
