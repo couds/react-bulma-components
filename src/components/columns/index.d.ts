@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Breakpoint, ResponsiveModifiers } from '../../modifiers';
+import { Breakpoint, ResponsiveModifiers } from '..';
 
 interface ColumnGroupProps {
   variableGap?: {

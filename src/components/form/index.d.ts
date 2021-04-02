@@ -5,7 +5,7 @@ import {
   BulmaComponent,
   BulmaComponentWithoutRenderAs,
 } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface FieldProps {
   align?: 'centered' | 'right';
