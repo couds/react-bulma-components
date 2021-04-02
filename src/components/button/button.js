@@ -35,13 +35,13 @@ const Button = ({
   if (submit) {
     otherProps = {
       type: 'submit',
-      renderAs: renderAs || 'button',
+      renderAs: 'button',
     };
   }
   if (reset) {
     otherProps = {
       type: 'reset',
-      renderAs: renderAs || 'button',
+      renderAs: 'button',
     };
   }
 
