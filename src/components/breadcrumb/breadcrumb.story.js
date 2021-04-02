@@ -30,7 +30,7 @@ Default.argTypes = {
   align: {
     control: {
       type: 'select',
-      options: ['centered', 'right'],
+      options: ['center', 'right'],
     },
   },
   size: {

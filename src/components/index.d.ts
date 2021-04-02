@@ -80,7 +80,7 @@ export interface ResponsiveModifiers {
   display?: DisplayModifier;
   textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   invisible?: Boolean;
-  textAlignment?: 'centered' | 'justified' | 'left' | 'right';
+  textAlignment?: 'center' | 'justify' | 'left' | 'right';
 }
 
 interface ResponsiveProps {

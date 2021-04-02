@@ -6,12 +6,8 @@ const CardFooterItem = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-footer-item', className)} />
 );
 
-CardFooterItem.propTypes = {
-  ...Element.propTypes,
-};
+CardFooterItem.propTypes = {};
 
-CardFooterItem.defaultProps = {
-  ...Element.defaultProps,
-};
+CardFooterItem.defaultProps = {};
 
 export default CardFooterItem;

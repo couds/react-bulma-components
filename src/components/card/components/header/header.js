@@ -13,12 +13,8 @@ CardHeader.Title = CardHeaderTitle;
 
 CardHeader.Icon = CardHeaderIcon;
 
-CardHeader.propTypes = {
-  ...Element.propTypes,
-};
+CardHeader.propTypes = {};
 
-CardHeader.defaultProps = {
-  ...Element.defaultProps,
-};
+CardHeader.defaultProps = {};
 
 export default CardHeader;

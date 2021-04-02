@@ -14,7 +14,7 @@ const CommonProps = () => {
           </Message.Body>
         </Message>
         {
-          show && <ArgsTable of={Element} />
+          show && <ArgsTable of={Element}  />
         }
       </Block>
     </>

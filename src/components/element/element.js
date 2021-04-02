@@ -1,16 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-const normalizeAlign = (align) => {
-  if (align === 'center') {
-    return 'centered';
-  }
-  if (align === 'justify') {
-    return 'justifyed';
-  }
-  return align;
-};
+import { normalizeAlign } from '../../services/normalizer';
 
 const buildResponsiveness = (
   currentViewport,
@@ -82,8 +73,6 @@ export const useElementClassNames = ({
   untilFullhd,
   ...props
 }) => {
-  const normalizedTextAlignment = normalizeAlign(textAlignment);
-
   return [
     classnames(
       {
@@ -126,7 +115,7 @@ export const useElementClassNames = ({
         [`pl-${pl}`]: pl,
         [`px-${px}`]: px,
         [`py-${py}`]: py,
-        [`has-text-${normalizedTextAlignment}`]: normalizedTextAlignment,
+        [`has-text-${normalizeAlign(textAlignment)}`]: textAlignment,
         [`has-text-weight-${textWeight}`]: textWeight,
         [`is-size-${textSize}`]: textSize,
         [`is-${textTransform}`]: textTransform,

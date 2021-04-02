@@ -7,12 +7,8 @@ const CardHeaderTitle = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-header-title', className)} />
 );
 
-CardHeaderTitle.propTypes = {
-  ...Element.propTypes,
-};
+CardHeaderTitle.propTypes = {};
 
-CardHeaderTitle.defaultProps = {
-  ...Element.defaultProps,
-};
+CardHeaderTitle.defaultProps = {};
 
 export default CardHeaderTitle;

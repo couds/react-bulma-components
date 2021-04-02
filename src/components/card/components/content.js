@@ -7,12 +7,8 @@ const CardContent = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-content', className)} />
 );
 
-CardContent.propTypes = {
-  ...Element.propTypes,
-};
+CardContent.propTypes = {};
 
-CardContent.defaultProps = {
-  ...Element.defaultProps,
-};
+CardContent.defaultProps = {};
 
 export default CardContent;

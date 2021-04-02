@@ -7,12 +7,8 @@ const CardHeaderIcon = ({ className, ...props }) => (
   <Element {...props} className={classnames('card-header-icon', className)} />
 );
 
-CardHeaderIcon.propTypes = {
-  ...Element.propTypes,
-};
+CardHeaderIcon.propTypes = {};
 
-CardHeaderIcon.defaultProps = {
-  ...Element.defaultProps,
-};
+CardHeaderIcon.defaultProps = {};
 
 export default CardHeaderIcon;

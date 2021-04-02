@@ -1,21 +1,13 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import logo from '../documentation/static/img/logo.png';
-import { Columns, Container, Heading } from './index';
+import { Columns, Block, Heading } from './index';
 
 <Meta title="Welcome" />
 
-<Container
-  display="flex"
-  flexDirection="column"
-  justifyContent="center"
-  alignItems="center"
->
-  <img src={logo} alt="Logo of React Bulma Components" />
+<Block>
   <Heading size={1}>React bulma components</Heading>
   <Heading size={6}>TypeScript friendly Bulma CSS React bindings.</Heading>
-</Container>
+</Block>
 
----
 
 # Installation
 

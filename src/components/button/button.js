@@ -85,26 +85,6 @@ const Button = ({
 Button.Group = ButtonGroup;
 
 Button.propTypes = {
-  ...Element.propTypes,
-  /**
-   * Children of Button.
-   */
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to pass to Button.
-   */
-  className: PropTypes.string,
-  /**
-   * React style object for Button.
-   */
-  style: PropTypes.shape({}),
-  /**
-   * Callback function when Button is clicked.
-   */
-  onClick: PropTypes.func,
-  /**
-   * Color of Button
-   */
   color: PropTypes.oneOf(colors),
   /**
    * Size of Button
@@ -146,32 +126,32 @@ Button.propTypes = {
    * Whether Button is a text button.
    */
   text: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Button.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'button',
-  onClick: () => null,
   color: undefined,
   size: undefined,
-  outlined: false,
-  inverted: false,
-  submit: false,
-  reset: false,
-  fullwidth: false,
-  hovered: false,
-  focused: false,
-  active: false,
-  loading: false,
-  disabled: false,
-  remove: false,
-  isSelected: false,
-  isStatic: false,
-  rounded: false,
-  text: false,
+  outlined: undefined,
+  inverted: undefined,
+  submit: undefined,
+  reset: undefined,
+  fullwidth: undefined,
+  hovered: undefined,
+  focused: undefined,
+  active: undefined,
+  loading: undefined,
+  disabled: undefined,
+  remove: undefined,
+  isSelected: undefined,
+  isStatic: undefined,
+  rounded: undefined,
+  text: undefined,
 };
 
 export default Button;

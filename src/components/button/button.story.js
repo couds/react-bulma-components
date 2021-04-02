@@ -53,7 +53,7 @@ Default.argTypes = {
     },
     control: {
       type: 'select',
-      options: ['default', 'centered', 'right'],
+      options: ['default', 'center', 'right'],
     },
   },
   groupSize: {
