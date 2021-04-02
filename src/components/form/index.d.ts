@@ -76,7 +76,7 @@ interface InputFileProps {
   color?: Color;
   size?: Size;
   filename?: string;
-  files?: FileList;
+  value?: FileList;
   fullwidth?: boolean;
   right?: boolean;
   centered?: boolean;

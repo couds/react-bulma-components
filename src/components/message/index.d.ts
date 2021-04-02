@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface MessageProps {
   size?: Size;

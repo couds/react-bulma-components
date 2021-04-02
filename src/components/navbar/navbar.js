@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import canUseDOM from '../../services/can-use-dom';
 import Brand from './components/brand';
 import Burger from './components/burger';
 import Menu from './components/menu';
@@ -31,9 +30,6 @@ const Navbar = ({
 }) => {
   htmlClass = fixed ? `has-navbar-fixed-${fixed}` : '';
   useEffect(() => {
-    if (!canUseDOM) {
-      return () => {};
-    }
     const html = window.document.querySelector('html');
     if (!html.classList.contains(`has-navbar-fixed-${fixed}`)) {
       html.classList.remove('has-navbar-fixed-top');

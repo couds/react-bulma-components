@@ -1,4 +1,4 @@
-import { Color } from 'src/modifiers';
+import { Color } from '..';
 import { BulmaComponent } from '../index';
 
 

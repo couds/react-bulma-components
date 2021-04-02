@@ -21,7 +21,7 @@ const InputFile = ({
   icon,
   inputProps,
   filename,
-  files,
+  value,
   centered,
   ...props
 }) => {
@@ -31,12 +31,12 @@ const InputFile = ({
     if (!ref.current) {
       return;
     }
-    if (files) {
-      ref.current.files = files;
+    if (value) {
+      ref.current.files = value;
     } else {
       ref.current.value = '';
     }
-  }, [files]);
+  }, [value]);
 
   return (
     <Element
@@ -147,7 +147,7 @@ InputFile.defaultProps = {
   color: undefined,
   size: undefined,
   filename: undefined,
-  files: undefined,
+  value: undefined,
   fullwidth: undefined,
   right: undefined,
   centered: undefined,

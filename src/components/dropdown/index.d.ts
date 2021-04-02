@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ElementProps, RenderAsComponent } from '..';
-import { Color } from '../../modifiers';
+import { Color } from '..';
 
 interface DropdownProps<T> {
   value?: T;

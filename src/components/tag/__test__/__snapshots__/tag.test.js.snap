@@ -8,7 +8,24 @@ exports[`Tag component Should be Large 1`] = `
 </span>
 `;
 
-exports[`Tag component Should be group tags 1`] = `
+exports[`Tag component Should be group tags using deprecated gapless 1`] = `
+<span
+  className="tags has-addons"
+>
+  <span
+    className="tag"
+  >
+    Tag 1
+  </span>
+  <span
+    className="tag"
+  >
+    Tag 2
+  </span>
+</span>
+`;
+
+exports[`Tag component Should be group tags using hasAddon (to match bulma docs) 1`] = `
 <span
   className="tags has-addons"
 >

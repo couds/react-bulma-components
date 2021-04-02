@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Color } from '../../modifiers';
+import { Color } from '..';
 
 interface NavbarProps {
   transparent?: boolean;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BulmaComponent } from '..';
-import { Size } from '../../modifiers';
+import { Size } from '..';
 
 interface PaginationProps {
   current?: number;

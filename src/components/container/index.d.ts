@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Breakpoint } from '../../modifiers';
+import { Breakpoint } from '..';
 
 interface ContainerProps {
   fluid?: boolean;
