@@ -10,6 +10,5 @@ module.exports = (api) => {
       '@babel/preset-react',
       ['@babel/preset-env', { modules: isTestEnv ? 'commonjs' : false }],
     ],
-    plugins: [['@babel/plugin-proposal-class-properties', { loose: true }]],
   };
 };
