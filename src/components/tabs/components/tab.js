@@ -17,8 +17,12 @@ const Tab = ({ children, className, style, active, domRef, ...props }) => (
 );
 
 Tab.propTypes = {
-  ...Element.propTypes,
   active: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Tab.defaultProps = {

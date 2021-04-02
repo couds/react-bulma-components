@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Tab from './components/tab';
 
 import Element from '../element';
+import { normalizeAlign } from '../../services/normalizer';
 
 const Tabs = ({
   children,
@@ -17,7 +18,7 @@ const Tabs = ({
   <Element
     {...props}
     className={classnames('tabs', className, {
-      [`is-${align}`]: align,
+      [`is-${normalizeAlign(align)}`]: align,
       [`is-${size}`]: size,
       // Bulma 0.6.2 is not releaset ATM
       'is-toggle': type === 'toggle-rounded',
