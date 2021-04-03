@@ -6,7 +6,7 @@
 [![Release Version](https://img.shields.io/github/release/couds/react-bulma-components.svg)](https://github.com/couds/react-bulma-components)
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
-React components for [Bulma](http://bulma.io/) (v0.9.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
+React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
 ## BREAKING CHANGES V3 -> V4:
 
@@ -31,6 +31,15 @@ React components for [Bulma](http://bulma.io/) (v0.9.1) UI compatible with most 
 ### Navbar.Item
 
 - Removed dropdown prop, it will be added automatically if a Navbar.Dropdown is detected on the childrens.
+
+### Form.Control
+
+- Removed size props (did nothing)
+- Automatically add has-icon-left/right if an `Icon` with align is on the children
+
+### Form.Input
+
+- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
 
 ## To Install
 

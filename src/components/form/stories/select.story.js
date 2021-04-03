@@ -1,6 +1,6 @@
 import React from 'react';
-import CONSTANTS from '../../constants';
-import { Form, Icon } from '../../index';
+import CONSTANTS from '../../../constants';
+import { Form, Icon } from '../../..';
 
 export const BasicUsage = (args) => {
   const [selectedOption, setSelectedOption] = React.useState('option1');

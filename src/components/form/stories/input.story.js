@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Icon } from '../../index';
-import CONSTANTS from '../../constants';
+import { Form, Icon } from '../../..';
+import CONSTANTS from '../../../constants';
 
 export const BasicUsage = (args) => (
   <Form.Control>

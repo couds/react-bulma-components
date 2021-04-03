@@ -1,0 +1,38 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './form.story';
+
+<Meta title="Form/Basics" />
+
+# Form
+
+The `Form` namespace contains all components available to build forms.
+
+## Components
+
+`react-bulma-components` supports the following components:
+
+| Components       | Descriptions                                                             |
+| ---------------- | ------------------------------------------------------------------------ |
+| `Form.Control`   | Container for all form components to maintain the design evenly balanced |
+| `Form.Field`     | To combine several `Form.Control` and keep the spacing consistent        |
+| `Form.Input`     | A basic text input                                                       |
+| `Form.Checkbox`  | Displays a checkbox                                                      |
+| `Form.Help`      | Displays a help message under form controls                              |
+| `Form.InputFile` | Displays a file input for file uploads                                   |
+| `Form.Label`     | Displays a label for a `Form.Field`                                      |
+| `Form.Radio`     | Displays a radio button                                                  |
+| `Form.Select`    | Displays a dropdown option menu                                          |
+| `Form.Textarea`  | Displays a multiline text box                                            |
+
+## Basic example
+
+A basic form example demonstrating different form components.
+
+<Canvas>
+  <Story story={stories.Default} name="Basics" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/general/)

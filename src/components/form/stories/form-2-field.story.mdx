@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Form } from '../../..';
+import * as stories from './form.story';
+import CommonProps from '../../../../.storybook/common-props';
+
+
+<Meta title="Form/Field" />
+
+# Field
+
+A `Field` container to wrap `Form.Label`, `Form.Control` and/or `Form.Help`, this allow you to keep the spaces consistents
+
+## Props
+
+<ArgsTable of={Form.Field} />
+
+## Components
+
+### `Field.Label`
+
+When you are using a horizontal Field (Means that the label and the form control are in the same row) you need to use
+this component to identify the left part (the label)
+
+<ArgsTable of={Form.Field.Label} />
+
+### `Field.Body`
+
+This component will be a container for another `Field` that will include the form control you want to use (Check the code of the story for details)
+
+<ArgsTable of={Form.Field.Body} />
+
+<CommonProps />
+
+
+## Example
+
+<Canvas>
+  <Story story={stories.Field} name="Field" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/general/#form-field)

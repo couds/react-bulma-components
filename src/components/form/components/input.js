@@ -13,9 +13,8 @@ const Input = ({
   color,
   readOnly,
   isStatic,
-  hovered,
+  status,
   rounded,
-  focused,
   ...props
 }) => (
   <Element
@@ -23,8 +22,7 @@ const Input = ({
     readOnly={readOnly || isStatic}
     className={classnames('input', className, {
       'is-static': isStatic,
-      'is-hovered': hovered,
-      'is-focused': focused,
+      [`is-${status}ed`]: status,
       'is-rounded': rounded,
       [`is-${size}`]: size,
       [`is-${color}`]: color,
@@ -33,7 +31,6 @@ const Input = ({
 );
 
 Input.propTypes = {
-  ...Element.propTypes,
   /**
    * Adjusts the size of this input.
    */
@@ -53,36 +50,20 @@ Input.propTypes = {
    * are removed.
    */
   isStatic: PropTypes.bool,
-  /**
-   * Whether this input is in a focused state.
-   */
-  focused: PropTypes.bool,
-  /**
-   * Whether this input is in a hovered state.
-   */
-  hovered: PropTypes.bool,
+  status: PropTypes.oneOf(['focus', 'hover']),
   /**
    * Whether this input is rounded. The input will have a 50% border-radius,
    * making the left and right side fully rounded.
    */
   rounded: PropTypes.bool,
-  /**
-   * Additional CSS classes to be passed to `<Form.Input />`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Input.defaultProps = {
-  ...Element.defaultProps,
-  className: undefined,
-  size: undefined,
-  color: undefined,
-  readOnly: false,
-  isStatic: false,
-  focused: false,
-  hovered: false,
-  rounded: false,
   renderAs: 'input',
 };
 

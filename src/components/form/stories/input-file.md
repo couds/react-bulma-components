@@ -1,7 +1,6 @@
 import { Canvas, Story, Meta, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Message } from '../../index';
+import { Message, Form } from '../../..';
 import * as stories from './input-file.story';
-import InputFile from './components/input-file';
 
 <Meta title="Form/File" />
 
@@ -25,7 +24,7 @@ construct a Bulma file input into one React component.
 
 ## Props
 
-<ArgsTable of={InputFile} />
+<ArgsTable of={Form.InputFile} />
 
 ## Modifiers
 

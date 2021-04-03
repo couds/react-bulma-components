@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form } from '../..';
-import CONSTANTS from '../../constants';
+import { Form } from '../../..';
+import CONSTANTS from '../../../constants';
 
 export const BasicUsage = (args) => (
   <Form.Field>

@@ -4,25 +4,19 @@ import classnames from 'classnames';
 
 import Element from '../../../element';
 
-const FieldLabel = ({ children, className, size, ...props }) => (
+const FieldLabel = ({ className, size, ...props }) => (
   <Element
     {...props}
     className={classnames('field-label', className, {
       [`is-${size}`]: size,
     })}
-  >
-    {children}
-  </Element>
+  />
 );
 
 FieldLabel.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
   size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
 };
 
-FieldLabel.defaultProps = {
-  ...Element.defaultProps,
-};
+FieldLabel.defaultProps = {};
 
 export default FieldLabel;

@@ -17,6 +17,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-events',
     '@storybook/addon-viewport',
+    '@storybook/addon-postcss',
     'storybook-addon-react-docgen',
   ],
   webpackFinal: (config) => {

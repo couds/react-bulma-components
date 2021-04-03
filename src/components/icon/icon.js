@@ -20,6 +20,9 @@ const Icon = ({ size, color, className, align, ...props }) => (
 
 Icon.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large', 'auto']),
+  /**
+   * Used when the icon is inside a `Form.Control`
+   */
   align: PropTypes.oneOf(['left', 'right']),
   color: PropTypes.oneOf(colors),
   renderAs: PropTypes.oneOfType([

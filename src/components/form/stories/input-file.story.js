@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Form } from '../..';
-import Columns from '../columns';
-import CONSTANTS from '../../constants';
+import { Form, Columns } from '../../..';
+import CONSTANTS from '../../../constants';
 
 export const BasicUsage = (args) => {
   const [fileName, setFileName] = useState('');

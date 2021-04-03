@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form } from '../..';
+import { Form } from '../../..';
 
 export const BasicUsage = () => {
   const [selectedValue, setSelectedValue] = useState('yes');

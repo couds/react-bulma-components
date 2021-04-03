@@ -9,12 +9,8 @@ const FieldBody = ({ children, className, ...props }) => (
   </Element>
 );
 
-FieldBody.propTypes = {
-  ...Element.propTypes,
-};
+FieldBody.propTypes = {};
 
-FieldBody.defaultProps = {
-  ...Element.defaultProps,
-};
+FieldBody.defaultProps = {};
 
 export default FieldBody;

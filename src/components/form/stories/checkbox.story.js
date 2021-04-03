@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from '../..';
+import { Form } from '../../..';
 
 export const BasicExample = () => (
   <Form.Field>

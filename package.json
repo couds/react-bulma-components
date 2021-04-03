@@ -62,6 +62,7 @@
     "@storybook/addon-events": "6.2.2",
     "@storybook/addon-knobs": "6.2.2",
     "@storybook/addon-links": "6.2.2",
+    "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storysource": "6.2.2",
     "@storybook/addon-viewport": "6.2.2",
     "@storybook/addons": "6.2.2",

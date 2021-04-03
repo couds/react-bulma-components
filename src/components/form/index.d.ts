@@ -8,7 +8,7 @@ import {
 import { Color, Size } from '..';
 
 interface FieldProps {
-  align?: 'centered' | 'right';
+  align?: 'center' | 'right';
   kind?: 'addons' | 'group';
   multiline?: boolean;
   horizontal?: boolean;
@@ -20,10 +20,7 @@ interface FieldLabelProps {
 
 interface ControlProps {
   fullwidth?: boolean;
-  iconLeft?: boolean;
-  iconRight?: boolean;
   loading?: boolean;
-  size?: Size;
 }
 
 interface InputProps<T> {
@@ -31,8 +28,7 @@ interface InputProps<T> {
   color?: Color;
   readOnly?: boolean;
   isStatic?: boolean;
-  focused?: boolean;
-  hovered?: boolean;
+  status?: 'focus' | 'hover';
   value?: T;
 }
 
