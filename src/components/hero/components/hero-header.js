@@ -4,15 +4,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const HeroBody = ({ className, ...props }) => (
-  <Element {...props} className={classnames(className, 'hero-body')} />
+const HeroHeader = ({ className, ...props }) => (
+  <Element {...props} className={classnames(className, 'hero-head')} />
 );
 
-HeroBody.defaultProps = {
-  renderAs: 'div',
-};
-
-HeroBody.propTypes = {
+HeroHeader.propTypes = {
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,
@@ -20,4 +16,8 @@ HeroBody.propTypes = {
   ]),
 };
 
-export default HeroBody;
+HeroHeader.defaultProps = {
+  renderAs: 'header',
+};
+
+export default HeroHeader;

@@ -1,0 +1,56 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Hero } from '../..';
+import * as stories from './hero.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Layout/Hero" />
+
+# Hero
+
+An imposing hero banner to showcase something
+
+The hero component allows you to add a full width banner to your webpage, which can optionally cover the full height of the page as well.
+
+The basic requirement of this component are:
+
+- `Hero` as the main container
+- `Hero.Body` as a direct child, in which you can put all your content
+- For the `fullheight` props to work, you will also need a hero-head and a hero-foot.
+
+## Components
+
+The `Hero` component contains the following components:
+
+- `<Hero.Header />`: Defines an item in the dropdown menu.
+- `<Hero.Body />`: Defines an item in the dropdown menu.
+- `<Hero.Footer />`: Draws a divider in the dropdown menu.
+
+## Props
+
+### `Hero`
+
+<ArgsTable of={Hero} />
+
+### `Hero.Header`
+
+<ArgsTable of={Hero.Header} />
+
+### `Hero.Body`
+
+<ArgsTable of={Hero.Body} />
+
+### `Hero.Footer`
+
+<ArgsTable of={Hero.Footer} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Hero" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/layout/hero/)

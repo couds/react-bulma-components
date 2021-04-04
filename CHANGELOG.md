@@ -54,6 +54,9 @@
 ### Form.Textarea
 - Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
 
+## Hero.Head
+- Renamed to `Hero.Header`
+
 ### Icon
 - Removed the `icon` prop from the `Icon` component.
 
