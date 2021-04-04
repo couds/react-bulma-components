@@ -8,56 +8,6 @@
 
 React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
-## BREAKING CHANGES V3 -> V4:
-
-- We Remove all the styles from this library, now you need to install and use the [bulma.io](https://bulma.io) package directly
-- Removed included icons
-- Dropdown component now accept an `icon` prop that will accept the the component to render the icon
-- Removed the `icon` prop from the `Icon` component.
-- Removed `List` component
-- Renamed `TextAligment` to `TextAlign` on common props
-- Deprecated `gapless` to `hasAddons` in `Button.Group`
-
-### Modal
-
-- Renamed `Modal.Card.Head` to `Modal.Card.Header`
-- Renamed `Modal.Card.Foot` to `Modal.Card.Footer`
-- Close button on the top-right corner will be displayed always if the showClose prop is passed, (Before if the children was a card was not displayed)
-
-### Dropdown
-
-- Removed deprecated `align` prop in favor of boolean `right` prop
-
-### Navbar.Item
-
-- Removed dropdown prop, it will be added automatically if a Navbar.Dropdown is detected on the childrens.
-
-### Form.Control
-
-- Removed size props (did nothing)
-- Automatically add has-icon-left/right if an `Icon` with align is on the children
-
-
-### Form.Label
-
-- Added `size` prop that will be used on components inside the `Field`, like `Input`, `Select`, `Label`...
-
-### Form.Input
-
-- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
-
-### Form.Select
-
-- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
-
-### Form.Textarea
-
-- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
-
-### Container
-
-- Removed `fluid` prop in favor to add it as an option of the `breakpoint` prop
-- Added `max` prop to allow use `is-max-desktop` and `is-max-widescreen` from bulmd
 
 ## To Install
 
