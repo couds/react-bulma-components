@@ -90,6 +90,9 @@
 ### Table
 - Add `hoverable` prop
 
+### Tile
+- Remove `notification` prop. You can use `renderAs={Notification}` if need it
+
 ## 3.3.0
 
 - Add `CHANGELOG.md`

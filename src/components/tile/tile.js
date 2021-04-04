@@ -14,13 +14,11 @@ const Tile = ({
   vertical,
   size,
   color,
-  notification,
   ...props
 }) => (
   <Element
     {...props}
     className={classnames('tile', className, {
-      notification,
       [`is-${kind}`]: kind,
       [`is-${size}`]: size,
       [`is-${color}`]: color,

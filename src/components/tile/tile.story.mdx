@@ -1,16 +1,53 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as stories from './tile.story.js'
+import CommonProps from '../../../.storybook/common-props';
 import { Box, Tile } from '../..';
 
-<Meta title="Components/Tile" />
+<Meta title="Layout/Tile" />
 
 # Tile
 
-A simple notification block to alert your users when something happen
+A single tile element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
+
+## Nesting
+
+You need at least 3 levels of hierarchy:
+
+```
+tile is-ancestor
+|
+└───tile is-parent
+    |
+    └───tile is-child
+```
+
+```
+tile is-ancestor
+|
+├───tile is-vertical is-8
+|   |
+|   ├───tile
+|   |   |
+|   |   ├───tile is-parent is-vertical
+|   |   |   ├───tile is-child
+|   |   |   └───tile is-child
+|   |   |
+|   |   └───tile is-parent
+|   |       └───tile is-child
+|   |
+|   └───tile is-parent
+|       └───tile is-child
+|
+└───tile is-parent
+    └───tile is-child
+```
+
 
 ## Props
 
 <ArgsTable of={Tile} />
+
+<CommonProps />
 
 ## Example
 
