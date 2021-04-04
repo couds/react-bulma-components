@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Media component Should be a Media Content 1`] = `
-<div
-  className="content"
->
-  <p>
-    Lorem Ipsum
-  </p>
-</div>
-`;
-
 exports[`Media component Should concat classname in props with Bulma classname 1`] = `
 <article
   className="media other-class this-is-a-test"
@@ -23,8 +13,6 @@ exports[`Media component Should concat classname in props with Bulma classname 1
 exports[`Media component Should exist 1`] = `[Function]`;
 
 exports[`Media component Should expose Level Side and Item 1`] = `[Function]`;
-
-exports[`Media component Should expose Level Side and Item 2`] = `[Function]`;
 
 exports[`Media component Should have media classname 1`] = `
 <article

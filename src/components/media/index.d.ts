@@ -6,7 +6,6 @@ interface MediaItemProps {
 
 declare const Media: BulmaComponent<{}, 'article'> & {
   Item: BulmaComponent<MediaItemProps, 'div'>;
-  Content: BulmaComponent<{}, 'div'>;
 };
 
 export default Media;

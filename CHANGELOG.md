@@ -60,6 +60,9 @@
 ### Level
 - Update default `renderAs` from `div` to `nav`
 
+### Media.Content
+- Removed the whole component, use `Content` component insted
+
 ### Media.Item
 - Renamed `position` prop to `align`
 
