@@ -92,6 +92,7 @@
 
 ### Tile
 - Remove `notification` prop. You can use `renderAs={Notification}` if need it
+- Remove `color` prop.
 
 ## 3.3.0
 

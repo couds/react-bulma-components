@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tile, Heading, Image, Section, Box } from '../..';
+import { Tile, Heading, Image, Section, Box, Notification } from '../..';
 
 export const Default = () => (
   <Section>
@@ -9,27 +9,17 @@ export const Default = () => (
         <Tile size={8} vertical>
           <Tile>
             <Tile kind="parent" vertical>
-              <Tile
-                renderAs="article"
-                kind="child"
-                notification
-                color="primary"
-              >
+              <Tile kind="child" renderAs={Notification} color="primary">
                 <Heading>Vertical...</Heading>
                 <Heading subtitle>Top tile</Heading>
               </Tile>
-              <Tile
-                renderAs="article"
-                kind="child"
-                notification
-                color="warning"
-              >
+              <Tile kind="child" renderAs={Notification} color="warning">
                 <Heading>Tiles...</Heading>
                 <Heading subtitle>Bottom Tile...</Heading>
               </Tile>
             </Tile>
             <Tile kind="parent">
-              <Tile renderAs="article" kind="child" notification color="info">
+              <Tile kind="child" renderAs={Notification} color="info">
                 <Heading>Middle Tile...</Heading>
                 <Heading subtitle>With image Tile...</Heading>
                 <Image
@@ -40,7 +30,7 @@ export const Default = () => (
             </Tile>
           </Tile>
           <Tile kind="parent">
-            <Tile renderAs="article" kind="child" notification color="danger">
+            <Tile kind="child" renderAs={Notification} color="danger">
               <Heading>Wide tile</Heading>
               <Heading subtitle>Aligned with the right tile</Heading>
               <div className="content" />
@@ -48,7 +38,7 @@ export const Default = () => (
           </Tile>
         </Tile>
         <Tile kind="parent">
-          <Tile renderAs="article" kind="child" notification color="success">
+          <Tile kind="child" renderAs={Notification} color="success">
             <div className="content">
               <Heading>Tall tile</Heading>
               <Heading subtitle>With even more content</Heading>
