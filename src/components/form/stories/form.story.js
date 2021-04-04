@@ -566,3 +566,66 @@ export const RadioExample = () => {
     </Form.Control>
   );
 };
+
+export const InputExampleExample = ({ withIcon, ...args }) => {
+  const [uploadedFile, setUploadedFile] = useState();
+
+  return (
+    <Form.InputFile
+      {...args}
+      value={uploadedFile}
+      icon={withIcon ? <i className="fas fa-upload" /> : undefined}
+      onChange={(e) => {
+        setUploadedFile(e.target.files);
+      }}
+    />
+  );
+};
+
+InputExampleExample.argTypes = {
+  color: {
+    defaultValue: undefined,
+    control: {
+      type: 'select',
+      options: Object.values(CONSTANTS.COLORS),
+    },
+  },
+  size: {
+    description: 'The size of this InputFile',
+    defaultValue: undefined,
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
+  align: {
+    control: {
+      type: 'select',
+      options: ['center', 'right'],
+    },
+  },
+  boxed: {
+    description: 'Whether this InputFile should be a box',
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  label: {
+    description: 'The label of the upload button',
+    defaultValue: 'Choose a file...',
+    control: {
+      type: 'text',
+    },
+  },
+  filename: {
+    control: {
+      type: 'text',
+    },
+  },
+  withIcon: {
+    control: {
+      type: 'boolean',
+    },
+  },
+};

@@ -4,14 +4,13 @@ exports[`Dropdown component Should Exist 1`] = `[Function]`;
 
 exports[`Dropdown component Should be centered 1`] = `
 <div
-  className="file has-name is-centered"
+  className="file is-centered has-name"
 >
   <label
     className="file-label"
   >
     <input
       className="file-input"
-      onChange={[Function]}
       type="file"
     />
     <span

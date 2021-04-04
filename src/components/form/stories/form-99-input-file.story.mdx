@@ -1,0 +1,27 @@
+import { Canvas, Story, Meta, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Message, Form } from '../../..';
+import * as stories from './form.story';
+
+<Meta title="Form/File" />
+
+# InputFile
+
+
+The `InputFile` component combines different HTML elements and Bulma classes required to
+construct a Bulma file input into one React component.
+
+
+## Props
+
+<ArgsTable of={Form.InputFile} />
+
+## Example
+
+<Canvas>
+  <Story story={stories.InputExampleExample} name="File" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/file)
