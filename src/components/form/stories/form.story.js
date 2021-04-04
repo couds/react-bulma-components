@@ -15,7 +15,7 @@ export const Default = () => {
     <form>
       <Form.Field>
         <Form.Label>Username</Form.Label>
-        <Form.Control iconLeft iconRight>
+        <Form.Control>
           <Form.Input
             color="success"
             value={username}
@@ -33,7 +33,7 @@ export const Default = () => {
 
       <Form.Field>
         <Form.Label>Email</Form.Label>
-        <Form.Control iconLeft iconRight>
+        <Form.Control>
           <Form.Input
             color="danger"
             value={email}
@@ -508,4 +508,32 @@ CheckboxExample.argTypes = {
       type: 'boolean',
     },
   },
+};
+
+export const RadioExample = () => {
+  const [selectedValue, setSelectedValue] = useState('yes');
+  const onChange = (e) => setSelectedValue(e.target.value);
+  return (
+    <Form.Control>
+      <Form.Radio
+        value="yes"
+        name="story-radio-name"
+        checked={selectedValue === 'yes'}
+        onChange={onChange}
+      >
+        Yes
+      </Form.Radio>
+      <Form.Radio
+        value="no"
+        name="story-radio-name"
+        checked={selectedValue === 'no'}
+        onChange={onChange}
+      >
+        No
+      </Form.Radio>
+      <Form.Radio name="story-radio-name" disabled onChange={onChange}>
+        I am disabled
+      </Form.Radio>
+    </Form.Control>
+  );
 };

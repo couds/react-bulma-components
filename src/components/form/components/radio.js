@@ -29,19 +29,12 @@ const Radio = ({
       type="radio"
       value={value}
       disabled={disabled}
-    />
+    />{' '}
     {children}
   </Element>
 );
 
 Radio.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to be passed to `Form.Radio`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
   /**
    * The name of the input field.
    * Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
@@ -64,17 +57,16 @@ Radio.propTypes = {
    * You can retrieve this value in the onChange handler of this component.
    */
   value: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Radio.defaultProps = {
   ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  name: undefined,
   value: '',
-  style: undefined,
-  disabled: false,
-  checked: false,
   renderAs: 'input',
 };
 

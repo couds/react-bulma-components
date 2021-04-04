@@ -16,21 +16,15 @@ const Label = ({ children, className, size, ...props }) => (
 );
 
 Label.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  htmlFor: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Label.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  size: undefined,
-  htmlFor: undefined,
   renderAs: 'label',
 };
 
