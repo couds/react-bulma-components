@@ -7,8 +7,18 @@ import FieldBody from './field-body';
 
 import Element from '../../../element';
 import { normalizeAlign } from '../../../../services/normalizer';
+import useFieldContext, { FieldContext } from './context';
 
-const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
+const Field = ({
+  className,
+  align,
+  multiline,
+  horizontal,
+  kind,
+  size,
+  ...props
+}) => {
+  const context = useFieldContext();
   let k = null;
 
   if (kind === 'addons') {
@@ -18,15 +28,17 @@ const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
   }
 
   return (
-    <Element
-      {...props}
-      className={classnames('field', className, {
-        [`${k}`]: k,
-        [`${k}-${normalizeAlign(align)}`]: k === 'is-grouped' && align,
-        [`${k}-multiline`]: k === 'is-grouped' && multiline,
-        'is-horizontal': horizontal,
-      })}
-    />
+    <FieldContext.Provider value={{ size: size || context.size }}>
+      <Element
+        {...props}
+        className={classnames('field', className, {
+          [`${k}`]: k,
+          [`${k}-${normalizeAlign(align)}`]: k === 'is-grouped' && align,
+          [`${k}-multiline`]: k === 'is-grouped' && multiline,
+          'is-horizontal': horizontal,
+        })}
+      />
+    </FieldContext.Provider>
   );
 };
 
@@ -35,7 +47,10 @@ Field.Label = FieldLabel;
 Field.Body = FieldBody;
 
 Field.propTypes = {
-  ...Element.propTypes,
+  /**
+   * When this prop is set this value will be used as size for `Form.Label` `Form.Input`, `Form.Textarea`, `Form.Select`, `Button` and `Icon` inside the field
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    * `addon`: Will group together the controls without gap between
    * `group`: Will group together the controls with evenly seperation between

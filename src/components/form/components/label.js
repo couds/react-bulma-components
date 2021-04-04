@@ -3,17 +3,22 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
+import useFieldContext from './field/context';
 
-const Label = ({ children, className, size, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('label', className, {
-      [`is-${size}`]: size,
-    })}
-  >
-    {children}
-  </Element>
-);
+const Label = ({ children, className, size, ...props }) => {
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
+  return (
+    <Element
+      {...props}
+      className={classnames('label', className, {
+        [`is-${calculatedSize}`]: calculatedSize,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Label.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),

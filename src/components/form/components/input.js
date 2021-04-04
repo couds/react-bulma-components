@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
+import useFieldContext from './field/context';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -16,19 +17,23 @@ const Input = ({
   status,
   rounded,
   ...props
-}) => (
-  <Element
-    {...props}
-    readOnly={readOnly || isStatic}
-    className={classnames('input', className, {
-      'is-static': isStatic,
-      [`is-${status}ed`]: status,
-      'is-rounded': rounded,
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-    })}
-  />
-);
+}) => {
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
+  return (
+    <Element
+      {...props}
+      readOnly={readOnly || isStatic}
+      className={classnames('input', className, {
+        'is-static': isStatic,
+        [`is-${status}ed`]: status,
+        'is-rounded': rounded,
+        [`is-${calculatedSize}`]: calculatedSize,
+        [`is-${color}`]: color,
+      })}
+    />
+  );
+};
 
 Input.propTypes = {
   /**

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
+import useFieldContext from './field/context';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -27,12 +28,14 @@ const Select = ({
    * Return default value for value prop
    */
   const defaultValue = multiple ? [] : '';
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
 
   return (
     <Element
       domRef={domRef}
       className={classnames('select', className, {
-        [`is-${size}`]: size,
+        [`is-${calculatedSize}`]: calculatedSize,
         [`is-${color}`]: color,
         'is-loading': loading,
         'is-multiple': multiple,

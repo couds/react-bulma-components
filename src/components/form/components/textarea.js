@@ -4,23 +4,27 @@ import classnames from 'classnames';
 
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
+import useFieldContext from './field/context';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Textarea = ({ className, size, color, status, fixedSize, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('textarea', className, {
-      [`is-${status}ed`]: status,
-      'has-fixed-size': fixedSize,
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-    })}
-  />
-);
+const Textarea = ({ className, size, color, status, fixedSize, ...props }) => {
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
+  return (
+    <Element
+      {...props}
+      className={classnames('textarea', className, {
+        [`is-${status}ed`]: status,
+        'has-fixed-size': fixedSize,
+        [`is-${calculatedSize}`]: calculatedSize,
+        [`is-${color}`]: color,
+      })}
+    />
+  );
+};
 
 Textarea.propTypes = {
-  ...Element.propTypes,
   /**
    * Adjusts the size of the textarea input
    */

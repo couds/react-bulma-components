@@ -19,17 +19,15 @@ const Help = ({ className, children, color, ...props }) => (
 );
 
 Help.propTypes = {
-  ...Element.propTypes,
-  className: PropTypes.string,
   color: PropTypes.oneOf(colors),
-  children: PropTypes.node,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Help.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  color: undefined,
   renderAs: 'p',
 };
 

@@ -155,20 +155,20 @@ LabelExample.argTypes = {
   },
 };
 
-export const Field = () => (
+export const Field = (args) => (
   <>
     <Box>
       <Message color="info">
         <Message.Body>Vertical Form</Message.Body>
       </Message>
-      <Form.Field>
+      <Form.Field {...args}>
         <Form.Label>Field label</Form.Label>
         <Form.Control>
           <Form.Input type="text" placeholder="Field control - text input" />
         </Form.Control>
         <Form.Help>Help text for this field</Form.Help>
       </Form.Field>
-      <Form.Field>
+      <Form.Field {...args}>
         <Form.Label>With Button</Form.Label>
         <Form.Field kind="addons">
           <Form.Control>
@@ -226,6 +226,15 @@ export const Field = () => (
     </Box>
   </>
 );
+
+Field.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+      options: ['small', 'medium', 'large'],
+    },
+  },
+};
 
 export const Control = ({ iconLeft, iconRight, ...args }) => (
   <>

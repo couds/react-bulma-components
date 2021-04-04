@@ -37,7 +37,20 @@ React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most 
 - Removed size props (did nothing)
 - Automatically add has-icon-left/right if an `Icon` with align is on the children
 
+
+### Form.Label
+
+- Added `size` prop that will be used on components inside the `Field`, like `Input`, `Select`, `Label`...
+
 ### Form.Input
+
+- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
+
+### Form.Select
+
+- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
+
+### Form.Textarea
 
 - Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
 

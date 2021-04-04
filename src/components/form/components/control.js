@@ -4,17 +4,30 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 import Icon from '../../icon';
+import useFieldContext from './field/context';
+import Button from '../../button';
 
-const Control = ({
-  children,
-  className,
-  fullwidth,
-  loading,
-  size,
-  ...props
-}) => {
-  const icons = React.Children.toArray(children)
-    .filter((child) => child.type === Icon)
+const isIcon = (child) => {
+  return (
+    child.type === Icon &&
+    (child.props.align === 'left' || child.props.align === 'right')
+  );
+};
+
+const Control = ({ children, className, fullwidth, loading, ...props }) => {
+  const context = useFieldContext();
+
+  const updatedChildren = React.Children.map(children, (child) => {
+    if (!isIcon(child) && child.type !== Button) {
+      return child;
+    }
+    return React.cloneElement(child, {
+      size: child.props.size || context.size,
+    });
+  });
+
+  const icons = React.Children.toArray(updatedChildren)
+    .filter(isIcon)
     .reduce(
       (acc, icon) => ({
         iconLeft: acc.iconLeft || icon.props.align === 'left',
@@ -30,10 +43,9 @@ const Control = ({
         'has-icons-left': icons.iconLeft,
         'has-icons-right': icons.iconRight,
         'is-loading': loading,
-        [`is-${size}`]: size,
       })}
     >
-      {children}
+      {updatedChildren}
     </Element>
   );
 };
