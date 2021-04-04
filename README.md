@@ -54,6 +54,11 @@ React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most 
 
 - Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
 
+### Container
+
+- Removed `fluid` prop in favor to add it as an option of the `breakpoint` prop
+- Added `max` prop to allow use `is-max-desktop` and `is-max-widescreen` from bulmd
+
 ## To Install
 
 ```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
