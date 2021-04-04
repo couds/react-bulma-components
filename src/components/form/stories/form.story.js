@@ -135,6 +135,26 @@ export const Default = () => {
   );
 };
 
+export const LabelExample = (args) => {
+  return (
+    <Form.Field>
+      <Form.Label {...args}>I&apos;m the label of this field</Form.Label>
+      <Form.Control>
+        <Form.Input placeholder="Inside a field set" />
+      </Form.Control>
+    </Form.Field>
+  );
+};
+
+LabelExample.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+      options: ['small', 'medium', 'large'],
+    },
+  },
+};
+
 export const Field = () => (
   <>
     <Box>
