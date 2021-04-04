@@ -16,8 +16,12 @@ const Section = ({ children, className, size, ...props }) => (
 );
 
 Section.propTypes = {
-  ...Element.propTypes,
   size: PropTypes.oneOf(['medium', 'large']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Section.defaultProps = {

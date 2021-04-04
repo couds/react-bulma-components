@@ -1,0 +1,26 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Section } from '../..';
+import * as stories from './section.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Layout/Section" />
+
+# Section
+
+A simple container to divide your page into sections.
+
+## Props
+
+<ArgsTable of={Section} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Section" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/layout/section/)
