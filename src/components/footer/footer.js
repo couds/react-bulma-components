@@ -1,20 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../element';
 
-const Footer = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('footer', className)}>
-    {children}
-  </Element>
+const Footer = ({ className, ...props }) => (
+  <Element {...props} className={classnames('footer', className)} />
 );
 
 Footer.propTypes = {
-  ...Element.propTypes,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Footer.defaultProps = {
-  ...Element.defaultProps,
+  renderAs: 'footer',
 };
 
 export default Footer;

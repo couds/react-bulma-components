@@ -36,6 +36,9 @@
 - Removed size props (did nothing)
 - Automatically add has-icon-left/right if an `Icon` with align is on the children
 
+### Footer
+- Update default `renderAs` to `footer`
+
 ### Form.Field
 - Added `size` prop that will be also used on childrens that accept size as a prop `Input`, `InputFile`, `Label`, `Icon`, `Button`...
 
