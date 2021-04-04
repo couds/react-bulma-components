@@ -39,7 +39,6 @@ interface LabelProps {
 interface TextareaProps {
   size?: Size;
   color?: Color;
-  status?: 'focus' | 'hover';
   fixedSize?: boolean;
 }
 
@@ -47,10 +46,8 @@ interface SelectProps<T> {
   size?: Size;
   color?: Color;
   value?: T;
-  readOnly?: boolean;
   loading?: boolean;
-  hovered?: boolean;
-  focused?: boolean;
+  status?: 'focus' | 'hover';
   multiple?: boolean;
 }
 

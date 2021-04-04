@@ -390,3 +390,104 @@ TextAreaExample.argTypes = {
     },
   },
 };
+
+export const SelectExample = ({ withIcon, ...args }) => {
+  const [selectedOption, setSelectedOption] = React.useState('option1');
+  React.useEffect(() => {
+    if (args.multiple) {
+      setSelectedOption([]);
+      return;
+    }
+    setSelectedOption('option1');
+  }, [args.multiple]);
+  return (
+    <Form.Field>
+      <Form.Label>Select an option</Form.Label>
+      <Form.Control>
+        <Form.Select
+          {...args}
+          size={args.size === 'default' ? null : args.size}
+          value={selectedOption}
+          onChange={(e) => {
+            const { value } = e.target;
+            if (args.multiple) {
+              setSelectedOption(
+                Array.from(e.target.selectedOptions, (option) => option.value),
+              );
+              return;
+            }
+            setSelectedOption(value);
+          }}
+        >
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+        </Form.Select>
+        {withIcon && (
+          <Icon align="left">
+            <i className="fas fa-user" />
+          </Icon>
+        )}
+      </Form.Control>
+    </Form.Field>
+  );
+};
+
+SelectExample.argTypes = {
+  color: {
+    description: 'Color of this dropdown',
+    defaultValue: undefined,
+    control: {
+      type: 'select',
+      options: Object.values(CONSTANTS.COLORS),
+    },
+  },
+  size: {
+    description: 'The size of this dropdown',
+    defaultValue: undefined,
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
+  rounded: {
+    description:
+      'Whether the dropdown button should have fully rounded corners.',
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  disabled: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  loading: {
+    description:
+      'Whether a loading spinner should be shown in place of the dropdown arrow',
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  multiple: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  status: {
+    defaultValue: false,
+    control: {
+      type: 'select',
+      options: ['focus', 'hover'],
+    },
+  },
+  withIcon: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+};

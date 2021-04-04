@@ -21,6 +21,7 @@ module.exports = {
     'storybook-addon-react-docgen',
   ],
   webpackFinal: (config) => {
+    config.devtool = 'source-maps';
     config.resolve.modules.push('node_modules', 'src');
     config.resolve.alias['react-bulma-components/lib'] = path.resolve(
       __dirname,
