@@ -5,7 +5,7 @@ import { Button, Box } from '../..';
 
 import CONSTANTS from '../../constants';
 
-export const Default = ({ hasAddons, groupSize, position, ...args }) => (
+export const Default = ({ hasAddons, groupSize, align, ...args }) => (
   <>
     <Box>
       <Button {...args}>Button</Button>
@@ -13,7 +13,7 @@ export const Default = ({ hasAddons, groupSize, position, ...args }) => (
     <Box>
       <Button.Group
         hasAddons={hasAddons}
-        position={position === 'default' ? '' : position}
+        align={align === 'default' ? '' : align}
         size={groupSize === 'default' ? '' : groupSize}
       >
         <Button renderAs="span" color="success">
@@ -40,7 +40,7 @@ Default.argTypes = {
       type: 'boolean',
     },
   },
-  position: {
+  align: {
     table: {
       category: 'Button Group',
     },

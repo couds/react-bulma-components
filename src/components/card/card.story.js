@@ -9,7 +9,7 @@ export const Default = () => (
     />
     <Card.Content>
       <Media>
-        <Media.Item renderAs="figure" position="left">
+        <Media.Item renderAs="figure" align="left">
           <Image
             size={64}
             alt="64x64"
@@ -41,7 +41,7 @@ export const FooterActions = () => (
     </Card.Header>
     <Card.Content>
       <Media>
-        <Media.Item renderAs="figure" position="left">
+        <Media.Item renderAs="figure" align="left">
           <Image
             size={64}
             alt="64x64"

@@ -20,7 +20,7 @@ export const Default = () => (
           <Form.Input type="password" placeholder="*************" />
         </Form.Control>
       </Form.Field>
-      <Button.Group position="right">
+      <Button.Group align="right">
         <Button color="primary">Sign in</Button>
       </Button.Group>
     </form>

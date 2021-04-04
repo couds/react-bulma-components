@@ -23,7 +23,7 @@ describe('Media component', () => {
   });
   it('Should hbe a Media Item', () => {
     const component = renderer.create(
-      <Media.Item renderAs="figure" position="left">
+      <Media.Item renderAs="figure" align="left">
         <img
           alt="placeholder"
           src="http://bulma.io/images/placeholders/128x128.png"
@@ -34,7 +34,7 @@ describe('Media component', () => {
   });
   it('Should hbe a Media Item Centered', () => {
     const component = renderer.create(
-      <Media.Item renderAs="figure" position="center">
+      <Media.Item renderAs="figure" align="center">
         <img
           alt="placeholder"
           src="http://bulma.io/images/placeholders/128x128.png"

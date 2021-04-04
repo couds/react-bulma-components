@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const MediaItem = ({ children, className, position, ...props }) => {
-  const p = position === 'center' ? 'content' : position;
+const MediaItem = ({ children, className, align, ...props }) => {
+  const p = align === 'center' ? 'content' : align;
   return (
     <Element
       {...props}
@@ -19,12 +19,11 @@ const MediaItem = ({ children, className, position, ...props }) => {
 };
 
 MediaItem.propTypes = {
-  ...Element.propTypes,
-  position: PropTypes.oneOf(['center', 'right', 'left']),
+  align: PropTypes.oneOf(['center', 'right', 'left']),
 };
 
 MediaItem.defaultProps = {
-  position: 'center',
+  align: 'center',
 };
 
 export default MediaItem;

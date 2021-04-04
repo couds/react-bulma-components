@@ -38,7 +38,7 @@ const Pagination = ({
   autoHide,
   className,
   size,
-  position,
+  align,
   rounded,
   onChange,
   ...props
@@ -57,7 +57,7 @@ const Pagination = ({
       {...props}
       className={classnames('pagination', className, {
         [`is-${size}`]: size,
-        [`is-${normalizeAlign(position)}`]: position,
+        [`is-${normalizeAlign(align)}`]: align,
         'is-rounded': rounded,
       })}
       aria-label="pagination"
@@ -184,7 +184,7 @@ Pagination.propTypes = {
    */
   autoHide: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  position: PropTypes.oneOf(['center', 'right']),
+  align: PropTypes.oneOf(['center', 'right']),
   rounded: PropTypes.bool,
   renderAs: PropTypes.oneOfType([
     PropTypes.func,

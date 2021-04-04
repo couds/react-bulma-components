@@ -4,12 +4,12 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const NavbarContainer = ({ className, children, position, ...props }) => (
+const NavbarContainer = ({ className, children, align, ...props }) => (
   <Element
     {...props}
     className={classnames(
       {
-        [`navbar-${position}`]: position,
+        [`navbar-${align}`]: align,
       },
       className,
     )}
@@ -19,11 +19,11 @@ const NavbarContainer = ({ className, children, position, ...props }) => (
 );
 
 NavbarContainer.propTypes = {
-  position: PropTypes.oneOf(['start', 'end']),
+  align: PropTypes.oneOf(['start', 'end']),
 };
 
 NavbarContainer.defaultProps = {
-  position: 'start',
+  align: 'start',
 };
 
 export default NavbarContainer;

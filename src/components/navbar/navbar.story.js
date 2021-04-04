@@ -38,7 +38,7 @@ export const Default = ({
           </Navbar.Item>
           <Navbar.Item href="#">Second</Navbar.Item>
         </Navbar.Container>
-        <Navbar.Container position="end">
+        <Navbar.Container align="end">
           <Navbar.Item href="#">At the end</Navbar.Item>
         </Navbar.Container>
       </Navbar.Menu>

@@ -29,7 +29,7 @@ interface NavbarLinkProps {
 }
 
 interface NavbarContainerProps {
-  position?: 'start' | 'end';
+  align?: 'start' | 'end';
 }
 
 declare const Navbar: BulmaComponent<NavbarProps, 'nav'> & {

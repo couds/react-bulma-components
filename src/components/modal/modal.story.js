@@ -21,7 +21,7 @@ export const Default = (args) => {
           </Modal.Card.Header>
           <Modal.Card.Body>
             <Media>
-              <Media.Item renderAs="figure" position="left">
+              <Media.Item renderAs="figure" align="left">
                 <Image
                   size={64}
                   alt="64x64"
@@ -43,7 +43,7 @@ export const Default = (args) => {
               </Media.Item>
             </Media>
           </Modal.Card.Body>
-          <Modal.Card.Footer renderAs={Button.Group} position="right" hasAddons>
+          <Modal.Card.Footer renderAs={Button.Group} align="right" hasAddons>
             <Button color="success">Like</Button>
             <Button>Share</Button>
           </Modal.Card.Footer>

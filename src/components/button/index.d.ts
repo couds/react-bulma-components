@@ -23,7 +23,7 @@ interface ButtonProps {
 interface ButtonGroupProps {
   size?: Size;
   hasAddons?: boolean;
-  position?: 'center' | 'right';
+  align?: 'center' | 'right';
 }
 
 declare const Button: BulmaComponent<ButtonProps, 'button'> & {

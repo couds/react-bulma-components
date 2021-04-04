@@ -16,9 +16,7 @@ Media.Item = MediaItem;
 
 Media.Content = MediaContent;
 
-Media.propTypes = {
-  ...Element.propTypes,
-};
+Media.propTypes = {};
 
 Media.defaultProps = {
   renderAs: 'article',

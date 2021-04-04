@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import Element from '../../element';
 import { normalizeAlign } from '../../../services/normalizer';
 
-const ButtonGroup = ({ className, hasAddons, position, size, ...props }) => (
+const ButtonGroup = ({ className, hasAddons, align, size, ...props }) => (
   <Element
     {...props}
     className={classnames('buttons', className, {
       'has-addons': hasAddons,
-      [`is-${[normalizeAlign(position)]}`]: position,
+      [`is-${[normalizeAlign(align)]}`]: align,
       [`are-${size}`]: size,
     })}
   />
@@ -22,9 +22,9 @@ ButtonGroup.propTypes = {
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
-   * Position of the group. By default, it is left-aligned.
+   * Align of the group. By default, it is left-aligned.
    */
-  position: PropTypes.oneOf(['center', 'right']),
+  align: PropTypes.oneOf(['center', 'right']),
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,
@@ -33,9 +33,6 @@ ButtonGroup.propTypes = {
 };
 
 ButtonGroup.defaultProps = {
-  hasAddons: undefined,
-  position: undefined,
-  size: undefined,
   renderAs: 'div',
 };
 

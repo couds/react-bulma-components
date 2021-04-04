@@ -132,7 +132,7 @@ describe('Button component', () => {
     });
     it('Should be centered', () => {
       const component = renderer.create(
-        <Button.Group position="center">
+        <Button.Group align="center">
           <Button>test 0</Button>
           <Button>test 1</Button>
         </Button.Group>,
@@ -141,7 +141,7 @@ describe('Button component', () => {
     });
     it('Should align to the right', () => {
       const component = renderer.create(
-        <Button.Group position="right">
+        <Button.Group align="right">
           <Button>test 0</Button>
           <Button>test 1</Button>
         </Button.Group>,

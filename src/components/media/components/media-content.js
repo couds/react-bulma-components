@@ -9,8 +9,6 @@ const MediaContent = ({ children, className, ...props }) => (
   </Element>
 );
 
-MediaContent.propTypes = {
-  ...Element.propTypes,
-};
+MediaContent.propTypes = {};
 
 export default MediaContent;

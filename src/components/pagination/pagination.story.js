@@ -52,7 +52,7 @@ Default.argTypes = {
       options: ['small', 'medium', 'large'],
     },
   },
-  position: {
+  align: {
     control: {
       type: 'select',
       options: ['center', 'right'],

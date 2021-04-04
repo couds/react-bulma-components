@@ -34,7 +34,7 @@ Tabs.Tab = Tab;
 
 Tabs.propTypes = {
   ...Element.propTypes,
-  align: PropTypes.oneOf(['centered', 'right']),
+  align: PropTypes.oneOf(['center', 'right']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /** This is called style on Bulma documentation */
   type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
