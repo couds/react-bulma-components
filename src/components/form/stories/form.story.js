@@ -491,3 +491,21 @@ SelectExample.argTypes = {
     },
   },
 };
+
+export const CheckboxExample = (args) => {
+  return (
+    <Form.Field>
+      <Form.Control>
+        <Form.Checkbox {...args}>Remember me</Form.Checkbox>
+      </Form.Control>
+    </Form.Field>
+  );
+};
+
+CheckboxExample.argTypes = {
+  disabled: {
+    control: {
+      type: 'boolean',
+    },
+  },
+};

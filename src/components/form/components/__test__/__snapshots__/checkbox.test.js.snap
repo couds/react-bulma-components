@@ -9,6 +9,7 @@ exports[`Checkbox component Should have checkbox classname 1`] = `
   <input
     type="checkbox"
   />
+   
   Text
 </label>
 `;
