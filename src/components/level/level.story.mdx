@@ -1,4 +1,6 @@
-import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Story, Meta, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import CommonProps from '../../../.storybook/common-props';
+import Level from '.';
 import * as stories from './level.story';
 
 <Meta title="Layout/Level" />
@@ -7,8 +9,6 @@ import * as stories from './level.story';
 
 A layout component that aligns children horizontally.
 
-## Usage
-
 The `Level` component has the following structured:
 
 - `<Level>`: The main container
@@ -16,25 +16,31 @@ The `Level` component has the following structured:
   - `<Level.Side align="right">` aligns its children to the right side of `Level`
     - `<Level.Item>` represents the individual items in `Level`. **Content of `Level.Item` will be vertically centerd**.
 
+If you use the `Level.Item` directly as a child of `Level` the items will be centered.
+
+## Props
+
+<ArgsTable of={Level} />
+
+## Components
+
+### Level.Side
+
+<ArgsTable of={Level.Side} />
+
+### Level.Item
+
+<ArgsTable of={Level.Item} />
+
+<CommonProps />
+
 ## Example
 
 <Canvas>
-  <Story story={stories.Default} />
+  <Story story={stories.Default} name="Level" />
 </Canvas>
 
-### Centered
 
-If `Level.Item` is directly under `Level`, they will be evenly spaced in the container.
+## Related
 
-<Canvas>
-  <Story story={stories.Centered} />
-</Canvas>
-
-### Mobile level
-
-By default, `Level` is vertical on mobile (meaning it will align its items vertically). You can enable the `mobile` prop
-so that `Level` will remain horizontal on mobile.
-
-<Canvas>
-  <Story story={stories.MobileLevel} />
-</Canvas>
+- [Official documentation](https://bulma.io/documentation/layout/level)

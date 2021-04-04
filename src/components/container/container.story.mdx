@@ -1,6 +1,8 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Message, Table, Element } from '../..';
 import Container from '.';
+import CommonProps from '../../../.storybook/common-props';
+
 import * as stories from './container.story';
 
 <Meta title="Layout/Container" />
@@ -92,6 +94,8 @@ The values 960, 1152 and 1344 have been chosen because they are divisible by bot
 ## Props
 
 <ArgsTable of={Container} />
+
+<CommonProps />
 
 <Message>
   <Message.Body>Resize the window to see what happens!</Message.Body>

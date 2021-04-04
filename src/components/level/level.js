@@ -22,10 +22,16 @@ Level.Side = LevelSide;
 Level.Item = LevelItem;
 
 Level.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
   breakpoint: PropTypes.oneOf(['mobile']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+};
+
+Level.defaultProps = {
+  renderAs: 'nav',
 };
 
 export default Level;

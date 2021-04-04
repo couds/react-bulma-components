@@ -9,8 +9,6 @@ const LevelItem = ({ children, className, ...props }) => (
   </Element>
 );
 
-LevelItem.propTypes = {
-  ...Element.propTypes,
-};
+LevelItem.propTypes = {};
 
 export default LevelItem;

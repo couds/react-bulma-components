@@ -4,20 +4,17 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const LevelSide = ({ children, className, align, ...props }) => (
+const LevelSide = ({ className, align, ...props }) => (
   <Element
     {...props}
     className={classnames(className, {
       [`level-${align}`]: align,
     })}
-  >
-    {children}
-  </Element>
+  />
 );
 
 LevelSide.propTypes = {
-  ...Element.propTypes,
-  align: PropTypes.string,
+  align: PropTypes.oneOf(['left', 'right']),
 };
 
 LevelSide.defaultProps = {
