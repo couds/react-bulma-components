@@ -12,6 +12,7 @@ exports[`Radio component Should be disabled, checked and with value 1`] = `
     type="radio"
     value="TEST"
   />
+   
   <p>
     Default
   </p>
@@ -21,15 +22,13 @@ exports[`Radio component Should be disabled, checked and with value 1`] = `
 exports[`Radio component Should concat classname in props with Bulma classname 1`] = `
 <label
   className="radio other-class this-is-a-test"
-  disabled={false}
 >
   <input
-    checked={false}
-    disabled={false}
     name="test"
     type="radio"
     value=""
   />
+   
   <p>
     Default
   </p>
@@ -41,15 +40,13 @@ exports[`Radio component Should exist 1`] = `[Function]`;
 exports[`Radio component Should have radio classname 1`] = `
 <label
   className="radio"
-  disabled={false}
 >
   <input
-    checked={false}
-    disabled={false}
     name="test"
     type="radio"
     value=""
   />
+   
   Test 
   <a>
     Give me
@@ -60,7 +57,6 @@ exports[`Radio component Should have radio classname 1`] = `
 exports[`Radio component Should use inline styles 1`] = `
 <label
   className="radio"
-  disabled={false}
   style={
     Object {
       "height": 250,
@@ -68,12 +64,11 @@ exports[`Radio component Should use inline styles 1`] = `
   }
 >
   <input
-    checked={false}
-    disabled={false}
     name="test"
     type="radio"
     value=""
   />
+   
   <p>
     Default
   </p>
