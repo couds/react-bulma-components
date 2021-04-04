@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Box, Button, Form, Icon } from '../../..';
+import { Block, Box, Button, Form, Icon } from '../../..';
 import CONSTANTS from '../../../constants';
 import Message from '../../message';
 
 export const Default = () => {
-  const [name, setName] = useState('');
   const [username, setUsername] = useState('bulma');
   const [email, setEmail] = useState('hello@');
   const [subject, setSubject] = useState('');
@@ -14,18 +13,6 @@ export const Default = () => {
 
   return (
     <form>
-      <Form.Field>
-        <Form.Label>Name</Form.Label>
-        <Form.Control>
-          <Form.Input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="Text input"
-          />
-        </Form.Control>
-      </Form.Field>
-
       <Form.Field>
         <Form.Label>Username</Form.Label>
         <Form.Control iconLeft iconRight>
@@ -62,17 +49,36 @@ export const Default = () => {
         <Form.Help color="danger">This email is invalid</Form.Help>
       </Form.Field>
 
+      <Block renderAs="fieldset" disabled>
+        <Form.Field>
+          <Form.Label>Label Text</Form.Label>
+          <Form.Control>
+            <Form.Input placeholder="Inside a field set" />
+          </Form.Control>
+        </Form.Field>
+        <Form.Field>
+          <Form.Label>Another disabled field</Form.Label>
+          <Form.Control>
+            <Form.Input placeholder="Another nside a field set" />
+          </Form.Control>
+        </Form.Field>
+      </Block>
       <Form.Field>
         <Form.Label>Subject</Form.Label>
-        <Form.Control>
-          <Form.Select
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-          >
-            <option value="select-dropdown">Select dropdown</option>
-            <option value="with-options">With options</option>
-          </Form.Select>
-        </Form.Control>
+        <Form.Field kind="group">
+          <Form.Control>
+            <Form.Select
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            >
+              <option value="select-dropdown">Select dropdown</option>
+              <option value="with-options">With options</option>
+            </Form.Select>
+          </Form.Control>
+          <Form.Control fullwidth loading>
+            <Form.Input placeholder="With loading state" />
+          </Form.Control>
+        </Form.Field>
       </Form.Field>
 
       <Form.Field>
@@ -268,34 +274,9 @@ Control.argTypes = {
   },
 };
 
-export const DisablingFields = (args) => (
-  <fieldset {...args}>
-    <Form.Field>
-      <Form.Label>Username</Form.Label>
-      <Form.Control>
-        <Form.Input type="text" placeholder="e.g. John Doe" />
-      </Form.Control>
-    </Form.Field>
-    <Form.Field>
-      <Form.Label>Password</Form.Label>
-      <Form.Control>
-        <Form.Input type="password" placeholder="password" />
-      </Form.Control>
-    </Form.Field>
-  </fieldset>
-);
-
-DisablingFields.argTypes = {
-  disabled: {
-    control: {
-      type: 'boolean',
-    },
-  },
-};
-
 export const InputExample = (args) => {
   return (
-    <fieldset>
+    <>
       <Form.Field>
         <Form.Label>Username</Form.Label>
         <Form.Control>
@@ -308,7 +289,7 @@ export const InputExample = (args) => {
           <Form.Input {...args} type="password" placeholder="password" />
         </Form.Control>
       </Form.Field>
-    </fieldset>
+    </>
   );
 };
 
@@ -341,7 +322,69 @@ InputExample.argTypes = {
       type: 'boolean',
     },
   },
+  disabled: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
   rounded: {
+    control: {
+      type: 'boolean',
+    },
+  },
+};
+
+export const TextAreaExample = (args) => (
+  <Form.Field>
+    <Form.Control>
+      <Form.Textarea
+        {...args}
+        placeholder="I am a textarea"
+        size={args.size === 'default' ? null : args.size}
+      />
+    </Form.Control>
+  </Form.Field>
+);
+
+TextAreaExample.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
+  color: {
+    control: {
+      type: 'select',
+      options: ['default', ...Object.values(CONSTANTS.COLORS)],
+    },
+  },
+  rows: {
+    control: {
+      type: 'number',
+    },
+  },
+  status: {
+    control: {
+      type: 'select',
+      options: ['focus', 'hover'],
+    },
+  },
+  readOnly: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  disabled: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  fixedSize: {
+    defaultValue: false,
     control: {
       type: 'boolean',
     },

@@ -20,8 +20,12 @@ describe('Textarea component', () => {
     const component = renderer.create(<Textarea style={{ height: 250 }} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should support various states', () => {
-    const component = renderer.create(<Textarea focused hovered />);
+  it('Should support hover state', () => {
+    const component = renderer.create(<Textarea status="hover" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should support focus state', () => {
+    const component = renderer.create(<Textarea status="focus" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have a fixed size', () => {

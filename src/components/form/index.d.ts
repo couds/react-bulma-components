@@ -39,8 +39,7 @@ interface LabelProps {
 interface TextareaProps {
   size?: Size;
   color?: Color;
-  focused?: boolean;
-  hovered?: boolean;
+  status?: 'focus' | 'hover';
   fixedSize?: boolean;
 }
 

@@ -7,20 +7,11 @@ import Element from '../../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-const Textarea = ({
-  className,
-  size,
-  color,
-  focused,
-  hovered,
-  fixedSize,
-  ...props
-}) => (
+const Textarea = ({ className, size, color, status, fixedSize, ...props }) => (
   <Element
     {...props}
     className={classnames('textarea', className, {
-      'is-focused': focused,
-      'is-hovered': hovered,
+      [`is-${status}ed`]: status,
       'has-fixed-size': fixedSize,
       [`is-${size}`]: size,
       [`is-${color}`]: color,
@@ -38,28 +29,21 @@ Textarea.propTypes = {
    * The color of this input.
    */
   color: PropTypes.oneOf(colors),
-  /**
-   * Whether this textarea is in a focused state.
-   */
-  focused: PropTypes.bool,
-  /**
-   * Whether this textarea is in a hovered state.
-   */
-  hovered: PropTypes.bool,
+  status: PropTypes.oneOf(['focus', 'hover']),
   /**
    * Whether the size of this textarea should be fixed regardless of its content.
    */
   fixedSize: PropTypes.bool,
+  disabled: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Textarea.defaultProps = {
-  ...Element.defaultProps,
   renderAs: 'textarea',
-  size: undefined,
-  focused: false,
-  hovered: false,
-  fixedSize: false,
-  color: undefined,
 };
 
 export default Textarea;

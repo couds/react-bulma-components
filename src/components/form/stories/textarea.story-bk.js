@@ -38,16 +38,10 @@ BasicUsage.argTypes = {
       type: 'boolean',
     },
   },
-  focused: {
-    defaultValue: false,
+  status: {
     control: {
-      type: 'boolean',
-    },
-  },
-  hovered: {
-    defaultValue: false,
-    control: {
-      type: 'boolean',
+      type: 'select',
+      options: ['focus', 'hover'],
     },
   },
   readOnly: {

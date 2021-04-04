@@ -20,9 +20,15 @@ exports[`Textarea component Should have textarea classname 1`] = `
 />
 `;
 
-exports[`Textarea component Should support various states 1`] = `
+exports[`Textarea component Should support focus state 1`] = `
 <textarea
-  className="textarea is-focused is-hovered"
+  className="textarea is-focused"
+/>
+`;
+
+exports[`Textarea component Should support hover state 1`] = `
+<textarea
+  className="textarea is-hovered"
 />
 `;
 

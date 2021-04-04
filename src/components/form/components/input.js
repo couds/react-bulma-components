@@ -56,6 +56,7 @@ Input.propTypes = {
    * making the left and right side fully rounded.
    */
   rounded: PropTypes.bool,
+  disabled: PropTypes.bool,
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,

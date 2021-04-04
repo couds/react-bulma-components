@@ -43,6 +43,18 @@ exports[`Input component Should have input classname 1`] = `
 />
 `;
 
+exports[`Input component Should support focus state 1`] = `
+<input
+  className="input is-focused"
+/>
+`;
+
+exports[`Input component Should support hovered state 1`] = `
+<input
+  className="input is-hovered"
+/>
+`;
+
 exports[`Input component Should use inline styles 1`] = `
 <input
   className="input"
