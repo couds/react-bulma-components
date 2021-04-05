@@ -1,12 +1,18 @@
 import { BulmaComponent } from '..';
 import { Breakpoint, ResponsiveModifiers } from '..';
 
+interface GapProps {
+  gap?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+}
+
 interface ColumnGroupProps {
-  variableGap?: {
-    [breakpoint in Breakpoint]: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-  };
+  touch?: GapProps & ResponsiveModifiers;
+  mobile?: GapProps & ResponsiveModifiers;
+  tablet?: GapProps & ResponsiveModifiers;
+  desktop?: GapProps & ResponsiveModifiers;
+  widescreen?: GapProps & ResponsiveModifiers;
   breakpoint?: Breakpoint;
-  gapless?: boolean;
+  gap?: GapProps;
   multiline?: boolean;
   centered?: boolean;
   vCentered?: boolean;

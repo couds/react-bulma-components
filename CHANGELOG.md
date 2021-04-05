@@ -24,6 +24,14 @@
 - Deprecated `gapless` to `hasAddons` in `Button.Group`
 - Renamed `position` prop to `align`
 
+### Columns
+- Remove `gapless` prop
+- Add variable `gap` prop
+- Add gap to responsive option
+
+### Columns.Column
+- Merge common responsive props with `Column` responsive props
+
 ### Container
 - Removed `fluid` prop in favor to add it as an option of the `breakpoint` prop
 - Added `max` prop to allow use `is-max-desktop` and `is-max-widescreen` from bulma

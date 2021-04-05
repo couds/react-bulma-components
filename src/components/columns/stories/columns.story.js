@@ -200,37 +200,79 @@ export const Nesting = () => (
   </Columns>
 );
 
-export const Gaps = ({ gapless }) => (
+export const Gaps = ({
+  mobile,
+  tablet,
+  touch,
+  desktop,
+  widescreen,
+  fullhd,
+  ...args
+}) => (
   <>
     {message}
     <Columns
-      gapless={gapless}
-      variableGap={{
-        mobile: 1,
-        tablet: 0,
-        desktop: 3,
-        widescreen: 8,
-        fullhd: 2,
-      }}
+      {...args}
+      mobile={mobile && { gap: mobile }}
+      tablet={tablet && { gap: tablet }}
+      touch={touch && { gap: touch }}
+      desktop={desktop && { gap: desktop }}
+      widescreen={widescreen && { gap: widescreen }}
+      fullhd={fullhd && { gap: fullhd }}
     >
       <Columns.Column size={3}>
-        <Notification color="primary">Size 1</Notification>
+        <Notification color="primary">Size 3</Notification>
       </Columns.Column>
       <Columns.Column size={3}>
-        <Notification color="primary">Size 1</Notification>
+        <Notification color="primary">Size 3</Notification>
       </Columns.Column>
       <Columns.Column size={3}>
-        <Notification color="primary">Size 1</Notification>
+        <Notification color="primary">Size 3</Notification>
       </Columns.Column>
       <Columns.Column size={3}>
-        <Notification color="primary">Size 1</Notification>
+        <Notification color="primary">Size 3</Notification>
       </Columns.Column>
     </Columns>
   </>
 );
 
-Gaps.args = {
-  gapless: false,
+Gaps.argTypes = {
+  gap: {
+    control: {
+      type: 'select',
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+  },
+  mobile: {
+    control: {
+      type: 'select',
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+  },
+  tablet: {
+    control: {
+      type: 'select',
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+  },
+  desktop: {
+    control: {
+      type: 'select',
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+  },
+  widescreen: {
+    control: {
+      type: 'select',
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+  },
+  fullhd: {
+    control: {
+      type: 'select',
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+  },
 };
 
 export const Options = ({ vCentered, centered, multiline }) => (

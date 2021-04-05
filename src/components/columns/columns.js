@@ -1,45 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import CONSTANTS from '../../constants';
 import Column from './components/column';
 import COLUMN_CONSTANTS from './constants';
 
 import Element from '../element';
 
-const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
-
-const sizes = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
 const Columns = ({
   className,
   breakpoint,
-  gapless,
+  gap,
   multiline,
   centered,
   vCentered,
   variableGap,
+  mobile = {},
+  tablet = {},
+  desktop = {},
+  widescreen = {},
+  fullhd = {},
+  touch = {},
   ...props
 }) => (
   <Element
     {...props}
+    {...{ mobile, tablet, desktop, widescreen, fullhd, touch }}
     className={classNames(className, 'columns', {
       [`is-${breakpoint}`]: breakpoint,
-      'is-gapless': gapless,
+      [`is-${gap}`]: gap !== undefined,
       'is-multiline': multiline,
       'is-centered': centered,
       'is-vcentered': vCentered,
-      'is-variable': Object.keys(variableGap).length > 0,
-      ...(variableGap
-        ? {
-            [`is-${variableGap.touch}-touch`]: variableGap.touch,
-            [`is-${variableGap.mobile}-mobile`]: variableGap.mobile,
-            [`is-${variableGap.tablet}-tablet`]: variableGap.tablet,
-            [`is-${variableGap.desktop}-desktop`]: variableGap.desktop,
-            [`is-${variableGap.widescreen}-widescreen`]: variableGap.widescreen,
-            [`is-${variableGap.fullhd}-fullhd`]: variableGap.fullhd,
-          }
-        : {}),
+      'is-variable':
+        gap !== undefined ||
+        [touch, mobile, tablet, desktop, widescreen, fullhd].find(
+          (b) => b.gap !== undefined,
+        ),
+      [`is-${touch.gap}-touch`]: touch.gap !== undefined,
+      [`is-${mobile.gap}-mobile`]: mobile.gap !== undefined,
+      [`is-${tablet.gap}-tablet`]: tablet.gap !== undefined,
+      [`is-${desktop.gap}-desktop`]: desktop.gap !== undefined,
+      [`is-${widescreen.gap}-widescreen`]: widescreen.gap !== undefined,
+      [`is-${fullhd.gap}-fullhd`]: fullhd.gap !== undefined,
     })}
   />
 );
@@ -49,27 +51,51 @@ Columns.Column = Column;
 Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
+  touch: PropTypes.shape({
+    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+  }),
   /**
-   * Specifies gap values between columns on different breakpoints
+   * Size, Offset and Narrow props for Mobile devices (This props are merge with the default responsive props)
    */
-  variableGap: PropTypes.shape({
-    ...Object.values(CONSTANTS.BREAKPOINTS).reduce(
-      (values, breakpoint) => ({
-        ...values,
-        [breakpoint]: PropTypes.oneOf(sizes),
-      }),
-      {},
-    ),
+  mobile: PropTypes.shape({
+    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+  }),
+  /**
+   * Size, Offset and Narrow props for Tablet devices (This props are merge with the default responsive props)
+   */
+  tablet: PropTypes.shape({
+    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+  }),
+  /**
+   * Size, Offset and Narrow props for Desktop devices (This props are merge with the default responsive props)
+   */
+  desktop: PropTypes.shape({
+    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+  }),
+  /**
+   * Size, Offset and Narrow props for WideScreen devices (This props are merge with the default responsive props)
+   */
+  widescreen: PropTypes.shape({
+    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+  }),
+  /**
+   * Size, Offset and Narrow props for FullHD devices (This props are merge with the default responsive props)
+   */
+  fullhd: PropTypes.shape({
+    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
   }),
   /**
    * Defines at what breakpoint upwards the column layout should be activated. Any viewport smaller
    * than the specified breakpoint will cause `<Columns.Column>` to stack on top of each other.
    */
-  breakpoint: PropTypes.oneOf(breakpoints),
-  /**
-   * Whether there should be **no gap** between columns
-   */
-  gapless: PropTypes.bool,
+  breakpoint: PropTypes.oneOf([
+    'touch',
+    'mobile',
+    'tablet',
+    'desktop',
+    'widescreen',
+    'fullhd',
+  ]),
   /**
    * Whether you want to add more column elements than would fit in a single row.
    * [Official documentation](https://bulma.io/documentation/columns/options/#multiline).
@@ -86,13 +112,7 @@ Columns.propTypes = {
 };
 
 Columns.defaultProps = {
-  ...Element.defaultProps,
-  breakpoint: undefined,
-  gapless: false,
-  centered: false,
-  vCentered: false,
   multiline: true,
-  variableGap: {},
 };
 
 export default Columns;

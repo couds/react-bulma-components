@@ -15,12 +15,12 @@ const Column = ({
   size,
   offset,
   narrow,
-  mobile,
-  tablet,
-  desktop,
-  widescreen,
-  fullhd,
-  touch,
+  mobile = {},
+  tablet = {},
+  desktop = {},
+  widescreen = {},
+  fullhd = {},
+  touch = {},
   ...props
 }) => (
   <Element
@@ -120,40 +120,6 @@ Column.propTypes = {
   }),
 };
 
-Column.defaultProps = {
-  size: undefined,
-  offset: undefined,
-  narrow: undefined,
-  mobile: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  touch: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  tablet: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  desktop: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  widescreen: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  fullhd: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-};
+Column.defaultProps = {};
 
 export default Column;

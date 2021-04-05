@@ -8,21 +8,9 @@ import * as stories from './columns.story';
 
 You can customize the gaps between columns
 
-### Default gap
+You can configure the gap between columns for all breakpoints with the `gap` prop, or specify per breakpoint using the responsive gap for each breakpoint (`mobile.gap`, `desktop.gap`, ...)
 
-By default, columns have gaps equal to the value of `$column-gap`, which is `0.75rem` by default.
-Note that it applies to **individual** column, so the gap between two adjacent columns will be twice of `$column-gap`.
-
----
-
-### Gapless
-
-Don't want any gaps between columns? Simply use the `gapless` prop and set it to true.
-
-### Breakpoint-based gaps
-
-You can specify different gap values for different viewport sizes via the `variableGap` prop, from 0 to 9. 0 means gapless,
-and 3 is the default gap value.
+## Example
 
 <Canvas>
   <Story story={stories.Gaps} />
