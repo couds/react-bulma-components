@@ -1,60 +1,78 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { Box, Tag, Block } from '../..';
+import CONSTANTS from '../../constants';
 
-import { storiesOf } from '@storybook/react';
+export const Default = ({ hasAddons, ...args }) => (
+  <>
+    <Box>
+      <Block>You can use a single tag individualy</Block>
+      <Block>
+        <Tag {...args}>Tag Text</Tag>
+      </Block>
+    </Box>
+    <Box>
+      <Block>Or group then together (Check the hasAddon control ^_^)</Block>
+      <Block>
+        <Tag.Group hasAddons={hasAddons}>
+          <Tag color="success">My Tag</Tag>
+          <Tag remove />
+        </Tag.Group>
+        <Tag.Group hasAddons={hasAddons}>
+          <Tag color="danger">My Second Tag</Tag>
+          <Tag remove />
+        </Tag.Group>
+        <Tag.Group hasAddons={hasAddons}>
+          <Tag color="info">npm downloads</Tag>
+          <Tag>18k/month</Tag>
+        </Tag.Group>
+      </Block>
+    </Box>
+  </>
+);
 
-import { Tag, Form } from 'react-bulma-components';
-
-storiesOf('Tag', module)
-  .addDecorator((story) => <div style={{ margin: 10 }}>{story()}</div>)
-  .add('Default', () => <Tag>Tag Text</Tag>)
-  .add('Group Tags', () => (
-    <Tag.Group>
-      <Tag color="primary">Tag Text</Tag>
-      <Tag color="success">Tag Text</Tag>
-      <Tag color="danger">Tag Text</Tag>
-      <Tag color="warning">Tag Text</Tag>
-      <Tag color="info">Tag Text</Tag>
-    </Tag.Group>
-  ))
-  .add('Group Tags without gap', () => (
-    <div>
-      <Tag.Group gapless>
-        <Tag>Tag Text</Tag>
-        <Tag color="primary">Tag Text</Tag>
-      </Tag.Group>
-      <Tag.Group gapless>
-        <Tag color="danger">Delete</Tag>
-        <Tag remove renderAs="a" />
-      </Tag.Group>
-    </div>
-  ))
-  .add('Group Tags without gap multiline', () => (
-    <div>
-      <Form.Field multiline kind="group">
-        <Form.Control>
-          <Tag.Group gapless>
-            <Tag color="dark">npm</Tag>
-            <Tag color="info">V 5.3</Tag>
-          </Tag.Group>
-        </Form.Control>
-        <Form.Control>
-          <Tag.Group gapless>
-            <Tag color="dark">Build</Tag>
-            <Tag color="success">Pass</Tag>
-          </Tag.Group>
-        </Form.Control>
-        <Form.Control>
-          <Tag.Group gapless>
-            <Tag color="dark">Chat</Tag>
-            <Tag color="primary">Slack</Tag>
-          </Tag.Group>
-        </Form.Control>
-      </Form.Field>
-    </div>
-  ))
-  .add('Others', () => (
-    <Tag.Group>
-      <Tag rounded>Rounded</Tag>
-      <Tag remove />
-    </Tag.Group>
-  ));
+Default.argTypes = {
+  color: {
+    table: {
+      category: 'Tag',
+    },
+    control: {
+      type: 'select',
+      options: ['default'].concat(Object.values(CONSTANTS.COLORS)),
+    },
+  },
+  size: {
+    table: {
+      category: 'Tag',
+    },
+    control: {
+      type: 'select',
+      options: ['default', 'normal', 'medium', 'large'],
+    },
+  },
+  rounded: {
+    table: {
+      category: 'Tag',
+    },
+    control: {
+      type: 'boolean',
+    },
+  },
+  remove: {
+    table: {
+      category: 'Tag',
+    },
+    control: {
+      type: 'boolean',
+    },
+  },
+  hasAddons: {
+    table: {
+      category: 'Tag Group',
+    },
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: true,
+  },
+};

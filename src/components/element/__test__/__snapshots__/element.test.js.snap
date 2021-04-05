@@ -11,7 +11,7 @@ exports[`Element component Should accept a react Element as renderAs prop 1`] = 
 
 exports[`Element component Should have helpers classnames 1`] = `
 <div
-  className="is-pulled-left has-text-white"
+  className="has-text-white is-pulled-left"
 >
   Facebook
 </div>

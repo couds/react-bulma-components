@@ -48,16 +48,6 @@ exports[`Notification component Should use inline styles 1`] = `
 </div>
 `;
 
-exports[`Notification component Should use use color black 1`] = `
-<div
-  className="notification is-black"
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
 exports[`Notification component Should use use color danger 1`] = `
 <div
   className="notification is-danger"
@@ -81,16 +71,6 @@ exports[`Notification component Should use use color dark 1`] = `
 exports[`Notification component Should use use color info 1`] = `
 <div
   className="notification is-info"
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
-exports[`Notification component Should use use color light 1`] = `
-<div
-  className="notification is-light"
 >
   <p>
     Default
@@ -138,9 +118,9 @@ exports[`Notification component Should use use color success 1`] = `
 </div>
 `;
 
-exports[`Notification component Should use use color warning 1`] = `
+exports[`Notification component Should use use color text 1`] = `
 <div
-  className="notification is-warning"
+  className="notification is-text"
 >
   <p>
     Default
@@ -148,9 +128,9 @@ exports[`Notification component Should use use color warning 1`] = `
 </div>
 `;
 
-exports[`Notification component Should use use color white 1`] = `
+exports[`Notification component Should use use color warning 1`] = `
 <div
-  className="notification is-white"
+  className="notification is-warning"
 >
   <p>
     Default

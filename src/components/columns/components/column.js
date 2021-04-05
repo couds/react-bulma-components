@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import CONSTANTS from '../constants';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(
@@ -15,16 +15,17 @@ const Column = ({
   size,
   offset,
   narrow,
-  mobile,
-  tablet,
-  desktop,
-  widescreen,
-  fullhd,
-  touch,
+  mobile = {},
+  tablet = {},
+  desktop = {},
+  widescreen = {},
+  fullhd = {},
+  touch = {},
   ...props
 }) => (
   <Element
     {...props}
+    {...{ mobile, tablet, desktop, widescreen, fullhd, touch }}
     className={classNames(className, 'column', {
       [`is-${size}`]: size,
       [`is-${touch.size}-mobile`]: touch.size,
@@ -54,7 +55,6 @@ const Column = ({
 );
 
 Column.propTypes = {
-  ...modifiers.propTypes,
   /**
    * The size the column should take. Possible values depends on the sizing method used.
    * See [below](#sizes) for more details.
@@ -71,7 +71,7 @@ Column.propTypes = {
    */
   narrow: PropTypes.bool,
   /**
-   * Size, Offset and Narrow props for Mobile devices (Up to 768px)
+   * Size, Offset and Narrow props for touch devices (This props are merge with the default responsive props)
    */
   touch: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
@@ -79,7 +79,7 @@ Column.propTypes = {
     narrow: PropTypes.bool,
   }),
   /**
-   * Size, Offset and Narrow props for Mobile devices (Up to 768px)
+   * Size, Offset and Narrow props for Mobile devices (This props are merge with the default responsive props)
    */
   mobile: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
@@ -87,7 +87,7 @@ Column.propTypes = {
     narrow: PropTypes.bool,
   }),
   /**
-   * Size, Offset and Narrow props for Tablet devices (Between 769px and 1023px)
+   * Size, Offset and Narrow props for Tablet devices (This props are merge with the default responsive props)
    */
   tablet: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
@@ -95,7 +95,7 @@ Column.propTypes = {
     narrow: PropTypes.bool,
   }),
   /**
-   * Size, Offset and Narrow props for Desktop devices (Between 1024px and 1215px)
+   * Size, Offset and Narrow props for Desktop devices (This props are merge with the default responsive props)
    */
   desktop: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
@@ -103,7 +103,7 @@ Column.propTypes = {
     narrow: PropTypes.bool,
   }),
   /**
-   * Size, Offset and Narrow props for WideScreen devices (Between 1216px and 1407px)
+   * Size, Offset and Narrow props for WideScreen devices (This props are merge with the default responsive props)
    */
   widescreen: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
@@ -111,60 +111,15 @@ Column.propTypes = {
     narrow: PropTypes.bool,
   }),
   /**
-   * Size, Offset and Narrow props for FullHD devices (1408px and above)
+   * Size, Offset and Narrow props for FullHD devices (This props are merge with the default responsive props)
    */
   fullhd: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
     offset: PropTypes.oneOf(sizes),
     narrow: PropTypes.bool,
   }),
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to be passed to `<Columns.Column />`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
 };
 
-Column.defaultProps = {
-  ...modifiers.defaultProps,
-  children: undefined,
-  className: undefined,
-  style: undefined,
-  size: undefined,
-  offset: undefined,
-  narrow: undefined,
-  mobile: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  touch: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  tablet: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  desktop: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  widescreen: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-  fullhd: {
-    size: undefined,
-    offset: undefined,
-    narrow: undefined,
-  },
-};
+Column.defaultProps = {};
 
 export default Column;

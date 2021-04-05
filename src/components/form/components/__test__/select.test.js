@@ -46,9 +46,29 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should be loading, hovered and focused', () => {
+  it('Should be loading', () => {
     const component = renderer.create(
-      <Select loading hovered focused>
+      <Select loading>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be focused', () => {
+    const component = renderer.create(
+      <Select status="focus">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be hovered', () => {
+    const component = renderer.create(
+      <Select status="hover">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -65,21 +85,5 @@ describe('Select component', () => {
       </Select>,
     );
     expect(component.toJSON()).toMatchSnapshot();
-  });
-  describe('value PropTypes', () => {
-    it('Should be multioption and should not accept non array value', () => {
-      const spy = jest.spyOn(console, 'error').mockImplementation();
-      const component = renderer.create(<Select multiple value={1}></Select>);
-      expect(component.toJSON()).toMatchSnapshot();
-      expect(spy).toBeCalled();
-      spy.mockRestore();
-    });
-    it('Should not be multioption and should not accept array value', () => {
-      const spy = jest.spyOn(console, 'error').mockImplementation();
-      const component = renderer.create(<Select value={[1, 2, 3]}></Select>);
-      expect(component.toJSON()).toMatchSnapshot();
-      expect(spy).toBeCalled();
-      spy.mockRestore();
-    });
   });
 });

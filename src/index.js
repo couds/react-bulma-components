@@ -1,6 +1,7 @@
 import * as Form from './components/form';
 
 export { default as Box } from './components/box';
+export { default as Block } from './components/block';
 export { default as Button } from './components/button';
 export { default as Breadcrumb } from './components/breadcrumb';
 export { default as Card } from './components/card';
@@ -17,6 +18,7 @@ export { default as Media } from './components/media';
 export { default as Notification } from './components/notification';
 export { default as Progress } from './components/progress';
 export { default as Section } from './components/section';
+export { default as Tabs } from './components/tabs';
 export { default as Table } from './components/table';
 export { default as Tag } from './components/tag';
 export { default as Tile } from './components/tile';
@@ -25,7 +27,6 @@ export { default as Dropdown } from './components/dropdown';
 export { default as Icon } from './components/icon';
 export { default as Loader } from './components/loader';
 export { default as Navbar } from './components/navbar';
-export { default as Tabs } from './components/tabs';
 export { default as Pagination } from './components/pagination';
 export { default as Menu } from './components/menu';
 export { default as Message } from './components/message';

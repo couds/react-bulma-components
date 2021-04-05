@@ -5,7 +5,6 @@ exports[`Input component Should be disabled with placeholder and value 1`] = `
   className="input"
   disabled={true}
   placeholder="hello tests"
-  readOnly={false}
   value="TEST"
 />
 `;
@@ -20,14 +19,12 @@ exports[`Input component Should be large and readOnly 1`] = `
 exports[`Input component Should be rounded 1`] = `
 <input
   className="input is-rounded"
-  readOnly={false}
 />
 `;
 
 exports[`Input component Should be type email and a with success colors 1`] = `
 <input
   className="input is-success"
-  readOnly={false}
   type="email"
 />
 `;
@@ -35,7 +32,6 @@ exports[`Input component Should be type email and a with success colors 1`] = `
 exports[`Input component Should concat classname in props with Bulma classname 1`] = `
 <input
   className="input other-class this-is-a-test"
-  readOnly={false}
 />
 `;
 
@@ -44,21 +40,24 @@ exports[`Input component Should exist 1`] = `[Function]`;
 exports[`Input component Should have input classname 1`] = `
 <input
   className="input"
-  readOnly={false}
 />
 `;
 
-exports[`Input component Should support various states 1`] = `
+exports[`Input component Should support focus state 1`] = `
 <input
-  className="input is-hovered is-focused"
-  readOnly={false}
+  className="input is-focused"
+/>
+`;
+
+exports[`Input component Should support hovered state 1`] = `
+<input
+  className="input is-hovered"
 />
 `;
 
 exports[`Input component Should use inline styles 1`] = `
 <input
   className="input"
-  readOnly={false}
   style={
     Object {
       "height": 250,

@@ -8,7 +8,7 @@ describe('Hero component', () => {
     expect(Hero).toMatchSnapshot();
   });
   it('Should expose Hero head, body and footer', () => {
-    expect(Hero.Head).toMatchSnapshot();
+    expect(Hero.Header).toMatchSnapshot();
     expect(Hero.Body).toMatchSnapshot();
     expect(Hero.Footer).toMatchSnapshot();
   });
@@ -47,9 +47,9 @@ describe('Hero component', () => {
   it('Should render Hero with hero head, body and footer', () => {
     const component = renderer.create(
       <Hero size="fullheight" color="primary">
-        <Hero.Head renderAs="header">
+        <Hero.Header>
           <div className="bd-notification is-info">Header</div>
-        </Hero.Head>
+        </Hero.Header>
         <Hero.Body>Body</Hero.Body>
         <Hero.Footer renderAs="footer">
           <div className="bd-notification is-danger">Footer</div>

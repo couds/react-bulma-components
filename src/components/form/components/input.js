@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import CONSTANTS from '../../../constants';
 import Element from '../../element';
+import useFieldContext from './field/context';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -13,27 +14,28 @@ const Input = ({
   color,
   readOnly,
   isStatic,
-  hovered,
+  status,
   rounded,
-  focused,
   ...props
-}) => (
-  <Element
-    {...props}
-    readOnly={readOnly || isStatic}
-    className={classnames('input', className, {
-      'is-static': isStatic,
-      'is-hovered': hovered,
-      'is-focused': focused,
-      'is-rounded': rounded,
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-    })}
-  />
-);
+}) => {
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
+  return (
+    <Element
+      {...props}
+      readOnly={readOnly || isStatic}
+      className={classnames('input', className, {
+        'is-static': isStatic,
+        [`is-${status}ed`]: status,
+        'is-rounded': rounded,
+        [`is-${calculatedSize}`]: calculatedSize,
+        [`is-${color}`]: color,
+      })}
+    />
+  );
+};
 
 Input.propTypes = {
-  ...modifiers.propTypes,
   /**
    * Adjusts the size of this input.
    */
@@ -53,36 +55,21 @@ Input.propTypes = {
    * are removed.
    */
   isStatic: PropTypes.bool,
-  /**
-   * Whether this input is in a focused state.
-   */
-  focused: PropTypes.bool,
-  /**
-   * Whether this input is in a hovered state.
-   */
-  hovered: PropTypes.bool,
+  status: PropTypes.oneOf(['focus', 'hover']),
   /**
    * Whether this input is rounded. The input will have a 50% border-radius,
    * making the left and right side fully rounded.
    */
   rounded: PropTypes.bool,
-  /**
-   * Additional CSS classes to be passed to `<Form.Input />`.
-   * They will sit alongside pre-applied Bulma classes.
-   */
-  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Input.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
-  size: undefined,
-  color: undefined,
-  readOnly: false,
-  isStatic: false,
-  focused: false,
-  hovered: false,
-  rounded: false,
   renderAs: 'input',
 };
 

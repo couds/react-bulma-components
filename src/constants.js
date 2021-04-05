@@ -1,4 +1,4 @@
-export default {
+const CONSTANTS = {
   BREAKPOINTS: {
     DESKTOP: 'desktop',
     TABLET: 'tablet',
@@ -9,18 +9,18 @@ export default {
   },
   COLORS: {
     PRIMARY: 'primary',
-    SUCCESS: 'success',
+    LINK: 'link',
     INFO: 'info',
+    SUCCESS: 'success',
     WARNING: 'warning',
     DANGER: 'danger',
-    LIGHT: 'light',
     DARK: 'dark',
-    WHITE: 'white',
-    BLACK: 'black',
-    LINK: 'link',
+    TEXT: 'text',
   },
   COLOR_VARIANT: {
     light: 'light',
     dark: 'dark',
   },
 };
+
+export default CONSTANTS;

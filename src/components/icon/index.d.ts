@@ -1,5 +1,5 @@
 import { BulmaComponentWithoutRenderAs } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface IconProps {
   icon?: string;

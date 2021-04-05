@@ -6,14 +6,7 @@
 [![Release Version](https://img.shields.io/github/release/couds/react-bulma-components.svg)](https://github.com/couds/react-bulma-components)
 [![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
-React components for [Bulma](http://bulma.io/) (v0.9.1) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
-
-## BREAKING CHANGES V3 -> V4:
-
-- We Remove all the styles from this library, now you need to install and use the [bulma.io](https://bulma.io) package directly
-- Removed included icons
-- Dropdown component now accept an `icon` prop that will accept the the component to render the icon
-- Removed the `icon` prop from the `Icon` component.
+React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
 
 ## To Install

@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Form } from '../../..';
+import * as stories from './form.story';
+import CommonProps from '../../../../.storybook/common-props';
+
+
+<Meta title="Form/Radio" />
+
+# Checkbox
+The `<Form.Radio>` component is a simple wrapper around the `<input type="radio"`> HTML element.
+The radio buttons are not styled to preserve cross browser compatibility.
+
+## Props
+
+<ArgsTable of={Form.Radio} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.RadioExample} name="Radio" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/radio)

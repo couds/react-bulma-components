@@ -1,23 +1,84 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
-import { action } from '@storybook/addon-actions';
 
-import { Button, Section } from '../..';
+import { Button, Box } from '../..';
 
 import CONSTANTS from '../../constants';
 
-export const Default = (args) => (
-  <Button
-    {...args}
-    onClick={action('Button Click')}
-    onMouseEnter={action('Hover')}
-  >
-    Button
-  </Button>
+export const Default = ({ hasAddons, groupSize, align, ...args }) => (
+  <>
+    <Box>
+      <Button {...args}>Button</Button>
+    </Box>
+    <Box>
+      <Button.Group
+        hasAddons={hasAddons}
+        align={align === 'default' ? '' : align}
+        size={groupSize === 'default' ? '' : groupSize}
+      >
+        <Button renderAs="span" color="success">
+          Save changes
+        </Button>
+        <Button renderAs="span" color="info">
+          Save and continue
+        </Button>
+        <Button renderAs="span" color="danger">
+          Cancel
+        </Button>
+      </Button.Group>
+    </Box>
+  </>
 );
 
 Default.argTypes = {
+  hasAddons: {
+    table: {
+      category: 'Button Group',
+    },
+    default: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  align: {
+    table: {
+      category: 'Button Group',
+    },
+    control: {
+      type: 'select',
+      options: ['default', 'center', 'right'],
+    },
+  },
+  groupSize: {
+    table: {
+      category: 'Button Group',
+    },
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
+  remove: {
+    table: {
+      category: 'Button',
+    },
+    control: {
+      type: 'boolean',
+    },
+  },
+  size: {
+    table: {
+      category: 'Button',
+    },
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
   colorVariant: {
+    table: {
+      category: 'Button',
+    },
     description: 'Variant of the color scheme',
     control: {
       type: 'select',
@@ -25,12 +86,18 @@ Default.argTypes = {
     },
   },
   fullwidth: {
+    table: {
+      category: 'Button',
+    },
     description: 'Whether the button should take up the entire parent width',
     control: {
       type: 'boolean',
     },
   },
   color: {
+    table: {
+      category: 'Button',
+    },
     description: 'Color of the button',
     defaultValue: '',
     control: {
@@ -39,6 +106,9 @@ Default.argTypes = {
     },
   },
   outlined: {
+    table: {
+      category: 'Button',
+    },
     description: 'Whether the button should have an outlined style',
     default: false,
     control: {
@@ -46,6 +116,9 @@ Default.argTypes = {
     },
   },
   inverted: {
+    table: {
+      category: 'Button',
+    },
     description:
       'Whether the button should have an inverted color scheme. Useful when button is used on colored background',
     default: false,
@@ -54,6 +127,9 @@ Default.argTypes = {
     },
   },
   disabled: {
+    table: {
+      category: 'Button',
+    },
     description: 'Whether the button should be disabled',
     default: false,
     control: {
@@ -61,6 +137,9 @@ Default.argTypes = {
     },
   },
   text: {
+    table: {
+      category: 'Button',
+    },
     description: 'Whether the button should have a text button style',
     default: false,
     control: {
@@ -68,6 +147,9 @@ Default.argTypes = {
     },
   },
   isStatic: {
+    table: {
+      category: 'Button',
+    },
     description: 'Whether the button should be non-interactive',
     default: false,
     control: {
@@ -75,76 +157,13 @@ Default.argTypes = {
     },
   },
   rounded: {
+    table: {
+      category: 'Button',
+    },
     description: 'Whether the button should have fully-rounded corners',
     default: false,
     control: {
       type: 'boolean',
-    },
-  },
-};
-
-export const CustomComponent = () => {
-  const Custom = ({ customProp, children, className }) => (
-    <a className={className} href={customProp}>
-      {children}
-    </a>
-  );
-
-  Custom.propTypes = {
-    customProp: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-  };
-
-  return (
-    <Section>
-      <Button
-        color="info"
-        renderAs={Custom}
-        customProp="https://github.com/couds/react-bulma-components"
-      >
-        Button rendered using another React Component with props
-      </Button>
-    </Section>
-  );
-};
-
-// eslint-disable-next-line react/prop-types
-export const ButtonGroup = ({ position, size, ...args }) => (
-  <Button.Group
-    position={position === 'default' ? '' : position}
-    size={size === 'default' ? '' : size}
-    {...args}
-  >
-    <Button renderAs="span" color="success">
-      Save changes
-    </Button>
-    <Button renderAs="span" color="info">
-      Save and continue
-    </Button>
-    <Button renderAs="span" color="danger">
-      Cancel
-    </Button>
-  </Button.Group>
-);
-
-ButtonGroup.argTypes = {
-  hasAddons: {
-    default: false,
-    control: {
-      type: 'boolean',
-    },
-  },
-  position: {
-    control: {
-      type: 'select',
-      options: ['default', 'centered', 'right'],
-    },
-  },
-  size: {
-    control: {
-      type: 'select',
-      options: ['default', 'small', 'medium', 'large'],
     },
   },
 };

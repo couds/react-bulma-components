@@ -17,9 +17,26 @@ exports[`Container component Should have container classname 1`] = `
 </div>
 `;
 
-exports[`Container component Should have helper classnames 1`] = `
+exports[`Container component Should ignore max prop on non desktop and non widescreen breakpoint 1`] = `
 <div
-  className="container is-paddingless is-block-widescreen-only is-flex-touch is-hidden-desktop"
+  className="container is-fullhd"
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;
+
+exports[`Container component Should use max prop on desktop breakpoint 1`] = `
+<div
+  className="container is-max-desktop"
 >
   <p
     className="bd-notification is-success"

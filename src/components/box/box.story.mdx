@@ -1,13 +1,22 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import * as stories from './box.story';
+import { Box } from '../..'
+import CommonProps from '../../../.storybook/common-props';
 
 <Meta title="Elements/Box" />
 
 # Box
 
-<Story story={stories.Default} />
+A white box element to contain other elements
 
-The Box element is a container that can be used to display other elements and media files.
+<ArgsTable of={Box} />
+
+<CommonProps />
+
+## Example
+<Canvas>
+  <Story story={stories.Default} name="Box" />
+</Canvas>
 
 ## Related
 

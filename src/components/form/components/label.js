@@ -1,37 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
-import Element from '../../element';
 
-const Label = ({ children, className, size, ...props }) => (
-  <Element
-    renderAs="label"
-    {...props}
-    className={classnames('label', className, {
-      [`is-${size}`]: size,
-    })}
-  >
-    {children}
-  </Element>
-);
+import Element from '../../element';
+import useFieldContext from './field/context';
+
+const Label = ({ children, className, size, ...props }) => {
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
+  return (
+    <Element
+      {...props}
+      className={classnames('label', className, {
+        [`is-${calculatedSize}`]: calculatedSize,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Label.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  htmlFor: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Label.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  size: undefined,
-  htmlFor: undefined,
+  renderAs: 'label',
 };
 
 export default Label;

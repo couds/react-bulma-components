@@ -2,14 +2,14 @@ import React from 'react';
 import { Card, Media, Image, Content, Heading } from '../..';
 
 export const Default = () => (
-  <Card>
+  <Card style={{ width: 300, margin: 'auto' }}>
     <Card.Image
       size="4by3"
       src="http://bulma.io/images/placeholders/1280x960.png"
     />
     <Card.Content>
       <Media>
-        <Media.Item renderAs="figure" position="left">
+        <Media.Item renderAs="figure" align="left">
           <Image
             size={64}
             alt="64x64"
@@ -41,7 +41,7 @@ export const FooterActions = () => (
     </Card.Header>
     <Card.Content>
       <Media>
-        <Media.Item renderAs="figure" position="left">
+        <Media.Item renderAs="figure" align="left">
           <Image
             size={64}
             alt="64x64"

@@ -1,8 +1,8 @@
 import { BulmaComponent } from '..';
-import { Size } from '../../modifiers';
+import { Size } from '..';
 
 interface TabsProps {
-  align?: 'centered' | 'right';
+  align?: 'center' | 'right';
   size?: Size;
   type?: 'toggle' | 'boxed' | 'toggle-rounded';
   fullwidth?: boolean;

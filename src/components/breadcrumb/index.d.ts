@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Size } from '../../modifiers';
+import { Size } from '..';
 
 interface BreadcrumbProps {
   separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';

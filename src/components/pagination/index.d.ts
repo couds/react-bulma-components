@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BulmaComponent } from '..';
-import { Size } from '../../modifiers';
+import { Size } from '..';
 
 interface PaginationProps {
   current?: number;
@@ -13,7 +13,7 @@ interface PaginationProps {
   showPrevNext?: boolean;
   showFirstLast?: boolean;
   size?: Size;
-  position?: 'centered' | 'right';
+  align?: 'center' | 'right';
   rounded?: boolean;
   autoHide?: boolean;
 }

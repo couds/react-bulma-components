@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Color } from '../../modifiers';
+import { Color } from '..';
 
 interface NavbarProps {
   transparent?: boolean;
@@ -14,8 +14,6 @@ interface NavbarBurgerProps {
 
 interface NavbarItemProps {
   active?: boolean;
-  dropdown?: boolean;
-  dropdownUp?: boolean;
   hoverable?: boolean;
   arrowless?: boolean;
 }
@@ -23,6 +21,7 @@ interface NavbarItemProps {
 interface NavbarDropdownProps {
   boxed?: boolean;
   right?: boolean;
+  up?: boolean;
 }
 
 interface NavbarLinkProps {
@@ -30,7 +29,7 @@ interface NavbarLinkProps {
 }
 
 interface NavbarContainerProps {
-  position?: 'start' | 'end';
+  align?: 'start' | 'end';
 }
 
 declare const Navbar: BulmaComponent<NavbarProps, 'nav'> & {

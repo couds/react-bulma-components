@@ -1,5 +1,6 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import Footer from '.';
+import CommonProps from '../../../.storybook/common-props';
 import * as stories from './footer.story';
 
 <Meta title="Layout/Footer" />
@@ -8,10 +9,18 @@ import * as stories from './footer.story';
 
 A responsive footer that can contain other components.
 
-<Canvas>
-  <Story story={stories.Overview} />
-</Canvas>
-
 ## Props
 
 <ArgsTable of={Footer} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Footer" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/layout/footer/)

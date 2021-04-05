@@ -5,24 +5,17 @@ import { Box, Breadcrumb } from '../..';
 export const Default = (args) => (
   <div>
     <Box>
-      <Breadcrumb
-        {...args}
-        items={[
-          {
-            name: 'Storybook',
-            url: '#1',
-          },
-          {
-            name: 'Breadcrumb',
-            url: '#2',
-          },
-          {
-            name: 'Breadcrumb Types',
-            url: '#3',
-            active: true,
-          },
-        ]}
-      />
+      <Breadcrumb {...args}>
+        <Breadcrumb.Item>
+          <a>Storybook</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>
+          <a>Breadcrumb</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a>Details</a>
+        </Breadcrumb.Item>
+      </Breadcrumb>
     </Box>
   </div>
 );
@@ -40,42 +33,10 @@ Default.argTypes = {
       options: ['center', 'right'],
     },
   },
+  size: {
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
 };
-
-export const CustomElement = () => {
-  /* eslint-disable react/prop-types */
-  const Anchor = ({ children, ...props }) => (
-    <a className="Others" {...props}>
-      {children}
-    </a>
-  );
-  /* eslint-enable react/prop-types */
-
-  return (
-    <div>
-      <Box>
-        <Breadcrumb
-          renderAs={Anchor}
-          hrefAttr="href"
-          items={[
-            {
-              name: 'Storybook',
-              url: '#1',
-            },
-            {
-              name: 'Breadcrumb',
-              url: '#2',
-            },
-            {
-              name: 'Breadcrumb Types',
-              url: '#3',
-              active: true,
-            },
-          ]}
-        />
-      </Box>
-    </div>
-  );
-};
-
-CustomElement.storyName = 'Use custom render element';

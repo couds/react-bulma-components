@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Select component Should be focused 1`] = `
+<div
+  className="select"
+>
+  <select
+    className="is-focused"
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Select component Should be hovered 1`] = `
+<div
+  className="select"
+>
+  <select
+    className="is-hovered"
+    value=""
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
 exports[`Select component Should be large, red, disabled and multioption 1`] = `
 <div
   className="select is-large is-danger is-multiple"
@@ -7,7 +49,6 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
   <select
     disabled={true}
     multiple={true}
-    readOnly={false}
     value={Array []}
   >
     <option>
@@ -23,15 +64,11 @@ exports[`Select component Should be large, red, disabled and multioption 1`] = `
 </div>
 `;
 
-exports[`Select component Should be loading, hovered and focused 1`] = `
+exports[`Select component Should be loading 1`] = `
 <div
   className="select is-loading"
 >
   <select
-    className="is-focused is-hovered"
-    disabled={false}
-    multiple={false}
-    readOnly={false}
     value=""
   >
     <option>
@@ -52,9 +89,6 @@ exports[`Select component Should be rounded 1`] = `
   className="select is-rounded"
 >
   <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
     value=""
   >
     <option>
@@ -75,9 +109,6 @@ exports[`Select component Should concat classname in props with Bulma classname 
   className="select other-class this-is-a-test"
 >
   <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
     value=""
   >
     <option>
@@ -100,9 +131,6 @@ exports[`Select component Should have select classname 1`] = `
   className="select"
 >
   <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
     value=""
   >
     <option>
@@ -128,9 +156,6 @@ exports[`Select component Should use inline styles 1`] = `
   }
 >
   <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
     value=""
   >
     <option>
@@ -143,37 +168,5 @@ exports[`Select component Should use inline styles 1`] = `
       3
     </option>
   </select>
-</div>
-`;
-
-exports[`Select component value PropTypes Should be multioption and should not accept non array value 1`] = `
-<div
-  className="select is-multiple"
->
-  <select
-    disabled={false}
-    multiple={true}
-    readOnly={false}
-    value={1}
-  />
-</div>
-`;
-
-exports[`Select component value PropTypes Should not be multioption and should not accept array value 1`] = `
-<div
-  className="select"
->
-  <select
-    disabled={false}
-    multiple={false}
-    readOnly={false}
-    value={
-      Array [
-        1,
-        2,
-        3,
-      ]
-    }
-  />
 </div>
 `;

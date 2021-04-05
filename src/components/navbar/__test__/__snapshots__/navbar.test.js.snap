@@ -35,7 +35,6 @@ exports[`Navbar component Should have Navbar classname 1`] = `
     </a>
     <div
       className="navbar-burger trigger-menu"
-      onClick={[Function]}
       role="button"
       style={
         Object {
@@ -75,7 +74,7 @@ exports[`Navbar component Should have Navbar classname 1`] = `
           >
             Home
           </a>
-          <div
+          <hr
             className="navbar-divider"
           />
           <a

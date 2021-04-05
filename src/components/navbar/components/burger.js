@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { ShowContext } from '../context';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const NavbarBurger = ({ style, className, ...props }) => (
@@ -26,18 +25,8 @@ const NavbarBurger = ({ style, className, ...props }) => (
   </ShowContext.Consumer>
 );
 
-NavbarBurger.propTypes = {
-  ...modifiers.propTypes,
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-};
+NavbarBurger.propTypes = {};
 
-NavbarBurger.defaultProps = {
-  ...modifiers.defaultProps,
-  style: undefined,
-  className: undefined,
-  onClick: () => {},
-};
+NavbarBurger.defaultProps = {};
 
 export default NavbarBurger;

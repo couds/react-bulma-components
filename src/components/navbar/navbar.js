@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import canUseDOM from '../../services/can-use-dom';
 import Brand from './components/brand';
 import Burger from './components/burger';
 import Menu from './components/menu';
@@ -13,8 +12,6 @@ import Container from './components/container';
 import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
 import Element from '../element';
-import modifiers from '../../modifiers';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -33,9 +30,6 @@ const Navbar = ({
 }) => {
   htmlClass = fixed ? `has-navbar-fixed-${fixed}` : '';
   useEffect(() => {
-    if (!canUseDOM) {
-      return () => {};
-    }
     const html = window.document.querySelector('html');
     if (!html.classList.contains(`has-navbar-fixed-${fixed}`)) {
       html.classList.remove('has-navbar-fixed-top');
@@ -54,16 +48,11 @@ const Navbar = ({
       <Element
         {...props}
         role="navigation"
-        className={classnames(
-          'navbar',
-          modifiers.classnames(props),
-          className,
-          {
-            'is-transparent': transparent,
-            [`is-fixed-${fixed}`]: fixed,
-            [`is-${color}`]: color,
-          },
-        )}
+        className={classnames('navbar', className, {
+          'is-transparent': transparent,
+          [`is-fixed-${fixed}`]: fixed,
+          [`is-${color}`]: color,
+        })}
       >
         {children}
       </Element>
@@ -72,27 +61,19 @@ const Navbar = ({
 };
 
 Navbar.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   transparent: PropTypes.bool,
-  renderAs: renderAsShape,
   fixed: PropTypes.oneOf(['top', 'bottom']),
   color: PropTypes.oneOf(colors),
   active: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Navbar.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'nav',
-  transparent: false,
-  active: false,
-  fixed: undefined,
-  color: undefined,
 };
 
 Navbar.Brand = Brand;

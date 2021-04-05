@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
 
-import HeroHead from './components/hero-head';
+import HeroHeader from './components/hero-header';
 import HeroBody from './components/hero-body';
 import HeroFooter from './components/hero-footer';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -34,34 +33,26 @@ const Hero = ({
   </Element>
 );
 
-Hero.Head = HeroHead;
+Hero.Header = HeroHeader;
 
 Hero.Body = HeroBody;
 
 Hero.Footer = HeroFooter;
 
 Hero.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight']),
   hasNavbar: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Hero.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'section',
-  color: undefined,
-  gradient: undefined,
-  size: undefined,
-  hasNavbar: undefined,
 };
 
 export default Hero;

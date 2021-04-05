@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -6,137 +6,116 @@ import CONSTANTS from '../../constants';
 import DropdownItem from './components/item';
 import DropdownDivider from './components/divider';
 import Button from '../button';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-export default class Dropdown extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.domRef = props.domRef || React.createRef();
-    this.state = {
-      open: false,
-    };
-  }
-
-  componentDidMount() {
-    document.addEventListener('click', this.close);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('click', this.close);
-  }
-
-  close = (evt) => {
+const Dropdown = ({
+  className,
+  children,
+  value,
+  color,
+  align,
+  right,
+  up,
+  hoverable,
+  label,
+  onChange,
+  closeOnSelect,
+  icon,
+  domRef,
+  ...props
+}) => {
+  const ref = useRef(domRef);
+  const [isOpen, setIsOpen] = useState(false);
+  const close = (evt) => {
     // IDK yet how to test using the ref in enzime
     // istanbul ignore if
     if (
-      this.props.hoverable ||
-      (evt &&
-        this.domRef &&
-        this.domRef.current &&
-        this.domRef.current.contains(evt.target))
+      hoverable ||
+      (evt && ref && ref.current && ref.current.contains(evt.target))
     ) {
       return;
     }
-    if (this.domRef.current) {
-      this.setState({ open: false });
+    if (ref.current) {
+      setIsOpen(false);
     }
   };
 
-  toggle = (evt) => {
-    if (this.props.hoverable) {
-      return;
+  const onSelect = (selectedValue) => () => {
+    if (onChange) {
+      onChange(selectedValue);
     }
-    if (evt) {
-      evt.preventDefault();
-    }
-    this.setState(({ open }) => ({ open: !open }));
-  };
-
-  select = (value) => () => {
-    if (this.props.onChange) {
-      this.props.onChange(value);
-    }
-    if (this.props.closeOnSelect) {
-      this.close();
+    if (closeOnSelect) {
+      close();
     }
   };
 
-  render() {
-    const {
-      className,
-      children,
-      value,
-      color,
-      align,
-      right,
-      up,
-      hoverable,
-      label,
-      onChange,
-      closeOnSelect,
-      icon,
-      ...props
-    } = this.props;
-    let current = label;
+  useEffect(() => {
+    window.addEventListener('click', close);
+    return () => {
+      window.removeEventListener('click', close);
+    };
+  }, []);
 
-    const childrenArray = React.Children.map(children, (child, i) => {
-      if (
-        child.type === DropdownItem &&
-        ((i === 0 && !label) || child.props.value === value)
-      ) {
-        current = child.props.children;
-      }
-      return React.cloneElement(
-        child,
-        child.type === DropdownItem
-          ? {
-              active: child.props.value === value,
-              onClick: this.select(child.props.value),
-            }
-          : {},
-      );
-    });
+  let current = label;
 
-    return (
-      <Element
-        {...props}
-        domRef={this.domRef}
-        className={classnames('dropdown', className, {
-          'is-active': this.state.open,
-          'is-up': up,
-          'is-right': right || align === 'right',
-          'is-hoverable': hoverable,
-        })}
-      >
-        <div
-          className="dropdown-trigger"
-          role="presentation"
-          onClick={this.toggle}
-        >
-          <Button color={color}>
-            <span>{current}</span>
-            {icon}
-          </Button>
-        </div>
-        <div className="dropdown-menu" id="dropdown-menu" role="menu">
-          <div className="dropdown-content">{childrenArray}</div>
-        </div>
-      </Element>
+  const childrenArray = React.Children.map(children, (child, i) => {
+    if (
+      child.type === DropdownItem &&
+      ((i === 0 && !label) || child.props.value === value)
+    ) {
+      current = child.props.children;
+    }
+    return React.cloneElement(
+      child,
+      child.type === DropdownItem
+        ? {
+            active: child.props.value === value,
+            onClick: onSelect(child.props.value),
+          }
+        : {},
     );
-  }
-}
+  });
+
+  return (
+    <Element
+      {...props}
+      domRef={ref}
+      className={classnames('dropdown', className, {
+        'is-active': isOpen,
+        'is-up': up,
+        'is-right': right || align === 'right',
+        'is-hoverable': hoverable,
+      })}
+    >
+      <div
+        className="dropdown-trigger"
+        role="presentation"
+        onClick={() => setIsOpen((o) => !o)}
+      >
+        <Button color={color}>
+          <span>{current}</span>
+          {icon}
+        </Button>
+      </div>
+      <div className="dropdown-menu" id="dropdown-menu" role="menu">
+        <div className="dropdown-content">{childrenArray}</div>
+      </div>
+    </Element>
+  );
+};
 
 Dropdown.Item = DropdownItem;
 
 Dropdown.Divider = DropdownDivider;
 
 Dropdown.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   /**
-   * The value of the currently selected dropdown item.
+   * The value of the currently selected dropdown item. If this value match
+   * with the value passed to a Dropdown.item it will be used as label if the label prop its empty
    */
   value: PropTypes.any,
   /**
@@ -157,17 +136,14 @@ Dropdown.propTypes = {
    */
   up: PropTypes.bool,
   /**
-   * @deprecated
-   */
-  align: PropTypes.oneOf(['right']),
-  /**
    * Whether the dropdown menu can be activated when the cursor
    * hovers above the button without clicking.
    */
   hoverable: PropTypes.bool,
   /**
    * A string, or a react component that displays the label of the dropdown
-   * button.
+   * button. if not set it will be use the selected Dropdown.Item or the first one
+   * if there is no selected
    */
   label: PropTypes.node,
   /**
@@ -183,24 +159,10 @@ Dropdown.propTypes = {
    * Additional CSS classes to pass to `<Dropdown />`.
    * They will sit alongside pre-applied bulma classes.
    */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  children: PropTypes.node,
 };
 
 Dropdown.defaultProps = {
-  ...modifiers.defaultProps,
   closeOnSelect: true,
-  className: undefined,
-  renderAs: 'div',
-  domRef: undefined,
-  style: undefined,
-  value: undefined,
-  children: [],
-  onChange: undefined,
-  color: undefined,
-  align: undefined,
-  hoverable: undefined,
-  label: undefined,
-  icon: undefined,
 };
+
+export default Dropdown;

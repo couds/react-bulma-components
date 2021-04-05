@@ -39,14 +39,6 @@ exports[`Progress component Should use inline styles 1`] = `
 />
 `;
 
-exports[`Progress component Should use use color black 1`] = `
-<progress
-  className="progress is-black"
-  max={100}
-  value={30}
-/>
-`;
-
 exports[`Progress component Should use use color danger 1`] = `
 <progress
   className="progress is-danger"
@@ -66,14 +58,6 @@ exports[`Progress component Should use use color dark 1`] = `
 exports[`Progress component Should use use color info 1`] = `
 <progress
   className="progress is-info"
-  max={100}
-  value={30}
-/>
-`;
-
-exports[`Progress component Should use use color light 1`] = `
-<progress
-  className="progress is-light"
   max={100}
   value={30}
 />
@@ -111,17 +95,17 @@ exports[`Progress component Should use use color success 1`] = `
 />
 `;
 
-exports[`Progress component Should use use color warning 1`] = `
+exports[`Progress component Should use use color text 1`] = `
 <progress
-  className="progress is-warning"
+  className="progress is-text"
   max={100}
   value={30}
 />
 `;
 
-exports[`Progress component Should use use color white 1`] = `
+exports[`Progress component Should use use color warning 1`] = `
 <progress
-  className="progress is-white"
+  className="progress is-warning"
   max={100}
   value={30}
 />

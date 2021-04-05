@@ -1,0 +1,39 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Columns, Message, Notification } from '../../..';
+import CommonProps from '../../../../.storybook/common-props';
+import * as stories from './columns.story';
+
+<Meta title="Columns/Basics" />
+
+# Columns using Flexbox
+
+You can build columns very easily:
+
+1. Add a `<Columns />` component
+2. Put as many `<Columns.Column />` as you want inside it.
+
+Each column will have an equal width, no matter the number of columns.
+
+## Basic
+
+<Canvas>
+  <Story story={stories.Basic} name="Basics" />
+</Canvas>
+
+## Props
+
+<br />
+
+### `Columns`
+
+<ArgsTable of={Columns} />
+
+### `Columns.Column`
+
+<ArgsTable of={Columns.Column} />
+
+<CommonProps />
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/basics/)

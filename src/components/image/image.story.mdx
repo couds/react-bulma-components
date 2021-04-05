@@ -1,0 +1,31 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './image.story.js'
+import { Box, Image } from '../..';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Image" />
+
+# Image
+
+Responsive images made easy. Images take time to load (if they load at all), for that is a good practice to 
+reserve the space before loading the image to avoid the page to jump around. 
+
+This Component also allow you to setup a fallback image in case the image its not loaded correctly,
+try on the `Canvas` tab changing the src control to a unexisting image route and see what happens
+
+## Props
+
+<ArgsTable of={Image} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Image" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/image/)

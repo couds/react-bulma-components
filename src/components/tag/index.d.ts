@@ -1,5 +1,5 @@
 import { BulmaComponent, BulmaComponentWithoutRenderAs } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface TagProps {
   color?: Color;
@@ -9,7 +9,11 @@ interface TagProps {
 }
 
 interface TagGroupProps {
+  /**
+  * @deprecated This prop was renamed to hasAddons to match bulma specs
+  */
   gapless?: boolean;
+  hasAddons?: boolean;
 }
 
 declare const Tag: BulmaComponent<TagProps, 'span'> & {

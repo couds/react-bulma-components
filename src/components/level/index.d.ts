@@ -1,9 +1,7 @@
 import { BulmaComponent } from '..';
-import { Breakpoint } from '../../modifiers';
 
 interface LevelProps {
-  mobile?: boolean;
-  breakpoint?: Breakpoint;
+  breakpoint?: | 'mobile';
 }
 
 interface LevelSideProps {

@@ -1,8 +1,9 @@
 import { BulmaComponent } from '..';
-import { Color } from '../../modifiers';
+import { Color } from '..';
 
 interface NotificationProps {
   color?: Color;
+  light?: Boolean;
 }
 
 declare const Notification: BulmaComponent<NotificationProps, 'div'>;

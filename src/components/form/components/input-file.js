@@ -2,9 +2,10 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Element from '../../element';
-import modifiers from '../../../modifiers';
 
 import CONSTANTS from '../../../constants';
+import useFieldContext from './field/context';
+import { normalizeAlign } from '../../../services/normalizer';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
@@ -15,39 +16,42 @@ const InputFile = ({
   color,
   size,
   fullwidth,
-  right,
+  align,
   boxed,
   name,
   label,
   icon,
   inputProps,
   filename,
-  files,
-  centered,
+  value,
   ...props
 }) => {
   const ref = useRef();
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
 
   useEffect(() => {
-    if (files) {
-      ref.current.files = files;
+    if (!ref.current) {
+      return;
+    }
+    if (value) {
+      ref.current.files = value;
     } else {
       ref.current.value = '';
     }
-  }, [files]);
+  }, [value]);
 
   return (
     <Element
       style={style}
       {...props}
       className={classnames('file', className, {
-        [`is-${size}`]: size,
+        [`is-${calculatedSize}`]: calculatedSize,
         [`is-${color}`]: color,
+        [`is-${normalizeAlign(align)}`]: align,
         'has-name': !!filename,
-        'is-right': right,
         'is-boxed': boxed,
         'is-fullwidth': fullwidth,
-        'is-centered': centered,
       })}
     >
       <label className="file-label">
@@ -70,18 +74,6 @@ const InputFile = ({
 };
 
 InputFile.propTypes = {
-  ...modifiers.propTypes,
-  /**
-   * Additional CSS classes to pass to `InputFile`.
-   * They will sit alongside pre-applied bulma classes.
-   */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  /**
-   * Callback for when the value of the input changes.
-   * Same signature as the onChange prop for `<input type="file">`.
-   */
-  onChange: PropTypes.func,
   /**
    * The color of `InputFile`
    */
@@ -96,21 +88,14 @@ InputFile.propTypes = {
    */
   filename: PropTypes.string,
   /**
-   * The selected file object.
+   * The selected file(s) object.
    */
   value: PropTypes.any,
   /**
    * Whether `InputFile` should take up all available width.
    */
   fullwidth: PropTypes.bool,
-  /**
-   * Whether `InputFile` should be aligned to the right.
-   */
-  right: PropTypes.bool,
-  /**
-   * Whether `InputFile` should be centered.
-   */
-  centered: PropTypes.bool,
+  align: PropTypes.oneOf(['center', 'right']),
   /**
    * Whether `InputFile` should be rendered in a box shape.
    */
@@ -138,20 +123,6 @@ InputFile.propTypes = {
 };
 
 InputFile.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
-  style: undefined,
-  onChange: () => {},
-  color: undefined,
-  size: undefined,
-  filename: undefined,
-  files: undefined,
-  fullwidth: undefined,
-  right: undefined,
-  centered: undefined,
-  boxed: undefined,
-  name: undefined,
-  icon: undefined,
   label: 'Choose a file...',
   inputProps: {},
 };

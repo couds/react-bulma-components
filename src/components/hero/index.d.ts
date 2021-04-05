@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface HeroProps {
   color?: Color;
@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 declare const Hero: BulmaComponent<HeroProps, 'section'> & {
-  Head: BulmaComponent<{}, 'div'>;
+  Header: BulmaComponent<{}, 'div'>;
   Body: BulmaComponent<{}, 'div'>;
   Footer: BulmaComponent<{}, 'div'>;
 };

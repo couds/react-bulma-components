@@ -13,15 +13,15 @@ module.exports = {
         },
       },
     },
-    '@storybook/addon-actions',
     '@storybook/addon-knobs',
     '@storybook/addon-links',
     '@storybook/addon-events',
-    '@storybook/addon-a11y',
     '@storybook/addon-viewport',
+    '@storybook/addon-postcss',
     'storybook-addon-react-docgen',
   ],
   webpackFinal: (config) => {
+    config.devtool = 'source-maps';
     config.resolve.modules.push('node_modules', 'src');
     config.resolve.alias['react-bulma-components/lib'] = path.resolve(
       __dirname,

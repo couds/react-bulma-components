@@ -1,0 +1,41 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Columns, Message, Notification } from '../../..';
+import * as stories from './columns.story';
+
+<Meta title="Columns/Responsiveness" />
+
+# Responsiveness
+
+You can handle different column size/offseet for each breakpoint independently.
+
+## Mobile Columns
+
+You can use the `breakpoint` prop on the `Column` component to specify at what viewport size `Columns`
+should be "activated", meaning it will display `Columns.Column` in a row. Any viewport smaller
+than the specified viewport size will cause `Columns` to display `Columns.Column`
+in a row.
+
+By default, the value is `'tablet'`. Any viewport smaller than `'tablet'` will cause `Columns` to stack
+`Columns.Column` on top of each other.
+
+## Different column sizes/offsets/narrowness per breakpoint
+
+You can define this values for each viewport size passing a configuration object on a prop named as the 
+viewport you are targeting mobile, tablet, desktop, widescreen and fullhd). The configuration object looks like this
+
+Note that you can also use the common responsive props here (like `textAlign`, `textSize`)
+
+```javascript
+{
+  size: "ANY VALID SIZE",
+  offset: "ANY VALID SIZE",
+  narrow: Boolean
+}
+```
+<Canvas>
+  <Story story={stories.Responsiveness} name="Responsiveness" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/responsiveness/)

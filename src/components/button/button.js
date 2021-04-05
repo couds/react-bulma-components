@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CONSTANTS from '../../constants';
-import modifiers from '../../modifiers';
 import ButtonGroup from './components/button-group';
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const colors = [null, ''].concat(Object.values(CONSTANTS.COLORS));
 
@@ -37,13 +35,13 @@ const Button = ({
   if (submit) {
     otherProps = {
       type: 'submit',
-      renderAs: renderAs || 'button',
+      renderAs: 'button',
     };
   }
   if (reset) {
     otherProps = {
       type: 'reset',
-      renderAs: renderAs || 'button',
+      renderAs: 'button',
     };
   }
 
@@ -87,30 +85,6 @@ const Button = ({
 Button.Group = ButtonGroup;
 
 Button.propTypes = {
-  ...modifiers.propTypes,
-  /**
-   * Children of Button.
-   */
-  children: PropTypes.node,
-  /**
-   * Additional CSS classes to pass to Button.
-   */
-  className: PropTypes.string,
-  /**
-   * React style object for Button.
-   */
-  style: PropTypes.shape({}),
-  /**
-   * A custom component that Button should be rendered as.
-   */
-  renderAs: renderAsShape,
-  /**
-   * Callback function when Button is clicked.
-   */
-  onClick: PropTypes.func,
-  /**
-   * Color of Button
-   */
   color: PropTypes.oneOf(colors),
   /**
    * Size of Button
@@ -152,32 +126,32 @@ Button.propTypes = {
    * Whether Button is a text button.
    */
   text: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Button.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
   renderAs: 'button',
-  onClick: () => null,
   color: undefined,
   size: undefined,
-  outlined: false,
-  inverted: false,
-  submit: false,
-  reset: false,
-  fullwidth: false,
-  hovered: false,
-  focused: false,
-  active: false,
-  loading: false,
-  disabled: false,
-  remove: false,
-  isSelected: false,
-  isStatic: false,
-  rounded: false,
-  text: false,
+  outlined: undefined,
+  inverted: undefined,
+  submit: undefined,
+  reset: undefined,
+  fullwidth: undefined,
+  hovered: undefined,
+  focused: undefined,
+  active: undefined,
+  loading: undefined,
+  disabled: undefined,
+  remove: undefined,
+  isSelected: undefined,
+  isStatic: undefined,
+  rounded: undefined,
+  text: undefined,
 };
 
 export default Button;

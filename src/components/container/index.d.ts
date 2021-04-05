@@ -1,9 +1,9 @@
 import { BulmaComponent } from '..';
-import { Breakpoint } from '../../modifiers';
+import { Breakpoint } from '..';
 
 interface ContainerProps {
-  fluid?: boolean;
-  breakpoint?: Breakpoint;
+  max?: boolean;
+  breakpoint?: Breakpoint | 'fluid';
 }
 
 declare const Container: BulmaComponent<ContainerProps, 'div'>;

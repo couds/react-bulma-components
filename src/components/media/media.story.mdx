@@ -1,0 +1,37 @@
+import { Story, Meta, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import CommonProps from '../../../.storybook/common-props';
+import Media from '.';
+import * as stories from './media.story';
+
+<Meta title="Layout/Media" />
+
+# Media
+
+The famous media object prevalent in social media interfaces, but useful in any context
+
+## Props
+
+<ArgsTable of={Media} />
+
+## Components
+
+### Media.Content
+
+<ArgsTable of={Media.Content} />
+
+### Media.Item
+
+<ArgsTable of={Media.Item} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Media" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/layout/level)

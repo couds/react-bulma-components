@@ -1,0 +1,75 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './form.story';
+import { Message } from '../../..'
+
+<Meta title="Form/Basics" />
+
+# Form
+
+The `Form` namespace contains all components available to build forms.
+
+## Components
+
+`react-bulma-components` supports the following components:
+
+| Components       | Descriptions                                                             |
+| ---------------- | ------------------------------------------------------------------------ |
+| `Form.Control`   | Container for all form components to maintain the design evenly balanced |
+| `Form.Field`     | To combine several `Form.Control` and keep the spacing consistent        |
+| `Form.Label`     | To show the text label to display within the form control                |
+| `Form.Input`     | A basic text input                                                       |
+| `Form.Checkbox`  | Displays a checkbox                                                      |
+| `Form.Help`      | Displays a help message under form controls                              |
+| `Form.InputFile` | Displays a file input for file uploads                                   |
+| `Form.Label`     | Displays a label for a `Form.Field`                                      |
+| `Form.Radio`     | Displays a radio button                                                  |
+| `Form.Select`    | Displays a dropdown option menu                                          |
+| `Form.Textarea`  | Displays a multiline text box                                            |
+
+<Message color="warning">
+  <Message.Body>
+    All components inside Form are <b>controlled components</b>. You need
+    to pass the value in order to see changes on the UI, you should listen to the <b>onChange</b> event
+    to update the value
+  </Message.Body>
+</Message>
+
+## Compose your form
+
+Ussualy you would need wrap each "row" of your form in a `Form.Field` component, include a `Form.Label` with the name of the form field,
+and use one or more `Form.Control` each one with one of `Form.Input, Form.Checkbox, Form.Help, Form.InputFile, Form.Label, Form.Radio, Form.Select, Form.Textarea` like
+
+```jsx
+<Form.Field>
+  <Form.Label>Username</Form.Label>
+  <Form.Control>
+    <Form.Input
+      color="success"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)}
+    />
+    <Icon align="left" size="small">
+      <i className="fas fa-user" />
+    </Icon>
+    <Icon align="right" size="small">
+      <i className="fas fa-check" />
+    </Icon>
+  </Form.Control>
+  <Form.Help color="success">This username is available</Form.Help>
+</Form.Field>
+```
+
+You can wrap several `Fields, Controls and Inputs` inside a fieldset and disable it all adding `disabled` to the wrapper `fieldset`
+
+## Example
+
+A basic form example demonstrating different form components.
+
+<Canvas>
+  <Story story={stories.Default} name="Basics" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/general/)

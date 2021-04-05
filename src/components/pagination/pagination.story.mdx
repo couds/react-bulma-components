@@ -1,0 +1,26 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Pagination } from '../..';
+import * as stories from './pagination.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Pagination" />
+
+# Pagination
+
+A responsive, usable, and flexible pagination
+
+## Props
+
+<ArgsTable of={Pagination} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Pagination" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/pagination/)

@@ -5,10 +5,10 @@ import {
   BulmaComponent,
   BulmaComponentWithoutRenderAs,
 } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface FieldProps {
-  align?: 'centered' | 'right';
+  align?: 'center' | 'right';
   kind?: 'addons' | 'group';
   multiline?: boolean;
   horizontal?: boolean;
@@ -20,10 +20,7 @@ interface FieldLabelProps {
 
 interface ControlProps {
   fullwidth?: boolean;
-  iconLeft?: boolean;
-  iconRight?: boolean;
   loading?: boolean;
-  size?: Size;
 }
 
 interface InputProps<T> {
@@ -31,8 +28,7 @@ interface InputProps<T> {
   color?: Color;
   readOnly?: boolean;
   isStatic?: boolean;
-  focused?: boolean;
-  hovered?: boolean;
+  status?: 'focus' | 'hover';
   value?: T;
 }
 
@@ -43,8 +39,6 @@ interface LabelProps {
 interface TextareaProps {
   size?: Size;
   color?: Color;
-  focused?: boolean;
-  hovered?: boolean;
   fixedSize?: boolean;
 }
 
@@ -52,10 +46,8 @@ interface SelectProps<T> {
   size?: Size;
   color?: Color;
   value?: T;
-  readOnly?: boolean;
   loading?: boolean;
-  hovered?: boolean;
-  focused?: boolean;
+  status?: 'focus' | 'hover';
   multiple?: boolean;
 }
 
@@ -76,10 +68,9 @@ interface InputFileProps {
   color?: Color;
   size?: Size;
   filename?: string;
-  files?: FileList;
+  value?: FileList;
   fullwidth?: boolean;
-  right?: boolean;
-  centered?: boolean;
+  aling?: 'center' | 'right';
   boxed?: boolean;
   label?: string;
   icon?: React.ReactElement;

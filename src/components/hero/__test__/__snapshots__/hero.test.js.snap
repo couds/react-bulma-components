@@ -84,16 +84,6 @@ exports[`Hero component Should use inline styles 1`] = `
 </section>
 `;
 
-exports[`Hero component Should use use color black 1`] = `
-<section
-  className="hero is-black"
->
-  <p>
-    Default
-  </p>
-</section>
-`;
-
 exports[`Hero component Should use use color danger 1`] = `
 <section
   className="hero is-danger"
@@ -117,16 +107,6 @@ exports[`Hero component Should use use color dark 1`] = `
 exports[`Hero component Should use use color info 1`] = `
 <section
   className="hero is-info"
->
-  <p>
-    Default
-  </p>
-</section>
-`;
-
-exports[`Hero component Should use use color light 1`] = `
-<section
-  className="hero is-light"
 >
   <p>
     Default
@@ -174,9 +154,9 @@ exports[`Hero component Should use use color success 1`] = `
 </section>
 `;
 
-exports[`Hero component Should use use color warning 1`] = `
+exports[`Hero component Should use use color text 1`] = `
 <section
-  className="hero is-warning"
+  className="hero is-text"
 >
   <p>
     Default
@@ -184,9 +164,9 @@ exports[`Hero component Should use use color warning 1`] = `
 </section>
 `;
 
-exports[`Hero component Should use use color white 1`] = `
+exports[`Hero component Should use use color warning 1`] = `
 <section
-  className="hero is-white"
+  className="hero is-warning"
 >
   <p>
     Default

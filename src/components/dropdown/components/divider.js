@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const DropdownDivider = ({ className, ...props }) => (
-  <Element
-    renderAs="hr"
-    {...props}
-    className={classnames('dropdown-divider', className)}
-  />
+  <Element {...props} className={classnames('dropdown-divider', className)} />
 );
 
 DropdownDivider.propTypes = {
-  ...modifiers.propTypes,
+  ...Element.propTypes,
   style: PropTypes.shape({}),
   /**
    * Additional CSS classes to pass to `<Dropdown.Divider />`.
@@ -23,9 +19,10 @@ DropdownDivider.propTypes = {
 };
 
 DropdownDivider.defaultProps = {
-  ...modifiers.defaultProps,
+  ...Element.defaultProps,
   style: undefined,
   className: undefined,
+  renderAs: 'hr',
 };
 
 export default DropdownDivider;

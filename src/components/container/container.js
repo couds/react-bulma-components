@@ -1,57 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from '../../constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
-const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
-
-const Container = ({ children, fluid, breakpoint, className, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('container', className, {
-      'is-fluid': fluid,
-      [`is-${breakpoint}`]: breakpoint,
-    })}
-  >
-    {children}
-  </Element>
-);
+const Container = ({ children, max, breakpoint, className, ...props }) => {
+  const canSetMax = ['desktop', 'widescreen'].includes(breakpoint);
+  return (
+    <Element
+      {...props}
+      className={classnames('container', className, {
+        [`is-${canSetMax && max ? 'max-' : ''}${breakpoint}`]: breakpoint,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Container.propTypes = {
-  ...modifiers.propTypes,
-  /**
-   * Whether this container is fluid. If true, the container
-   * will be fullwidth, but will also leave 32px on left and right side.
-   */
-  fluid: PropTypes.bool,
   /**
    * Specifies the breakpoint at which the container will stop being fullwidth.
    */
-  breakpoint: PropTypes.oneOf(breakpoints),
-  children: PropTypes.node,
+  breakpoint: PropTypes.oneOf([
+    'mobile',
+    'tablet',
+    'desktop',
+    'widescreen',
+    'fullhd',
+    'fluid',
+  ]),
   /**
-   * Additional CSS classes to pass to `<Container />`.
-   * They will sit alongside pre-applied bulma classes.
+   * Only work for `desktop`  and `widescreen` breakpoints, Check the [bulma documentation](https://bulma.io/documentation/layout/container/#overview)
    */
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  /**
-   * Specifies what component `<Container />` should be rendered as.
-   */
-  renderAs: renderAsShape,
+  max: PropTypes.bool,
 };
 
-Container.defaultProps = {
-  ...modifiers.defaultProps,
-  fluid: false,
-  children: null,
-  breakpoint: undefined,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
-};
+Container.defaultProps = {};
 
 export default Container;

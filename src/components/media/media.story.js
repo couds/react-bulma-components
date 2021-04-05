@@ -1,84 +1,19 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
+import { Media, Image, Content, Button, Section, Box, Form } from '../..';
 
-import {
-  Media,
-  Image,
-  Content,
-  Button,
-  Level,
-  Section,
-  Box,
-  Form,
-} from 'react-bulma-components';
-
-const style = { background: '#e6e6e6', width: 64, height: 64 };
-
-storiesOf('Media', module)
-  .add('Default', () => (
-    <Section>
-      <Box>
-        <Media>
-          <Media.Item renderAs="figure" position="left">
-            <Image
-              size={64}
-              alt="64x64"
-              src="http://bulma.io/images/placeholders/128x128.png"
-            />
-          </Media.Item>
-          <Media.Item>
-            <Content>
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small>{' '}
-                <small>31m</small>
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                ornare magna eros, eu pellentesque tortor vestibulum ut.
-                Maecenas non massa sem. Etiam finibus odio quis feugiat
-                facilisis.
-              </p>
-            </Content>
-            <Level breakpoint="mobile">
-              <Level.Side align="left">
-                <Button link>Like</Button>
-                <Button link>Share</Button>
-              </Level.Side>
-            </Level>
-          </Media.Item>
-        </Media>
-      </Box>
-    </Section>
-  ))
-  .add('Right Media', () => (
-    <Section>
-      <Box>
-        <Media>
-          <Media.Item>
-            <p>Lorem Ipsum</p>
-          </Media.Item>
-          <Media.Item renderAs="figure" position="right">
-            <img
-              style={style}
-              alt="64x64"
-              src="http://bulma.io/images/placeholders/128x128.png"
-            />
-          </Media.Item>
-        </Media>
-      </Box>
-    </Section>
-  ))
-  .add('Nested', () => (
+export const Default = () => {
+  return (
     <Section>
       <Box>
         <Media renderAs="article">
-          <Media.Item position="left">
+          <Media.Item align="left">
             <Image
               src="http://bulma.io/images/placeholders/128x128.png"
               size={64}
             />
           </Media.Item>
-          <Media.Item position="center">
+          <Media.Item align="center">
             <Content>
               <p>
                 <strong>Barbara Middleton</strong>
@@ -95,13 +30,13 @@ storiesOf('Media', module)
             </Content>
 
             <Media>
-              <Media.Item position="left">
+              <Media.Item align="left">
                 <Image
                   src="http://bulma.io/images/placeholders/128x128.png"
                   size={48}
                 />
               </Media.Item>
-              <Media.Item position="center">
+              <Media.Item align="center">
                 <Content>
                   <p>
                     <strong>Sean Brown</strong>
@@ -131,13 +66,13 @@ storiesOf('Media', module)
             </Media>
 
             <Media>
-              <Media.Item position="left">
+              <Media.Item align="left">
                 <Image
                   src="http://bulma.io/images/placeholders/96x96.png"
                   size={48}
                 />
               </Media.Item>
-              <Media.Item position="center">
+              <Media.Item align="center">
                 <Content>
                   <p>
                     <strong>Kayli Eunice </strong>
@@ -158,13 +93,13 @@ storiesOf('Media', module)
           </Media.Item>
         </Media>
         <Media renderAs="article">
-          <Media.Item position="left">
+          <Media.Item align="left">
             <Image
               src="http://bulma.io/images/placeholders/128x128.png"
               size={64}
             />
           </Media.Item>
-          <Media.Item position="center">
+          <Media.Item align="center">
             <Form.Field>
               <Form.Control renderAs="p">
                 <Form.Textarea placeholder="Add a comment..." />
@@ -179,4 +114,5 @@ storiesOf('Media', module)
         </Media>
       </Box>
     </Section>
-  ));
+  );
+};

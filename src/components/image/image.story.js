@@ -1,77 +1,57 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import { Box, Image, Block } from '../..';
 
-import { Image, Table } from 'react-bulma-components';
+export const Default = (args) => (
+  <Box>
+    <Block>This text is above the image</Block>
+    <Block>
+      <Image {...args} />
+    </Block>
+    <Block>
+      And this is below and it is where it should be even before the image is
+      loaded
+    </Block>
+  </Box>
+);
 
-import CONSTANTS from './constants';
+Default.args = {
+  src: 'https://wallpapercave.com/wp/tU89SSy.jpg',
+  fullwidth: false,
+  rounded: false,
+  fallback:
+    'https://nosequemepasa.com/wp-content/themes/wishful-blog/wishfulthemes/assets/images/fallback-image-one.jpg',
+};
 
-storiesOf('Image', module)
-  .add('Default', () => (
-    <div style={{ width: 320 }}>
-      <Image
-        fullwidth={boolean('fullwidth', false)}
-        rounded={boolean('rounded', false)}
-        src="http://bulma.io/images/placeholders/640x480.png"
-        size="3by2"
-      />
-    </div>
-  ))
-  .add('Fixed Square', () => (
-    <Table>
-      <thead>
-        <tr>
-          <th />
-          <th>Size</th>
-          <th>Image</th>
-          <th />
-        </tr>
-      </thead>
-      <tbody>
-        {CONSTANTS.SIZES.filter((size) => typeof size === 'number').map(
-          (size) => (
-            <tr key={size}>
-              <td />
-              <td style={{ width: 100 }}>{size}</td>
-              <td style={{ width: 128 }}>
-                <Image
-                  src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
-                  size={size}
-                />
-              </td>
-              <td />
-            </tr>
-          ),
-        )}
-      </tbody>
-    </Table>
-  ))
-  .add('Responsive images with ratios', () => (
-    <Table>
-      <thead>
-        <tr>
-          <th />
-          <th>Size</th>
-          <th>Image</th>
-          <th />
-        </tr>
-      </thead>
-      <tbody>
-        {CONSTANTS.SIZES.filter((size) => typeof size === 'string').map(
-          (size) => (
-            <tr key={size}>
-              <td />
-              <td style={{ width: 100 }}>{size}</td>
-              <td style={{ width: 128 }}>
-                <Image
-                  src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
-                  size={size}
-                />
-              </td>
-              <td />
-            </tr>
-          ),
-        )}
-      </tbody>
-    </Table>
-  ));
+Default.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+      options: [
+        16,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+        'square',
+        '1by1',
+        '4by3',
+        '3by2',
+        '16by9',
+        '2by1',
+        '5by4',
+        '5by3',
+        '3by1',
+        '4by5',
+        '3by4',
+        '2by3',
+        '3by5',
+        '9by16',
+        '1by2',
+        '1by3',
+      ],
+    },
+  },
+};

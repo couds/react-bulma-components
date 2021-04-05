@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from '../../constants';
 import LevelSide from './components/level-side';
 import LevelItem from './components/level-item';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
-const breakpoints = [null].concat(Object.values(CONSTANTS.BREAKPOINTS));
-
-const Level = ({ children, className, breakpoint, mobile, ...props }) => (
+const Level = ({ children, className, breakpoint, ...props }) => (
   <Element
     {...props}
     className={classnames('level', className, {
       [`is-${breakpoint}`]: breakpoint,
-      'is-mobile': mobile,
     })}
   >
     {children}
@@ -27,23 +22,16 @@ Level.Side = LevelSide;
 Level.Item = LevelItem;
 
 Level.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  mobile: PropTypes.bool,
-  style: PropTypes.shape({}),
-  breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: renderAsShape,
+  breakpoint: PropTypes.oneOf(['mobile']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Level.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  mobile: false,
-  style: undefined,
-  breakpoint: undefined,
-  renderAs: 'div',
+  renderAs: 'nav',
 };
 
 export default Level;

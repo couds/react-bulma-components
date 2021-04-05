@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Content } from '../..';
 import * as stories from './content.story';
+import CommonProps from '../../../.storybook/common-props';
 
 <Meta title="Elements/Content" />
 
@@ -9,13 +10,12 @@ import * as stories from './content.story';
 This component handles WYSIWYG/plain HTML content.
 The example below demonstrates the formatting of different HTML elements.
 
-<Canvas>
-  <Story story={stories.Default} />
-</Canvas>
 
 ## Props
 
 <ArgsTable of={Content} />
+
+<CommonProps />
 
 ## Size
 
@@ -25,12 +25,6 @@ There are three sizes available:
 - `'small'`
 - `'medium'`
 - `'large'`
-
-<Canvas>
-  <Story name="Adjustable size" args={{ size: 'small' }}>
-    {stories.AdjustableContentSize.bind({})}
-  </Story>
-</Canvas>
 
 ## List styles
 
@@ -44,8 +38,10 @@ you can still use the following Bulma classes via the `className` prop to do jus
 
 Alternatively, you can use the HTML `type` attribute of `<ol>` to achieve the same effect.
 
+## Example
+
 <Canvas>
-  <Story story={stories.CustomizeItemMarkers} />
+  <Story story={stories.Default} name="Content" />
 </Canvas>
 
 ## Related

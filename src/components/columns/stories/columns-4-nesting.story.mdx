@@ -1,0 +1,19 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Columns, Message, Notification } from '../../..';
+import * as stories from './columns.story';
+
+<Meta title="Columns/Nesting" />
+
+# Nesting
+
+You can nest `Columns` inside any `Columns.Column` indefinitely to create more complex layout
+
+The difference with multiline columns is the order in the HTML code: all the blue columns appear before the red ones. Resize to a narrower viewport to see the result.
+
+In this example, the numbers represent the nesting level the `Columns.Column` is in.
+
+<Story story={stories.Nesting} />
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/nesting/)

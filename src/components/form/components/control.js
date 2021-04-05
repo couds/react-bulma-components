@@ -1,58 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
-import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
-const Control = ({
-  children,
-  className,
-  fullwidth,
-  iconLeft,
-  iconRight,
-  loading,
-  size,
-  ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('control', className, {
-      'is-expanded': fullwidth,
-      'has-icons-left': iconLeft,
-      'has-icons-right': iconRight,
-      'is-loading': loading,
-      [`is-${size}`]: size,
-    })}
-  >
-    {children}
-  </Element>
-);
+import Element from '../../element';
+import Icon from '../../icon';
+import useFieldContext from './field/context';
+import Button from '../../button';
+
+const isIcon = (child) => {
+  return (
+    child.type === Icon &&
+    (child.props.align === 'left' || child.props.align === 'right')
+  );
+};
+
+const Control = ({ children, className, fullwidth, loading, ...props }) => {
+  const context = useFieldContext();
+
+  const updatedChildren = React.Children.map(children, (child) => {
+    if (!isIcon(child) && child.type !== Button) {
+      return child;
+    }
+    return React.cloneElement(child, {
+      size: child.props.size || context.size,
+    });
+  });
+
+  const icons = React.Children.toArray(updatedChildren)
+    .filter(isIcon)
+    .reduce(
+      (acc, icon) => ({
+        iconLeft: acc.iconLeft || icon.props.align === 'left',
+        iconRight: acc.iconRight || icon.props.align === 'right',
+      }),
+      { iconLeft: false, iconRight: false },
+    );
+  return (
+    <Element
+      {...props}
+      className={classnames('control', className, {
+        'is-expanded': fullwidth,
+        'has-icons-left': icons.iconLeft,
+        'has-icons-right': icons.iconRight,
+        'is-loading': loading,
+      })}
+    >
+      {updatedChildren}
+    </Element>
+  );
+};
 
 Control.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
-  fullwidth: PropTypes.bool,
-  iconLeft: PropTypes.bool,
-  iconRight: PropTypes.bool,
   loading: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * When true and the `Field` container has the `kind` props set the Control
+   * will use all available space instead of adjusting to the element inside
+   */
+  fullwidth: PropTypes.bool,
 };
 
-Control.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
-  fullwidth: undefined,
-  iconLeft: undefined,
-  iconRight: undefined,
-  loading: undefined,
-  size: undefined,
-};
+Control.defaultProps = {};
 
 export default Control;

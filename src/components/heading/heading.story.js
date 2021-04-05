@@ -1,31 +1,43 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Heading from './heading';
 
-const HEADING_SIZES = [1, 2, 3, 4, 5, 6];
-
-export const BasicUsage = () => (
+export const Default = ({ titleSize, titleWeight, spaced }) => (
   <>
-    <Heading>Title</Heading>
+    <Heading spaced={spaced} size={titleSize} weight={titleWeight}>
+      Title
+    </Heading>
     <Heading subtitle>Subtitle</Heading>
   </>
 );
 
-export const HeadingSizes = () => (
-  <>
-    {HEADING_SIZES.map((size) => (
-      <Heading key={size} size={size}>
-        Heading {size}
-      </Heading>
-    ))}
-  </>
-);
-
-export const SubheadingSizes = () => (
-  <>
-    {HEADING_SIZES.map((size) => (
-      <Heading subtitle key={size} size={size}>
-        Subtitle {size}
-      </Heading>
-    ))}
-  </>
-);
+Default.argTypes = {
+  titleSize: {
+    name: 'size',
+    table: {
+      category: 'Title',
+    },
+    control: {
+      type: 'select',
+      options: ['default', 1, 2, 3, 4, 5, 6],
+    },
+  },
+  titleWeight: {
+    name: 'weight',
+    table: {
+      category: 'Title',
+    },
+    control: {
+      type: 'select',
+      options: ['default', 'light', 'normal', 'semibold', 'bold'],
+    },
+  },
+  spaced: {
+    table: {
+      category: 'Title',
+    },
+    control: {
+      type: 'boolean',
+    },
+  },
+};

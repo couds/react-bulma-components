@@ -1,0 +1,33 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Tabs } from '../..';
+import * as stories from './tabs.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Tabs" />
+
+# Tabs
+
+Simple responsive horizontal navigation tabs, with different styles
+
+## Props
+
+<ArgsTable of={Tabs} />
+
+## Components
+
+### `Tabs.Tab`
+
+<ArgsTable of={Tabs.Tab} />
+
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Tabs" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/tabs/)

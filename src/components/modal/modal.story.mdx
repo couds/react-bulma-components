@@ -1,0 +1,67 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Modal from '.';
+import * as stories from './modal.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Modal" />
+
+# Modal
+
+A basic modal with overlay where you can add any content you want
+
+The modal structure is very simple:
+
+- `<Modal />`: Rhe main container
+  - `<Modal.Content/>`: a horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content
+  - `<Modal.Card>`: A more classic modal with head, body and footer
+    - `<Modal.Card.Header />` The header of the modal, here you can use the `Modal.Card.Title` component, or your own custom component
+    - `<Modal.Card.Title />` Normally used as a children of `Modal.Card.Head`
+    - `<Modal.Card.Body />` The main content of the modal, if the height its bigger that the viewport will generate scroll inside this component
+    - `<Modal.Card.Footer />` The main content of the modal, if the height its bigger that the viewport will generate scroll inside this component
+
+## Props
+
+<br />
+
+<ArgsTable of={Modal} />
+
+## Components
+
+### `Modal.Content`
+Custom content for the modal, here you can add any kind of component
+
+<ArgsTable of={Modal.Content} />
+
+### Modal.Card
+classic modal with head, body and footer
+
+<ArgsTable of={Modal.Card} />
+
+#### Modal.Card.Header
+
+<ArgsTable of={Modal.Card.Header} />
+
+#### Modal.Card.Title
+
+<ArgsTable of={Modal.Card.Title} />
+
+#### Modal.Card.Body
+
+<ArgsTable of={Modal.Card.Body} />
+
+#### Modal.Card.Footer
+
+<ArgsTable of={Modal.Card.Footer} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Modal" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/modal/)

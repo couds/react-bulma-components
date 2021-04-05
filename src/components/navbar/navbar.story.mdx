@@ -1,0 +1,82 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Navbar } from '../..';
+import * as stories from './navbar.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Navbar" />
+
+# Navbar
+
+A colored message block that can be used to emphasize content or used as a notification banner. Use `Message.Header`
+to create a header of the block, and `Message.Body` for the body of the block.
+
+The style of the message change depending if the Header is included or not, Play with the Controls in the canvas to
+ see how this component behave with different props
+
+## Props
+
+<ArgsTable of={Navbar} />
+
+## Components
+
+### `Navbar.Brand`
+The left side, always visible, which usually contains the logo and optionally some links or icons
+
+<ArgsTable of={Navbar.Brand} />
+
+### `Navbar.Burger`
+The hamburger icon, which toggles the navbar menu on touch devices
+
+<ArgsTable of={Navbar.Burger} />
+
+### `Navbar.Menu`
+the right side, **hidden on touch devices**, visible on desktop
+
+<ArgsTable of={Navbar.Menu} />
+
+### `Navbar.Container`
+This is a container for the `Menu.Item` can be align to the `start` or `end` (left or right) using the **align** prop
+
+<ArgsTable of={Navbar.Container} />
+
+### `Navbar.Item`
+A single item of the navbar, ussualy rendered as an `a` or a `div`, can be used as a container for `Menu.Link` and `Menu.Dropdown`
+
+<ArgsTable of={Navbar.Item} />
+
+### `Navbar.Link`
+The default type of children of `Navbar.Item`. you should use this component in conjunction with `Navbar.Dropdown` like this, to correctly use dropdowns on the Navbar
+
+```jsx
+<Navbar.Item href="#">
+  <Navbar.Link>Item</Navbar.Link>
+  <Navbar.Dropdown>
+    <Navbar.Item href="#">Subitem 1</Navbar.Item>
+    <Navbar.Item href="#">Subitem 2</Navbar.Item>
+  </Navbar.Dropdown>
+</Navbar.Item>
+```
+
+<ArgsTable of={Navbar.Item} />
+
+### `Navbar.Dropdown`
+Container for `Navbar.Item`'s that will be hidden by default, and will be displayed depending of the props of the parent `Navbar.Item`
+
+<ArgsTable of={Navbar.Dropdown} />
+
+### `Navbar.Divider`
+An divider for items inside the `Navbar.Dropdown`
+
+<ArgsTable of={Navbar.Divider} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Navbar" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/navbar/)

@@ -1,5 +1,5 @@
 import { BulmaComponent } from '..';
-import { Color, Size } from '../../modifiers';
+import { Color, Size } from '..';
 
 interface ButtonProps {
   onClick?: () => void;
@@ -23,7 +23,7 @@ interface ButtonProps {
 interface ButtonGroupProps {
   size?: Size;
   hasAddons?: boolean;
-  position?: 'centered' | 'right';
+  align?: 'center' | 'right';
 }
 
 declare const Button: BulmaComponent<ButtonProps, 'button'> & {

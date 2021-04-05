@@ -46,7 +46,7 @@ describe('Navbar component', () => {
         <div>TEST</div>
         <Navbar.Menu>
           <Navbar.Container>
-            <Navbar.Item dropdown hoverable>
+            <Navbar.Item hoverable>
               <Navbar.Link>Docs</Navbar.Link>
               <Navbar.Dropdown boxed>
                 <Navbar.Item href="#">Home</Navbar.Item>
