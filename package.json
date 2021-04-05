@@ -17,7 +17,8 @@
     "prepare": "npm run clean:build && npm run build && npm run clean:test",
     "deploy-storybook": "storybook-to-ghpages",
     "build": "babel ./src --out-dir ./lib --copy-files --source-maps",
-    "clean:test": "rm -rf $(find ./lib -name \"__test__\")"
+    "clean:test": "rm -rf $(find ./lib -name \"__test__\")",
+    "upgrade-dependencies": "npx npm-check --update"
   },
   "storybook-deployer": {
     "gitUsername": "Couds",
@@ -35,7 +36,8 @@
     "css",
     "bootstrap",
     "modal",
-    "layout"
+    "layout",
+    "responsive"
   ],
   "author": "John Benavides",
   "license": "MIT",

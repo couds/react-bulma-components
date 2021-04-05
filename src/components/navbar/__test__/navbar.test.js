@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { JSDOM } from 'jsdom';
 import { renderToString } from 'react-dom/server';
-import Navbar, { getHtmlClasses } from '..';
+import Navbar from '..';
 
 describe('Navbar component', () => {
   let window;
@@ -26,12 +26,6 @@ describe('Navbar component', () => {
   });
   it('Should Exist', () => {
     expect(Navbar).toMatchSnapshot();
-  });
-
-  it('should render on server side', () => {
-    const html = renderToString(<Navbar fixed="top" />);
-    expect(html).toMatchSnapshot();
-    expect(getHtmlClasses()).toMatchSnapshot('top');
   });
 
   it('Should have Navbar classname', () => {

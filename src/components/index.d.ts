@@ -69,6 +69,7 @@ interface FlexboxProps {
 }
 
 type DisplayModifier =
+  | 'relative'
   | 'block'
   | 'flex'
   | 'inline'

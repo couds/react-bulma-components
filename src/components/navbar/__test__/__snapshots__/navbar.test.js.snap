@@ -54,9 +54,7 @@ exports[`Navbar component Should have Navbar classname 1`] = `
   <div
     className="navbar-menu"
   >
-    <div
-      className="navbar-start"
-    >
+    <div>
       <span
         className="navbar-item has-dropdown is-hoverable"
       >
@@ -109,7 +107,3 @@ exports[`Navbar component Should render as an html section 1`] = `
   role="navigation"
 />
 `;
-
-exports[`Navbar component should render on server side 1`] = `"<nav class=\\"navbar is-fixed-top\\" role=\\"navigation\\"></nav>"`;
-
-exports[`Navbar component should render on server side: top 1`] = `"has-navbar-fixed-top"`;
