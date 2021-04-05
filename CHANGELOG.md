@@ -11,10 +11,13 @@
   - Added srOnly prop to all components to display only on **screen readers**
   - Add Support to textSize `7`
 - Improve responsive helper props (`mobile`, `tablet`, `desktop`, `widescreen`, `fullhd`, `touch`, `untilWidescreen`, `untilFullhd`)
-  - `hidden` is now inside `display` prop, `{ hidden: true }` become `{ display: 'hidden' }`
   - Added `invisible` to responsive props
+- `hidden` is now inside `display` prop, `{ hidden: true }` become `{ display: 'hidden' }`
+- Added `invisible` prop on all Components
 - New Storybook, with more details (and hopefully more helpful)
 - Renamed the prop value `centered` to `center` on all components to use the same everywhere
+- Added display prop with same values as responsive display (bulma currently only support flex, hidden and relative at this level)
+
 
 ### Breadcrumb
 - Removed `items` props in favor of composition with `Breadcrumb.Item`
@@ -65,6 +68,9 @@
 ### Form.Textarea
 - Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
 
+### Hero
+- `size` prop its ignored if `hasNavbar` prop is set
+
 ## Hero.Head
 - Renamed to `Hero.Header`
 
@@ -91,6 +97,7 @@
 
 ### Navbar.Container
 - Renamed `position` prop to `align`
+- Change `align` values from `start,end` to `left/right`
 
 ### Pagination
 - Renamed `position` prop to `align`

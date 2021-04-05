@@ -24,7 +24,7 @@ const Hero = ({
     {...props}
     className={classnames('hero', className, {
       [`is-${color}`]: color,
-      [`is-${size}`]: size,
+      [`is-${size}`]: size && !hasNavbar,
       'is-bold': gradient,
       'is-fullheight-with-navbar': hasNavbar,
     })}

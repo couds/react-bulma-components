@@ -4,12 +4,17 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
+const alignMapper = {
+  left: 'start',
+  right: 'end',
+};
+
 const NavbarContainer = ({ className, children, align, ...props }) => (
   <Element
     {...props}
     className={classnames(
       {
-        [`navbar-${align}`]: align,
+        [`navbar-${alignMapper[align]}`]: alignMapper[align],
       },
       className,
     )}
@@ -19,7 +24,7 @@ const NavbarContainer = ({ className, children, align, ...props }) => (
 );
 
 NavbarContainer.propTypes = {
-  align: PropTypes.oneOf(['start', 'end']),
+  align: PropTypes.oneOf(['left', 'right']),
 };
 
 NavbarContainer.defaultProps = {

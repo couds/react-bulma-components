@@ -173,6 +173,8 @@ export type ElementProps<
   domRef?: React.RefObject<TComponent>;
   renderAs?: TComponent;
   style?: React.CSSProperties;
+  display?: DisplayModifier;
+  invisible?: boolean;
 } & OmitKeys<RenderAsComponentProps<TComponent>, keyof TProps>;
 
 export type BulmaComponent<

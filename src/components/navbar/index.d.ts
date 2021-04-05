@@ -4,6 +4,7 @@ import { Color } from '..';
 interface NavbarProps {
   transparent?: boolean;
   fixed?: 'top' | 'bottom';
+  size: 'large';
   color?: Color;
   active?: boolean;
 }
@@ -29,7 +30,7 @@ interface NavbarLinkProps {
 }
 
 interface NavbarContainerProps {
-  align?: 'start' | 'end';
+  align?: 'left' | 'right';
 }
 
 declare const Navbar: BulmaComponent<NavbarProps, 'nav'> & {

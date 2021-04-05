@@ -15,10 +15,6 @@ import Element from '../element';
 
 const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
-let htmlClass = '';
-
-export const getHtmlClasses = () => htmlClass;
-
 const Navbar = ({
   children,
   className,
@@ -26,9 +22,9 @@ const Navbar = ({
   transparent,
   color,
   active,
+  size,
   ...props
 }) => {
-  htmlClass = fixed ? `has-navbar-fixed-${fixed}` : '';
   useEffect(() => {
     const html = window.document.querySelector('html');
     if (!html.classList.contains(`has-navbar-fixed-${fixed}`)) {
@@ -52,6 +48,7 @@ const Navbar = ({
           'is-transparent': transparent,
           [`is-fixed-${fixed}`]: fixed,
           [`is-${color}`]: color,
+          [`is-spaced`]: size === 'large',
         })}
       >
         {children}

@@ -1,5 +1,3 @@
-import Navbar, { getHtmlClasses } from './navbar';
+import Navbar from './navbar';
 
 export default Navbar;
-
-export { getHtmlClasses };
