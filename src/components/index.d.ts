@@ -164,7 +164,7 @@ type RenderAsComponentProps<
 
 export type OmitKeys<T, U> = Pick<T, Exclude<keyof T, U>>;
 
-export type RenderAsComponent = string | React.ComponentType<never>;
+export type RenderAsComponent = React.ElementType;
 
 export type ElementProps<
   TProps,
