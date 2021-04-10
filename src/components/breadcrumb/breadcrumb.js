@@ -28,7 +28,10 @@ Breadcrumb.Item = BreadcrumbItem;
 
 Breadcrumb.propTypes = {
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   align: PropTypes.oneOf(['right', 'center']),
   renderAs: PropTypes.oneOfType([
     PropTypes.func,

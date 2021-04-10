@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import CONSTANTS from '../../../constants';
 import Element from '../../element';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Help = ({ className, children, color, ...props }) => (
   <Element
@@ -19,7 +16,19 @@ const Help = ({ className, children, color, ...props }) => (
 );
 
 Help.propTypes = {
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,

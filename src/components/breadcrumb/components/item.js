@@ -25,7 +25,6 @@ BreadcrumbItem.propTypes = {
 };
 
 BreadcrumbItem.defaultProps = {
-  active: false,
   renderAs: 'li',
 };
 

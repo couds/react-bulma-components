@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from '../../constants';
 
 import Element from '../element';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Progress = ({ className, value, max, color, size, ...props }) => (
   <Element
@@ -20,23 +17,33 @@ const Progress = ({ className, value, max, color, size, ...props }) => (
 );
 
 Progress.propTypes = {
-  ...Element.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   value: PropTypes.number,
   max: PropTypes.number,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Progress.defaultProps = {
-  ...Element.defaultProps,
-  className: undefined,
-  style: undefined,
-  color: undefined,
-  size: undefined,
-  value: undefined,
-  max: undefined,
   renderAs: 'progress',
 };
 

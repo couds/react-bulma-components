@@ -88,13 +88,11 @@ Modal.Content = ModalContent;
 Modal.Card = ModalCard;
 
 Modal.propTypes = {
-  ...Element.propTypes,
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   closeOnEsc: PropTypes.bool,
   closeOnBlur: PropTypes.bool,
   showClose: PropTypes.bool,
-  children: PropTypes.node.isRequired,
   document: PropTypes.object,
   className: PropTypes.string,
 };
@@ -102,9 +100,6 @@ Modal.propTypes = {
 Modal.defaultProps = {
   closeOnEsc: true,
   showClose: true,
-  closeOnBlur: false,
-  className: undefined,
-  domRef: React.createRef(),
   // Expose mount point for testing
   document: undefined,
 };

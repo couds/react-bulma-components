@@ -52,37 +52,61 @@ Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
   touch: PropTypes.shape({
-    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   }),
   /**
    * Size, Offset and Narrow props for Mobile devices (This props are merge with the default responsive props)
    */
   mobile: PropTypes.shape({
-    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   }),
   /**
    * Size, Offset and Narrow props for Tablet devices (This props are merge with the default responsive props)
    */
   tablet: PropTypes.shape({
-    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   }),
   /**
    * Size, Offset and Narrow props for Desktop devices (This props are merge with the default responsive props)
    */
   desktop: PropTypes.shape({
-    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   }),
   /**
    * Size, Offset and Narrow props for WideScreen devices (This props are merge with the default responsive props)
    */
   widescreen: PropTypes.shape({
-    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   }),
   /**
    * Size, Offset and Narrow props for FullHD devices (This props are merge with the default responsive props)
    */
   fullhd: PropTypes.shape({
-    gap: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      PropTypes.number,
+      PropTypes.string,
+    ]),
   }),
   /**
    * Defines at what breakpoint upwards the column layout should be activated. Any viewport smaller

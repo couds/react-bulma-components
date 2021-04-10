@@ -183,7 +183,10 @@ Pagination.propTypes = {
    * If true will hide the pagination if `total == 1`
    */
   autoHide: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   align: PropTypes.oneOf(['center', 'right']),
   rounded: PropTypes.bool,
   renderAs: PropTypes.oneOfType([

@@ -28,7 +28,6 @@ MenuList.propTypes = {
 };
 
 MenuList.defaultProps = {
-  ...Element.defaultProps,
   renderAs: 'ul',
 };
 

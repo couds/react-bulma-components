@@ -9,8 +9,6 @@ const Loader = ({ children, className, ...props }) => (
   </Element>
 );
 
-Loader.propTypes = {
-  ...Element.propTypes,
-};
+Loader.propTypes = {};
 
 export default Loader;

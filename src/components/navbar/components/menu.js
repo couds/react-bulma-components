@@ -20,12 +20,8 @@ const NavbarMenu = ({ className, children, ...props }) => (
   </ShowContext.Consumer>
 );
 
-NavbarMenu.propTypes = {
-  ...Element.propTypes,
-};
+NavbarMenu.propTypes = {};
 
-NavbarMenu.defaultProps = {
-  ...Element.defaultProps,
-};
+NavbarMenu.defaultProps = {};
 
 export default NavbarMenu;

@@ -29,7 +29,11 @@ const Tile = ({
 Tile.propTypes = {
   kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
   vertical: PropTypes.bool,
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 export default Tile;

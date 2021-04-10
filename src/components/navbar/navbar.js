@@ -9,11 +9,8 @@ import Dropdown from './components/dropdown';
 import Divider from './components/divider';
 import Link from './components/link';
 import Container from './components/container';
-import CONSTANTS from '../../constants';
 import { ShowContext } from './context';
 import Element from '../element';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Navbar = ({
   children,
@@ -60,7 +57,20 @@ const Navbar = ({
 Navbar.propTypes = {
   transparent: PropTypes.bool,
   fixed: PropTypes.oneOf(['top', 'bottom']),
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  size: PropTypes.oneOfType([PropTypes.oneOf(['large']), PropTypes.string]),
   active: PropTypes.bool,
   renderAs: PropTypes.oneOfType([
     PropTypes.func,

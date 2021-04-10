@@ -29,26 +29,13 @@ const Table = ({
 );
 
 Table.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   size: PropTypes.oneOf(['fullwidth', 'narrow']),
   striped: PropTypes.bool,
   bordered: PropTypes.bool,
   hoverable: PropTypes.bool,
 };
 
-Table.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  size: undefined,
-  striped: false,
-  bordered: false,
-  hoverable: false,
-};
+Table.defaultProps = {};
 
 Table.Container = Container;
 

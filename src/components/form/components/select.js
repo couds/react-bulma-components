@@ -2,11 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import CONSTANTS from '../../../constants';
 import Element from '../../element';
 import useFieldContext from './field/context';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Select = ({
   className,
@@ -63,11 +60,26 @@ Select.propTypes = {
   /**
    * Adjusts the size of this component.
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   /**
    * Adjusts the color of this component.
    */
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
   /**
    * Whether the dropdown button should have fully rounded corners.
    */

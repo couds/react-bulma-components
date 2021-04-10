@@ -30,7 +30,11 @@ const Heading = ({
 );
 
 Heading.propTypes = {
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
   subtitle: PropTypes.bool,
   heading: PropTypes.bool,

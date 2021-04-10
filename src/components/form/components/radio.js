@@ -65,8 +65,6 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-  ...Element.defaultProps,
-  value: '',
   renderAs: 'input',
 };
 

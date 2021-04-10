@@ -85,8 +85,6 @@ export const useElementClassNames = ({
       [`is-align-content-${alignContent}`]: alignContent,
       [`is-align-items-${alignItems}`]: alignItems,
       [`is-flex-grow-${flexGrow}`]: flexGrow,
-      'has-ratio': ratio,
-      [`is-${ratio}`]: ratio,
       'is-clearfix': clearfix,
       [`is-pulled-${pull}`]: pull,
       'is-marginless': marginless,
@@ -133,14 +131,7 @@ export const useElementClassNames = ({
   props,
 ];
 
-const Element = ({
-  className,
-  renderAs,
-  ratio,
-  domRef,
-  children,
-  ...allProps
-}) => {
+const Element = ({ className, renderAs, domRef, children, ...allProps }) => {
   const RenderAs = renderAs;
   const [classNames, props] = useElementClassNames(allProps);
   return (
@@ -229,43 +220,81 @@ Element.propTypes = {
     'left',
     'right',
   ]),
-  m: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mt: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mr: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mb: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  ml: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mx: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  my: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  m: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  mt: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  mr: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  mb: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  ml: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  mx: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  my: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   marginless: PropTypes.bool,
   overlay: PropTypes.bool,
   paddingless: PropTypes.bool,
-  p: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pt: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pr: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pb: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pl: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  px: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  py: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  p: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  pt: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  pr: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  pb: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  pl: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  px: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  py: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   pull: PropTypes.oneOf([undefined, 'right', 'left']),
   radiusless: PropTypes.bool,
-  ratio: PropTypes.oneOf([
-    'square',
-    '1by1',
-    '4by3',
-    '3by2',
-    '16by9',
-    '2by1',
-    '5by4',
-    '5by3',
-    '3by1',
-    '4by5',
-    '3by4',
-    '2by3',
-    '3by5',
-    '9by16',
-    '1by2',
-    '1by3',
-  ]),
   renderAs: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
@@ -290,13 +319,21 @@ Element.propTypes = {
     PropTypes.string,
   ]),
   textFamily: PropTypes.string,
-  textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  textSize: PropTypes.oneOfType([
+    PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
   textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
   unselectable: PropTypes.bool,
 
   mobile: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -308,7 +345,11 @@ Element.propTypes = {
     ]),
   }),
   tablet: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -321,7 +362,11 @@ Element.propTypes = {
     only: PropTypes.bool,
   }),
   desktop: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -334,7 +379,11 @@ Element.propTypes = {
     only: PropTypes.bool,
   }),
   widescreen: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -347,7 +396,11 @@ Element.propTypes = {
     only: PropTypes.bool,
   }),
   fullhd: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -359,7 +412,11 @@ Element.propTypes = {
     ]),
   }),
   touch: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -371,7 +428,11 @@ Element.propTypes = {
     ]),
   }),
   untilWidrscreen: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',
@@ -383,7 +444,11 @@ Element.propTypes = {
     ]),
   }),
   untilFullhd: PropTypes.shape({
-    textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+    textSize: PropTypes.oneOfType([
+      PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     textAlign: PropTypes.oneOf(['centered', 'justify', 'left', 'right']),
     display: PropTypes.oneOf([
       'block',

@@ -2,13 +2,12 @@ import { addDecorator } from '@storybook/react';
 import { withPropsTable } from 'storybook-addon-react-docgen';
 import { MINIMAL_VIEWPORTS} from '@storybook/addon-viewport';
 
-import 'bulma/css/bulma.min.css';
+import test from './rewrites.scss'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import './rewrites.css'
+
+console.log(test);
 
 addDecorator(withPropsTable);
-
-console.log(JSON.stringify(MINIMAL_VIEWPORTS, null, 2))
 
 export const parameters = {
   layout: 'padded',

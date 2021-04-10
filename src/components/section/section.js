@@ -16,7 +16,10 @@ const Section = ({ children, className, size, ...props }) => (
 );
 
 Section.propTypes = {
-  size: PropTypes.oneOf(['medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,

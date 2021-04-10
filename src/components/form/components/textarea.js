@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-import CONSTANTS from '../../../constants';
 import Element from '../../element';
 import useFieldContext from './field/context';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Textarea = ({ className, size, color, status, fixedSize, ...props }) => {
   const context = useFieldContext();
@@ -28,11 +24,26 @@ Textarea.propTypes = {
   /**
    * Adjusts the size of the textarea input
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   /**
    * The color of this input.
    */
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
   status: PropTypes.oneOf(['focus', 'hover']),
   /**
    * Whether the size of this textarea should be fixed regardless of its content.

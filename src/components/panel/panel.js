@@ -27,15 +27,18 @@ Panel.Block = Block;
 Panel.Icon = Icon;
 
 Panel.propTypes = {
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'dark',
-    'text',
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
   ]),
   renderAs: PropTypes.oneOfType([
     PropTypes.func,

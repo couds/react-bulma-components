@@ -19,6 +19,7 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-postcss',
     'storybook-addon-react-docgen',
+    '@storybook/preset-scss',
   ],
   webpackFinal: (config) => {
     config.devtool = 'source-maps';

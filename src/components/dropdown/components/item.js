@@ -18,7 +18,6 @@ const DropdownItem = ({ active, children, value, className, ...props }) => (
 );
 
 DropdownItem.propTypes = {
-  ...Element.propTypes,
   /**
    * Whether this dropdown item is currently selected.
    * Shows a highlighted effect if true.
@@ -34,8 +33,6 @@ DropdownItem.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-DropdownItem.defaultProps = {
-  ...Element.defaultProps,
-};
+DropdownItem.defaultProps = {};
 
 export default DropdownItem;

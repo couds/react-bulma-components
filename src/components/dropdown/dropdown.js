@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-import CONSTANTS from '../../constants';
 import DropdownItem from './components/item';
 import DropdownDivider from './components/divider';
 import Button from '../button';
 
 import Element from '../element';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const Dropdown = ({
   className,
@@ -112,7 +108,6 @@ Dropdown.Item = DropdownItem;
 Dropdown.Divider = DropdownDivider;
 
 Dropdown.propTypes = {
-  ...Element.propTypes,
   /**
    * The value of the currently selected dropdown item. If this value match
    * with the value passed to a Dropdown.item it will be used as label if the label prop its empty
@@ -125,7 +120,19 @@ Dropdown.propTypes = {
   /**
    * The color of the dropdown button.
    */
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
   /**
    * Whether the dropdown should align to the right side.
    */

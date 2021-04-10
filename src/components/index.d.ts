@@ -15,7 +15,7 @@ interface HelperProps {
   srOnly?: boolean;
 }
 
-type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | Number | String;
 
 interface SpacingProps {
   m?: SpacingSize;
@@ -79,7 +79,7 @@ type DisplayModifier =
 
 export interface ResponsiveModifiers {
   display?: DisplayModifier;
-  textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | Number | String;
   invisible?: Boolean;
   textAlign?: 'center' | 'justify' | 'left' | 'right';
 }
@@ -99,15 +99,15 @@ interface ResponsiveProps {
 interface ColorProps {
   textColor?: string;
   backgroundColor?: string;
-  colorVariant?: 'light' | 'dark';
+  colorVariant?: 'light' | 'dark' | String;
 }
 
 interface TypographyProps {
-  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
-  textAlign?: 'center' | 'justify' | 'left' | 'right';
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6 | Number | String;
+  textAlign?: 'center' | 'justify' | 'left' | 'right' | String;
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
-  textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code';
+  textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code' | String;
   italic?: boolean;
 }
 
@@ -136,12 +136,13 @@ export type Color =
   | 'dark'
   | 'white'
   | 'black'
-  | 'link';
+  | 'link'
+  | String;
 
 /**
  * Defines all Bulma size values
  */
-export type Size = 'small' | 'medium' | 'large';
+export type Size = 'small' | 'medium' | 'large' | String;
 
 /**
  * Defines all Bulma breakpoint values
@@ -152,7 +153,8 @@ export type Breakpoint =
   | 'mobile'
   | 'widescreen'
   | 'fullhd'
-  | 'touch';
+  | 'touch'
+  | String;
 
 type RenderAsComponentProps<
   TComponent

@@ -16,7 +16,10 @@ const Content = ({ children, className, size, ...props }) => (
 );
 
 Content.propTypes = {
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
 };
 
 Content.defaultProps = {};

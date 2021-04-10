@@ -27,3 +27,7 @@ pre code .number{
   font-size: unset;
   height: unset;
 }
+
+$custom-colors: ("brand": (#8A4D76, #FFF), "custom": (#f88fa1,#000));
+
+@import "~bulma/bulma.sass";

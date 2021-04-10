@@ -16,10 +16,6 @@ const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => (
 );
 
 TagGroup.propTypes = {
-  ...Element.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
   hasAddons: PropTypes.bool,
   /**
    * deprecated: use hasAddons
@@ -28,12 +24,6 @@ TagGroup.propTypes = {
 };
 
 TagGroup.defaultProps = {
-  ...Element.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  hasAddons: undefined,
-  gapless: undefined,
   renderAs: 'span',
 };
 

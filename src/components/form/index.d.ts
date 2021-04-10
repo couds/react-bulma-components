@@ -15,7 +15,7 @@ interface FieldProps {
 }
 
 interface FieldLabelProps {
-  size?: Size | 'small';
+  size?: Size;
 }
 
 interface ControlProps {

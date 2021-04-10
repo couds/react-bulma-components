@@ -1,7 +1,7 @@
 import { BulmaComponentWithoutRenderAs } from '..';
 
 interface ImageProps {
-  src?: string;
+  src: string;
   alt?: string;
   rounded?: boolean;
   size?:
@@ -27,7 +27,9 @@ interface ImageProps {
     | '3by5'
     | '9by16'
     | '1by2'
-    | '1by3';
+    | '1by3'
+    | String
+    | Number;
   fallback?: string;
   fullwidth?: boolean;
 }

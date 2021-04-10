@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from '../../constants';
 import ButtonGroup from './components/button-group';
 import Element from '../element';
-
-const colors = [null, ''].concat(Object.values(CONSTANTS.COLORS));
 
 const Button = ({
   children,
@@ -85,11 +82,23 @@ const Button = ({
 Button.Group = ButtonGroup;
 
 Button.propTypes = {
-  color: PropTypes.oneOf(colors),
-  /**
-   * Size of Button
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   /**
    * Whether Button should have an outline.
    */

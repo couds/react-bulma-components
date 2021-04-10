@@ -2,7 +2,7 @@ import { BulmaComponent } from '..';
 import { Breakpoint, ResponsiveModifiers } from '..';
 
 interface GapProps {
-  gap?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  gap?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | String | Number;
 }
 
 interface ColumnGroupProps {

@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Element from '../../element';
 
-import CONSTANTS from '../../../constants';
 import useFieldContext from './field/context';
 import { normalizeAlign } from '../../../services/normalizer';
-
-const colors = [null].concat(Object.values(CONSTANTS.COLORS));
 
 const InputFile = ({
   className,
@@ -77,11 +74,26 @@ InputFile.propTypes = {
   /**
    * The color of `InputFile`
    */
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
   /**
    * The size of `InputFile`
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
   /**
    * The name of the selected file. It will be shown as the file label
    * of this component, next/under the upload button.
