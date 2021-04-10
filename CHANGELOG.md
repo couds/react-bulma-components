@@ -76,6 +76,7 @@
 
 ### Icon
 - Removed the `icon` prop from the `Icon` component.
+- Add `text` prop to enable `icon-text`
 
 ### Level
 - Update default `renderAs` from `div` to `nav`

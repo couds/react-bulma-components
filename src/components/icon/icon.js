@@ -7,13 +7,14 @@ import Element from '../element';
 
 const colors = [undefined].concat(Object.values(CONSTANTS.COLORS));
 
-const Icon = ({ size, color, className, align, ...props }) => (
+const Icon = ({ size, color, className, align, text, ...props }) => (
   <Element
     {...props}
     className={classnames('icon', className, {
       [`is-${size}`]: size,
       [`is-${align}`]: align,
       [`has-text-${color}`]: color,
+      'icon-text': text,
     })}
   />
 );

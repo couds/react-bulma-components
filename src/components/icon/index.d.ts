@@ -6,6 +6,7 @@ interface IconProps {
   size?: Size | 'auto';
   align?: 'left' | 'right';
   color?: Color;
+  text?: Boolean;
 }
 
 declare const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'>;
