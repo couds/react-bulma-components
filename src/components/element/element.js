@@ -245,6 +245,7 @@ Element.propTypes = {
     'inline',
     'inline-block',
     'inline-flex',
+    'relative',
     'hidden',
   ]),
   marginless: PropTypes.bool,
