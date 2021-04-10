@@ -2,26 +2,35 @@
 
 ## 4.0.0
 
+- Move Bulma as a Peer Dependency
 - Bump Bulma version to `0.9.2`
   - Improves TS support
   - `<List />` component is completely removed.
-  - New spacing modifiers. They have the same names as their equivalent Bulma class names.
-    Refer to the [official documentation](https://bulma.io/documentation/helpers/spacing-helpers/) for more information.
-    - Usage: `pt-0` in Bulma is equivalent to `pt={0}` in props. Applies to all spacing modifiers.
-  - Added srOnly prop to all components to display only on **screen readers**
-  - Add Support to textSize `7`
+- New Storybook, with more details (and hopefully more helpful)
+- Enable Tree shaking by default
+### All Components
+- New spacing modifiers. They have the same names as their equivalent Bulma class names.
+  Refer to the [official documentation](https://bulma.io/documentation/helpers/spacing-helpers/) for more information.
+  - Usage: `pt-0` in Bulma is equivalent to `pt={0}` in props. Applies to all spacing modifiers.
+- Added srOnly prop to all components to display only on **screen readers**
+- Add Support to textSize `7`
 - Improve responsive helper props (`mobile`, `tablet`, `desktop`, `widescreen`, `fullhd`, `touch`, `untilWidescreen`, `untilFullhd`)
   - Added `invisible` to responsive props
 - `hidden` is now inside `display` prop, `{ hidden: true }` become `{ display: 'hidden' }`
 - Added `invisible` prop on all Components
-- New Storybook, with more details (and hopefully more helpful)
 - Renamed the prop value `centered` to `center` on all components to use the same everywhere
 - Added display prop with same values as responsive display (bulma currently only support flex, hidden and relative at this level)
-
+- Added `colorVariation` prop to hancle `light/dark` color helpers
+- Added `clickable` prop
+- Added `fontFamily` prop
+- 
 
 ### Breadcrumb
 - Removed `items` props in favor of composition with `Breadcrumb.Item`
-- Added new component `Breadcrumb.Item`
+
+
+### Breadcrumb.Item
+- New Component
 
 ### Botton.Group
 - Deprecated `gapless` to `hasAddons` in `Button.Group`
@@ -63,7 +72,8 @@
 - Added `size` prop that will be used on components inside the `Field`, like `Input`, `Select`, `Label`...
 
 ### Form.Select
-- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
+- Added `state` props that accept `hover` or `focus` as value
+- Added `rounded` prop
 
 ### Form.Textarea
 - Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
@@ -71,7 +81,7 @@
 ### Hero
 - `size` prop its ignored if `hasNavbar` prop is set
 
-## Hero.Head
+### Hero.Head
 - Renamed to `Hero.Header`
 
 ### Icon
@@ -105,6 +115,9 @@
 
 ### Table
 - Add `hoverable` prop
+
+### Table.Container
+- New Component
 
 ### Tile
 - Remove `notification` prop. You can use `renderAs={Notification}` if need it
