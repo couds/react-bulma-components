@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 import useFieldContext from './field/context';
+import { normalizeStatus } from '../../../services/normalizer';
 
 const Select = ({
   className,
@@ -43,7 +44,7 @@ const Select = ({
       <Element
         {...props}
         className={classnames({
-          [`is-${status}ed`]: status,
+          [`is-${normalizeStatus(status)}`]: status,
         })}
         multiple={multiple}
         value={value !== undefined ? value : defaultValue}
@@ -97,7 +98,7 @@ Select.propTypes = {
   /**
    * Whether this component is hovered.
    */
-  statusred: PropTypes.oneOf(['hover', 'focus']),
+  status: PropTypes.oneOf(['hover', 'focus']),
   /**
    * The value that is held by the `<select>` element.
    * Must be an array if `multiple` prop is true.

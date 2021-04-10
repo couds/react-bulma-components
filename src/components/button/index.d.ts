@@ -5,7 +5,7 @@ interface ButtonProps {
   onClick?: () => void;
   color?: Color;
   size?: Size;
-  state?: 'hover' | 'focus' | 'active' | 'loading';
+  state?: 'hover' | 'focus' | 'active';
   outlined?: boolean;
   inverted?: boolean;
   submit?: boolean;

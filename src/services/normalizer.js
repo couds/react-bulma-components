@@ -1,9 +1,16 @@
 export const normalizeAlign = (align) => {
-  if (align === 'center') {
-    return 'centered';
-  }
-  if (align === 'justify') {
-    return 'justifyed';
-  }
-  return align;
+  const map = {
+    justify: 'justifyed',
+    center: 'centered',
+  };
+  return map[align] || align;
+};
+
+export const normalizeStatus = (status) => {
+  const map = {
+    focus: 'focused',
+    hover: 'hovered',
+    active: 'active',
+  };
+  return map[status] || status;
 };

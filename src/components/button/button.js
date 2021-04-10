@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ButtonGroup from './components/button-group';
 import Element from '../element';
+import { normalizeStatus } from '../../services/normalizer';
 
 const Button = ({
   children,
@@ -15,9 +16,7 @@ const Button = ({
   submit,
   reset,
   fullwidth,
-  focused,
-  hovered,
-  active,
+  status,
   loading,
   disabled,
   remove,
@@ -65,9 +64,7 @@ const Button = ({
         'is-outlined': outlined,
         'is-inverted': inverted,
         'is-fullwidth': fullwidth,
-        'is-hovered': hovered,
-        'is-focused': focused,
-        'is-active': active,
+        [`is-${normalizeStatus(status)}`]: status,
         'is-loading': loading,
         'is-text': text,
         delete: remove,
@@ -109,9 +106,7 @@ Button.propTypes = {
   inverted: PropTypes.bool,
   submit: PropTypes.bool,
   reset: PropTypes.bool,
-  hovered: PropTypes.bool,
-  focused: PropTypes.bool,
-  active: PropTypes.bool,
+  status: PropTypes.oneOf(['focus', 'hover', 'active']),
   loading: PropTypes.bool,
   /**
    * Whether Button should occupy the full width of parent
@@ -144,23 +139,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   renderAs: 'button',
-  color: undefined,
-  size: undefined,
-  outlined: undefined,
-  inverted: undefined,
-  submit: undefined,
-  reset: undefined,
-  fullwidth: undefined,
-  hovered: undefined,
-  focused: undefined,
-  active: undefined,
-  loading: undefined,
-  disabled: undefined,
-  remove: undefined,
-  isSelected: undefined,
-  isStatic: undefined,
-  rounded: undefined,
-  text: undefined,
 };
 
 export default Button;

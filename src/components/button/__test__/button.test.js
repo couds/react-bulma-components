@@ -66,15 +66,15 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render focused state', () => {
-    const component = renderer.create(<Button focused />);
+    const component = renderer.create(<Button status="focused" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render hovered state', () => {
-    const component = renderer.create(<Button hovered />);
+    const component = renderer.create(<Button status="hovered" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should render active state', () => {
-    const component = renderer.create(<Button active />);
+    const component = renderer.create(<Button status="active" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should be a submit form button', () => {

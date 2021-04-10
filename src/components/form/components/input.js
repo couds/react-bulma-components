@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 import useFieldContext from './field/context';
+import { normalizeStatus } from '../../../services/normalizer';
 
 const Input = ({
   className,
@@ -23,7 +24,7 @@ const Input = ({
       readOnly={readOnly || isStatic}
       className={classnames('input', className, {
         'is-static': isStatic,
-        [`is-${status}ed`]: status,
+        [`is-${normalizeStatus(status)}`]: status,
         'is-rounded': rounded,
         [`is-${calculatedSize}`]: calculatedSize,
         [`is-${color}`]: color,
