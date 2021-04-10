@@ -54,7 +54,9 @@ exports[`Navbar component Should have Navbar classname 1`] = `
   <div
     className="navbar-menu"
   >
-    <div>
+    <div
+      className="navbar-start"
+    >
       <span
         className="navbar-item has-dropdown is-hoverable"
       >

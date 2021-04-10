@@ -8,47 +8,47 @@ describe('Pagination component', () => {
     expect(Pagination).toMatchSnapshot();
   });
   it('Should have 3 pages and page 1 active', () => {
-    const component = renderer.create(<Pagination total={3} current={1} />);
+    const component = renderer.create(<Pagination onChange={() => {}} total={3} current={1} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should have 5 pages, page 5 active and display pages 3 to 5', () => {
-    const component = renderer.create(<Pagination total={5} current={5} />);
+    const component = renderer.create(<Pagination onChange={() => {}} total={5} current={5} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not display page numbers', () => {
     const component = renderer.create(
-      <Pagination delta={0} total={5} current={5} />,
+      <Pagination onChange={() => {}} delta={0} total={5} current={5} />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should display first and last page number', () => {
     const component = renderer.create(
-      <Pagination showFirstLast current={1} total={5} />,
+      <Pagination showFirstLast current={1} total={5} onChange={() => {}} />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not display Previous/Next buttons', () => {
     const component = renderer.create(
-      <Pagination showPrevNext={false} delta={3} total={5} current={2} />,
+      <Pagination showPrevNext={false} delta={3} total={5} current={2} onChange={() => {}} />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Next button should be disabled', () => {
-    const component = renderer.create(<Pagination total={3} current={3} />);
+    const component = renderer.create(<Pagination total={3} current={3} onChange={() => {}} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('All buttons should be disabled', () => {
     const component = renderer.create(
-      <Pagination total={3} current={1} disabled />,
+      <Pagination total={3} current={1} disabled onChange={() => {}} />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not render if total pages equals 1', () => {
-    const component = renderer.create(<Pagination total={1} current={1} />);
+    const component = renderer.create(<Pagination total={1} current={1} onChange={() => {}} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should not render if current page is greater than total pages', () => {
-    const component = renderer.create(<Pagination total={2} current={3} />);
+    const component = renderer.create(<Pagination total={2} current={3} onChange={() => {}} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
   it('Should call to onChange event on click on navigation button', () => {

@@ -5,29 +5,16 @@ module.exports = (api) => {
 
   const useESModules = !api.env(['test']);
   return {
-    ignore: ['**/__test__', '**/*.story.js', '**/*.test.js'],
-    plugins: [
-      '@babel/plugin-transform-runtime',
-      'transform-react-remove-prop-types',
-      '@babel/plugin-transform-react-constant-elements',
-    ],
     presets: [
       [
         '@babel/preset-env',
         {
           bugfixes: true,
-          browserslistEnv: process.env.BABEL_ENV || process.env.NODE_ENV,
           debug: process.env.RBC_BUILD_VERBOSE === 'true',
           modules: useESModules ? false : 'commonjs',
-          shippedProposals: api.env('modern'),
         },
       ],
-      [
-        '@babel/preset-react',
-        {
-          runtime: 'automatic',
-        },
-      ],
+      ['@babel/preset-react'],
     ],
   };
 };

@@ -28,7 +28,7 @@ NavbarContainer.propTypes = {
 };
 
 NavbarContainer.defaultProps = {
-  align: 'start',
+  align: 'left',
 };
 
 export default NavbarContainer;
