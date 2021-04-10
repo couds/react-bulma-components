@@ -10,13 +10,13 @@ that they will use to render, along with all the generated Bulma classes.
 
 For example, `Container` is rendered as:
 
-```
+```jsx
 <div class="container ...">
 ```
 
 and `Button` is rendered as:
 
-```
+```jsx
 <button class="button ...">
 ```
 
@@ -32,7 +32,7 @@ This is where the `renderAs` prop that is available to every component comes in 
 You can use the `renderAs` prop to specify what HTML element you want the component to render with.
 For example, a `Button` can be rendered as an `input` instead of a `button`:
 
-```js
+```jsx
 <Button renderAs="input" />
 ```
 
@@ -43,7 +43,7 @@ For example, a `Button` can be rendered as an `input` instead of a `button`:
 One of the very common use case of `renderAs` is [integrating with `react-router`](https://github.com/couds/react-bulma-components/issues/55).
 You can instruct a Bulma component to render using the `Link` component from `react-router`:
 
-```js
+```jsx
 <Button renderAs={Link} color="primary" to="/login" />
 ```
 

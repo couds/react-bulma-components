@@ -155,53 +155,6 @@ const Element = ({
 };
 
 Element.propTypes = {
-  textColor: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  backgroundColor: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'primary',
-      'link',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'text',
-    ]),
-    PropTypes.string,
-  ]),
-  colorVariant: PropTypes.oneOf(['light', 'dark']),
-  // Flex
-  flexDirection: PropTypes.oneOf([
-    'row',
-    'row-reverse',
-    'column',
-    'column-reverse',
-  ]),
-  flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
-  justifyContent: PropTypes.oneOf([
-    'flex-start',
-    'flex-end',
-    'center',
-    'space-around',
-    'space-between',
-    'space-evenly',
-    'start',
-    'end',
-    'left',
-    'right',
-  ]),
   alignContent: PropTypes.oneOf([
     'flex-start',
     'flex-end',
@@ -222,23 +175,24 @@ Element.propTypes = {
     'baseline',
     'stretch',
   ]),
-  flexGrow: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
-  // Typography
-  textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-  textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
-  textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
-  textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
-  textFamily: PropTypes.string,
-  italic: PropTypes.bool,
-  // Helpers
+  backgroundColor: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  className: PropTypes.string,
   clearfix: PropTypes.bool,
-  pull: PropTypes.oneOf([undefined, 'right', 'left']),
-  overlay: PropTypes.bool,
-  clipped: PropTypes.bool,
-  radiusless: PropTypes.bool,
-  shadowless: PropTypes.bool,
-  unselectable: PropTypes.bool,
   clickable: PropTypes.bool,
+  clipped: PropTypes.bool,
+  colorVariant: PropTypes.oneOf(['light', 'dark']),
   display: PropTypes.oneOf([
     'block',
     'flex',
@@ -248,14 +202,52 @@ Element.propTypes = {
     'relative',
     'hidden',
   ]),
-  marginless: PropTypes.bool,
-  paddingless: PropTypes.bool,
-  invisible: PropTypes.bool,
-  hidden: PropTypes.bool,
   /**
    * Reference to Dom element
    */
   domRef: PropTypes.object,
+  // Flex
+  flexDirection: PropTypes.oneOf([
+    'row',
+    'row-reverse',
+    'column',
+    'column-reverse',
+  ]),
+  flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  flexGrow: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
+  italic: PropTypes.bool,
+  invisible: PropTypes.bool,
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-around',
+    'space-between',
+    'space-evenly',
+    'start',
+    'end',
+    'left',
+    'right',
+  ]),
+  m: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  mt: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  mr: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  mb: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  ml: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  mx: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  my: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  marginless: PropTypes.bool,
+  overlay: PropTypes.bool,
+  paddingless: PropTypes.bool,
+  p: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  pt: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  pr: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  pb: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  pl: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  px: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  py: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  pull: PropTypes.oneOf([undefined, 'right', 'left']),
+  radiusless: PropTypes.bool,
   ratio: PropTypes.oneOf([
     'square',
     '1by1',
@@ -274,21 +266,35 @@ Element.propTypes = {
     '1by2',
     '1by3',
   ]),
-  className: PropTypes.string,
-  m: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mt: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mr: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mb: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  ml: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  mx: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  my: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  p: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pt: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pr: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pb: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  pl: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  px: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
-  py: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    /**
+     * A string with the name of an Html element or a React Component
+     */
+    PropTypes.object,
+  ]),
+  shadowless: PropTypes.bool,
+  textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+  textColor: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  textFamily: PropTypes.string,
+  textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  textTransform: PropTypes.oneOf(['capitalized', 'lowercase', 'uppercase']),
+  textWeight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
+  unselectable: PropTypes.bool,
+
   mobile: PropTypes.shape({
     textSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
     textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
@@ -388,14 +394,6 @@ Element.propTypes = {
       'hidden',
     ]),
   }),
-  renderAs: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-    /**
-     * A string with the name of an Html element or a React Component
-     */
-    PropTypes.object,
-  ]),
 };
 
 Element.defaultProps = {
