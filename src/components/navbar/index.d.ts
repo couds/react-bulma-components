@@ -4,7 +4,7 @@ import { Color } from '..';
 interface NavbarProps {
   transparent?: boolean;
   fixed?: 'top' | 'bottom';
-  size: 'large';
+  size?: 'large';
   color?: Color;
   active?: boolean;
 }
