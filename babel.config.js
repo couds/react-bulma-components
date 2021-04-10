@@ -5,6 +5,7 @@ module.exports = (api) => {
 
   const useESModules = !api.env(['test']);
   return {
+    plugins: ['babel-plugin-transform-react-remove-prop-types'],
     presets: [
       [
         '@babel/preset-env',
