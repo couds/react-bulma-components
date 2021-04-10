@@ -3,8 +3,19 @@
   "version": "4.0.0-RC.2",
   "description": "React components for Bulma framework",
   "main": "./lib/index.js",
+  "type": "module",
   "types": "./src/index.d.ts",
   "sideEffects": false,
+  "exports": {
+    "default": "./lib/index.js",
+    "import": "./index.esm.mjs"
+  },
+  "files": [
+    "./lib"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "jest",
     "test:cov": "eslint . && jest --coverage",
