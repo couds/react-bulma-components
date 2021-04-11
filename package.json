@@ -12,7 +12,8 @@
   },
   "files": [
     "lib",
-    "index.esm.mjs"
+    "index.esm.mjs",
+    "**/*.d.ts"
   ],
   "directories": {
     "lib": "lib"
