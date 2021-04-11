@@ -51,7 +51,7 @@ Hero.propTypes = {
   ]),
   gradient: PropTypes.bool,
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large', 'fullheight']),
+    PropTypes.oneOf(['small', 'medium', 'large', 'halfheight', 'fullheight']),
     PropTypes.string,
   ]),
   hasNavbar: PropTypes.bool,

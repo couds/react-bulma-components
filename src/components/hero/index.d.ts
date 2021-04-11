@@ -4,7 +4,7 @@ import { Color, Size } from '..';
 interface HeroProps {
   color?: Color;
   gradient?: boolean;
-  size?: Size | 'fullheight';
+  size?: Size | 'halfheight'| 'fullheight';
   hasNavbar?: boolean;
 }
 
