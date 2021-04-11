@@ -11,7 +11,8 @@
     "import": "./index.esm.mjs"
   },
   "files": [
-    "./lib"
+    "lib",
+    "index.esm.mjs"
   ],
   "directories": {
     "lib": "lib"
