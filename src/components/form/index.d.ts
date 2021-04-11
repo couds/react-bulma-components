@@ -21,6 +21,7 @@ interface FieldLabelProps {
 interface ControlProps {
   fullwidth?: boolean;
   loading?: boolean;
+  iconType?: React.ElementType,
 }
 
 interface InputProps<T> {

@@ -7,15 +7,22 @@ import Icon from '../../icon';
 import useFieldContext from './field/context';
 import Button from '../../button';
 
-const isIcon = (child) => {
-  return (
-    child.type === Icon &&
-    (child.props.align === 'left' || child.props.align === 'right')
-  );
-};
-
-const Control = ({ children, className, fullwidth, loading, ...props }) => {
+const Control = ({
+  children,
+  className,
+  fullwidth,
+  loading,
+  iconType,
+  ...props
+}) => {
   const context = useFieldContext();
+
+  const isIcon = (child) => {
+    return (
+      child.type === (iconType || Icon) &&
+      (child.props.align === 'left' || child.props.align === 'right')
+    );
+  };
 
   const updatedChildren = React.Children.map(children, (child) => {
     if (!isIcon(child) && child.type !== Button) {
@@ -52,6 +59,11 @@ const Control = ({ children, className, fullwidth, loading, ...props }) => {
 
 Control.propTypes = {
   loading: PropTypes.bool,
+  iconType: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   /**
    * When true and the `Field` container has the `kind` props set the Control
    * will use all available space instead of adjusting to the element inside
