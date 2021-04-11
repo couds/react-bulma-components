@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   setupFilesAfterEnv: ['./__test__/setup.js'],
   rootDir: 'src',
   testMatch: ['**/*.test.js'],
@@ -18,9 +18,6 @@ module.exports = {
       lines: 80,
       statements: 80,
     },
-  },
-  transform: {
-    '^.+\\.js$': 'babel-jest',
   },
   moduleNameMapper: {
     '\\.(css|less|s(c|a)ss)$': '<rootDir>/../__mocks__/style.js',
