@@ -3,7 +3,16 @@ import { Color, Size } from '..';
 
 interface ButtonProps {
   onClick?: () => void;
-  color?: Color;
+  color?: Color
+  | 'ghost'
+  | 'black-bis'
+  | 'black-ter'
+  | 'white-bis'
+  | 'white-ter'
+  | 'grey-darker'
+  | 'grey-dark'
+  | 'grey-light'
+  | 'grey-lighter';
   size?: Size;
   state?: 'hover' | 'focus' | 'active';
   outlined?: boolean;
