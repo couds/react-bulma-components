@@ -3,16 +3,23 @@
   "version": "4.0.0-RC.6",
   "description": "React components for Bulma framework",
   "main": "./lib/index.js",
+  "exports": {
+    "import": "./lib",
+    "require": "./cjs",
+    "default": "./lib"
+  },
   "type": "module",
   "types": "./src/index.d.ts",
   "sideEffects": false,
   "files": [
     "lib",
+    "cjs",
     "index.esm.mjs",
     "**/*.d.ts"
   ],
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "cjs": "cjs"
   },
   "scripts": {
     "test": "jest",
@@ -21,11 +28,14 @@
     "coveralls": "cat ./.coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
     "docs": "cd documentation && npm start",
-    "clean:build": "rm -rf lib",
+    "clean:build": "rm -rf lib cjs",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
-    "prepare": "npm run clean:build && npm run build",
+    "prepare": "npm run clean:build && npm run build-all",
     "deploy-storybook": "storybook-to-ghpages",
-    "build": "babel ./src --out-dir ./lib --source-maps --ignore \"**/__test__,**/*.story.js\"",
+    "babel": "babel ./src --source-maps --ignore \"**/__test__,**/*.story.js\"",
+    "build-commonjs": "TARGET=commonjs npm run babel -- --out-dir ./cjs ",
+    "build-esm": "npm run babel -- --out-dir ./lib ",
+    "build-all": "npm run build-commonjs && npm run build-esm",
     "upgrade-dependencies": "npx npm-check --update"
   },
   "storybook-deployer": {

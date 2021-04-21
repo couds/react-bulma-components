@@ -68,9 +68,8 @@ typings/
 out*
 
 /reports
-/dist
 /lib
-/full
+/cjs
 .coverage
 .vscode
 .cache
