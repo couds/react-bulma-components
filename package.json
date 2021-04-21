@@ -6,10 +6,6 @@
   "type": "module",
   "types": "./src/index.d.ts",
   "sideEffects": false,
-  "exports": {
-    "default": "./lib/index.js",
-    "import": "./index.esm.mjs"
-  },
   "files": [
     "lib",
     "index.esm.mjs",
