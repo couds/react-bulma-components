@@ -7,7 +7,7 @@ interface MenuListComponentProps {
 
 interface MenuListItemProps {
   active?: boolean;
-  children?: string[] | React.ReactElement[];
+  children?: React.ReactNode;
 }
 
 declare const Menu: BulmaComponent<{}, 'aside'> & {
