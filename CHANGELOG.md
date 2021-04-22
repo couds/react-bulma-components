@@ -2,10 +2,10 @@
 
 ## 4.0.0
 
-- Move Bulma as a Peer Dependency
+- **[Breaking Change]** Move Bulma as a Peer Dependency
+- **[Breaking Change]** `<List />` component is completely removed.
 - Bump Bulma version to `0.9.2`
-  - Improves TS support
-  - `<List />` component is completely removed.
+- Improves TS support
 - New Storybook, with more details (and hopefully more helpful)
 - Enable Tree shaking by default
 ### All Components
@@ -14,46 +14,44 @@
   - Usage: `pt-0` in Bulma is equivalent to `pt={0}` in props. Applies to all spacing modifiers.
 - Added srOnly prop to all components to display only on **screen readers**
 - Add Support to textSize `7`
-- Improve responsive helper props (`mobile`, `tablet`, `desktop`, `widescreen`, `fullhd`, `touch`, `untilWidescreen`, `untilFullhd`)
-  - Added `invisible` to responsive props
+- **[Breaking Change]** Improve responsive helper props (`mobile`, `tablet`, `desktop`, `widescreen`, `fullhd`, `touch`, `untilWidescreen`, `untilFullhd`)
+- Added `invisible` to responsive props
 - `hidden` is now inside `display` prop, `{ hidden: true }` become `{ display: 'hidden' }`
 - Added `invisible` prop on all Components
-- Renamed the prop value `centered` to `center` on all components to use the same everywhere
+- **[Breaking Change]** Renamed the prop value `centered` to `center` on all components to use the same everywhere
 - Added display prop with same values as responsive display (bulma currently only support flex, hidden and relative at this level)
 - Added `colorVariation` prop to hancle `light/dark` color helpers
 - Added `clickable` prop
 - Added `fontFamily` prop
-- 
 
 ### Breadcrumb
-- Removed `items` props in favor of composition with `Breadcrumb.Item`
-
+- **[Breaking Change]** Removed `items` props in favor of composition with `Breadcrumb.Item`
 
 ### Breadcrumb.Item
 - New Component
 
 ### Botton.Group
 - Deprecated `gapless` to `hasAddons` in `Button.Group`
-- Renamed `position` prop to `align`
+- **[Breaking Change]** Renamed `position` prop to `align`
 
 ### Columns
-- Remove `gapless` prop
-- Add variable `gap` prop
+- **[Breaking Change]** Remove `gapless` prop
+- **[Breaking Change]** Add variable `gap` prop
 - Add gap to responsive option
 
 ### Columns.Column
 - Merge common responsive props with `Column` responsive props
 
 ### Container
-- Removed `fluid` prop in favor to add it as an option of the `breakpoint` prop
+- **[Breaking Change]** Removed `fluid` prop in favor to add it as an option of the `breakpoint` prop
 - Added `max` prop to allow use `is-max-desktop` and `is-max-widescreen` from bulma
 
 ### Dropdown
-- Dropdown component now accept an `icon` prop that will accept the the component to render the icon
-- Removed deprecated `align` prop in favor of boolean `right` prop
+- **[Breaking Change]** Dropdown component now accept an `icon` prop that will accept the the component to render the icon
+- **[Breaking Change]** Removed deprecated `align` prop in favor of boolean `right` prop
 
 ### Form.Control
-- Removed size props (did nothing)
+- **[Breaking Change]** Removed size props (did nothing)
 - Automatically add has-icon-left/right if an `Icon` with align is on the children
 
 ### Footer
@@ -63,7 +61,7 @@
 - Added `size` prop that will be also used on childrens that accept size as a prop `Input`, `InputFile`, `Label`, `Icon`, `Button`...
 
 ### Form.Input
-- Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
+- **[Breaking Change]** Removed `hovered` and `focused` prop in favor to a `state` props that accept `hover` or `focus` as value
 
 ### Form.InputFile
 - Removed `centered` and `right` prop in favor to a `align` props that accept `center` or `right` as value

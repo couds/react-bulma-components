@@ -7,7 +7,7 @@ export const Default = (args) => (
   <div style={{ margin: '-1rem' }}>
     <Hero {...args}>
       <Hero.Header renderAs="header">
-        <Notification color="dark">Header</Notification>
+        Header
       </Hero.Header>
       <Hero.Body>
         <Container>
@@ -18,7 +18,7 @@ export const Default = (args) => (
         </Container>
       </Hero.Body>
       <Hero.Footer>
-        <Notification color="dark">Footer</Notification>
+        Footer
       </Hero.Footer>
     </Hero>
   </div>
@@ -34,7 +34,7 @@ Default.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large', 'fullheight'],
+      options: ['default', 'small', 'medium', 'large', 'halfheight', 'fullheight'],
     },
   },
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArgsTable } from '@storybook/addon-docs/blocks';
-import { Element, Block, Message, Button } from '../'
+import { Block, Message, Button } from '../'
+import Element from '../src/components/element'
 
 const CommonProps = () => {
   const [show, setShow] = useState()
