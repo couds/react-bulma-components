@@ -10,9 +10,9 @@ React components for [Bulma](http://bulma.io/) (v0.8.2) UI compatible with most 
 
 ## V4 Beta Now Available! 
 
-Try it out now: `npm i react-bulma-components@4.0.0-1`
+Try it out now: `npm i react-bulma-components@next`
 
-v4 removes dependency on `bulma`, so you'll have to install it yourself. v4 supports Bulma up to v0.9.1.
+v4 removes dependency on `bulma`, so you'll have to install it yourself. v4 supports Bulma up to v0.9.2.
 Also included in the versions are TypeScript support, bug fixes and new props/missing features. Check out [this issue](https://github.com/couds/react-bulma-components/issues/262)
 for the full changelog and what is being worked on.
 
