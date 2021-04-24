@@ -11,40 +11,38 @@ export const Default = ({
   right,
   boxed,
   ...args
-}) => {
-  return (
-    <Navbar {...args}>
-      <Navbar.Brand>
-        <Navbar.Item renderAs="a" href="#">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            alt="Bulma: a modern CSS framework based on Flexbox"
-            width="112"
-            height="28"
-          />
+}) => (
+  <Navbar {...args}>
+    <Navbar.Brand>
+      <Navbar.Item renderAs="a" href="#">
+        <img
+          src="https://bulma.io/images/bulma-logo.png"
+          alt="Bulma: a modern CSS framework based on Flexbox"
+          width="112"
+          height="28"
+        />
+      </Navbar.Item>
+      <Navbar.Burger />
+    </Navbar.Brand>
+    <Navbar.Menu>
+      <Navbar.Container>
+        <Navbar.Item hoverable={hoverable} active={itemAactive} href="#">
+          <Navbar.Link arrowless={arrowless}>First</Navbar.Link>
+          <Navbar.Dropdown up={up} right={right} boxed={boxed}>
+            <Navbar.Item href="#">Subitem 1</Navbar.Item>
+            <Navbar.Item href="#">Subitem 2</Navbar.Item>
+            <Navbar.Divider />
+            <Navbar.Item href="#">After divider</Navbar.Item>
+          </Navbar.Dropdown>
         </Navbar.Item>
-        <Navbar.Burger />
-      </Navbar.Brand>
-      <Navbar.Menu>
-        <Navbar.Container>
-          <Navbar.Item hoverable={hoverable} active={itemAactive} href="#">
-            <Navbar.Link arrowless={arrowless}>First</Navbar.Link>
-            <Navbar.Dropdown up={up} right={right} boxed={boxed}>
-              <Navbar.Item href="#">Subitem 1</Navbar.Item>
-              <Navbar.Item href="#">Subitem 2</Navbar.Item>
-              <Navbar.Divider />
-              <Navbar.Item href="#">After divider</Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
-          <Navbar.Item href="#">Second</Navbar.Item>
-        </Navbar.Container>
-        <Navbar.Container align="end">
-          <Navbar.Item href="#">At the end</Navbar.Item>
-        </Navbar.Container>
-      </Navbar.Menu>
-    </Navbar>
-  );
-};
+        <Navbar.Item href="#">Second</Navbar.Item>
+      </Navbar.Container>
+      <Navbar.Container align="end">
+        <Navbar.Item href="#">At the end</Navbar.Item>
+      </Navbar.Container>
+    </Navbar.Menu>
+  </Navbar>
+);
 
 Default.argTypes = {
   color: {

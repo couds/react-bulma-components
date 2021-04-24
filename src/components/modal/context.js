@@ -4,8 +4,6 @@ export const ModalContext = React.createContext({
   onClose: () => {},
 });
 
-const useModalContext = () => {
-  return useContext(ModalContext);
-};
+const useModalContext = () => useContext(ModalContext);
 
 export default useModalContext;

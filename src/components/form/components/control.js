@@ -17,12 +17,9 @@ const Control = ({
 }) => {
   const context = useFieldContext();
 
-  const isIcon = (child) => {
-    return (
-      child.type === (iconType || Icon) &&
-      (child.props.align === 'left' || child.props.align === 'right')
-    );
-  };
+  const isIcon = (child) =>
+    child.type === (iconType || Icon) &&
+    (child.props.align === 'left' || child.props.align === 'right');
 
   const updatedChildren = React.Children.map(children, (child) => {
     if (!isIcon(child) && child.type !== Button) {

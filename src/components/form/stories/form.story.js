@@ -135,16 +135,14 @@ export const Default = () => {
   );
 };
 
-export const LabelExample = (args) => {
-  return (
-    <Form.Field>
-      <Form.Label {...args}>I&apos;m the label of this field</Form.Label>
-      <Form.Control>
-        <Form.Input placeholder="Inside a field set" />
-      </Form.Control>
-    </Form.Field>
-  );
-};
+export const LabelExample = (args) => (
+  <Form.Field>
+    <Form.Label {...args}>I&apos;m the label of this field</Form.Label>
+    <Form.Control>
+      <Form.Input placeholder="Inside a field set" />
+    </Form.Control>
+  </Form.Field>
+);
 
 LabelExample.argTypes = {
   size: {
@@ -303,24 +301,22 @@ Control.argTypes = {
   },
 };
 
-export const InputExample = (args) => {
-  return (
-    <>
-      <Form.Field>
-        <Form.Label>Username</Form.Label>
-        <Form.Control>
-          <Form.Input type="text" {...args} placeholder="e.g. John Doe" />
-        </Form.Control>
-      </Form.Field>
-      <Form.Field>
-        <Form.Label>Password</Form.Label>
-        <Form.Control>
-          <Form.Input {...args} type="password" placeholder="password" />
-        </Form.Control>
-      </Form.Field>
-    </>
-  );
-};
+export const InputExample = (args) => (
+  <>
+    <Form.Field>
+      <Form.Label>Username</Form.Label>
+      <Form.Control>
+        <Form.Input type="text" {...args} placeholder="e.g. John Doe" />
+      </Form.Control>
+    </Form.Field>
+    <Form.Field>
+      <Form.Label>Password</Form.Label>
+      <Form.Control>
+        <Form.Input {...args} type="password" placeholder="password" />
+      </Form.Control>
+    </Form.Field>
+  </>
+);
 
 InputExample.argTypes = {
   size: {
@@ -521,15 +517,13 @@ SelectExample.argTypes = {
   },
 };
 
-export const CheckboxExample = (args) => {
-  return (
-    <Form.Field>
-      <Form.Control>
-        <Form.Checkbox {...args}>Remember me</Form.Checkbox>
-      </Form.Control>
-    </Form.Field>
-  );
-};
+export const CheckboxExample = (args) => (
+  <Form.Field>
+    <Form.Control>
+      <Form.Checkbox {...args}>Remember me</Form.Checkbox>
+    </Form.Control>
+  </Form.Field>
+);
 
 CheckboxExample.argTypes = {
   disabled: {

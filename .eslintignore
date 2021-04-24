@@ -7,3 +7,4 @@ reports
 *.test.js
 **/*.d.ts
 documentation/**
+.coverage

@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { Hero, Heading, Container, Notification } from '../..';
+import { Hero, Heading, Container } from '../..';
 import CONSTANTS from '../../constants';
 
 export const Default = (args) => (
   <div style={{ margin: '-1rem' }}>
     <Hero {...args}>
-      <Hero.Header renderAs="header">
-        Header
-      </Hero.Header>
+      <Hero.Header renderAs="header">Header</Hero.Header>
       <Hero.Body>
         <Container>
           <Heading>Hero title Info</Heading>
@@ -17,9 +15,7 @@ export const Default = (args) => (
           </Heading>
         </Container>
       </Hero.Body>
-      <Hero.Footer>
-        Footer
-      </Hero.Footer>
+      <Hero.Footer>Footer</Hero.Footer>
     </Hero>
   </div>
 );
@@ -34,7 +30,14 @@ Default.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large', 'halfheight', 'fullheight'],
+      options: [
+        'default',
+        'small',
+        'medium',
+        'large',
+        'halfheight',
+        'fullheight',
+      ],
     },
   },
 };
