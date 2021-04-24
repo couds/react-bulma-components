@@ -21,6 +21,11 @@ TagGroup.propTypes = {
    * deprecated: use hasAddons
    */
   gapless: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 TagGroup.defaultProps = {
