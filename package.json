@@ -30,7 +30,7 @@
     "docs": "cd documentation && npm start",
     "clean:build": "rm -rf lib cjs",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
-    "prepublish": "npm run clean:build && npm run prepublish",
+    "prepublish": "npm run clean:build && npm run build-all",
     "deploy-storybook": "storybook-to-ghpages",
     "babel": "babel ./src --source-maps --ignore \"**/__test__,**/*.story.js\"",
     "build-commonjs": "TARGET=commonjs npm run babel -- --out-dir ./cjs ",
