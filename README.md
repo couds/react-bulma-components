@@ -8,8 +8,8 @@
 
 React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
-
 ## To Install
+
 
 ```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
 
