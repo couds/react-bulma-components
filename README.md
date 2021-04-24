@@ -1,4 +1,4 @@
-# <div style="display: flex; align-items: center"><img src="https://raw.githubusercontent.com/couds/react-bulma-components/next/documentation/static/img/logo.png" width="40" style="margin-top: 3px" /><span>React Bulma Components</span></div>
+# <div style="display: flex; align-items: center"><img src="https://raw.githubusercontent.com/couds/react-bulma-components/master/static/img.png" width="40" style="margin-top: 3px" /><span>React Bulma Components</span></div>
 
 
 [![Build Status](https://travis-ci.org/couds/react-bulma-components.svg?branch=master)](https://travis-ci.org/couds/react-bulma-components)
