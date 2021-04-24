@@ -1,4 +1,6 @@
-# <div style="display: flex; align-items: center"><img src="https://raw.githubusercontent.com/couds/react-bulma-components/master/static/img.png" width="40" style="margin-top: 3px" /><span>React Bulma Components</span></div>
+<div style="text-align: center"><img src="https://raw.githubusercontent.com/couds/react-bulma-components/master/static/img.png" width="128" style="margin-top: 3px" /></div>
+
+# React Bulma Components
 
 
 [![Build Status](https://travis-ci.org/couds/react-bulma-components.svg?branch=master)](https://travis-ci.org/couds/react-bulma-components)
@@ -12,6 +14,13 @@ React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most 
 
 
 ```npm install react-bulma-components``` or ```yarn add -E react-bulma-components```
+
+
+## Documentation
+
+You can find the documentation in https://react-bulma.dev/en/storybook
+
+Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used
 
 ## To Use
 
@@ -32,6 +41,14 @@ import { Form } from 'react-bulma-components';
 
 const { Input, Field, Control, Label } = Form;
 ```
+
+## SASS support
+
+Since CSS logic is separated from this library, there is no special setup required with the library. Simply follow
+the [instructions](https://bulma.io/documentation/overview/modular/) in the official documentation. You only need to
+make sure the CSS is properly imported for your website.
+
+Starting from v4, tree shaking is supported, so only the code of the components you have imported will be bundled.
 
 ## FAQ
 
@@ -65,10 +82,3 @@ const TestComponent = () => {
 ```
 
 **Why we do this instead of using** [React.forwardRef](https://reactjs.org/docs/forwarding-refs.html)? The forwardRef wrap the component into another one, because this is a library for wrapping the Bulma Framework cause an overhead and a lot of noise on the component tab of the React Dev Tools.
-
-
-## Documentation
-
-You can find the documentation in https://react-bulma.dev/storybook
-
-Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used (you can find the source code of the story on the tab `Story` on the bottom panel

@@ -22,22 +22,11 @@ module.exports = {
     '@storybook/preset-scss',
   ],
   webpackFinal: (config) => {
-    config.devtool = 'source-maps';
     config.resolve.modules.push('node_modules', 'src');
-    config.resolve.alias['react-bulma-components/lib'] = path.resolve(
-      __dirname,
-      '../src',
-    );
     config.resolve.alias['react-bulma-components'] = path.resolve(
       __dirname,
       '../src',
     );
-    config.plugins.push(
-      new DefinePlugin({
-        process: JSON.stringify(true),
-      }),
-    );
-
     return config;
   },
 };

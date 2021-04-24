@@ -1,56 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Description } from '@storybook/addon-docs/blocks';
 import { Columns, Block, Heading } from './index';
+import Readme from '../README.md';
 
 <Meta title="Welcome" />
 
-<Block>
-  <Heading size={1}>React bulma components</Heading>
-  <Heading size={6}>TypeScript friendly Bulma CSS React bindings.</Heading>
-</Block>
-
-
-# Installation
-
-Install `react-bulma-components` with your favorite package manager:
-
-```
-npm i react-bulma-components
-```
-
-In v4, Bulma is no longer bundled, and you have to install and import Bulma CSS yourself:
-
-```
-npm i bulma
-```
-
-Then in your top level component file (`App.js` for example), import the CSS file:
-
-```js
-import React from 'react';
-
-// other imports...
-
-import 'bulma/css/bulma.min.css';
-
-function App() {
-  /* ... */
-}
-```
-
-## SASS support
-
-Since CSS logic is separated from this library, there is no special setup required with the library. Simply follow
-the [instructions](https://bulma.io/documentation/overview/modular/) in the official documentation. You only need to
-make sure the CSS is properly imported for your website.
-
-<br />
-
-# Usage
-
-All components are exported under the `react-bulma-components` namespace:
-
-```js
-import { Container, Button, Form } from 'react-bulma-components';
-```
-
-Starting from v4, tree shaking is supported, so only the code of the components you have imported will be bundled.
+<Description>{Readme}</Description>
