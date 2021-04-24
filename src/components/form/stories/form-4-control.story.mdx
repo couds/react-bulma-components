@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Form } from '../../..';
+import * as stories from './form.story';
+import CommonProps from '../../../../.storybook/common-props';
+
+
+<Meta title="Form/Control" />
+
+# Control
+
+The Control is a versatile container meant to enhance single `Form` component. Because it has the same height as the element that it wraps, it can only contain the following Bulma elements:
+
+- `Form.Input`
+- `Form.Select`
+- `Button`
+- `Icon`
+
+This container gives the ability to:
+
+- Keep the spacing consistent
+- Combine form controls into a group
+- Combine form controls into a list
+- Append and prepend icons to a form control, when an icon with `align="left"` or `align="right"` is found the control will automatically add the bulma class `has-icon-left` and/or `has-icon-right`
+
+## Props
+
+<ArgsTable of={Form.Control} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Control} name="Control" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/general/#form-control)

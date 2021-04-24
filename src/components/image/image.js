@@ -1,86 +1,92 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CONSTANTS from './constants';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
 
-export default class Image extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const Image = ({
+  className,
+  alt,
+  size,
+  fallback,
+  rounded,
+  src,
+  fullwidth,
+  ...props
+}) => {
+  const [state, setState] = useState({ src });
+  useEffect(() => {
+    setState({ src });
+  }, [src]);
+  let s = size;
+
+  if (typeof size === 'number') {
+    s = `${s}x${s}`;
   }
-
-  onError = () => {
-    this.setState({
-      src: this.props.fallback,
-    });
-  };
-
-  static getDerivedStateFromProps = (props, state) => ({
-    src: state.default !== props.src ? props.src : state.src,
-    default: props.src,
-  });
-
-  render() {
-    const {
-      className,
-      alt,
-      size,
-      fallback,
-      rounded,
-      src,
-      fullwidth,
-      ...props
-    } = this.props;
-    let s = size;
-
-    if (typeof size === 'number') {
-      s = `${s}x${s}`;
-    }
-
-    return (
-      <Element
-        {...props}
-        renderAs="figure"
-        className={classnames('image', className, {
-          [`is-${s}`]: s,
-          'is-fullwidth': fullwidth,
+  return (
+    <Element
+      {...props}
+      className={classnames('image', className, {
+        [`is-${s}`]: s,
+        'is-fullwidth': fullwidth,
+      })}
+    >
+      <img
+        className={classnames({
+          'is-rounded': rounded,
         })}
-      >
-        <img
-          className={classnames({
-            'is-rounded': rounded,
-          })}
-          onError={this.onError}
-          src={this.state.src}
-          alt={alt}
-        />
-      </Element>
-    );
-  }
-}
+        onError={() => state.src !== fallback && setState({ src: fallback })}
+        src={state.src}
+        alt={alt}
+      />
+    </Element>
+  );
+};
 
 Image.propTypes = {
-  ...modifiers.propTypes,
-  className: PropTypes.string,
-  src: PropTypes.string,
+  src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   rounded: PropTypes.bool,
-  style: PropTypes.shape({}),
-  size: PropTypes.oneOf(CONSTANTS.SIZES),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128,
+      'square',
+      '1by1',
+      '4by3',
+      '3by2',
+      '16by9',
+      '2by1',
+      '5by4',
+      '5by3',
+      '3by1',
+      '4by5',
+      '3by4',
+      '2by3',
+      '3by5',
+      '9by16',
+      '1by2',
+      '1by3',
+    ]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   fallback: PropTypes.string,
   fullwidth: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Image.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
-  src: '',
-  alt: '',
-  rounded: false,
-  style: undefined,
-  size: undefined,
-  fallback: 'https://bulma.io/images/placeholders/480x480.png',
-  fullwidth: false,
+  renderAs: 'figure',
 };
+
+export default Image;

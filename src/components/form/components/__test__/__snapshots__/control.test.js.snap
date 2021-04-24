@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Control component Should be fullwidth, loading and size = large 1`] = `
-<div
-  className="control is-expanded is-loading is-large"
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
 exports[`Control component Should concat classname in props with Bulma classname 1`] = `
 <div
   className="control other-class this-is-a-test"

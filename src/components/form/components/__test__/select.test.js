@@ -46,4 +46,44 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be loading', () => {
+    const component = renderer.create(
+      <Select loading>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be focused', () => {
+    const component = renderer.create(
+      <Select status="focus">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be hovered', () => {
+    const component = renderer.create(
+      <Select status="hover">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be rounded', () => {
+    const component = renderer.create(
+      <Select rounded>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

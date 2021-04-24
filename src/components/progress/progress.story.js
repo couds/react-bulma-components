@@ -1,15 +1,41 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { Progress, Block, Message } from '../..';
+import CONSTANTS from '../../constants';
 
-import { storiesOf } from '@storybook/react';
+export const Default = (args) => (
+  <>
+    <Block>
+      <Message color="info">
+        <Message.Body>
+          Play with the controls to see how the component behave with differents
+          props
+        </Message.Body>
+      </Message>
+    </Block>
+    <Block>
+      <Progress {...args} />
+    </Block>
+  </>
+);
 
-import Progress from 'react-bulma-components/lib/components/progress';
+Default.args = {
+  value: 30,
+  max: 100,
+};
 
-storiesOf('Progress', module).add('Default', () => (
-  <div>
-    <Progress />
-    <Progress max={100} value={15} color="primary" size="small" />
-    <Progress max={100} value={15} color="info" />
-    <Progress max={100} value={15} color="success" size="medium" />
-    <Progress max={100} value={15} color="danger" size="large" />
-  </div>
-));
+Default.argTypes = {
+  color: {
+    control: {
+      type: 'select',
+      options: ['default'].concat(Object.values(CONSTANTS.COLORS)),
+    },
+  },
+  size: {
+    control: {
+      type: 'select',
+      options: ['small', 'normal', 'medium', 'large'],
+      defaultValue: 'normal',
+    },
+  },
+};

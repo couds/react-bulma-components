@@ -1,0 +1,51 @@
+import { ArgsTable, Props, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Menu from './menu';
+import * as stories from './menu.story';
+import { Message } from '../../index';
+import CommonProps from '../../../.storybook/common-props';
+
+
+<Meta title="Components/Menu" />
+
+# Menu
+
+The `Menu` component allows you to create vertical navigation menus. It has two sub-components:
+
+- `Menu.List` defines a section in the menu with a title.
+- `Menu.List.Item` defines an item in a section. Can be shown as selected using the `active` prop.
+  To create nested lists, simply put `Menu.List` as a direct child of `Menu.List.Item`.
+
+<Message color="info">
+  <Message.Body>
+    You can create nested menu using Menu.List as a only children of a Menu.Item
+  </Message.Body>
+</Message>
+
+## Props
+
+<br />
+
+### `Menu`
+
+<Props of={Menu} />
+
+### `Menu.List`
+
+<ArgsTable of={Menu.List} />
+
+### `Menu.List.Item`
+
+<ArgsTable of={Menu.List.Item} />
+
+<CommonProps />
+
+## Example 
+
+<Canvas>
+  <Story story={stories.BasicUsage} name="Menu" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/menu/)

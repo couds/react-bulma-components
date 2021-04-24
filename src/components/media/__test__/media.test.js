@@ -7,7 +7,6 @@ describe('Media component', () => {
     expect(Media).toMatchSnapshot();
   });
   it('Should expose Level Side and Item', () => {
-    expect(Media.Content).toMatchSnapshot();
     expect(Media.Item).toMatchSnapshot();
   });
   it('Should have media classname', () => {
@@ -23,7 +22,7 @@ describe('Media component', () => {
   });
   it('Should hbe a Media Item', () => {
     const component = renderer.create(
-      <Media.Item renderAs="figure" position="left">
+      <Media.Item renderAs="figure" align="left">
         <img
           alt="placeholder"
           src="http://bulma.io/images/placeholders/128x128.png"
@@ -34,7 +33,7 @@ describe('Media component', () => {
   });
   it('Should hbe a Media Item Centered', () => {
     const component = renderer.create(
-      <Media.Item renderAs="figure" position="center">
+      <Media.Item renderAs="figure" align="center">
         <img
           alt="placeholder"
           src="http://bulma.io/images/placeholders/128x128.png"
@@ -43,14 +42,7 @@ describe('Media component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should be a Media Content', () => {
-    const component = renderer.create(
-      <Media.Content>
-        <p>Lorem Ipsum</p>
-      </Media.Content>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
+
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Media className="other-class this-is-a-test">

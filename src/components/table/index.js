@@ -1,3 +1,3 @@
-import './table.sass';
+import Table from './table';
 
-export { default } from './table';
+export default Table;

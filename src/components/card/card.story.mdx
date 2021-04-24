@@ -1,0 +1,84 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Card from '.';
+import { Image } from '../..';
+import * as stories from './card.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Card" />
+
+# Card
+
+A composable component for displaying rich content.
+
+## Components
+
+- `<Card.Header />`: Displays a horizontal header bar at the top, with drop shadow.
+  - `<Card.Header.Title />` : Displays a left-aligned header text in the header.
+  - `<Card.Header.Icon />`: Displays an icon at the end of header.
+- `<Card.Image />` : Displays an image in card. Since it uses the `<Image />` component under the hood,
+- `<Card.Content />`: Displays the main content of the card. Can contain other components.
+they share the same props.
+- `<Card.Footer />`: Displays a horizontal list of controls at the bottom.
+  - `<Card.Footer.Item />`: An item in the footer.
+
+## Props
+
+<ArgsTable of={Card} />
+
+## Components
+
+The following components are available to compose card content.
+
+### `<Card.Image />`
+
+Displays an image in card. Since it uses the `<Image />` component under the hood, Share the same props as `Image`
+
+<ArgsTable of={Image} />
+
+### `<Card.Content />`
+
+Displays the main content of the card. Can contain other components.
+
+<ArgsTable of={Card.Content} />
+
+### `<Card.Header />`
+
+Displays a horizontal header bar at the top, with drop shadow.
+
+<ArgsTable of={Card.Header} />
+
+#### `<Card.Header.Title />`
+
+Displays a left-aligned header text in the header.
+
+<ArgsTable of={Card.Header.Title} />
+
+#### `<Card.Header.Icon />`
+
+Displays an icon at the end of header.
+
+<ArgsTable of={Card.Header.Icon} />
+
+### `<Card.Footer />`
+
+Displays a horizontal list of controls at the bottom.
+
+<ArgsTable of={Card.Footer} />
+
+#### `<Card.Footer.Item />`
+
+An item in the footer.
+
+<ArgsTable of={Card.Footer.Item} />
+
+<CommonProps />
+
+## Examples
+
+<Canvas>
+  <Story story={stories.Default} name="Card" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/card)

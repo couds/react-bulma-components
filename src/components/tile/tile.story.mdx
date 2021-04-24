@@ -1,0 +1,76 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './tile.story.js'
+import CommonProps from '../../../.storybook/common-props';
+import { Box, Tile, Message } from '../..';
+
+<Meta title="Layout/Tile" />
+
+# Tile
+
+A single tile element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
+
+## Nesting
+
+Everything is a tile! To create a grid of tiles, you only need to nest tile elements.
+
+- Start with an **ancestor** tile that will wrap all other tiles:
+- Add tile elements that will distribute themselves horizontally
+  - You can resize any tile according to a 12 column grid (Just like the `Columns` component)
+  - If you want to stack tiles vertically, add the `vertical` prop on the parent tile
+- As soon as you want to add content to a tile, just:
+  - Add `kind="child"` prop on the `Tile`
+  - Add `kind="parent"` to the parent `Tile`
+  - You can render as other component the `child` Tile (Try `Box` or `Notification`)
+
+<Message color="danger">
+  <Message.Body>
+    Note: You need at least 3 levels of hierarchy:
+  </Message.Body>
+</Message>
+
+```
+tile kind="ancestor"
+|
+└───tile kind="parent"
+    |
+    └───tile kind="child"
+```
+<Message color="info">
+  <Message.Body>
+    You can, however, nest tiles deeper than that, and mix it up!
+  </Message.Body>
+</Message>
+
+```
+tile kind="ancestor"
+|
+├───tile is-vertical is-8
+|   |
+|   ├───tile
+|   |   |
+|   |   ├───tile kind="parent" is-vertical
+|   |   |   ├───tile kind="child"
+|   |   |   └───tile kind="child"
+|   |   |
+|   |   └───tile kind="parent"
+|   |       └───tile kind="child"
+|   |
+|   └───tile kind="parent"
+|       └───tile kind="child"
+|
+└───tile kind="parent"
+    └───tile kind="child"
+```
+
+
+## Props
+
+<ArgsTable of={Tile} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Tile" />
+</Canvas>

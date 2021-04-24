@@ -1,0 +1,45 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Dropdown } from '../..';
+import * as stories from './dropdown.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Dropdown" />
+
+# Dropdown
+
+A component for implementing dropdown menu patterns that incorporates the button and the menu elements.
+
+## Components
+
+The `Dropdown` component contains the following components:
+
+- `<Dropdown.Item />`: Defines an item in the dropdown menu.
+- `<Dropdown.Divider />`: Draws a divider in the dropdown menu.
+
+## Props
+
+<br />
+
+### `Dropdown`
+
+<ArgsTable of={Dropdown} />
+
+### `Dropdown.Item`
+
+<ArgsTable of={Dropdown.Item} />
+
+### `Dropdown.Divider`
+
+<ArgsTable of={Dropdown.Divider} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Overview} name="Dropdown" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/dropdown/)

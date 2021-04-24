@@ -1,20 +1,38 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import classnames from 'classnames';
+import { Box, Icon } from '../..';
+import CONSTANTS from '../../constants';
 
-import { storiesOf } from '@storybook/react';
+const faSizeMapper = {
+  small: '',
+  medium: 'lg',
+  large: '2x',
+};
 
-import Icon from 'react-bulma-components/lib/components/icon';
+export const Default = ({ size, ...args }) => (
+  <Box>
+    <Icon {...args} size={size} style={{ border: '1px solid red' }}>
+      <i
+        className={classnames('fas fa-home', {
+          [`fa-${faSizeMapper[size]}`]: size,
+        })}
+      />
+    </Icon>
+  </Box>
+);
 
-storiesOf('Icon', module)
-  .add('Default', () => (
-    <div>
-      <Icon icon="bars" color="info" />
-      <Icon icon="angle-down" />
-    </div>
-  ))
-  .add('Custom Icon', () => (
-    <div>
-      <Icon>
-        <span className="rbc rbc-bars" />
-      </Icon>
-    </div>
-  ));
+Default.argTypes = {
+  color: {
+    control: {
+      type: 'select',
+      options: ['default'].concat(Object.values(CONSTANTS.COLORS)),
+    },
+  },
+  size: {
+    control: {
+      type: 'select',
+      options: ['default', 'small', 'medium', 'large'],
+    },
+  },
+};

@@ -1,0 +1,188 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Block, Card, Columns, Container, Message, Notification, Table, Element } from '../../..';
+
+<Meta title="Core Component/Responsive" />
+
+# The Element component
+### Visibility/Responsive helpers
+
+<Block>
+  You can control de visibility of each component per breakpoint, See the following table for details
+</Block>
+<Table bordered size="fullwidth">
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>
+        Mobile<br />
+        Up to <code>768px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        Tablet<br />
+        Between <code>769px</code> and <code>1023px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        Desktop<br />
+        Between <code>1024px</code> and <code>1215px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        Widescreen<br />
+        Between <code>1216px</code> and <code>1407px</code>
+      </th>
+      <th style={{ width: '20%' }}>
+        FullHD<br />
+        <code>1408px</code> and above
+      </th>
+    </tr>
+  </thead>
+  <Element renderAs="tbody" textAlign="center" textTransform="capitalized">
+    <tr>
+      <td>
+        <Notification color="info">mobile</Notification>
+      </td>
+      <td colspan="4">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Notification>-</Notification>
+      </td>
+      <td colspan="4">
+        <Notification color="info">tablet</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+      <td colspan="3">
+        <Notification color="info">desktop</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+      <td colspan="2">
+        <Notification color="info">widescreen</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">fullhd</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">tablet-only</Notification>
+      </td>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">desktop-only</Notification>
+      </td>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+      <td>
+        <Notification color="info">widescreen-only</Notification>
+      </td>
+      <td>
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <Notification color="info">touch</Notification>
+      </td>
+      <td colspan="3">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <Notification color="info">until-widescreen</Notification>
+      </td>
+      <td colspan="2">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <Notification color="info">until-fullhd</Notification>
+      </td>
+      <td colspan="1">
+        <Notification>-</Notification>
+      </td>
+    </tr>
+  </Element>
+</Table>
+
+
+First, the simple props:
+
+| Prop name   | Values                                                             | Description                                                    |
+| ----------- | ------------------------------------------------------------------ | -------------------------------------------------------------- |
+| `display`   | 'block', 'flex', 'inline', 'inline-block', 'inline-flex', 'hidden' | Corresponds to display classes in Bulma                        |
+| `invisible` | boolean                                                            | Corresponds to CSS: `visibility: hidden`                       |
+| `srOnly`    | boolean                                                            | Hides component but screen readers can still see the component |
+
+Now, on to the responsive helpers.
+
+Each viewport prop accepts an object of available modifiers that can vary depending on the current viewport.
+Each modifier in the object acts the same as their non viewport specific counterpart except their effect depends on the viewport.
+The object has the following fields:
+
+| Field name      | Values                                     | Description                                                                |
+| --------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
+| `display`       | Refer to the `display` modifier prop       | Acts the same as `display` modifier except the effect is viewport specific |
+| `textSize`      | Refer to the `textSize` modifier prop      | Changes text size depending on the viewport                                |
+| `textAlign` | Refer to the `textAlign` modifier prop | Changes text alignment depending on the viewport                           |
+| `invisible`     | Boolean                                    | if true will render the element with `is-invisible` bulma class            |
+| `only`          | Boolean                                    | If tru will apply the values of the other fields only on the breakpoint instead of following the table above            |
+
+As an example, consider the following:
+
+```jsx
+<Container
+  mobile={{ display: 'hidden' }}
+  desktop={{
+    only: true,
+    display: 'flex',
+    textAlign: 'center',
+  }}
+  widescreen={{ display: 'inline' }}
+/>
+```
+
+The modifier props translate to the following Bulma classes:
+
+- `'is-hidden-mobile'`
+- `'is-flex-desktop-only'`
+- `'has-text-centered-desktop-only'`
+- `'is-inline-widescreen'`
+
+The `Container` will be hidden on `mobile` only;
+it will display children in flex and center text on `desktop` viewport **only** and will be display inline on widescreen and up.
+
+## Notes
+
+- The breakpoints `until-widescreen` and `until-fullhd` do not have the bulma class for responsiveness **yet**,
+please follow this [PR](https://github.com/jgthms/bulma/pull/3299) for details

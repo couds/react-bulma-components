@@ -1,0 +1,27 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './progress.story.js'
+import { Progress } from '../..';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Progress" />
+
+# Progress
+
+Change how the native progress bar looks line on the browser to match your design line
+
+## Props
+
+<ArgsTable of={Progress} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Progress" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/progress/)

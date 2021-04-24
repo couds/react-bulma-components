@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 /* eslint-disable-next-line import/no-cycle */
 import List from '../list';
-import modifiers from '../../../../../modifiers';
+
 import Element from '../../../../element';
-import renderAsShape from '../../../../../modifiers/render-as';
 
 const MenuListItem = ({
   children,
@@ -46,18 +45,15 @@ const MenuListItem = ({
 };
 
 MenuListItem.propTypes = {
-  ...modifiers.propTypes,
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   active: PropTypes.bool,
-  renderAs: renderAsShape,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 MenuListItem.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
-  children: null,
-  active: false,
   renderAs: 'a',
 };
 

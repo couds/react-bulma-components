@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Form } from '../../..';
+import * as stories from './form.story';
+import CommonProps from '../../../../.storybook/common-props';
+
+
+<Meta title="Form/Select" />
+
+# Select
+The browser built-in **select dropdown**, styled accordingly
+
+## Props
+
+<ArgsTable of={Form.Select} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.SelectExample} name="Select" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/form/select)

@@ -1,0 +1,40 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Message } from '../../index';
+import * as stories from './message.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Message" />
+
+# Message
+
+A colored message block that can be used to emphasize content or used as a notification banner. Use `Message.Header`
+to create a header of the block, and `Message.Body` for the body of the block.
+
+The style of the message change depending if the Header is included or not, Play with the Controls in the canvas to
+ see how this component behave with different props
+
+## Props
+
+<ArgsTable of={Message} />
+
+## Components
+
+### `Message.Title`
+
+<ArgsTable of={Message.Title} />
+
+### `Message.Body`
+
+<ArgsTable of={Message.Body} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.BasicUsage} name="Message" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/message/)

@@ -1,5 +1,7 @@
 language: node_js
 node_js:
   - "12"
-script: yarn test:cov
+before_install:
+  - npm i -g npm@6.14.12
+script: npm run test:cov
 after_success: 'npm run coveralls'

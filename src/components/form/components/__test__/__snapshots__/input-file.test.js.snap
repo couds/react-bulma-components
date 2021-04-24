@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component Should Exist 1`] = `[Function]`;
+
+exports[`Dropdown component Should be centered 1`] = `
+<div
+  className="file is-centered has-name"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      type="file"
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+    <span
+      className="file-name"
+    >
+      test.js
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Dropdown component Should render file input tree 1`] = `
+<div
+  className="file"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Dropdown component should pass file attributes 1`] = `
+<div
+  className="file"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      accept="image/*"
+      capture="source"
+      className="file-input"
+      multiple={true}
+      onChange={[Function]}
+      type="file"
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Dropdown component should set filename text 1`] = `
+<div
+  className="file has-name"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+    <span
+      className="file-name"
+    >
+      my-file.js
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Dropdown component should set filename text 2`] = `
+<div
+  className="file has-name"
+>
+  <label
+    className="file-label"
+  >
+    <input
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+    />
+    <span
+      className="file-cta"
+    >
+      <span
+        className="file-label"
+      >
+        Choose a file...
+      </span>
+    </span>
+    <span
+      className="file-name"
+    >
+      my-file.js
+    </span>
+  </label>
+</div>
+`;

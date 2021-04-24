@@ -1,92 +1,119 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
 
-import { boolean, select, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import CONSTANTS from '../../constants';
+import { Box, Dropdown } from '../..';
+import Icon from '../icon';
 
-import Dropdown from '.';
-import Container from '../container';
-import Section from '../section';
+const icon = (
+  <Icon>
+    <i className="fas fa-angle-down" aria-hidden="true" />
+  </Icon>
+);
 
-const alignment = {
-  Default: '',
-  right: 'right',
+export const Overview = (args) => (
+  <Box
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 600,
+    }}
+  >
+    <Dropdown
+      {...args}
+      color={args.color === 'default' ? '' : args.color}
+      icon={icon}
+    >
+      <Dropdown.Item renderAs="a" value="item">
+        Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="other">
+        Other Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="active">
+        Active Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="other 2">
+        Other Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item renderAs="a" value="divider">
+        After divider
+      </Dropdown.Item>
+    </Dropdown>
+  </Box>
+);
+
+Overview.argTypes = {
+  label: {
+    defaultValue: 'Dropdown label',
+    control: {
+      type: 'text',
+    },
+  },
+  color: {
+    defaultValue: '',
+    control: {
+      type: 'select',
+      options: ['default', ...Object.values(CONSTANTS.COLORS)],
+    },
+  },
+  hoverable: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  closeOnSelect: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  right: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+  up: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
 };
 
-class Wrapper extends React.Component {
-  state = {
-    selected: '',
-  };
-  onChange = selected => {
-    this.setState({ selected });
-  };
-  render() {
-    return (
-      <Dropdown
-        {...this.props}
-        value={this.state.selected}
-        onChange={this.onChange}
-        color="info"
-        label={text('label', '')}
-      >
-        <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-        <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item value="divider">With divider</Dropdown.Item>
-      </Dropdown>
-    );
-  }
-}
+export const Controlled = (args) => {
+  const [selected, setSelected] = useState('');
+  return (
+    <Dropdown {...args} value={selected} onChange={setSelected} color="info">
+      <Dropdown.Item renderAs="a" value="item">
+        Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="other">
+        Other Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="active">
+        Active Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Item renderAs="a" value="other 2">
+        Other Dropdown item
+      </Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item renderAs="a" value="divider">
+        With divider
+      </Dropdown.Item>
+    </Dropdown>
+  );
+};
 
-storiesOf('Dropdown', module)
-  .add('Default', () => (
-    <Dropdown onChange={action('select')} label={text('label', '')}>
-      <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item value="divider">With divider</Dropdown.Item>
-    </Dropdown>
-  ))
-  .add('Hoverable', () => (
-    <Dropdown hoverable value="item" label={text('label', '')}>
-      <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-      <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item value="divider">With divider</Dropdown.Item>
-    </Dropdown>
-  ))
-  .add('Alignment', () => (
-    <div>
-      <Container>
-        <Section size="large">
-          <Dropdown
-            align={select(
-              'align (deprecated; will be removed in future releases)',
-              alignment,
-            )}
-            right={boolean('right (will replace "align" prop)', false)}
-            value="item"
-            up={boolean('up', false)}
-            label={text('label', '')}
-          >
-            <Dropdown.Item value="item">Dropdown item</Dropdown.Item>
-            <Dropdown.Item value="other">Other Dropdown item</Dropdown.Item>
-            <Dropdown.Item value="active">Active Dropdown item</Dropdown.Item>
-            <Dropdown.Item value="other 2">Other Dropdown item</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item value="divider">With divider</Dropdown.Item>
-          </Dropdown>
-        </Section>
-      </Container>
-    </div>
-  ))
-  .add('Controlled component', () => <Wrapper />)
-  .add('Controlled component Hoverable', () => (
-    <Wrapper hoverable color="dark" />
-  ));
+Controlled.argTypes = {
+  hoverable: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
+};

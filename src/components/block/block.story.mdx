@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './block.story';
+import { Block } from '../..'
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Block" />
+
+# Block
+
+The block element its the simplest of the components on Bulma, his only function its to add margin between the elements
+
+<ArgsTable of={Block} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Blocks} name="Block" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/block)

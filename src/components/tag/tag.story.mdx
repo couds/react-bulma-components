@@ -1,0 +1,31 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './tag.story.js'
+import { Box, Tag } from '../..';
+
+<Meta title="Elements/Tag" />
+
+# Tag
+### Small tag element that you can insert whenever you want
+
+
+The Bulma tag is a small but versatile element. It's very useful as a way to attach information to a block or other component. Its size makes it also easy to display in numbers, making it appropriate for long lists of items.
+
+## Props
+
+### Tag
+<ArgsTable of={Tag} />
+
+
+### Tag.Group
+<ArgsTable of={Tag.Group} />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Tag" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/tag/)

@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
-import CONSTANTS from '../../../constants';
-import Element from '../../element';
 
-const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
-);
+import Element from '../../element';
+import useFieldContext from './field/context';
+import { normalizeStatus } from '../../../services/normalizer';
 
 const Select = ({
   className,
+  rounded,
   style,
   size,
   color,
   loading,
-  readOnly,
+  status,
   disabled,
   value,
   multiple,
@@ -23,62 +21,110 @@ const Select = ({
   name,
   domRef,
   ...props
-}) => (
-  <Element
-    domRef={domRef}
-    className={classnames('select', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-      'is-loading': loading,
-      'is-multiple': multiple,
-    })}
-    style={style}
-  >
+}) => {
+  /**
+   * Return default value for value prop
+   */
+  const defaultValue = multiple ? [] : '';
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
+
+  return (
     <Element
-      renderAs="select"
-      {...props}
-      multiple={multiple}
-      value={value}
-      readOnly={readOnly}
-      disabled={disabled}
-      name={name}
+      domRef={domRef}
+      className={classnames('select', className, {
+        [`is-${calculatedSize}`]: calculatedSize,
+        [`is-${color}`]: color,
+        'is-loading': loading,
+        'is-multiple': multiple,
+        'is-rounded': rounded,
+      })}
+      style={style}
     >
-      {children}
+      <Element
+        {...props}
+        className={classnames({
+          [`is-${normalizeStatus(status)}`]: status,
+        })}
+        multiple={multiple}
+        value={value !== undefined ? value : defaultValue}
+        disabled={disabled}
+        name={name}
+      >
+        {children}
+      </Element>
     </Element>
-  </Element>
-);
+  );
+};
 
 Select.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.oneOf(colors),
-  readOnly: PropTypes.bool,
-  disabled: PropTypes.bool,
-  multiple: PropTypes.bool,
-  loading: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
+   * Adjusts the size of this component.
+   */
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
+  /**
+   * Adjusts the color of this component.
+   */
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  /**
+   * Whether the dropdown button should have fully rounded corners.
+   */
+  rounded: PropTypes.bool,
+  disabled: PropTypes.bool,
+  /**
+   * Whether the `<select>` element should accept multiple values.
+   * If true, then the `value` prop can only accept an array.
+   */
+  multiple: PropTypes.bool,
+  /**
+   * Whether a loading spinner should be shown in place of the dropdown arrow
+   */
+  loading: PropTypes.bool,
+  /**
+   * Whether this component is hovered.
+   */
+  status: PropTypes.oneOf(['hover', 'focus']),
+  /**
+   * The value that is held by the `<select>` element.
+   * Must be an array if `multiple` prop is true.
+   *
+   * If this prop is undefined, an empty string will be the default value
+   * of `<select>`, or an empty array if `multiple` is true.
+   */
+  value: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  /**
+   * The name of the input field.
+   * Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
   name: PropTypes.string,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Select.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  value: '',
-  style: undefined,
-  size: undefined,
-  color: undefined,
-  readOnly: false,
-  disabled: false,
-  multiple: false,
-  loading: false,
-  name: undefined,
+  renderAs: 'select',
 };
 
 export default Select;

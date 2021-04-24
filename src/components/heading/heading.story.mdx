@@ -1,0 +1,32 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './heading.story';
+import { Heading } from '../..';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Title - Heading" />
+
+# Heading
+
+The `Heading` component combines **title** and **subtitle** styles into one component.
+
+## Props
+
+<ArgsTable of={Heading} />
+
+<CommonProps />
+
+## Spacing
+
+When you put title and subtitle together the spacing between them will be reduced.
+The official documentation recommends that the size difference between title and subtitle should be 2.
+For example, if your title has a size of 5, your subtitle should have a size of 3.
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Title - Heading" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/title/)

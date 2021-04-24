@@ -31,7 +31,7 @@ describe('Tag component', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  it('Should be group tags', () => {
+  it('Should be group tags using deprecated gapless', () => {
     const component = renderer.create(
       <Tag.Group gapless>
         <Tag>Tag 1</Tag>
@@ -40,6 +40,17 @@ describe('Tag component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  it('Should be group tags using hasAddon (to match bulma docs)', () => {
+    const component = renderer.create(
+      <Tag.Group hasAddons>
+        <Tag>Tag 1</Tag>
+        <Tag>Tag 2</Tag>
+      </Tag.Group>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   [null]
     .concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]))
     .map(color =>

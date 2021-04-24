@@ -28,18 +28,20 @@ describe('Modal component', () => {
     expect(Modal.Content).toMatchSnapshot();
     expect(Modal.Card).toMatchSnapshot();
     expect(Modal.Card.Title).toMatchSnapshot();
-    expect(Modal.Card.Head).toMatchSnapshot();
+    expect(Modal.Card.Header).toMatchSnapshot();
     expect(Modal.Card.Body).toMatchSnapshot();
-    expect(Modal.Card.Foot).toMatchSnapshot();
+    expect(Modal.Card.Footer).toMatchSnapshot();
   });
   it('Should render modal-card-head', () => {
     const onClose = jest.fn();
     component = mount(
-      <Modal.Card onClose={onClose}>
-        <Modal.Card.Head onClose={onClose}>
-          <Modal.Card.Title>Modal Title</Modal.Card.Title>
-        </Modal.Card.Head>
-      </Modal.Card>,
+      <Modal show onClose={onClose}>
+        <Modal.Card>
+          <Modal.Card.Header>
+            <Modal.Card.Title>Modal Title</Modal.Card.Title>
+          </Modal.Card.Header>
+        </Modal.Card>
+      </Modal>
     );
     component
       .find('.delete')
@@ -54,9 +56,9 @@ describe('Modal component', () => {
     component = mount(
       <Modal document={window.document} show={false} onClose={onClose}>
         <Modal.Card>
-          <Modal.Card.Head>
+          <Modal.Card.Header>
             <Modal.Card.Title>Modal Title</Modal.Card.Title>
-          </Modal.Card.Head>
+          </Modal.Card.Header>
         </Modal.Card>
       </Modal>,
     );
@@ -73,9 +75,9 @@ describe('Modal component', () => {
     component = mount(
       <Modal document={window.document} show onClose={onClose}>
         <Modal.Card>
-          <Modal.Card.Head onClose={onClose}>
+          <Modal.Card.Header onClose={onClose}>
             <Modal.Card.Title>Modal Title</Modal.Card.Title>
-          </Modal.Card.Head>
+          </Modal.Card.Header>
         </Modal.Card>
       </Modal>,
     );
@@ -92,9 +94,9 @@ describe('Modal component', () => {
     component = mount(
       <Modal document={window.document} show onClose={onClose}>
         <Modal.Card>
-          <Modal.Card.Head>
+          <Modal.Card.Header>
             <Modal.Card.Title>Modal Title</Modal.Card.Title>
-          </Modal.Card.Head>
+          </Modal.Card.Header>
         </Modal.Card>
       </Modal>,
     );
@@ -117,9 +119,9 @@ describe('Modal component', () => {
         onClose={onClose}
       >
         <Modal.Card>
-          <Modal.Card.Head>
+          <Modal.Card.Header>
             <Modal.Card.Title>Modal Title</Modal.Card.Title>
-          </Modal.Card.Head>
+          </Modal.Card.Header>
         </Modal.Card>
       </Modal>,
     );
@@ -137,11 +139,11 @@ describe('Modal component', () => {
     component = mount(
       <Modal closeOnEsc document={window.document} show onClose={onClose}>
         <Modal.Card>
-          <Modal.Card.Head>
+          <Modal.Card.Header>
             <Modal.Card.Title>Modal Title</Modal.Card.Title>
-          </Modal.Card.Head>
+          </Modal.Card.Header>
           <Modal.Card.Body>Body</Modal.Card.Body>
-          <Modal.Card.Foot>Footer</Modal.Card.Foot>
+          <Modal.Card.Footer>Footer</Modal.Card.Footer>
         </Modal.Card>
       </Modal>,
     );

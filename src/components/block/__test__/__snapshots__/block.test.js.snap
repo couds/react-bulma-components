@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box component Should concat Bulma class with classes in props 1`] = `
+<div
+  className="block other-class test"
+>
+  Facebook
+</div>
+`;
+
+exports[`Box component Should have box classname 1`] = `
+<div
+  className="block"
+>
+  Facebook
+</div>
+`;

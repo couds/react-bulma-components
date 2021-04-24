@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
 
 const Heading = ({
   children,
@@ -31,27 +30,24 @@ const Heading = ({
 );
 
 Heading.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  renderAs: renderAsShape,
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
   subtitle: PropTypes.bool,
   heading: PropTypes.bool,
   spaced: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Heading.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
   renderAs: 'h1',
-  size: undefined,
-  weight: undefined,
-  subtitle: false,
-  heading: false,
-  spaced: false,
 };
 
 export default Heading;

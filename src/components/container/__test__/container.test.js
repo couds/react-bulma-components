@@ -14,30 +14,20 @@ describe('Container component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-
-  it('Should have helper classnames', () => {
+  it('Should use max prop on desktop breakpoint', () => {
     const component = renderer.create(
-      <Container
-        paddingless
-        responsive={{
-          widescreen: {
-            display: {
-              value: 'block',
-              only: true,
-            },
-          },
-          touch: {
-            display: {
-              value: 'flex',
-            },
-          },
-          desktop: {
-            hide: {
-              value: true,
-            },
-          },
-        }}
-      >
+      <Container breakpoint="desktop" max>
+        <p className="bd-notification is-success">
+          <p>Default</p>
+          <p>Container</p>
+        </p>
+      </Container>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should ignore max prop on non desktop and non widescreen breakpoint', () => {
+    const component = renderer.create(
+      <Container breakpoint="fullhd" max>
         <p className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>

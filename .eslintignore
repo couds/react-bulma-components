@@ -4,5 +4,7 @@ full/**
 lib/**
 node_modules
 reports
-*.story.js
 *.test.js
+**/*.d.ts
+documentation/**
+.coverage

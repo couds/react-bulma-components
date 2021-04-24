@@ -1,0 +1,49 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Content } from '../..';
+import * as stories from './content.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Content" />
+
+# Content
+
+This component handles WYSIWYG/plain HTML content.
+The example below demonstrates the formatting of different HTML elements.
+
+
+## Props
+
+<ArgsTable of={Content} />
+
+<CommonProps />
+
+## Size
+
+You can adjust the size of the content with the `size` prop.
+There are three sizes available:
+
+- `'small'`
+- `'medium'`
+- `'large'`
+
+## List styles
+
+Although this library does not provide components that let you change item markers of `<ol>` inside `<Content />`,
+you can still use the following Bulma classes via the `className` prop to do just that:
+
+- `is-lower-alpha`
+- `is-lower-roman`
+- `is-upper-alpha`
+- `is-upper-roman`
+
+Alternatively, you can use the HTML `type` attribute of `<ol>` to achieve the same effect.
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Content" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/content/)

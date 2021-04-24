@@ -1,128 +1,142 @@
-import React, { PureComponent } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Element from '../../element';
-import modifiers from '../../../modifiers';
 
-import CONSTANTS from '../../../constants';
+import useFieldContext from './field/context';
+import { normalizeAlign } from '../../../services/normalizer';
 
-const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
-);
+const InputFile = ({
+  className,
+  style,
+  onChange,
+  color,
+  size,
+  fullwidth,
+  align,
+  boxed,
+  name,
+  label,
+  icon,
+  inputProps,
+  filename,
+  value,
+  ...props
+}) => {
+  const ref = useRef();
+  const context = useFieldContext();
+  const calculatedSize = size || context.size;
 
-export default class InputFile extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filename: undefined,
-    };
-  }
-
-  select = event => {
-    const { files } = event.target;
-    this.setState({
-      filename: files.length > 0 ? files[0].name : undefined,
-    });
-    if (this.props.onChange) {
-      this.props.onChange(event);
+  useEffect(() => {
+    if (!ref.current) {
+      return;
     }
-  };
+    if (value) {
+      ref.current.files = value;
+    } else {
+      ref.current.value = '';
+    }
+  }, [value]);
 
-  render() {
-    const {
-      className,
-      style,
-      onChange,
-      color,
-      size,
-      fileName,
-      fullwidth,
-      right,
-      boxed,
-      name,
-      label,
-      icon,
-      inputProps,
-      ...props
-    } = this.props;
-
-    const { filename } = this.state;
-
-    return (
-      <Element
-        style={style}
-        {...props}
-        className={classnames('file', className, {
-          [`is-${size}`]: size,
-          [`is-${color}`]: color,
-          'has-name': !fileName,
-          'is-right': right,
-          'is-boxed': boxed,
-          'is-fullwidth': fullwidth,
-        })}
-      >
-        <label className="file-label">
-          <input
-            {...inputProps}
-            name={name}
-            type="file"
-            className="file-input"
-            onChange={this.select}
-          />
-          <span className="file-cta">
-            {icon && <span className="file-icon">{icon}</span>}
-            <span className="file-label">{label}</span>
-          </span>
-          {fileName && filename && (
-            <span className="file-name">{filename}</span>
-          )}
-        </label>
-      </Element>
-    );
-  }
-}
+  return (
+    <Element
+      style={style}
+      {...props}
+      className={classnames('file', className, {
+        [`is-${calculatedSize}`]: calculatedSize,
+        [`is-${color}`]: color,
+        [`is-${normalizeAlign(align)}`]: align,
+        'has-name': !!filename,
+        'is-boxed': boxed,
+        'is-fullwidth': fullwidth,
+      })}
+    >
+      <label className="file-label">
+        <input
+          {...inputProps}
+          name={name}
+          type="file"
+          className="file-input"
+          onChange={onChange}
+          ref={ref}
+        />
+        <span className="file-cta">
+          {icon && <span className="file-icon">{icon}</span>}
+          <span className="file-label">{label}</span>
+        </span>
+        {filename && <span className="file-name">{filename}</span>}
+      </label>
+    </Element>
+  );
+};
 
 InputFile.propTypes = {
-  ...modifiers.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  onChange: PropTypes.func,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  fileName: PropTypes.bool,
+  /**
+   * The color of `InputFile`
+   */
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  /**
+   * The size of `InputFile`
+   */
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.string,
+  ]),
+  /**
+   * The name of the selected file. It will be shown as the file label
+   * of this component, next/under the upload button.
+   */
+  filename: PropTypes.string,
+  /**
+   * The selected file(s) object.
+   */
+  value: PropTypes.any,
+  /**
+   * Whether `InputFile` should take up all available width.
+   */
   fullwidth: PropTypes.bool,
-  right: PropTypes.bool,
+  align: PropTypes.oneOf(['center', 'right']),
+  /**
+   * Whether `InputFile` should be rendered in a box shape.
+   */
   boxed: PropTypes.bool,
   /**
    * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
    */
   name: PropTypes.string,
+  /**
+   * Label for the upload button.
+   */
   label: PropTypes.string,
+  /**
+   * An optional icon to be drawn in the button next to/on top of the button label.
+   *
+   * `icon={<i className="fas ..." />}`
+   */
   icon: PropTypes.element,
-  inputProps: PropTypes.shape({
-    accept: PropTypes.string,
-    capture: PropTypes.string,
-    multiple: PropTypes.bool,
-  }),
+  /**
+   * Additional props to be passed to the underlying `<input>` element.
+   * Other props passed to `InputFile` itself will be passed to the element
+   * that wraps around the `<input>` element.
+   */
+  inputProps: PropTypes.shape({}),
 };
 
 InputFile.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
-  style: undefined,
-  onChange: () => {},
-  color: undefined,
-  size: undefined,
-  fileName: true,
-  fullwidth: undefined,
-  right: undefined,
-  boxed: undefined,
-  name: undefined,
-  icon: undefined,
   label: 'Choose a file...',
-  inputProps: {
-    accept: undefined,
-    capture: undefined,
-    multiple: undefined,
-  },
+  inputProps: {},
 };
+
+export default InputFile;

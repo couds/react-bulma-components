@@ -48,19 +48,10 @@ exports[`Tile component Should use inline styles 1`] = `
 </div>
 `;
 
-exports[`Tile component Should use use color black 1`] = `
-<div
-  className="tile notification is-black"
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
 exports[`Tile component Should use use color danger 1`] = `
 <div
-  className="tile notification is-danger"
+  className="tile is-danger"
+  notification={true}
 >
   <p>
     Default
@@ -70,7 +61,8 @@ exports[`Tile component Should use use color danger 1`] = `
 
 exports[`Tile component Should use use color dark 1`] = `
 <div
-  className="tile notification is-dark"
+  className="tile is-dark"
+  notification={true}
 >
   <p>
     Default
@@ -80,17 +72,8 @@ exports[`Tile component Should use use color dark 1`] = `
 
 exports[`Tile component Should use use color info 1`] = `
 <div
-  className="tile notification is-info"
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
-exports[`Tile component Should use use color light 1`] = `
-<div
-  className="tile notification is-light"
+  className="tile is-info"
+  notification={true}
 >
   <p>
     Default
@@ -100,7 +83,8 @@ exports[`Tile component Should use use color light 1`] = `
 
 exports[`Tile component Should use use color link 1`] = `
 <div
-  className="tile notification is-link"
+  className="tile is-link"
+  notification={true}
 >
   <p>
     Default
@@ -110,7 +94,8 @@ exports[`Tile component Should use use color link 1`] = `
 
 exports[`Tile component Should use use color null 1`] = `
 <div
-  className="tile notification"
+  className="tile"
+  notification={true}
 >
   <p>
     Default
@@ -120,7 +105,8 @@ exports[`Tile component Should use use color null 1`] = `
 
 exports[`Tile component Should use use color primary 1`] = `
 <div
-  className="tile notification is-primary"
+  className="tile is-primary"
+  notification={true}
 >
   <p>
     Default
@@ -130,7 +116,19 @@ exports[`Tile component Should use use color primary 1`] = `
 
 exports[`Tile component Should use use color success 1`] = `
 <div
-  className="tile notification is-success"
+  className="tile is-success"
+  notification={true}
+>
+  <p>
+    Default
+  </p>
+</div>
+`;
+
+exports[`Tile component Should use use color text 1`] = `
+<div
+  className="tile is-text"
+  notification={true}
 >
   <p>
     Default
@@ -140,17 +138,8 @@ exports[`Tile component Should use use color success 1`] = `
 
 exports[`Tile component Should use use color warning 1`] = `
 <div
-  className="tile notification is-warning"
->
-  <p>
-    Default
-  </p>
-</div>
-`;
-
-exports[`Tile component Should use use color white 1`] = `
-<div
-  className="tile notification is-white"
+  className="tile is-warning"
+  notification={true}
 >
   <p>
     Default

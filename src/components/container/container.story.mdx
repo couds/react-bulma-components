@@ -1,0 +1,110 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Message, Table, Element } from '../..';
+import Container from '.';
+import CommonProps from '../../../.storybook/common-props';
+
+import * as stories from './container.story';
+
+<Meta title="Layout/Container" />
+
+# Container
+
+The container component is a basic layout element that centers your contents horizontally.
+
+<Table bordered>
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        Below
+        <br />
+        <code>1023px</code>
+      </th>
+      <th>
+        Desktop
+        <br />
+        Between <code>1024px</code> and <code>1215px</code>
+      </th>
+      <th>
+        Widescreen
+        <br />
+        Between <code>1216px</code> and <code>1407px</code>
+      </th>
+      <th>
+        FullHD
+        <br />
+        <code>1408px</code> and above
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Breakpoint / Max</th>
+      <Element renderAs="th" textAlign="center" colspan="4"><code>max-width</code></Element>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><code>default</code></td>
+      <Element renderAs="td" backgroundColor="white-ter" textAlign="center" textColor="grey-light">Full width</Element>
+      <Element renderAs="td"textAlign="center" ><code>960px</code></Element>
+      <Element renderAs="td"textAlign="center" ><code>1152px</code></Element>
+      <Element renderAs="td"textAlign="center" ><code>1344px</code></Element>
+    </tr>
+    <tr>
+      <td><code>widescreen</code></td>
+      <Element colspan="2" renderAs="td" backgroundColor="white-ter" textAlign="center" textColor="grey-light">
+        Full width
+      </Element>
+      <Element renderAs="td"textAlign="center" ><code>1152px</code></Element>
+      <Element renderAs="td"textAlign="center" ><code>1344px</code></Element>
+    </tr>
+    <tr>
+      <td><code>fullhd</code></td>
+      <Element colspan="3" renderAs="td" backgroundColor="white-ter" textAlign="center" textColor="grey-light">
+        Full width
+      </Element>
+      <Element renderAs="td"textAlign="center" ><code>1344px</code></Element>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>desktop</code> / <code>max</code></td>
+      <Element renderAs="td" backgroundColor="white-ter" textAlign="center" textColor="grey-light">Full width</Element>
+      <Element renderAs="td"textAlign="center" colspan="3"><code>960px</code></Element>
+    </tr>
+    <tr>
+      <td><code>widescreen</code> / <code>max</code></td>
+      <Element renderAs="td" backgroundColor="white-ter" textAlign="center" textColor="grey-light">Full width</Element>
+      <Element renderAs="td"textAlign="center" ><code>960px</code></Element>
+      <Element renderAs="td"textAlign="center"  colspan="2"><code>1152px</code></Element>
+    </tr>
+  </tbody>
+</Table>
+
+By default, the container will only be activated from the desktop breakpoint. It will increase its max-width after reaching the widescreen and fullhd breakpoints.
+
+This is how the container will behave:
+
+- On desktop it will have a maximum width of `960px`.
+- On widescreen it will have a maximum width of `1152px`.
+- On fullhd it will have a maximum width of `1344px`.
+
+The values 960, 1152 and 1344 have been chosen because they are divisible by both 12 and 16.
+
+## Props
+
+<ArgsTable of={Container} />
+
+<CommonProps />
+
+<Message>
+  <Message.Body>Resize the window to see what happens!</Message.Body>
+</Message>
+
+<Canvas>
+  <Story story={stories.ContainerExample} name="Container" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/layout/container)

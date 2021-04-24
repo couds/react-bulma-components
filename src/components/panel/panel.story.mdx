@@ -1,0 +1,60 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Panel } from '../..';
+import * as stories from './panel.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Components/Panel" />
+
+# Panel
+
+A composable panel, for compact controls
+
+The panel is a container for several types:
+
+- `Panel.Header` as the first child
+- `Panel.Tabs` for navigation
+- `Panel.Block` which can contain other elements, like:
+  - `Form.Control`
+  - `Form.Input`
+  - `Button`
+  - `Panel.Icon`
+
+The `Panel.Block` can be an anchor tag `<a>` or a label `<label>` with a checkbox inside.
+
+## Props
+
+<ArgsTable of={Panel} />
+
+## Components
+
+### `Panel.Header`
+
+<ArgsTable of={Panel.Header} />
+
+### `Panel.Tabs`
+
+<ArgsTable of={Panel.Tabs} />
+
+### `Panel.Tabs.Tab`
+
+<ArgsTable of={Panel.Tabs.Tab} />
+
+### `Panel.Block`
+
+<ArgsTable of={Panel.Block} />
+
+### `Panel.Icon`
+
+<ArgsTable of={Panel.Icon} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Panel" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/components/panel/)

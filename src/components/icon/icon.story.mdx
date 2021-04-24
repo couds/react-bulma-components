@@ -1,0 +1,27 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './icon.story.js'
+import { Icon } from '../..';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Icon" />
+
+# Icon
+
+This component reserve a square space for the icon
+
+## Props
+
+<ArgsTable of={Icon} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Icon" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/icon/)

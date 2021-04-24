@@ -30,4 +30,14 @@ describe('Table component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should create a scrollable table', () => {
+    const component = renderer.create(
+      <Table.Container>
+        <Table>
+          <tr />
+        </Table>
+      </Table.Container>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

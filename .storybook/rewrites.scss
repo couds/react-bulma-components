@@ -1,0 +1,33 @@
+
+pre code {
+  color: currentColor;
+}
+
+pre code .tag.token {
+  background-color: unset;
+  border-radius: unset;
+  display: unset;
+  font-size: 1em;
+  height: unset;
+  padding-left: unset;
+  padding-right: unset;
+  white-space: unset;
+}
+pre code .number.token {
+  margin-right: unset;
+}
+
+pre code .plain-text {
+  color: #da1039;
+}
+
+pre code .number{
+  padding: unset;
+  min-width: unset;
+  font-size: unset;
+  height: unset;
+}
+
+$custom-colors: ("brand": (#8A4D76, #FFF), "custom": (#f88fa1,#000));
+
+@import "~bulma/bulma.sass";

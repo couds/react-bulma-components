@@ -1,18 +1,71 @@
 import React from 'react';
+import { Pagination } from '../..';
 
-import { storiesOf } from '@storybook/react';
+export const Default = (args) => <Pagination {...args} />;
 
-import Pagination from 'react-bulma-components/lib/components/pagination';
-
-storiesOf('Pagination', module)
-  .addDecorator(story => <div style={{ margin: 50 }}>{story()}</div>)
-  .add('Default', () => <Pagination current={3} total={5} delta={1} />)
-  .add('Without page number', () => (
-    <Pagination current={3} total={5} delta={0} />
-  ))
-  .add('Without prev/next button', () => (
-    <Pagination showPrevNext={false} current={3} total={5} delta={1} />
-  ))
-  .add('With all buttons manually disabled', () => (
-    <Pagination disabled current={3} total={5} />
-  ));
+Default.argTypes = {
+  showFirstLast: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: true,
+  },
+  showPrevNext: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: true,
+  },
+  current: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 3,
+  },
+  total: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 5,
+  },
+  delta: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 1,
+  },
+  disabled: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  rounded: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  size: {
+    control: {
+      type: 'select',
+      options: ['small', 'medium', 'large'],
+    },
+  },
+  align: {
+    control: {
+      type: 'select',
+      options: ['center', 'right'],
+    },
+  },
+  previous: {
+    control: {
+      type: 'text',
+    },
+    defaultValue: 'Previous',
+  },
+  next: {
+    control: {
+      type: 'text',
+    },
+    defaultValue: 'Next',
+  },
+};

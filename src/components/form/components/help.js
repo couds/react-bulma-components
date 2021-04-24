@@ -1,14 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
 
-import CONSTANTS from '../../../constants';
 import Element from '../../element';
-
-const colors = [null].concat(
-  Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]),
-);
 
 const Help = ({ className, children, color, ...props }) => (
   <Element
@@ -22,17 +16,27 @@ const Help = ({ className, children, color, ...props }) => (
 );
 
 Help.propTypes = {
-  ...modifiers.propTypes,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  children: PropTypes.node,
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Help.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  color: undefined,
   renderAs: 'p',
 };
 

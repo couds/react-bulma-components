@@ -1,0 +1,45 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Columns, Message, Notification } from '../../..';
+import * as stories from './columns.story';
+
+<Meta title="Columns/Sizes" />
+
+# Column sizes
+
+The grid is divided into 12 columns, and you can specify how many columns each column occupies with the `size` prop.
+
+For example, a column with `size={7}` will occupy 7 of the 12 columns. you can define the size of each column individually, you also define it using proportions
+
+If a column does not fix on the remaning space (for example 7 + 6) the second one will wrap to the next "row"
+
+If no size is specified the column will take the available space, if you want to change this you can pass the 
+`narrow` prop, Please take into account that if both size and narrow are passed the size take precedence
+
+### Proportions
+
+You can adjust the size of each column using proportions:
+
+- `"three-quarters"`
+- `"two-thirds"`
+- `"half"`
+- `"one-third"`
+- `"one-quarter"`
+- `"full"`
+- `"four-fifths"`
+- `"three-fifths"`
+- `"two-fifths"`
+- `"one-fifth"`
+
+Just pass them to the `size` prop, and they will size themselves according to the given proportions.
+For example, a column with `size` `"two-thirds"` will occupy two third of the available space.
+
+### Offset
+
+While you can use empty columns `<Columns.Column size={3} />` to create horizontal space between columns, you can also pass a size value to the prop `offset`
+<Canvas>
+  <Story story={stories.Sizes} name="Sizes" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/sizes/)

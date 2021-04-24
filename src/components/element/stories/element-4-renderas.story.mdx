@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Message } from '../../..';
+
+<Meta title="Core Component/The renderAs prop" />
+
+# The Element component
+## The `renderAs` prop
+
+Under the hood, each Bulma component has a specified default `renderAs` component
+that they will use to render, along with all the generated Bulma classes.
+
+For example, `Container` is rendered as:
+
+```jsx
+<div class="container ...">
+```
+
+and `Button` is rendered as:
+
+```jsx
+<button class="button ...">
+```
+
+Every Bulma component accepts attributes or props of the elements or components
+they will be rendered as. `Container` accepts all HTML attributes of `<div>`, and `Button`
+accepts all HTML attributes of `<button>`.
+
+Sometimes, however, you may want a Bulma component to be rendered as another React component or as another HTML element.
+This is where the `renderAs` prop that is available to every component comes in handy.
+
+### Render with a different HTML element
+
+You can use the `renderAs` prop to specify what HTML element you want the component to render with.
+For example, a `Button` can be rendered as an `input` instead of a `button`:
+
+```jsx
+<Button renderAs="input" />
+```
+
+`Button` will now be rendered as an `<input>`; all the attributes of `<input>` is also available as props.
+
+### `react-router`
+
+One of the very common use case of `renderAs` is [integrating with `react-router`](https://github.com/couds/react-bulma-components/issues/55).
+You can instruct a Bulma component to render using the `Link` component from `react-router`:
+
+```jsx
+<Button renderAs={Link} color="primary" to="/login" />
+```
+
+Using the `renderAs` prop, all Bulma classes are forwarded to the `Link` component, and all
+props of the `Link` components are exposed correctly.
+
+### What about TypeScript?
+
+The TypeScript definition that is shipped with this library correctly identifies the props
+of the component that is passed to `renderAs` and will add the type information to the Bulma component itself.
+
+<Message color="primary">
+  <Message.Body>
+    🎉 Huge credit to{' '}
+    <a href="https://stackoverflow.com/questions/54049871/how-do-i-type-this-as-jsx-attribute-in-typescript">
+      this answer
+    </a>{' '}
+    on Stack Overflow for making this possible.
+  </Message.Body>
+</Message>

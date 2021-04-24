@@ -1,0 +1,27 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './notification.story.js'
+import { Box, Notification } from '../..';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Notification" />
+
+# Notification
+
+A simple notification block to alert your users when something happen
+
+## Props
+
+<ArgsTable of={Notification} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Notification" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/notification/)

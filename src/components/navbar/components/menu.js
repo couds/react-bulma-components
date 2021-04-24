@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { ShowContext } from '../context';
-import modifiers from '../../../modifiers';
+
 import Element from '../../element';
 
 const NavbarMenu = ({ className, children, ...props }) => (
   <ShowContext.Consumer>
-    {active => (
+    {(active) => (
       <Element
         {...props}
         className={classnames('navbar-menu', className, {
@@ -21,18 +20,8 @@ const NavbarMenu = ({ className, children, ...props }) => (
   </ShowContext.Consumer>
 );
 
-NavbarMenu.propTypes = {
-  ...modifiers.propTypes,
-  style: PropTypes.shape({}),
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
+NavbarMenu.propTypes = {};
 
-NavbarMenu.defaultProps = {
-  ...modifiers.defaultProps,
-  style: undefined,
-  className: undefined,
-  children: null,
-};
+NavbarMenu.defaultProps = {};
 
 export default NavbarMenu;

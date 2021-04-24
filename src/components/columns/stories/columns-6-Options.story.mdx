@@ -1,0 +1,26 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Columns, Message, Notification } from '../../..';
+import * as stories from './columns.story';
+
+<Meta title="Columns/Options" />
+
+#Options
+
+Here you will find some other options that will help you to customize the behaviour of the columns
+
+## Columns Alignment
+
+You can center columns vertically, to do it add the vCentered prop to the `Column` component. Also you can center horizontaly adding the centered prop
+
+## Multiline
+
+By default, the columns will break into a new line when do not have enough space, you can disable this with `multiline={false}`
+
+
+<Canvas>
+  <Story story={stories.Options} />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/options/)

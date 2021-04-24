@@ -1,3 +1,3 @@
-import './tabs.sass';
+import Tabs from './tabs';
 
-export { default } from './tabs';
+export default Tabs;

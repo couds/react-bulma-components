@@ -1,45 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
 import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
+import { normalizeAlign } from '../../../services/normalizer';
 
-const ButtonGroup = ({
-  children,
-  className,
-  hasAddons,
-  position,
-  size,
-  ...props
-}) => (
+const ButtonGroup = ({ className, hasAddons, align, size, ...props }) => (
   <Element
     {...props}
     className={classnames('buttons', className, {
       'has-addons': hasAddons,
-      [`is-${[position]}`]: position,
+      [`is-${[normalizeAlign(align)]}`]: align,
       [`are-${size}`]: size,
     })}
-  >
-    {children}
-  </Element>
+  />
 );
 
 ButtonGroup.propTypes = {
-  ...modifiers.propTypes,
-  className: PropTypes.string,
   hasAddons: PropTypes.bool,
-  size: PropTypes.string,
-  position: PropTypes.oneOf(['centered', 'right']),
-  renderAs: renderAsShape,
+  /**
+   * The size of *all* the buttons in the group.
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Align of the group. By default, it is left-aligned.
+   */
+  align: PropTypes.oneOf(['center', 'right']),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 ButtonGroup.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
-  hasAddons: undefined,
-  position: undefined,
-  size: undefined,
   renderAs: 'div',
 };
 

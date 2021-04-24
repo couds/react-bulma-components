@@ -6,10 +6,8 @@ import Block from './components/block';
 import Header from './components/header';
 import Icon from './components/icon';
 import Tabs from './components/tabs';
-import modifiers from '../../modifiers';
+
 import Element from '../element';
-import renderAsShape from '../../modifiers/render-as';
-import CONSTANTS from '../../constants';
 
 const Panel = ({ color, className, ...props }) => (
   <Element
@@ -29,17 +27,28 @@ Panel.Block = Block;
 Panel.Icon = Icon;
 
 Panel.propTypes = {
-  ...modifiers.propTypes,
-  className: PropTypes.string,
-  renderAs: renderAsShape,
-  color: PropTypes.oneOf([null, '', ...Object.values(CONSTANTS.COLORS)]),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf([
+      'primary',
+      'link',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'text',
+    ]),
+    PropTypes.string,
+  ]),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 Panel.defaultProps = {
-  ...modifiers.defaultProps,
-  className: undefined,
   renderAs: 'nav',
-  color: undefined,
 };
 
 export default Panel;

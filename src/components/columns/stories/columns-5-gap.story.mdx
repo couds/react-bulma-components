@@ -1,0 +1,21 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { Columns, Message, Notification } from '../../..';
+import * as stories from './columns.story';
+
+<Meta title="Columns/Gaps" />
+
+# Colums gap
+
+You can customize the gaps between columns
+
+You can configure the gap between columns for all breakpoints with the `gap` prop, or specify per breakpoint using the responsive gap for each breakpoint (`mobile.gap`, `desktop.gap`, ...)
+
+## Example
+
+<Canvas>
+  <Story story={stories.Gaps} />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/columns/gap/)

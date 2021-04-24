@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Button from '.';
+import * as stories from './button.story';
+import CommonProps from '../../../.storybook/common-props';
+
+<Meta title="Elements/Button" />
+
+# Button
+
+A basic UI component that allows users to perform action.
+
+## Props
+
+Props that Button accepts, on top of modifier props. Go to canvas to play with the props.
+
+<ArgsTable of={Button} />
+
+## Button group
+
+Multiple buttons can be grouped together to form a group, using the `<Button.Group` component.
+
+<ArgsTable of={Button.Group} />
+
+<CommonProps />
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Button" />
+</Canvas>
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/button)

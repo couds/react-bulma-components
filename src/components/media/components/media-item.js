@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import modifiers from '../../../modifiers';
-import Element from '../../element';
-import renderAsShape from '../../../modifiers/render-as';
 
-const MediaItem = ({ children, className, position, ...props }) => {
-  const p = position === 'center' ? 'content' : position;
+import Element from '../../element';
+
+const MediaItem = ({ children, className, align, ...props }) => {
+  const p = align === 'center' ? 'content' : align;
   return (
     <Element
       {...props}
@@ -20,21 +19,11 @@ const MediaItem = ({ children, className, position, ...props }) => {
 };
 
 MediaItem.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.shape({}),
-  renderAs: renderAsShape,
-  position: PropTypes.oneOf(['center', 'right', 'left']),
+  align: PropTypes.oneOf(['center', 'right', 'left']),
 };
 
 MediaItem.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null,
-  className: undefined,
-  style: undefined,
-  renderAs: 'div',
-  position: 'center',
+  align: 'center',
 };
 
 export default MediaItem;

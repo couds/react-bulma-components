@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Message, Button, Notification, Block } from '../../..';
+
+<Meta title="Core Component/Customization" />
+
+# Extend and Customize
+## You can add your own sizes and color in addition of the one provided by Bulma.
+
+To enable this feature you need to enable the `Sass` support on your project and follow the [Bulma Documantation](https://bulma.io/documentation/customize/concepts/) 
+
+Then create a `$custom-colors` variable with the list of colors you want to add.
+
+<Message color="info">
+  <Message.Body><b>Note</b> that each color come in pairs (The color and the inverse)</Message.Body>
+</Message>
+
+## For Example
+
+In your `Sass file`
+
+```scss
+$custom-colors: ("brand": (#8A4D76, #FFF), "custom": (#f88fa1,#000));
+```
+
+Then you can use the colors defined in any color prop like this
+
+```jsx
+
+<Button color="brand">My brand button</Button>
+
+<Notification color="brand"> My Notification</Notification>
+
+```
+
+<Block>
+  <Button color="brand">My brand button</Button>
+</Block>
+
+<Block>
+  <Notification color="custom"> My Secondary Notification</Notification>
+</Block>

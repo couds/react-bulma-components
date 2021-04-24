@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import * as stories from './table.story.js'
+import { Table } from '../..';
+
+<Meta title="Elements/Table" />
+
+# Table
+
+Change how the native progress bar looks line on the browser to match your design line
+
+## Props
+
+<ArgsTable of={Table} />
+
+### Selected State
+
+To avoid creating a unnecesary component for the table row, we didn't expose the selected as others options, for this you will need to use the classname `is-selected` on the `tr` you want
+
+## Example
+
+<Canvas>
+  <Story story={stories.Default} name="Table" />
+</Canvas>
+
+
+## Related
+
+- [Official documentation](https://bulma.io/documentation/elements/table/)

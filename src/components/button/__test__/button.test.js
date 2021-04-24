@@ -61,6 +61,22 @@ describe('Button component', () => {
     const component = renderer.create(<Button disabled />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should render loading state', () => {
+    const component = renderer.create(<Button loading />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render focused state', () => {
+    const component = renderer.create(<Button status="focused" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render hovered state', () => {
+    const component = renderer.create(<Button status="hovered" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should render active state', () => {
+    const component = renderer.create(<Button status="active" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should be a submit form button', () => {
     const component = renderer.create(<Button submit />);
     expect(component.toJSON()).toMatchSnapshot();
@@ -81,17 +97,9 @@ describe('Button component', () => {
     component.simulate('click');
     expect(onClick).toHaveBeenCalledTimes(0);
   });
-  it('Should have a call default onClick is no listener is set', () => {
-    const spy = jest.spyOn(Button.defaultProps, 'onClick');
-    const component = shallow(<Button />);
-    component.simulate('click');
-    component.simulate('click');
-    expect(spy).toHaveBeenCalledTimes(2);
-    Button.defaultProps.onClick.mockRestore();
-  });
   it('Should forward ref', () => {
     const testRef = React.createRef();
-    mount(<Button ref={testRef} />);
+    mount(<Button domRef={testRef} />);
     expect(testRef.current).not.toBeNull();
   });
   describe('Button Group component', () => {
@@ -124,7 +132,7 @@ describe('Button component', () => {
     });
     it('Should be centered', () => {
       const component = renderer.create(
-        <Button.Group position="centered">
+        <Button.Group align="center">
           <Button>test 0</Button>
           <Button>test 1</Button>
         </Button.Group>,
@@ -133,7 +141,7 @@ describe('Button component', () => {
     });
     it('Should align to the right', () => {
       const component = renderer.create(
-        <Button.Group position="right">
+        <Button.Group align="right">
           <Button>test 0</Button>
           <Button>test 1</Button>
         </Button.Group>,
