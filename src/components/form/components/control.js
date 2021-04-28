@@ -25,7 +25,7 @@ const Control = ({
   };
 
   const updatedChildren = React.Children.map(children, (child) => {
-    if (!isIcon(child) && child.type !== Button) {
+    if (!child || (!isIcon(child) && child.type !== Button)) {
       return child;
     }
     return React.cloneElement(child, {
