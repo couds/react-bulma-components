@@ -4,14 +4,16 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const PanelBlock = ({ className, active, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('panel-block', className, {
-      'is-active': active,
-    })}
-  />
-);
+const PanelBlock = ({ className, active, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('panel-block', className, {
+        'is-active': active,
+      })}
+    />
+  );
+};
 
 PanelBlock.propTypes = {
   active: PropTypes.bool,

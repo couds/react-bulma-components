@@ -4,9 +4,9 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
-const Footer = ({ className, ...props }) => (
-  <Element {...props} className={classnames('footer', className)} />
-);
+const Footer = ({ className, ...props }) => {
+  return <Element {...props} className={classnames('footer', className)} />;
+};
 
 Footer.propTypes = {
   renderAs: PropTypes.oneOfType([

@@ -67,7 +67,13 @@ const Pagination = ({
           <a
             role="button"
             tabIndex={0}
-            onClick={prevDisabled ? undefined : () => onChange(current - 1)}
+            onClick={
+              prevDisabled
+                ? undefined
+                : () => {
+                    return onChange(current - 1);
+                  }
+            }
             className="pagination-previous"
             title="This is the first page"
             disabled={prevDisabled}
@@ -77,7 +83,13 @@ const Pagination = ({
           <a
             role="button"
             tabIndex={0}
-            onClick={nextDisabled ? undefined : () => onChange(current + 1)}
+            onClick={
+              nextDisabled
+                ? undefined
+                : () => {
+                    return onChange(current + 1);
+                  }
+            }
             className="pagination-next"
             disabled={nextDisabled}
           >
@@ -95,7 +107,9 @@ const Pagination = ({
                     role="button"
                     tabIndex={0}
                     className="pagination-link"
-                    onClick={() => onChange(1)}
+                    onClick={() => {
+                      return onChange(1);
+                    }}
                     aria-label="Page 1"
                     aria-current="page"
                     disabled={disabled}
@@ -110,28 +124,32 @@ const Pagination = ({
             )}
             {Array(lastPage - firstPage + 1)
               .fill(0)
-              .map((_, i) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <li key={i + firstPage}>
-                  <a
-                    role="button"
-                    tabIndex={0}
-                    className={classnames('pagination-link', {
-                      'is-current': current === i + firstPage,
-                    })}
-                    onClick={
-                      current === firstPage + i
-                        ? undefined
-                        : () => onChange(firstPage + i)
-                    }
-                    aria-label={`Page ${i + firstPage}`}
-                    aria-current="page"
-                    disabled={disabled}
-                  >
-                    {i + firstPage}
-                  </a>
-                </li>
-              ))}
+              .map((_, i) => {
+                return (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <li key={i + firstPage}>
+                    <a
+                      role="button"
+                      tabIndex={0}
+                      className={classnames('pagination-link', {
+                        'is-current': current === i + firstPage,
+                      })}
+                      onClick={
+                        current === firstPage + i
+                          ? undefined
+                          : () => {
+                              return onChange(firstPage + i);
+                            }
+                      }
+                      aria-label={`Page ${i + firstPage}`}
+                      aria-current="page"
+                      disabled={disabled}
+                    >
+                      {i + firstPage}
+                    </a>
+                  </li>
+                );
+              })}
             {showFirstLast && current !== lastPage && total !== lastPage && (
               <>
                 <li key={total}>
@@ -142,7 +160,9 @@ const Pagination = ({
                     role="button"
                     tabIndex={0}
                     className="pagination-link"
-                    onClick={() => onChange(total)}
+                    onClick={() => {
+                      return onChange(total);
+                    }}
                     aria-label={`Page ${total}`}
                     aria-current="page"
                     disabled={disabled}

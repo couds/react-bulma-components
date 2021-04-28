@@ -10,17 +10,19 @@ const faSizeMapper = {
   large: '2x',
 };
 
-export const Default = ({ size, ...args }) => (
-  <Box>
-    <Icon {...args} size={size} style={{ border: '1px solid red' }}>
-      <i
-        className={classnames('fas fa-home', {
-          [`fa-${faSizeMapper[size]}`]: size,
-        })}
-      />
-    </Icon>
-  </Box>
-);
+export const Default = ({ size, ...args }) => {
+  return (
+    <Box>
+      <Icon {...args} size={size} style={{ border: '1px solid red' }}>
+        <i
+          className={classnames('fas fa-home', {
+            [`fa-${faSizeMapper[size]}`]: size,
+          })}
+        />
+      </Icon>
+    </Box>
+  );
+};
 
 Default.argTypes = {
   color: {

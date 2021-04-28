@@ -6,14 +6,21 @@ export const Default = (args) => {
   return (
     <>
       <Button.Group renderAs={Block}>
-        <Button color="info" onClick={() => setOpenModal('card')}>
+        <Button
+          color="info"
+          onClick={() => {
+            return setOpenModal('card');
+          }}
+        >
           Open Card Modal
         </Button>
       </Button.Group>
       <Modal
         {...args}
         show={openModal === 'card'}
-        onClose={() => setOpenModal()}
+        onClose={() => {
+          return setOpenModal();
+        }}
       >
         <Modal.Card>
           <Modal.Card.Header showClose>

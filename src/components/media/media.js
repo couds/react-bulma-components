@@ -6,11 +6,13 @@ import MediaItem from './components/media-item';
 
 import Element from '../element';
 
-const Media = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('media', className, {})}>
-    {children}
-  </Element>
-);
+const Media = ({ children, className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('media', className, {})}>
+      {children}
+    </Element>
+  );
+};
 
 Media.Item = MediaItem;
 

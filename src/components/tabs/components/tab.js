@@ -4,17 +4,19 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const Tab = ({ children, className, style, active, domRef, ...props }) => (
-  <li
-    ref={domRef}
-    style={style}
-    className={classnames(className, {
-      'is-active': active,
-    })}
-  >
-    <Element {...props}>{children}</Element>
-  </li>
-);
+const Tab = ({ children, className, style, active, domRef, ...props }) => {
+  return (
+    <li
+      ref={domRef}
+      style={style}
+      className={classnames(className, {
+        'is-active': active,
+      })}
+    >
+      <Element {...props}>{children}</Element>
+    </li>
+  );
+};
 
 Tab.propTypes = {
   active: PropTypes.bool,

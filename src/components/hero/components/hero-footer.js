@@ -4,9 +4,9 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const HeroFooter = ({ className, ...props }) => (
-  <Element {...props} className={classnames(className, 'hero-foot')} />
-);
+const HeroFooter = ({ className, ...props }) => {
+  return <Element {...props} className={classnames(className, 'hero-foot')} />;
+};
 
 HeroFooter.propTypes = {
   renderAs: PropTypes.oneOfType([

@@ -22,49 +22,55 @@ const options = {
   breakpoints: ['default'].concat(Object.values(GLOBAL_CONSTANTS.BREAKPOINTS)),
 };
 
-export const Basic = () => (
-  <Columns>
-    <Columns.Column>
-      <Notification color="primary">First Column</Notification>
-    </Columns.Column>
-    <Columns.Column>
-      <Notification color="primary">Second Column</Notification>
-    </Columns.Column>
-    <Columns.Column>
-      <Notification color="primary">Third Column</Notification>
-    </Columns.Column>
-    <Columns.Column>
-      <Notification color="primary">Fourth Column</Notification>
-    </Columns.Column>
-  </Columns>
-);
-
-export const Sizes = ({ size, narrow, offset }) => (
-  <>
-    {message}
+export const Basic = () => {
+  return (
     <Columns>
-      <Columns.Column size={size}>
-        <Notification color="primary">Size: {size}</Notification>
+      <Columns.Column>
+        <Notification color="primary">First Column</Notification>
       </Columns.Column>
       <Columns.Column>
-        <Notification>Auto</Notification>
+        <Notification color="primary">Second Column</Notification>
+      </Columns.Column>
+      <Columns.Column>
+        <Notification color="primary">Third Column</Notification>
+      </Columns.Column>
+      <Columns.Column>
+        <Notification color="primary">Fourth Column</Notification>
       </Columns.Column>
     </Columns>
-    <Columns>
-      <Columns.Column size={2}>
-        <Notification>2</Notification>
-      </Columns.Column>
-      <Columns.Column narrow={narrow} color="primary">
-        <Notification>{narrow ? 'Narrow' : 'Flexible'}</Notification>
-      </Columns.Column>
-    </Columns>
-    <Columns>
-      <Columns.Column size={4} offset={offset}>
-        <Notification color="primary">size: 4 and offset {offset}</Notification>
-      </Columns.Column>
-    </Columns>
-  </>
-);
+  );
+};
+
+export const Sizes = ({ size, narrow, offset }) => {
+  return (
+    <>
+      {message}
+      <Columns>
+        <Columns.Column size={size}>
+          <Notification color="primary">Size: {size}</Notification>
+        </Columns.Column>
+        <Columns.Column>
+          <Notification>Auto</Notification>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={2}>
+          <Notification>2</Notification>
+        </Columns.Column>
+        <Columns.Column narrow={narrow} color="primary">
+          <Notification>{narrow ? 'Narrow' : 'Flexible'}</Notification>
+        </Columns.Column>
+      </Columns>
+      <Columns>
+        <Columns.Column size={4} offset={offset}>
+          <Notification color="primary">
+            size: 4 and offset {offset}
+          </Notification>
+        </Columns.Column>
+      </Columns>
+    </>
+  );
+};
 
 Sizes.args = {
   narrow: false,
@@ -94,33 +100,35 @@ export const Responsiveness = ({
   widescreen,
   fullhd,
   breakpoint,
-}) => (
-  <>
-    {message}
-    <Notification style={{ marginBottom: '1.5rem' }}>
-      with <b>breakpoint=&quot;{breakpoint}&quot;</b> the columns will be active
-      on all sizes equal or greater than the breakpoint
-    </Notification>
-    <Box>
-      <Columns breakpoint={breakpoint}>
-        <Columns.Column
-          mobile={mobile}
-          tablet={tablet}
-          desktop={desktop}
-          widescreen={widescreen}
-          fullhd={fullhd}
-        >
-          <Notification color="primary">
-            <p>I&apos;m responsive</p>
-          </Notification>
-        </Columns.Column>
-        <Columns.Column>
-          <Notification color="info">Auto</Notification>
-        </Columns.Column>
-      </Columns>
-    </Box>
-  </>
-);
+}) => {
+  return (
+    <>
+      {message}
+      <Notification style={{ marginBottom: '1.5rem' }}>
+        with <b>breakpoint=&quot;{breakpoint}&quot;</b> the columns will be
+        active on all sizes equal or greater than the breakpoint
+      </Notification>
+      <Box>
+        <Columns breakpoint={breakpoint}>
+          <Columns.Column
+            mobile={mobile}
+            tablet={tablet}
+            desktop={desktop}
+            widescreen={widescreen}
+            fullhd={fullhd}
+          >
+            <Notification color="primary">
+              <p>I&apos;m responsive</p>
+            </Notification>
+          </Columns.Column>
+          <Columns.Column>
+            <Notification color="info">Auto</Notification>
+          </Columns.Column>
+        </Columns>
+      </Box>
+    </>
+  );
+};
 
 Responsiveness.args = {
   breakpoint: 'tablet',
@@ -162,43 +170,45 @@ Responsiveness.argTypes = {
   },
 };
 
-export const Nesting = () => (
-  <Columns>
-    <Columns.Column>
-      <Notification color="primary">0</Notification>
-      <Columns>
-        <Columns.Column>
-          <Notification color="info">1</Notification>
-          <Columns>
-            <Columns.Column size="half">
-              <Notification color="danger">2</Notification>
-            </Columns.Column>
-            <Columns.Column size="half">
-              <Notification color="danger">2</Notification>
-            </Columns.Column>
-          </Columns>
-        </Columns.Column>
-        <Columns.Column>
-          <Notification color="info">1</Notification>
-        </Columns.Column>
-      </Columns>
-    </Columns.Column>
-    <Columns.Column>
-      <Notification color="primary">0</Notification>
-      <Columns>
-        <Columns.Column size="two-thirds">
-          <Notification color="info">1</Notification>
-        </Columns.Column>
-        <Columns.Column size="one-third">
-          <Notification color="info">1</Notification>
-        </Columns.Column>
-        <Columns.Column>
-          <Notification color="info">1</Notification>
-        </Columns.Column>
-      </Columns>
-    </Columns.Column>
-  </Columns>
-);
+export const Nesting = () => {
+  return (
+    <Columns>
+      <Columns.Column>
+        <Notification color="primary">0</Notification>
+        <Columns>
+          <Columns.Column>
+            <Notification color="info">1</Notification>
+            <Columns>
+              <Columns.Column size="half">
+                <Notification color="danger">2</Notification>
+              </Columns.Column>
+              <Columns.Column size="half">
+                <Notification color="danger">2</Notification>
+              </Columns.Column>
+            </Columns>
+          </Columns.Column>
+          <Columns.Column>
+            <Notification color="info">1</Notification>
+          </Columns.Column>
+        </Columns>
+      </Columns.Column>
+      <Columns.Column>
+        <Notification color="primary">0</Notification>
+        <Columns>
+          <Columns.Column size="two-thirds">
+            <Notification color="info">1</Notification>
+          </Columns.Column>
+          <Columns.Column size="one-third">
+            <Notification color="info">1</Notification>
+          </Columns.Column>
+          <Columns.Column>
+            <Notification color="info">1</Notification>
+          </Columns.Column>
+        </Columns>
+      </Columns.Column>
+    </Columns>
+  );
+};
 
 export const Gaps = ({
   mobile,
@@ -208,33 +218,35 @@ export const Gaps = ({
   widescreen,
   fullhd,
   ...args
-}) => (
-  <>
-    {message}
-    <Columns
-      {...args}
-      mobile={mobile && { gap: mobile }}
-      tablet={tablet && { gap: tablet }}
-      touch={touch && { gap: touch }}
-      desktop={desktop && { gap: desktop }}
-      widescreen={widescreen && { gap: widescreen }}
-      fullhd={fullhd && { gap: fullhd }}
-    >
-      <Columns.Column size={3}>
-        <Notification color="primary">Size 3</Notification>
-      </Columns.Column>
-      <Columns.Column size={3}>
-        <Notification color="primary">Size 3</Notification>
-      </Columns.Column>
-      <Columns.Column size={3}>
-        <Notification color="primary">Size 3</Notification>
-      </Columns.Column>
-      <Columns.Column size={3}>
-        <Notification color="primary">Size 3</Notification>
-      </Columns.Column>
-    </Columns>
-  </>
-);
+}) => {
+  return (
+    <>
+      {message}
+      <Columns
+        {...args}
+        mobile={mobile && { gap: mobile }}
+        tablet={tablet && { gap: tablet }}
+        touch={touch && { gap: touch }}
+        desktop={desktop && { gap: desktop }}
+        widescreen={widescreen && { gap: widescreen }}
+        fullhd={fullhd && { gap: fullhd }}
+      >
+        <Columns.Column size={3}>
+          <Notification color="primary">Size 3</Notification>
+        </Columns.Column>
+        <Columns.Column size={3}>
+          <Notification color="primary">Size 3</Notification>
+        </Columns.Column>
+        <Columns.Column size={3}>
+          <Notification color="primary">Size 3</Notification>
+        </Columns.Column>
+        <Columns.Column size={3}>
+          <Notification color="primary">Size 3</Notification>
+        </Columns.Column>
+      </Columns>
+    </>
+  );
+};
 
 Gaps.argTypes = {
   gap: {
@@ -275,47 +287,49 @@ Gaps.argTypes = {
   },
 };
 
-export const Options = ({ vCentered, centered, multiline }) => (
-  <>
-    {message}
-    <Columns vCentered={vCentered} centered={centered} multiline={multiline}>
-      <Columns.Column size={7}>
-        <Notification>
-          <p>7</p>
-        </Notification>
-      </Columns.Column>
-      <Columns.Column size={5}>
-        <Notification>
-          <p style={{ minHeight: '3rem' }}>5</p>
-        </Notification>
-      </Columns.Column>
-      <Columns.Column size={3}>
-        <Notification color="success">3</Notification>
-      </Columns.Column>
-      <Columns.Column size={4}>
-        <Notification color="success">4</Notification>
-      </Columns.Column>
-      <Columns.Column size={3}>
-        <Notification color="success">3</Notification>
-      </Columns.Column>
-      <Columns.Column narrow>
-        <Notification color="info">Narrow Column</Notification>
-      </Columns.Column>
-      <Columns.Column narrow>
-        <Notification color="info">Narrow Column</Notification>
-      </Columns.Column>
-      <Columns.Column narrow>
-        <Notification color="info">Narrow Column</Notification>
-      </Columns.Column>
-      <Columns.Column narrow>
-        <Notification color="info">Narrow Column</Notification>
-      </Columns.Column>
-      <Columns.Column size={4}>
-        <Notification color="info">4</Notification>
-      </Columns.Column>
-    </Columns>
-  </>
-);
+export const Options = ({ vCentered, centered, multiline }) => {
+  return (
+    <>
+      {message}
+      <Columns vCentered={vCentered} centered={centered} multiline={multiline}>
+        <Columns.Column size={7}>
+          <Notification>
+            <p>7</p>
+          </Notification>
+        </Columns.Column>
+        <Columns.Column size={5}>
+          <Notification>
+            <p style={{ minHeight: '3rem' }}>5</p>
+          </Notification>
+        </Columns.Column>
+        <Columns.Column size={3}>
+          <Notification color="success">3</Notification>
+        </Columns.Column>
+        <Columns.Column size={4}>
+          <Notification color="success">4</Notification>
+        </Columns.Column>
+        <Columns.Column size={3}>
+          <Notification color="success">3</Notification>
+        </Columns.Column>
+        <Columns.Column narrow>
+          <Notification color="info">Narrow Column</Notification>
+        </Columns.Column>
+        <Columns.Column narrow>
+          <Notification color="info">Narrow Column</Notification>
+        </Columns.Column>
+        <Columns.Column narrow>
+          <Notification color="info">Narrow Column</Notification>
+        </Columns.Column>
+        <Columns.Column narrow>
+          <Notification color="info">Narrow Column</Notification>
+        </Columns.Column>
+        <Columns.Column size={4}>
+          <Notification color="info">4</Notification>
+        </Columns.Column>
+      </Columns>
+    </>
+  );
+};
 
 Options.args = {
   vCentered: false,

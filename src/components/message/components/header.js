@@ -3,11 +3,13 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const MessageHeader = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('message-header', className)}>
-    {children}
-  </Element>
-);
+const MessageHeader = ({ children, className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('message-header', className)}>
+      {children}
+    </Element>
+  );
+};
 
 MessageHeader.propTypes = {};
 

@@ -8,11 +8,13 @@ import CardFooter from './components/footer';
 
 import Element from '../element';
 
-const Card = ({ className, children, ...props }) => (
-  <Element className={classnames('card', className)} {...props}>
-    {children}
-  </Element>
-);
+const Card = ({ className, children, ...props }) => {
+  return (
+    <Element className={classnames('card', className)} {...props}>
+      {children}
+    </Element>
+  );
+};
 
 Card.Image = CardImage;
 

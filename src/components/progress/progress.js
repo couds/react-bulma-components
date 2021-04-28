@@ -4,17 +4,19 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
-const Progress = ({ className, value, max, color, size, ...props }) => (
-  <Element
-    {...props}
-    value={value}
-    max={max}
-    className={classnames('progress', className, {
-      [`is-${color}`]: color,
-      [`is-${size}`]: size,
-    })}
-  />
-);
+const Progress = ({ className, value, max, color, size, ...props }) => {
+  return (
+    <Element
+      {...props}
+      value={value}
+      max={max}
+      className={classnames('progress', className, {
+        [`is-${color}`]: color,
+        [`is-${size}`]: size,
+      })}
+    />
+  );
+};
 
 Progress.propTypes = {
   color: PropTypes.oneOfType([

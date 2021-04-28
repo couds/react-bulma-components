@@ -28,6 +28,7 @@
   },
   "rules": {
     "prettier/prettier": "error",
+    "arrow-body-style": [2, "always"],
     "no-console": 0,
     "no-param-reassign": 0,
     "react/jsx-filename-extension": 0,

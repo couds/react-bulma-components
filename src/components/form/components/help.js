@@ -4,16 +4,18 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const Help = ({ className, children, color, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('help', className, {
-      [`is-${color}`]: color,
-    })}
-  >
-    {children}
-  </Element>
-);
+const Help = ({ className, children, color, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('help', className, {
+        [`is-${color}`]: color,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Help.propTypes = {
   color: PropTypes.oneOfType([

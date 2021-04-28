@@ -31,10 +31,11 @@ const Navbar = ({
     if (fixed) {
       html.classList.add(`has-navbar-fixed-${fixed}`);
     }
-    return () =>
-      window.document
+    return () => {
+      return window.document
         .querySelector('html')
         .classList.remove(`has-navbar-fixed-${fixed}`);
+    };
   }, [fixed]);
   return (
     <ShowContext.Provider value={active}>

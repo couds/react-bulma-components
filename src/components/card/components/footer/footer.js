@@ -4,9 +4,11 @@ import CardFooterItem from './components/footer-item';
 
 import Element from '../../../element';
 
-const CardFooter = ({ className, ...props }) => (
-  <Element {...props} className={classnames('card-footer', className)} />
-);
+const CardFooter = ({ className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('card-footer', className)} />
+  );
+};
 
 CardFooter.Item = CardFooterItem;
 

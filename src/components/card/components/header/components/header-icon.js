@@ -3,9 +3,11 @@ import classnames from 'classnames';
 
 import Element from '../../../../element';
 
-const CardHeaderIcon = ({ className, ...props }) => (
-  <Element {...props} className={classnames('card-header-icon', className)} />
-);
+const CardHeaderIcon = ({ className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('card-header-icon', className)} />
+  );
+};
 
 CardHeaderIcon.propTypes = {};
 

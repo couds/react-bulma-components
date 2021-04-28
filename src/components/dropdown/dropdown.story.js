@@ -11,39 +11,41 @@ const icon = (
   </Icon>
 );
 
-export const Overview = (args) => (
-  <Box
-    style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: 600,
-    }}
-  >
-    <Dropdown
-      {...args}
-      color={args.color === 'default' ? '' : args.color}
-      icon={icon}
+export const Overview = (args) => {
+  return (
+    <Box
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 600,
+      }}
     >
-      <Dropdown.Item renderAs="a" value="item">
-        Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item renderAs="a" value="other">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item renderAs="a" value="active">
-        Active Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item renderAs="a" value="other 2">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item renderAs="a" value="divider">
-        After divider
-      </Dropdown.Item>
-    </Dropdown>
-  </Box>
-);
+      <Dropdown
+        {...args}
+        color={args.color === 'default' ? '' : args.color}
+        icon={icon}
+      >
+        <Dropdown.Item renderAs="a" value="item">
+          Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="other">
+          Other Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="active">
+          Active Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="other 2">
+          Other Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item renderAs="a" value="divider">
+          After divider
+        </Dropdown.Item>
+      </Dropdown>
+    </Box>
+  );
+};
 
 Overview.argTypes = {
   label: {

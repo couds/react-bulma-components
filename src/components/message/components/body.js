@@ -3,11 +3,13 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const MessageBody = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('message-body', className)}>
-    {children}
-  </Element>
-);
+const MessageBody = ({ children, className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('message-body', className)}>
+      {children}
+    </Element>
+  );
+};
 
 MessageBody.propTypes = {};
 

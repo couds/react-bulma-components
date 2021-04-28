@@ -5,9 +5,11 @@ import CardHeaderIcon from './components/header-icon';
 
 import Element from '../../../element';
 
-const CardHeader = ({ className, ...props }) => (
-  <Element {...props} className={classnames('card-header', className)} />
-);
+const CardHeader = ({ className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('card-header', className)} />
+  );
+};
 
 CardHeader.Title = CardHeaderTitle;
 

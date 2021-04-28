@@ -4,16 +4,18 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('tags', className, {
-      'has-addons': gapless || hasAddons,
-    })}
-  >
-    {children}
-  </Element>
-);
+const TagGroup = ({ children, className, gapless, hasAddons, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('tags', className, {
+        'has-addons': gapless || hasAddons,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 TagGroup.propTypes = {
   hasAddons: PropTypes.bool,

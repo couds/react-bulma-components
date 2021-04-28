@@ -4,16 +4,18 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
-const Section = ({ children, className, size, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('section', className, {
-      [`is-${size}`]: size,
-    })}
-  >
-    {children}
-  </Element>
-);
+const Section = ({ children, className, size, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('section', className, {
+        [`is-${size}`]: size,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Section.propTypes = {
   size: PropTypes.oneOfType([

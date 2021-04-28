@@ -4,17 +4,19 @@ import classnames from 'classnames';
 
 import Element from '../element';
 
-const Icon = ({ size, color, className, align, text, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('icon', className, {
-      [`is-${size}`]: size,
-      [`is-${align}`]: align,
-      [`has-text-${color}`]: color,
-      'icon-text': text,
-    })}
-  />
-);
+const Icon = ({ size, color, className, align, text, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('icon', className, {
+        [`is-${size}`]: size,
+        [`is-${align}`]: align,
+        [`has-text-${color}`]: color,
+        'icon-text': text,
+      })}
+    />
+  );
+};
 
 Icon.propTypes = {
   size: PropTypes.oneOfType([

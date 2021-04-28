@@ -13,20 +13,22 @@ const Table = ({
   bordered,
   hoverable,
   ...props
-}) => (
-  <Element
-    {...props}
-    renderAs="table"
-    className={classnames('table', className, {
-      [`is-${size}`]: size,
-      'is-bordered': bordered,
-      'is-striped': striped,
-      'is-hoverable': hoverable,
-    })}
-  >
-    {children}
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      {...props}
+      renderAs="table"
+      className={classnames('table', className, {
+        [`is-${size}`]: size,
+        'is-bordered': bordered,
+        'is-striped': striped,
+        'is-hoverable': hoverable,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Table.propTypes = {
   size: PropTypes.oneOf(['fullwidth', 'narrow']),

@@ -19,7 +19,9 @@ export const Default = () => {
           <Form.Input
             color="success"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => {
+              return setUsername(e.target.value);
+            }}
           />
           <Icon align="left" size="small">
             <i className="fas fa-user" />
@@ -37,7 +39,9 @@ export const Default = () => {
           <Form.Input
             color="danger"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              return setEmail(e.target.value);
+            }}
           />
           <Icon align="left" size="small">
             <i className="fas fa-envelope" />
@@ -69,7 +73,9 @@ export const Default = () => {
           <Form.Control>
             <Form.Select
               value={subject}
-              onChange={(e) => setSubject(e.target.value)}
+              onChange={(e) => {
+                return setSubject(e.target.value);
+              }}
             >
               <option value="select-dropdown">Select dropdown</option>
               <option value="with-options">With options</option>
@@ -85,7 +91,9 @@ export const Default = () => {
         <Form.Label>Message</Form.Label>
         <Form.Textarea
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) => {
+            return setMessage(e.target.value);
+          }}
         />
       </Form.Field>
 
@@ -93,7 +101,9 @@ export const Default = () => {
         <Form.Control>
           <Form.Checkbox
             checked={tocAgreed}
-            onChange={(e) => setTocAgreed(e.target.checked)}
+            onChange={(e) => {
+              return setTocAgreed(e.target.checked);
+            }}
           >
             {'  '}I agree to the <a href="#">terms and conditions</a>
           </Form.Checkbox>
@@ -106,7 +116,9 @@ export const Default = () => {
             value="yes"
             name="question"
             checked={questionValue === 'yes'}
-            onChange={(e) => setQuestionValue(e.target.value)}
+            onChange={(e) => {
+              return setQuestionValue(e.target.value);
+            }}
           >
             {'  '}Yes
           </Form.Radio>
@@ -114,7 +126,9 @@ export const Default = () => {
             value="no"
             name="question"
             checked={questionValue === 'no'}
-            onChange={(e) => setQuestionValue(e.target.value)}
+            onChange={(e) => {
+              return setQuestionValue(e.target.value);
+            }}
           >
             {'  '}No
           </Form.Radio>
@@ -135,14 +149,16 @@ export const Default = () => {
   );
 };
 
-export const LabelExample = (args) => (
-  <Form.Field>
-    <Form.Label {...args}>I&apos;m the label of this field</Form.Label>
-    <Form.Control>
-      <Form.Input placeholder="Inside a field set" />
-    </Form.Control>
-  </Form.Field>
-);
+export const LabelExample = (args) => {
+  return (
+    <Form.Field>
+      <Form.Label {...args}>I&apos;m the label of this field</Form.Label>
+      <Form.Control>
+        <Form.Input placeholder="Inside a field set" />
+      </Form.Control>
+    </Form.Field>
+  );
+};
 
 LabelExample.argTypes = {
   size: {
@@ -153,77 +169,82 @@ LabelExample.argTypes = {
   },
 };
 
-export const Field = (args) => (
-  <>
-    <Box>
-      <Message color="info">
-        <Message.Body>Vertical Form</Message.Body>
-      </Message>
-      <Form.Field {...args}>
-        <Form.Label>Field label</Form.Label>
-        <Form.Control>
-          <Form.Input type="text" placeholder="Field control - text input" />
-        </Form.Control>
-        <Form.Help>Help text for this field</Form.Help>
-      </Form.Field>
-      <Form.Field {...args}>
-        <Form.Label>With Button</Form.Label>
-        <Form.Field kind="addons">
-          <Form.Control>
-            <Button disabled>+1</Button>
-          </Form.Control>
-          <Form.Control fullwidth>
-            <Form.Input type="tel" placeholder="555-555-555" />
-          </Form.Control>
-        </Form.Field>
-        <Form.Field kind="group" align="center">
-          <Form.Control>
-            <Button color="primary">Send</Button>
-          </Form.Control>
-          <Form.Control>
-            <Button color="info">Cancel</Button>
-          </Form.Control>
-          <Form.Control>
-            <Button color="link">Reset</Button>
-          </Form.Control>
-        </Form.Field>
-      </Form.Field>
-    </Box>
-    <Box>
-      <Message color="info">
-        <Message.Body>Horizontal Form</Message.Body>
-      </Message>
-      <Form.Field horizontal>
-        <Form.Field.Label>
+export const Field = (args) => {
+  return (
+    <>
+      <Box>
+        <Message color="info">
+          <Message.Body>Vertical Form</Message.Body>
+        </Message>
+        <Form.Field {...args}>
           <Form.Label>Field label</Form.Label>
-        </Form.Field.Label>
-        <Form.Field.Body>
-          <Form.Field>
+          <Form.Control>
+            <Form.Input type="text" placeholder="Field control - text input" />
+          </Form.Control>
+          <Form.Help>Help text for this field</Form.Help>
+        </Form.Field>
+        <Form.Field {...args}>
+          <Form.Label>With Button</Form.Label>
+          <Form.Field kind="addons">
             <Form.Control>
-              <Form.Input
-                type="text"
-                placeholder="Field control - text input"
-              />
+              <Button disabled>+1</Button>
             </Form.Control>
-            <Form.Help>Help text for this field</Form.Help>
-          </Form.Field>
-        </Form.Field.Body>
-      </Form.Field>
-      <Form.Field horizontal>
-        <Form.Field.Label>
-          <Form.Label>Field label</Form.Label>
-        </Form.Field.Label>
-        <Form.Field.Body>
-          <Form.Field>
-            <Form.Control>
-              <Form.Textarea type="text" placeholder="Field control - Aread" />
+            <Form.Control fullwidth>
+              <Form.Input type="tel" placeholder="555-555-555" />
             </Form.Control>
           </Form.Field>
-        </Form.Field.Body>
-      </Form.Field>
-    </Box>
-  </>
-);
+          <Form.Field kind="group" align="center">
+            <Form.Control>
+              <Button color="primary">Send</Button>
+            </Form.Control>
+            <Form.Control>
+              <Button color="info">Cancel</Button>
+            </Form.Control>
+            <Form.Control>
+              <Button color="link">Reset</Button>
+            </Form.Control>
+          </Form.Field>
+        </Form.Field>
+      </Box>
+      <Box>
+        <Message color="info">
+          <Message.Body>Horizontal Form</Message.Body>
+        </Message>
+        <Form.Field horizontal>
+          <Form.Field.Label>
+            <Form.Label>Field label</Form.Label>
+          </Form.Field.Label>
+          <Form.Field.Body>
+            <Form.Field>
+              <Form.Control>
+                <Form.Input
+                  type="text"
+                  placeholder="Field control - text input"
+                />
+              </Form.Control>
+              <Form.Help>Help text for this field</Form.Help>
+            </Form.Field>
+          </Form.Field.Body>
+        </Form.Field>
+        <Form.Field horizontal>
+          <Form.Field.Label>
+            <Form.Label>Field label</Form.Label>
+          </Form.Field.Label>
+          <Form.Field.Body>
+            <Form.Field>
+              <Form.Control>
+                <Form.Textarea
+                  type="text"
+                  placeholder="Field control - Aread"
+                />
+              </Form.Control>
+            </Form.Field>
+          </Form.Field.Body>
+        </Form.Field>
+      </Box>
+    </>
+  );
+};
 
 Field.argTypes = {
   size: {
@@ -234,39 +255,41 @@ Field.argTypes = {
   },
 };
 
-export const Control = ({ iconLeft, iconRight, ...args }) => (
-  <>
-    <Form.Field>
-      <Form.Label>Username</Form.Label>
-      <Form.Control {...args}>
-        <Form.Input type="text" placeholder="e.g. John Doe" />
-        {iconLeft && (
+export const Control = ({ iconLeft, iconRight, ...args }) => {
+  return (
+    <>
+      <Form.Field>
+        <Form.Label>Username</Form.Label>
+        <Form.Control {...args}>
+          <Form.Input type="text" placeholder="e.g. John Doe" />
+          {iconLeft && (
+            <Icon align="left">
+              <i className="fas fa-user" />
+            </Icon>
+          )}
+          {iconRight && (
+            <Icon align="right">
+              <i className="fas fa-check" />
+            </Icon>
+          )}
+        </Form.Control>
+      </Form.Field>
+      <Form.Field>
+        <Form.Label>Username</Form.Label>
+        <Form.Control>
+          <Form.Select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </Form.Select>
           <Icon align="left">
-            <i className="fas fa-user" />
+            <i className="fas fa-globe" />
           </Icon>
-        )}
-        {iconRight && (
-          <Icon align="right">
-            <i className="fas fa-check" />
-          </Icon>
-        )}
-      </Form.Control>
-    </Form.Field>
-    <Form.Field>
-      <Form.Label>Username</Form.Label>
-      <Form.Control>
-        <Form.Select>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </Form.Select>
-        <Icon align="left">
-          <i className="fas fa-globe" />
-        </Icon>
-      </Form.Control>
-    </Form.Field>
-  </>
-);
+        </Form.Control>
+      </Form.Field>
+    </>
+  );
+};
 
 Control.argTypes = {
   size: {
@@ -301,22 +324,24 @@ Control.argTypes = {
   },
 };
 
-export const InputExample = (args) => (
-  <>
-    <Form.Field>
-      <Form.Label>Username</Form.Label>
-      <Form.Control>
-        <Form.Input type="text" {...args} placeholder="e.g. John Doe" />
-      </Form.Control>
-    </Form.Field>
-    <Form.Field>
-      <Form.Label>Password</Form.Label>
-      <Form.Control>
-        <Form.Input {...args} type="password" placeholder="password" />
-      </Form.Control>
-    </Form.Field>
-  </>
-);
+export const InputExample = (args) => {
+  return (
+    <>
+      <Form.Field>
+        <Form.Label>Username</Form.Label>
+        <Form.Control>
+          <Form.Input type="text" {...args} placeholder="e.g. John Doe" />
+        </Form.Control>
+      </Form.Field>
+      <Form.Field>
+        <Form.Label>Password</Form.Label>
+        <Form.Control>
+          <Form.Input {...args} type="password" placeholder="password" />
+        </Form.Control>
+      </Form.Field>
+    </>
+  );
+};
 
 InputExample.argTypes = {
   size: {
@@ -360,17 +385,19 @@ InputExample.argTypes = {
   },
 };
 
-export const TextAreaExample = (args) => (
-  <Form.Field>
-    <Form.Control>
-      <Form.Textarea
-        {...args}
-        placeholder="I am a textarea"
-        size={args.size === 'default' ? null : args.size}
-      />
-    </Form.Control>
-  </Form.Field>
-);
+export const TextAreaExample = (args) => {
+  return (
+    <Form.Field>
+      <Form.Control>
+        <Form.Textarea
+          {...args}
+          placeholder="I am a textarea"
+          size={args.size === 'default' ? null : args.size}
+        />
+      </Form.Control>
+    </Form.Field>
+  );
+};
 
 TextAreaExample.argTypes = {
   size: {
@@ -437,7 +464,9 @@ export const SelectExample = ({ withIcon, ...args }) => {
             const { value } = e.target;
             if (args.multiple) {
               setSelectedOption(
-                Array.from(e.target.selectedOptions, (option) => option.value),
+                Array.from(e.target.selectedOptions, (option) => {
+                  return option.value;
+                }),
               );
               return;
             }
@@ -517,13 +546,15 @@ SelectExample.argTypes = {
   },
 };
 
-export const CheckboxExample = (args) => (
-  <Form.Field>
-    <Form.Control>
-      <Form.Checkbox {...args}>Remember me</Form.Checkbox>
-    </Form.Control>
-  </Form.Field>
-);
+export const CheckboxExample = (args) => {
+  return (
+    <Form.Field>
+      <Form.Control>
+        <Form.Checkbox {...args}>Remember me</Form.Checkbox>
+      </Form.Control>
+    </Form.Field>
+  );
+};
 
 CheckboxExample.argTypes = {
   disabled: {
@@ -535,7 +566,9 @@ CheckboxExample.argTypes = {
 
 export const RadioExample = () => {
   const [selectedValue, setSelectedValue] = useState('yes');
-  const onChange = (e) => setSelectedValue(e.target.value);
+  const onChange = (e) => {
+    return setSelectedValue(e.target.value);
+  };
   return (
     <Form.Control>
       <Form.Radio

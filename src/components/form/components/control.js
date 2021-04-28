@@ -17,9 +17,12 @@ const Control = ({
 }) => {
   const context = useFieldContext();
 
-  const isIcon = (child) =>
-    child.type === (iconType || Icon) &&
-    (child.props.align === 'left' || child.props.align === 'right');
+  const isIcon = (child) => {
+    return (
+      child.type === (iconType || Icon) &&
+      (child.props.align === 'left' || child.props.align === 'right')
+    );
+  };
 
   const updatedChildren = React.Children.map(children, (child) => {
     if (!isIcon(child) && child.type !== Button) {
@@ -33,10 +36,12 @@ const Control = ({
   const icons = React.Children.toArray(updatedChildren)
     .filter(isIcon)
     .reduce(
-      (acc, icon) => ({
-        iconLeft: acc.iconLeft || icon.props.align === 'left',
-        iconRight: acc.iconRight || icon.props.align === 'right',
-      }),
+      (acc, icon) => {
+        return {
+          iconLeft: acc.iconLeft || icon.props.align === 'left',
+          iconRight: acc.iconRight || icon.props.align === 'right',
+        };
+      },
       { iconLeft: false, iconRight: false },
     );
   return (

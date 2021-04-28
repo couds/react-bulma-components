@@ -4,11 +4,13 @@ import classnames from 'classnames';
 
 import Element from '../../../element';
 
-const ModalCardTitle = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('modal-card-title', className)}>
-    {children}
-  </Element>
-);
+const ModalCardTitle = ({ children, className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('modal-card-title', className)}>
+      {children}
+    </Element>
+  );
+};
 
 ModalCardTitle.propTypes = {
   renderAs: PropTypes.oneOfType([

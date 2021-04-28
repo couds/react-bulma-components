@@ -4,9 +4,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const NavbarDivider = ({ className, ...props }) => (
-  <Element {...props} className={classnames('navbar-divider', className)} />
-);
+const NavbarDivider = ({ className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('navbar-divider', className)} />
+  );
+};
 
 NavbarDivider.propTypes = {
   renderAs: PropTypes.oneOfType([

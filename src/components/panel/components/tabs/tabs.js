@@ -4,9 +4,9 @@ import Tab from './components/tab';
 
 import Element from '../../../element';
 
-const PanelTabs = ({ className, ...props }) => (
-  <Element {...props} className={classnames('panel-tabs', className)} />
-);
+const PanelTabs = ({ className, ...props }) => {
+  return <Element {...props} className={classnames('panel-tabs', className)} />;
+};
 
 PanelTabs.Tab = Tab;
 

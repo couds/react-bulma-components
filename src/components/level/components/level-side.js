@@ -4,14 +4,16 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const LevelSide = ({ className, align, ...props }) => (
-  <Element
-    {...props}
-    className={classnames(className, {
-      [`level-${align}`]: align,
-    })}
-  />
-);
+const LevelSide = ({ className, align, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames(className, {
+        [`level-${align}`]: align,
+      })}
+    />
+  );
+};
 
 LevelSide.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),

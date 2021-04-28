@@ -3,21 +3,23 @@ import React from 'react';
 import { Progress, Block, Message } from '../..';
 import CONSTANTS from '../../constants';
 
-export const Default = (args) => (
-  <>
-    <Block>
-      <Message color="info">
-        <Message.Body>
-          Play with the controls to see how the component behave with differents
-          props
-        </Message.Body>
-      </Message>
-    </Block>
-    <Block>
-      <Progress {...args} />
-    </Block>
-  </>
-);
+export const Default = (args) => {
+  return (
+    <>
+      <Block>
+        <Message color="info">
+          <Message.Body>
+            Play with the controls to see how the component behave with
+            differents props
+          </Message.Body>
+        </Message>
+      </Block>
+      <Block>
+        <Progress {...args} />
+      </Block>
+    </>
+  );
+};
 
 Default.args = {
   value: 30,

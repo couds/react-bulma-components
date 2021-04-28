@@ -14,21 +14,23 @@ const Tabs = ({
   type,
   fullwidth,
   ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('tabs', className, {
-      [`is-${normalizeAlign(align)}`]: align,
-      [`is-${size}`]: size,
-      // Bulma 0.6.2 is not releaset ATM
-      'is-toggle': type === 'toggle-rounded',
-      [`is-${type}`]: type,
-      'is-fullwidth': fullwidth,
-    })}
-  >
-    <ul>{children}</ul>
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('tabs', className, {
+        [`is-${normalizeAlign(align)}`]: align,
+        [`is-${size}`]: size,
+        // Bulma 0.6.2 is not releaset ATM
+        'is-toggle': type === 'toggle-rounded',
+        [`is-${type}`]: type,
+        'is-fullwidth': fullwidth,
+      })}
+    >
+      <ul>{children}</ul>
+    </Element>
+  );
+};
 
 Tabs.Tab = Tab;
 

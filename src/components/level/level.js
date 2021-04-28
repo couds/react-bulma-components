@@ -6,16 +6,18 @@ import LevelItem from './components/level-item';
 
 import Element from '../element';
 
-const Level = ({ children, className, breakpoint, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('level', className, {
-      [`is-${breakpoint}`]: breakpoint,
-    })}
-  >
-    {children}
-  </Element>
-);
+const Level = ({ children, className, breakpoint, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('level', className, {
+        [`is-${breakpoint}`]: breakpoint,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Level.Side = LevelSide;
 

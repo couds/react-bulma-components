@@ -3,9 +3,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const DropdownDivider = ({ className, ...props }) => (
-  <Element {...props} className={classnames('dropdown-divider', className)} />
-);
+const DropdownDivider = ({ className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('dropdown-divider', className)} />
+  );
+};
 
 DropdownDivider.propTypes = {};
 

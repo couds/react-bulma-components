@@ -1,7 +1,9 @@
 import React from 'react';
 import { Pagination } from '../..';
 
-export const Default = (args) => <Pagination {...args} />;
+export const Default = (args) => {
+  return <Pagination {...args} />;
+};
 
 Default.argTypes = {
   showFirstLast: {

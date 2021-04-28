@@ -2,18 +2,20 @@
 import React from 'react';
 import { Box, Image, Block } from '../..';
 
-export const Default = (args) => (
-  <Box>
-    <Block>This text is above the image</Block>
-    <Block>
-      <Image {...args} />
-    </Block>
-    <Block>
-      And this is below and it is where it should be even before the image is
-      loaded
-    </Block>
-  </Box>
-);
+export const Default = (args) => {
+  return (
+    <Box>
+      <Block>This text is above the image</Block>
+      <Block>
+        <Image {...args} />
+      </Block>
+      <Block>
+        And this is below and it is where it should be even before the image is
+        loaded
+      </Block>
+    </Box>
+  );
+};
 
 Default.args = {
   src: 'https://wallpapercave.com/wp/tU89SSy.jpg',

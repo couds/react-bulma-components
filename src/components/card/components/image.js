@@ -4,11 +4,13 @@ import Image from '../../image';
 
 import Element from '../../element';
 
-const CardImage = ({ className, domRef, ...props }) => (
-  <Element domRef={domRef} className={classnames('card-image', className)}>
-    <Image {...props} />
-  </Element>
-);
+const CardImage = ({ className, domRef, ...props }) => {
+  return (
+    <Element domRef={domRef} className={classnames('card-image', className)}>
+      <Image {...props} />
+    </Element>
+  );
+};
 
 CardImage.propTypes = {};
 

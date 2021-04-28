@@ -4,14 +4,16 @@ import classnames from 'classnames';
 
 import Element from '../../../../element';
 
-const PanelTabsTab = ({ className, active, ...props }) => (
-  <Element
-    {...props}
-    className={classnames(className, {
-      'is-active': active,
-    })}
-  />
-);
+const PanelTabsTab = ({ className, active, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames(className, {
+        'is-active': active,
+      })}
+    />
+  );
+};
 
 PanelTabsTab.propTypes = {
   active: PropTypes.bool,

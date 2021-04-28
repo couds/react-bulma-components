@@ -16,9 +16,9 @@ const NavbarItem = ({
 }) => {
   let as = renderAs;
 
-  const dropdown = React.Children.toArray(children).find(
-    (child) => child.type === NavbarDropdown,
-  );
+  const dropdown = React.Children.toArray(children).find((child) => {
+    return child.type === NavbarDropdown;
+  });
 
   if (dropdown && renderAs === 'a') {
     as = 'span';

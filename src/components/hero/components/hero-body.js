@@ -4,9 +4,9 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const HeroBody = ({ className, ...props }) => (
-  <Element {...props} className={classnames(className, 'hero-body')} />
-);
+const HeroBody = ({ className, ...props }) => {
+  return <Element {...props} className={classnames(className, 'hero-body')} />;
+};
 
 HeroBody.defaultProps = {
   renderAs: 'div',

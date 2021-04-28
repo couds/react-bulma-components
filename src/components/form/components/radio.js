@@ -14,25 +14,27 @@ const Radio = ({
   children,
   domRef,
   ...props
-}) => (
-  <Element
-    renderAs="label"
-    domRef={domRef}
-    disabled={disabled}
-    className={classnames('radio', className)}
-    style={style}
-  >
+}) => {
+  return (
     <Element
-      {...props}
-      name={name}
-      checked={checked}
-      type="radio"
-      value={value}
+      renderAs="label"
+      domRef={domRef}
       disabled={disabled}
-    />{' '}
-    {children}
-  </Element>
-);
+      className={classnames('radio', className)}
+      style={style}
+    >
+      <Element
+        {...props}
+        name={name}
+        checked={checked}
+        type="radio"
+        value={value}
+        disabled={disabled}
+      />{' '}
+      {children}
+    </Element>
+  );
+};
 
 Radio.propTypes = {
   /**

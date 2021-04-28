@@ -12,17 +12,19 @@ const Checkbox = ({
   checked,
   domRef,
   ...props
-}) => (
-  <Element
-    renderAs="label"
-    domRef={domRef}
-    disabled={disabled}
-    className={classnames('checkbox', className)}
-    style={style}
-  >
-    <Element type="checkbox" disabled={disabled} {...props} /> {children}
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      renderAs="label"
+      domRef={domRef}
+      disabled={disabled}
+      className={classnames('checkbox', className)}
+      style={style}
+    >
+      <Element type="checkbox" disabled={disabled} {...props} /> {children}
+    </Element>
+  );
+};
 
 Checkbox.propTypes = {
   disabled: PropTypes.bool,

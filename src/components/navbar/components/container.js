@@ -9,19 +9,21 @@ const alignMapper = {
   right: 'end',
 };
 
-const NavbarContainer = ({ className, children, align, ...props }) => (
-  <Element
-    {...props}
-    className={classnames(
-      {
-        [`navbar-${alignMapper[align]}`]: alignMapper[align],
-      },
-      className,
-    )}
-  >
-    {children}
-  </Element>
-);
+const NavbarContainer = ({ className, children, align, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames(
+        {
+          [`navbar-${alignMapper[align]}`]: alignMapper[align],
+        },
+        className,
+      )}
+    >
+      {children}
+    </Element>
+  );
+};
 
 NavbarContainer.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),

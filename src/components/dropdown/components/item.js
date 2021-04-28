@@ -4,18 +4,20 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const DropdownItem = ({ active, children, value, className, ...props }) => (
-  <Element
-    title={value}
-    {...props}
-    role="presentation"
-    className={classnames(className, 'dropdown-item', {
-      'is-active': active,
-    })}
-  >
-    {children}
-  </Element>
-);
+const DropdownItem = ({ active, children, value, className, ...props }) => {
+  return (
+    <Element
+      title={value}
+      {...props}
+      role="presentation"
+      className={classnames(className, 'dropdown-item', {
+        'is-active': active,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 DropdownItem.propTypes = {
   /**

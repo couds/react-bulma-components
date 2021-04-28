@@ -15,19 +15,21 @@ const Hero = ({
   size,
   hasNavbar,
   ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('hero', className, {
-      [`is-${color}`]: color,
-      [`is-${size}`]: size && !hasNavbar,
-      'is-bold': gradient,
-      'is-fullheight-with-navbar': hasNavbar,
-    })}
-  >
-    {children}
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('hero', className, {
+        [`is-${color}`]: color,
+        [`is-${size}`]: size && !hasNavbar,
+        'is-bold': gradient,
+        'is-fullheight-with-navbar': hasNavbar,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Hero.Header = HeroHeader;
 

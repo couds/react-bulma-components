@@ -3,9 +3,11 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const PanelHeader = ({ className, ...props }) => (
-  <Element {...props} className={classnames('panel-heading', className)} />
-);
+const PanelHeader = ({ className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('panel-heading', className)} />
+  );
+};
 
 PanelHeader.propTypes = {};
 

@@ -13,21 +13,23 @@ const Heading = ({
   spaced,
   heading,
   ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames(className, {
-      title: !subtitle && !heading,
-      subtitle,
-      heading,
-      [`is-${size}`]: size,
-      [`has-text-weight-${weight}`]: weight,
-      'is-spaced': spaced && !subtitle,
-    })}
-  >
-    {children}
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      {...props}
+      className={classnames(className, {
+        title: !subtitle && !heading,
+        subtitle,
+        heading,
+        [`is-${size}`]: size,
+        [`has-text-weight-${weight}`]: weight,
+        'is-spaced': spaced && !subtitle,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Heading.propTypes = {
   size: PropTypes.oneOfType([

@@ -39,13 +39,15 @@ const Dropdown = ({
     }
   };
 
-  const onSelect = (selectedValue) => () => {
-    if (onChange) {
-      onChange(selectedValue);
-    }
-    if (closeOnSelect) {
-      close();
-    }
+  const onSelect = (selectedValue) => {
+    return () => {
+      if (onChange) {
+        onChange(selectedValue);
+      }
+      if (closeOnSelect) {
+        close();
+      }
+    };
   };
 
   useEffect(() => {
@@ -89,7 +91,11 @@ const Dropdown = ({
       <div
         className="dropdown-trigger"
         role="presentation"
-        onClick={() => setIsOpen((o) => !o)}
+        onClick={() => {
+          return setIsOpen((o) => {
+            return !o;
+          });
+        }}
       >
         <Button color={color}>
           <span>{current}</span>

@@ -8,11 +8,13 @@ import ModalCardTitle from './title';
 
 import Element from '../../../element';
 
-const ModalCard = ({ className, onClose, children, ...props }) => (
-  <Element {...props} className={classnames('modal-card', className)}>
-    {children}
-  </Element>
-);
+const ModalCard = ({ className, onClose, children, ...props }) => {
+  return (
+    <Element {...props} className={classnames('modal-card', className)}>
+      {children}
+    </Element>
+  );
+};
 
 ModalCard.Header = ModalCardHeader;
 

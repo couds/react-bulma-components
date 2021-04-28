@@ -5,9 +5,9 @@ import MenuList from './components/list';
 
 import Element from '../element';
 
-const Menu = ({ className, ...props }) => (
-  <Element {...props} className={classnames('menu', className)} />
-);
+const Menu = ({ className, ...props }) => {
+  return <Element {...props} className={classnames('menu', className)} />;
+};
 
 Menu.List = MenuList;
 

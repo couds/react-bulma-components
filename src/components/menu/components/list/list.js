@@ -6,12 +6,14 @@ import MenuListItem from './components/item';
 
 import Element from '../../../element';
 
-const MenuList = ({ className, title, ...props }) => (
-  <>
-    {title && <p className="menu-label">{title}</p>}
-    <Element className={classnames('menu-list', className)} {...props} />
-  </>
-);
+const MenuList = ({ className, title, ...props }) => {
+  return (
+    <>
+      {title && <p className="menu-label">{title}</p>}
+      <Element className={classnames('menu-list', className)} {...props} />
+    </>
+  );
+};
 
 MenuList.Item = MenuListItem;
 

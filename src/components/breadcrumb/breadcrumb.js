@@ -11,18 +11,20 @@ const Breadcrumb = ({
   align,
   children,
   ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('breadcrumb', className, {
-      [`has-${separator}-separator`]: separator,
-      [`is-${size}`]: size,
-      [`is-${align}`]: align,
-    })}
-  >
-    <ul>{children}</ul>
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('breadcrumb', className, {
+        [`has-${separator}-separator`]: separator,
+        [`is-${size}`]: size,
+        [`is-${align}`]: align,
+      })}
+    >
+      <ul>{children}</ul>
+    </Element>
+  );
+};
 
 Breadcrumb.Item = BreadcrumbItem;
 

@@ -4,16 +4,18 @@ import classNames from 'classnames';
 
 import Element from '../../element';
 
-const BreadcrumbItem = ({ className, active, children, ...props }) => (
-  <Element
-    {...props}
-    className={classNames(className, {
-      'is-active': active,
-    })}
-  >
-    {children}
-  </Element>
-);
+const BreadcrumbItem = ({ className, active, children, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classNames(className, {
+        'is-active': active,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 BreadcrumbItem.propTypes = {
   active: PropTypes.bool,

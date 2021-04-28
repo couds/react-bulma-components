@@ -9,14 +9,16 @@ import Tabs from './components/tabs';
 
 import Element from '../element';
 
-const Panel = ({ color, className, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('panel', className, {
-      [`is-${color}`]: color,
-    })}
-  />
-);
+const Panel = ({ color, className, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('panel', className, {
+        [`is-${color}`]: color,
+      })}
+    />
+  );
+};
 
 Panel.Header = Header;
 

@@ -6,17 +6,19 @@ import MessageHeader from './components/header';
 
 import Element from '../element';
 
-const Message = ({ children, className, color, size, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('message', className, {
-      [`is-${color}`]: color,
-      [`is-${size}`]: size,
-    })}
-  >
-    {children}
-  </Element>
-);
+const Message = ({ children, className, color, size, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('message', className, {
+        [`is-${color}`]: color,
+        [`is-${size}`]: size,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Message.Body = MessageBody;
 

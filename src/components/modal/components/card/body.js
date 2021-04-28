@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Element from '../../../element';
 
-const ModalCardBody = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('modal-card-body', className)}>
-    {children}
-  </Element>
-);
+const ModalCardBody = ({ children, className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('modal-card-body', className)}>
+      {children}
+    </Element>
+  );
+};
 
 ModalCardBody.propTypes = {
   renderAs: PropTypes.oneOfType([

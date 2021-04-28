@@ -12,19 +12,21 @@ const Tile = ({
   size,
   color,
   ...props
-}) => (
-  <Element
-    {...props}
-    className={classnames('tile', className, {
-      [`is-${kind}`]: kind,
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
-      'is-vertical': vertical,
-    })}
-  >
-    {children}
-  </Element>
-);
+}) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('tile', className, {
+        [`is-${kind}`]: kind,
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-vertical': vertical,
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Tile.propTypes = {
   kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),

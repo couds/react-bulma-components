@@ -2,14 +2,16 @@
 import React from 'react';
 import Heading from './heading';
 
-export const Default = ({ titleSize, titleWeight, spaced }) => (
-  <>
-    <Heading spaced={spaced} size={titleSize} weight={titleWeight}>
-      Title
-    </Heading>
-    <Heading subtitle>Subtitle</Heading>
-  </>
-);
+export const Default = ({ titleSize, titleWeight, spaced }) => {
+  return (
+    <>
+      <Heading spaced={spaced} size={titleSize} weight={titleWeight}>
+        Title
+      </Heading>
+      <Heading subtitle>Subtitle</Heading>
+    </>
+  );
+};
 
 Default.argTypes = {
   titleSize: {

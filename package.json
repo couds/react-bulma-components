@@ -62,7 +62,7 @@
   "bugs": {
     "url": "https://github.com/couds/react-bulma-components/issues"
   },
-  "homepage": "https://github.com/couds/react-bulma-components#readme",
+  "homepage": "https://react-bulma.dev",
   "dependencies": {
     "classnames": "2.3.1"
   },

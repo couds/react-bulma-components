@@ -35,7 +35,9 @@ const Image = ({
         className={classnames({
           'is-rounded': rounded,
         })}
-        onError={() => state.src !== fallback && setState({ src: fallback })}
+        onError={() => {
+          return state.src !== fallback && setState({ src: fallback });
+        }}
         src={state.src}
         alt={alt}
       />

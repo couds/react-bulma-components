@@ -3,11 +3,13 @@ import classnames from 'classnames';
 
 import Element from '../../element';
 
-const LevelItem = ({ children, className, ...props }) => (
-  <Element {...props} className={classnames('level-item', className, {})}>
-    {children}
-  </Element>
-);
+const LevelItem = ({ children, className, ...props }) => {
+  return (
+    <Element {...props} className={classnames('level-item', className, {})}>
+      {children}
+    </Element>
+  );
+};
 
 LevelItem.propTypes = {};
 

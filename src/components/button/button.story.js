@@ -5,30 +5,32 @@ import { Button, Box } from '../..';
 
 import CONSTANTS from '../../constants';
 
-export const Default = ({ hasAddons, groupSize, align, ...args }) => (
-  <>
-    <Box>
-      <Button {...args}>Button</Button>
-    </Box>
-    <Box>
-      <Button.Group
-        hasAddons={hasAddons}
-        align={align === 'default' ? '' : align}
-        size={groupSize === 'default' ? '' : groupSize}
-      >
-        <Button renderAs="span" color="success">
-          Save changes
-        </Button>
-        <Button renderAs="span" color="info">
-          Save and continue
-        </Button>
-        <Button renderAs="span" color="danger">
-          Cancel
-        </Button>
-      </Button.Group>
-    </Box>
-  </>
-);
+export const Default = ({ hasAddons, groupSize, align, ...args }) => {
+  return (
+    <>
+      <Box>
+        <Button {...args}>Button</Button>
+      </Box>
+      <Box>
+        <Button.Group
+          hasAddons={hasAddons}
+          align={align === 'default' ? '' : align}
+          size={groupSize === 'default' ? '' : groupSize}
+        >
+          <Button renderAs="span" color="success">
+            Save changes
+          </Button>
+          <Button renderAs="span" color="info">
+            Save and continue
+          </Button>
+          <Button renderAs="span" color="danger">
+            Cancel
+          </Button>
+        </Button.Group>
+      </Box>
+    </>
+  );
+};
 
 Default.argTypes = {
   hasAddons: {

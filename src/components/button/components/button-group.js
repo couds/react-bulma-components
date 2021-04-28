@@ -4,16 +4,18 @@ import classnames from 'classnames';
 import Element from '../../element';
 import { normalizeAlign } from '../../../services/normalizer';
 
-const ButtonGroup = ({ className, hasAddons, align, size, ...props }) => (
-  <Element
-    {...props}
-    className={classnames('buttons', className, {
-      'has-addons': hasAddons,
-      [`is-${[normalizeAlign(align)]}`]: align,
-      [`are-${size}`]: size,
-    })}
-  />
-);
+const ButtonGroup = ({ className, hasAddons, align, size, ...props }) => {
+  return (
+    <Element
+      {...props}
+      className={classnames('buttons', className, {
+        'has-addons': hasAddons,
+        [`is-${[normalizeAlign(align)]}`]: align,
+        [`are-${size}`]: size,
+      })}
+    />
+  );
+};
 
 ButtonGroup.propTypes = {
   hasAddons: PropTypes.bool,
