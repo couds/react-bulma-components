@@ -2,7 +2,6 @@ import { BulmaComponent } from '..';
 import { Color, Size } from '..';
 
 interface ButtonProps {
-  onClick?: () => void;
   color?: Color
   | 'ghost'
   | 'black-bis'
