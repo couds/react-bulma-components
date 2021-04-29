@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-components",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "React components for Bulma framework",
   "main": "./lib/index.js",
   "exports": {
