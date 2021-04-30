@@ -2,7 +2,7 @@ import { BulmaComponent } from '..';
 import ImageProps from '../image';
 
 declare const Card: BulmaComponent<{}, 'div'> & {
-  Image: BulmaComponent<typeof ImageProps, 'figure'>;
+  Image: BulmaComponent<ImageProps, 'figure'>;
   Content: BulmaComponent<{}, 'div'>;
   Header: BulmaComponent<{}, 'div'> & {
     Title: BulmaComponent<{}, 'div'>;
