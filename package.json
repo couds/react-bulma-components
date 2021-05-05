@@ -2,23 +2,17 @@
   "name": "react-bulma-components",
   "version": "4.0.2",
   "description": "React components for Bulma framework",
-  "main": "./lib/index.js",
-  "exports": {
-    "import": "./lib",
-    "require": "./cjs",
-    "default": "./lib"
-  },
-  "type": "module",
+  "main": "./cjs/index.js",
   "types": "./src/index.d.ts",
   "sideEffects": false,
   "files": [
-    "lib",
+    "esm",
     "cjs",
     "index.esm.mjs",
     "**/*.d.ts"
   ],
   "directories": {
-    "lib": "lib",
+    "esm": "esm",
     "cjs": "cjs"
   },
   "scripts": {
@@ -28,13 +22,13 @@
     "coveralls": "cat ./.coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
     "docs": "cd documentation && npm start",
-    "clean:build": "rm -rf lib cjs",
+    "clean:build": "rm -rf esm cjs",
     "build-storybook-static": "build-storybook -c .storybook -o .out",
     "prepublish": "npm run clean:build && npm run build-all",
     "deploy-storybook": "storybook-to-ghpages",
     "babel": "babel ./src --source-maps --ignore \"**/__test__,**/*.story.js\"",
     "build-commonjs": "TARGET=commonjs npm run babel -- --out-dir ./cjs ",
-    "build-esm": "npm run babel -- --out-dir ./lib ",
+    "build-esm": "npm run babel -- --out-dir ./esm",
     "build-all": "npm run build-commonjs && npm run build-esm",
     "upgrade-dependencies": "npx npm-check --update"
   },
