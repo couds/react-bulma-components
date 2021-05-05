@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   setupFilesAfterEnv: ['./__test__/setup.js'],
   rootDir: 'src',
   testMatch: ['**/*.test.js'],
