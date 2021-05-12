@@ -68,7 +68,7 @@ typings/
 out*
 
 /reports
-/lib
+/esm
 /cjs
 .coverage
 .vscode
