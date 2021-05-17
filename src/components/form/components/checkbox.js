@@ -21,7 +21,7 @@ const Checkbox = ({
       className={classnames('checkbox', className)}
       style={style}
     >
-      <Element type="checkbox" disabled={disabled} {...props} /> {children}
+      <Element type="checkbox" disabled={disabled} checked={checked} {...props} /> {children}
     </Element>
   );
 };
