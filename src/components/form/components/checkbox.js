@@ -9,7 +9,6 @@ const Checkbox = ({
   style,
   disabled,
   children,
-  checked,
   domRef,
   ...props
 }) => {
