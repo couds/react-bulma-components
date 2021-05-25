@@ -16,4 +16,8 @@ describe('Icon component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should only enable icon-text class if text prop is enabled', () => {
+    const component = renderer.create(<Icon text icon="bars" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

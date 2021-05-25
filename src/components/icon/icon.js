@@ -8,7 +8,8 @@ const Icon = ({ size, color, className, align, text, ...props }) => {
   return (
     <Element
       {...props}
-      className={classnames('icon', className, {
+      className={classnames(className, {
+        icon: !text,
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color,
