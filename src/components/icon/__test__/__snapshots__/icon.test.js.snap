@@ -4,7 +4,7 @@ exports[`Icon component Should Exist 1`] = `[Function]`;
 
 exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 <span
-  className="other-class icon"
+  className="icon other-class"
   icon="bars"
 />
 `;
@@ -16,9 +16,13 @@ exports[`Icon component Should have box classname 1`] = `
 />
 `;
 
-exports[`Icon component Should only enable icon-text class if text prop is enabled 1`] = `
+exports[`Icon component Should render wrapped on icon-text class 1`] = `
 <span
   className="icon-text"
-  icon="bars"
-/>
+>
+  <span
+    className="icon"
+    icon="bars"
+  />
+</span>
 `;
