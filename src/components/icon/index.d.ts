@@ -1,4 +1,4 @@
-import { BulmaComponentWithoutRenderAs } from '..';
+import { BulmaComponentWithoutRenderAs, BulmaComponent } from '..';
 import { Color, Size } from '..';
 
 interface IconProps {
@@ -9,6 +9,8 @@ interface IconProps {
   text?: Boolean;
 }
 
-declare const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'>;
+declare const Icon: BulmaComponentWithoutRenderAs<IconProps, 'span'> & {
+  Text: BulmaComponent<{}, 'span'>;
+};
 
 export default Icon;

@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Text from './components/text';
 
 import Element from '../element';
 
-const Icon = ({ size, color, className, align, text, ...props }) => {
+const Icon = ({ size, color, className, align, ...props }) => {
   return (
     <Element
       {...props}
-      className={classnames(className, {
-        icon: !text,
+      className={classnames('icon', className, {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color,
-        'icon-text': text,
       })}
     />
   );
@@ -51,5 +50,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   renderAs: 'span',
 };
+
+Icon.Text = Text;
 
 export default Icon;
