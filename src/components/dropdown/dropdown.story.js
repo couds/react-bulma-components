@@ -85,6 +85,12 @@ Overview.argTypes = {
       type: 'boolean',
     },
   },
+  disabled: {
+    defaultValue: false,
+    control: {
+      type: 'boolean',
+    },
+  },
 };
 
 export const Controlled = (args) => {
