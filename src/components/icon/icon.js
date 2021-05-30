@@ -5,7 +5,12 @@ import Text from './components/text';
 
 import Element from '../element';
 
-const Icon = ({ size, color, className, align, ...props }) => {
+const Icon = ({ size, color, className, align, text, ...props }) => {
+  if (text !== undefined) {
+    console.warn(
+      '[Deprecation] Text prop for Icon Component its deprecated, please use Icon.Text Component instead',
+    );
+  }
   return (
     <Element
       {...props}
@@ -13,6 +18,7 @@ const Icon = ({ size, color, className, align, ...props }) => {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color,
+        'icon-text': text,
       })}
     />
   );
