@@ -22,10 +22,6 @@ const Select = ({
   domRef,
   ...props
 }) => {
-  /**
-   * Return default value for value prop
-   */
-  const defaultValue = multiple ? [] : '';
   const context = useFieldContext();
   const calculatedSize = size || context.size;
 
@@ -47,7 +43,7 @@ const Select = ({
           [`is-${normalizeStatus(status)}`]: status,
         })}
         multiple={multiple}
-        value={value !== undefined ? value : defaultValue}
+        value={value}
         disabled={disabled}
         name={name}
       >

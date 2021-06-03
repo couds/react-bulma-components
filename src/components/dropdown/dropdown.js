@@ -21,6 +21,7 @@ const Dropdown = ({
   closeOnSelect,
   icon,
   domRef,
+  disabled,
   ...props
 }) => {
   const ref = useRef(domRef);
@@ -92,12 +93,15 @@ const Dropdown = ({
         className="dropdown-trigger"
         role="presentation"
         onClick={() => {
-          return setIsOpen((o) => {
-            return !o;
+          if (disabled) {
+            return;
+          }
+          setIsOpen((open) => {
+            return !open;
           });
         }}
       >
-        <Button color={color}>
+        <Button disabled={disabled} color={color}>
           <span>{current}</span>
           {icon}
         </Button>
@@ -139,6 +143,7 @@ Dropdown.propTypes = {
     ]),
     PropTypes.string,
   ]),
+  disabled: PropTypes.bool,
   /**
    * Whether the dropdown should align to the right side.
    */
