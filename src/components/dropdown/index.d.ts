@@ -13,7 +13,7 @@ interface DropdownProps<T> {
   up?: boolean;
   align?: 'right';
   icon?: React.ReactNode;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 interface DropdownItemProps<T> {
