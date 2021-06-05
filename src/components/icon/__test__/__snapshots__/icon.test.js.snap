@@ -4,7 +4,7 @@ exports[`Icon component Should Exist 1`] = `[Function]`;
 
 exports[`Icon component Should concat Bulma class with classes in props 1`] = `
 <span
-  className="icon other-class"
+  className="other-class icon"
   icon="bars"
 />
 `;
