@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Text from './components/text';
 
 import Element from '../element';
 
 const Icon = ({ size, color, className, align, text, ...props }) => {
+  if (text !== undefined) {
+    console.warn(
+      '[Deprecation] Text prop for Icon Component its deprecated, please use Icon.Text Component instead',
+    );
+  }
   return (
     <Element
       {...props}
@@ -51,5 +57,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   renderAs: 'span',
 };
+
+Icon.Text = Text;
 
 export default Icon;
