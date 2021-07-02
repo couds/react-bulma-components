@@ -56,7 +56,7 @@ const Image = ({
         src={state.src}
         alt={alt}
         crossOrigin={crossOrigin}
-        height={height ? `${height}px` : null}
+        height={height}
         ismap={ismap}
         loading={loading}
         longdesc={longdesc}
@@ -64,7 +64,7 @@ const Image = ({
         sizes={sizes}
         srcSet={srcSet}
         useMap={useMap}
-        width={width ? `${width}px` : null}
+        width={width}
       />
     </Element>
   );
@@ -74,7 +74,7 @@ Image.propTypes = {
   fullwidth: PropTypes.bool,
   alt: PropTypes.string,
   crossOrigin: PropTypes.oneOf(['anonymous', 'use-credentials']),
-  height: PropTypes.number,
+  height: PropTypes.string,
   ismap: PropTypes.bool,
   loading: PropTypes.oneOf(['eager', 'lazy']),
   longdesc: PropTypes.string,
@@ -89,7 +89,7 @@ Image.propTypes = {
   src: PropTypes.string.isRequired,
   srcSet: PropTypes.string,
   useMap: PropTypes.string,
-  width: PropTypes.number,
+  width: PropTypes.string,
   rounded: PropTypes.bool,
   size: PropTypes.oneOfType([
     PropTypes.oneOf([
