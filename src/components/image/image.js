@@ -121,6 +121,9 @@ Image.propTypes = {
     PropTypes.string,
   ]),
   fallback: PropTypes.string,
+  /**
+   * Applies additional classes to the `img` tag (standard `className` applies to root element)
+   */
   imageClassName: PropTypes.string,
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
