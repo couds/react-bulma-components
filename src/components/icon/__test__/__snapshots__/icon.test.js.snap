@@ -16,9 +16,13 @@ exports[`Icon component Should have box classname 1`] = `
 />
 `;
 
-exports[`Icon component Should only enable icon-text class if text prop is enabled 1`] = `
+exports[`Icon component Should render wrapped on icon-text class 1`] = `
 <span
   className="icon-text"
-  icon="bars"
-/>
+>
+  <span
+    className="icon"
+    icon="bars"
+  />
+</span>
 `;
