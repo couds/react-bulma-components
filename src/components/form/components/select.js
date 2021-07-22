@@ -20,6 +20,7 @@ const Select = ({
   children,
   name,
   domRef,
+  fullwidth,
   ...props
 }) => {
   const context = useFieldContext();
@@ -31,6 +32,7 @@ const Select = ({
       className={classnames('select', className, {
         [`is-${calculatedSize}`]: calculatedSize,
         [`is-${color}`]: color,
+        'is-expanded': fullwidth,
         'is-loading': loading,
         'is-multiple': multiple,
         'is-rounded': rounded,
