@@ -32,7 +32,7 @@ const Select = ({
       className={classnames('select', className, {
         [`is-${calculatedSize}`]: calculatedSize,
         [`is-${color}`]: color,
-        'is-expanded': fullwidth,
+        'is-fullwidth': fullwidth,
         'is-loading': loading,
         'is-multiple': multiple,
         'is-rounded': rounded,
