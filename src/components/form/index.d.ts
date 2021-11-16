@@ -50,6 +50,7 @@ interface SelectProps<T> {
   loading?: boolean;
   status?: 'focus' | 'hover';
   multiple?: boolean;
+  fullwidth?: boolean;
 }
 
 interface CheckboxProps {
