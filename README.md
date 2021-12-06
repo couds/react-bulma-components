@@ -18,7 +18,7 @@ React components for [Bulma](http://bulma.io/) (v0.9.2) UI compatible with most 
 
 ## Documentation
 
-You can find the documentation in https://react-bulma.dev/en/storybook
+You can find the documentation in https://couds.github.io/react-bulma-components/
 
 Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used
 
