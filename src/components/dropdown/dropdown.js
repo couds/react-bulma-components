@@ -22,6 +22,7 @@ const Dropdown = ({
   icon,
   domRef,
   disabled,
+  menuId,
   ...props
 }) => {
   const ref = useRef(domRef);
@@ -101,12 +102,17 @@ const Dropdown = ({
           });
         }}
       >
-        <Button disabled={disabled} color={color}>
+        <Button
+          disabled={disabled}
+          color={color}
+          aria-haspopup
+          aria-controls={menuId}
+        >
           <span>{current}</span>
           {icon}
         </Button>
       </div>
-      <div className="dropdown-menu" id="dropdown-menu" role="menu">
+      <div className="dropdown-menu" id={menuId} role="menu">
         <div className="dropdown-content">{childrenArray}</div>
       </div>
     </Element>
@@ -174,13 +180,15 @@ Dropdown.propTypes = {
    */
   icon: PropTypes.node,
   /**
-   * Additional CSS classes to pass to `<Dropdown />`.
-   * They will sit alongside pre-applied bulma classes.
+   * Specify the id of the menu component.
+   * Default is "dropdown-menu".
    */
+  menuId: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   closeOnSelect: true,
+  menuId: 'dropdown-menu',
 };
 
 export default Dropdown;

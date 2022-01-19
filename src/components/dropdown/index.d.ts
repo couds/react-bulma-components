@@ -14,6 +14,7 @@ interface DropdownProps<T> {
   align?: 'right';
   icon?: React.ReactNode;
   disabled?: boolean;
+  menuId?: string;
 }
 
 interface DropdownItemProps<T> {

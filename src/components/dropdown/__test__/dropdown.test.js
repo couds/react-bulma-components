@@ -178,4 +178,12 @@ describe('Dropdown component', () => {
     );
     expect(component.find('span').text()).toEqual('Item');
   });
+  it('Should pass specified ID to the menu component', () => {
+    const component = shallow(
+      <Dropdown menuId="test-id">
+        <Dropdown.Item value="value">Item</Dropdown.Item>
+      </Dropdown>,
+    );
+    expect(component).toMatchSnapshot();
+  });
 });
