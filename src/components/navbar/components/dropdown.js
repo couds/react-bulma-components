@@ -36,7 +36,7 @@ NavbarDropdown.propTypes = {
 };
 
 NavbarDropdown.defaultProps = {
-  renderAs: 'span',
+  renderAs: 'div',
 };
 
 export default NavbarDropdown;

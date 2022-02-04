@@ -21,7 +21,7 @@ const NavbarItem = ({
   });
 
   if (dropdown && renderAs === 'a') {
-    as = 'span';
+    as = 'div';
   }
   return (
     <Element
