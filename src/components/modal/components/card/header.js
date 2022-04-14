@@ -12,7 +12,7 @@ const ModalCardHead = ({ children, className, showClose, ...props }) => {
   return (
     <Element {...props} className={classnames('modal-card-head', className)}>
       {children}
-      {showClose && <Button remove onClick={onClose} />}
+      {showClose && <Button remove onClick={onClose} aria-label="Close this modal" />}
     </Element>
   );
 };
