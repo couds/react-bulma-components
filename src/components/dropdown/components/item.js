@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Element from '../../element';
+import DropdownContext from './dropdown-context';
 
 const DropdownItem = ({ active, children, value, className, ...props }) => {
+  const context = useContext(DropdownContext);
   return (
     <Element
       title={value}
+      onClick={() => {
+        context.onSelect(value);
+      }}
       {...props}
       role="presentation"
       className={classnames(className, 'dropdown-item', {
-        'is-active': active,
+        'is-active': active || context.value === value,
       })}
     >
       {children}

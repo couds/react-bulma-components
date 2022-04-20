@@ -6,6 +6,7 @@ import DropdownDivider from './components/divider';
 import Button from '../button';
 
 import Element from '../element';
+import DropdownContext from './components/dropdown-context';
 
 const Dropdown = ({
   className,
@@ -28,7 +29,6 @@ const Dropdown = ({
   const ref = useRef(domRef);
   const [isOpen, setIsOpen] = useState(false);
   const close = (evt) => {
-    // IDK yet how to test using the ref in enzime
     // istanbul ignore if
     if (
       hoverable ||
@@ -59,63 +59,54 @@ const Dropdown = ({
     };
   }, []);
 
-  let current = label;
-
-  const childrenArray = React.Children.map(children, (child, i) => {
-    if (
-      child.type === DropdownItem &&
-      ((i === 0 && !label) || child.props.value === value)
-    ) {
-      current = child.props.children;
+  const currentLabel = React.Children.toArray(children)
+    .filter(child => child.type === DropdownItem)
+    .reduce((current, child, i) => {
+    if ((i === 0 && !current) || child.props.value === value) {
+      return child.props.children;
     }
-    return React.cloneElement(
-      child,
-      child.type === DropdownItem
-        ? {
-            active: child.props.value === value,
-            onClick: onSelect(child.props.value),
-          }
-        : {},
-    );
-  });
+    return current
+  }, label);
 
   return (
-    <Element
-      {...props}
-      domRef={ref}
-      className={classnames('dropdown', className, {
-        'is-active': isOpen,
-        'is-up': up,
-        'is-right': right || align === 'right',
-        'is-hoverable': hoverable,
-      })}
-    >
-      <div
-        className="dropdown-trigger"
-        role="presentation"
-        onClick={() => {
-          if (disabled) {
-            return;
-          }
-          setIsOpen((open) => {
-            return !open;
-          });
-        }}
+    <DropdownContext.Provider value={{ onSelect, value}}>
+      <Element
+        {...props}
+        domRef={ref}
+        className={classnames('dropdown', className, {
+          'is-active': isOpen,
+          'is-up': up,
+          'is-right': right || align === 'right',
+          'is-hoverable': hoverable,
+        })}
       >
-        <Button
-          disabled={disabled}
-          color={color}
-          aria-haspopup
-          aria-controls={menuId}
+        <div
+          className="dropdown-trigger"
+          role="presentation"
+          onClick={() => {
+            if (disabled) {
+              return;
+            }
+            setIsOpen((open) => {
+              return !open;
+            });
+          }}
         >
-          <span>{current}</span>
-          {icon}
-        </Button>
-      </div>
-      <div className="dropdown-menu" id={menuId} role="menu">
-        <div className="dropdown-content">{childrenArray}</div>
-      </div>
-    </Element>
+          <Button
+            disabled={disabled}
+            color={color}
+            aria-haspopup
+            aria-controls={menuId}
+          >
+            <span>{currentLabel}</span>
+            {icon}
+          </Button>
+        </div>
+        <div className="dropdown-menu" id={menuId} role="menu">
+          <div className="dropdown-content">{children}</div>
+        </div>
+      </Element>
+    </DropdownContext.Provider>
   );
 };
 
