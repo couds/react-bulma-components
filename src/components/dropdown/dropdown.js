@@ -24,16 +24,15 @@ const Dropdown = ({
   domRef,
   disabled,
   menuId,
+  fullwidth,
   ...props
 }) => {
+  const style = fullwidth ? { width: '100%' } : undefined;
   const ref = useRef(domRef);
   const [isOpen, setIsOpen] = useState(false);
   const close = (evt) => {
     // istanbul ignore if
-    if (
-      hoverable ||
-      (evt && ref && ref.current && ref.current.contains(evt.target))
-    ) {
+    if (hoverable || (evt && ref.current && ref.current.contains(evt.target))) {
       return;
     }
     if (ref.current) {
@@ -42,14 +41,12 @@ const Dropdown = ({
   };
 
   const onSelect = (selectedValue) => {
-    return () => {
-      if (onChange) {
-        onChange(selectedValue);
-      }
-      if (closeOnSelect) {
-        close();
-      }
-    };
+    if (onChange) {
+      onChange(selectedValue);
+    }
+    if (closeOnSelect) {
+      close();
+    }
   };
 
   useEffect(() => {
@@ -60,16 +57,18 @@ const Dropdown = ({
   }, []);
 
   const currentLabel = React.Children.toArray(children)
-    .filter(child => child.type === DropdownItem)
+    .filter((child) => {
+      return child.type === DropdownItem;
+    })
     .reduce((current, child, i) => {
-    if ((i === 0 && !current) || child.props.value === value) {
-      return child.props.children;
-    }
-    return current
-  }, label);
+      if ((i === 0 && !current) || child.props.value === value) {
+        return child.props.children;
+      }
+      return current;
+    }, label);
 
   return (
-    <DropdownContext.Provider value={{ onSelect, value}}>
+    <DropdownContext.Provider value={{ onSelect, value }}>
       <Element
         {...props}
         domRef={ref}
@@ -83,6 +82,7 @@ const Dropdown = ({
         <div
           className="dropdown-trigger"
           role="presentation"
+          style={style}
           onClick={() => {
             if (disabled) {
               return;
@@ -97,12 +97,14 @@ const Dropdown = ({
             color={color}
             aria-haspopup
             aria-controls={menuId}
+            fullwidth={fullwidth}
+            style={fullwidth ? { justifyContent: 'space-between' } : undefined}
           >
             <span>{currentLabel}</span>
             {icon}
           </Button>
         </div>
-        <div className="dropdown-menu" id={menuId} role="menu">
+        <div className="dropdown-menu" id={menuId} role="menu" style={style}>
           <div className="dropdown-content">{children}</div>
         </div>
       </Element>

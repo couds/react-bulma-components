@@ -91,37 +91,51 @@ Overview.argTypes = {
       type: 'boolean',
     },
   },
-};
-
-export const Controlled = (args) => {
-  const [selected, setSelected] = useState('');
-  return (
-    <Dropdown {...args} value={selected} onChange={setSelected} color="info">
-      <Dropdown.Item renderAs="a" value="item">
-        Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item renderAs="a" value="other">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item renderAs="a" value="active">
-        Active Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Item renderAs="a" value="other 2">
-        Other Dropdown item
-      </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item renderAs="a" value="divider">
-        With divider
-      </Dropdown.Item>
-    </Dropdown>
-  );
-};
-
-Controlled.argTypes = {
-  hoverable: {
+  fullwidth: {
     defaultValue: false,
     control: {
       type: 'boolean',
     },
   },
 };
+
+export const Controlled = (args) => {
+  const [selected, setSelected] = useState('');
+  return (
+    <Box
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 600,
+      }}
+    >
+      <Dropdown
+        {...args}
+        value={selected}
+        style={{ width: 320 }}
+        onChange={setSelected}
+        icon={icon}
+      >
+        <Dropdown.Item renderAs="a" value="item">
+          Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="other">
+          Other Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="active">
+          Active Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Item renderAs="a" value="other 2">
+          Other Dropdown item
+        </Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item renderAs="a" value="divider">
+          With divider
+        </Dropdown.Item>
+      </Dropdown>
+    </Box>
+  );
+};
+
+Controlled.argTypes = Overview.argTypes;
