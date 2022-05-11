@@ -4,7 +4,7 @@ import { Size } from '..';
 interface BreadcrumbProps {
   separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
   size?: Size;
-  align?: 'right' | 'center';
+  align?: 'right' | 'centered';
 }
 
 interface BreadcrumbItemProps {
