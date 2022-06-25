@@ -32,6 +32,17 @@ describe('Field component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should have field-label classname with normal size', () => {
+    const component = renderer.create(
+      <Field.Label size="normal">
+        <p className="bd-notification is-success">
+          <p>Default</p>
+          <p>Container</p>
+        </p>
+      </Field.Label>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should have field-body classname', () => {
     const component = renderer.create(
       <Field.Body>

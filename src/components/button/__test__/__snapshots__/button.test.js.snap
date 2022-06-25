@@ -102,9 +102,23 @@ exports[`Button component Should be a Large Primary Button 1`] = `
 />
 `;
 
+exports[`Button component Should be a Normal Primary Button 1`] = `
+<button
+  className="is-primary is-normal button"
+  tabIndex={0}
+/>
+`;
+
 exports[`Button component Should be a Primary Button 1`] = `
 <button
   className="is-primary button"
+  tabIndex={0}
+/>
+`;
+
+exports[`Button component Should be a Responsive Primary Button 1`] = `
+<button
+  className="is-primary is-responsive button"
   tabIndex={0}
 />
 `;

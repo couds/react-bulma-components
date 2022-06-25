@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Label component Should be normal 1`] = `
+<label
+  className="label is-normal"
+>
+  Test 
+  <a>
+    Give me
+  </a>
+</label>
+`;
+
 exports[`Label component Should concat classname in props with Bulma classname 1`] = `
 <label
   className="label other-class this-is-a-test"

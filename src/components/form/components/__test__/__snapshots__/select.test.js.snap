@@ -79,6 +79,27 @@ exports[`Select component Should be loading 1`] = `
 </div>
 `;
 
+exports[`Select component Should be normal 1`] = `
+<div
+  className="select is-normal is-danger is-multiple"
+>
+  <select
+    disabled={true}
+    multiple={true}
+  >
+    <option>
+      1
+    </option>
+    <option>
+      2
+    </option>
+    <option>
+      3
+    </option>
+  </select>
+</div>
+`;
+
 exports[`Select component Should be rounded 1`] = `
 <div
   className="select is-rounded"

@@ -10,6 +10,10 @@ describe('Textarea component', () => {
     const component = renderer.create(<Textarea />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be normal', () => {
+    const component = renderer.create(<Textarea size="normal" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Textarea className="other-class this-is-a-test" />,

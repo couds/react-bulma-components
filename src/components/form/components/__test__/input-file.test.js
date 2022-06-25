@@ -30,9 +30,9 @@ describe('Dropdown component', () => {
     expect(InputFile).toMatchSnapshot();
   });
 
-  it('Should be centered', () => {
+  it('Should be centered and normal', () => {
     const component = renderer.create(
-      <InputFile filename="test.js" align="center" />,
+      <InputFile filename="test.js" align="center" size="normal" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

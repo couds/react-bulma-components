@@ -16,3 +16,20 @@ exports[`Content component Should have content classname 1`] = `
   </p>
 </div>
 `;
+
+exports[`Content component Should have content classname with normal size 1`] = `
+<div
+  className="content is-normal"
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;

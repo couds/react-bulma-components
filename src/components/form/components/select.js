@@ -60,7 +60,7 @@ Select.propTypes = {
    * Adjusts the size of this component.
    */
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
     PropTypes.string,
   ]),
   /**

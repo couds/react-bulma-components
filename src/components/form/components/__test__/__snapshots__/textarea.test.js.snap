@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Textarea component Should be normal 1`] = `
+<textarea
+  className="textarea is-normal"
+/>
+`;
+
 exports[`Textarea component Should concat classname in props with Bulma classname 1`] = `
 <textarea
   className="textarea other-class this-is-a-test"

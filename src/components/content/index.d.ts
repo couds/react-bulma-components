@@ -1,8 +1,7 @@
-import { BulmaComponent } from '..';
-import { Size } from '..';
+import { BulmaComponent, Size } from '..';
 
 interface ContentProps {
-  size?: Size;
+  size?: Size & 'normal';
 }
 
 declare const Content: BulmaComponent<ContentProps, 'div'>;

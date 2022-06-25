@@ -14,6 +14,14 @@ describe('Label component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be normal', () => {
+    const component = renderer.create(
+      <Label size="normal">
+        Test <a>Give me</a>
+      </Label>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should concat classname in props with Bulma classname', () => {
     const component = renderer.create(
       <Label className="other-class this-is-a-test">

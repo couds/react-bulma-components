@@ -11,6 +11,7 @@ const Button = ({
   renderAs,
   color,
   size,
+  responsive,
   outlined,
   inverted,
   submit,
@@ -58,6 +59,7 @@ const Button = ({
       className={classnames(className, {
         [`is-${color}`]: color,
         [`is-${size}`]: size,
+        'is-responsive': responsive,
         'is-selected': isSelected,
         'is-static': isStatic,
         'is-rounded': rounded,
@@ -101,9 +103,10 @@ Button.propTypes = {
     PropTypes.string,
   ]),
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
     PropTypes.string,
   ]),
+  responsive: PropTypes.bool,
   /**
    * Whether Button should have an outline.
    */

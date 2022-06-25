@@ -6,8 +6,7 @@ exports[`Pagination component All buttons should be disabled 1`] = `
   className="pagination"
 >
   <a
-    className="pagination-previous"
-    disabled={true}
+    className="pagination-previous is-disabled"
     role="button"
     tabIndex={0}
     title="This is the first page"
@@ -15,8 +14,7 @@ exports[`Pagination component All buttons should be disabled 1`] = `
     Previous
   </a>
   <a
-    className="pagination-next"
-    disabled={true}
+    className="pagination-next is-disabled"
     role="button"
     tabIndex={0}
   >
@@ -29,8 +27,7 @@ exports[`Pagination component All buttons should be disabled 1`] = `
       <a
         aria-current="page"
         aria-label="Page 1"
-        className="pagination-link is-current"
-        disabled={true}
+        className="pagination-link is-current is-disabled"
         role="button"
         tabIndex={0}
       >
@@ -41,9 +38,7 @@ exports[`Pagination component All buttons should be disabled 1`] = `
       <a
         aria-current="page"
         aria-label="Page 2"
-        className="pagination-link"
-        disabled={true}
-        onClick={[Function]}
+        className="pagination-link is-disabled"
         role="button"
         tabIndex={0}
       >
@@ -54,9 +49,7 @@ exports[`Pagination component All buttons should be disabled 1`] = `
       <a
         aria-current="page"
         aria-label="Page 3"
-        className="pagination-link"
-        disabled={true}
-        onClick={[Function]}
+        className="pagination-link is-disabled"
         role="button"
         tabIndex={0}
       >
@@ -82,8 +75,7 @@ exports[`Pagination component Next button should be disabled 1`] = `
     Previous
   </a>
   <a
-    className="pagination-next"
-    disabled={true}
+    className="pagination-next is-disabled"
     role="button"
     tabIndex={0}
   >
@@ -139,8 +131,7 @@ exports[`Pagination component Should display first and last page number 1`] = `
   className="pagination"
 >
   <a
-    className="pagination-previous"
-    disabled={true}
+    className="pagination-previous is-disabled"
     role="button"
     tabIndex={0}
     title="This is the first page"
@@ -222,8 +213,7 @@ exports[`Pagination component Should have 3 pages and page 1 active 1`] = `
   className="pagination"
 >
   <a
-    className="pagination-previous"
-    disabled={true}
+    className="pagination-previous is-disabled"
     role="button"
     tabIndex={0}
     title="This is the first page"
@@ -295,8 +285,7 @@ exports[`Pagination component Should have 5 pages, page 5 active and display pag
     Previous
   </a>
   <a
-    className="pagination-next"
-    disabled={true}
+    className="pagination-next is-disabled"
     role="button"
     tabIndex={0}
   >
@@ -430,8 +419,7 @@ exports[`Pagination component Should not display page numbers 1`] = `
     Previous
   </a>
   <a
-    className="pagination-next"
-    disabled={true}
+    className="pagination-next is-disabled"
     role="button"
     tabIndex={0}
   >

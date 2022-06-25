@@ -164,7 +164,7 @@ LabelExample.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'normal', 'medium', 'large'],
     },
   },
 };
@@ -250,7 +250,7 @@ Field.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'normal', 'medium', 'large'],
     },
   },
 };
@@ -347,7 +347,7 @@ InputExample.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'normal', 'medium', 'large'],
     },
   },
   color: {
@@ -403,7 +403,7 @@ TextAreaExample.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large'],
+      options: ['default', 'small', 'normal', 'medium', 'large'],
     },
   },
   color: {
@@ -500,7 +500,7 @@ SelectExample.argTypes = {
     defaultValue: undefined,
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large'],
+      options: ['default', 'small', 'normal', 'medium', 'large'],
     },
   },
   rounded: {
@@ -622,7 +622,7 @@ InputExampleExample.argTypes = {
     defaultValue: undefined,
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large'],
+      options: ['default', 'small', 'normal', 'medium', 'large'],
     },
   },
   align: {

@@ -22,7 +22,7 @@ const Label = ({ children, className, size, ...props }) => {
 
 Label.propTypes = {
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
     PropTypes.string,
   ]),
   renderAs: PropTypes.oneOfType([

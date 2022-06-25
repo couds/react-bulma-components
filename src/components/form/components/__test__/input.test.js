@@ -24,6 +24,10 @@ describe('Input component', () => {
     const component = renderer.create(<Input color="success" type="email" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be normal', () => {
+    const component = renderer.create(<Input readOnly size="normal" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should be large and readOnly', () => {
     const component = renderer.create(<Input readOnly size="large" />);
     expect(component.toJSON()).toMatchSnapshot();

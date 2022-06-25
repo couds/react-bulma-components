@@ -51,7 +51,7 @@ Field.propTypes = {
    * When this prop is set this value will be used as size for `Form.Label` `Form.Input`, `Form.Textarea`, `Form.Select`, `Button` and `Icon` inside the field
    */
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
     PropTypes.string,
   ]),
   /**
