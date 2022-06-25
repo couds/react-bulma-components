@@ -1,18 +1,19 @@
-import { BulmaComponent } from '..';
-import { Color, Size } from '..';
+import { BulmaComponent, Color, Size } from '..';
 
 interface ButtonProps {
-  color?: Color
-  | 'ghost'
-  | 'black-bis'
-  | 'black-ter'
-  | 'white-bis'
-  | 'white-ter'
-  | 'grey-darker'
-  | 'grey-dark'
-  | 'grey-light'
-  | 'grey-lighter';
-  size?: Size;
+  color?:
+    | Color
+    | 'ghost'
+    | 'black-bis'
+    | 'black-ter'
+    | 'white-bis'
+    | 'white-ter'
+    | 'grey-darker'
+    | 'grey-dark'
+    | 'grey-light'
+    | 'grey-lighter';
+  size?: Size & 'normal';
+  responsive?: boolean;
   state?: 'hover' | 'focus' | 'active';
   outlined?: boolean;
   inverted?: boolean;

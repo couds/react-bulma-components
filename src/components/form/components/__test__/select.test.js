@@ -36,6 +36,16 @@ describe('Select component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be normal', () => {
+    const component = renderer.create(
+      <Select color="danger" size="normal" multiple disabled>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </Select>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should be large, red, disabled and multioption', () => {
     const component = renderer.create(
       <Select color="danger" size="large" multiple disabled>

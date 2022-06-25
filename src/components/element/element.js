@@ -11,9 +11,8 @@ const buildResponsiveness = (
 
   return classnames({
     [`is-${display}-${currentViewport}${suffix}`]: display,
-    [`has-text-${normalizeAlign(
+    [`has-text-${normalizeAlign(textAlign)}-${currentViewport}${suffix}`]:
       textAlign,
-    )}-${currentViewport}${suffix}`]: textAlign,
     [`is-size-${textSize}-${currentViewport}${suffix}`]: textSize,
     [`is-invisible-${currentViewport}${suffix}`]: invisible,
   });
@@ -60,6 +59,7 @@ export const useElementClassNames = ({
   textWeight,
   textTransform,
   italic,
+  underline,
   textSize,
   textAlign,
   textFamily,
@@ -119,6 +119,7 @@ export const useElementClassNames = ({
         [`is-${textTransform}`]: textTransform,
         [`is-family-${textFamily}`]: textFamily,
         'is-italic': italic,
+        'is-underline': underline,
       },
       buildResponsiveness('mobile', mobile),
       buildResponsiveness('tablet', tablet),
@@ -209,6 +210,7 @@ Element.propTypes = {
   flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
   flexGrow: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
   italic: PropTypes.bool,
+  underline: PropTypes.bool,
   invisible: PropTypes.bool,
   justifyContent: PropTypes.oneOf([
     'flex-start',
@@ -223,37 +225,37 @@ Element.propTypes = {
     'right',
   ]),
   m: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   mt: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   mr: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   mb: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   ml: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   mx: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   my: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
@@ -261,37 +263,37 @@ Element.propTypes = {
   overlay: PropTypes.bool,
   paddingless: PropTypes.bool,
   p: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   pt: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   pr: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   pb: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   pl: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   px: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),
   py: PropTypes.oneOfType([
-    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 'auto']),
     PropTypes.number,
     PropTypes.string,
   ]),

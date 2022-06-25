@@ -16,6 +16,13 @@ exports[`Input component Should be large and readOnly 1`] = `
 />
 `;
 
+exports[`Input component Should be normal 1`] = `
+<input
+  className="input is-normal"
+  readOnly={true}
+/>
+`;
+
 exports[`Input component Should be rounded 1`] = `
 <input
   className="input is-rounded"

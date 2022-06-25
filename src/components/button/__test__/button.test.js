@@ -39,6 +39,14 @@ describe('Button component', () => {
     const component = renderer.create(<Button color="primary" size="large" />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  it('Should be a Normal Primary Button', () => {
+    const component = renderer.create(<Button color="primary" size="normal" />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  it('Should be a Responsive Primary Button', () => {
+    const component = renderer.create(<Button color="primary" responsive />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   it('Should render as a static Button', () => {
     const component = renderer.create(<Button isStatic color="primary" />);
     expect(component.toJSON()).toMatchSnapshot();

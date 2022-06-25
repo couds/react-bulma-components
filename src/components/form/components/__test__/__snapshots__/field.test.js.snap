@@ -90,3 +90,20 @@ exports[`Field component Should have field-label classname 1`] = `
   </p>
 </div>
 `;
+
+exports[`Field component Should have field-label classname with normal size 1`] = `
+<div
+  className="field-label is-normal"
+>
+  <p
+    className="bd-notification is-success"
+  >
+    <p>
+      Default
+    </p>
+    <p>
+      Container
+    </p>
+  </p>
+</div>
+`;

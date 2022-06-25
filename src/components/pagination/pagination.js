@@ -74,9 +74,10 @@ const Pagination = ({
                     return onChange(current - 1);
                   }
             }
-            className="pagination-previous"
+            className={classnames('pagination-previous', {
+              'is-disabled': prevDisabled,
+            })}
             title="This is the first page"
-            disabled={prevDisabled}
           >
             {previous}
           </a>
@@ -90,8 +91,9 @@ const Pagination = ({
                     return onChange(current + 1);
                   }
             }
-            className="pagination-next"
-            disabled={nextDisabled}
+            className={classnames('pagination-next', {
+              'is-disabled': nextDisabled,
+            })}
           >
             {next}
           </a>
@@ -106,13 +108,18 @@ const Pagination = ({
                   <a
                     role="button"
                     tabIndex={0}
-                    className="pagination-link"
-                    onClick={() => {
-                      return onChange(1);
-                    }}
+                    className={classnames('pagination-link', {
+                      'is-disabled': disabled,
+                    })}
+                    onClick={
+                      disabled
+                        ? undefined
+                        : () => {
+                            return onChange(1);
+                          }
+                    }
                     aria-label="Page 1"
                     aria-current="page"
-                    disabled={disabled}
                   >
                     1
                   </a>
@@ -133,9 +140,10 @@ const Pagination = ({
                       tabIndex={0}
                       className={classnames('pagination-link', {
                         'is-current': current === i + firstPage,
+                        'is-disabled': disabled,
                       })}
                       onClick={
-                        current === firstPage + i
+                        disabled || current === firstPage + i
                           ? undefined
                           : () => {
                               return onChange(firstPage + i);
@@ -143,7 +151,6 @@ const Pagination = ({
                       }
                       aria-label={`Page ${i + firstPage}`}
                       aria-current="page"
-                      disabled={disabled}
                     >
                       {i + firstPage}
                     </a>
@@ -159,13 +166,18 @@ const Pagination = ({
                   <a
                     role="button"
                     tabIndex={0}
-                    className="pagination-link"
-                    onClick={() => {
-                      return onChange(total);
-                    }}
+                    className={classnames('pagination-link', {
+                      'is-disabled': disabled,
+                    })}
+                    onClick={
+                      disabled
+                        ? undefined
+                        : () => {
+                            return onChange(total);
+                          }
+                    }
                     aria-label={`Page ${total}`}
                     aria-current="page"
-                    disabled={disabled}
                   >
                     {total}
                   </a>

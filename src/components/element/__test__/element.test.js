@@ -9,7 +9,7 @@ describe('Element component', () => {
   });
   it('Should have helpers classnames', () => {
     const component = renderer.create(
-      <Element textColor="white" pull="left">
+      <Element textColor="white" pull="left" underline>
         Facebook
       </Element>,
     );
@@ -17,7 +17,7 @@ describe('Element component', () => {
   });
   it('Should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
-    const Custom = props => (
+    const Custom = (props) => (
       <p {...props}>
         Custom
         {props.children}

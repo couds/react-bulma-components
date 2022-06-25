@@ -4,8 +4,11 @@ import {
   OmitKeys,
   BulmaComponent,
   BulmaComponentWithoutRenderAs,
+  Color,
+  Size,
 } from '..';
-import { Color, Size } from '..';
+
+type InputSize = Size & 'normal';
 
 interface FieldProps {
   align?: 'center' | 'right';
@@ -15,7 +18,7 @@ interface FieldProps {
 }
 
 interface FieldLabelProps {
-  size?: Size;
+  size?: InputSize;
 }
 
 interface ControlProps {
@@ -25,7 +28,7 @@ interface ControlProps {
 }
 
 interface InputProps<T> {
-  size?: Size;
+  size?: InputSize;
   color?: Color;
   readOnly?: boolean;
   isStatic?: boolean;
@@ -34,17 +37,17 @@ interface InputProps<T> {
 }
 
 interface LabelProps {
-  size?: Size;
+  size?: InputSize;
 }
 
 interface TextareaProps {
-  size?: Size;
+  size?: InputSize;
   color?: Color;
   fixedSize?: boolean;
 }
 
 interface SelectProps<T> {
-  size?: Size;
+  size?: InputSize;
   color?: Color;
   value?: T;
   loading?: boolean;
@@ -68,7 +71,7 @@ interface HelpProps {
 interface InputFileProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   color?: Color;
-  size?: Size;
+  size?: InputSize;
   filename?: string;
   value?: FileList;
   fullwidth?: boolean;

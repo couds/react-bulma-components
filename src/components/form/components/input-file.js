@@ -91,7 +91,7 @@ InputFile.propTypes = {
    * The size of `InputFile`
    */
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
     PropTypes.string,
   ]),
   /**

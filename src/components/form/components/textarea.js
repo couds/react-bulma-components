@@ -26,7 +26,7 @@ Textarea.propTypes = {
    * Adjusts the size of the textarea input
    */
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large']),
+    PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
     PropTypes.string,
   ]),
   /**

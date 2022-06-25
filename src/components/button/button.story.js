@@ -74,7 +74,16 @@ Default.argTypes = {
     },
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large'],
+      options: ['default', 'small', 'normal', 'medium', 'large'],
+    },
+  },
+  responsive: {
+    table: {
+      category: 'Button',
+    },
+    description: 'Whether the button should adjust size based on breakpoints',
+    control: {
+      type: 'boolean',
     },
   },
   colorVariant: {

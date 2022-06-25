@@ -15,7 +15,7 @@ interface HelperProps {
   srOnly?: boolean;
 }
 
-type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | Number | String;
+type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 'auto' | Number | String;
 
 interface SpacingProps {
   m?: SpacingSize;
@@ -107,8 +107,15 @@ interface TypographyProps {
   textAlign?: 'center' | 'justify' | 'left' | 'right' | String;
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
-  textFamily?: 'sans-serif' | 'monospace' | 'primary' | 'secondary' | 'code' | String;
+  textFamily?:
+    | 'sans-serif'
+    | 'monospace'
+    | 'primary'
+    | 'secondary'
+    | 'code'
+    | String;
   italic?: boolean;
+  underline?: boolean;
 }
 
 type HTMLAttributes<K extends keyof JSX.IntrinsicElements> = OmitKeys<

@@ -2,9 +2,9 @@
 
 exports[`Dropdown component Should Exist 1`] = `[Function]`;
 
-exports[`Dropdown component Should be centered 1`] = `
+exports[`Dropdown component Should be centered and normal 1`] = `
 <div
-  className="file is-centered has-name"
+  className="file is-normal is-centered has-name"
 >
   <label
     className="file-label"

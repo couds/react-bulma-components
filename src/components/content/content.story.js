@@ -164,7 +164,7 @@ Default.argTypes = {
   size: {
     control: {
       type: 'select',
-      options: ['default', 'small', 'medium', 'large'],
+      options: ['default', 'small', 'normal', 'medium', 'large'],
     },
   },
 };
