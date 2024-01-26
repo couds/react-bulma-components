@@ -173,7 +173,7 @@ export type ElementProps<
   TComponent extends RenderAsComponent
 > = ModifierProps & {
   className?: string;
-  domRef?: React.RefObject<TComponent>;
+  domRef?: React.RefObject<React.ElementRef<TComponent>>;
   renderAs?: TComponent;
   style?: React.CSSProperties;
   display?: DisplayModifier;
