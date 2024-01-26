@@ -21,7 +21,7 @@ interface FieldLabelProps {
 interface ControlProps {
   fullwidth?: boolean;
   loading?: boolean;
-  iconType?: React.ElementType,
+  iconType?: React.ElementType;
 }
 
 interface InputProps<T> {
@@ -30,6 +30,7 @@ interface InputProps<T> {
   readOnly?: boolean;
   isStatic?: boolean;
   status?: 'focus' | 'hover';
+  rounded?: boolean;
   value?: T;
 }
 
