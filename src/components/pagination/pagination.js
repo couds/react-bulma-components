@@ -75,7 +75,6 @@ const Pagination = ({
                   }
             }
             className="pagination-previous"
-            title="This is the first page"
             disabled={prevDisabled}
           >
             {previous}
