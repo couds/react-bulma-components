@@ -1,8 +1,8 @@
-import { BulmaComponent } from '..';
-import { Breakpoint, ResponsiveModifiers } from '..';
+import { BulmaComponent, Breakpoint, ResponsiveModifiers } from '..';
 
+type GapSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | String | Number;
 interface GapProps {
-  gap?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | String | Number;
+  gap?: GapSize;
 }
 
 interface ColumnGroupProps {
@@ -12,7 +12,7 @@ interface ColumnGroupProps {
   desktop?: GapProps & ResponsiveModifiers;
   widescreen?: GapProps & ResponsiveModifiers;
   breakpoint?: Breakpoint;
-  gap?: GapProps;
+  gap?: GapSize;
   multiline?: boolean;
   centered?: boolean;
   vCentered?: boolean;

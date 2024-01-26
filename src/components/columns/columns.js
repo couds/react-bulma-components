@@ -111,6 +111,14 @@ Columns.propTypes = {
     ]),
   }),
   /**
+   * Default gap props
+   */
+  gap: PropTypes.oneOfType([
+    PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6, 7, 8]),
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  /**
    * Defines at what breakpoint upwards the column layout should be activated. Any viewport smaller
    * than the specified breakpoint will cause `<Columns.Column>` to stack on top of each other.
    */
